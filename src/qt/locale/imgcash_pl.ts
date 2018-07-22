@@ -3,11 +3,11 @@
     <name>AddressBookPage</name>
     <message>
         <source>Right-click to edit address or label</source>
-        <translation>Kliknij prawym przyciskiem myszki, aby edytować adres lub etykietę</translation>
+        <translation>Kliknij prawym przyciskiem myszki, aby edytowaÄ‡ adres lub etykietÄ™</translation>
     </message>
     <message>
         <source>Create a new address</source>
-        <translation>Stwórz nowy adres</translation>
+        <translation>StwÃ³rz nowy adres</translation>
     </message>
     <message>
         <source>&amp;New</source>
@@ -23,11 +23,11 @@
     </message>
     <message>
         <source>Delete the currently selected address from the list</source>
-        <translation>Usuń obecnie zaznaczony adres z listy</translation>
+        <translation>UsuÅ„ obecnie zaznaczony adres z listy</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation>&amp;Usuń</translation>
+        <translation>&amp;UsuÅ„</translation>
     </message>
     <message>
         <source>Export the data in the current tab to a file</source>
@@ -43,7 +43,7 @@
     </message>
     <message>
         <source>Choose the address to send coins to</source>
-        <translation>Wybierz adres, na który wyślesz monety</translation>
+        <translation>Wybierz adres, na ktÃ³ry wyÅ›lesz monety</translation>
     </message>
     <message>
         <source>Choose the address to receive coins with</source>
@@ -55,19 +55,19 @@
     </message>
     <message>
         <source>Sending addresses</source>
-        <translation>Adres do wysyłania</translation>
+        <translation>Adres do wysyÅ‚ania</translation>
     </message>
     <message>
         <source>Receiving addresses</source>
         <translation>Adres odbiorczy</translation>
     </message>
     <message>
-        <source>These are your ImgCash addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>To są twoje adresy ImgCash, na które wysyłasz płatności. Zanim wyślesz środki, zawsze upewnij się, że kwota i adres są prawidłowe.</translation>
+        <source>These are your ImageCoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>To sÄ… twoje adresy ImageCoin, na ktÃ³re wysyÅ‚asz pÅ‚atnoÅ›ci. Zanim wyÅ›lesz Å›rodki, zawsze upewnij siÄ™, Å¼e kwota i adres sÄ… prawidÅ‚owe.</translation>
     </message>
     <message>
-        <source>These are your ImgCash addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>To są twoje adresy do otrzymywania ImgCashów. Zaleca się tworzyć nowy adres dla każdej transakcji.</translation>
+        <source>These are your ImageCoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>To sÄ… twoje adresy do otrzymywania ImageCoinÃ³w. Zaleca siÄ™ tworzyÄ‡ nowy adres dla kaÅ¼dej transakcji.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -75,7 +75,7 @@
     </message>
     <message>
         <source>Copy &amp;Label</source>
-        <translation>Kopiuj &amp;Etykietę</translation>
+        <translation>Kopiuj &amp;EtykietÄ™</translation>
     </message>
     <message>
         <source>&amp;Edit</source>
@@ -83,19 +83,19 @@
     </message>
     <message>
         <source>Export Address List</source>
-        <translation>Eksportuj listę adresów</translation>
+        <translation>Eksportuj listÄ™ adresÃ³w</translation>
     </message>
     <message>
         <source>Comma separated file (*.csv)</source>
-        <translation>Wartości rozdzielone przecinkami (*.csv)</translation>
+        <translation>WartoÅ›ci rozdzielone przecinkami (*.csv)</translation>
     </message>
     <message>
         <source>Exporting Failed</source>
-        <translation>Próba eksportu nie powiodła się</translation>
+        <translation>PrÃ³ba eksportu nie powiodÅ‚a siÄ™</translation>
     </message>
     <message>
         <source>There was an error trying to save the address list to %1. Please try again.</source>
-        <translation>Wystąpił błąd podczas próby zapisu listy adresów do %1. Spróbuj ponownie.</translation>
+        <translation>WystÄ…piÅ‚ bÅ‚Ä…d podczas prÃ³by zapisu listy adresÃ³w do %1. SprÃ³buj ponownie.</translation>
     </message>
 </context>
 <context>
@@ -117,23 +117,23 @@
     <name>AskPassphraseDialog</name>
     <message>
         <source>Passphrase Dialog</source>
-        <translation>Okienko Hasła</translation>
+        <translation>Okienko HasÅ‚a</translation>
     </message>
     <message>
         <source>Enter passphrase</source>
-        <translation>Wpisz hasło</translation>
+        <translation>Wpisz hasÅ‚o</translation>
     </message>
     <message>
         <source>New passphrase</source>
-        <translation>Nowe hasło</translation>
+        <translation>Nowe hasÅ‚o</translation>
     </message>
     <message>
         <source>Repeat new passphrase</source>
-        <translation>Powtórz nowe hasło</translation>
+        <translation>PowtÃ³rz nowe hasÅ‚o</translation>
     </message>
     <message>
         <source>Serves to disable the trivial sendmoney when OS account compromised. Provides no real security.</source>
-        <translation>Służy do zablokowania funkcji wysyłania środków, gdy konto użytkownika systemu operacyjnego zostało przejęte przez osobę trzecią. Nie gwarantuje prawdziwego bezpieczeństwa.</translation>
+        <translation>SÅ‚uÅ¼y do zablokowania funkcji wysyÅ‚ania Å›rodkÃ³w, gdy konto uÅ¼ytkownika systemu operacyjnego zostaÅ‚o przejÄ™te przez osobÄ™ trzeciÄ…. Nie gwarantuje prawdziwego bezpieczeÅ„stwa.</translation>
     </message>
     <message>
         <source>Only for mixing via PrivateSend</source>
@@ -141,7 +141,7 @@
     </message>
     <message>
         <source>Enter the new passphrase to the wallet.&lt;br/&gt;Please use a passphrase of &lt;b&gt;ten or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</source>
-        <translation>Wprowadź nowe hasło dla twojego portfela.&lt;br/&gt;Proszę używać hasła o długości co najmniej &lt;b&gt;dziesięciu losowych znaków&lt;/b&gt; lub &lt;b&gt;co najmniej 8 słów&lt;/b&gt;.</translation>
+        <translation>WprowadÅº nowe hasÅ‚o dla twojego portfela.&lt;br/&gt;ProszÄ™ uÅ¼ywaÄ‡ hasÅ‚a o dÅ‚ugoÅ›ci co najmniej &lt;b&gt;dziesiÄ™ciu losowych znakÃ³w&lt;/b&gt; lub &lt;b&gt;co najmniej 8 sÅ‚Ã³w&lt;/b&gt;.</translation>
     </message>
     <message>
         <source>Encrypt wallet</source>
@@ -149,7 +149,7 @@
     </message>
     <message>
         <source>This operation needs your wallet passphrase to unlock the wallet.</source>
-        <translation>Ta operacja wymaga hasła do odblokowania portfela.</translation>
+        <translation>Ta operacja wymaga hasÅ‚a do odblokowania portfela.</translation>
     </message>
     <message>
         <source>Unlock wallet</source>
@@ -157,7 +157,7 @@
     </message>
     <message>
         <source>This operation needs your wallet passphrase to decrypt the wallet.</source>
-        <translation>Ta operacja wymaga hasła do odszyfrowania portfela.</translation>
+        <translation>Ta operacja wymaga hasÅ‚a do odszyfrowania portfela.</translation>
     </message>
     <message>
         <source>Decrypt wallet</source>
@@ -165,67 +165,67 @@
     </message>
     <message>
         <source>Change passphrase</source>
-        <translation>Zmień hasło</translation>
+        <translation>ZmieÅ„ hasÅ‚o</translation>
     </message>
     <message>
         <source>Enter the old passphrase and new passphrase to the wallet.</source>
-        <translation>Wpisz stare i nowe hasło dla portfela.</translation>
+        <translation>Wpisz stare i nowe hasÅ‚o dla portfela.</translation>
     </message>
     <message>
         <source>Confirm wallet encryption</source>
-        <translation>Potwierdź zaszyfrowanie portfela</translation>
+        <translation>PotwierdÅº zaszyfrowanie portfela</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR ImgCash&lt;/b&gt;!</source>
-        <translation>Ostrzeżenie: Jeśli zaszyfrujesz swój portfel i zgubisz hasło, &lt;b&gt;STRACISZ WSZYSTKIE ŚRODKI&lt;/b&gt;</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR ImageCoin&lt;/b&gt;!</source>
+        <translation>OstrzeÅ¼enie: JeÅ›li zaszyfrujesz swÃ³j portfel i zgubisz hasÅ‚o, &lt;b&gt;STRACISZ WSZYSTKIE ÅšRODKI&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
-        <translation>Jesteś pewien, że chcesz zaszyfrować portfel?</translation>
+        <translation>JesteÅ› pewien, Å¼e chcesz zaszyfrowaÄ‡ portfel?</translation>
     </message>
     <message>
         <source>Wallet encrypted</source>
         <translation>Portfel zaszyfrowany</translation>
     </message>
     <message>
-        <source>ImgCash Core will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your ImgCashs from being stolen by malware infecting your computer.</source>
-        <translation>ImgCash Core zostanie zamknięty, aby ukończyć szyfrowanie. Pamiętaj, szyfrowanie portfela nie chroni przed kradzieżą ImgCashów, jeśli twój komputer jest zainfekowany przez malware.</translation>
+        <source>ImageCoin Core will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your ImageCoins from being stolen by malware infecting your computer.</source>
+        <translation>ImageCoin Core zostanie zamkniÄ™ty, aby ukoÅ„czyÄ‡ szyfrowanie. PamiÄ™taj, szyfrowanie portfela nie chroni przed kradzieÅ¼Ä… ImageCoinÃ³w, jeÅ›li twÃ³j komputer jest zainfekowany przez malware.</translation>
     </message>
     <message>
         <source>IMPORTANT: Any previous backups you have made of your wallet file should be replaced with the newly generated, encrypted wallet file. For security reasons, previous backups of the unencrypted wallet file will become useless as soon as you start using the new, encrypted wallet.</source>
-        <translation>WAŻNE: Wszystkie wykonane wcześniej kopie zapasowe portfela należy zamienić na nowe, szyfrowane pliki. Z powodów bezpieczeństwa, poprzednie niezaszyfrowane kopie portfela staną się bezużyteczne, gdy tylko zaczniesz korzystać z nowego, zaszyfrowanego portfela.</translation>
+        <translation>WAÅ»NE: Wszystkie wykonane wczeÅ›niej kopie zapasowe portfela naleÅ¼y zamieniÄ‡ na nowe, szyfrowane pliki. Z powodÃ³w bezpieczeÅ„stwa, poprzednie niezaszyfrowane kopie portfela stanÄ… siÄ™ bezuÅ¼yteczne, gdy tylko zaczniesz korzystaÄ‡ z nowego, zaszyfrowanego portfela.</translation>
     </message>
     <message>
         <source>Wallet encryption failed</source>
-        <translation>Szyfrowanie portfela nie powiodło się</translation>
+        <translation>Szyfrowanie portfela nie powiodÅ‚o siÄ™</translation>
     </message>
     <message>
         <source>Wallet encryption failed due to an internal error. Your wallet was not encrypted.</source>
-        <translation>Szyfrowanie portfela nie powiodło się z powodu wewnętrznego błędu. Twój portfel nie został zaszyfrowany.</translation>
+        <translation>Szyfrowanie portfela nie powiodÅ‚o siÄ™ z powodu wewnÄ™trznego bÅ‚Ä™du. TwÃ³j portfel nie zostaÅ‚ zaszyfrowany.</translation>
     </message>
     <message>
         <source>The supplied passphrases do not match.</source>
-        <translation>Podane hasła nie są takie same.</translation>
+        <translation>Podane hasÅ‚a nie sÄ… takie same.</translation>
     </message>
     <message>
         <source>Wallet unlock failed</source>
-        <translation>Odblokowanie portfela nie powiodło się</translation>
+        <translation>Odblokowanie portfela nie powiodÅ‚o siÄ™</translation>
     </message>
     <message>
         <source>The passphrase entered for the wallet decryption was incorrect.</source>
-        <translation>Wprowadzone hasło do odszyfrowania portfela jest niepoprawne.</translation>
+        <translation>Wprowadzone hasÅ‚o do odszyfrowania portfela jest niepoprawne.</translation>
     </message>
     <message>
         <source>Wallet decryption failed</source>
-        <translation>Odszyfrowanie portfela nie powiodło się</translation>
+        <translation>Odszyfrowanie portfela nie powiodÅ‚o siÄ™</translation>
     </message>
     <message>
         <source>Wallet passphrase was successfully changed.</source>
-        <translation>Hasło portfela zostało pomyślnie zmienione.</translation>
+        <translation>HasÅ‚o portfela zostaÅ‚o pomyÅ›lnie zmienione.</translation>
     </message>
     <message>
         <source>Warning: The Caps Lock key is on!</source>
-        <translation>Uwaga: Klawisz Caps Lock jest włączony!</translation>
+        <translation>Uwaga: Klawisz Caps Lock jest wÅ‚Ä…czony!</translation>
     </message>
 </context>
 <context>
@@ -242,12 +242,12 @@
 <context>
     <name>BitcoinGUI</name>
     <message>
-        <source>A fatal error occurred. ImgCash Core can no longer continue safely and will quit.</source>
-        <translation>Wystąpił błąd krytyczny. ImgCash Core nie może bezpiecznie kontynuować i zostanie zamknięty.</translation>
+        <source>A fatal error occurred. ImageCoin Core can no longer continue safely and will quit.</source>
+        <translation>WystÄ…piÅ‚ bÅ‚Ä…d krytyczny. ImageCoin Core nie moÅ¼e bezpiecznie kontynuowaÄ‡ i zostanie zamkniÄ™ty.</translation>
     </message>
     <message>
-        <source>ImgCash Core</source>
-        <translation>ImgCash Core</translation>
+        <source>ImageCoin Core</source>
+        <translation>ImageCoin Core</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -255,7 +255,7 @@
     </message>
     <message>
         <source>Node</source>
-        <translation>Węzeł</translation>
+        <translation>WÄ™zeÅ‚</translation>
     </message>
     <message>
         <source>&amp;Overview</source>
@@ -263,23 +263,23 @@
     </message>
     <message>
         <source>Show general overview of wallet</source>
-        <translation>Pokazuje ogólne podsumowanie portfela</translation>
+        <translation>Pokazuje ogÃ³lne podsumowanie portfela</translation>
     </message>
     <message>
         <source>&amp;Send</source>
-        <translation>Wyślij</translation>
+        <translation>WyÅ›lij</translation>
     </message>
     <message>
-        <source>Send coins to a ImgCash address</source>
-        <translation>Wyślij monety na adres ImgCash</translation>
+        <source>Send coins to a ImageCoin address</source>
+        <translation>WyÅ›lij monety na adres ImageCoin</translation>
     </message>
     <message>
         <source>&amp;Receive</source>
         <translation>Odbie&amp;rz</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and ImgCash: URIs)</source>
-        <translation>Poproś o płatności (generuje kod QR oraz ImgCash: link)</translation>
+        <source>Request payments (generates QR codes and ImageCoin: URIs)</source>
+        <translation>PoproÅ› o pÅ‚atnoÅ›ci (generuje kod QR oraz ImageCoin: link)</translation>
     </message>
     <message>
         <source>&amp;Transactions</source>
@@ -287,7 +287,7 @@
     </message>
     <message>
         <source>Browse transaction history</source>
-        <translation>Przeglądaj historię transakcji</translation>
+        <translation>PrzeglÄ…daj historiÄ™ transakcji</translation>
     </message>
     <message>
         <source>&amp;Masternodes</source>
@@ -295,23 +295,23 @@
     </message>
     <message>
         <source>Browse masternodes</source>
-        <translation>Przeglądaj masternody</translation>
+        <translation>PrzeglÄ…daj masternody</translation>
     </message>
     <message>
         <source>E&amp;xit</source>
-        <translation>&amp;Zakończ</translation>
+        <translation>&amp;ZakoÅ„cz</translation>
     </message>
     <message>
         <source>Quit application</source>
         <translation>Zamknij program</translation>
     </message>
     <message>
-        <source>&amp;About ImgCash Core</source>
-        <translation>&amp;O ImgCash Core</translation>
+        <source>&amp;About ImageCoin Core</source>
+        <translation>&amp;O ImageCoin Core</translation>
     </message>
     <message>
-        <source>Show information about ImgCash Core</source>
-        <translation>Pokaż informacje o ImgCash Core</translation>
+        <source>Show information about ImageCoin Core</source>
+        <translation>PokaÅ¼ informacje o ImageCoin Core</translation>
     </message>
     <message>
         <source>About &amp;Qt</source>
@@ -319,23 +319,23 @@
     </message>
     <message>
         <source>Show information about Qt</source>
-        <translation>Pokaż informacje o Qt</translation>
+        <translation>PokaÅ¼ informacje o Qt</translation>
     </message>
     <message>
         <source>&amp;Options...</source>
         <translation>&amp;Opcje...</translation>
     </message>
     <message>
-        <source>Modify configuration options for ImgCash Core</source>
-        <translation>Zmień opcje konfiguracji ImgCash Core</translation>
+        <source>Modify configuration options for ImageCoin Core</source>
+        <translation>ZmieÅ„ opcje konfiguracji ImageCoin Core</translation>
     </message>
     <message>
         <source>&amp;Show / Hide</source>
-        <translation>&amp;Pokaż / Ukryj</translation>
+        <translation>&amp;PokaÅ¼ / Ukryj</translation>
     </message>
     <message>
         <source>Show or hide the main Window</source>
-        <translation>Pokazuje lub ukrywa główne okno</translation>
+        <translation>Pokazuje lub ukrywa gÅ‚Ã³wne okno</translation>
     </message>
     <message>
         <source>&amp;Encrypt Wallet...</source>
@@ -347,19 +347,19 @@
     </message>
     <message>
         <source>&amp;Backup Wallet...</source>
-        <translation>Wykonaj kopię zapasową...</translation>
+        <translation>Wykonaj kopiÄ™ zapasowÄ…...</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
-        <translation>Zapisz kopię zapasową portfela w innym miejscu</translation>
+        <translation>Zapisz kopiÄ™ zapasowÄ… portfela w innym miejscu</translation>
     </message>
     <message>
         <source>&amp;Change Passphrase...</source>
-        <translation>&amp;Zmień hasło...</translation>
+        <translation>&amp;ZmieÅ„ hasÅ‚o...</translation>
     </message>
     <message>
         <source>Change the passphrase used for wallet encryption</source>
-        <translation>Zmień hasło użyte do zaszyfrowania portfela</translation>
+        <translation>ZmieÅ„ hasÅ‚o uÅ¼yte do zaszyfrowania portfela</translation>
     </message>
     <message>
         <source>&amp;Unlock Wallet...</source>
@@ -375,19 +375,19 @@
     </message>
     <message>
         <source>Sign &amp;message...</source>
-        <translation>Podpisz wiado&amp;mość...</translation>
+        <translation>Podpisz wiado&amp;moÅ›Ä‡...</translation>
     </message>
     <message>
-        <source>Sign messages with your ImgCash addresses to prove you own them</source>
-        <translation>Podpisz wiadomości swoim adresem ImgCash, aby udowodnić, że jesteś ich właścicielem. </translation>
+        <source>Sign messages with your ImageCoin addresses to prove you own them</source>
+        <translation>Podpisz wiadomoÅ›ci swoim adresem ImageCoin, aby udowodniÄ‡, Å¼e jesteÅ› ich wÅ‚aÅ›cicielem. </translation>
     </message>
     <message>
         <source>&amp;Verify message...</source>
-        <translation>&amp;Zweryfikuj wiadomość...</translation>
+        <translation>&amp;Zweryfikuj wiadomoÅ›Ä‡...</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified ImgCash addresses</source>
-        <translation>Zweryfikuj wiadomości, aby upewnić się, że zostały one podpisane wybranym adresem ImgCash</translation>
+        <source>Verify messages to ensure they were signed with specified ImageCoin addresses</source>
+        <translation>Zweryfikuj wiadomoÅ›ci, aby upewniÄ‡ siÄ™, Å¼e zostaÅ‚y one podpisane wybranym adresem ImageCoin</translation>
     </message>
     <message>
         <source>&amp;Information</source>
@@ -395,7 +395,7 @@
     </message>
     <message>
         <source>Show diagnostic information</source>
-        <translation>Pokaż informacje diagnostyczne</translation>
+        <translation>PokaÅ¼ informacje diagnostyczne</translation>
     </message>
     <message>
         <source>&amp;Debug console</source>
@@ -403,7 +403,7 @@
     </message>
     <message>
         <source>Open debugging console</source>
-        <translation>Otwórz konsolę debugowania</translation>
+        <translation>OtwÃ³rz konsolÄ™ debugowania</translation>
     </message>
     <message>
         <source>&amp;Network Monitor</source>
@@ -411,15 +411,15 @@
     </message>
     <message>
         <source>Show network monitor</source>
-        <translation>Pokaż monitor sieci</translation>
+        <translation>PokaÅ¼ monitor sieci</translation>
     </message>
     <message>
         <source>&amp;Peers list</source>
-        <translation>&amp;lista peerów</translation>
+        <translation>&amp;lista peerÃ³w</translation>
     </message>
     <message>
         <source>Show peers info</source>
-        <translation>Pokaż informacje a peerach</translation>
+        <translation>PokaÅ¼ informacje a peerach</translation>
     </message>
     <message>
         <source>Wallet &amp;Repair</source>
@@ -427,11 +427,11 @@
     </message>
     <message>
         <source>Show wallet repair options</source>
-        <translation>Pokaż opcje naprawy portfela</translation>
+        <translation>PokaÅ¼ opcje naprawy portfela</translation>
     </message>
     <message>
         <source>Open Wallet &amp;Configuration File</source>
-        <translation>Otwórz Plik &amp;Konfiguracyjny Portfela</translation>
+        <translation>OtwÃ³rz Plik &amp;Konfiguracyjny Portfela</translation>
     </message>
     <message>
         <source>Open configuration file</source>
@@ -439,27 +439,27 @@
     </message>
     <message>
         <source>Open &amp;Masternode Configuration File</source>
-        <translation>Otwórz Plik &amp;Konfiguracyjny Masternoda</translation>
+        <translation>OtwÃ³rz Plik &amp;Konfiguracyjny Masternoda</translation>
     </message>
     <message>
         <source>Open Masternode configuration file</source>
-        <translation>Otwórz plik konfiguracyjny Masternoda</translation>
+        <translation>OtwÃ³rz plik konfiguracyjny Masternoda</translation>
     </message>
     <message>
         <source>Show Automatic &amp;Backups</source>
-        <translation>Pokaż automatyczne kopie zapasowe (&amp;Backups)</translation>
+        <translation>PokaÅ¼ automatyczne kopie zapasowe (&amp;Backups)</translation>
     </message>
     <message>
         <source>Show automatically created wallet backups</source>
-        <translation>Pokaż automatycznie utworzone kopie zapasowe portfela.</translation>
+        <translation>PokaÅ¼ automatycznie utworzone kopie zapasowe portfela.</translation>
     </message>
     <message>
         <source>&amp;Sending addresses...</source>
-        <translation>Adres wysyłania</translation>
+        <translation>Adres wysyÅ‚ania</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
-        <translation>Pokaż listę użytych adresów wysyłających i etykiety</translation>
+        <translation>PokaÅ¼ listÄ™ uÅ¼ytych adresÃ³w wysyÅ‚ajÄ…cych i etykiety</translation>
     </message>
     <message>
         <source>&amp;Receiving addresses...</source>
@@ -467,23 +467,23 @@
     </message>
     <message>
         <source>Show the list of used receiving addresses and labels</source>
-        <translation>Pokaż listę użytych adresów odbiorczych i etykiety</translation>
+        <translation>PokaÅ¼ listÄ™ uÅ¼ytych adresÃ³w odbiorczych i etykiety</translation>
     </message>
     <message>
         <source>Open &amp;URI...</source>
-        <translation>Otwórz &amp;URI...</translation>
+        <translation>OtwÃ³rz &amp;URI...</translation>
     </message>
     <message>
-        <source>Open a ImgCash: URI or payment request</source>
-        <translation>Otwórz ImgCash: Link lub żądanie zapłaty</translation>
+        <source>Open a ImageCoin: URI or payment request</source>
+        <translation>OtwÃ³rz ImageCoin: Link lub Å¼Ä…danie zapÅ‚aty</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
         <translation>&amp;Opcje konsoli</translation>
     </message>
     <message>
-        <source>Show the ImgCash Core help message to get a list with possible ImgCash Core command-line options</source>
-        <translation>Pokaż wiadomość pomocy ImgCash Core, aby otrzymać listę z dostępnymi opcjami wiersza poleceń.</translation>
+        <source>Show the ImageCoin Core help message to get a list with possible ImageCoin Core command-line options</source>
+        <translation>PokaÅ¼ wiadomoÅ›Ä‡ pomocy ImageCoin Core, aby otrzymaÄ‡ listÄ™ z dostÄ™pnymi opcjami wiersza poleceÅ„.</translation>
     </message>
     <message>
         <source>&amp;PrivateSend information</source>
@@ -491,7 +491,7 @@
     </message>
     <message>
         <source>Show the PrivateSend basic information</source>
-        <translation>Pokaż podstawowe informacje PrivateSend</translation>
+        <translation>PokaÅ¼ podstawowe informacje PrivateSend</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -503,7 +503,7 @@
     </message>
     <message>
         <source>&amp;Tools</source>
-        <translation>&amp;Narzędzia</translation>
+        <translation>&amp;NarzÄ™dzia</translation>
     </message>
     <message>
         <source>&amp;Help</source>
@@ -511,47 +511,47 @@
     </message>
     <message>
         <source>Tabs toolbar</source>
-        <translation>Pasek zakładek</translation>
+        <translation>Pasek zakÅ‚adek</translation>
     </message>
     <message>
-        <source>ImgCash Core client</source>
-        <translation>Klient ImgCash Core</translation>
+        <source>ImageCoin Core client</source>
+        <translation>Klient ImageCoin Core</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to ImgCash network</source>
-        <translation><numerusform>%n aktywne połączenie z siecią ImgCash</numerusform><numerusform>%n aktywne połączenia z siecią ImgCash</numerusform><numerusform>%n aktywnych połączeń z siecią ImgCash</numerusform><numerusform>%n aktywne połączenia z siecią ImgCash</numerusform></translation>
+        <source>%n active connection(s) to ImageCoin network</source>
+        <translation><numerusform>%n aktywne poÅ‚Ä…czenie z sieciÄ… ImageCoin</numerusform><numerusform>%n aktywne poÅ‚Ä…czenia z sieciÄ… ImageCoin</numerusform><numerusform>%n aktywnych poÅ‚Ä…czeÅ„ z sieciÄ… ImageCoin</numerusform><numerusform>%n aktywne poÅ‚Ä…czenia z sieciÄ… ImageCoin</numerusform></translation>
     </message>
     <message>
         <source>Network activity disabled</source>
-        <translation>Aktywność sieci jest wyłączona</translation>
+        <translation>AktywnoÅ›Ä‡ sieci jest wyÅ‚Ä…czona</translation>
     </message>
     <message>
         <source>Syncing Headers (%1%)...</source>
-        <translation>Synchronizacja nagłówków (%1%)...</translation>
+        <translation>Synchronizacja nagÅ‚Ã³wkÃ³w (%1%)...</translation>
     </message>
     <message>
         <source>Synchronizing with network...</source>
-        <translation>Synchronizacja z siecią...</translation>
+        <translation>Synchronizacja z sieciÄ…...</translation>
     </message>
     <message>
         <source>Indexing blocks on disk...</source>
-        <translation>Indeksowanie bloków na dysku...</translation>
+        <translation>Indeksowanie blokÃ³w na dysku...</translation>
     </message>
     <message>
         <source>Processing blocks on disk...</source>
-        <translation>Przetwarzanie bloków na dysku...</translation>
+        <translation>Przetwarzanie blokÃ³w na dysku...</translation>
     </message>
     <message>
         <source>Reindexing blocks on disk...</source>
-        <translation>Ponowne indeksowanie bloków na dysku...</translation>
+        <translation>Ponowne indeksowanie blokÃ³w na dysku...</translation>
     </message>
     <message>
         <source>Connecting to peers...</source>
-        <translation>Łączenie z peerami</translation>
+        <translation>Å�Ä…czenie z peerami</translation>
     </message>
     <message numerus="yes">
         <source>Processed %n block(s) of transaction history.</source>
-        <translation><numerusform>Pobrano %n blok z historią transakcji.</numerusform><numerusform>Pobranych zostało %n bloki z historią transakcji.</numerusform><numerusform>Pobranych zostało %n bloków z historią transakcji.</numerusform><numerusform>Pobrano %n bloków z historią transakcji.</numerusform></translation>
+        <translation><numerusform>Pobrano %n blok z historiÄ… transakcji.</numerusform><numerusform>Pobranych zostaÅ‚o %n bloki z historiÄ… transakcji.</numerusform><numerusform>Pobranych zostaÅ‚o %n blokÃ³w z historiÄ… transakcji.</numerusform><numerusform>Pobrano %n blokÃ³w z historiÄ… transakcji.</numerusform></translation>
     </message>
     <message>
         <source>%1 behind</source>
@@ -559,15 +559,15 @@
     </message>
     <message>
         <source>Catching up...</source>
-        <translation>Pobieranie bloków ...</translation>
+        <translation>Pobieranie blokÃ³w ...</translation>
     </message>
     <message>
         <source>Last received block was generated %1 ago.</source>
-        <translation>Ostatni otrzymany blok został wygenerowany %1 temu.</translation>
+        <translation>Ostatni otrzymany blok zostaÅ‚ wygenerowany %1 temu.</translation>
     </message>
     <message>
         <source>Transactions after this will not yet be visible.</source>
-        <translation>Transakcje po tym momencie nie będą jeszcze widoczne.</translation>
+        <translation>Transakcje po tym momencie nie bÄ™dÄ… jeszcze widoczne.</translation>
     </message>
     <message>
         <source>Up to date</source>
@@ -575,15 +575,15 @@
     </message>
     <message>
         <source>Synchronizing additional data: %p%</source>
-        <translation>Synchronizuję dodatkowe dane: %p%</translation>
+        <translation>SynchronizujÄ™ dodatkowe dane: %p%</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Błąd</translation>
+        <translation>BÅ‚Ä…d</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Ostrzeżenie</translation>
+        <translation>OstrzeÅ¼enie</translation>
     </message>
     <message>
         <source>Information</source>
@@ -598,7 +598,7 @@
     <message>
         <source>Amount: %1
 </source>
-        <translation>Ilość: %1
+        <translation>IloÅ›Ä‡: %1
 </translation>
     </message>
     <message>
@@ -621,19 +621,19 @@
     </message>
     <message>
         <source>Sent transaction</source>
-        <translation>Transakcja wysłana</translation>
+        <translation>Transakcja wysÅ‚ana</translation>
     </message>
     <message>
         <source>Incoming transaction</source>
-        <translation>Transakcja przychodząca</translation>
+        <translation>Transakcja przychodzÄ…ca</translation>
     </message>
     <message>
         <source>HD key generation is &lt;b&gt;enabled&lt;/b&gt;</source>
-        <translation>Generowanie kluczy HD jest &lt;b&gt;włączone&lt;/b&gt;</translation>
+        <translation>Generowanie kluczy HD jest &lt;b&gt;wÅ‚Ä…czone&lt;/b&gt;</translation>
     </message>
     <message>
         <source>HD key generation is &lt;b&gt;disabled&lt;/b&gt;</source>
-        <translation>Generowanie kluczy HD jest &lt;b&gt;wyłączone&lt;/b&gt;</translation>
+        <translation>Generowanie kluczy HD jest &lt;b&gt;wyÅ‚Ä…czone&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt;</source>
@@ -652,22 +652,22 @@
     <name>ClientModel</name>
     <message>
         <source>Total: %1 (PS compatible: %2 / Enabled: %3)</source>
-        <translation>Razem: %1 (zgodne z PS: %2 / włączone: %3)</translation>
+        <translation>Razem: %1 (zgodne z PS: %2 / wÅ‚Ä…czone: %3)</translation>
     </message>
     <message>
         <source>Network Alert</source>
-        <translation>Sieć Alert</translation>
+        <translation>SieÄ‡ Alert</translation>
     </message>
 </context>
 <context>
     <name>CoinControlDialog</name>
     <message>
         <source>Quantity:</source>
-        <translation>Ilość:</translation>
+        <translation>IloÅ›Ä‡:</translation>
     </message>
     <message>
         <source>Bytes:</source>
-        <translation>Bajtów:</translation>
+        <translation>BajtÃ³w:</translation>
     </message>
     <message>
         <source>Amount:</source>
@@ -675,19 +675,19 @@
     </message>
     <message>
         <source>Fee:</source>
-        <translation>Opłata:</translation>
+        <translation>OpÅ‚ata:</translation>
     </message>
     <message>
         <source>Coin Selection</source>
-        <translation>Wybór Monet</translation>
+        <translation>WybÃ³r Monet</translation>
     </message>
     <message>
         <source>Dust:</source>
-        <translation>Pył:</translation>
+        <translation>PyÅ‚:</translation>
     </message>
     <message>
         <source>After Fee:</source>
-        <translation>Po opłacie:</translation>
+        <translation>Po opÅ‚acie:</translation>
     </message>
     <message>
         <source>Change:</source>
@@ -699,7 +699,7 @@
     </message>
     <message>
         <source>toggle lock state</source>
-        <translation>odwróć stan blokady</translation>
+        <translation>odwrÃ³Ä‡ stan blokady</translation>
     </message>
     <message>
         <source>Tree mode</source>
@@ -719,7 +719,7 @@
     </message>
     <message>
         <source>Received with label</source>
-        <translation>Otrzymane z etykietą</translation>
+        <translation>Otrzymane z etykietÄ…</translation>
     </message>
     <message>
         <source>Received with address</source>
@@ -747,11 +747,11 @@
     </message>
     <message>
         <source>Copy label</source>
-        <translation>Kopiuj etykietę</translation>
+        <translation>Kopiuj etykietÄ™</translation>
     </message>
     <message>
         <source>Copy amount</source>
-        <translation>Kopiuj kwotę</translation>
+        <translation>Kopiuj kwotÄ™</translation>
     </message>
     <message>
         <source>Copy transaction ID</source>
@@ -767,35 +767,35 @@
     </message>
     <message>
         <source>Copy quantity</source>
-        <translation>Skopiuj ilość</translation>
+        <translation>Skopiuj iloÅ›Ä‡</translation>
     </message>
     <message>
         <source>Copy fee</source>
-        <translation>Skopiuj opłatę</translation>
+        <translation>Skopiuj opÅ‚atÄ™</translation>
     </message>
     <message>
         <source>Copy after fee</source>
-        <translation>Skopiuj ilość po opłacie</translation>
+        <translation>Skopiuj iloÅ›Ä‡ po opÅ‚acie</translation>
     </message>
     <message>
         <source>Copy bytes</source>
-        <translation>Skopiuj ilość bajtów</translation>
+        <translation>Skopiuj iloÅ›Ä‡ bajtÃ³w</translation>
     </message>
     <message>
         <source>Copy dust</source>
-        <translation>Kopiuj pył (kwota poniżej 5460 duffów)</translation>
+        <translation>Kopiuj pyÅ‚ (kwota poniÅ¼ej 5460 duffÃ³w)</translation>
     </message>
     <message>
         <source>Copy change</source>
-        <translation>Skopiuj resztę</translation>
+        <translation>Skopiuj resztÄ™</translation>
     </message>
     <message>
         <source>Please switch to "List mode" to use this function.</source>
-        <translation>W celu użycia tej funkcji, przełącz na "Tryb Listy"</translation>
+        <translation>W celu uÅ¼ycia tej funkcji, przeÅ‚Ä…cz na "Tryb Listy"</translation>
     </message>
     <message>
         <source>Non-anonymized input selected. &lt;b&gt;PrivateSend will be disabled.&lt;/b&gt;&lt;br&gt;&lt;br&gt;If you still want to use PrivateSend, please deselect all non-nonymized inputs first and then check PrivateSend checkbox again.</source>
-        <translation>Wybrano niezanonimizowane środki. &lt;b&gt; PrivateSend  zostanie wyłączony.&lt;/b&gt;&lt;br&gt;&lt;br&gt;Jeśli nadal chcesz użyć PrivateSend, cofnij wybór niezanonimizowanych środków, a następnie zaznacz pole wyboru PrivateSend.</translation>
+        <translation>Wybrano niezanonimizowane Å›rodki. &lt;b&gt; PrivateSend  zostanie wyÅ‚Ä…czony.&lt;/b&gt;&lt;br&gt;&lt;br&gt;JeÅ›li nadal chcesz uÅ¼yÄ‡ PrivateSend, cofnij wybÃ³r niezanonimizowanych Å›rodkÃ³w, a nastÄ™pnie zaznacz pole wyboru PrivateSend.</translation>
     </message>
     <message>
         <source>(%1 locked)</source>
@@ -811,11 +811,11 @@
     </message>
     <message>
         <source>This label turns red if any recipient receives an amount smaller than the current dust threshold.</source>
-        <translation>Etykieta staje się czerwona, jeżeli któryś z odbiorców otrzymuje kwotę mniejszą niż obecna granica pyłu.</translation>
+        <translation>Etykieta staje siÄ™ czerwona, jeÅ¼eli ktÃ³ryÅ› z odbiorcÃ³w otrzymuje kwotÄ™ mniejszÄ… niÅ¼ obecna granica pyÅ‚u.</translation>
     </message>
     <message>
         <source>Can vary +/- %1 duff(s) per input.</source>
-        <translation>Może się różnić około +/- %1 duff(ów) na transację.</translation>
+        <translation>MoÅ¼e siÄ™ rÃ³Å¼niÄ‡ okoÅ‚o +/- %1 duff(Ã³w) na transacjÄ™.</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -842,63 +842,63 @@
     </message>
     <message>
         <source>Basic Privacy</source>
-        <translation>Podstawowa prywatność</translation>
+        <translation>Podstawowa prywatnoÅ›Ä‡</translation>
     </message>
     <message>
         <source>High Privacy</source>
-        <translation>Wysoka prywatność</translation>
+        <translation>Wysoka prywatnoÅ›Ä‡</translation>
     </message>
     <message>
         <source>Maximum Privacy</source>
-        <translation>Maksymalna prywatność</translation>
+        <translation>Maksymalna prywatnoÅ›Ä‡</translation>
     </message>
     <message>
         <source>Please select a privacy level.</source>
-        <translation>Proszę wybrać poziom prywatności.</translation>
+        <translation>ProszÄ™ wybraÄ‡ poziom prywatnoÅ›ci.</translation>
     </message>
     <message>
-        <source>Use 2 separate masternodes to mix funds up to 1000 ImgCash</source>
-        <translation>Użyj 2 oddzielnych masternodów, aby wymieszać środki max. do 1000 ImgCash</translation>
+        <source>Use 2 separate masternodes to mix funds up to 1000 ImageCoin</source>
+        <translation>UÅ¼yj 2 oddzielnych masternodÃ³w, aby wymieszaÄ‡ Å›rodki max. do 1000 ImageCoin</translation>
     </message>
     <message>
-        <source>Use 8 separate masternodes to mix funds up to 1000 ImgCash</source>
-        <translation>Użyj 8 oddzielnych masternodów, aby wymieszać środki max. do 1000 ImgCash</translation>
+        <source>Use 8 separate masternodes to mix funds up to 1000 ImageCoin</source>
+        <translation>UÅ¼yj 8 oddzielnych masternodÃ³w, aby wymieszaÄ‡ Å›rodki max. do 1000 ImageCoin</translation>
     </message>
     <message>
         <source>Use 16 separate masternodes</source>
-        <translation>Użyj 16 oddzielnych masternodów</translation>
+        <translation>UÅ¼yj 16 oddzielnych masternodÃ³w</translation>
     </message>
     <message>
-        <source>This option is the quickest and will cost about ~0.025 ImgCash to anonymize 1000 ImgCash</source>
-        <translation>Ta opcja jest najszybsza i kosztuje około 0.025 ImgCash za zanonimizowanie 1000 ImgCash</translation>
+        <source>This option is the quickest and will cost about ~0.025 ImageCoin to anonymize 1000 ImageCoin</source>
+        <translation>Ta opcja jest najszybsza i kosztuje okoÅ‚o 0.025 ImageCoin za zanonimizowanie 1000 ImageCoin</translation>
     </message>
     <message>
-        <source>This option is moderately fast and will cost about 0.05 ImgCash to anonymize 1000 ImgCash</source>
-        <translation>Ta opcja jest w miarę szybka i kosztuje około 0.05 ImgCash za zanonimizowanie 1000 ImgCash</translation>
+        <source>This option is moderately fast and will cost about 0.05 ImageCoin to anonymize 1000 ImageCoin</source>
+        <translation>Ta opcja jest w miarÄ™ szybka i kosztuje okoÅ‚o 0.05 ImageCoin za zanonimizowanie 1000 ImageCoin</translation>
     </message>
     <message>
-        <source>0.1 ImgCash per 1000 ImgCash you anonymize.</source>
-        <translation>0.1 ImgCash za każde 1000 ImgCash, które zanonimizujesz.</translation>
+        <source>0.1 ImageCoin per 1000 ImageCoin you anonymize.</source>
+        <translation>0.1 ImageCoin za kaÅ¼de 1000 ImageCoin, ktÃ³re zanonimizujesz.</translation>
     </message>
     <message>
         <source>This is the slowest and most secure option. Using maximum anonymity will cost</source>
-        <translation>Jest to najwolniejsza, lecz najbardziej bezpieczna opcja. Maksymalny poziom zanonimizowania będzie kosztować</translation>
+        <translation>Jest to najwolniejsza, lecz najbardziej bezpieczna opcja. Maksymalny poziom zanonimizowania bÄ™dzie kosztowaÄ‡</translation>
     </message>
     <message>
         <source>PrivateSend Configuration</source>
         <translation>Konfiguracja PrivateSend</translation>
     </message>
     <message>
-        <source>PrivateSend was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening ImgCash's configuration screen.</source>
-        <translation>PrivateSend pomyślnie ustawiono na poziom podstawowy (%1 oraz 2 rundy). Możesz to zmienić w każdej chwili, otwierając ekran konfiguracji ImgCash.</translation>
+        <source>PrivateSend was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening ImageCoin's configuration screen.</source>
+        <translation>PrivateSend pomyÅ›lnie ustawiono na poziom podstawowy (%1 oraz 2 rundy). MoÅ¼esz to zmieniÄ‡ w kaÅ¼dej chwili, otwierajÄ…c ekran konfiguracji ImageCoin.</translation>
     </message>
     <message>
-        <source>PrivateSend was successfully set to high (%1 and 8 rounds). You can change this at any time by opening ImgCash's configuration screen.</source>
-        <translation>PrivateSend pomyślnie ustawiono na poziom wysoki (%1 oraz 8 rund). Możesz to zmienić w każdej chwili, otwierając ekran konfiguracji ImgCash.</translation>
+        <source>PrivateSend was successfully set to high (%1 and 8 rounds). You can change this at any time by opening ImageCoin's configuration screen.</source>
+        <translation>PrivateSend pomyÅ›lnie ustawiono na poziom wysoki (%1 oraz 8 rund). MoÅ¼esz to zmieniÄ‡ w kaÅ¼dej chwili, otwierajÄ…c ekran konfiguracji ImageCoin.</translation>
     </message>
     <message>
-        <source>PrivateSend was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening ImgCash's configuration screen.</source>
-        <translation>PrivateSend pomyślnie ustawiono na poziom najwyższy (%1 oraz 16 rund). Możesz to zmienić w każdej chwili, otwierając ekran konfiguracji ImgCash.</translation>
+        <source>PrivateSend was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening ImageCoin's configuration screen.</source>
+        <translation>PrivateSend pomyÅ›lnie ustawiono na poziom najwyÅ¼szy (%1 oraz 16 rund). MoÅ¼esz to zmieniÄ‡ w kaÅ¼dej chwili, otwierajÄ…c ekran konfiguracji ImageCoin.</translation>
     </message>
 </context>
 <context>
@@ -913,7 +913,7 @@
     </message>
     <message>
         <source>The label associated with this address list entry</source>
-        <translation>Etykieta skojarzona z tym wpisem na liście adresów</translation>
+        <translation>Etykieta skojarzona z tym wpisem na liÅ›cie adresÃ³w</translation>
     </message>
     <message>
         <source>&amp;Address</source>
@@ -921,7 +921,7 @@
     </message>
     <message>
         <source>The address associated with this address list entry. This can only be modified for sending addresses.</source>
-        <translation>Ten adres jest skojarzony z wpisem na liście adresów. Może być zmodyfikowany jedynie dla adresów wysyłających.</translation>
+        <translation>Ten adres jest skojarzony z wpisem na liÅ›cie adresÃ³w. MoÅ¼e byÄ‡ zmodyfikowany jedynie dla adresÃ³w wysyÅ‚ajÄ…cych.</translation>
     </message>
     <message>
         <source>New receiving address</source>
@@ -929,31 +929,31 @@
     </message>
     <message>
         <source>New sending address</source>
-        <translation>Nowy adres wysyłania</translation>
+        <translation>Nowy adres wysyÅ‚ania</translation>
     </message>
     <message>
         <source>Edit receiving address</source>
-        <translation>Zmień adres odbiorczy</translation>
+        <translation>ZmieÅ„ adres odbiorczy</translation>
     </message>
     <message>
         <source>Edit sending address</source>
-        <translation>Zmień adres wysyłania</translation>
+        <translation>ZmieÅ„ adres wysyÅ‚ania</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid ImgCash address.</source>
-        <translation>Wprowadzony adres "%1" nie jest właściwym adresem ImgCash.</translation>
+        <source>The entered address "%1" is not a valid ImageCoin address.</source>
+        <translation>Wprowadzony adres "%1" nie jest wÅ‚aÅ›ciwym adresem ImageCoin.</translation>
     </message>
     <message>
         <source>The entered address "%1" is already in the address book.</source>
-        <translation>Wprowadzony adres "%1" już istnieje w książce adresowej.</translation>
+        <translation>Wprowadzony adres "%1" juÅ¼ istnieje w ksiÄ…Å¼ce adresowej.</translation>
     </message>
     <message>
         <source>Could not unlock wallet.</source>
-        <translation>Nie można było odblokować portfela.</translation>
+        <translation>Nie moÅ¼na byÅ‚o odblokowaÄ‡ portfela.</translation>
     </message>
     <message>
         <source>New key generation failed.</source>
-        <translation>Tworzenie nowego klucza nie powiodło się.</translation>
+        <translation>Tworzenie nowego klucza nie powiodÅ‚o siÄ™.</translation>
     </message>
 </context>
 <context>
@@ -968,22 +968,22 @@
     </message>
     <message>
         <source>Directory already exists. Add %1 if you intend to create a new directory here.</source>
-        <translation>Katalog już istnieje. Dodaj %1, jeśli masz zamiar utworzyć tutaj nowy katalog.</translation>
+        <translation>Katalog juÅ¼ istnieje. Dodaj %1, jeÅ›li masz zamiar utworzyÄ‡ tutaj nowy katalog.</translation>
     </message>
     <message>
         <source>Path already exists, and is not a directory.</source>
-        <translation>Ścieżka już istnieje i nie wskazuje na folder.</translation>
+        <translation>ÅšcieÅ¼ka juÅ¼ istnieje i nie wskazuje na folder.</translation>
     </message>
     <message>
         <source>Cannot create data directory here.</source>
-        <translation>Nie można było tutaj utworzyć folderu.</translation>
+        <translation>Nie moÅ¼na byÅ‚o tutaj utworzyÄ‡ folderu.</translation>
     </message>
 </context>
 <context>
     <name>HelpMessageDialog</name>
     <message>
-        <source>ImgCash Core</source>
-        <translation>ImgCash Core</translation>
+        <source>ImageCoin Core</source>
+        <translation>ImageCoin Core</translation>
     </message>
     <message>
         <source>version</source>
@@ -994,16 +994,16 @@
         <translation>(%1-bit)</translation>
     </message>
     <message>
-        <source>About ImgCash Core</source>
-        <translation>Informacje o ImgCash Core</translation>
+        <source>About ImageCoin Core</source>
+        <translation>Informacje o ImageCoin Core</translation>
     </message>
     <message>
         <source>Command-line options</source>
-        <translation>Opcje lini poleceń</translation>
+        <translation>Opcje lini poleceÅ„</translation>
     </message>
     <message>
         <source>Usage:</source>
-        <translation>Użycie:</translation>
+        <translation>UÅ¼ycie:</translation>
     </message>
     <message>
         <source>command-line options</source>
@@ -1011,15 +1011,15 @@
     </message>
     <message>
         <source>UI Options:</source>
-        <translation>Opcje wyglądu</translation>
+        <translation>Opcje wyglÄ…du</translation>
     </message>
     <message>
         <source>Choose data directory on startup (default: %u)</source>
-        <translation>Przy uruchomieniu wybierz folder danych  (domyślnie: %u)</translation>
+        <translation>Przy uruchomieniu wybierz folder danych  (domyÅ›lnie: %u)</translation>
     </message>
     <message>
         <source>Set language, for example "de_DE" (default: system locale)</source>
-        <translation>Ustaw Język, na przykład "pl_PL" (domyślnie: systemowy)</translation>
+        <translation>Ustaw JÄ™zyk, na przykÅ‚ad "pl_PL" (domyÅ›lnie: systemowy)</translation>
     </message>
     <message>
         <source>Start minimized</source>
@@ -1027,23 +1027,23 @@
     </message>
     <message>
         <source>Set SSL root certificates for payment request (default: -system-)</source>
-        <translation>Ustaw główne cerytfikaty SSL dla żądań płatności (domyślnie: -system-)</translation>
+        <translation>Ustaw gÅ‚Ã³wne cerytfikaty SSL dla Å¼Ä…daÅ„Â pÅ‚atnoÅ›ci (domyÅ›lnie: -system-)</translation>
     </message>
     <message>
         <source>Show splash screen on startup (default: %u)</source>
-        <translation>Przy uruchamianiu pokaż ekran powitalny (domyślnie: %u)</translation>
+        <translation>Przy uruchamianiu pokaÅ¼ ekran powitalny (domyÅ›lnie: %u)</translation>
     </message>
     <message>
         <source>Reset all settings changed in the GUI</source>
-        <translation>Resetuj wszystkie ustawienia zmienione w graficznym interfejsie użytkownika</translation>
+        <translation>Resetuj wszystkie ustawienia zmienione w graficznym interfejsie uÅ¼ytkownika</translation>
     </message>
     <message>
         <source>PrivateSend information</source>
         <translation>Informacje o PrivateSend</translation>
     </message>
     <message>
-        <source>&lt;h3&gt;PrivateSend Basics&lt;/h3&gt; PrivateSend gives you true financial privacy by obscuring the origins of your funds. All the ImgCash in your wallet is comprised of different "inputs" which you can think of as separate, discrete coins.&lt;br&gt; PrivateSend uses an innovative process to mix your inputs with the inputs of two other people, without having your coins ever leave your wallet. You retain control of your money at all times..&lt;hr&gt; &lt;b&gt;The PrivateSend process works like this:&lt;/b&gt;&lt;ol type="1"&gt; &lt;li&gt;PrivateSend begins by breaking your transaction inputs down into standard denominations. These denominations are 0.01 ImgCash, 0.1 ImgCash, 1 ImgCash and 10 ImgCash -- sort of like the paper money you use every day.&lt;/li&gt; &lt;li&gt;Your wallet then sends requests to specially configured software nodes on the network, called "masternodes." These masternodes are informed then that you are interested in mixing a certain denomination. No identifiable information is sent to the masternodes, so they never know "who" you are.&lt;/li&gt; &lt;li&gt;When two other people send similar messages, indicating that they wish to mix the same denomination, a mixing session begins. The masternode mixes up the inputs and instructs all three users' wallets to pay the now-transformed input back to themselves. Your wallet pays that denomination directly to itself, but in a different address (called a change address).&lt;/li&gt; &lt;li&gt;In order to fully obscure your funds, your wallet must repeat this process a number of times with each denomination. Each time the process is completed, it's called a "round." Each round of PrivateSend makes it exponentially more difficult to determine where your funds originated.&lt;/li&gt; &lt;li&gt;This mixing process happens in the background without any intervention on your part. When you wish to make a transaction, your funds will already be anonymized. No additional waiting is required.&lt;/li&gt; &lt;/ol&gt; &lt;hr&gt;&lt;b&gt;IMPORTANT:&lt;/b&gt; Your wallet only contains 1000 of these "change addresses." Every time a mixing event happens, up to 9 of your addresses are used up. This means those 1000 addresses last for about 100 mixing events. When 900 of them are used, your wallet must create more addresses. It can only do this, however, if you have automatic backups enabled.&lt;br&gt; Consequently, users who have backups disabled will also have PrivateSend disabled. &lt;hr&gt;For more info see &lt;a href="https://ImgCashpay.atlassian.net/wiki/display/DOC/PrivateSend"&gt;https://ImgCashpay.atlassian.net/wiki/display/DOC/PrivateSend&lt;/a&gt;         </source>
-        <translation>&lt;h3&gt;Podstawy PrivateSend&lt;/h3&gt; PrivateSend zapewnia prawdziwą prywatność poprzez ukrycie pochodzenia środków. Wszystkie ImgCashe w twoim portfelu składają się z różnych "kwot wejściowych", które można traktować jako oddzielne, indywidualne monety.&lt;br&gt; PrivateSend wykorzystuje rewolucyjny proces mieszania twoich "kwot wejściowych" z "kwotami wejściowymi" dwóch innych  użytkowników, przy czym twoje środki nigdy nie opuszczają twojego portfela. W każdej chwili zachowujesz nad nimi pełną kontrolę.&lt;hr&gt; &lt;b&gt;Proces PrivateSend przebiega w następujący sposób:&lt;/b&gt;&lt;ol type="1"&gt; &lt;li&gt;Najpierw PrivateSend dzieli twoje kwoty wejściowe twoich transakcji na standardowe nominały. Są kwoty 0.01 ImgCash, 0.1 ImgCash, 1 ImgCash oraz 10 ImgCash – mniej  więcej jak banknoty, których codziennie używasz.&lt;/li&gt; &lt;li&gt;Następnie twój portfel wysyła żądania do specjalnie skonfigurowanych węzłów sieci, zwanych "masternodami." Masternody otrzymują komunikat, że jesteś zainteresowany wymieszaniem określonego nominału. Masternody nie otrzymują żadnych informacji pozwalających na identyfikację, w związku z tym nigdy nie wiedzą "kim" jesteś.&lt;/li&gt; &lt;li&gt;Kiedy dwaj inni użytkownicy wyślą podobne komunikaty, z żądanie wymieszanie takiego samego nominału, rozpocznie się sesja mieszania. Masternod wymiesza kwoty wejściowe i nakaże portfelom takich trzech użytkowników wypłacić sobie samemu przetworzone kwoty wejściowe. Twój portfel wpłaci dany nominał do siebie samego, jednak na inny adres (tzw. adres reszty).&lt;/li&gt; &lt;li&gt;W celu pełnego zaciemnienia pochodzenia środków, twój portfel musi powtórzyć te czynności dla każdego nominału określoną ilość razy.  Każde wykonanie tego procesu określamy mianem "rundy." Każda runda procesu PrivateSend wykładniczo zwiększa trudność ustalenia pochodzenia twoich środków.&lt;/li&gt; &lt;li&gt;Proces mieszania odbywa się w tle, bez dodatkowego zaangażowania z twojej strony. Kiedy zechcesz wykonać transakcję, twoje środki będą już zanonimizowane. Nie będzie konieczne dodatkowe oczekiwanie.&lt;/li&gt; &lt;/ol&gt; &lt;hr&gt;&lt;b&gt;UWAGA:&lt;/b&gt; Portfel zawiera tylko 1000 "adresów reszty." Każde mieszanie zużywa do 9 adresów. Oznacza to, że po 100 mieszaniach zużyjesz ok. 1000 adresów. Po wykorzystaniu 900 adresów, portfel musi wygenerować nowe adresy. Może not nastąpić jedynie, jeżeli włączone jest automatyczne tworzenie kopii zapasowych.&lt;br&gt; Dlatego też, PrivateSend jest wyłączone, jeżeli użytkownik wyłączył automatyczne tworzenie kopii zapasowych. &lt;hr&gt;Więcej informacji znajdziesz na stronie &lt;a href="https://ImgCashpay.atlassian.net/wiki/display/DOC/PrivateSend"&gt;https://ImgCashpay.atlassian.net/wiki/display/DOC/PrivateSend&lt;/a&gt;         </translation>
+        <source>&lt;h3&gt;PrivateSend Basics&lt;/h3&gt; PrivateSend gives you true financial privacy by obscuring the origins of your funds. All the ImageCoin in your wallet is comprised of different "inputs" which you can think of as separate, discrete coins.&lt;br&gt; PrivateSend uses an innovative process to mix your inputs with the inputs of two other people, without having your coins ever leave your wallet. You retain control of your money at all times..&lt;hr&gt; &lt;b&gt;The PrivateSend process works like this:&lt;/b&gt;&lt;ol type="1"&gt; &lt;li&gt;PrivateSend begins by breaking your transaction inputs down into standard denominations. These denominations are 0.01 ImageCoin, 0.1 ImageCoin, 1 ImageCoin and 10 ImageCoin -- sort of like the paper money you use every day.&lt;/li&gt; &lt;li&gt;Your wallet then sends requests to specially configured software nodes on the network, called "masternodes." These masternodes are informed then that you are interested in mixing a certain denomination. No identifiable information is sent to the masternodes, so they never know "who" you are.&lt;/li&gt; &lt;li&gt;When two other people send similar messages, indicating that they wish to mix the same denomination, a mixing session begins. The masternode mixes up the inputs and instructs all three users' wallets to pay the now-transformed input back to themselves. Your wallet pays that denomination directly to itself, but in a different address (called a change address).&lt;/li&gt; &lt;li&gt;In order to fully obscure your funds, your wallet must repeat this process a number of times with each denomination. Each time the process is completed, it's called a "round." Each round of PrivateSend makes it exponentially more difficult to determine where your funds originated.&lt;/li&gt; &lt;li&gt;This mixing process happens in the background without any intervention on your part. When you wish to make a transaction, your funds will already be anonymized. No additional waiting is required.&lt;/li&gt; &lt;/ol&gt; &lt;hr&gt;&lt;b&gt;IMPORTANT:&lt;/b&gt; Your wallet only contains 1000 of these "change addresses." Every time a mixing event happens, up to 9 of your addresses are used up. This means those 1000 addresses last for about 100 mixing events. When 900 of them are used, your wallet must create more addresses. It can only do this, however, if you have automatic backups enabled.&lt;br&gt; Consequently, users who have backups disabled will also have PrivateSend disabled. &lt;hr&gt;For more info see &lt;a href="https://ImageCoinpay.atlassian.net/wiki/display/DOC/PrivateSend"&gt;https://ImageCoinpay.atlassian.net/wiki/display/DOC/PrivateSend&lt;/a&gt;         </source>
+        <translation>&lt;h3&gt;Podstawy PrivateSend&lt;/h3&gt; PrivateSend zapewnia prawdziwÄ… prywatnoÅ›Ä‡ poprzez ukrycie pochodzenia Å›rodkÃ³w. Wszystkie ImageCoine w twoim portfelu skÅ‚adajÄ… siÄ™ z rÃ³Å¼nych "kwot wejÅ›ciowych", ktÃ³re moÅ¼na traktowaÄ‡ jako oddzielne, indywidualne monety.&lt;br&gt; PrivateSend wykorzystuje rewolucyjny proces mieszania twoich "kwot wejÅ›ciowych" z "kwotami wejÅ›ciowymi" dwÃ³ch innych  uÅ¼ytkownikÃ³w, przy czym twoje Å›rodki nigdy nie opuszczajÄ… twojego portfela. W kaÅ¼dej chwili zachowujesz nad nimi peÅ‚nÄ… kontrolÄ™.&lt;hr&gt; &lt;b&gt;Proces PrivateSend przebiega w nastÄ™pujÄ…cy sposÃ³b:&lt;/b&gt;&lt;ol type="1"&gt; &lt;li&gt;Najpierw PrivateSend dzieli twoje kwoty wejÅ›ciowe twoich transakcji na standardowe nominaÅ‚y. SÄ… kwoty 0.01 ImageCoin, 0.1 ImageCoin, 1 ImageCoin oraz 10 ImageCoin â€“ mniej  wiÄ™cej jak banknoty, ktÃ³rych codziennie uÅ¼ywasz.&lt;/li&gt; &lt;li&gt;NastÄ™pnie twÃ³j portfel wysyÅ‚a Å¼Ä…dania do specjalnie skonfigurowanych wÄ™zÅ‚Ã³w sieci, zwanych "masternodami." Masternody otrzymujÄ… komunikat, Å¼e jesteÅ› zainteresowany wymieszaniem okreÅ›lonego nominaÅ‚u. Masternody nie otrzymujÄ… Å¼adnych informacji pozwalajÄ…cych na identyfikacjÄ™, w zwiÄ…zku z tym nigdy nie wiedzÄ… "kim" jesteÅ›.&lt;/li&gt; &lt;li&gt;Kiedy dwaj inni uÅ¼ytkownicy wyÅ›lÄ… podobne komunikaty, z Å¼Ä…danie wymieszanie takiego samego nominaÅ‚u, rozpocznie siÄ™ sesja mieszania. Masternod wymiesza kwoty wejÅ›ciowe i nakaÅ¼e portfelom takich trzech uÅ¼ytkownikÃ³w wypÅ‚aciÄ‡ sobie samemu przetworzone kwoty wejÅ›ciowe. TwÃ³j portfel wpÅ‚aci dany nominaÅ‚ do siebie samego, jednak na inny adres (tzw. adres reszty).&lt;/li&gt; &lt;li&gt;W celu peÅ‚nego zaciemnienia pochodzenia Å›rodkÃ³w, twÃ³j portfel musi powtÃ³rzyÄ‡ te czynnoÅ›ci dla kaÅ¼dego nominaÅ‚u okreÅ›lonÄ… iloÅ›Ä‡ razy.  KaÅ¼de wykonanie tego procesu okreÅ›lamy mianem "rundy." KaÅ¼da runda procesu PrivateSend wykÅ‚adniczo zwiÄ™ksza trudnoÅ›Ä‡ ustalenia pochodzenia twoich Å›rodkÃ³w.&lt;/li&gt; &lt;li&gt;Proces mieszania odbywa siÄ™ w tle, bez dodatkowego zaangaÅ¼owania z twojej strony. Kiedy zechcesz wykonaÄ‡ transakcjÄ™, twoje Å›rodki bÄ™dÄ… juÅ¼ zanonimizowane. Nie bÄ™dzie konieczne dodatkowe oczekiwanie.&lt;/li&gt; &lt;/ol&gt; &lt;hr&gt;&lt;b&gt;UWAGA:&lt;/b&gt; Portfel zawiera tylko 1000 "adresÃ³w reszty." KaÅ¼de mieszanie zuÅ¼ywa do 9 adresÃ³w. Oznacza to, Å¼e po 100 mieszaniach zuÅ¼yjesz ok. 1000 adresÃ³w. Po wykorzystaniu 900 adresÃ³w, portfel musi wygenerowaÄ‡ nowe adresy. MoÅ¼e not nastÄ…piÄ‡ jedynie, jeÅ¼eli wÅ‚Ä…czone jest automatyczne tworzenie kopii zapasowych.&lt;br&gt; Dlatego teÅ¼, PrivateSend jest wyÅ‚Ä…czone, jeÅ¼eli uÅ¼ytkownik wyÅ‚Ä…czyÅ‚ automatyczne tworzenie kopii zapasowych. &lt;hr&gt;WiÄ™cej informacji znajdziesz na stronie &lt;a href="https://ImageCoinpay.atlassian.net/wiki/display/DOC/PrivateSend"&gt;https://ImageCoinpay.atlassian.net/wiki/display/DOC/PrivateSend&lt;/a&gt;         </translation>
     </message>
 </context>
 <context>
@@ -1053,36 +1053,36 @@
         <translation>Witaj</translation>
     </message>
     <message>
-        <source>Welcome to ImgCash Core.</source>
-        <translation>Witaj w ImgCash Core</translation>
+        <source>Welcome to ImageCoin Core.</source>
+        <translation>Witaj w ImageCoin Core</translation>
     </message>
     <message>
-        <source>As this is the first time the program is launched, you can choose where ImgCash Core will store its data.</source>
-        <translation>Ponieważ uruchomiłeś ten program po raz pierwszy, możesz wybrać gdzie ImgCash Core będzie przechowywał dane.</translation>
+        <source>As this is the first time the program is launched, you can choose where ImageCoin Core will store its data.</source>
+        <translation>PoniewaÅ¼ uruchomiÅ‚eÅ› ten program po raz pierwszy, moÅ¼esz wybraÄ‡ gdzie ImageCoin Core bÄ™dzie przechowywaÅ‚ dane.</translation>
     </message>
     <message>
-        <source>ImgCash Core will download and store a copy of the ImgCash block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
-        <translation>ImgCash Core ściągnie i zapisze kopię łańcucha bloków-blockchain na twoim dysku. Co najmniej %1GB danych zostanie zapisanych w tym katalogu, a z upływem czasu blockchain będzie stopniowo wymagał coraz więcej miejsca. Twój portfel również zostanie zapisany w tym katalogu.</translation>
+        <source>ImageCoin Core will download and store a copy of the ImageCoin block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
+        <translation>ImageCoin Core Å›ciÄ…gnie i zapisze kopiÄ™ Å‚aÅ„cucha blokÃ³w-blockchain na twoim dysku. Co najmniej %1GB danych zostanie zapisanych w tym katalogu, a z upÅ‚ywem czasu blockchain bÄ™dzie stopniowo wymagaÅ‚ coraz wiÄ™cej miejsca. TwÃ³j portfel rÃ³wnieÅ¼ zostanie zapisany w tym katalogu.</translation>
     </message>
     <message>
         <source>Use the default data directory</source>
-        <translation>Użyj domyślnego folderu danych</translation>
+        <translation>UÅ¼yj domyÅ›lnego folderu danych</translation>
     </message>
     <message>
         <source>Use a custom data directory:</source>
-        <translation>Użyj wybranego folderu dla danych</translation>
+        <translation>UÅ¼yj wybranego folderu dla danych</translation>
     </message>
     <message>
-        <source>ImgCash Core</source>
-        <translation>ImgCash Core</translation>
+        <source>ImageCoin Core</source>
+        <translation>ImageCoin Core</translation>
     </message>
     <message>
         <source>Error: Specified data directory "%1" cannot be created.</source>
-        <translation>Wystąpił błąd: Katalog "%1" nie może zostać stworzony.</translation>
+        <translation>WystÄ…piÅ‚ bÅ‚Ä…d: Katalog "%1" nie moÅ¼e zostaÄ‡ stworzony.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Błąd</translation>
+        <translation>BÅ‚Ä…d</translation>
     </message>
     <message>
         <source>%1 GB of free space available</source>
@@ -1105,7 +1105,7 @@
     </message>
     <message>
         <source>Note: Status of your masternodes in local wallet can potentially be slightly incorrect.&lt;br /&gt;Always wait for wallet to sync additional data and then double check from another node&lt;br /&gt;if your masternode should be running but you still do not see "ENABLED" in "Status" field.</source>
-        <translation>Uwaga! Status twoich masternodów w lokalnym portfelu potencjalnie może być niezupełnie poprawny.&lt;br /&gt;Jeżeli twój masternode powinien być uruchomiony, ale nadal nie widzisz słowa "WŁĄCZONY" w polu "Status", &lt;br /&gt;zawsze poczekaj na zsynchronizowanie danych dodatkowych i porównaj z danymi z innego węzła.</translation>
+        <translation>Uwaga! Status twoich masternodÃ³w w lokalnym portfelu potencjalnie moÅ¼e byÄ‡ niezupeÅ‚nie poprawny.&lt;br /&gt;JeÅ¼eli twÃ³j masternode powinien byÄ‡ uruchomiony, ale nadal nie widzisz sÅ‚owa "WÅ�Ä„CZONY" w polu "Status", &lt;br /&gt;zawsze poczekaj na zsynchronizowanie danych dodatkowych i porÃ³wnaj z danymi z innego wÄ™zÅ‚a.</translation>
     </message>
     <message>
         <source>Alias</source>
@@ -1117,7 +1117,7 @@
     </message>
     <message>
         <source>Protocol</source>
-        <translation>Protokół</translation>
+        <translation>ProtokÃ³Å‚</translation>
     </message>
     <message>
         <source>Status</source>
@@ -1141,7 +1141,7 @@
     </message>
     <message>
         <source>Start &amp;MISSING</source>
-        <translation>Uruchom &amp;brakujące</translation>
+        <translation>Uruchom &amp;brakujÄ…ce</translation>
     </message>
     <message>
         <source>&amp;Update status</source>
@@ -1161,15 +1161,15 @@
     </message>
     <message>
         <source>Filter List:</source>
-        <translation>Filtruj listę:</translation>
+        <translation>Filtruj listÄ™:</translation>
     </message>
     <message>
         <source>Filter masternode list</source>
-        <translation>Filtruj listę masternodów</translation>
+        <translation>Filtruj listÄ™ masternodÃ³w</translation>
     </message>
     <message>
         <source>Node Count:</source>
-        <translation>Liczba węzłów:</translation>
+        <translation>Liczba wÄ™zÅ‚Ã³w:</translation>
     </message>
     <message>
         <source>Start alias</source>
@@ -1177,35 +1177,35 @@
     </message>
     <message>
         <source>Confirm masternode start</source>
-        <translation>Potwierdź start masternoda</translation>
+        <translation>PotwierdÅº start masternoda</translation>
     </message>
     <message>
         <source>Are you sure you want to start masternode %1?</source>
-        <translation>Czy na pewno chcesz wystartować masternod %1?</translation>
+        <translation>Czy na pewno chcesz wystartowaÄ‡ masternod %1?</translation>
     </message>
     <message>
         <source>Confirm all masternodes start</source>
-        <translation>Potwierdź start wszystkich masternodów</translation>
+        <translation>PotwierdÅº start wszystkich masternodÃ³w</translation>
     </message>
     <message>
         <source>Are you sure you want to start ALL masternodes?</source>
-        <translation>Czy na pewno chcesz wystartować WSZYSTKIE masternody?</translation>
+        <translation>Czy na pewno chcesz wystartowaÄ‡ WSZYSTKIE masternody?</translation>
     </message>
     <message>
         <source>Command is not available right now</source>
-        <translation>Obecnie komenda jest niedostępna.</translation>
+        <translation>Obecnie komenda jest niedostÄ™pna.</translation>
     </message>
     <message>
         <source>You can't use this command until masternode list is synced</source>
-        <translation>Nie możesz użyć tej komendy przed zsynchronizowaniem listy masternodów.</translation>
+        <translation>Nie moÅ¼esz uÅ¼yÄ‡ tej komendy przed zsynchronizowaniem listy masternodÃ³w.</translation>
     </message>
     <message>
         <source>Confirm missing masternodes start</source>
-        <translation>Potwierdź uruchomienie zagubionego masternoda</translation>
+        <translation>PotwierdÅº uruchomienie zagubionego masternoda</translation>
     </message>
     <message>
         <source>Are you sure you want to start MISSING masternodes?</source>
-        <translation>Czy na pewno chcesz wystartować BRAKUJĄCE masternody?</translation>
+        <translation>Czy na pewno chcesz wystartowaÄ‡ BRAKUJÄ„CE masternody?</translation>
     </message>
 </context>
 <context>
@@ -1215,16 +1215,16 @@
         <translation>Forma</translation>
     </message>
     <message>
-        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the ImgCash network, as detailed below.</source>
-        <translation>Ostatnie mogą jeszcze nie być widoczne i dlatego saldo portfela może być niepoprawne. Poprawne informacje pojawią się po zakończeniu synchronizacji z siecią ImgCash, tak jak przedstawiono to poniżej.</translation>
+        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the ImageCoin network, as detailed below.</source>
+        <translation>Ostatnie mogÄ… jeszcze nie byÄ‡ widoczne i dlatego saldo portfela moÅ¼e byÄ‡ niepoprawne. Poprawne informacje pojawiÄ… siÄ™ po zakoÅ„czeniu synchronizacji z sieciÄ… ImageCoin, tak jak przedstawiono to poniÅ¼ej.</translation>
     </message>
     <message>
-        <source>Attempting to spend ImgCash that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
-        <translation>Próba wydania środków, z transakcji wykonanych, ale jeszcze niewidocznych, nie zostanie zaakceptowana przez sieć.</translation>
+        <source>Attempting to spend ImageCoin that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
+        <translation>PrÃ³ba wydania Å›rodkÃ³w, z transakcji wykonanych, ale jeszcze niewidocznych, nie zostanie zaakceptowana przez sieÄ‡.</translation>
     </message>
     <message>
         <source>Number of blocks left</source>
-        <translation>Ilość pozostałych bloków</translation>
+        <translation>IloÅ›Ä‡ pozostaÅ‚ych blokÃ³w</translation>
     </message>
     <message>
         <source>Unknown...</source>
@@ -1236,7 +1236,7 @@
     </message>
     <message>
         <source>Progress</source>
-        <translation>Postęp</translation>
+        <translation>PostÄ™p</translation>
     </message>
     <message>
         <source>~</source>
@@ -1244,7 +1244,7 @@
     </message>
     <message>
         <source>Progress increase per hour</source>
-        <translation>Wzrost postępu na godzinę</translation>
+        <translation>Wzrost postÄ™pu na godzinÄ™</translation>
     </message>
     <message>
         <source>calculating...</source>
@@ -1252,7 +1252,7 @@
     </message>
     <message>
         <source>Estimated time left until synced</source>
-        <translation>Przybliżony czas do synchronizacji</translation>
+        <translation>PrzybliÅ¼ony czas do synchronizacji</translation>
     </message>
     <message>
         <source>Hide</source>
@@ -1260,18 +1260,18 @@
     </message>
     <message>
         <source>Unknown. Syncing Headers (%1)...</source>
-        <translation>Nieznane. Synchronizacja nagłówków (%1)...</translation>
+        <translation>Nieznane. Synchronizacja nagÅ‚Ã³wkÃ³w (%1)...</translation>
     </message>
 </context>
 <context>
     <name>OpenURIDialog</name>
     <message>
         <source>Open URI</source>
-        <translation>Otwórz URI:</translation>
+        <translation>OtwÃ³rz URI:</translation>
     </message>
     <message>
         <source>Open payment request from URI or file</source>
-        <translation>Otwórz żądanie zapłaty z URI lub pliku</translation>
+        <translation>OtwÃ³rz Å¼Ä…danie zapÅ‚aty z URI lub pliku</translation>
     </message>
     <message>
         <source>URI:</source>
@@ -1279,11 +1279,11 @@
     </message>
     <message>
         <source>Select payment request file</source>
-        <translation>Otwórz żądanie zapłaty z pliku</translation>
+        <translation>OtwÃ³rz Å¼Ä…danie zapÅ‚aty z pliku</translation>
     </message>
     <message>
         <source>Select payment request file to open</source>
-        <translation>Wybierz plik żądania zapłaty do otwarcia</translation>
+        <translation>Wybierz plik Å¼Ä…dania zapÅ‚aty do otwarcia</translation>
     </message>
 </context>
 <context>
@@ -1294,11 +1294,11 @@
     </message>
     <message>
         <source>&amp;Main</source>
-        <translation>Główne</translation>
+        <translation>GÅ‚Ã³wne</translation>
     </message>
     <message>
         <source>Size of &amp;database cache</source>
-        <translation>Rozmiar &amp;pamięci podręcznej bazy danych.</translation>
+        <translation>Rozmiar &amp;pamiÄ™ci podrÄ™cznej bazy danych.</translation>
     </message>
     <message>
         <source>MB</source>
@@ -1306,95 +1306,95 @@
     </message>
     <message>
         <source>Number of script &amp;verification threads</source>
-        <translation>Liczba wątków &amp;weryfikacji skryptu</translation>
+        <translation>Liczba wÄ…tkÃ³w &amp;weryfikacji skryptu</translation>
     </message>
     <message>
         <source>(0 = auto, &lt;0 = leave that many cores free)</source>
         <translation>(0=auto, &lt;0 = zostaw tyle wolnych rdzeni)</translation>
     </message>
     <message>
-        <source>Amount of ImgCash to keep anonymized</source>
-        <translation>Ilość ImgCashów, które mają pozostać anonimowe.</translation>
+        <source>Amount of ImageCoin to keep anonymized</source>
+        <translation>IloÅ›Ä‡ ImageCoinÃ³w, ktÃ³re majÄ… pozostaÄ‡ anonimowe.</translation>
     </message>
     <message>
         <source>W&amp;allet</source>
         <translation>Portfel</translation>
     </message>
     <message>
-        <source>Automatically start ImgCash Core after logging in to the system.</source>
-        <translation>Automatycznie uruchom ImgCash Core po zalogowaniu do systemu.</translation>
+        <source>Automatically start ImageCoin Core after logging in to the system.</source>
+        <translation>Automatycznie uruchom ImageCoin Core po zalogowaniu do systemu.</translation>
     </message>
     <message>
-        <source>&amp;Start ImgCash Core on system login</source>
-        <translation>&amp;Uruchom ImgCash Core przy zalogowaniu do systemu</translation>
+        <source>&amp;Start ImageCoin Core on system login</source>
+        <translation>&amp;Uruchom ImageCoin Core przy zalogowaniu do systemu</translation>
     </message>
     <message>
         <source>Show additional tab listing all your masternodes in first sub-tab&lt;br/&gt;and all masternodes on the network in second sub-tab.</source>
-        <translation>Pokaż dodatkową zakładkę z listą Twoich wszystkich masternodów w pierwszej podzakładce &lt;br/&gt; oraz listą wszystkich masternodów sieci w drugiej podzakładce .</translation>
+        <translation>PokaÅ¼ dodatkowÄ… zakÅ‚adkÄ™ z listÄ… Twoich wszystkich masternodÃ³w w pierwszej podzakÅ‚adce &lt;br/&gt; oraz listÄ… wszystkich masternodÃ³w sieci w drugiej podzakÅ‚adce .</translation>
     </message>
     <message>
         <source>Show Masternodes Tab</source>
-        <translation>Pokaż Zakładkę Mastenodów</translation>
+        <translation>PokaÅ¼ ZakÅ‚adkÄ™ MastenodÃ³w</translation>
     </message>
     <message>
         <source>Show additional information and buttons for PrivateSend on overview screen.</source>
-        <translation>Pokazuj dodatkowe informacje i przyciski dla PrivateSend na ekranie przeglądu.</translation>
+        <translation>Pokazuj dodatkowe informacje i przyciski dla PrivateSend na ekranie przeglÄ…du.</translation>
     </message>
     <message>
         <source>Enable advanced PrivateSend interface</source>
-        <translation>Włącz zaawansowany interfejs PrivateSend</translation>
+        <translation>WÅ‚Ä…cz zaawansowany interfejs PrivateSend</translation>
     </message>
     <message>
         <source>Show warning dialog when PrivateSend detects that wallet has very low number of keys left.</source>
-        <translation>Pokaż ostrzeżenie, kiedy PrivateSend wykryje, że w portfelu pozostało już niewiele kluczy.</translation>
+        <translation>PokaÅ¼ ostrzeÅ¼enie, kiedy PrivateSend wykryje, Å¼e w portfelu pozostaÅ‚o juÅ¼ niewiele kluczy.</translation>
     </message>
     <message>
         <source>Warn if PrivateSend is running out of keys</source>
-        <translation>Ostrzegaj, jeżeli wyczerpują się klucze PrivateSend</translation>
+        <translation>Ostrzegaj, jeÅ¼eli wyczerpujÄ… siÄ™ klucze PrivateSend</translation>
     </message>
     <message>
         <source>Enable PrivateSend &amp;multi-session</source>
-        <translation>Włącz multi-sesję dla PrivateSend</translation>
+        <translation>WÅ‚Ä…cz multi-sesjÄ™ dla PrivateSend</translation>
     </message>
     <message>
         <source>If you disable the spending of unconfirmed change, the change from a transaction&lt;br/&gt;cannot be used until that transaction has at least one confirmation.&lt;br/&gt;This also affects how your balance is computed.</source>
-        <translation>Jeśli wyłączysz możliwość wydawania niepotwierdzonej reszty, to reszta z transakcji&lt;br/&gt; nie może zostać użyta dopóki nie ma przynajmniej jednego potwierdzona.&lt;br/&gt; To również wpływa na to, jak wyliczane jest twoje saldo.</translation>
+        <translation>JeÅ›li wyÅ‚Ä…czysz moÅ¼liwoÅ›Ä‡ wydawania niepotwierdzonej reszty, to reszta z transakcji&lt;br/&gt; nie moÅ¼e zostaÄ‡ uÅ¼yta dopÃ³ki nie ma przynajmniej jednego potwierdzona.&lt;br/&gt; To rÃ³wnieÅ¼ wpÅ‚ywa na to, jak wyliczane jest twoje saldo.</translation>
     </message>
     <message>
         <source>PrivateSend rounds to use</source>
-        <translation>Ilość rund PrivateSend to użycia</translation>
+        <translation>IloÅ›Ä‡ rund PrivateSend to uÅ¼ycia</translation>
     </message>
     <message>
         <source>This amount acts as a threshold to turn off PrivateSend once it's reached.</source>
-        <translation>Ta kwota działa jako próg po którego przekroczeniu PrivateSend zostaje wyłączony.</translation>
+        <translation>Ta kwota dziaÅ‚a jako prÃ³g po ktÃ³rego przekroczeniu PrivateSend zostaje wyÅ‚Ä…czony.</translation>
     </message>
     <message>
-        <source>Automatically open the ImgCash Core client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Automatycznie otwórz port klienta ImgCash Core na ruterze. Opcja działa jedynie, jeżeli router obsługuje UPnP i funkcja UPnP jest włączona.</translation>
+        <source>Automatically open the ImageCoin Core client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Automatycznie otwÃ³rz port klienta ImageCoin Core na ruterze. Opcja dziaÅ‚a jedynie, jeÅ¼eli router obsÅ‚uguje UPnP i funkcja UPnP jest wÅ‚Ä…czona.</translation>
     </message>
     <message>
         <source>Accept connections from outside</source>
-        <translation>Akceptuj połączenia z zewnątrz</translation>
+        <translation>Akceptuj poÅ‚Ä…czenia z zewnÄ…trz</translation>
     </message>
     <message>
         <source>Allow incoming connections</source>
-        <translation>Zezwól na przychodzące połączenia</translation>
+        <translation>ZezwÃ³l na przychodzÄ…ce poÅ‚Ä…czenia</translation>
     </message>
     <message>
-        <source>Connect to the ImgCash network through a SOCKS5 proxy.</source>
-        <translation>Połącz się z siecią ImgCash przez proxy SOCKS5.</translation>
+        <source>Connect to the ImageCoin network through a SOCKS5 proxy.</source>
+        <translation>PoÅ‚Ä…cz siÄ™ z sieciÄ… ImageCoin przez proxy SOCKS5.</translation>
     </message>
     <message>
         <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
-        <translation>Połą&amp;cz się przez SOCKS5 proxy (opcja domyślna):</translation>
+        <translation>PoÅ‚Ä…&amp;cz siÄ™ przez SOCKS5 proxy (opcja domyÅ›lna):</translation>
     </message>
     <message>
         <source>Minimize instead of exit the application when the window is closed. When this option is enabled, the application will be closed only after selecting Exit in the menu.</source>
-        <translation>Minimalizuje zamiast zakończyć działanie programu przy zamknięciu okna. Kiedy ta opcja jest włączona, program zakończy działanie po wybraniu Zamknij w menu.</translation>
+        <translation>Minimalizuje zamiast zakoÅ„czyÄ‡ dziaÅ‚anie programu przy zamkniÄ™ciu okna. Kiedy ta opcja jest wÅ‚Ä…czona, program zakoÅ„czy dziaÅ‚anie po wybraniu Zamknij w menu.</translation>
     </message>
     <message>
-        <source>The user interface language can be set here. This setting will take effect after restarting ImgCash Core.</source>
-        <translation>Tutaj można ustawić język interfejsu użytkownika. Ustawienie to zostanie uaktywnione po ponownym uruchomieniu ImgCash Core.</translation>
+        <source>The user interface language can be set here. This setting will take effect after restarting ImageCoin Core.</source>
+        <translation>Tutaj moÅ¼na ustawiÄ‡ jÄ™zyk interfejsu uÅ¼ytkownika. Ustawienie to zostanie uaktywnione po ponownym uruchomieniu ImageCoin Core.</translation>
     </message>
     <message>
         <source>Expert</source>
@@ -1402,27 +1402,27 @@
     </message>
     <message>
         <source>This setting determines the amount of individual masternodes that an input will be anonymized through.&lt;br/&gt;More rounds of anonymization gives a higher degree of privacy, but also costs more in fees.</source>
-        <translation>Tutaj możesz ustawić liczbę masternodów, przez które transakcja zostanie przepuszczona.&lt;br/&gt;Im większa liczba masternodów tym większy poziom anonimowości, ale opłata jest również wyższa.</translation>
+        <translation>Tutaj moÅ¼esz ustawiÄ‡ liczbÄ™ masternodÃ³w, przez ktÃ³re transakcja zostanie przepuszczona.&lt;br/&gt;Im wiÄ™ksza liczba masternodÃ³w tym wiÄ™kszy poziom anonimowoÅ›ci, ale opÅ‚ata jest rÃ³wnieÅ¼ wyÅ¼sza.</translation>
     </message>
     <message>
         <source>Whether to show coin control features or not.</source>
-        <translation>Czy pokazać funkcje kontroli monet czy nie.</translation>
+        <translation>Czy pokazaÄ‡ funkcje kontroli monet czy nie.</translation>
     </message>
     <message>
         <source>Enable coin &amp;control features</source>
-        <translation>Włącz funkcje &amp;kontroli monet</translation>
+        <translation>WÅ‚Ä…cz funkcje &amp;kontroli monet</translation>
     </message>
     <message>
         <source>&amp;Spend unconfirmed change</source>
-        <translation>&amp;Wydaj niepotwierdzoną resztę</translation>
+        <translation>&amp;Wydaj niepotwierdzonÄ… resztÄ™</translation>
     </message>
     <message>
         <source>&amp;Network</source>
-        <translation>&amp;Sieć</translation>
+        <translation>&amp;SieÄ‡</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
-        <translation>Mapuj port używając &amp;UPnP</translation>
+        <translation>Mapuj port uÅ¼ywajÄ…c &amp;UPnP</translation>
     </message>
     <message>
         <source>Proxy &amp;IP:</source>
@@ -1442,7 +1442,7 @@
     </message>
     <message>
         <source>Used for reaching peers via:</source>
-        <translation>Używane do połączenia z peerami przez: </translation>
+        <translation>UÅ¼ywane do poÅ‚Ä…czenia z peerami przez: </translation>
     </message>
     <message>
         <source>IPv4</source>
@@ -1457,12 +1457,12 @@
         <translation>Tor</translation>
     </message>
     <message>
-        <source>Connect to the ImgCash network through a separate SOCKS5 proxy for Tor hidden services.</source>
-        <translation>Połącz się z siecią ImgCash przez oddzielne proxy SOCKS5 dla ukrytych usług Tor.</translation>
+        <source>Connect to the ImageCoin network through a separate SOCKS5 proxy for Tor hidden services.</source>
+        <translation>PoÅ‚Ä…cz siÄ™ z sieciÄ… ImageCoin przez oddzielne proxy SOCKS5 dla ukrytych usÅ‚ug Tor.</translation>
     </message>
     <message>
         <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services:</source>
-        <translation>Użyj osobnego proxy SOCK5 aby połączyć się z peerami przez sieć Tor:</translation>
+        <translation>UÅ¼yj osobnego proxy SOCK5 aby poÅ‚Ä…czyÄ‡ siÄ™ z peerami przez sieÄ‡ Tor:</translation>
     </message>
     <message>
         <source>&amp;Window</source>
@@ -1470,41 +1470,41 @@
     </message>
     <message>
         <source>&amp;Hide the icon from the system tray.</source>
-        <translation>&amp;Ukryj ikonę na pasku zadań.</translation>
+        <translation>&amp;Ukryj ikonÄ™ na pasku zadaÅ„.</translation>
     </message>
     <message>
         <source>Hide tray icon</source>
-        <translation>Ukryj ikonę na pasku zadań</translation>
+        <translation>Ukryj ikonÄ™ na pasku zadaÅ„</translation>
     </message>
     <message>
         <source>Show only a tray icon after minimizing the window.</source>
-        <translation>Pokazuj tylko ikonę przy zegarku po zminimalizowaniu okna.</translation>
+        <translation>Pokazuj tylko ikonÄ™ przy zegarku po zminimalizowaniu okna.</translation>
     </message>
     <message>
         <source>&amp;Minimize to the tray instead of the taskbar</source>
-        <translation>&amp;Minimalizuj do paska przy zegarku zamiast do paska zadań</translation>
+        <translation>&amp;Minimalizuj do paska przy zegarku zamiast do paska zadaÅ„</translation>
     </message>
     <message>
         <source>M&amp;inimize on close</source>
-        <translation>M&amp;inimalizuj przy zamknięciu</translation>
+        <translation>M&amp;inimalizuj przy zamkniÄ™ciu</translation>
     </message>
     <message>
         <source>&amp;Display</source>
-        <translation>&amp;Wyświetlanie</translation>
+        <translation>&amp;WyÅ›wietlanie</translation>
     </message>
     <message>
         <source>User Interface &amp;language:</source>
-        <translation>Język &amp;Użytkownika:</translation>
+        <translation>JÄ™zyk &amp;UÅ¼ytkownika:</translation>
     </message>
     <message>
         <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/projects/p/ImgCash/</source>
-        <translation>ImgCash Core nie został przetłumaczony na twój język? Tłumaczenie jest niepełne lub niepoprawne? Możesz pomóc nam tłumaczyć tutaj:
-https://www.transifex.com/projects/p/ImgCash/</translation>
+https://www.transifex.com/projects/p/ImageCoin/</source>
+        <translation>ImageCoin Core nie zostaÅ‚ przetÅ‚umaczony na twÃ³j jÄ™zyk? TÅ‚umaczenie jest niepeÅ‚ne lub niepoprawne? MoÅ¼esz pomÃ³c nam tÅ‚umaczyÄ‡ tutaj:
+https://www.transifex.com/projects/p/ImageCoin/</translation>
     </message>
     <message>
         <source>User Interface Theme:</source>
-        <translation>Motyw interefejsu użytkownika:</translation>
+        <translation>Motyw interefejsu uÅ¼ytkownika:</translation>
     </message>
     <message>
         <source>&amp;Unit to show amounts in:</source>
@@ -1512,7 +1512,7 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Choose the default subdivision unit to show in the interface and when sending coins.</source>
-        <translation>Wybierz podział jednostki pokazywany w interfejsie  oraz podczas wysyłania monet</translation>
+        <translation>Wybierz podziaÅ‚ jednostki pokazywany w interfejsie  oraz podczas wysyÅ‚ania monet</translation>
     </message>
     <message>
         <source>Decimal digits</source>
@@ -1520,15 +1520,15 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Third party transaction URLs</source>
-        <translation>URL transakcji osób trzecich</translation>
+        <translation>URL transakcji osÃ³b trzecich</translation>
     </message>
     <message>
         <source>Active command-line options that override above options:</source>
-        <translation>Aktywne opcje linii komend, które nadpisują powyższe opcje:</translation>
+        <translation>Aktywne opcje linii komend, ktÃ³re nadpisujÄ… powyÅ¼sze opcje:</translation>
     </message>
     <message>
         <source>Reset all client options to default.</source>
-        <translation>Przywróć wszystkie domyślne ustawienia klienta.</translation>
+        <translation>PrzywrÃ³Ä‡ wszystkie domyÅ›lne ustawienia klienta.</translation>
     </message>
     <message>
         <source>&amp;Reset Options</source>
@@ -1544,31 +1544,31 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>default</source>
-        <translation>domyślny</translation>
+        <translation>domyÅ›lny</translation>
     </message>
     <message>
         <source>none</source>
-        <translation>żaden</translation>
+        <translation>Å¼aden</translation>
     </message>
     <message>
         <source>Confirm options reset</source>
-        <translation>Potwierdź reset ustawień</translation>
+        <translation>PotwierdÅº reset ustawieÅ„</translation>
     </message>
     <message>
         <source>Client restart required to activate changes.</source>
-        <translation>Wymagany restart programu, aby uaktywnić zmiany.</translation>
+        <translation>Wymagany restart programu, aby uaktywniÄ‡ zmiany.</translation>
     </message>
     <message>
         <source>Client will be shut down. Do you want to proceed?</source>
-        <translation>Klient zostanie zamknięty. Kontynuować?</translation>
+        <translation>Klient zostanie zamkniÄ™ty. KontynuowaÄ‡?</translation>
     </message>
     <message>
         <source>This change would require a client restart.</source>
-        <translation>Ta zmiana może wymagać ponownego uruchomienia klienta.</translation>
+        <translation>Ta zmiana moÅ¼e wymagaÄ‡ ponownego uruchomienia klienta.</translation>
     </message>
     <message>
         <source>The supplied proxy address is invalid.</source>
-        <translation>Adres podanego proxy jest nieprawidłowy</translation>
+        <translation>Adres podanego proxy jest nieprawidÅ‚owy</translation>
     </message>
 </context>
 <context>
@@ -1578,16 +1578,16 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
         <translation>Formularz</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the ImgCash network after a connection is established, but this process has not completed yet.</source>
-        <translation>Wyświetlona informacja może być przedawniona. Twój portfel automatycznie zsynchronizuje się z siecią ImgCash, gdy tylko zostanie ustanowione połączenie, jednak proces ten jeszcze się nie zakończył.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the ImageCoin network after a connection is established, but this process has not completed yet.</source>
+        <translation>WyÅ›wietlona informacja moÅ¼e byÄ‡ przedawniona. TwÃ³j portfel automatycznie zsynchronizuje siÄ™ z sieciÄ… ImageCoin, gdy tylko zostanie ustanowione poÅ‚Ä…czenie, jednak proces ten jeszcze siÄ™ nie zakoÅ„czyÅ‚.</translation>
     </message>
     <message>
         <source>Available:</source>
-        <translation>Dostępne:</translation>
+        <translation>DostÄ™pne:</translation>
     </message>
     <message>
         <source>Your current spendable balance</source>
-        <translation>Twoje obecne dostępne saldo</translation>
+        <translation>Twoje obecne dostÄ™pne saldo</translation>
     </message>
     <message>
         <source>Pending:</source>
@@ -1595,15 +1595,15 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Total of transactions that have yet to be confirmed, and do not yet count toward the spendable balance</source>
-        <translation>Suma transakcji, które nie zostały jeszcze potwierdzone, a które nie zostały wliczone do twojego obecnego salda</translation>
+        <translation>Suma transakcji, ktÃ³re nie zostaÅ‚y jeszcze potwierdzone, a ktÃ³re nie zostaÅ‚y wliczone do twojego obecnego salda</translation>
     </message>
     <message>
         <source>Immature:</source>
-        <translation>Niedojrzały: </translation>
+        <translation>NiedojrzaÅ‚y: </translation>
     </message>
     <message>
         <source>Mined balance that has not yet matured</source>
-        <translation>Balans wydobycia, który jeszcze nie dojrzał</translation>
+        <translation>Balans wydobycia, ktÃ³ry jeszcze nie dojrzaÅ‚</translation>
     </message>
     <message>
         <source>Balances</source>
@@ -1611,19 +1611,19 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Unconfirmed transactions to watch-only addresses</source>
-        <translation>Niepotwierdzone transakcje do adresów mogących być jedynie do odczytu.</translation>
+        <translation>Niepotwierdzone transakcje do adresÃ³w mogÄ…cych byÄ‡ jedynie do odczytu.</translation>
     </message>
     <message>
         <source>Mined balance in watch-only addresses that has not yet matured</source>
-        <translation>Wykopane fundusze  jeszcze nie gotowe będące w adresie tylko do odczytu.</translation>
+        <translation>Wykopane fundusze  jeszcze nie gotowe bÄ™dÄ…ce w adresie tylko do odczytu.</translation>
     </message>
     <message>
         <source>Total:</source>
-        <translation>Wynosi ogółem:</translation>
+        <translation>Wynosi ogÃ³Å‚em:</translation>
     </message>
     <message>
         <source>Your current total balance</source>
-        <translation>Twoje obecne saldo całkowite</translation>
+        <translation>Twoje obecne saldo caÅ‚kowite</translation>
     </message>
     <message>
         <source>Current total balance in watch-only addresses</source>
@@ -1631,15 +1631,15 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Watch-only:</source>
-        <translation>Tylko do podglądu:</translation>
+        <translation>Tylko do podglÄ…du:</translation>
     </message>
     <message>
         <source>Your current balance in watch-only addresses</source>
-        <translation>Twój obecny stan konta w adresie tylko do odczytu</translation>
+        <translation>TwÃ³j obecny stan konta w adresie tylko do odczytu</translation>
     </message>
     <message>
         <source>Spendable:</source>
-        <translation>Dostępne do wydania:</translation>
+        <translation>DostÄ™pne do wydania:</translation>
     </message>
     <message>
         <source>PrivateSend</source>
@@ -1651,19 +1651,19 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Enabled/Disabled</source>
-        <translation>Włączony/Wyłączony</translation>
+        <translation>WÅ‚Ä…czony/WyÅ‚Ä…czony</translation>
     </message>
     <message>
         <source>Completion:</source>
-        <translation>Ukończone:</translation>
+        <translation>UkoÅ„czone:</translation>
     </message>
     <message>
         <source>Try to manually submit a PrivateSend request.</source>
-        <translation>Spróbuj ręcznie zażądać PrivateSend.</translation>
+        <translation>SprÃ³buj rÄ™cznie zaÅ¼Ä…daÄ‡ PrivateSend.</translation>
     </message>
     <message>
         <source>Reset the current status of PrivateSend (can interrupt PrivateSend if it's in the process of Mixing, which can cost you money!)</source>
-        <translation>Zresetuj obecny stan PrivateSend (może przerwać PrivateSend, jeżeli jest w trakcie mieszania. Może Cię to kosztować! )</translation>
+        <translation>Zresetuj obecny stan PrivateSend (moÅ¼e przerwaÄ‡ PrivateSend, jeÅ¼eli jest w trakcie mieszania. MoÅ¼e CiÄ™ to kosztowaÄ‡! )</translation>
     </message>
     <message>
         <source>Information about PrivateSend and Mixing</source>
@@ -1675,15 +1675,15 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Amount and Rounds:</source>
-        <translation>Ilość oraz Rundy:</translation>
+        <translation>IloÅ›Ä‡ oraz Rundy:</translation>
     </message>
     <message>
-        <source>0 ImgCash / 0 Rounds</source>
-        <translation>0 ImgCash / 0 Rund</translation>
+        <source>0 ImageCoin / 0 Rounds</source>
+        <translation>0 ImageCoin / 0 Rund</translation>
     </message>
     <message>
         <source>Submitted Denom:</source>
-        <translation>Zgłoszone denominacje:</translation>
+        <translation>ZgÅ‚oszone denominacje:</translation>
     </message>
     <message>
         <source>n/a</source>
@@ -1703,11 +1703,11 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>The denominations you submitted to the Masternode.&lt;br&gt;To mix, other users must submit the exact same denominations.</source>
-        <translation>Nominały, które wysłałeś do Masternoda.&lt;br&gt;Aby zostały wymieszane, inni użytkownicy muszą wysłać dokładnie takie same nominały. </translation>
+        <translation>NominaÅ‚y, ktÃ³re wysÅ‚aÅ‚eÅ› do Masternoda.&lt;br&gt;Aby zostaÅ‚y wymieszane, inni uÅ¼ytkownicy muszÄ… wysÅ‚aÄ‡ dokÅ‚adnie takie same nominaÅ‚y. </translation>
     </message>
     <message>
         <source>(Last Message)</source>
-        <translation>(Ostatnia Wiadomość)</translation>
+        <translation>(Ostatnia WiadomoÅ›Ä‡)</translation>
     </message>
     <message>
         <source>Try Mix</source>
@@ -1723,7 +1723,7 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Automatic backups are disabled, no mixing available!</source>
-        <translation>Automatyczne kopie zapasowe wyłączone, brak możliwości miksowania</translation>
+        <translation>Automatyczne kopie zapasowe wyÅ‚Ä…czone, brak moÅ¼liwoÅ›ci miksowania</translation>
     </message>
     <message>
         <source>Start Mixing</source>
@@ -1735,7 +1735,7 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>No inputs detected</source>
-        <translation>Nie wykryto wejść</translation>
+        <translation>Nie wykryto wejÅ›Ä‡</translation>
     </message>
     <message numerus="yes">
         <source>%n Rounds</source>
@@ -1743,15 +1743,15 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Found enough compatible inputs to anonymize %1</source>
-        <translation>Znaleziono wystarczającą ilość odpowiednich środków aby zanonimizowaź %1</translation>
+        <translation>Znaleziono wystarczajÄ…cÄ… iloÅ›Ä‡ odpowiednich Å›rodkÃ³w aby zanonimizowaÅº %1</translation>
     </message>
     <message>
         <source>Not enough compatible inputs to anonymize &lt;span style='color:red;'&gt;%1&lt;/span&gt;,&lt;br&gt;will anonymize &lt;span style='color:red;'&gt;%2&lt;/span&gt; instead</source>
-        <translation>Nie ma wystarczającej ilośći środków aby moć dokonać anonimizacji &lt;span style='color:red;'&gt;%1&lt;/span&gt;,&lt;br&gt;zamiast oryginalnej sumy &lt;spam style='color:red;'&gt;%2&lt;/spam&gt; zostanie zanonimizowanych.</translation>
+        <translation>Nie ma wystarczajÄ…cej iloÅ›Ä‡i Å›rodkÃ³w aby moÄ‡ dokonaÄ‡ anonimizacji &lt;span style='color:red;'&gt;%1&lt;/span&gt;,&lt;br&gt;zamiast oryginalnej sumy &lt;spam style='color:red;'&gt;%2&lt;/spam&gt; zostanie zanonimizowanych.</translation>
     </message>
     <message>
         <source>Overall progress</source>
-        <translation>Całkowity postęp</translation>
+        <translation>CaÅ‚kowity postÄ™p</translation>
     </message>
     <message>
         <source>Denominated</source>
@@ -1767,140 +1767,140 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message numerus="yes">
         <source>Denominated inputs have %5 of %n rounds on average</source>
-        <translation><numerusform>Denonimowane wejścia mają średnio %5 rundę z %n </numerusform><numerusform>Denonimowane wejścia mają średnio %5 rundy z %n </numerusform><numerusform>Denonimowane wejścia mają średnio %5 rund z %n</numerusform><numerusform>Denonimowane wejścia mają średnio %5 z %n rund</numerusform></translation>
+        <translation><numerusform>Denonimowane wejÅ›cia majÄ… Å›rednio %5 rundÄ™ z %n </numerusform><numerusform>Denonimowane wejÅ›cia majÄ… Å›rednio %5 rundy z %n </numerusform><numerusform>Denonimowane wejÅ›cia majÄ… Å›rednio %5 rund z %n</numerusform><numerusform>Denonimowane wejÅ›cia majÄ… Å›rednio %5 z %n rund</numerusform></translation>
     </message>
     <message>
         <source>keys left: %1</source>
-        <translation>ilość pozostałych kluczy: %1</translation>
+        <translation>iloÅ›Ä‡ pozostaÅ‚ych kluczy: %1</translation>
     </message>
     <message>
         <source>Disabled</source>
-        <translation>Wyłączony</translation>
+        <translation>WyÅ‚Ä…czony</translation>
     </message>
     <message>
         <source>Very low number of keys left since last automatic backup!</source>
-        <translation>Od czasu ostatniego automatycznego backupu pozostało bardzo mało kluczy!</translation>
+        <translation>Od czasu ostatniego automatycznego backupu pozostaÅ‚o bardzo maÅ‚o kluczy!</translation>
     </message>
     <message>
         <source>We are about to create a new automatic backup for you, however &lt;span style='color:red;'&gt; you should always make sure you have backups saved in some safe place&lt;/span&gt;!</source>
-        <translation>Utworzymy nową automatyczną kopię zapasową, jednak&lt;span style='color:red;'&gt; zawsze musisz zapisywać swoje kopie zapasowe w bezpiecznym miejscu &lt;/span&gt;!</translation>
+        <translation>Utworzymy nowÄ… automatycznÄ… kopiÄ™ zapasowÄ…, jednak&lt;span style='color:red;'&gt; zawsze musisz zapisywaÄ‡ swoje kopie zapasowe w bezpiecznym miejscu &lt;/span&gt;!</translation>
     </message>
     <message>
         <source>Note: You turn this message off in options.</source>
-        <translation>Uwaga: Ten komunikat możesz wyłączyć w Opcjach.</translation>
+        <translation>Uwaga: Ten komunikat moÅ¼esz wyÅ‚Ä…czyÄ‡ w Opcjach.</translation>
     </message>
     <message>
         <source>WARNING! Something went wrong on automatic backup</source>
-        <translation>UWAGA! Wystąpił błąd przy tworzeniu automatycznej kopii zapasowej</translation>
+        <translation>UWAGA! WystÄ…piÅ‚ bÅ‚Ä…d przy tworzeniu automatycznej kopii zapasowej</translation>
     </message>
     <message>
         <source>ERROR! Failed to create automatic backup</source>
-        <translation>BŁĄD! Automatyczne tworzenie kopii zapasowej nie powiodło się</translation>
+        <translation>BÅ�Ä„D! Automatyczne tworzenie kopii zapasowej nie powiodÅ‚o siÄ™</translation>
     </message>
     <message>
         <source>Mixing is disabled, please close your wallet and fix the issue!</source>
-        <translation>Mieszanie wyłączone! Zamknij portfel i rozwiąż problem.</translation>
+        <translation>Mieszanie wyÅ‚Ä…czone! Zamknij portfel i rozwiÄ…Å¼ problem.</translation>
     </message>
     <message>
         <source>Enabled</source>
-        <translation>Włączony</translation>
+        <translation>WÅ‚Ä…czony</translation>
     </message>
     <message>
         <source>see debug.log for details.</source>
-        <translation>Szczegóły znajdziesz w pliku debug.log.</translation>
+        <translation>SzczegÃ³Å‚y znajdziesz w pliku debug.log.</translation>
     </message>
     <message>
         <source>WARNING! Failed to replenish keypool, please unlock your wallet to do so.</source>
-        <translation>OSTRZEŻENIE! Nie udało się uzupełnić puli kluczy. W tym celu musisz odblokować portfel.</translation>
+        <translation>OSTRZEÅ»ENIE! Nie udaÅ‚o siÄ™ uzupeÅ‚niÄ‡ puli kluczy. W tym celu musisz odblokowaÄ‡ portfel.</translation>
     </message>
     <message>
         <source>Last PrivateSend message:
 </source>
-        <translation>Ostatnia wiadomość PrivateSend:
+        <translation>Ostatnia wiadomoÅ›Ä‡ PrivateSend:
 </translation>
     </message>
     <message>
         <source>N/A</source>
-        <translation>NIEDOSTĘPNE</translation>
+        <translation>NIEDOSTÄ˜PNE</translation>
     </message>
     <message>
         <source>PrivateSend was successfully reset.</source>
-        <translation>PrivateSend pomyślnie zresetowano</translation>
+        <translation>PrivateSend pomyÅ›lnie zresetowano</translation>
     </message>
     <message>
         <source>If you don't want to see internal PrivateSend fees/transactions select "Most Common" as Type on the "Transactions" tab.</source>
-        <translation>Jeśli nie chcesz widzieć wewnętrznych transakcji/opłat PrivateSend to w zakładce "Transakcje" wybierz opcję "Najpopularniejsza" jako rodzaj transakcji.</translation>
+        <translation>JeÅ›li nie chcesz widzieÄ‡ wewnÄ™trznych transakcji/opÅ‚at PrivateSend to w zakÅ‚adce "Transakcje" wybierz opcjÄ™ "Najpopularniejsza" jako rodzaj transakcji.</translation>
     </message>
     <message>
         <source>PrivateSend requires at least %1 to use.</source>
-        <translation>PrivateSend wymaga użycia co najmniej %1</translation>
+        <translation>PrivateSend wymaga uÅ¼ycia co najmniej %1</translation>
     </message>
     <message>
         <source>Wallet is locked and user declined to unlock. Disabling PrivateSend.</source>
-        <translation>Portfel jest zablokowany, a użytkownik odmówił odblokowania. PrivateSend został wyłączony.</translation>
+        <translation>Portfel jest zablokowany, a uÅ¼ytkownik odmÃ³wiÅ‚ odblokowania. PrivateSend zostaÅ‚ wyÅ‚Ä…czony.</translation>
     </message>
 </context>
 <context>
     <name>PaymentServer</name>
     <message>
         <source>Payment request error</source>
-        <translation>Błąd żądania płatności</translation>
+        <translation>BÅ‚Ä…d Å¼Ä…dania pÅ‚atnoÅ›ci</translation>
     </message>
     <message>
-        <source>Cannot start ImgCash: click-to-pay handler</source>
-        <translation>Nie można włączyć ImgCash: kliknij-aby-zapłacić ubsługującemu.</translation>
+        <source>Cannot start ImageCoin: click-to-pay handler</source>
+        <translation>Nie moÅ¼na wÅ‚Ä…czyÄ‡ ImageCoin: kliknij-aby-zapÅ‚aciÄ‡ ubsÅ‚ugujÄ…cemu.</translation>
     </message>
     <message>
         <source>URI handling</source>
-        <translation>Obsługa URI</translation>
+        <translation>ObsÅ‚uga URI</translation>
     </message>
     <message>
         <source>Payment request fetch URL is invalid: %1</source>
-        <translation>Żądanie płatności podowduje że URL jest niewłaściwy: %1</translation>
+        <translation>Å»Ä…danie pÅ‚atnoÅ›ci podowduje Å¼e URL jest niewÅ‚aÅ›ciwy: %1</translation>
     </message>
     <message>
         <source>Invalid payment address %1</source>
-        <translation>Nieprawidłowy adres płatności %1</translation>
+        <translation>NieprawidÅ‚owy adres pÅ‚atnoÅ›ci %1</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an invalid ImgCash address or malformed URI parameters.</source>
-        <translation>URI nie może zostać przeanalizowany! Mogło to być spowodowane przez niewłaściwy adres ImgCash lub niewłaściwe parametry URI</translation>
+        <source>URI cannot be parsed! This can be caused by an invalid ImageCoin address or malformed URI parameters.</source>
+        <translation>URI nie moÅ¼e zostaÄ‡ przeanalizowany! MogÅ‚o to byÄ‡ spowodowane przez niewÅ‚aÅ›ciwy adres ImageCoin lub niewÅ‚aÅ›ciwe parametry URI</translation>
     </message>
     <message>
         <source>Payment request file handling</source>
-        <translation>Obsługa pliku z żądaniem płatności</translation>
+        <translation>ObsÅ‚uga pliku z Å¼Ä…daniem pÅ‚atnoÅ›ci</translation>
     </message>
     <message>
         <source>Payment request file cannot be read! This can be caused by an invalid payment request file.</source>
-        <translation>Nie można odczytać pliku z żądaniem płatności! Może to być spowodowane przez niewłaściwy plik z żądaniem płatności.</translation>
+        <translation>Nie moÅ¼na odczytaÄ‡ pliku z Å¼Ä…daniem pÅ‚atnoÅ›ci! MoÅ¼e to byÄ‡ spowodowane przez niewÅ‚aÅ›ciwy plik z Å¼Ä…daniem pÅ‚atnoÅ›ci.</translation>
     </message>
     <message>
         <source>Payment request rejected</source>
-        <translation>Żądanie płatności zostało odrzucone</translation>
+        <translation>Å»Ä…danie pÅ‚atnoÅ›ci zostaÅ‚o odrzucone</translation>
     </message>
     <message>
         <source>Payment request network doesn't match client network.</source>
-        <translation>Sieć żądania płatnośc nie pasuje do sieci klienta.</translation>
+        <translation>SieÄ‡ Å¼Ä…dania pÅ‚atnoÅ›c nie pasuje do sieci klienta.</translation>
     </message>
     <message>
         <source>Payment request expired.</source>
-        <translation>Żądanie płatności wygasło.</translation>
+        <translation>Å»Ä…danie pÅ‚atnoÅ›ci wygasÅ‚o.</translation>
     </message>
     <message>
         <source>Payment request is not initialized.</source>
-        <translation>Żądanie płatności nie zostało zainicjonowane.</translation>
+        <translation>Å»Ä…danie pÅ‚atnoÅ›ci nie zostaÅ‚o zainicjonowane.</translation>
     </message>
     <message>
         <source>Unverified payment requests to custom payment scripts are unsupported.</source>
-        <translation>Niezweryfikowane żądania płatności dla specjalnych skryptów z płatnościami nie są obsługiwane.</translation>
+        <translation>Niezweryfikowane Å¼Ä…dania pÅ‚atnoÅ›ci dla specjalnych skryptÃ³w z pÅ‚atnoÅ›ciami nie sÄ… obsÅ‚ugiwane.</translation>
     </message>
     <message>
         <source>Invalid payment request.</source>
-        <translation>Nieważne żądanie płatności.</translation>
+        <translation>NiewaÅ¼ne Å¼Ä…danie pÅ‚atnoÅ›ci.</translation>
     </message>
     <message>
         <source>Requested payment amount of %1 is too small (considered dust).</source>
-        <translation>Żądana kwota %1 jest za niska (uznana za pył).</translation>
+        <translation>Å»Ä…dana kwota %1 jest za niska (uznana za pyÅ‚).</translation>
     </message>
     <message>
         <source>Refund from %1</source>
@@ -1908,27 +1908,27 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Payment request %1 is too large (%2 bytes, allowed %3 bytes).</source>
-        <translation>Żądanie płatności %1 jest zbyt duże (%2 bitów, maksymalny rozmiar to %3 bitów).</translation>
+        <translation>Å»Ä…danie pÅ‚atnoÅ›ci %1 jest zbyt duÅ¼e (%2 bitÃ³w, maksymalny rozmiar to %3 bitÃ³w).</translation>
     </message>
     <message>
         <source>Error communicating with %1: %2</source>
-        <translation>Błąd komunikacji z %1 : %2</translation>
+        <translation>BÅ‚Ä…d komunikacji z %1 : %2</translation>
     </message>
     <message>
         <source>Payment request cannot be parsed!</source>
-        <translation>Żądanie płatności nie może zostać przeanalizowane!</translation>
+        <translation>Å»Ä…danie pÅ‚atnoÅ›ci nie moÅ¼e zostaÄ‡ przeanalizowane!</translation>
     </message>
     <message>
         <source>Bad response from server %1</source>
-        <translation>Błędna odpowiedź z serwera %1</translation>
+        <translation>BÅ‚Ä™dna odpowiedÅº z serwera %1</translation>
     </message>
     <message>
         <source>Network request error</source>
-        <translation>Błąd żądania sieci</translation>
+        <translation>BÅ‚Ä…d Å¼Ä…dania sieci</translation>
     </message>
     <message>
         <source>Payment acknowledged</source>
-        <translation>Płatność potwierdzona</translation>
+        <translation>PÅ‚atnoÅ›Ä‡ potwierdzona</translation>
     </message>
 </context>
 <context>
@@ -1939,11 +1939,11 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Node/Service</source>
-        <translation>Węzeł/Usługa</translation>
+        <translation>WÄ™zeÅ‚/UsÅ‚uga</translation>
     </message>
     <message>
         <source>User Agent</source>
-        <translation>Agent użytkownika</translation>
+        <translation>Agent uÅ¼ytkownika</translation>
     </message>
     <message>
         <source>Ping</source>
@@ -1953,40 +1953,40 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
 <context>
     <name>QObject</name>
     <message>
-        <source>ImgCash Core</source>
-        <translation>ImgCash Core</translation>
+        <source>ImageCoin Core</source>
+        <translation>ImageCoin Core</translation>
     </message>
     <message>
         <source>Error: Specified data directory "%1" does not exist.</source>
-        <translation>Błąd: Podany folder danych "%1" nie istnieje.</translation>
+        <translation>BÅ‚Ä…d: Podany folder danych "%1" nie istnieje.</translation>
     </message>
     <message>
         <source>Error: Cannot parse configuration file: %1. Only use key=value syntax.</source>
-        <translation>Błąd: Nie można przetworzyć pliku konfiguracyjnego: %1. Używaj jedynie składni: klucz=wartość.</translation>
+        <translation>BÅ‚Ä…d: Nie moÅ¼na przetworzyÄ‡ pliku konfiguracyjnego: %1. UÅ¼ywaj jedynie skÅ‚adni: klucz=wartoÅ›Ä‡.</translation>
     </message>
     <message>
         <source>Error: %1</source>
-        <translation>Błąd: %1</translation>
+        <translation>BÅ‚Ä…d: %1</translation>
     </message>
     <message>
         <source>Error reading masternode configuration file: %1</source>
-        <translation>Błąd wczytywania pliku konfiguracji masternoda: %1</translation>
+        <translation>BÅ‚Ä…d wczytywania pliku konfiguracji masternoda: %1</translation>
     </message>
     <message>
-        <source>ImgCash Core didn't yet exit safely...</source>
-        <translation>ImgCash Core jeszcze nie został poprawnie zamknięty...</translation>
+        <source>ImageCoin Core didn't yet exit safely...</source>
+        <translation>ImageCoin Core jeszcze nie zostaÅ‚ poprawnie zamkniÄ™ty...</translation>
     </message>
     <message>
         <source>Amount</source>
         <translation>Kwota</translation>
     </message>
     <message>
-        <source>Enter a ImgCash address (e.g. %1)</source>
-        <translation>Wpisz adres ImgCash (np. %1)</translation>
+        <source>Enter a ImageCoin address (e.g. %1)</source>
+        <translation>Wpisz adres ImageCoin (np. %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
-        <translation>%1 dzień</translation>
+        <translation>%1 dzieÅ„</translation>
     </message>
     <message>
         <source>%1 h</source>
@@ -2002,11 +2002,11 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>None</source>
-        <translation>Żaden</translation>
+        <translation>Å»aden</translation>
     </message>
     <message>
         <source>N/A</source>
-        <translation>Nieważne</translation>
+        <translation>NiewaÅ¼ne</translation>
     </message>
     <message>
         <source>%1 ms</source>
@@ -2026,11 +2026,11 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message numerus="yes">
         <source>%n day(s)</source>
-        <translation><numerusform>%n dzień</numerusform><numerusform>%n dni</numerusform><numerusform>%n dni</numerusform><numerusform>%n dni</numerusform></translation>
+        <translation><numerusform>%n dzieÅ„</numerusform><numerusform>%n dni</numerusform><numerusform>%n dni</numerusform><numerusform>%n dni</numerusform></translation>
     </message>
     <message numerus="yes">
         <source>%n week(s)</source>
-        <translation><numerusform>%n tydzień</numerusform><numerusform>%n tygodnie</numerusform><numerusform>%n tygodnie</numerusform><numerusform>%n tygodnie</numerusform></translation>
+        <translation><numerusform>%n tydzieÅ„</numerusform><numerusform>%n tygodnie</numerusform><numerusform>%n tygodnie</numerusform><numerusform>%n tygodnie</numerusform></translation>
     </message>
     <message numerus="yes">
         <source>%n year(s)</source>
@@ -2068,7 +2068,7 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     <name>RPCConsole</name>
     <message>
         <source>Tools window</source>
-        <translation>Okno narzędzi</translation>
+        <translation>Okno narzÄ™dzi</translation>
     </message>
     <message>
         <source>&amp;Information</source>
@@ -2076,7 +2076,7 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>General</source>
-        <translation>Ogólne</translation>
+        <translation>OgÃ³lne</translation>
     </message>
     <message>
         <source>Name</source>
@@ -2088,15 +2088,15 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>N/A</source>
-        <translation>NIEDOSTĘPNE</translation>
+        <translation>NIEDOSTÄ˜PNE</translation>
     </message>
     <message>
         <source>Number of connections</source>
-        <translation>Liczba połączeń</translation>
+        <translation>Liczba poÅ‚Ä…czeÅ„</translation>
     </message>
     <message>
         <source>&amp;Open</source>
-        <translation>&amp;Otwórz</translation>
+        <translation>&amp;OtwÃ³rz</translation>
     </message>
     <message>
         <source>Startup time</source>
@@ -2104,7 +2104,7 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Network</source>
-        <translation>Sieć</translation>
+        <translation>SieÄ‡</translation>
     </message>
     <message>
         <source>Last block time</source>
@@ -2116,7 +2116,7 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Current number of blocks</source>
-        <translation>Aktualna liczba bloków</translation>
+        <translation>Aktualna liczba blokÃ³w</translation>
     </message>
     <message>
         <source>Client version</source>
@@ -2124,19 +2124,19 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Using BerkeleyDB version</source>
-        <translation>Używana wersja BerkeleyDB</translation>
+        <translation>UÅ¼ywana wersja BerkeleyDB</translation>
     </message>
     <message>
         <source>Block chain</source>
-        <translation>Ciąg bloków</translation>
+        <translation>CiÄ…g blokÃ³w</translation>
     </message>
     <message>
         <source>Number of Masternodes</source>
-        <translation>Liczba masternodów</translation>
+        <translation>Liczba masternodÃ³w</translation>
     </message>
     <message>
         <source>Memory Pool</source>
-        <translation>Pula Pamięci</translation>
+        <translation>Pula PamiÄ™ci</translation>
     </message>
     <message>
         <source>Current number of transactions</source>
@@ -2144,11 +2144,11 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Memory usage</source>
-        <translation>Użycie pamięci</translation>
+        <translation>UÅ¼ycie pamiÄ™ci</translation>
     </message>
     <message>
-        <source>Open the ImgCash Core debug log file from the current data directory. This can take a few seconds for large log files.</source>
-        <translation>Otwórz plik dziennika debugowania ImgCash Core w bieżącym folderze danych. W przypadku dużych plików może to chwilę potrwać.</translation>
+        <source>Open the ImageCoin Core debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <translation>OtwÃ³rz plik dziennika debugowania ImageCoin Core w bieÅ¼Ä…cym folderze danych. W przypadku duÅ¼ych plikÃ³w moÅ¼e to chwilÄ™ potrwaÄ‡.</translation>
     </message>
     <message>
         <source>&amp;Console</source>
@@ -2156,7 +2156,7 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Clear console</source>
-        <translation>Wyczyść konsolę</translation>
+        <translation>WyczyÅ›Ä‡ konsolÄ™</translation>
     </message>
     <message>
         <source>&amp;Network Traffic</source>
@@ -2164,11 +2164,11 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>&amp;Clear</source>
-        <translation>&amp;Wyczyść</translation>
+        <translation>&amp;WyczyÅ›Ä‡</translation>
     </message>
     <message>
         <source>Totals</source>
-        <translation>Kwota ogólna</translation>
+        <translation>Kwota ogÃ³lna</translation>
     </message>
     <message>
         <source>Received</source>
@@ -2176,7 +2176,7 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Sent</source>
-        <translation>Wysłany</translation>
+        <translation>WysÅ‚any</translation>
     </message>
     <message>
         <source>&amp;Peers</source>
@@ -2188,11 +2188,11 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Select a peer to view detailed information.</source>
-        <translation>Wybierz peera aby zobaczyć jego szczegółowe informacje.</translation>
+        <translation>Wybierz peera aby zobaczyÄ‡ jego szczegÃ³Å‚owe informacje.</translation>
     </message>
     <message>
         <source>Whitelisted</source>
-        <translation>Biała lista</translation>
+        <translation>BiaÅ‚a lista</translation>
     </message>
     <message>
         <source>Direction</source>
@@ -2204,11 +2204,11 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Starting Block</source>
-        <translation>Początkowy blok</translation>
+        <translation>PoczÄ…tkowy blok</translation>
     </message>
     <message>
         <source>Synced Headers</source>
-        <translation>Zsynchronizowane nagłówki</translation>
+        <translation>Zsynchronizowane nagÅ‚Ã³wki</translation>
     </message>
     <message>
         <source>Synced Blocks</source>
@@ -2216,11 +2216,11 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Wallet Path</source>
-        <translation>Ścieżka portfela</translation>
+        <translation>ÅšcieÅ¼ka portfela</translation>
     </message>
     <message>
         <source>User Agent</source>
-        <translation>Agent użytkownika</translation>
+        <translation>Agent uÅ¼ytkownika</translation>
     </message>
     <message>
         <source>Datadir</source>
@@ -2232,11 +2232,11 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Increase font size</source>
-        <translation>Zwiększ rozmiar czcionki</translation>
+        <translation>ZwiÄ™ksz rozmiar czcionki</translation>
     </message>
     <message>
         <source>Services</source>
-        <translation>Usługi</translation>
+        <translation>UsÅ‚ugi</translation>
     </message>
     <message>
         <source>Ban Score</source>
@@ -2244,11 +2244,11 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Connection Time</source>
-        <translation>Czas Połączenia</translation>
+        <translation>Czas PoÅ‚Ä…czenia</translation>
     </message>
     <message>
         <source>Last Send</source>
-        <translation>Ostatnio Wysłane</translation>
+        <translation>Ostatnio WysÅ‚ane</translation>
     </message>
     <message>
         <source>Last Receive</source>
@@ -2256,7 +2256,7 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Ping Time</source>
-        <translation>czas opóźnienia sieci</translation>
+        <translation>czas opÃ³Åºnienia sieci</translation>
     </message>
     <message>
         <source>The duration of a currently outstanding ping.</source>
@@ -2284,15 +2284,15 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Rescan blockchain files</source>
-        <translation>Przeskanuj pliki lańcucha</translation>
+        <translation>Przeskanuj pliki laÅ„cucha</translation>
     </message>
     <message>
         <source>Recover transactions 1</source>
-        <translation>Odzyskaj transakcję 1</translation>
+        <translation>Odzyskaj transakcjÄ™ 1</translation>
     </message>
     <message>
         <source>Recover transactions 2</source>
-        <translation>Odzyskaj transakcję 2</translation>
+        <translation>Odzyskaj transakcjÄ™ 2</translation>
     </message>
     <message>
         <source>Upgrade wallet format</source>
@@ -2300,27 +2300,27 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>The buttons below will restart the wallet with command-line options to repair the wallet, fix issues with corrupt blockhain files or missing/obsolete transactions.</source>
-        <translation>Przycisk poniżej zrestartuje portfel z opcjami linii komend służącymi do naprawy portfela, rozwiązywania problemów z plikami łańcucha bloków oraz zgubionych lub nieważnych transakcji .</translation>
+        <translation>Przycisk poniÅ¼ej zrestartuje portfel z opcjami linii komend sÅ‚uÅ¼Ä…cymi do naprawy portfela, rozwiÄ…zywania problemÃ³w z plikami Å‚aÅ„cucha blokÃ³w oraz zgubionych lub niewaÅ¼nych transakcji .</translation>
     </message>
     <message>
         <source>-salvagewallet: Attempt to recover private keys from a corrupt wallet.dat.</source>
-        <translation>-salvagewallet: Próbuje przywrócić prywatne klucze z uszkodzonego portfela.</translation>
+        <translation>-salvagewallet: PrÃ³buje przywrÃ³ciÄ‡ prywatne klucze z uszkodzonego portfela.</translation>
     </message>
     <message>
         <source>-rescan: Rescan the block chain for missing wallet transactions.</source>
-        <translation>-rescan: Przeskanuje łańcuch w poszukiwaniu brakujących transakcji portfela.</translation>
+        <translation>-rescan: Przeskanuje Å‚aÅ„cuch w poszukiwaniu brakujÄ…cych transakcji portfela.</translation>
     </message>
     <message>
         <source>-zapwallettxes=1: Recover transactions from blockchain (keep meta-data, e.g. account owner).</source>
-        <translation>-zapwallettxes=1: Odzyskaj transakcje z łańcucha bloków (nie zmieniaj meta-danych, np. właściciela konta).</translation>
+        <translation>-zapwallettxes=1: Odzyskaj transakcje z Å‚aÅ„cucha blokÃ³w (nie zmieniaj meta-danych, np. wÅ‚aÅ›ciciela konta).</translation>
     </message>
     <message>
         <source>-zapwallettxes=2: Recover transactions from blockchain (drop meta-data).</source>
-        <translation>-zapwallettxes=2: Odzyskaj transakcje z blockchainu (pozbądź się meta-danych)</translation>
+        <translation>-zapwallettxes=2: Odzyskaj transakcje z blockchainu (pozbÄ…dÅº siÄ™ meta-danych)</translation>
     </message>
     <message>
         <source>-upgradewallet: Upgrade wallet to latest format on startup. (Note: this is NOT an update of the wallet itself!)</source>
-        <translation>-upgradewallet: przeprowadź upgrade portfela do najnowszego formatu podczas uruchomienia. (Nie oznacza to zaktualizowania samego portfela!)</translation>
+        <translation>-upgradewallet: przeprowadÅº upgrade portfela do najnowszego formatu podczas uruchomienia. (Nie oznacza to zaktualizowania samego portfela!)</translation>
     </message>
     <message>
         <source>Wallet repair options.</source>
@@ -2332,11 +2332,11 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>-reindex: Rebuild block chain index from current blk000??.dat files.</source>
-        <translation>reindex: Odtwórz index łańcucha bloków z najnowszego pliku blk000??.dat </translation>
+        <translation>reindex: OdtwÃ³rz index Å‚aÅ„cucha blokÃ³w z najnowszego pliku blk000??.dat </translation>
     </message>
     <message>
         <source>&amp;Disconnect</source>
-        <translation>&amp;Rozłącz</translation>
+        <translation>&amp;RozÅ‚Ä…cz</translation>
     </message>
     <message>
         <source>Ban for</source>
@@ -2344,15 +2344,15 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>1 &amp;hour</source>
-        <translation>1 &amp;godzinę</translation>
+        <translation>1 &amp;godzinÄ™</translation>
     </message>
     <message>
         <source>1 &amp;day</source>
-        <translation>1 &amp;dzień</translation>
+        <translation>1 &amp;dzieÅ„</translation>
     </message>
     <message>
         <source>1 &amp;week</source>
-        <translation>1 &amp;tydzień</translation>
+        <translation>1 &amp;tydzieÅ„</translation>
     </message>
     <message>
         <source>1 &amp;year</source>
@@ -2363,28 +2363,28 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
         <translation>&amp;Miejski</translation>
     </message>
     <message>
-        <source>Welcome to the ImgCash Core RPC console.</source>
-        <translation>Witaj w konsoli RPC ImgCash Core</translation>
+        <source>Welcome to the ImageCoin Core RPC console.</source>
+        <translation>Witaj w konsoli RPC ImageCoin Core</translation>
     </message>
     <message>
         <source>Use up and down arrows to navigate history, and &lt;b&gt;Ctrl-L&lt;/b&gt; to clear screen.</source>
-        <translation>Użyj strzałek do przewijania historii i &lt;b&gt;Ctrl-L&lt;/b&gt; aby wyczyścić ekran</translation>
+        <translation>UÅ¼yj strzaÅ‚ek do przewijania historii i &lt;b&gt;Ctrl-L&lt;/b&gt; aby wyczyÅ›ciÄ‡ ekran</translation>
     </message>
     <message>
         <source>Type &lt;b&gt;help&lt;/b&gt; for an overview of available commands.</source>
-        <translation>Wpisz &lt;b&gt;help&lt;/b&gt; aby uzyskać listę dostępnych komend</translation>
+        <translation>Wpisz &lt;b&gt;help&lt;/b&gt; aby uzyskaÄ‡ listÄ™ dostÄ™pnych komend</translation>
     </message>
     <message>
         <source>In:</source>
-        <translation>Wejście:</translation>
+        <translation>WejÅ›cie:</translation>
     </message>
     <message>
         <source>Out:</source>
-        <translation>Wyjście:</translation>
+        <translation>WyjÅ›cie:</translation>
     </message>
     <message>
         <source>Network activity disabled</source>
-        <translation>Aktywność sieci jest wyłączona</translation>
+        <translation>AktywnoÅ›Ä‡ sieci jest wyÅ‚Ä…czona</translation>
     </message>
     <message>
         <source>%1 B</source>
@@ -2404,7 +2404,7 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>(node id: %1)</source>
-        <translation>(id węzła: %1)</translation>
+        <translation>(id wÄ™zÅ‚a: %1)</translation>
     </message>
     <message>
         <source>via %1</source>
@@ -2416,11 +2416,11 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Inbound</source>
-        <translation>przychodzące</translation>
+        <translation>przychodzÄ…ce</translation>
     </message>
     <message>
         <source>Outbound</source>
-        <translation>wychodzące</translation>
+        <translation>wychodzÄ…ce</translation>
     </message>
     <message>
         <source>Yes</source>
@@ -2439,31 +2439,31 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     <name>ReceiveCoinsDialog</name>
     <message>
         <source>Reuse one of the previously used receiving addresses.&lt;br&gt;Reusing addresses has security and privacy issues.&lt;br&gt;Do not use this unless re-generating a payment request made before.</source>
-        <translation>Użyj jeden z poprzednio użytych adresów odbiorczych.&lt;br&gt; Podczas ponownego używania adresów występują problemy z bezpieczeństwem i prywatnością.&lt;br&gt; Nie korzystaj z tej opcji, chyba że odtwarzasz żądanie płatności wykonane już wcześniej.</translation>
+        <translation>UÅ¼yj jeden z poprzednio uÅ¼ytych adresÃ³w odbiorczych.&lt;br&gt; Podczas ponownego uÅ¼ywania adresÃ³w wystÄ™pujÄ… problemy z bezpieczeÅ„stwem i prywatnoÅ›ciÄ….&lt;br&gt; Nie korzystaj z tej opcji, chyba Å¼e odtwarzasz Å¼Ä…danie pÅ‚atnoÅ›ci wykonane juÅ¼ wczeÅ›niej.</translation>
     </message>
     <message>
         <source>R&amp;euse an existing receiving address (not recommended)</source>
-        <translation>Użyj istniejącego adresu odbiorczego (nie zalecane)</translation>
+        <translation>UÅ¼yj istniejÄ…cego adresu odbiorczego (nie zalecane)</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the ImgCash network.</source>
-        <translation>Opcjonalna wiadomość do żądania płatności. Wiadomość wyświetli się po otwarciu żądania. Pamiętaj: Wiadomość nie zostanie wysłana razem z płatnością poprzez sieć ImgCash.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the ImageCoin network.</source>
+        <translation>Opcjonalna wiadomoÅ›Ä‡ do Å¼Ä…dania pÅ‚atnoÅ›ci. WiadomoÅ›Ä‡ wyÅ›wietli siÄ™ po otwarciu Å¼Ä…dania. PamiÄ™taj: WiadomoÅ›Ä‡ nie zostanie wysÅ‚ana razem z pÅ‚atnoÅ›ciÄ… poprzez sieÄ‡ ImageCoin.</translation>
     </message>
     <message>
         <source>&amp;Message:</source>
-        <translation>&amp;Wiadomość:</translation>
+        <translation>&amp;WiadomoÅ›Ä‡:</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
         <translation>Opcjonalna etykieta do skojarzenia z nowym adresem odbiorczym.</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the ImgCash network.</source>
-        <translation>Opcjonalna wiadomość do żądania płatności. Wiadomość wyświetli się po otwarciu żądania.&lt;br&gt; Pamiętaj: Wiadomość nie zostanie wysłana razem z płatnością poprzez sieć ImgCash.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the ImageCoin network.</source>
+        <translation>Opcjonalna wiadomoÅ›Ä‡ do Å¼Ä…dania pÅ‚atnoÅ›ci. WiadomoÅ›Ä‡ wyÅ›wietli siÄ™ po otwarciu Å¼Ä…dania.&lt;br&gt; PamiÄ™taj: WiadomoÅ›Ä‡ nie zostanie wysÅ‚ana razem z pÅ‚atnoÅ›ciÄ… poprzez sieÄ‡ ImageCoin.</translation>
     </message>
     <message>
         <source>Use this form to request payments. All fields are &lt;b&gt;optional&lt;/b&gt;.</source>
-        <translation>Użyj tego formularza do zażądania płatności. Wszystkie pola są &lt;b&gt;opcjonalne&lt;/b&gt;.</translation>
+        <translation>UÅ¼yj tego formularza do zaÅ¼Ä…dania pÅ‚atnoÅ›ci. Wszystkie pola sÄ… &lt;b&gt;opcjonalne&lt;/b&gt;.</translation>
     </message>
     <message>
         <source>&amp;Label:</source>
@@ -2471,7 +2471,7 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>An optional amount to request. Leave this empty or zero to not request a specific amount.</source>
-        <translation>Opcjonalna kwota żądania. Pozostaw puste pole lub zero, aby nie podawać konkretnej kwoty.</translation>
+        <translation>Opcjonalna kwota Å¼Ä…dania. Pozostaw puste pole lub zero, aby nie podawaÄ‡ konkretnej kwoty.</translation>
     </message>
     <message>
         <source>&amp;Amount:</source>
@@ -2479,39 +2479,39 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>&amp;Request payment</source>
-        <translation>&amp;Żądaj płatności</translation>
+        <translation>&amp;Å»Ä…daj pÅ‚atnoÅ›ci</translation>
     </message>
     <message>
         <source>Clear all fields of the form.</source>
-        <translation>Wyczyść pola formularza</translation>
+        <translation>WyczyÅ›Ä‡ pola formularza</translation>
     </message>
     <message>
         <source>Clear</source>
-        <translation>Wyczyść</translation>
+        <translation>WyczyÅ›Ä‡</translation>
     </message>
     <message>
         <source>Request InstantSend</source>
-        <translation>Zarządaj InstantSend</translation>
+        <translation>ZarzÄ…daj InstantSend</translation>
     </message>
     <message>
         <source>Requested payments history</source>
-        <translation>Żądanie historii płatności</translation>
+        <translation>Å»Ä…danie historii pÅ‚atnoÅ›ci</translation>
     </message>
     <message>
         <source>Show the selected request (does the same as double clicking an entry)</source>
-        <translation>Pokaż zaznaczone żądanie (działa jak podwójne kliknięcie)</translation>
+        <translation>PokaÅ¼ zaznaczone Å¼Ä…danie (dziaÅ‚a jak podwÃ³jne klikniÄ™cie)</translation>
     </message>
     <message>
         <source>Show</source>
-        <translation>Pokaż</translation>
+        <translation>PokaÅ¼</translation>
     </message>
     <message>
         <source>Remove the selected entries from the list</source>
-        <translation>Usuń zaznaczone z listy</translation>
+        <translation>UsuÅ„ zaznaczone z listy</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation>Usuń</translation>
+        <translation>UsuÅ„</translation>
     </message>
     <message>
         <source>Copy URI</source>
@@ -2519,15 +2519,15 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Copy label</source>
-        <translation>Kopiuj etykietę</translation>
+        <translation>Kopiuj etykietÄ™</translation>
     </message>
     <message>
         <source>Copy message</source>
-        <translation>Kopiuj wiadomość</translation>
+        <translation>Kopiuj wiadomoÅ›Ä‡</translation>
     </message>
     <message>
         <source>Copy amount</source>
-        <translation>Kopiuj kwotę</translation>
+        <translation>Kopiuj kwotÄ™</translation>
     </message>
 </context>
 <context>
@@ -2550,11 +2550,11 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Request payment to %1</source>
-        <translation>Żądaj płatności do %1</translation>
+        <translation>Å»Ä…daj pÅ‚atnoÅ›ci do %1</translation>
     </message>
     <message>
         <source>Payment information</source>
-        <translation>Informacje o płatności</translation>
+        <translation>Informacje o pÅ‚atnoÅ›ci</translation>
     </message>
     <message>
         <source>URI</source>
@@ -2574,7 +2574,7 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Message</source>
-        <translation>Wiadomość</translation>
+        <translation>WiadomoÅ›Ä‡</translation>
     </message>
     <message>
         <source>InstantSend</source>
@@ -2590,11 +2590,11 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Resulting URI too long, try to reduce the text for label / message.</source>
-        <translation>Wynikowy URI jest zbyt długi, spróbuj zmniejszyć tekst etykiety / wiadomości</translation>
+        <translation>Wynikowy URI jest zbyt dÅ‚ugi, sprÃ³buj zmniejszyÄ‡ tekst etykiety / wiadomoÅ›ci</translation>
     </message>
     <message>
         <source>Error encoding URI into QR Code.</source>
-        <translation>Błąd kodowania URI w Kodzie QR.</translation>
+        <translation>BÅ‚Ä…d kodowania URI w Kodzie QR.</translation>
     </message>
 </context>
 <context>
@@ -2609,7 +2609,7 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Message</source>
-        <translation>Wiadomość</translation>
+        <translation>WiadomoÅ›Ä‡</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -2617,7 +2617,7 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>(no message)</source>
-        <translation>(brak wiadomości)</translation>
+        <translation>(brak wiadomoÅ›ci)</translation>
     </message>
     <message>
         <source>(no amount)</source>
@@ -2632,7 +2632,7 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     <name>SendCoinsDialog</name>
     <message>
         <source>Send Coins</source>
-        <translation>Wyślij Monety</translation>
+        <translation>WyÅ›lij Monety</translation>
     </message>
     <message>
         <source>Coin Control Features</source>
@@ -2640,7 +2640,7 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Inputs...</source>
-        <translation>Wejścia...</translation>
+        <translation>WejÅ›cia...</translation>
     </message>
     <message>
         <source>automatically selected</source>
@@ -2648,15 +2648,15 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Insufficient funds!</source>
-        <translation>Niewystarczające środki!</translation>
+        <translation>NiewystarczajÄ…ce Å›rodki!</translation>
     </message>
     <message>
         <source>Quantity:</source>
-        <translation>Ilość:</translation>
+        <translation>IloÅ›Ä‡:</translation>
     </message>
     <message>
         <source>Bytes:</source>
-        <translation>Bajtów:</translation>
+        <translation>BajtÃ³w:</translation>
     </message>
     <message>
         <source>Amount:</source>
@@ -2664,15 +2664,15 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Fee:</source>
-        <translation>Opłata:</translation>
+        <translation>OpÅ‚ata:</translation>
     </message>
     <message>
         <source>Dust:</source>
-        <translation>Pył</translation>
+        <translation>PyÅ‚</translation>
     </message>
     <message>
         <source>After Fee:</source>
-        <translation>Po opłacie:</translation>
+        <translation>Po opÅ‚acie:</translation>
     </message>
     <message>
         <source>Change:</source>
@@ -2680,7 +2680,7 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>If this is activated, but the change address is empty or invalid, change will be sent to a newly generated address.</source>
-        <translation>Kiedy ta opcja jest wybrana, ale adres reszty jest pusty lub nieprawidłowy to reszta będzie wysyłana na adres nowo-wygenerowany.</translation>
+        <translation>Kiedy ta opcja jest wybrana, ale adres reszty jest pusty lub nieprawidÅ‚owy to reszta bÄ™dzie wysyÅ‚ana na adres nowo-wygenerowany.</translation>
     </message>
     <message>
         <source>Custom change address</source>
@@ -2688,7 +2688,7 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Transaction Fee:</source>
-        <translation>Opłata za transakcje:</translation>
+        <translation>OpÅ‚ata za transakcje:</translation>
     </message>
     <message>
         <source>Choose...</source>
@@ -2696,7 +2696,7 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>collapse fee-settings</source>
-        <translation>zamknij ustawienia opłat</translation>
+        <translation>zamknij ustawienia opÅ‚at</translation>
     </message>
     <message>
         <source>PrivateSend</source>
@@ -2708,15 +2708,15 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>If the custom fee is set to 1000 duffs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 duffs in fee,&lt;br /&gt;while "at least" pays 1000 duffs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
-        <translation>Jeśli ręcznie ustalona opłata wynosi 1000 Duffów, a sama transakcja ma tylko 250 bajtów, to opłata "za kilobajt" wynosi tylko 250 duffów. &lt;br/&gt;Dzieje się tak dla każdej transakcji poniżej 1000 duffów. W przypadku transakcji większych niż jedrn kilobajt opłata jest naliczana od kilobajta. </translation>
+        <translation>JeÅ›li rÄ™cznie ustalona opÅ‚ata wynosi 1000 DuffÃ³w, a sama transakcja ma tylko 250 bajtÃ³w, to opÅ‚ata "za kilobajt" wynosi tylko 250 duffÃ³w. &lt;br/&gt;Dzieje siÄ™ tak dla kaÅ¼dej transakcji poniÅ¼ej 1000 duffÃ³w. W przypadku transakcji wiÄ™kszych niÅ¼ jedrn kilobajt opÅ‚ata jest naliczana od kilobajta. </translation>
     </message>
     <message>
         <source>If the custom fee is set to 1000 duffs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 duffs in fee,&lt;br /&gt;while "total at least" pays 1000 duffs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
-        <translation>Jeśli ręcznie ustalona opłata wynosi 1000 Duffów, a sama transakcja ma tylko 250 bitów, to opłata "za kilobajt" wynosi tylko 250 duffów.&lt;br/&gt; Dzieje się tak dla każdej transakcji poniżej 1000 duffów. W przypadku transakcji większych niż jeden kilobajt opłata jest naliczana od kilobajta.</translation>
+        <translation>JeÅ›li rÄ™cznie ustalona opÅ‚ata wynosi 1000 DuffÃ³w, a sama transakcja ma tylko 250 bitÃ³w, to opÅ‚ata "za kilobajt" wynosi tylko 250 duffÃ³w.&lt;br/&gt; Dzieje siÄ™ tak dla kaÅ¼dej transakcji poniÅ¼ej 1000 duffÃ³w. W przypadku transakcji wiÄ™kszych niÅ¼ jeden kilobajt opÅ‚ata jest naliczana od kilobajta.</translation>
     </message>
     <message>
-        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for ImgCash transactions than the network can process.</source>
-        <translation>Uiszczanie minimalnej opłaty za transakcję jest ok, dopóki ilość transakcji nie przekracza dostępnego miejsca w bloku. &lt;br /&gt;Jeśli zostanie wysłanych więcej transakcji niż sieć może przetworzyć, to może się zdarzyć, że Twoja transakcja nigdy nie zostanie potwierdzona.</translation>
+        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for ImageCoin transactions than the network can process.</source>
+        <translation>Uiszczanie minimalnej opÅ‚aty za transakcjÄ™ jest ok, dopÃ³ki iloÅ›Ä‡ transakcji nie przekracza dostÄ™pnego miejsca w bloku. &lt;br /&gt;JeÅ›li zostanie wysÅ‚anych wiÄ™cej transakcji niÅ¼ sieÄ‡ moÅ¼e przetworzyÄ‡, to moÅ¼e siÄ™ zdarzyÄ‡, Å¼e Twoja transakcja nigdy nie zostanie potwierdzona.</translation>
     </message>
     <message>
         <source>per kilobyte</source>
@@ -2728,11 +2728,11 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>total at least</source>
-        <translation>Łączna kwota wynosi co najmniej</translation>
+        <translation>Å�Ä…czna kwota wynosi co najmniej</translation>
     </message>
     <message>
         <source>(read the tooltip)</source>
-        <translation>(przeczytaj powpowiedź w chmurce)</translation>
+        <translation>(przeczytaj powpowiedÅº w chmurce)</translation>
     </message>
     <message>
         <source>Recommended:</source>
@@ -2744,7 +2744,7 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>(Smart fee not initialized yet. This usually takes a few blocks...)</source>
-        <translation>(Opłata smart nie została jeszcze zainicjonowana. Zazwyczaj zajmuje to kilka bloków...)</translation>
+        <translation>(OpÅ‚ata smart nie zostaÅ‚a jeszcze zainicjonowana. Zazwyczaj zajmuje to kilka blokÃ³w...)</translation>
     </message>
     <message>
         <source>Confirmation time:</source>
@@ -2760,35 +2760,35 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Send as zero-fee transaction if possible</source>
-        <translation>Wyślij transakcję bez uiszczania opłat, jeśli jest to możliwe.</translation>
+        <translation>WyÅ›lij transakcjÄ™ bez uiszczania opÅ‚at, jeÅ›li jest to moÅ¼liwe.</translation>
     </message>
     <message>
         <source>(confirmation may take longer)</source>
-        <translation>(potwierdzenie może zająć trochę więcej czasu)</translation>
+        <translation>(potwierdzenie moÅ¼e zajÄ…Ä‡ trochÄ™ wiÄ™cej czasu)</translation>
     </message>
     <message>
         <source>Confirm the send action</source>
-        <translation>Potwierdź czynność wysyłania</translation>
+        <translation>PotwierdÅº czynnoÅ›Ä‡ wysyÅ‚ania</translation>
     </message>
     <message>
         <source>S&amp;end</source>
-        <translation>Wy&amp;syłka</translation>
+        <translation>Wy&amp;syÅ‚ka</translation>
     </message>
     <message>
         <source>Clear all fields of the form.</source>
-        <translation>Wyczyść wszystkie pola formularza</translation>
+        <translation>WyczyÅ›Ä‡ wszystkie pola formularza</translation>
     </message>
     <message>
         <source>Clear &amp;All</source>
-        <translation>Wyczyść &amp;wszystko</translation>
+        <translation>WyczyÅ›Ä‡ &amp;wszystko</translation>
     </message>
     <message>
         <source>Send to multiple recipients at once</source>
-        <translation>Wyślij do wielu odbiorców na raz</translation>
+        <translation>WyÅ›lij do wielu odbiorcÃ³w na raz</translation>
     </message>
     <message>
         <source>Add &amp;Recipient</source>
-        <translation>Dodaj Odbio&amp;rcę</translation>
+        <translation>Dodaj Odbio&amp;rcÄ™</translation>
     </message>
     <message>
         <source>Balance:</source>
@@ -2796,47 +2796,47 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Copy quantity</source>
-        <translation>Skopiuj ilość</translation>
+        <translation>Skopiuj iloÅ›Ä‡</translation>
     </message>
     <message>
         <source>Copy amount</source>
-        <translation>Kopiuj kwotę</translation>
+        <translation>Kopiuj kwotÄ™</translation>
     </message>
     <message>
         <source>Copy fee</source>
-        <translation>Skopiuj opłatę</translation>
+        <translation>Skopiuj opÅ‚atÄ™</translation>
     </message>
     <message>
         <source>Copy after fee</source>
-        <translation>Skopiuj ilość po opłacie</translation>
+        <translation>Skopiuj iloÅ›Ä‡ po opÅ‚acie</translation>
     </message>
     <message>
         <source>Copy bytes</source>
-        <translation>Skopiuj ilość bajtów</translation>
+        <translation>Skopiuj iloÅ›Ä‡ bajtÃ³w</translation>
     </message>
     <message>
         <source>Copy dust</source>
-        <translation>skopiuj drobne (poniżej 5460 duffów)</translation>
+        <translation>skopiuj drobne (poniÅ¼ej 5460 duffÃ³w)</translation>
     </message>
     <message>
         <source>Copy change</source>
-        <translation>Skopiuj resztę</translation>
+        <translation>Skopiuj resztÄ™</translation>
     </message>
     <message>
         <source>using</source>
-        <translation>używając</translation>
+        <translation>uÅ¼ywajÄ…c</translation>
     </message>
     <message>
         <source>anonymous funds</source>
-        <translation>anonimowe środki</translation>
+        <translation>anonimowe Å›rodki</translation>
     </message>
     <message>
         <source>(privatesend requires this amount to be rounded up to the nearest %1).</source>
-        <translation>(privatesend wymaga aby ta kwota została zaokrąglona do najbliżeszej %1).</translation>
+        <translation>(privatesend wymaga aby ta kwota zostaÅ‚a zaokrÄ…glona do najbliÅ¼eszej %1).</translation>
     </message>
     <message>
         <source>any available funds (not anonymous)</source>
-        <translation>jakiekolwiek dostępne środki (brak anonimowości)</translation>
+        <translation>jakiekolwiek dostÄ™pne Å›rodki (brak anonimowoÅ›ci)</translation>
     </message>
     <message>
         <source>and InstantSend</source>
@@ -2848,31 +2848,31 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Are you sure you want to send?</source>
-        <translation>Czy na pewno chcesz wysłać?</translation>
+        <translation>Czy na pewno chcesz wysÅ‚aÄ‡?</translation>
     </message>
     <message>
         <source>are added as transaction fee</source>
-        <translation>dodane są jako opłata za transakcje</translation>
+        <translation>dodane sÄ… jako opÅ‚ata za transakcje</translation>
     </message>
     <message>
         <source>Total Amount = &lt;b&gt;%1&lt;/b&gt;&lt;br /&gt;= %2</source>
-        <translation>Całkowita ilość = &lt;b&gt;%1&lt;/b&gt;&lt;br /&gt;= %2</translation>
+        <translation>CaÅ‚kowita iloÅ›Ä‡ = &lt;b&gt;%1&lt;/b&gt;&lt;br /&gt;= %2</translation>
     </message>
     <message>
         <source>&lt;b&gt;(%1 of %2 entries displayed)&lt;/b&gt;</source>
-        <translation>&lt;b&gt;(%1 z %2 wyświetlonych wpisów)&lt;/b&gt;</translation>
+        <translation>&lt;b&gt;(%1 z %2 wyÅ›wietlonych wpisÃ³w)&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Confirm send coins</source>
-        <translation>Potwierdź wysyłanie monet</translation>
+        <translation>PotwierdÅº wysyÅ‚anie monet</translation>
     </message>
     <message>
         <source>The recipient address is not valid. Please recheck.</source>
-        <translation>Adres odbiorcy jest nieprawidłowy, proszę poprawić.</translation>
+        <translation>Adres odbiorcy jest nieprawidÅ‚owy, proszÄ™ poprawiÄ‡.</translation>
     </message>
     <message>
         <source>The amount to pay must be larger than 0.</source>
-        <translation>Kwota do zapłacenia musi być większa od 0.</translation>
+        <translation>Kwota do zapÅ‚acenia musi byÄ‡ wiÄ™ksza od 0.</translation>
     </message>
     <message>
         <source>The amount exceeds your balance.</source>
@@ -2884,39 +2884,39 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Duplicate address found: addresses should only be used once each.</source>
-        <translation>Znaleziono identyczny adres: adres powinien być użyty tylko raz.</translation>
+        <translation>Znaleziono identyczny adres: adres powinien byÄ‡ uÅ¼yty tylko raz.</translation>
     </message>
     <message>
         <source>Transaction creation failed!</source>
-        <translation>Utworzenie transakcji nie powiodło się!</translation>
+        <translation>Utworzenie transakcji nie powiodÅ‚o siÄ™!</translation>
     </message>
     <message>
         <source>The transaction was rejected! This might happen if some of the coins in your wallet were already spent, such as if you used a copy of wallet.dat and coins were spent in the copy but not marked as spent here.</source>
-        <translation>Transakcja została odrzucona! Może się to zdarzyć, jeśli część monet z portfela została już wydana przy użyciu kopii pliku wallet.dat i nie zostało to tutaj uwzględnione.</translation>
+        <translation>Transakcja zostaÅ‚a odrzucona! MoÅ¼e siÄ™ to zdarzyÄ‡, jeÅ›li czÄ™Å›Ä‡ monet z portfela zostaÅ‚a juÅ¼ wydana przy uÅ¼yciu kopii pliku wallet.dat i nie zostaÅ‚o to tutaj uwzglÄ™dnione.</translation>
     </message>
     <message>
         <source>A fee higher than %1 is considered an absurdly high fee.</source>
-        <translation>Opłata wyższa niż %1 jest absurdalnie wysoka.</translation>
+        <translation>OpÅ‚ata wyÅ¼sza niÅ¼ %1 jest absurdalnie wysoka.</translation>
     </message>
     <message>
         <source>Payment request expired.</source>
-        <translation>Żądanie płatności wygasło.</translation>
+        <translation>Å»Ä…danie pÅ‚atnoÅ›ci wygasÅ‚o.</translation>
     </message>
     <message>
         <source>Pay only the required fee of %1</source>
-        <translation>Uiść jedynie minimalną opłatę %1</translation>
+        <translation>UiÅ›Ä‡ jedynie minimalnÄ… opÅ‚atÄ™ %1</translation>
     </message>
     <message numerus="yes">
         <source>Estimated to begin confirmation within %n block(s).</source>
-        <translation><numerusform>Potwierdzenia zaczną się za około %n blok</numerusform><numerusform>Potwierdzenia zaczną się za około %n bloki</numerusform><numerusform>Potwierdzenia zaczną się za około %n bloków</numerusform><numerusform>Potwierdzenia zaczną się za około %n bloków</numerusform></translation>
+        <translation><numerusform>Potwierdzenia zacznÄ… siÄ™ za okoÅ‚o %n blok</numerusform><numerusform>Potwierdzenia zacznÄ… siÄ™ za okoÅ‚o %n bloki</numerusform><numerusform>Potwierdzenia zacznÄ… siÄ™ za okoÅ‚o %n blokÃ³w</numerusform><numerusform>Potwierdzenia zacznÄ… siÄ™ za okoÅ‚o %n blokÃ³w</numerusform></translation>
     </message>
     <message>
-        <source>Warning: Invalid ImgCash address</source>
-        <translation>Ostrzeżenie: adres ImgCash jest nieprawidlowy </translation>
+        <source>Warning: Invalid ImageCoin address</source>
+        <translation>OstrzeÅ¼enie: adres ImageCoin jest nieprawidlowy </translation>
     </message>
     <message>
         <source>Warning: Unknown change address</source>
-        <translation>Ostrzeżenie: Nieznany adres reszty</translation>
+        <translation>OstrzeÅ¼enie: Nieznany adres reszty</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -2927,19 +2927,19 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     <name>SendCoinsEntry</name>
     <message>
         <source>This is a normal payment.</source>
-        <translation>To jest standardowa płatność</translation>
+        <translation>To jest standardowa pÅ‚atnoÅ›Ä‡</translation>
     </message>
     <message>
         <source>Pay &amp;To:</source>
-        <translation>Zapłać &amp;dla:</translation>
+        <translation>ZapÅ‚aÄ‡ &amp;dla:</translation>
     </message>
     <message>
-        <source>The ImgCash address to send the payment to</source>
-        <translation>Adres ImgCash na który wysłać fundusze</translation>
+        <source>The ImageCoin address to send the payment to</source>
+        <translation>Adres ImageCoin na ktÃ³ry wysÅ‚aÄ‡ fundusze</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
-        <translation>Wybierz wcześniej użyty adres </translation>
+        <translation>Wybierz wczeÅ›niej uÅ¼yty adres </translation>
     </message>
     <message>
         <source>Alt+A</source>
@@ -2955,7 +2955,7 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Remove this entry</source>
-        <translation>Usuń ten wpis</translation>
+        <translation>UsuÅ„ ten wpis</translation>
     </message>
     <message>
         <source>&amp;Label:</source>
@@ -2963,39 +2963,39 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Enter a label for this address to add it to the list of used addresses</source>
-        <translation>Wprowadź etykietę dla tego adresu by dodać go do listy użytych adresów</translation>
+        <translation>WprowadÅº etykietÄ™ dla tego adresu by dodaÄ‡ go do listy uÅ¼ytych adresÃ³w</translation>
     </message>
     <message>
         <source>A&amp;mount:</source>
         <translation>Su&amp;ma:</translation>
     </message>
     <message>
-        <source>The fee will be deducted from the amount being sent. The recipient will receive a lower amount of ImgCash than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
-        <translation>Opłata zostanie odliczona od wysyłanej kwoty. Odbiorca otrzyma mniej, niż wprowadziłeś w polu kwoty. W razie wielu odbiorców, opłata zostanie równo podzielona.</translation>
+        <source>The fee will be deducted from the amount being sent. The recipient will receive a lower amount of ImageCoin than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
+        <translation>OpÅ‚ata zostanie odliczona od wysyÅ‚anej kwoty. Odbiorca otrzyma mniej, niÅ¼ wprowadziÅ‚eÅ› w polu kwoty. W razie wielu odbiorcÃ³w, opÅ‚ata zostanie rÃ³wno podzielona.</translation>
     </message>
     <message>
         <source>S&amp;ubtract fee from amount</source>
-        <translation>Odejm&amp;ij opłatę od kwoty</translation>
+        <translation>Odejm&amp;ij opÅ‚atÄ™ od kwoty</translation>
     </message>
     <message>
         <source>Message:</source>
-        <translation>Wiadomość:</translation>
+        <translation>WiadomoÅ›Ä‡:</translation>
     </message>
     <message>
-        <source>A message that was attached to the ImgCash: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the ImgCash network.</source>
-        <translation>Wiadomość, która została dołączona do ImgCash: Link, który zostanie zapisany wraz z transakcją do wglądu w przyszłości. Zauważ, że sama wiadomość nie zostanie wysłana przez sieć ImgCash.</translation>
+        <source>A message that was attached to the ImageCoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the ImageCoin network.</source>
+        <translation>WiadomoÅ›Ä‡, ktÃ³ra zostaÅ‚a doÅ‚Ä…czona do ImageCoin: Link, ktÃ³ry zostanie zapisany wraz z transakcjÄ… do wglÄ…du w przyszÅ‚oÅ›ci. ZauwaÅ¼, Å¼e sama wiadomoÅ›Ä‡ nie zostanie wysÅ‚ana przez sieÄ‡ ImageCoin.</translation>
     </message>
     <message>
         <source>This is an unauthenticated payment request.</source>
-        <translation>To żądane zapłaty nie zostało uwierzytelnione.</translation>
+        <translation>To Å¼Ä…dane zapÅ‚aty nie zostaÅ‚o uwierzytelnione.</translation>
     </message>
     <message>
         <source>This is an authenticated payment request.</source>
-        <translation>To żądanie zapłaty jest uwierzytelnione.</translation>
+        <translation>To Å¼Ä…danie zapÅ‚aty jest uwierzytelnione.</translation>
     </message>
     <message>
         <source>Pay To:</source>
-        <translation>Wpłać do:</translation>
+        <translation>WpÅ‚aÄ‡ do:</translation>
     </message>
     <message>
         <source>Memo:</source>
@@ -3003,41 +3003,41 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Enter a label for this address to add it to your address book</source>
-        <translation>Wprowadź etykietę dla tego adresu by dodać go do książki adresowej</translation>
+        <translation>WprowadÅº etykietÄ™ dla tego adresu by dodaÄ‡ go do ksiÄ…Å¼ki adresowej</translation>
     </message>
 </context>
 <context>
     <name>ShutdownWindow</name>
     <message>
-        <source>ImgCash Core is shutting down...</source>
-        <translation>Trwa zamykanie ImgCash Core</translation>
+        <source>ImageCoin Core is shutting down...</source>
+        <translation>Trwa zamykanie ImageCoin Core</translation>
     </message>
     <message>
         <source>Do not shut down the computer until this window disappears.</source>
-        <translation>Nie wyłączaj komputera, dopóki to okno nie zniknie.</translation>
+        <translation>Nie wyÅ‚Ä…czaj komputera, dopÃ³ki to okno nie zniknie.</translation>
     </message>
 </context>
 <context>
     <name>SignVerifyMessageDialog</name>
     <message>
         <source>Signatures - Sign / Verify a Message</source>
-        <translation>Podpisy - Podpisz / zweryfikuj wiadomość</translation>
+        <translation>Podpisy - Podpisz / zweryfikuj wiadomoÅ›Ä‡</translation>
     </message>
     <message>
         <source>&amp;Sign Message</source>
-        <translation>Podpi&amp;sz Wiadomość</translation>
+        <translation>Podpi&amp;sz WiadomoÅ›Ä‡</translation>
     </message>
     <message>
-        <source>You can sign messages/agreements with your addresses to prove you can receive ImgCash sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
-        <translation>Możesz podpisywać wiadomości swoimi adresami aby udowodnić, że jesteś ich właścicielem. Uważaj, aby nie podpisywać niczego co wzbudza Twoje podejrzenia, ponieważ ktoś może stosować phishing próbując nakłonić Cię do ich podpisania. Akceptuj i podpisuj tylko w pełni zrozumiałe komunikaty i wiadomości.</translation>
+        <source>You can sign messages/agreements with your addresses to prove you can receive ImageCoin sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
+        <translation>MoÅ¼esz podpisywaÄ‡ wiadomoÅ›ci swoimi adresami aby udowodniÄ‡, Å¼e jesteÅ› ich wÅ‚aÅ›cicielem. UwaÅ¼aj, aby nie podpisywaÄ‡ niczego co wzbudza Twoje podejrzenia, poniewaÅ¼ ktoÅ› moÅ¼e stosowaÄ‡ phishing prÃ³bujÄ…c nakÅ‚oniÄ‡ CiÄ™ do ich podpisania. Akceptuj i podpisuj tylko w peÅ‚ni zrozumiaÅ‚e komunikaty i wiadomoÅ›ci.</translation>
     </message>
     <message>
-        <source>The ImgCash address to sign the message with</source>
-        <translation>Adres ImgCash do podpisu wiadomości</translation>
+        <source>The ImageCoin address to sign the message with</source>
+        <translation>Adres ImageCoin do podpisu wiadomoÅ›ci</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
-        <translation>Wybierz wcześniej użyty adres</translation>
+        <translation>Wybierz wczeÅ›niej uÅ¼yty adres</translation>
     </message>
     <message>
         <source>Alt+A</source>
@@ -3053,7 +3053,7 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Enter the message you want to sign here</source>
-        <translation>Wprowadź wiadomość, którą chcesz podpisać, tutaj</translation>
+        <translation>WprowadÅº wiadomoÅ›Ä‡, ktÃ³rÄ… chcesz podpisaÄ‡, tutaj</translation>
     </message>
     <message>
         <source>Signature</source>
@@ -3064,96 +3064,96 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
         <translation>Kopiuje aktualny podpis do schowka systemowego</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this ImgCash address</source>
-        <translation>Podpisz wiadomość, aby udowodnić, że jesteś właścicielem adresu ImgCash.</translation>
+        <source>Sign the message to prove you own this ImageCoin address</source>
+        <translation>Podpisz wiadomoÅ›Ä‡, aby udowodniÄ‡, Å¼e jesteÅ› wÅ‚aÅ›cicielem adresu ImageCoin.</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
-        <translation>Podpisz Wiado&amp;mość</translation>
+        <translation>Podpisz Wiado&amp;moÅ›Ä‡</translation>
     </message>
     <message>
         <source>Reset all sign message fields</source>
-        <translation>Zresetuj wszystkie pola podpisanej wiadomości</translation>
+        <translation>Zresetuj wszystkie pola podpisanej wiadomoÅ›ci</translation>
     </message>
     <message>
         <source>Clear &amp;All</source>
-        <translation>Wyczyść &amp;wszystko</translation>
+        <translation>WyczyÅ›Ä‡ &amp;wszystko</translation>
     </message>
     <message>
         <source>&amp;Verify Message</source>
-        <translation>&amp;Zweryfikuj wiadomość</translation>
+        <translation>&amp;Zweryfikuj wiadomoÅ›Ä‡</translation>
     </message>
     <message>
         <source>Enter the receiver's address, message (ensure you copy line breaks, spaces, tabs, etc. exactly) and signature below to verify the message. Be careful not to read more into the signature than what is in the signed message itself, to avoid being tricked by a man-in-the-middle attack. Note that this only proves the signing party receives with the address, it cannot prove sendership of any transaction!</source>
-        <translation>Wpisz adres odbiorcy, podaj wiadomość (upewnij się, że dokładnie skopiujesz wszystkie zakończenia linii, spacje, tabulacje itp.) oraz podpis poniżej by sprawdzić wiadomość. Uważaj by nie dodać więcej do podpisu niż do samej podpisywanej wiadomości by uniknąć ataku man-in-the-middle (człowiek pośrodku)</translation>
+        <translation>Wpisz adres odbiorcy, podaj wiadomoÅ›Ä‡ (upewnij siÄ™, Å¼e dokÅ‚adnie skopiujesz wszystkie zakoÅ„czenia linii, spacje, tabulacje itp.) oraz podpis poniÅ¼ej by sprawdziÄ‡ wiadomoÅ›Ä‡. UwaÅ¼aj by nie dodaÄ‡ wiÄ™cej do podpisu niÅ¼ do samej podpisywanej wiadomoÅ›ci by uniknÄ…Ä‡ ataku man-in-the-middle (czÅ‚owiek poÅ›rodku)</translation>
     </message>
     <message>
-        <source>The ImgCash address the message was signed with</source>
-        <translation>Adres ImgCash, którym wiadomość została podpisana</translation>
+        <source>The ImageCoin address the message was signed with</source>
+        <translation>Adres ImageCoin, ktÃ³rym wiadomoÅ›Ä‡ zostaÅ‚a podpisana</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified ImgCash address</source>
-        <translation>Zweryfikuj wiadomość, aby upewnić się, że została zapisana przez konkretny adres ImgCash</translation>
+        <source>Verify the message to ensure it was signed with the specified ImageCoin address</source>
+        <translation>Zweryfikuj wiadomoÅ›Ä‡, aby upewniÄ‡ siÄ™, Å¼e zostaÅ‚a zapisana przez konkretny adres ImageCoin</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>
-        <translation>Zweryfikuj Wiado&amp;mość</translation>
+        <translation>Zweryfikuj Wiado&amp;moÅ›Ä‡</translation>
     </message>
     <message>
         <source>Reset all verify message fields</source>
-        <translation>Resetuje wszystkie pola weryfikacji wiadomości</translation>
+        <translation>Resetuje wszystkie pola weryfikacji wiadomoÅ›ci</translation>
     </message>
     <message>
         <source>Click "Sign Message" to generate signature</source>
-        <translation>Kliknij "Podpisz Wiadomość" żeby uzyskać podpis</translation>
+        <translation>Kliknij "Podpisz WiadomoÅ›Ä‡" Å¼eby uzyskaÄ‡ podpis</translation>
     </message>
     <message>
         <source>The entered address is invalid.</source>
-        <translation>Podany adres jest nieprawidłowy.</translation>
+        <translation>Podany adres jest nieprawidÅ‚owy.</translation>
     </message>
     <message>
         <source>Please check the address and try again.</source>
-        <translation>Proszę sprawdzić adres i spróbować ponownie.</translation>
+        <translation>ProszÄ™ sprawdziÄ‡ adres i sprÃ³bowaÄ‡ ponownie.</translation>
     </message>
     <message>
         <source>The entered address does not refer to a key.</source>
-        <translation>Wprowadzony adres nie odnosi się do klucza.</translation>
+        <translation>Wprowadzony adres nie odnosi siÄ™ do klucza.</translation>
     </message>
     <message>
         <source>Wallet unlock was cancelled.</source>
-        <translation>Odblokowanie portfela zostało anulowane.</translation>
+        <translation>Odblokowanie portfela zostaÅ‚o anulowane.</translation>
     </message>
     <message>
         <source>Private key for the entered address is not available.</source>
-        <translation>Klucz prywatny dla podanego adresu nie jest dostępny</translation>
+        <translation>Klucz prywatny dla podanego adresu nie jest dostÄ™pny</translation>
     </message>
     <message>
         <source>Message signing failed.</source>
-        <translation>Podpisanie wiadomości nie powiodło się</translation>
+        <translation>Podpisanie wiadomoÅ›ci nie powiodÅ‚o siÄ™</translation>
     </message>
     <message>
         <source>Message signed.</source>
-        <translation>Wiadomość podpisana.</translation>
+        <translation>WiadomoÅ›Ä‡ podpisana.</translation>
     </message>
     <message>
         <source>The signature could not be decoded.</source>
-        <translation>Podpis nie może zostać zdekodowany.</translation>
+        <translation>Podpis nie moÅ¼e zostaÄ‡ zdekodowany.</translation>
     </message>
     <message>
         <source>Please check the signature and try again.</source>
-        <translation>Sprawdź podpis i spróbuj ponownie.</translation>
+        <translation>SprawdÅº podpis i sprÃ³buj ponownie.</translation>
     </message>
     <message>
         <source>The signature did not match the message digest.</source>
-        <translation>Podpis nie odpowiadał streszczeniu wiadomości</translation>
+        <translation>Podpis nie odpowiadaÅ‚ streszczeniu wiadomoÅ›ci</translation>
     </message>
     <message>
         <source>Message verification failed.</source>
-        <translation>Weryfikacja wiadomości nie powiodła się.</translation>
+        <translation>Weryfikacja wiadomoÅ›ci nie powiodÅ‚a siÄ™.</translation>
     </message>
     <message>
         <source>Message verified.</source>
-        <translation>Wiadomość zweryfikowana.</translation>
+        <translation>WiadomoÅ›Ä‡ zweryfikowana.</translation>
     </message>
 </context>
 <context>
@@ -3163,8 +3163,8 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
         <translation>[testnet]</translation>
     </message>
     <message>
-        <source>ImgCash Core</source>
-        <translation>ImgCash Core</translation>
+        <source>ImageCoin Core</source>
+        <translation>ImageCoin Core</translation>
     </message>
     <message>
         <source>Version %1</source>
@@ -3175,8 +3175,8 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
         <translation>Deweloperzy Bitcoin Core</translation>
     </message>
     <message>
-        <source>The ImgCash Core developers</source>
-        <translation>Deweloperzy ImgCash Core</translation>
+        <source>The ImageCoin Core developers</source>
+        <translation>Deweloperzy ImageCoin Core</translation>
     </message>
 </context>
 <context>
@@ -3190,11 +3190,11 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     <name>TransactionDesc</name>
     <message numerus="yes">
         <source>Open for %n more block(s)</source>
-        <translation><numerusform>Otwórz na %n dodatkowy blok</numerusform><numerusform>Otwórz na %n dodatkowe bloki</numerusform><numerusform>Otwórz na %n dodatkowych bloków</numerusform><numerusform>Otwórz na %n dodatkowych bloków</numerusform></translation>
+        <translation><numerusform>OtwÃ³rz na %n dodatkowy blok</numerusform><numerusform>OtwÃ³rz na %n dodatkowe bloki</numerusform><numerusform>OtwÃ³rz na %n dodatkowych blokÃ³w</numerusform><numerusform>OtwÃ³rz na %n dodatkowych blokÃ³w</numerusform></translation>
     </message>
     <message>
         <source>Open until %1</source>
-        <translation>Otwórz do %1</translation>
+        <translation>OtwÃ³rz do %1</translation>
     </message>
     <message>
         <source>conflicted</source>
@@ -3210,11 +3210,11 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>in memory pool</source>
-        <translation>w puli pamięci</translation>
+        <translation>w puli pamiÄ™ci</translation>
     </message>
     <message>
         <source>not in memory pool</source>
-        <translation>brak w puli pamięci</translation>
+        <translation>brak w puli pamiÄ™ci</translation>
     </message>
     <message>
         <source>abandoned</source>
@@ -3226,7 +3226,7 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>%1 confirmations</source>
-        <translation>%1 potwierdzeń</translation>
+        <translation>%1 potwierdzeÅ„</translation>
     </message>
     <message>
         <source>verified via InstantSend</source>
@@ -3246,11 +3246,11 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>, has not been successfully broadcast yet</source>
-        <translation>, nie został jeszcze pomyślnie wyemitowany</translation>
+        <translation>, nie zostaÅ‚ jeszcze pomyÅ›lnie wyemitowany</translation>
     </message>
     <message numerus="yes">
         <source>, broadcast through %n node(s)</source>
-        <translation><numerusform>, rozgłoś poprzez %n węzeł</numerusform><numerusform>, rozgłoś poprzez %n węzły</numerusform><numerusform>, rozgłoś poprzez %n węzłów</numerusform><numerusform>, rozgłoś poprzez %n węzłów</numerusform></translation>
+        <translation><numerusform>, rozgÅ‚oÅ› poprzez %n wÄ™zeÅ‚</numerusform><numerusform>, rozgÅ‚oÅ› poprzez %n wÄ™zÅ‚y</numerusform><numerusform>, rozgÅ‚oÅ› poprzez %n wÄ™zÅ‚Ã³w</numerusform><numerusform>, rozgÅ‚oÅ› poprzez %n wÄ™zÅ‚Ã³w</numerusform></translation>
     </message>
     <message>
         <source>Date</source>
@@ -3258,7 +3258,7 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Source</source>
-        <translation>Źródło</translation>
+        <translation>Å¹rÃ³dÅ‚o</translation>
     </message>
     <message>
         <source>Generated</source>
@@ -3278,11 +3278,11 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>own address</source>
-        <translation>własny adres</translation>
+        <translation>wÅ‚asny adres</translation>
     </message>
     <message>
         <source>watch-only</source>
-        <translation>Tylko do podglądu</translation>
+        <translation>Tylko do podglÄ…du</translation>
     </message>
     <message>
         <source>label</source>
@@ -3294,7 +3294,7 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message numerus="yes">
         <source>matures in %n more block(s)</source>
-        <translation><numerusform>Dojrzewa w ciągu %n bloku</numerusform><numerusform>Dojrzewa w ciągu %n bloków</numerusform><numerusform>Dojrzewa w ciągu %n bloków</numerusform><numerusform>Dojrzewa w ciągu %n bloków</numerusform></translation>
+        <translation><numerusform>Dojrzewa w ciÄ…gu %n bloku</numerusform><numerusform>Dojrzewa w ciÄ…gu %n blokÃ³w</numerusform><numerusform>Dojrzewa w ciÄ…gu %n blokÃ³w</numerusform><numerusform>Dojrzewa w ciÄ…gu %n blokÃ³w</numerusform></translation>
     </message>
     <message>
         <source>not accepted</source>
@@ -3302,15 +3302,15 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Debit</source>
-        <translation>Obciążenie</translation>
+        <translation>ObciÄ…Å¼enie</translation>
     </message>
     <message>
         <source>Total debit</source>
-        <translation>Obciążenia razem</translation>
+        <translation>ObciÄ…Å¼enia razem</translation>
     </message>
     <message>
         <source>Total credit</source>
-        <translation>Wpływy razem</translation>
+        <translation>WpÅ‚ywy razem</translation>
     </message>
     <message>
         <source>Transaction fee</source>
@@ -3322,7 +3322,7 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Message</source>
-        <translation>Wiadomość</translation>
+        <translation>WiadomoÅ›Ä‡</translation>
     </message>
     <message>
         <source>Comment</source>
@@ -3334,7 +3334,7 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Transaction total size</source>
-        <translation>Całkowity rozmiar transakcji</translation>
+        <translation>CaÅ‚kowity rozmiar transakcji</translation>
     </message>
     <message>
         <source>Merchant</source>
@@ -3342,7 +3342,7 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Generated coins must mature %1 blocks before they can be spent. When you generated this block, it was broadcast to the network to be added to the block chain. If it fails to get into the chain, its state will change to "not accepted" and it won't be spendable. This may occasionally happen if another node generates a block within a few seconds of yours.</source>
-        <translation>Wygenerowane monety muszą dojrzeć przez %1 bloków zanim będzie można je wysłać. Gdy wygenerowałeś ten blok, został on ogłoszony w sieci i dodany do łańcucha bloków. Jeżeli nie uda mu się wejść do łańcucha, jego status zostanie zmieniony na "nie zaakceptowano" i nie będzie można go wydać. To czasem zdarza się, gdy inny węzeł wygeneruje blok kilka sekund przed tobą.</translation>
+        <translation>Wygenerowane monety muszÄ… dojrzeÄ‡ przez %1 blokÃ³w zanim bÄ™dzie moÅ¼na je wysÅ‚aÄ‡. Gdy wygenerowaÅ‚eÅ› ten blok, zostaÅ‚ on ogÅ‚oszony w sieci i dodany do Å‚aÅ„cucha blokÃ³w. JeÅ¼eli nie uda mu siÄ™ wejÅ›Ä‡ do Å‚aÅ„cucha, jego status zostanie zmieniony na "nie zaakceptowano" i nie bÄ™dzie moÅ¼na go wydaÄ‡. To czasem zdarza siÄ™, gdy inny wÄ™zeÅ‚ wygeneruje blok kilka sekund przed tobÄ….</translation>
     </message>
     <message>
         <source>Debug information</source>
@@ -3354,7 +3354,7 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Inputs</source>
-        <translation>Wejścia</translation>
+        <translation>WejÅ›cia</translation>
     </message>
     <message>
         <source>Amount</source>
@@ -3366,18 +3366,18 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>false</source>
-        <translation>fałsz</translation>
+        <translation>faÅ‚sz</translation>
     </message>
 </context>
 <context>
     <name>TransactionDescDialog</name>
     <message>
         <source>Transaction details</source>
-        <translation>Szczegóły transakcji</translation>
+        <translation>SzczegÃ³Å‚y transakcji</translation>
     </message>
     <message>
         <source>This pane shows a detailed description of the transaction</source>
-        <translation>Ten panel pokazuje szczegółowy opis transakcji</translation>
+        <translation>Ten panel pokazuje szczegÃ³Å‚owy opis transakcji</translation>
     </message>
 </context>
 <context>
@@ -3396,11 +3396,11 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message numerus="yes">
         <source>Open for %n more block(s)</source>
-        <translation><numerusform>Otwórz na %n dodatkowy blok</numerusform><numerusform>Otwórz na %n dodatkowe bloki</numerusform><numerusform>Otwórz na %n dodatkowych bloków</numerusform><numerusform>Otwórz na %n dodatkowych bloków</numerusform></translation>
+        <translation><numerusform>OtwÃ³rz na %n dodatkowy blok</numerusform><numerusform>OtwÃ³rz na %n dodatkowe bloki</numerusform><numerusform>OtwÃ³rz na %n dodatkowych blokÃ³w</numerusform><numerusform>OtwÃ³rz na %n dodatkowych blokÃ³w</numerusform></translation>
     </message>
     <message>
         <source>Open until %1</source>
-        <translation>Otwórz do %1</translation>
+        <translation>OtwÃ³rz do %1</translation>
     </message>
     <message>
         <source>Offline</source>
@@ -3416,11 +3416,11 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Confirming (%1 of %2 recommended confirmations)</source>
-        <translation>Potwierdzanie (%1 z %2 rekomendowanych potwierdzeń)</translation>
+        <translation>Potwierdzanie (%1 z %2 rekomendowanych potwierdzeÅ„)</translation>
     </message>
     <message>
         <source>Confirmed (%1 confirmations)</source>
-        <translation>Zatwierdzony (%1 potwierdzeń)</translation>
+        <translation>Zatwierdzony (%1 potwierdzeÅ„)</translation>
     </message>
     <message>
         <source>Conflicted</source>
@@ -3428,11 +3428,11 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Immature (%1 confirmations, will be available after %2)</source>
-        <translation>Niedojrzały (%1 potwierdzenia, będzie dostępny po %2)</translation>
+        <translation>NiedojrzaÅ‚y (%1 potwierdzenia, bÄ™dzie dostÄ™pny po %2)</translation>
     </message>
     <message>
         <source>This block was not received by any other nodes and will probably not be accepted!</source>
-        <translation>Ten blok nie został odebrany przez jakikolwiek inny węzeł i prawdopodobnie nie zostanie zaakceptowany!</translation>
+        <translation>Ten blok nie zostaÅ‚ odebrany przez jakikolwiek inny wÄ™zeÅ‚ i prawdopodobnie nie zostanie zaakceptowany!</translation>
     </message>
     <message>
         <source>Generated but not accepted</source>
@@ -3452,11 +3452,11 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Sent to</source>
-        <translation>Wysłano do</translation>
+        <translation>WysÅ‚ano do</translation>
     </message>
     <message>
         <source>Payment to yourself</source>
-        <translation>Płatność do siebie</translation>
+        <translation>PÅ‚atnoÅ›Ä‡ do siebie</translation>
     </message>
     <message>
         <source>Mined</source>
@@ -3468,15 +3468,15 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>PrivateSend Collateral Payment</source>
-        <translation>Płatność zabezpieczająca PrivateSend</translation>
+        <translation>PÅ‚atnoÅ›Ä‡ zabezpieczajÄ…ca PrivateSend</translation>
     </message>
     <message>
         <source>PrivateSend Make Collateral Inputs</source>
-        <translation>PrivateSend Stwórz wejscia transakcji zastawu.</translation>
+        <translation>PrivateSend StwÃ³rz wejscia transakcji zastawu.</translation>
     </message>
     <message>
         <source>PrivateSend Create Denominations</source>
-        <translation>PrivateSend Stwórz Denominacje</translation>
+        <translation>PrivateSend StwÃ³rz Denominacje</translation>
     </message>
     <message>
         <source>PrivateSend</source>
@@ -3484,7 +3484,7 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>watch-only</source>
-        <translation>Tylko do podgądu</translation>
+        <translation>Tylko do podgÄ…du</translation>
     </message>
     <message>
         <source>(n/a)</source>
@@ -3496,7 +3496,7 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Transaction status. Hover over this field to show number of confirmations.</source>
-        <translation>Status transakcji. Najedź na pole, aby zobaczyć liczbę potwierdzeń.</translation>
+        <translation>Status transakcji. NajedÅº na pole, aby zobaczyÄ‡ liczbÄ™ potwierdzeÅ„.</translation>
     </message>
     <message>
         <source>Date and time that the transaction was received.</source>
@@ -3508,15 +3508,15 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Whether or not a watch-only address is involved in this transaction.</source>
-        <translation>Bez względu na to czy adres tylko do odczytu jest zawarty w tej transakcji.</translation>
+        <translation>Bez wzglÄ™du na to czy adres tylko do odczytu jest zawarty w tej transakcji.</translation>
     </message>
     <message>
         <source>User-defined intent/purpose of the transaction.</source>
-        <translation>Określony przez użytkownika cel transakcji.</translation>
+        <translation>OkreÅ›lony przez uÅ¼ytkownika cel transakcji.</translation>
     </message>
     <message>
         <source>Amount removed from or added to balance.</source>
-        <translation>Kwota usunięta z lub dodana do konta.</translation>
+        <translation>Kwota usuniÄ™ta z lub dodana do konta.</translation>
     </message>
 </context>
 <context>
@@ -3535,11 +3535,11 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>This month</source>
-        <translation>W tym miesiącu</translation>
+        <translation>W tym miesiÄ…cu</translation>
     </message>
     <message>
         <source>Last month</source>
-        <translation>W zeszłym miesiącu</translation>
+        <translation>W zeszÅ‚ym miesiÄ…cu</translation>
     </message>
     <message>
         <source>This year</source>
@@ -3559,7 +3559,7 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Sent to</source>
-        <translation>Wysłano do</translation>
+        <translation>WysÅ‚ano do</translation>
     </message>
     <message>
         <source>PrivateSend</source>
@@ -3567,11 +3567,11 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>PrivateSend Make Collateral Inputs</source>
-        <translation>PrivateSend Stwórz wejscia transakcji zastawu.</translation>
+        <translation>PrivateSend StwÃ³rz wejscia transakcji zastawu.</translation>
     </message>
     <message>
         <source>PrivateSend Create Denominations</source>
-        <translation>PrivateSend Stwórz Denominacje</translation>
+        <translation>PrivateSend StwÃ³rz Denominacje</translation>
     </message>
     <message>
         <source>PrivateSend Denominate</source>
@@ -3579,7 +3579,7 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>PrivateSend Collateral Payment</source>
-        <translation>Płatność zabezpieczająca PrivateSend</translation>
+        <translation>PÅ‚atnoÅ›Ä‡ zabezpieczajÄ…ca PrivateSend</translation>
     </message>
     <message>
         <source>To yourself</source>
@@ -3595,7 +3595,7 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Enter address or label to search</source>
-        <translation>Wprowadź adres albo etykietę żeby wyszukać</translation>
+        <translation>WprowadÅº adres albo etykietÄ™ Å¼eby wyszukaÄ‡</translation>
     </message>
     <message>
         <source>Min amount</source>
@@ -3603,7 +3603,7 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Abandon transaction</source>
-        <translation>Porzuć transakcję</translation>
+        <translation>PorzuÄ‡ transakcjÄ™</translation>
     </message>
     <message>
         <source>Copy address</source>
@@ -3611,11 +3611,11 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Copy label</source>
-        <translation>Kopiuj etykietę</translation>
+        <translation>Kopiuj etykietÄ™</translation>
     </message>
     <message>
         <source>Copy amount</source>
-        <translation>Kopiuj kwotę</translation>
+        <translation>Kopiuj kwotÄ™</translation>
     </message>
     <message>
         <source>Copy transaction ID</source>
@@ -3627,15 +3627,15 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Copy full transaction details</source>
-        <translation>Skopiuj wszystkie szczegóły transakcji.</translation>
+        <translation>Skopiuj wszystkie szczegÃ³Å‚y transakcji.</translation>
     </message>
     <message>
         <source>Edit label</source>
-        <translation>Zmień etykietę</translation>
+        <translation>ZmieÅ„ etykietÄ™</translation>
     </message>
     <message>
         <source>Show transaction details</source>
-        <translation>Pokaż szczegóły transakcji</translation>
+        <translation>PokaÅ¼ szczegÃ³Å‚y transakcji</translation>
     </message>
     <message>
         <source>Export Transaction History</source>
@@ -3675,19 +3675,19 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Exporting Failed</source>
-        <translation>Błąd przy próbie eksportu</translation>
+        <translation>BÅ‚Ä…d przy prÃ³bie eksportu</translation>
     </message>
     <message>
         <source>There was an error trying to save the transaction history to %1.</source>
-        <translation>Wystąpił błąd przy próbie zapisu historii transakcji do %1.</translation>
+        <translation>WystÄ…piÅ‚ bÅ‚Ä…d przy prÃ³bie zapisu historii transakcji do %1.</translation>
     </message>
     <message>
         <source>Exporting Successful</source>
-        <translation>Eksport powiódł się</translation>
+        <translation>Eksport powiÃ³dÅ‚ siÄ™</translation>
     </message>
     <message>
         <source>The transaction history was successfully saved to %1.</source>
-        <translation>Historia transakcji została zapisana do %1.</translation>
+        <translation>Historia transakcji zostaÅ‚a zapisana do %1.</translation>
     </message>
     <message>
         <source>Range:</source>
@@ -3702,29 +3702,29 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     <name>UnitDisplayStatusBarControl</name>
     <message>
         <source>Unit to show amounts in. Click to select another unit.</source>
-        <translation>Jednostki w których wyrażane są kwoty. Kliknij aby wybrać inną jednostkę. </translation>
+        <translation>Jednostki w ktÃ³rych wyraÅ¼ane sÄ… kwoty. Kliknij aby wybraÄ‡ innÄ… jednostkÄ™. </translation>
     </message>
 </context>
 <context>
     <name>WalletFrame</name>
     <message>
         <source>No wallet has been loaded.</source>
-        <translation>Nie załadowano żadnego portfela.</translation>
+        <translation>Nie zaÅ‚adowano Å¼adnego portfela.</translation>
     </message>
 </context>
 <context>
     <name>WalletModel</name>
     <message>
         <source>Send Coins</source>
-        <translation>Wyślij płatność</translation>
+        <translation>WyÅ›lij pÅ‚atnoÅ›Ä‡</translation>
     </message>
     <message>
-        <source>InstantSend doesn't support sending values that high yet. Transactions are currently limited to %1 ImgCash.</source>
-        <translation>InstantSend nie obsługuje jeszcze tak wielkich kwot. Transakcje są obecnie ograniczone do %1 ImgCash</translation>
+        <source>InstantSend doesn't support sending values that high yet. Transactions are currently limited to %1 ImageCoin.</source>
+        <translation>InstantSend nie obsÅ‚uguje jeszcze tak wielkich kwot. Transakcje sÄ… obecnie ograniczone do %1 ImageCoin</translation>
     </message>
     <message>
         <source>Used way too many inputs (&gt;%1) for this InstantSend transaction, fees could be huge.</source>
-        <translation>Dla tej transakcji InstantSend użyto zbyt wielu wejść (&gt;%1). Opłata może być bardzo wysoka.</translation>
+        <translation>Dla tej transakcji InstantSend uÅ¼yto zbyt wielu wejÅ›Ä‡ (&gt;%1). OpÅ‚ata moÅ¼e byÄ‡ bardzo wysoka.</translation>
     </message>
 </context>
 <context>
@@ -3739,7 +3739,7 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Selected amount:</source>
-        <translation>Zaznaczona ilość:</translation>
+        <translation>Zaznaczona iloÅ›Ä‡:</translation>
     </message>
     <message>
         <source>Backup Wallet</source>
@@ -3751,74 +3751,74 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Backup Failed</source>
-        <translation>Nie udało się wykonać kopii zapasowej</translation>
+        <translation>Nie udaÅ‚o siÄ™ wykonaÄ‡ kopii zapasowej</translation>
     </message>
     <message>
         <source>There was an error trying to save the wallet data to %1.</source>
-        <translation>Wystąpił błąd przy próbie zapisu pliku portfela do %1.</translation>
+        <translation>WystÄ…piÅ‚ bÅ‚Ä…d przy prÃ³bie zapisu pliku portfela do %1.</translation>
     </message>
     <message>
         <source>Backup Successful</source>
-        <translation>Wykonano Kopię Zapasową</translation>
+        <translation>Wykonano KopiÄ™ ZapasowÄ…</translation>
     </message>
     <message>
         <source>The wallet data was successfully saved to %1.</source>
-        <translation>Plik portfela został zapisany do %1.</translation>
+        <translation>Plik portfela zostaÅ‚ zapisany do %1.</translation>
     </message>
 </context>
 <context>
-    <name>ImgCash-core</name>
+    <name>ImageCoin-core</name>
     <message>
         <source>Bind to given address and always listen on it. Use [host]:port notation for IPv6</source>
-        <translation>Związany z danym adresem oraz zawsze prowadzący na nim nasłuch.  Użyj [host]:oznaczenie dla IPv6</translation>
+        <translation>ZwiÄ…zany z danym adresem oraz zawsze prowadzÄ…cy na nim nasÅ‚uch.  UÅ¼yj [host]:oznaczenie dla IPv6</translation>
     </message>
     <message>
-        <source>Cannot obtain a lock on data directory %s. ImgCash Core is probably already running.</source>
-        <translation>Nie można zablokować katalogu danych %s. Prawdopodobnie ImgCash jest już uruchomiony. </translation>
+        <source>Cannot obtain a lock on data directory %s. ImageCoin Core is probably already running.</source>
+        <translation>Nie moÅ¼na zablokowaÄ‡ katalogu danych %s. Prawdopodobnie ImageCoin jest juÅ¼ uruchomiony. </translation>
     </message>
     <message>
         <source>Error: Listening for incoming connections failed (listen returned error %s)</source>
-        <translation>Błąd: Nie powiodło się nasłuchiwanie połączeń przychodzących (nasłuch zwrócił błąd %s)</translation>
+        <translation>BÅ‚Ä…d: Nie powiodÅ‚o siÄ™ nasÅ‚uchiwanie poÅ‚Ä…czeÅ„ przychodzÄ…cych (nasÅ‚uch zwrÃ³ciÅ‚ bÅ‚Ä…d %s)</translation>
     </message>
     <message>
         <source>Execute command when a relevant alert is received or we see a really long fork (%s in cmd is replaced by message)</source>
-        <translation>Wykonaj komendę po otrzymaniu odpowiedniego zawiadomienia lub po obserwacji bardzo długiego rozszczepienia (%s w konsoli jest zastąpiony przez wiadomość)</translation>
+        <translation>Wykonaj komendÄ™ po otrzymaniu odpowiedniego zawiadomienia lub po obserwacji bardzo dÅ‚ugiego rozszczepienia (%s w konsoli jest zastÄ…piony przez wiadomoÅ›Ä‡)</translation>
     </message>
     <message>
         <source>Execute command when a wallet transaction changes (%s in cmd is replaced by TxID)</source>
-        <translation>Wykonaj komendę kiedy zmienia się transakcja portfela (%s w konsoli jest zastąpione przez TxID)</translation>
+        <translation>Wykonaj komendÄ™ kiedy zmienia siÄ™ transakcja portfela (%s w konsoli jest zastÄ…pione przez TxID)</translation>
     </message>
     <message>
         <source>Execute command when the best block changes (%s in cmd is replaced by block hash)</source>
-        <translation>Wykonaj komendę przy zmianie najlepszego bloku (%s w konsoli jest zastąpione przez hasz bloku)</translation>
+        <translation>Wykonaj komendÄ™ przy zmianie najlepszego bloku (%s w konsoli jest zastÄ…pione przez hasz bloku)</translation>
     </message>
     <message>
         <source>Name to construct url for KeePass entry that stores the wallet passphrase</source>
-        <translation>Nazwa służąca do stworzenia linka do KeePass w którym trzymane jest hasło portfela</translation>
+        <translation>Nazwa sÅ‚uÅ¼Ä…ca do stworzenia linka do KeePass w ktÃ³rym trzymane jest hasÅ‚o portfela</translation>
     </message>
     <message>
         <source>Query for peer addresses via DNS lookup, if low on addresses (default: 1 unless -connect)</source>
-        <translation>Jeśli pula adresów jest niska, pytaj o adresy peer przez podgląd DNS (domyślnie: 1 chyba że -connect)</translation>
+        <translation>JeÅ›li pula adresÃ³w jest niska, pytaj o adresy peer przez podglÄ…d DNS (domyÅ›lnie: 1 chyba Å¼e -connect)</translation>
     </message>
     <message>
         <source>Set maximum size of high-priority/low-fee transactions in bytes (default: %d)</source>
-        <translation>Ustaw maksymalny rozmiar transakcji o wysokim/niskim priorytecie w bajtach (domyślny: %d)</translation>
+        <translation>Ustaw maksymalny rozmiar transakcji o wysokim/niskim priorytecie w bajtach (domyÅ›lny: %d)</translation>
     </message>
     <message>
         <source>Set the number of script verification threads (%u to %d, 0 = auto, &lt;0 = leave that many cores free, default: %d)</source>
-        <translation>Ustaw liczbę wątków weryfikacji skryptu (%u do %d, 0 = auto, &lt;0 = zostaw tyle rdzeni wolnych, domyślnie: %d)</translation>
+        <translation>Ustaw liczbÄ™ wÄ…tkÃ³w weryfikacji skryptu (%u do %d, 0 = auto, &lt;0 = zostaw tyle rdzeni wolnych, domyÅ›lnie: %d)</translation>
     </message>
     <message>
         <source>This is a pre-release test build - use at your own risk - do not use for mining or merchant applications</source>
-        <translation>Ta wersja nie jest jeszcze gotowa na oficjalne wydanie - używaj jej na własne ryzyko - nie używaj tej wersji do kopania monet lub do świadczenia usług komercyjnych.</translation>
+        <translation>Ta wersja nie jest jeszcze gotowa na oficjalne wydanie - uÅ¼ywaj jej na wÅ‚asne ryzyko - nie uÅ¼ywaj tej wersji do kopania monet lub do Å›wiadczenia usÅ‚ug komercyjnych.</translation>
     </message>
     <message>
-        <source>Unable to bind to %s on this computer. ImgCash Core is probably already running.</source>
-        <translation>Niezdolny do związania z %s na tym komputerze. Prawdopodobnie ImgCash jest już uruchomiony. </translation>
+        <source>Unable to bind to %s on this computer. ImageCoin Core is probably already running.</source>
+        <translation>Niezdolny do zwiÄ…zania z %s na tym komputerze. Prawdopodobnie ImageCoin jest juÅ¼ uruchomiony. </translation>
     </message>
     <message>
         <source>Warning: The network does not appear to fully agree! Some miners appear to be experiencing issues.</source>
-        <translation>Uwaga: Wygląda na to, że istnieją pewne rozbieżności w sieci! Możliwe, że niektórzy kopacze doświadczają problemów technicznych. </translation>
+        <translation>Uwaga: WyglÄ…da na to, Å¼e istniejÄ… pewne rozbieÅ¼noÅ›ci w sieci! MoÅ¼liwe, Å¼e niektÃ³rzy kopacze doÅ›wiadczajÄ… problemÃ³w technicznych. </translation>
     </message>
     <message>
         <source>Warning: We do not appear to fully agree with our peers! You may need to upgrade, or other nodes may need to upgrade.</source>
@@ -3826,31 +3826,31 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Warning: wallet.dat corrupt, data salvaged! Original wallet.dat saved as wallet.{timestamp}.bak in %s; if your balance or transactions are incorrect you should restore from a backup.</source>
-        <translation>Uwaga: plik wallet.dat jest uszkodzony, ale dane zostały odzyskane! Oryginalny plik wallet.dat został zapisany jako wallet.{timestamp}.bak w %s; jeżeli twoje saldo lub transakcje są nieprawidłowe powinieneś przwyrócić ten plik z kopi zapasowej.</translation>
+        <translation>Uwaga: plik wallet.dat jest uszkodzony, ale dane zostaÅ‚y odzyskane! Oryginalny plik wallet.dat zostaÅ‚ zapisany jako wallet.{timestamp}.bak w %s; jeÅ¼eli twoje saldo lub transakcje sÄ… nieprawidÅ‚owe powinieneÅ› przwyrÃ³ciÄ‡ ten plik z kopi zapasowej.</translation>
     </message>
     <message>
         <source>You must specify a masternodeprivkey in the configuration. Please see documentation for help.</source>
-        <translation>Musisz sprecyzować masternodeprivkey w konfiguracji. Proszę przeglądnij dokumentacje w celu pomocy.</translation>
+        <translation>Musisz sprecyzowaÄ‡ masternodeprivkey w konfiguracji. ProszÄ™ przeglÄ…dnij dokumentacje w celu pomocy.</translation>
     </message>
     <message>
         <source>Accept command line and JSON-RPC commands</source>
-        <translation>Zaakceptuj linie poleceń oraz polecenia JSON-RPC </translation>
+        <translation>Zaakceptuj linie poleceÅ„ oraz polecenia JSON-RPC </translation>
     </message>
     <message>
         <source>Accept connections from outside (default: 1 if no -proxy or -connect)</source>
-        <translation>Pozwól na połączenia z zewnątrz (domyślnie: 1 jeśli nie -proxy lub -connect)</translation>
+        <translation>PozwÃ³l na poÅ‚Ä…czenia z zewnÄ…trz (domyÅ›lnie: 1 jeÅ›li nie -proxy lub -connect)</translation>
     </message>
     <message>
         <source>Add a node to connect to and attempt to keep the connection open</source>
-        <translation>Dodaj węzeł do połączenia się oraz spróbuj utrzymać połączenie otwarte</translation>
+        <translation>Dodaj wÄ™zeÅ‚ do poÅ‚Ä…czenia siÄ™ oraz sprÃ³buj utrzymaÄ‡ poÅ‚Ä…czenie otwarte</translation>
     </message>
     <message>
         <source>Allow DNS lookups for -addnode, -seednode and -connect</source>
-        <translation>Pozwól na wyszukiwanie DNS dla -addnode, -seednode oraz -connect</translation>
+        <translation>PozwÃ³l na wyszukiwanie DNS dla -addnode, -seednode oraz -connect</translation>
     </message>
     <message>
         <source>Already have that input.</source>
-        <translation>Ta wartość wejściowa już istnieje</translation>
+        <translation>Ta wartoÅ›Ä‡ wejÅ›ciowa juÅ¼ istnieje</translation>
     </message>
     <message>
         <source>Block creation options:</source>
@@ -3858,39 +3858,39 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Cannot downgrade wallet</source>
-        <translation>Nie można obniżyć wersji portfela</translation>
+        <translation>Nie moÅ¼na obniÅ¼yÄ‡ wersji portfela</translation>
     </message>
     <message>
         <source>Cannot resolve -bind address: '%s'</source>
-        <translation>Nie można rozwiązać -bind dla adresu adresu: '%s'</translation>
+        <translation>Nie moÅ¼na rozwiÄ…zaÄ‡ -bind dla adresu adresu: '%s'</translation>
     </message>
     <message>
         <source>Cannot resolve -externalip address: '%s'</source>
-        <translation>Nie można rozwiązać -externalip dla adresu: '%s'</translation>
+        <translation>Nie moÅ¼na rozwiÄ…zaÄ‡ -externalip dla adresu: '%s'</translation>
     </message>
     <message>
         <source>Cannot write default address</source>
-        <translation>Nie można zapisać domyślnych adresów</translation>
+        <translation>Nie moÅ¼na zapisaÄ‡ domyÅ›lnych adresÃ³w</translation>
     </message>
     <message>
         <source>Collateral not valid.</source>
-        <translation>Transakcja pod zastaw jest nie niewłaściwa.</translation>
+        <translation>Transakcja pod zastaw jest nie niewÅ‚aÅ›ciwa.</translation>
     </message>
     <message>
         <source>Connect only to the specified node(s)</source>
-        <translation>Podłącz tylko do wyszczególnionych węzła(ów)</translation>
+        <translation>PodÅ‚Ä…cz tylko do wyszczegÃ³lnionych wÄ™zÅ‚a(Ã³w)</translation>
     </message>
     <message>
         <source>Connect to a node to retrieve peer addresses, and disconnect</source>
-        <translation>Podłącz do węzła aby odzyskać adresy peerów, a potem odłącz</translation>
+        <translation>PodÅ‚Ä…cz do wÄ™zÅ‚a aby odzyskaÄ‡ adresy peerÃ³w, a potem odÅ‚Ä…cz</translation>
     </message>
     <message>
         <source>Connection options:</source>
-        <translation>Opcje połączenia:</translation>
+        <translation>Opcje poÅ‚Ä…czenia:</translation>
     </message>
     <message>
         <source>Corrupted block database detected</source>
-        <translation>Wykryto uszkodzoną bazę danych bloków</translation>
+        <translation>Wykryto uszkodzonÄ… bazÄ™ danych blokÃ³w</translation>
     </message>
     <message>
         <source>Debugging/Testing options:</source>
@@ -3898,243 +3898,243 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Do not load the wallet and disable wallet RPC calls</source>
-        <translation>Nie wczytuj portfela oraz wyłącz połączenia RPC</translation>
+        <translation>Nie wczytuj portfela oraz wyÅ‚Ä…cz poÅ‚Ä…czenia RPC</translation>
     </message>
     <message>
         <source>Do you want to rebuild the block database now?</source>
-        <translation>Czy chcesz teraz przebudować bazę danych bloków?</translation>
+        <translation>Czy chcesz teraz przebudowaÄ‡ bazÄ™ danych blokÃ³w?</translation>
     </message>
     <message>
         <source>Done loading</source>
-        <translation>Wczytywanie zakończone</translation>
+        <translation>Wczytywanie zakoÅ„czone</translation>
     </message>
     <message>
         <source>Entries are full.</source>
-        <translation>Wpisy są pełne.</translation>
+        <translation>Wpisy sÄ… peÅ‚ne.</translation>
     </message>
     <message>
         <source>Error initializing block database</source>
-        <translation>Błąd podczas inicjowania bazy dancyh bloku</translation>
+        <translation>BÅ‚Ä…d podczas inicjowania bazy dancyh bloku</translation>
     </message>
     <message>
         <source>Error initializing wallet database environment %s!</source>
-        <translation>Błąd podczas inicjowania środowiska bazy danych portfela %s!</translation>
+        <translation>BÅ‚Ä…d podczas inicjowania Å›rodowiska bazy danych portfela %s!</translation>
     </message>
     <message>
         <source>Error loading block database</source>
-        <translation>Błąd wczytywania bloku bazy danych</translation>
+        <translation>BÅ‚Ä…d wczytywania bloku bazy danych</translation>
     </message>
     <message>
         <source>Error loading wallet.dat</source>
-        <translation>Błąd wczytywania wallet.dat</translation>
+        <translation>BÅ‚Ä…d wczytywania wallet.dat</translation>
     </message>
     <message>
         <source>Error loading wallet.dat: Wallet corrupted</source>
-        <translation>Błąd wczytywania wallet.dat: Portfel uszkodzony</translation>
+        <translation>BÅ‚Ä…d wczytywania wallet.dat: Portfel uszkodzony</translation>
     </message>
     <message>
         <source>Error opening block database</source>
-        <translation>Błąd otwarcia bloku bazy danych</translation>
+        <translation>BÅ‚Ä…d otwarcia bloku bazy danych</translation>
     </message>
     <message>
         <source>Error reading from database, shutting down.</source>
-        <translation>Błąd odczytu bazy danych, następuje zamknięcie.</translation>
+        <translation>BÅ‚Ä…d odczytu bazy danych, nastÄ™puje zamkniÄ™cie.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Błąd</translation>
+        <translation>BÅ‚Ä…d</translation>
     </message>
     <message>
         <source>Error: Disk space is low!</source>
-        <translation>Błąd: Przestrzeń dyskowa jest niska!</translation>
+        <translation>BÅ‚Ä…d: PrzestrzeÅ„ dyskowa jest niska!</translation>
     </message>
     <message>
         <source>Failed to listen on any port. Use -listen=0 if you want this.</source>
-        <translation>Nie powiódł się nasłuch żadnego z portów. Użyj -listen=0 jeśli chcesz.</translation>
+        <translation>Nie powiÃ³dÅ‚ siÄ™ nasÅ‚uch Å¼adnego z portÃ³w. UÅ¼yj -listen=0 jeÅ›li chcesz.</translation>
     </message>
     <message>
         <source>(1 = keep tx meta data e.g. account owner and payment request information, 2 = drop tx meta data)</source>
-        <translation>(1 = zaochwaj metadane np. informacje właściciela konta oraz żądania zapłat, 2 = pozbądź się matadanych tx)</translation>
+        <translation>(1 = zaochwaj metadane np. informacje wÅ‚aÅ›ciciela konta oraz Å¼Ä…dania zapÅ‚at, 2 = pozbÄ…dÅº siÄ™ matadanych tx)</translation>
     </message>
     <message>
         <source>-fallbackfee is set very high! This is the transaction fee you may pay when fee estimates are not available.</source>
-        <translation>-fallbackfee jest bardzo wysoka! Ta opłata może być uiszczona jeśli nie ma innych szacunków wysokości opłaty.</translation>
+        <translation>-fallbackfee jest bardzo wysoka! Ta opÅ‚ata moÅ¼e byÄ‡ uiszczona jeÅ›li nie ma innych szacunkÃ³w wysokoÅ›ci opÅ‚aty.</translation>
     </message>
     <message>
         <source>-maxtxfee is set very high! Fees this large could be paid on a single transaction.</source>
-        <translation>-maxtxfee jest bardzo wysoka! Tak duże opłaty mogą być uiszczone przy wysłaniu jednej transakcji.</translation>
+        <translation>-maxtxfee jest bardzo wysoka! Tak duÅ¼e opÅ‚aty mogÄ… byÄ‡ uiszczone przy wysÅ‚aniu jednej transakcji.</translation>
     </message>
     <message>
         <source>-paytxfee is set very high! This is the transaction fee you will pay if you send a transaction.</source>
-        <translation>-paytxfee jest bardzo wysoka! To jest opłata którą będziesz musiał uiścić jeśli dokonasz transakcji.</translation>
+        <translation>-paytxfee jest bardzo wysoka! To jest opÅ‚ata ktÃ³rÄ… bÄ™dziesz musiaÅ‚ uiÅ›ciÄ‡ jeÅ›li dokonasz transakcji.</translation>
     </message>
     <message>
         <source>A fee rate (in %s/kB) that will be used when fee estimation has insufficient data (default: %s)</source>
-        <translation>Opłata (w %s/kB) jaka zostanie użyta jeśli oszacowanie wysokości opłaty jest niemożliwe (domyślnie %s)</translation>
+        <translation>OpÅ‚ata (w %s/kB) jaka zostanie uÅ¼yta jeÅ›li oszacowanie wysokoÅ›ci opÅ‚aty jest niemoÅ¼liwe (domyÅ›lnie %s)</translation>
     </message>
     <message>
         <source>Accept relayed transactions received from whitelisted peers even when not relaying transactions (default: %d)</source>
-        <translation>Akceptuj retransmitowaną tranasakcje od peerów z białej listy, nwet jeśli nie retransmitujesz transakcji. (domyślnie: %d)</translation>
+        <translation>Akceptuj retransmitowanÄ… tranasakcje od peerÃ³w z biaÅ‚ej listy, nwet jeÅ›li nie retransmitujesz transakcji. (domyÅ›lnie: %d)</translation>
     </message>
     <message>
         <source>Allow JSON-RPC connections from specified source. Valid for &lt;ip&gt; are a single IP (e.g. 1.2.3.4), a network/netmask (e.g. 1.2.3.4/255.255.255.0) or a network/CIDR (e.g. 1.2.3.4/24). This option can be specified multiple times</source>
-        <translation>Pozwól na połączenia JSON-RPC z konkretnego źródła. Ważne dla &lt;ip&gt; pojedyńczego IP (np. 1.2.3.4), sieci/maski sieci (np. 1.2.3.4/255.255.255.0) lub  sieci/CIDR (np. 1.2.3.4/24). Opcja to może być ustawiana wielokrotnie</translation>
+        <translation>PozwÃ³l na poÅ‚Ä…czenia JSON-RPC z konkretnego ÅºrÃ³dÅ‚a. WaÅ¼ne dla &lt;ip&gt; pojedyÅ„czego IP (np. 1.2.3.4), sieci/maski sieci (np. 1.2.3.4/255.255.255.0) lub  sieci/CIDR (np. 1.2.3.4/24). Opcja to moÅ¼e byÄ‡ ustawiana wielokrotnie</translation>
     </message>
     <message>
         <source>Bind to given address and whitelist peers connecting to it. Use [host]:port notation for IPv6</source>
-        <translation>Zwiąż z danym adresem oraz wpisz łączących się peerów na białą liste. Użyj notacji [host]:port dla IPv6</translation>
+        <translation>ZwiÄ…Å¼ z danym adresem oraz wpisz Å‚Ä…czÄ…cych siÄ™ peerÃ³w na biaÅ‚Ä… liste. UÅ¼yj notacji [host]:port dla IPv6</translation>
     </message>
     <message>
         <source>Bind to given address to listen for JSON-RPC connections. Use [host]:port notation for IPv6. This option can be specified multiple times (default: bind to all interfaces)</source>
-        <translation>Zwiąż z danym adresem oraz wpisz łączących się peerów na białą liste. Użyj notacji [host]:port dla IPv6. Opcja ta może być ustawiana wielokrotnie (domyślnie: połącz z wszystkimi interfejsami)</translation>
+        <translation>ZwiÄ…Å¼ z danym adresem oraz wpisz Å‚Ä…czÄ…cych siÄ™ peerÃ³w na biaÅ‚Ä… liste. UÅ¼yj notacji [host]:port dla IPv6. Opcja ta moÅ¼e byÄ‡ ustawiana wielokrotnie (domyÅ›lnie: poÅ‚Ä…cz z wszystkimi interfejsami)</translation>
     </message>
     <message>
         <source>Create new files with system default permissions, instead of umask 077 (only effective with disabled wallet functionality)</source>
-        <translation>Zamiast demaskowania 077, stwórz nowe pliki z domyślnymi pozwoleniami systemu (możliwe tylko z wyłączoną funkcją porfela)</translation>
+        <translation>Zamiast demaskowania 077, stwÃ³rz nowe pliki z domyÅ›lnymi pozwoleniami systemu (moÅ¼liwe tylko z wyÅ‚Ä…czonÄ… funkcjÄ… porfela)</translation>
     </message>
     <message>
         <source>Delete all wallet transactions and only recover those parts of the blockchain through -rescan on startup</source>
-        <translation>Usuń wszystkie transakcje portfela i odzyskaj tylko te części blockchainu - zeskanuj powonie na starcie.</translation>
+        <translation>UsuÅ„ wszystkie transakcje portfela i odzyskaj tylko te czÄ™Å›ci blockchainu - zeskanuj powonie na starcie.</translation>
     </message>
     <message>
         <source>Distributed under the MIT software license, see the accompanying file COPYING or &lt;http://www.opensource.org/licenses/mit-license.php&gt;.</source>
-        <translation>Rozpowszechniane na licencji MIT. Jeśli chcesz się dowiedzieć więcej otwórz towarzyszący plik o nzwie COPYING lub odwiedź &lt;http://www.opensource.org/licenses/mit-license.php&gt;.</translation>
+        <translation>Rozpowszechniane na licencji MIT. JeÅ›li chcesz siÄ™ dowiedzieÄ‡ wiÄ™cej otwÃ³rz towarzyszÄ…cy plik o nzwie COPYING lub odwiedÅº &lt;http://www.opensource.org/licenses/mit-license.php&gt;.</translation>
     </message>
     <message>
         <source>Error loading %s: You can't enable HD on a already existing non-HD wallet</source>
-        <translation>Błąd podczas wczytywania %s: Niemożliwe jest zmienienie zwykłego porfela w porfel HD</translation>
+        <translation>BÅ‚Ä…d podczas wczytywania %s: NiemoÅ¼liwe jest zmienienie zwykÅ‚ego porfela w porfel HD</translation>
     </message>
     <message>
         <source>Found unconfirmed denominated outputs, will wait till they confirm to continue.</source>
-        <translation>Znaleziono niepotwierdzone denominowane transakcje wyjściowe, poczekam aż zostaną one potwierdzone aby móc kontynuować dalej.</translation>
+        <translation>Znaleziono niepotwierdzone denominowane transakcje wyjÅ›ciowe, poczekam aÅ¼ zostanÄ… one potwierdzone aby mÃ³c kontynuowaÄ‡ dalej.</translation>
     </message>
     <message>
         <source>How thorough the block verification of -checkblocks is (0-4, default: %u)</source>
-        <translation>Jak dokładna ma być weryfikacja bloku -chceckblocks (0-4, domyślnie: %u)</translation>
+        <translation>Jak dokÅ‚adna ma byÄ‡ weryfikacja bloku -chceckblocks (0-4, domyÅ›lnie: %u)</translation>
     </message>
     <message>
         <source>If paytxfee is not set, include enough fee so transactions begin confirmation on average within n blocks (default: %u)</source>
-        <translation>Jeśli opłata za transakcję (paytxfee) nie jest ustawiona, dodaj wystarczającą opłatę aby proces potwierdzenia rozpoczął się średnio w przeciągu n bloków (domyślnie: %u)</translation>
+        <translation>JeÅ›li opÅ‚ata za transakcjÄ™ (paytxfee) nie jest ustawiona, dodaj wystarczajÄ…cÄ… opÅ‚atÄ™ aby proces potwierdzenia rozpoczÄ…Å‚ siÄ™ Å›rednio w przeciÄ…gu n blokÃ³w (domyÅ›lnie: %u)</translation>
     </message>
     <message>
         <source>If this block is in the chain assume that it and its ancestors are valid and potentially skip their script verification (0 to verify all, default: %s, testnet: %s)</source>
-        <translation>Jeśli ten blok jest w łańcuchu załóż, że on i poprzednie bloki są prawidłowe i potencjalnie pomiń weryfikację skryptu (0 aby weryfikować wszystkie, domyślnie: %s, testnet: %s)</translation>
+        <translation>JeÅ›li ten blok jest w Å‚aÅ„cuchu zaÅ‚Ã³Å¼, Å¼e on i poprzednie bloki sÄ… prawidÅ‚owe i potencjalnie pomiÅ„ weryfikacjÄ™ skryptu (0 aby weryfikowaÄ‡ wszystkie, domyÅ›lnie: %s, testnet: %s)</translation>
     </message>
     <message>
         <source>Invalid amount for -maxtxfee=&lt;amount&gt;: '%s' (must be at least the minrelay fee of %s to prevent stuck transactions)</source>
-        <translation>Nieprawidłowa kwota za -maxtxfee=&lt;amount&gt;: '%s' (musi ona wynosić co najmniej tyle co minimalna opłata za retransmisje %s aby zapobiec utknięciu transakcji)</translation>
+        <translation>NieprawidÅ‚owa kwota za -maxtxfee=&lt;amount&gt;: '%s' (musi ona wynosiÄ‡ co najmniej tyle co minimalna opÅ‚ata za retransmisje %s aby zapobiec utkniÄ™ciu transakcji)</translation>
     </message>
     <message>
         <source>Maintain a full transaction index, used by the getrawtransaction rpc call (default: %u)</source>
-        <translation>Utrzymuj pełny index transakcji używany przez getrawtransaction rpc call (domyślnie: %u)</translation>
+        <translation>Utrzymuj peÅ‚ny index transakcji uÅ¼ywany przez getrawtransaction rpc call (domyÅ›lnie: %u)</translation>
     </message>
     <message>
         <source>Make sure to encrypt your wallet and delete all non-encrypted backups after you verified that wallet works!</source>
-        <translation>Jeśli już zweryfikowałeś że porfel działa jak należy, to nie zapomnij zaszyfrować porfel oraz usunąć wszystkie niezaszyfrowane kopie zapasowe.</translation>
+        <translation>JeÅ›li juÅ¼ zweryfikowaÅ‚eÅ› Å¼e porfel dziaÅ‚a jak naleÅ¼y, to nie zapomnij zaszyfrowaÄ‡ porfel oraz usunÄ…Ä‡ wszystkie niezaszyfrowane kopie zapasowe.</translation>
     </message>
     <message>
         <source>Maximum size of data in data carrier transactions we relay and mine (default: %u)</source>
-        <translation>Maksymalny rozmiar danych w wykopanych i retransmitowanych transakcjach przesyłanych przez operatora (domyślnie: %u)</translation>
+        <translation>Maksymalny rozmiar danych w wykopanych i retransmitowanych transakcjach przesyÅ‚anych przez operatora (domyÅ›lnie: %u)</translation>
     </message>
     <message>
         <source>Number of seconds to keep misbehaving peers from reconnecting (default: %u)</source>
-        <translation>Ilość czasu liczonego w sekundach jaki musi upłynąć zanim wadliwy peer znowu może spróbować nawiązać połączenie (domyślnie: %u)</translation>
+        <translation>IloÅ›Ä‡ czasu liczonego w sekundach jaki musi upÅ‚ynÄ…Ä‡ zanim wadliwy peer znowu moÅ¼e sprÃ³bowaÄ‡ nawiÄ…zaÄ‡ poÅ‚Ä…czenie (domyÅ›lnie: %u)</translation>
     </message>
     <message>
         <source>Output debugging information (default: %u, supplying &lt;category&gt; is optional)</source>
-        <translation>Informacje na temat debugowania danych wyjściowych (domyślnie: %u, podanie &lt;category&gt; jest opcjonalne)</translation>
+        <translation>Informacje na temat debugowania danych wyjÅ›ciowych (domyÅ›lnie: %u, podanie &lt;category&gt; jest opcjonalne)</translation>
     </message>
     <message>
         <source>Set the number of threads for coin generation if enabled (-1 = all cores, default: %d)</source>
-        <translation>Ustaw liczbę wątków do generowania monet, jeśli jest ono włączone (-1 = wszystkie rdzenie. domyślnie: %d)</translation>
+        <translation>Ustaw liczbÄ™ wÄ…tkÃ³w do generowania monet, jeÅ›li jest ono wÅ‚Ä…czone (-1 = wszystkie rdzenie. domyÅ›lnie: %d)</translation>
     </message>
     <message>
         <source>Show N confirmations for a successfully locked transaction (0-9999, default: %u)</source>
-        <translation>Pokaż N potwierdzeń dla skutecznie zamkniętej transakcji (0-9999, domyślnie: %u)</translation>
+        <translation>PokaÅ¼ N potwierdzeÅ„ dla skutecznie zamkniÄ™tej transakcji (0-9999, domyÅ›lnie: %u)</translation>
     </message>
     <message>
         <source>This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit &lt;https://www.openssl.org/&gt; and cryptographic software written by Eric Young and UPnP software written by Thomas Bernard.</source>
-        <translation>Produkt ten zawiera oprogramowanie stworzone przez OpenSSL Project do użytku w OpenSSL Toolkit &lt;https://www.openssl.org/&gt;, oprogramowanie krptograficzne napisane przez Eric Young oraz oprogramowanie UPnP napisane przez Thomas Bernard.</translation>
+        <translation>Produkt ten zawiera oprogramowanie stworzone przez OpenSSL Project do uÅ¼ytku w OpenSSL Toolkit &lt;https://www.openssl.org/&gt;, oprogramowanie krptograficzne napisane przez Eric Young oraz oprogramowanie UPnP napisane przez Thomas Bernard.</translation>
     </message>
     <message>
-        <source>Unable to locate enough funds for this transaction that are not equal 1000 ImgCash.</source>
-        <translation>Niemożliwe jest zlokalizowanie wystarczającej ilości środków dla tej transakcji, które nie są równe 1000 ImgCash.</translation>
+        <source>Unable to locate enough funds for this transaction that are not equal 1000 ImageCoin.</source>
+        <translation>NiemoÅ¼liwe jest zlokalizowanie wystarczajÄ…cej iloÅ›ci Å›rodkÃ³w dla tej transakcji, ktÃ³re nie sÄ… rÃ³wne 1000 ImageCoin.</translation>
     </message>
     <message>
         <source>Use hierarchical deterministic key generation (HD) after bip39/bip44. Only has effect during wallet creation/first start</source>
-        <translation>Użyj hierarchinie deterministyczny proces generacji kluczy (HD) po bip39/44 Tyczy się jedynie kiedy towrzysz nowy portfel.</translation>
+        <translation>UÅ¼yj hierarchinie deterministyczny proces generacji kluczy (HD) po bip39/44 Tyczy siÄ™ jedynie kiedy towrzysz nowy portfel.</translation>
     </message>
     <message>
         <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services (default: %s)</source>
-        <translation>Użyj osobnego proxy SOCK5 aby połączyć się z peerami przez sieć Tor (domyślnie: %s)</translation>
+        <translation>UÅ¼yj osobnego proxy SOCK5 aby poÅ‚Ä…czyÄ‡ siÄ™ z peerami przez sieÄ‡ Tor (domyÅ›lnie: %s)</translation>
     </message>
     <message>
         <source>User defined mnemonic for HD wallet (bip39). Only has effect during wallet creation/first start (default: randomly generated)</source>
-        <translation>Lista słów dla porfela HD stworzona przez użytkownika (bip39). Tyczy się jedynie kiedy tworzysz nowy porfel (domyślnie: tworozne losowo)</translation>
+        <translation>Lista sÅ‚Ã³w dla porfela HD stworzona przez uÅ¼ytkownika (bip39). Tyczy siÄ™ jedynie kiedy tworzysz nowy porfel (domyÅ›lnie: tworozne losowo)</translation>
     </message>
     <message>
         <source>User defined seed for HD wallet (should be in hex). Only has effect during wallet creation/first start (default: randomly generated)</source>
-        <translation>Lista słów dla porfela HD stworzona przez użytkownika (powinna być w formie hex). Tyczy się jedynie kiedy tworzysz nowy porfel. (domyślnie: tworzone losowo)</translation>
+        <translation>Lista sÅ‚Ã³w dla porfela HD stworzona przez uÅ¼ytkownika (powinna byÄ‡ w formie hex). Tyczy siÄ™ jedynie kiedy tworzysz nowy porfel. (domyÅ›lnie: tworzone losowo)</translation>
     </message>
     <message>
         <source>Warning: incorrect parameter -walletbackupsdir, path must exist! Using default path.</source>
-        <translation>Uwaga: błędne parametry - walletbackupdir, ścieżka musi być poprawna! Używając domyślnie ścieżki.</translation>
+        <translation>Uwaga: bÅ‚Ä™dne parametry - walletbackupdir, Å›cieÅ¼ka musi byÄ‡ poprawna! UÅ¼ywajÄ…c domyÅ›lnie Å›cieÅ¼ki.</translation>
     </message>
     <message>
         <source>Whitelist peers connecting from the given netmask or IP address. Can be specified multiple times.</source>
-        <translation>Peery z białej listy łączące się z danej maski sieci lub adresu IP. Może byc ustawiane wielokrotnie.</translation>
+        <translation>Peery z biaÅ‚ej listy Å‚Ä…czÄ…ce siÄ™ z danej maski sieci lub adresu IP. MoÅ¼e byc ustawiane wielokrotnie.</translation>
     </message>
     <message>
         <source>Whitelisted peers cannot be DoS banned and their transactions are always relayed, even if they are already in the mempool, useful e.g. for a gateway</source>
-        <translation>Peery z białej listy nie mogą zostać zbanowane a ich transakcje są zawsze retransmitowane, nawet jeśli już są w pamięci zbiorowej (mempool). Jest to przydatne np. dla bramek wyjściowych</translation>
+        <translation>Peery z biaÅ‚ej listy nie mogÄ… zostaÄ‡ zbanowane a ich transakcje sÄ… zawsze retransmitowane, nawet jeÅ›li juÅ¼ sÄ… w pamiÄ™ci zbiorowej (mempool). Jest to przydatne np. dla bramek wyjÅ›ciowych</translation>
     </message>
     <message>
         <source>You need to rebuild the database using -reindex-chainstate to change -txindex</source>
-        <translation>Musisz odnowić bazę danych używając -reindex-chainstate aby zmienić -txindex</translation>
+        <translation>Musisz odnowiÄ‡ bazÄ™ danych uÅ¼ywajÄ…c -reindex-chainstate aby zmieniÄ‡ -txindex</translation>
     </message>
     <message>
         <source>(default: %s)</source>
-        <translation>(domyślnie: %s)</translation>
+        <translation>(domyÅ›lnie: %s)</translation>
     </message>
     <message>
         <source>Accept public REST requests (default: %u)</source>
-        <translation>Akceptuj publiczne żądania REST (domyślnie: %u)</translation>
+        <translation>Akceptuj publiczne Å¼Ä…dania REST (domyÅ›lnie: %u)</translation>
     </message>
     <message>
         <source>Always query for peer addresses via DNS lookup (default: %u)</source>
-        <translation>Zawsze wysyłaj zapytanie o adres peera przez podgląd DNS (domyślnie: %u)</translation>
+        <translation>Zawsze wysyÅ‚aj zapytanie o adres peera przez podglÄ…d DNS (domyÅ›lnie: %u)</translation>
     </message>
     <message>
         <source>Can't mix: no compatible inputs found!</source>
-        <translation>Mieszanie jest niemożliwe: nie znaleziono odpowiednich wartości wejściowych.</translation>
+        <translation>Mieszanie jest niemoÅ¼liwe: nie znaleziono odpowiednich wartoÅ›ci wejÅ›ciowych.</translation>
     </message>
     <message>
         <source>Cannot resolve -whitebind address: '%s'</source>
-        <translation>Nie można rozwiązać -bind dla adresu adresu: '%s'</translation>
+        <translation>Nie moÅ¼na rozwiÄ…zaÄ‡ -bind dla adresu adresu: '%s'</translation>
     </message>
     <message>
         <source>Chain selection options:</source>
-        <translation>Opcje wyboru łańcucha:</translation>
+        <translation>Opcje wyboru Å‚aÅ„cucha:</translation>
     </message>
     <message>
         <source>Connect through SOCKS5 proxy</source>
-        <translation>Połączenie poprzez SOCKS5 proxy</translation>
+        <translation>PoÅ‚Ä…czenie poprzez SOCKS5 proxy</translation>
     </message>
     <message>
         <source>Connect to KeePassHttp on port &lt;port&gt; (default: %u)</source>
-        <translation>Podłącz do KeePassHttp na porcie &lt;port&gt; (domyślny: %u)</translation>
+        <translation>PodÅ‚Ä…cz do KeePassHttp na porcie &lt;port&gt; (domyÅ›lny: %u)</translation>
     </message>
     <message>
         <source>Copyright (C) 2009-%i The Bitcoin Core Developers</source>
         <translation>Prawo autorskie (c) 2009-%i deweloperzy Bitcoin</translation>
     </message>
     <message>
-        <source>Copyright (C) 2014-%i The ImgCash Core Developers</source>
-        <translation>Prawa autorskie (C) 2014-%i deweloperzy ImgCash</translation>
+        <source>Copyright (C) 2014-%i The ImageCoin Core Developers</source>
+        <translation>Prawa autorskie (C) 2014-%i deweloperzy ImageCoin</translation>
     </message>
     <message>
         <source>Enable the client to act as a masternode (0-1, default: %u)</source>
-        <translation>Upoważnia klienta aby działał jako masternode (0-1, domyślnie: %u)</translation>
+        <translation>UpowaÅ¼nia klienta aby dziaÅ‚aÅ‚ jako masternode (0-1, domyÅ›lnie: %u)</translation>
     </message>
     <message>
         <source>Entry exceeds maximum size.</source>
@@ -4142,47 +4142,47 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Error connecting to Masternode.</source>
-        <translation>Błąd w połączeniu z Masternodem.</translation>
+        <translation>BÅ‚Ä…d w poÅ‚Ä…czeniu z Masternodem.</translation>
     </message>
     <message>
         <source>Error loading %s: You can't disable HD on a already existing HD wallet</source>
-        <translation>Błąd podczas wczytywania %s: Niemożliwe jest zmienienie porfela HD w standarodowy porfel.</translation>
+        <translation>BÅ‚Ä…d podczas wczytywania %s: NiemoÅ¼liwe jest zmienienie porfela HD w standarodowy porfel.</translation>
     </message>
     <message>
-        <source>Error loading wallet.dat: Wallet requires newer version of ImgCash Core</source>
-        <translation>Błą wczytywania wallet.dat: Portfel wymaga nowszej wersji ImgCash</translation>
+        <source>Error loading wallet.dat: Wallet requires newer version of ImageCoin Core</source>
+        <translation>BÅ‚Ä… wczytywania wallet.dat: Portfel wymaga nowszej wersji ImageCoin</translation>
     </message>
     <message>
         <source>Failed to load fulfilled requests cache from</source>
-        <translation>Nieudane ładowanie bufora zrealizowanych żądań z</translation>
+        <translation>Nieudane Å‚adowanie bufora zrealizowanych Å¼Ä…daÅ„ z</translation>
     </message>
     <message>
         <source>Failed to load governance cache from</source>
-        <translation>Nieudane ładowanie bufora governance z</translation>
+        <translation>Nieudane Å‚adowanie bufora governance z</translation>
     </message>
     <message>
         <source>Failed to load masternode cache from</source>
-        <translation>Nieudane ładowanie bufora masternodów z</translation>
+        <translation>Nieudane Å‚adowanie bufora masternodÃ³w z</translation>
     </message>
     <message>
         <source>Failed to load masternode payments cache from</source>
-        <translation>Nieudane ładowanie bufora płatności masternodów z</translation>
+        <translation>Nieudane Å‚adowanie bufora pÅ‚atnoÅ›ci masternodÃ³w z</translation>
     </message>
     <message>
         <source>Found enough users, signing ( waiting %s )</source>
-        <translation>Znaleziono wystarczającą ilość użytkowników, trwa podoposywanie ( poczekaj %s )</translation>
+        <translation>Znaleziono wystarczajÄ…cÄ… iloÅ›Ä‡ uÅ¼ytkownikÃ³w, trwa podoposywanie ( poczekaj %s )</translation>
     </message>
     <message>
         <source>Found enough users, signing ...</source>
-        <translation>Znaleziono wystarczającą ilość użytkowników, zapisuje ...</translation>
+        <translation>Znaleziono wystarczajÄ…cÄ… iloÅ›Ä‡ uÅ¼ytkownikÃ³w, zapisuje ...</translation>
     </message>
     <message>
         <source>Generate coins (default: %u)</source>
-        <translation>Generuj monety (domyślny: %u)</translation>
+        <translation>Generuj monety (domyÅ›lny: %u)</translation>
     </message>
     <message>
         <source>How many blocks to check at startup (default: %u, 0 = all)</source>
-        <translation>Ile bloków sprawdzić podczas uruchomienia (domyślnie: %u, 0 = wszystkie)</translation>
+        <translation>Ile blokÃ³w sprawdziÄ‡ podczas uruchomienia (domyÅ›lnie: %u, 0 = wszystkie)</translation>
     </message>
     <message>
         <source>Importing...</source>
@@ -4190,7 +4190,7 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Include IP addresses in debug output (default: %u)</source>
-        <translation>Załącz adres IP do wyników debugowania (domyślnie: %u)</translation>
+        <translation>ZaÅ‚Ä…cz adres IP do wynikÃ³w debugowania (domyÅ›lnie: %u)</translation>
     </message>
     <message>
         <source>Incompatible mode.</source>
@@ -4202,95 +4202,95 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Incorrect or no genesis block found. Wrong datadir for network?</source>
-        <translation>Znaleziono nieprawidłowy blok lub brak bloku początkowego. Nieprawidłowy katalog danych dla sieci</translation>
+        <translation>Znaleziono nieprawidÅ‚owy blok lub brak bloku poczÄ…tkowego. NieprawidÅ‚owy katalog danych dla sieci</translation>
     </message>
     <message>
         <source>Information</source>
         <translation>Informacja</translation>
     </message>
     <message>
-        <source>Initialization sanity check failed. ImgCash Core is shutting down.</source>
-        <translation>Inicjalizacja kontroli poprawności nie powiodła się. Trwa zamykanie ImgCash Core</translation>
+        <source>Initialization sanity check failed. ImageCoin Core is shutting down.</source>
+        <translation>Inicjalizacja kontroli poprawnoÅ›ci nie powiodÅ‚a siÄ™. Trwa zamykanie ImageCoin Core</translation>
     </message>
     <message>
         <source>Input is not valid.</source>
-        <translation>Transakcja wejściowa jest niewłaściwa.</translation>
+        <translation>Transakcja wejÅ›ciowa jest niewÅ‚aÅ›ciwa.</translation>
     </message>
     <message>
         <source>Insufficient funds.</source>
-        <translation>Niewystarczające środki</translation>
+        <translation>NiewystarczajÄ…ce Å›rodki</translation>
     </message>
     <message>
         <source>Invalid -onion address: '%s'</source>
-        <translation>Nieprawidłowy adres -onion: '%s'</translation>
+        <translation>NieprawidÅ‚owy adres -onion: '%s'</translation>
     </message>
     <message>
         <source>Invalid -proxy address: '%s'</source>
-        <translation>Nieprawidłowy adres -proxy: '%s'</translation>
+        <translation>NieprawidÅ‚owy adres -proxy: '%s'</translation>
     </message>
     <message>
         <source>Invalid amount for -maxtxfee=&lt;amount&gt;: '%s'</source>
-        <translation>Nieprawidłowa kwota dla -maxtxfee=&lt;amount&gt;: '%s'</translation>
+        <translation>NieprawidÅ‚owa kwota dla -maxtxfee=&lt;amount&gt;: '%s'</translation>
     </message>
     <message>
         <source>Invalid amount for -minrelaytxfee=&lt;amount&gt;: '%s'</source>
-        <translation>Nieprawidłowa kwota dla -minrelaytxfee=&lt;kwota&gt;: '%s'</translation>
+        <translation>NieprawidÅ‚owa kwota dla -minrelaytxfee=&lt;kwota&gt;: '%s'</translation>
     </message>
     <message>
         <source>Invalid amount for -mintxfee=&lt;amount&gt;: '%s'</source>
-        <translation>Nieprawidłowa kwota dla -mintxfee=&lt;kwota&gt;: '%s'</translation>
+        <translation>NieprawidÅ‚owa kwota dla -mintxfee=&lt;kwota&gt;: '%s'</translation>
     </message>
     <message>
         <source>Invalid amount for -paytxfee=&lt;amount&gt;: '%s' (must be at least %s)</source>
-        <translation>Nieprawidłowa kwota dla -paytxfee=&lt;amount&gt;: '%s' (musi wynosić co najmniej %s)</translation>
+        <translation>NieprawidÅ‚owa kwota dla -paytxfee=&lt;amount&gt;: '%s' (musi wynosiÄ‡ co najmniej %s)</translation>
     </message>
     <message>
         <source>Invalid amount for -paytxfee=&lt;amount&gt;: '%s'</source>
-        <translation>Nieprawidłowa kwota dla -paytxfee=&lt;kwota&gt;: '%s'</translation>
+        <translation>NieprawidÅ‚owa kwota dla -paytxfee=&lt;kwota&gt;: '%s'</translation>
     </message>
     <message>
         <source>Keypool ran out, please call keypoolrefill first</source>
-        <translation>Wyczerpana pula kluczy, najpierw wywołaj keypoolrefill</translation>
+        <translation>Wyczerpana pula kluczy, najpierw wywoÅ‚aj keypoolrefill</translation>
     </message>
     <message>
         <source>Listen for JSON-RPC connections on &lt;port&gt; (default: %u or testnet: %u)</source>
-        <translation>Nasłuchuj połączeń JSON-RPC na &lt;port&gt; (domyślnie: %u lub testnet: %u)</translation>
+        <translation>NasÅ‚uchuj poÅ‚Ä…czeÅ„ JSON-RPC na &lt;port&gt; (domyÅ›lnie: %u lub testnet: %u)</translation>
     </message>
     <message>
         <source>Listen for connections on &lt;port&gt; (default: %u or testnet: %u)</source>
-        <translation>Nasłuchuj połączeń na &lt;port&gt; (domyślnie: %u lub testnet: %u)</translation>
+        <translation>NasÅ‚uchuj poÅ‚Ä…czeÅ„ na &lt;port&gt; (domyÅ›lnie: %u lub testnet: %u)</translation>
     </message>
     <message>
         <source>Loading banlist...</source>
-        <translation>Ładuję listę blokowanych...</translation>
+        <translation>Å�adujÄ™ listÄ™ blokowanych...</translation>
     </message>
     <message>
         <source>Loading fulfilled requests cache...</source>
-        <translation>Ładuję bufor zrealizowanych żądań...</translation>
+        <translation>Å�adujÄ™ bufor zrealizowanych Å¼Ä…daÅ„...</translation>
     </message>
     <message>
         <source>Loading masternode cache...</source>
-        <translation>Ładuję pamięć podręczną masternoda...</translation>
+        <translation>Å�adujÄ™ pamiÄ™Ä‡ podrÄ™cznÄ… masternoda...</translation>
     </message>
     <message>
         <source>Loading masternode payment cache...</source>
-        <translation>Ładuję pamięć podręczną płatności masternodów...</translation>
+        <translation>Å�adujÄ™ pamiÄ™Ä‡ podrÄ™cznÄ… pÅ‚atnoÅ›ci masternodÃ³w...</translation>
     </message>
     <message>
         <source>Lock is already in place.</source>
-        <translation>Transakcja została już zamknięta.</translation>
+        <translation>Transakcja zostaÅ‚a juÅ¼ zamkniÄ™ta.</translation>
     </message>
     <message>
         <source>Lock masternodes from masternode configuration file (default: %u)</source>
-        <translation>Zamknij masternody z pliku konfiguracji (domyślnie: %u)</translation>
+        <translation>Zamknij masternody z pliku konfiguracji (domyÅ›lnie: %u)</translation>
     </message>
     <message>
         <source>Maximum per-connection receive buffer, &lt;n&gt;*1000 bytes (default: %u)</source>
-        <translation>Maksymalny bufor odbierający na każde połączenie, &lt;n&gt;*1000 bajtów (domyślny: %u)</translation>
+        <translation>Maksymalny bufor odbierajÄ…cy na kaÅ¼de poÅ‚Ä…czenie, &lt;n&gt;*1000 bajtÃ³w (domyÅ›lny: %u)</translation>
     </message>
     <message>
         <source>Maximum per-connection send buffer, &lt;n&gt;*1000 bytes (default: %u)</source>
-        <translation>Maksymalny bufor wysyłania na każde połączenie, &lt;n&gt;*1000 bajtów (domyślny: %u)</translation>
+        <translation>Maksymalny bufor wysyÅ‚ania na kaÅ¼de poÅ‚Ä…czenie, &lt;n&gt;*1000 bajtÃ³w (domyÅ›lny: %u)</translation>
     </message>
     <message>
         <source>Mixing in progress...</source>
@@ -4298,15 +4298,15 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Mnemonic passphrase is too long, must be at most 256 characters</source>
-        <translation>Fraza przypominająca zbyt długa - maksymalna długość to 256 znaków</translation>
+        <translation>Fraza przypominajÄ…ca zbyt dÅ‚uga - maksymalna dÅ‚ugoÅ›Ä‡ to 256 znakÃ³w</translation>
     </message>
     <message>
         <source>Need to specify a port with -whitebind: '%s'</source>
-        <translation>Musisz wyznaczyć port z -whitebind: '%s'</translation>
+        <translation>Musisz wyznaczyÄ‡ port z -whitebind: '%s'</translation>
     </message>
     <message>
         <source>No Masternodes detected.</source>
-        <translation>Nie wykryto żadnego Masternoda.</translation>
+        <translation>Nie wykryto Å¼adnego Masternoda.</translation>
     </message>
     <message>
         <source>No compatible Masternode found.</source>
@@ -4314,11 +4314,11 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Not in the Masternode list.</source>
-        <translation>Nie istnieje na liście masternodów.</translation>
+        <translation>Nie istnieje na liÅ›cie masternodÃ³w.</translation>
     </message>
     <message>
         <source>Only connect to nodes in network &lt;net&gt; (ipv4, ipv6 or onion)</source>
-        <translation>Łącz się tylko z węzłami w sieci &lt;net&gt; (ipv4, ipv6 lub onion)</translation>
+        <translation>Å�Ä…cz siÄ™ tylko z wÄ™zÅ‚ami w sieci &lt;net&gt; (ipv4, ipv6 lub onion)</translation>
     </message>
     <message>
         <source>Port: %d</source>
@@ -4326,83 +4326,83 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Prepend debug output with timestamp (default: %u)</source>
-        <translation>Poprzedź wyniki debugowania datą i godziną (domyślnie: %u)</translation>
+        <translation>PoprzedÅº wyniki debugowania datÄ… i godzinÄ… (domyÅ›lnie: %u)</translation>
     </message>
     <message>
         <source>Rebuild chain state and block index from the blk*.dat files on disk</source>
-        <translation>Odbuduj stan łańcucha i indeks bloków z plików blk*.dat na dysku</translation>
+        <translation>Odbuduj stan Å‚aÅ„cucha i indeks blokÃ³w z plikÃ³w blk*.dat na dysku</translation>
     </message>
     <message>
         <source>Rebuild chain state from the currently indexed blocks</source>
-        <translation>Odbuduj stan łańcucha z obecnie zaindeksowanych bloków</translation>
+        <translation>Odbuduj stan Å‚aÅ„cucha z obecnie zaindeksowanych blokÃ³w</translation>
     </message>
     <message>
         <source>Send trace/debug info to debug.log file (default: %u)</source>
-        <translation>Wyślij informacje o debugowaniu/śladach do pliku debug.log (domyślnie: %u)</translation>
+        <translation>WyÅ›lij informacje o debugowaniu/Å›ladach do pliku debug.log (domyÅ›lnie: %u)</translation>
     </message>
     <message>
         <source>Send transactions as zero-fee transactions if possible (default: %u)</source>
-        <translation>Wyślij transakcje jako darmowe jeśli istnieje taka możliwość (domyślnie: %u)</translation>
+        <translation>WyÅ›lij transakcje jako darmowe jeÅ›li istnieje taka moÅ¼liwoÅ›Ä‡ (domyÅ›lnie: %u)</translation>
     </message>
     <message>
         <source>Set key pool size to &lt;n&gt; (default: %u)</source>
-        <translation>Ustaw ilość kluczy w key pool na &lt;n&gt; (domyślny: %u)</translation>
+        <translation>Ustaw iloÅ›Ä‡ kluczy w key pool na &lt;n&gt; (domyÅ›lny: %u)</translation>
     </message>
     <message>
         <source>Set minimum block size in bytes (default: %u)</source>
-        <translation>Ustaw minimalny rozmiar bloku w bajtach (domyślny: %u)</translation>
+        <translation>Ustaw minimalny rozmiar bloku w bajtach (domyÅ›lny: %u)</translation>
     </message>
     <message>
         <source>Set the number of threads to service RPC calls (default: %d)</source>
-        <translation>Ustaw liczbę wątków dla usługi połączen RPC (domyślny: %d)</translation>
+        <translation>Ustaw liczbÄ™ wÄ…tkÃ³w dla usÅ‚ugi poÅ‚Ä…czen RPC (domyÅ›lny: %d)</translation>
     </message>
     <message>
         <source>Specify configuration file (default: %s)</source>
-        <translation>Ustaw plik konfiguracji (domyślnie: %s)</translation>
+        <translation>Ustaw plik konfiguracji (domyÅ›lnie: %s)</translation>
     </message>
     <message>
         <source>Specify connection timeout in milliseconds (minimum: 1, default: %d)</source>
-        <translation>ustaw limit czasu połączenia w milisekundach (minimum: 1, domyślnie: %d)</translation>
+        <translation>ustaw limit czasu poÅ‚Ä…czenia w milisekundach (minimum: 1, domyÅ›lnie: %d)</translation>
     </message>
     <message>
         <source>Specify masternode configuration file (default: %s)</source>
-        <translation>Ustaw plik konfiguracji masternoda (domyślnie: %s)</translation>
+        <translation>Ustaw plik konfiguracji masternoda (domyÅ›lnie: %s)</translation>
     </message>
     <message>
         <source>Specify pid file (default: %s)</source>
-        <translation>Sprecyjzuj plik pid (domyślny: %s)</translation>
+        <translation>Sprecyjzuj plik pid (domyÅ›lny: %s)</translation>
     </message>
     <message>
         <source>Spend unconfirmed change when sending transactions (default: %u)</source>
-        <translation>Wydaj niepotwierdzoną resztę podczas wysyłania transakcji (domuślnie: %u)</translation>
+        <translation>Wydaj niepotwierdzonÄ… resztÄ™ podczas wysyÅ‚ania transakcji (domuÅ›lnie: %u)</translation>
     </message>
     <message>
         <source>Submitted following entries to masternode: %u / %d</source>
-        <translation>Następujące wpisy zostały przesłane do masternoda: %u / %d</translation>
+        <translation>NastÄ™pujÄ…ce wpisy zostaÅ‚y przesÅ‚ane do masternoda: %u / %d</translation>
     </message>
     <message>
         <source>Submitted to masternode, waiting for more entries ( %u / %d ) %s</source>
-        <translation>Zapisano do masternoda, czekam na więcej wejść ( %u / %d ) %s</translation>
+        <translation>Zapisano do masternoda, czekam na wiÄ™cej wejÅ›Ä‡ ( %u / %d ) %s</translation>
     </message>
     <message>
         <source>Submitted to masternode, waiting in queue %s</source>
-        <translation>Przesłano do masterdnoda, czekaj na swoją kolej %s</translation>
+        <translation>PrzesÅ‚ano do masterdnoda, czekaj na swojÄ… kolej %s</translation>
     </message>
     <message>
         <source>Synchroning blockchain...</source>
-        <translation>Synchronizuję łańcuch bloków...</translation>
+        <translation>SynchronizujÄ™ Å‚aÅ„cuch blokÃ³w...</translation>
     </message>
     <message>
         <source>Synchronization failed</source>
-        <translation>Synchronizacja nie powiodła się</translation>
+        <translation>Synchronizacja nie powiodÅ‚a siÄ™</translation>
     </message>
     <message>
         <source>Synchronization finished</source>
-        <translation>Synchronizacja zakończona</translation>
+        <translation>Synchronizacja zakoÅ„czona</translation>
     </message>
     <message>
         <source>Synchronizing masternodes...</source>
-        <translation>Synchronizuję masternody...</translation>
+        <translation>SynchronizujÄ™ masternody...</translation>
     </message>
     <message>
         <source>This is not a Masternode.</source>
@@ -4410,23 +4410,23 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Threshold for disconnecting misbehaving peers (default: %u)</source>
-        <translation>Próg dla niewłaściwie działających, odłączających sie peerów (domyślnie: %u)</translation>
+        <translation>PrÃ³g dla niewÅ‚aÅ›ciwie dziaÅ‚ajÄ…cych, odÅ‚Ä…czajÄ…cych sie peerÃ³w (domyÅ›lnie: %u)</translation>
     </message>
     <message>
         <source>Too many %f denominations, removing.</source>
-        <translation>Zbyt wiele %f nominałów, usuwam.</translation>
+        <translation>Zbyt wiele %f nominaÅ‚Ã³w, usuwam.</translation>
     </message>
     <message>
         <source>Unable to start HTTP server. See debug log for details.</source>
-        <translation>Uruchomienie serwera HTTP nieudane. Szczegóły znajdziesz w dzienniku debugowania.</translation>
+        <translation>Uruchomienie serwera HTTP nieudane. SzczegÃ³Å‚y znajdziesz w dzienniku debugowania.</translation>
     </message>
     <message>
         <source>Unknown response.</source>
-        <translation>Nieznana odpowiedź.</translation>
+        <translation>Nieznana odpowiedÅº.</translation>
     </message>
     <message>
         <source>Unsupported argument -tor found, use -onion.</source>
-        <translation>Znaleziono nieobsługiwany argument -tor, użyj -onion.</translation>
+        <translation>Znaleziono nieobsÅ‚ugiwany argument -tor, uÅ¼yj -onion.</translation>
     </message>
     <message>
         <source>Upgrade wallet to latest format on startup</source>
@@ -4434,139 +4434,139 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Use KeePass 2 integration using KeePassHttp plugin (default: %u)</source>
-        <translation>Użyj integracji KeePass 2 z wtyczką KeePass Http (domyślnie: %u)</translation>
+        <translation>UÅ¼yj integracji KeePass 2 z wtyczkÄ… KeePass Http (domyÅ›lnie: %u)</translation>
     </message>
     <message>
         <source>Use UPnP to map the listening port (default: %u)</source>
-        <translation>Użyj UPnP aby zmapować port nasłuchu (domyślnie: %u)</translation>
+        <translation>UÅ¼yj UPnP aby zmapowaÄ‡ port nasÅ‚uchu (domyÅ›lnie: %u)</translation>
     </message>
     <message>
         <source>Use the test chain</source>
-        <translation>Użyj łańcucha testowego</translation>
+        <translation>UÅ¼yj Å‚aÅ„cucha testowego</translation>
     </message>
     <message>
-        <source>Wallet needed to be rewritten: restart ImgCash Core to complete</source>
-        <translation>Portfel potrzebuje być przepisany: uruchom ponownie ImgCash Core aby zakończyć.</translation>
+        <source>Wallet needed to be rewritten: restart ImageCoin Core to complete</source>
+        <translation>Portfel potrzebuje byÄ‡ przepisany: uruchom ponownie ImageCoin Core aby zakoÅ„czyÄ‡.</translation>
     </message>
     <message>
         <source>Will retry...</source>
-        <translation>Spróbuje ponownie...</translation>
+        <translation>SprÃ³buje ponownie...</translation>
     </message>
     <message>
         <source>Invalid masternodeprivkey. Please see documenation.</source>
-        <translation>Nieprawidłowy klucz prywatny masternoda. Przeczytaj dokumentację.</translation>
+        <translation>NieprawidÅ‚owy klucz prywatny masternoda. Przeczytaj dokumentacjÄ™.</translation>
     </message>
     <message>
         <source>Can't find random Masternode.</source>
-        <translation>Nie można znaleźć przypadkowego masternoda.</translation>
+        <translation>Nie moÅ¼na znaleÅºÄ‡ przypadkowego masternoda.</translation>
     </message>
     <message>
         <source>Can't mix while sync in progress.</source>
-        <translation>Nie możesz miksować w trakcie  synchronizacji.</translation>
+        <translation>Nie moÅ¼esz miksowaÄ‡ w trakcie  synchronizacji.</translation>
     </message>
     <message>
         <source>Could not parse masternode.conf</source>
-        <translation>Nie można analizować masternode.conf</translation>
+        <translation>Nie moÅ¼na analizowaÄ‡ masternode.conf</translation>
     </message>
     <message>
         <source>Invalid netmask specified in -whitelist: '%s'</source>
-        <translation>Niewłaściwa maska sieci w -whitelist: '%s'</translation>
+        <translation>NiewÅ‚aÅ›ciwa maska sieci w -whitelist: '%s'</translation>
     </message>
     <message>
         <source>Invalid port detected in masternode.conf</source>
-        <translation>Wykryto niewłaściwy port w masternode.conf</translation>
+        <translation>Wykryto niewÅ‚aÅ›ciwy port w masternode.conf</translation>
     </message>
     <message>
         <source>Invalid script detected.</source>
-        <translation>Wykryto nieprawidłowy skrypt.</translation>
+        <translation>Wykryto nieprawidÅ‚owy skrypt.</translation>
     </message>
     <message>
         <source>KeePassHttp id for the established association</source>
-        <translation>ID KeePassHttp dla ustanowionego skojażenia</translation>
+        <translation>ID KeePassHttp dla ustanowionego skojaÅ¼enia</translation>
     </message>
     <message>
         <source>KeePassHttp key for AES encrypted communication with KeePass</source>
-        <translation>Klucz KeePassHttp dla zaszyfrowanego metodą AES połączenia z KeePass</translation>
+        <translation>Klucz KeePassHttp dla zaszyfrowanego metodÄ… AES poÅ‚Ä…czenia z KeePass</translation>
     </message>
     <message>
-        <source>Keep N ImgCash anonymized (default: %u)</source>
-        <translation>Utrzymuj N zanonimizowanych ImgCash (domyślnie: %u)</translation>
+        <source>Keep N ImageCoin anonymized (default: %u)</source>
+        <translation>Utrzymuj N zanonimizowanych ImageCoin (domyÅ›lnie: %u)</translation>
     </message>
     <message>
         <source>Keep at most &lt;n&gt; unconnectable transactions in memory (default: %u)</source>
-        <translation>Utrzymuj najwyżej &lt;n&gt; niepodłączalnych transakcji w pamięci (domyślny: %u)</translation>
+        <translation>Utrzymuj najwyÅ¼ej &lt;n&gt; niepodÅ‚Ä…czalnych transakcji w pamiÄ™ci (domyÅ›lny: %u)</translation>
     </message>
     <message>
         <source>Do not keep transactions in the mempool longer than &lt;n&gt; hours (default: %u)</source>
-        <translation>Nie trzyma transakcji w puli pamięci dłużej niż &lt;n&gt; godz. (domyślnie: %u)</translation>
+        <translation>Nie trzyma transakcji w puli pamiÄ™ci dÅ‚uÅ¼ej niÅ¼ &lt;n&gt; godz. (domyÅ›lnie: %u)</translation>
     </message>
     <message>
         <source>Enable InstantSend, show confirmations for locked transactions (0-1, default: %u)</source>
-        <translation>Włącz InstantSend, pokazuj potwierdzenia zamkniętych  transakcji (0-1, domyślnie: %u)</translation>
+        <translation>WÅ‚Ä…cz InstantSend, pokazuj potwierdzenia zamkniÄ™tych  transakcji (0-1, domyÅ›lnie: %u)</translation>
     </message>
     <message>
         <source>Execute command when a wallet InstantSend transaction is successfully locked (%s in cmd is replaced by TxID)</source>
-        <translation>Wykonaj komendę, kiedy się transakcja InstantSend  portfela zostanie pomyślnie zamknięta (%s w konsoli jest zastąpione przez TxID)</translation>
+        <translation>Wykonaj komendÄ™, kiedy siÄ™ transakcja InstantSend  portfela zostanie pomyÅ›lnie zamkniÄ™ta (%s w konsoli jest zastÄ…pione przez TxID)</translation>
     </message>
     <message>
         <source>Failed to create backup, file already exists! This could happen if you restarted wallet in less than 60 seconds. You can continue if you are ok with this.</source>
-        <translation>Tworzenie kopii zapasowej nieudane, plik już istnieje! Taka sytuacja może wystąpić, jeżeli minęło mniej niż 60 od ostatniego zamknięcia portfela. Jeżeli Ci to nie przeszkadza, możesz kontynuować.</translation>
+        <translation>Tworzenie kopii zapasowej nieudane, plik juÅ¼ istnieje! Taka sytuacja moÅ¼e wystÄ…piÄ‡, jeÅ¼eli minÄ™Å‚o mniej niÅ¼ 60 od ostatniego zamkniÄ™cia portfela. JeÅ¼eli Ci to nie przeszkadza, moÅ¼esz kontynuowaÄ‡.</translation>
     </message>
     <message>
-        <source>Please check that your computer's date and time are correct! If your clock is wrong ImgCash Core will not work properly.</source>
-        <translation>Sprawdź, czy data i godzina na Twoim komputerze są poprawne! Jeżeli zegar wskazuje niewłaściwy czas, ImgCash Core nie będzie działać poprawnie.</translation>
+        <source>Please check that your computer's date and time are correct! If your clock is wrong ImageCoin Core will not work properly.</source>
+        <translation>SprawdÅº, czy data i godzina na Twoim komputerze sÄ… poprawne! JeÅ¼eli zegar wskazuje niewÅ‚aÅ›ciwy czas, ImageCoin Core nie bÄ™dzie dziaÅ‚aÄ‡ poprawnie.</translation>
     </message>
     <message>
         <source>%s - %d confirmations</source>
-        <translation>%s - %d potwierdzeń</translation>
+        <translation>%s - %d potwierdzeÅ„</translation>
     </message>
     <message>
         <source>(%d could be used only on mainnet)</source>
-        <translation>(%d może być użyte jedynie na głównej sieci)</translation>
+        <translation>(%d moÅ¼e byÄ‡ uÅ¼yte jedynie na gÅ‚Ã³wnej sieci)</translation>
     </message>
     <message>
         <source>(default: %u)</source>
-        <translation>(domyślnie: %u)</translation>
+        <translation>(domyÅ›lnie: %u)</translation>
     </message>
     <message>
         <source>(must be %d for mainnet)</source>
-        <translation>(musi być %d dla głównej sieci)</translation>
+        <translation>(musi byÄ‡ %d dla gÅ‚Ã³wnej sieci)</translation>
     </message>
     <message>
         <source>-maxmempool must be at least %d MB</source>
-        <translation>-maxmempol musi być przynajmniej %d MB</translation>
+        <translation>-maxmempol musi byÄ‡ przynajmniej %d MB</translation>
     </message>
     <message>
         <source>&lt;category&gt; can be:</source>
-        <translation>&lt;category&gt;może być:</translation>
+        <translation>&lt;category&gt;moÅ¼e byÄ‡:</translation>
     </message>
     <message>
         <source>Automatic backups disabled</source>
-        <translation>Automatyczne tworzenie kopi zapasowych jest wyłączone</translation>
+        <translation>Automatyczne tworzenie kopi zapasowych jest wyÅ‚Ä…czone</translation>
     </message>
     <message>
         <source>Automatically create Tor hidden service (default: %d)</source>
-        <translation>Automatycznie stwórz ukrytą usługę Tor (domyślnie: %d)</translation>
+        <translation>Automatycznie stwÃ³rz ukrytÄ… usÅ‚ugÄ™ Tor (domyÅ›lnie: %d)</translation>
     </message>
     <message>
         <source>ERROR! Failed to create automatic backup</source>
-        <translation>BŁĄD! Automatyczne tworzenie kopii zapasowej nie powiodło się</translation>
+        <translation>BÅ�Ä„D! Automatyczne tworzenie kopii zapasowej nie powiodÅ‚o siÄ™</translation>
     </message>
     <message>
         <source>Enable publish hash block in &lt;address&gt;</source>
-        <translation>Pozwól na publikację hash bloku w &lt;address&gt;</translation>
+        <translation>PozwÃ³l na publikacjÄ™ hash bloku w &lt;address&gt;</translation>
     </message>
     <message>
         <source>Enable publish hash transaction (locked via InstantSend) in &lt;address&gt;</source>
-        <translation>Pozwól na publikację hash transakcji (zabezpiecznona przez InstantSend) w &lt;address&gt;</translation>
+        <translation>PozwÃ³l na publikacjÄ™ hash transakcji (zabezpiecznona przez InstantSend) w &lt;address&gt;</translation>
     </message>
     <message>
         <source>Enable publish hash transaction in &lt;address&gt;</source>
-        <translation>Pozwól na publikację hash transakcji w &lt;address&gt;</translation>
+        <translation>PozwÃ³l na publikacjÄ™ hash transakcji w &lt;address&gt;</translation>
     </message>
     <message>
         <source>Enable publish raw block in &lt;address&gt;</source>
-        <translation>Pozwól na publikację surowego bloku w &lt;address&gt;</translation>
+        <translation>PozwÃ³l na publikacjÄ™ surowego bloku w &lt;address&gt;</translation>
     </message>
     <message>
         <source>Line: %d</source>
@@ -4578,23 +4578,23 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Loading block index...</source>
-        <translation>Wczytuje indeks bloków</translation>
+        <translation>Wczytuje indeks blokÃ³w</translation>
     </message>
     <message>
         <source>Loading wallet... (%3.2f %%)</source>
-        <translation>Ładuje portfel... (%3.2f %%)</translation>
+        <translation>Å�aduje portfel... (%3.2f %%)</translation>
     </message>
     <message>
         <source>Loading wallet...</source>
-        <translation>Ładuje portfel...</translation>
+        <translation>Å�aduje portfel...</translation>
     </message>
     <message>
         <source>Masternode options:</source>
-        <translation>Opcje masternodów:</translation>
+        <translation>Opcje masternodÃ³w:</translation>
     </message>
     <message>
         <source>Masternode queue is full.</source>
-        <translation>Kolejka masternodów jest pełna.</translation>
+        <translation>Kolejka masternodÃ³w jest peÅ‚na.</translation>
     </message>
     <message>
         <source>Masternode:</source>
@@ -4602,19 +4602,19 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Missing input transaction information.</source>
-        <translation>Brak informacji o transakcji wejściowej.</translation>
+        <translation>Brak informacji o transakcji wejÅ›ciowej.</translation>
     </message>
     <message>
         <source>No errors detected.</source>
-        <translation>Nie wykryto błędów.</translation>
+        <translation>Nie wykryto bÅ‚Ä™dÃ³w.</translation>
     </message>
     <message>
         <source>No matching denominations found for mixing.</source>
-        <translation>Nie znaleziono nominałów nadających się do miksowania.</translation>
+        <translation>Nie znaleziono nominaÅ‚Ã³w nadajÄ…cych siÄ™ do miksowania.</translation>
     </message>
     <message>
         <source>Node relay options:</source>
-        <translation>Opcje retransmitujących węzłów:</translation>
+        <translation>Opcje retransmitujÄ…cych wÄ™zÅ‚Ã³w:</translation>
     </message>
     <message>
         <source>Non-standard public key detected.</source>
@@ -4622,11 +4622,11 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Not compatible with existing transactions.</source>
-        <translation>Nie kompatybilny z istniejącymi transakcjami.</translation>
+        <translation>Nie kompatybilny z istniejÄ…cymi transakcjami.</translation>
     </message>
     <message>
         <source>Not enough file descriptors available.</source>
-        <translation>Dostępny niewystarczający opis pliku.</translation>
+        <translation>DostÄ™pny niewystarczajÄ…cy opis pliku.</translation>
     </message>
     <message>
         <source>Options:</source>
@@ -4634,7 +4634,7 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Password for JSON-RPC connections</source>
-        <translation>Hasło dla połączeń JSON-RPC</translation>
+        <translation>HasÅ‚o dla poÅ‚Ä…czeÅ„ JSON-RPC</translation>
     </message>
     <message>
         <source>PrivateSend is idle.</source>
@@ -4646,11 +4646,11 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Wasn't able to create wallet backup folder %s!</source>
-        <translation>Nie udało się utworzyć folderu %s na kopie zapasowe portfela!</translation>
+        <translation>Nie udaÅ‚o siÄ™ utworzyÄ‡ folderu %s na kopie zapasowe portfela!</translation>
     </message>
     <message>
         <source>no mixing available.</source>
-        <translation>Mieszanie niedostępne.</translation>
+        <translation>Mieszanie niedostÄ™pne.</translation>
     </message>
     <message>
         <source>RPC server options:</source>
@@ -4658,15 +4658,15 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Receive and display P2P network alerts (default: %u)</source>
-        <translation>Odbiera i wyświetla P2P alarmy sieci (standardowo: %u)</translation>
+        <translation>Odbiera i wyÅ›wietla P2P alarmy sieci (standardowo: %u)</translation>
     </message>
     <message>
         <source>Relay and mine data carrier transactions (default: %u)</source>
-        <translation>Retransmituj i przejrzyj transakcje operatora danych (domyślnie: %u)</translation>
+        <translation>Retransmituj i przejrzyj transakcje operatora danych (domyÅ›lnie: %u)</translation>
     </message>
     <message>
         <source>Relay non-P2SH multisig (default: %u)</source>
-        <translation>Retransmituj non-P2SH multisig (doyślnie: %u)</translation>
+        <translation>Retransmituj non-P2SH multisig (doyÅ›lnie: %u)</translation>
     </message>
     <message>
         <source>Rescanning...</source>
@@ -4674,23 +4674,23 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Run in the background as a daemon and accept commands</source>
-        <translation>Działaj w tle jako daemon i akceptuj polecenia</translation>
+        <translation>DziaÅ‚aj w tle jako daemon i akceptuj polecenia</translation>
     </message>
     <message>
         <source>Session not complete!</source>
-        <translation>Sesja nie została ukończona!</translation>
+        <translation>Sesja nie zostaÅ‚a ukoÅ„czona!</translation>
     </message>
     <message>
         <source>Session timed out.</source>
-        <translation>Sesja wygasła</translation>
+        <translation>Sesja wygasÅ‚a</translation>
     </message>
     <message>
         <source>Set database cache size in megabytes (%d to %d, default: %d)</source>
-        <translation>Ustaw pamięć podręczną bazy danych w megabajtach (%d to %d, domyślny: %d)</translation>
+        <translation>Ustaw pamiÄ™Ä‡ podrÄ™cznÄ… bazy danych w megabajtach (%d to %d, domyÅ›lny: %d)</translation>
     </message>
     <message>
         <source>Set maximum block size in bytes (default: %d)</source>
-        <translation>Ustaw maksymalny rozmiar bloku w bajtach (domyślny: %d)</translation>
+        <translation>Ustaw maksymalny rozmiar bloku w bajtach (domyÅ›lny: %d)</translation>
     </message>
     <message>
         <source>Set the masternode private key</source>
@@ -4698,15 +4698,15 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Show all debugging options (usage: --help -help-debug)</source>
-        <translation>Pokaż wszystkie opcje debugowania (użyj: --help -help-debug)</translation>
+        <translation>PokaÅ¼ wszystkie opcje debugowania (uÅ¼yj: --help -help-debug)</translation>
     </message>
     <message>
         <source>Shrink debug.log file on client startup (default: 1 when no -debug)</source>
-        <translation>Zmniejsz plik debug.log podczas włączania klienta (domyślny: 1 kiedy nie ma -debug)</translation>
+        <translation>Zmniejsz plik debug.log podczas wÅ‚Ä…czania klienta (domyÅ›lny: 1 kiedy nie ma -debug)</translation>
     </message>
     <message>
         <source>Signing transaction failed</source>
-        <translation>Podpisywanie transakcji nie powiodło się</translation>
+        <translation>Podpisywanie transakcji nie powiodÅ‚o siÄ™</translation>
     </message>
     <message>
         <source>Specify data directory</source>
@@ -4718,23 +4718,23 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Specify your own public address</source>
-        <translation>Sprecyzuj swój adres publiczny</translation>
+        <translation>Sprecyzuj swÃ³j adres publiczny</translation>
     </message>
     <message>
         <source>Synchronization pending...</source>
-        <translation>Oczekiwanie na synchronizację...</translation>
+        <translation>Oczekiwanie na synchronizacjÄ™...</translation>
     </message>
     <message>
         <source>Synchronizing governance objects...</source>
-        <translation>Synchronizuję obiekty zarządzania...</translation>
+        <translation>SynchronizujÄ™ obiekty zarzÄ…dzania...</translation>
     </message>
     <message>
         <source>Synchronizing masternode payments...</source>
-        <translation>Synchronizacja płatności masternodów...</translation>
+        <translation>Synchronizacja pÅ‚atnoÅ›ci masternodÃ³w...</translation>
     </message>
     <message>
         <source>The transaction amount is too small to pay the fee</source>
-        <translation>Kwota transakcji jest za niska by pokryć opłatę</translation>
+        <translation>Kwota transakcji jest za niska by pokryÄ‡ opÅ‚atÄ™</translation>
     </message>
     <message>
         <source>This help message</source>
@@ -4746,43 +4746,43 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Transaction amount too small</source>
-        <translation>Zbyt mała kwota</translation>
+        <translation>Zbyt maÅ‚a kwota</translation>
     </message>
     <message>
         <source>Transaction amounts must be positive</source>
-        <translation>Kwota musi być dodatnia</translation>
+        <translation>Kwota musi byÄ‡ dodatnia</translation>
     </message>
     <message>
         <source>Transaction created successfully.</source>
-        <translation>Skutecznie utworzono transakcję.</translation>
+        <translation>Skutecznie utworzono transakcjÄ™.</translation>
     </message>
     <message>
         <source>Transaction fees are too high.</source>
-        <translation>Opłaty za transakcję są zbyt wysokie.</translation>
+        <translation>OpÅ‚aty za transakcjÄ™ sÄ… zbyt wysokie.</translation>
     </message>
     <message>
         <source>Transaction not valid.</source>
-        <translation>Transakcja niewłaściwa.</translation>
+        <translation>Transakcja niewÅ‚aÅ›ciwa.</translation>
     </message>
     <message>
         <source>Transaction too large for fee policy</source>
-        <translation>Transakcja nie mieści się w ramach wyznaczających wielkość opłaty za transakcję</translation>
+        <translation>Transakcja nie mieÅ›ci siÄ™ w ramach wyznaczajÄ…cych wielkoÅ›Ä‡ opÅ‚aty za transakcjÄ™</translation>
     </message>
     <message>
         <source>Transaction too large</source>
-        <translation>Za duża transakcja</translation>
+        <translation>Za duÅ¼a transakcja</translation>
     </message>
     <message>
         <source>Unable to bind to %s on this computer (bind returned error %s)</source>
-        <translation>Nie udało się powiązać do %s na tym komputerze (powiązanie zwróciło błąd %s)</translation>
+        <translation>Nie udaÅ‚o siÄ™ powiÄ…zaÄ‡ do %s na tym komputerze (powiÄ…zanie zwrÃ³ciÅ‚o bÅ‚Ä…d %s)</translation>
     </message>
     <message>
         <source>Unable to sign spork message, wrong key?</source>
-        <translation>Niemożliwe podpisanie wiadomości spork, nieprawidłowy klucz?</translation>
+        <translation>NiemoÅ¼liwe podpisanie wiadomoÅ›ci spork, nieprawidÅ‚owy klucz?</translation>
     </message>
     <message>
         <source>Unknown network specified in -onlynet: '%s'</source>
-        <translation>Nieznana sieć określona w -onlynet: '%s'</translation>
+        <translation>Nieznana sieÄ‡ okreÅ›lona w -onlynet: '%s'</translation>
     </message>
     <message>
         <source>Unknown state: id = %u</source>
@@ -4790,11 +4790,11 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Username for JSON-RPC connections</source>
-        <translation>Nazwa użytkownika dla połączeń JSON-RPC </translation>
+        <translation>Nazwa uÅ¼ytkownika dla poÅ‚Ä…czeÅ„ JSON-RPC </translation>
     </message>
     <message>
         <source>Verifying blocks...</source>
-        <translation>Weryfikacja bloków...</translation>
+        <translation>Weryfikacja blokÃ³w...</translation>
     </message>
     <message>
         <source>Verifying wallet...</source>
@@ -4802,15 +4802,15 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Very low number of keys left: %d</source>
-        <translation>Pozostało bardzo mało kluczy: %d</translation>
+        <translation>PozostaÅ‚o bardzo maÅ‚o kluczy: %d</translation>
     </message>
     <message>
         <source>Wallet %s resides outside data directory %s</source>
-        <translation>Plik wallet %s znajduje się poza katalogiem danych %s</translation>
+        <translation>Plik wallet %s znajduje siÄ™ poza katalogiem danych %s</translation>
     </message>
     <message>
         <source>Wallet is locked.</source>
-        <translation>Portfel jest zamknięty.</translation>
+        <translation>Portfel jest zamkniÄ™ty.</translation>
     </message>
     <message>
         <source>Wallet options:</source>
@@ -4822,15 +4822,15 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Ostrzeżenie</translation>
+        <translation>OstrzeÅ¼enie</translation>
     </message>
     <message>
         <source>Your entries added successfully.</source>
-        <translation>Twoje wejścia zostały dodane z powodzeniem.</translation>
+        <translation>Twoje wejÅ›cia zostaÅ‚y dodane z powodzeniem.</translation>
     </message>
     <message>
         <source>Your transaction was accepted into the pool!</source>
-        <translation>Twoja transakcja została dołączona do poola!</translation>
+        <translation>Twoja transakcja zostaÅ‚a doÅ‚Ä…czona do poola!</translation>
     </message>
     <message>
         <source>Zapping all transactions from wallet...</source>
@@ -4838,7 +4838,7 @@ https://www.transifex.com/projects/p/ImgCash/</translation>
     </message>
     <message>
         <source>wallet.dat corrupt, salvage failed</source>
-        <translation>Plik wallet.dat zepsuty, odzyskiwanie nie powiodło się</translation>
+        <translation>Plik wallet.dat zepsuty, odzyskiwanie nie powiodÅ‚o siÄ™</translation>
     </message>
 </context>
 </TS>

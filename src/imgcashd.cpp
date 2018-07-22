@@ -75,7 +75,7 @@ bool AppInit(int argc, char* argv[])
     // Process help and version before taking care about datadir
     if (mapArgs.count("-?") || mapArgs.count("-h") ||  mapArgs.count("-help") || mapArgs.count("-version"))
     {
-        std::string strUsage = _("ImgCash Core Daemon") + " " + _("version") + " " + FormatFullVersion() + "\n";
+        std::string strUsage = _("ImageCoin Core Daemon") + " " + _("version") + " " + FormatFullVersion() + "\n";
 
         if (mapArgs.count("-version"))
         {
@@ -84,7 +84,7 @@ bool AppInit(int argc, char* argv[])
         else
         {
             strUsage += "\n" + _("Usage:") + "\n" +
-                  "  imgcashd [options]                     " + _("Start ImgCash Core Daemon") + "\n";
+                  "  ImageCoind [options]                     " + _("Start ImageCoin Core Daemon") + "\n";
 
             strUsage += "\n" + HelpMessage(HMM_BITCOIND);
         }
@@ -136,14 +136,14 @@ bool AppInit(int argc, char* argv[])
 
         if (fCommandLine)
         {
-            fprintf(stderr, "Error: There is no RPC client functionality in dashd anymore. Use the ImgCash-cli utility instead.\n");
+            fprintf(stderr, "Error: There is no RPC client functionality in dashd anymore. Use the ImageCoin-cli utility instead.\n");
             exit(EXIT_FAILURE);
         }
 #ifndef WIN32
         fDaemon = GetBoolArg("-daemon", false);
         if (fDaemon)
         {
-            fprintf(stdout, "ImgCash Core server starting\n");
+            fprintf(stdout, "ImageCoin Core server starting\n");
 
             // Daemonize
             pid_t pid = fork();

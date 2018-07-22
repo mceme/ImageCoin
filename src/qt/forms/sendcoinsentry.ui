@@ -57,7 +57,7 @@
       <item>
        <widget class="QValidatedLineEdit" name="payTo">
         <property name="toolTip">
-         <string>The IMGC address to send the payment to</string>
+         <string>The IMG address to send the payment to</string>
         </property>
        </widget>
       </item>
@@ -1249,7 +1249,7 @@
   <tabstop>deleteButton_s</tabstop>
  </tabstops>
  <resources>
-  <include location="../imgcash.qrc"/>
+  <include location="../ImageCoin.qrc"/>
  </resources>
  <connections/>
 </ui>

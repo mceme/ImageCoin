@@ -49,8 +49,8 @@ EXTRA_LIBRARIES += libbitcoin_zmq.a
 endif
 
 if BUILD_BITCOIN_LIBS
-lib_LTLIBRARIES = libimgcashconsensus.la
-LIBBITCOIN_CONSENSUS=libimgcashconsensus.la
+lib_LTLIBRARIES = libImageCoinconsensus.la
+LIBBITCOIN_CONSENSUS=libImageCoinconsensus.la
 else
 LIBBITCOIN_CONSENSUS=
 endif
@@ -60,15 +60,15 @@ TESTS =
 BENCHMARKS =
 
 if BUILD_BITCOIND
-  bin_PROGRAMS += imgcashd
+  bin_PROGRAMS += ImageCoind
 endif
 
 if BUILD_BITCOIN_UTILS
-  bin_PROGRAMS += imgcash-cli imgcash-tx
+  bin_PROGRAMS += ImageCoin-cli ImageCoin-tx
 endif
 
 .PHONY: FORCE check-symbols check-security
-# imgcash core #
+# ImageCoin core #
 BITCOIN_CORE_H = \
   addrdb.h \
   activemasternode.h \
@@ -207,7 +207,7 @@ obj/build.h: FORCE
 	  $(abs_top_srcdir)
 libbitcoin_util_a-clientversion.$(OBJEXT): obj/build.h
 
-# server: shared between imgcashd and imgcash-qt
+# server: shared between ImageCoind and ImageCoin-qt
 libbitcoin_server_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(MINIUPNPC_CPPFLAGS) $(EVENT_CFLAGS) $(EVENT_PTHREADS_CFLAGS)
 libbitcoin_server_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libbitcoin_server_a_SOURCES = \
@@ -280,7 +280,7 @@ libbitcoin_zmq_a_SOURCES = \
 endif
 
 
-# wallet: shared between imgcashd and imgcash-qt, but only linked
+# wallet: shared between ImageCoind and ImageCoin-qt, but only linked
 # when wallet enabled
 libbitcoin_wallet_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 libbitcoin_wallet_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
@@ -343,7 +343,7 @@ crypto_libbitcoin_crypto_a_SOURCES += \
   crypto/sph_skein.h \
   crypto/sph_types.h
 
-# common: shared between imgcashd, and imgcash-qt and non-server tools
+# common: shared between ImageCoind, and ImageCoin-qt and non-server tools
 libbitcoin_common_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 libbitcoin_common_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libbitcoin_common_a_SOURCES = \
@@ -403,7 +403,7 @@ if GLIBC_BACK_COMPAT
 libbitcoin_util_a_SOURCES += compat/glibc_compat.cpp
 endif
 
-# cli: shared between imgcash-cli and imgcash-qt
+# cli: shared between ImageCoin-cli and ImageCoin-qt
 libbitcoin_cli_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 libbitcoin_cli_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libbitcoin_cli_a_SOURCES = \
@@ -414,16 +414,16 @@ nodist_libbitcoin_util_a_SOURCES = $(srcdir)/obj/build.h
 #
 
 # bitcoind binary #
-imgcashd_SOURCES = imgcashd.cpp
-imgcashd_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-imgcashd_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-imgcashd_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+ImageCoind_SOURCES = ImageCoind.cpp
+ImageCoind_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+ImageCoind_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+ImageCoind_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-imgcashd_SOURCES += imgcashd-res.rc
+ImageCoind_SOURCES += ImageCoind-res.rc
 endif
 
-imgcashd_LDADD = \
+ImageCoind_LDADD = \
   $(LIBBITCOIN_SERVER) \
   $(LIBBITCOIN_COMMON) \
   $(LIBUNIVALUE) \
@@ -434,56 +434,56 @@ imgcashd_LDADD = \
   $(LIBSECP256K1)
 
 if ENABLE_ZMQ
-imgcashd_LDADD += $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
+ImageCoind_LDADD += $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
 endif
 
 if ENABLE_WALLET
-imgcashd_LDADD += libbitcoin_wallet.a
+ImageCoind_LDADD += libbitcoin_wallet.a
 endif
 
-imgcashd_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS)
+ImageCoind_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS)
 
-# imgcash-cli binary #
-imgcash_cli_SOURCES = imgcash-cli.cpp
-imgcash_cli_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
-imgcash_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-imgcash_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+# ImageCoin-cli binary #
+ImageCoin_cli_SOURCES = ImageCoin-cli.cpp
+ImageCoin_cli_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
+ImageCoin_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+ImageCoin_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-imgcash_cli_SOURCES += imgcash-cli-res.rc
+ImageCoin_cli_SOURCES += ImageCoin-cli-res.rc
 endif
 
-imgcash_cli_LDADD = \
+ImageCoin_cli_LDADD = \
   $(LIBBITCOIN_CLI) \
   $(LIBUNIVALUE) \
   $(LIBBITCOIN_UTIL)
-imgcash_cli_LDADD += $(BOOST_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS)
+ImageCoin_cli_LDADD += $(BOOST_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS)
 #
 
-# imgcash-tx binary #
-imgcash_tx_SOURCES = imgcash-tx.cpp
-imgcash_tx_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-imgcash_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-imgcash_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+# ImageCoin-tx binary #
+ImageCoin_tx_SOURCES = ImageCoin-tx.cpp
+ImageCoin_tx_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+ImageCoin_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+ImageCoin_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-imgcash_tx_SOURCES += imgcash-tx-res.rc
+ImageCoin_tx_SOURCES += ImageCoin-tx-res.rc
 endif
 
-imgcash_tx_LDADD = \
+ImageCoin_tx_LDADD = \
   $(LIBUNIVALUE) \
   $(LIBBITCOIN_COMMON) \
   $(LIBBITCOIN_UTIL) \
   $(LIBBITCOIN_CRYPTO) \
   $(LIBSECP256K1)
 
-imgcash_tx_LDADD += $(BOOST_LIBS) $(CRYPTO_LIBS)
+ImageCoin_tx_LDADD += $(BOOST_LIBS) $(CRYPTO_LIBS)
 #
 
-# imgcashconsensus library #
+# ImageCoinconsensus library #
 if BUILD_BITCOIN_LIBS
-include_HEADERS = script/imgcashconsensus.h
-libimgcashconsensus_la_SOURCES = \
+include_HEADERS = script/ImageCoinconsensus.h
+libImageCoinconsensus_la_SOURCES = \
   crypto/hmac_sha512.cpp \
   crypto/ripemd160.cpp \
   crypto/sha1.cpp \
@@ -492,20 +492,20 @@ libimgcashconsensus_la_SOURCES = \
   hash.cpp \
   primitives/transaction.cpp \
   pubkey.cpp \
-  script/imgcashconsensus.cpp \
+  script/ImageCoinconsensus.cpp \
   script/interpreter.cpp \
   script/script.cpp \
   uint256.cpp \
   utilstrencodings.cpp
 
 if GLIBC_BACK_COMPAT
-  libimgcashconsensus_la_SOURCES += compat/glibc_compat.cpp
+  libImageCoinconsensus_la_SOURCES += compat/glibc_compat.cpp
 endif
 
-libimgcashconsensus_la_LDFLAGS = $(AM_LDFLAGS) -no-undefined $(RELDFLAGS)
-libimgcashconsensus_la_LIBADD = $(LIBSECP256K1)
-libimgcashconsensus_la_CPPFLAGS = $(AM_CPPFLAGS) -I$(builddir)/obj -I$(srcdir)/secp256k1/include -DBUILD_BITCOIN_INTERNAL
-libimgcashconsensus_la_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+libImageCoinconsensus_la_LDFLAGS = $(AM_LDFLAGS) -no-undefined $(RELDFLAGS)
+libImageCoinconsensus_la_LIBADD = $(LIBSECP256K1)
+libImageCoinconsensus_la_CPPFLAGS = $(AM_CPPFLAGS) -I$(builddir)/obj -I$(srcdir)/secp256k1/include -DBUILD_BITCOIN_INTERNAL
+libImageCoinconsensus_la_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 
 endif
 #

@@ -1,5 +1,5 @@
 // Copyright (c) 2011-2015 The Bitcoin Core developers
-// Copyright (c) 2014-2017 The IMGC Core developers
+// Copyright (c) 2014-2017 The IMG Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -19,9 +19,9 @@ BitcoinUnits::BitcoinUnits(QObject *parent):
 QList<BitcoinUnits::Unit> BitcoinUnits::availableUnits()
 {
     QList<BitcoinUnits::Unit> unitlist;
-    unitlist.append(IMGC);
-    unitlist.append(mIMGC);
-    unitlist.append(uIMGC);
+    unitlist.append(IMG);
+    unitlist.append(mIMG);
+    unitlist.append(uIMG);
     unitlist.append(duffs);
     return unitlist;
 }
@@ -30,9 +30,9 @@ bool BitcoinUnits::valid(int unit)
 {
     switch(unit)
     {
-    case IMGC:
-    case mIMGC:
-    case uIMGC:
+    case IMG:
+    case mIMG:
+    case uIMG:
     case duffs:
         return true;
     default:
@@ -46,9 +46,9 @@ QString BitcoinUnits::name(int unit)
     {
         switch(unit)
         {
-            case IMGC: return QString("IMGC");
-            case mIMGC: return QString("mIMGC");
-            case uIMGC: return QString::fromUtf8("μIMGC");
+            case IMG: return QString("IMG");
+            case mIMG: return QString("mIMG");
+            case uIMG: return QString::fromUtf8("μIMG");
             case duffs: return QString("duffs");
             default: return QString("???");
         }
@@ -57,9 +57,9 @@ QString BitcoinUnits::name(int unit)
     {
         switch(unit)
         {
-            case IMGC: return QString("tIMGC");
-            case mIMGC: return QString("mtIMGC");
-            case uIMGC: return QString::fromUtf8("μtIMGC");
+            case IMG: return QString("tIMG");
+            case mIMG: return QString("mtIMG");
+            case uIMG: return QString::fromUtf8("μtIMG");
             case duffs: return QString("tduffs");
             default: return QString("???");
         }
@@ -72,10 +72,10 @@ QString BitcoinUnits::description(int unit)
     {
         switch(unit)
         {
-            case IMGC: return QString("IMGC");
-            case mIMGC: return QString("Milli-IMGC (1 / 1" THIN_SP_UTF8 "000)");
-            case uIMGC: return QString("Micro-IMGC (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
-            case duffs: return QString("Ten Nano-IMGC (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case IMG: return QString("IMG");
+            case mIMG: return QString("Milli-IMG (1 / 1" THIN_SP_UTF8 "000)");
+            case uIMG: return QString("Micro-IMG (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case duffs: return QString("Ten Nano-IMG (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
             default: return QString("???");
         }
     }
@@ -83,10 +83,10 @@ QString BitcoinUnits::description(int unit)
     {
         switch(unit)
         {
-            case IMGC: return QString("TestIMGCs");
-            case mIMGC: return QString("Milli-TestIMGC (1 / 1" THIN_SP_UTF8 "000)");
-            case uIMGC: return QString("Micro-TestIMGC (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
-            case duffs: return QString("Ten Nano-TestIMGC (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case IMG: return QString("TestIMGs");
+            case mIMG: return QString("Milli-TestIMG (1 / 1" THIN_SP_UTF8 "000)");
+            case uIMG: return QString("Micro-TestIMG (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case duffs: return QString("Ten Nano-TestIMG (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
             default: return QString("???");
         }
     }
@@ -96,9 +96,9 @@ qint64 BitcoinUnits::factor(int unit)
 {
     switch(unit)
     {
-    case IMGC:  return 100000000;
-    case mIMGC: return 100000;
-    case uIMGC: return 100;
+    case IMG:  return 100000000;
+    case mIMG: return 100000;
+    case uIMG: return 100;
     case duffs: return 1;
     default:   return 100000000;
     }
@@ -108,9 +108,9 @@ int BitcoinUnits::decimals(int unit)
 {
     switch(unit)
     {
-    case IMGC: return 8;
-    case mIMGC: return 5;
-    case uIMGC: return 2;
+    case IMG: return 8;
+    case mIMG: return 5;
+    case uIMG: return 2;
     case duffs: return 0;
     default: return 0;
     }

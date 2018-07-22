@@ -137,7 +137,7 @@
   </layout>
  </widget>
  <resources>
-  <include location="../imgcash.qrc"/>
+  <include location="../ImageCoin.qrc"/>
  </resources>
  <connections/>
 </ui>

@@ -6,7 +6,7 @@ SetCompressor /SOLID lzma
 # General Symbol Definitions
 !define REGKEY "SOFTWARE\$(^Name)"
 !define VERSION @CLIENT_VERSION_MAJOR@.@CLIENT_VERSION_MINOR@.@CLIENT_VERSION_REVISION@
-!define COMPANY "IMGCash Core project"
+!define COMPANY "ImageCoin Core project"
 !define URL https://www.imagehosty.com/
 
 # MUI Symbol Definitions
@@ -50,16 +50,16 @@ Var StartMenuGroup
 # Installer attributes
 OutFile @abs_top_srcdir@/dashcore-${VERSION}-win@WINDOWS_BITS@-setup.exe
 !if "@WINDOWS_BITS@" == "64"
-InstallDir $PROGRAMFILES64\ImgCashCore
+InstallDir $PROGRAMFILES64\ImageCoinCore
 !else
-InstallDir $PROGRAMFILES\ImgCashCore
+InstallDir $PROGRAMFILES\ImageCoinCore
 !endif
 CRCCheck on
 XPStyle on
 BrandingText " "
 ShowInstDetails show
 VIProductVersion ${VERSION}.@CLIENT_VERSION_BUILD@
-VIAddVersionKey ProductName "IMAGECASH Core"
+VIAddVersionKey ProductName "ImageCoin Core"
 VIAddVersionKey ProductVersion "${VERSION}"
 VIAddVersionKey CompanyName "${COMPANY}"
 VIAddVersionKey CompanyWebsite "${URL}"
@@ -73,19 +73,19 @@ ShowUninstDetails show
 Section -Main SEC0000
     SetOutPath $INSTDIR
     SetOverwrite on
-    File @abs_top_srcdir@/release/imgcash-qt.exe
+    File @abs_top_srcdir@/release/ImageCoin-qt.exe
     File /oname=COPYING.txt @abs_top_srcdir@/COPYING
     File /oname=readme.txt @abs_top_srcdir@/doc/README_windows.txt
     SetOutPath $INSTDIR\daemon
-    File @abs_top_srcdir@/release/imgcashd.exe
-    File @abs_top_srcdir@/release/imgcash-cli.exe
+    File @abs_top_srcdir@/release/ImageCoind.exe
+    File @abs_top_srcdir@/release/ImageCoin-cli.exe
     SetOutPath $INSTDIR\doc
     File /r @abs_top_srcdir@/doc\*.*
     SetOutPath $INSTDIR
     WriteRegStr HKCU "${REGKEY}\Components" Main 1
 
     # Remove old wxwidgets-based-dash executable and locales:
-    Delete /REBOOTOK $INSTDIR\imgcash.exe
+    Delete /REBOOTOK $INSTDIR\ImageCoin.exe
     RMDir /r /REBOOTOK $INSTDIR\locale
 SectionEnd
 

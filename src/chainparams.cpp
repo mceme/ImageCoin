@@ -25,7 +25,7 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
     txNew.nVersion = 1;
     txNew.vin.resize(1);
     txNew.vout.resize(1);
-    txNew.vin[0].scriptSig = CScript() << 486604799 << CScriptNum(4) << std::vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
+    txNew.vin[0].scriptSig = CScript() << 1532223997 << CScriptNum(4) << std::vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
     txNew.vout[0].nValue = genesisReward;
     txNew.vout[0].scriptPubKey = genesisOutputScript;
 
@@ -53,7 +53,7 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
  */
 static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward)
 {
-    const char* pszTimestamp = "Wired 09/Jan/2018 Manuel Millionaire";
+    const char* pszTimestamp = "Wired 22/July/2018 New coin to buy and sell Images";
     const CScript genesisOutputScript = CScript() << ParseHex("040184710fa689ad5023690c80f3a49c8f13f8d45b8c857fbcbc8bc4a8e4d3eb4b10f4d4604fa08dce601aaf0f470216fe1b51850b4acf21b179c45070ac7b03a9") << OP_CHECKSIG;
     return CreateGenesisBlock(pszTimestamp, genesisOutputScript, nTime, nNonce, nBits, nVersion, genesisReward);
 }
@@ -94,13 +94,13 @@ public:
         consensus.BIP34Height = 1;
         consensus.BIP34Hash = uint256S("0x000007d91d1254d60e2dd1ae580383070a4ddffa4c64c2eeb4a2f9ecc0414343");
         consensus.powLimit = uint256S("00000fffff000000000000000000000000000000000000000000000000000000");
-        consensus.nPowTargetTimespan = 24 * 60 * 60; // Dash: 1 day
-        consensus.nPowTargetSpacing = 2.5 * 60; // Dash: 2.5 minutes
+        consensus.nPowTargetTimespan = 24 * 60 * 60; // ImageCoin: 1 day
+        consensus.nPowTargetSpacing = 1 * 60; // ImageCoin: 1 minutes
         consensus.fPowAllowMinDifficultyBlocks = false;
         consensus.fPowNoRetargeting = false;
         consensus.nPowKGWHeight = 15200;
-        consensus.nPowDGWHeight = 8250;
-        consensus.nRuleChangeActivationThreshold = 1916; // 95% of 2016
+        consensus.nPowDGWHeight = 1000;
+        consensus.nRuleChangeActivationThreshold = 1916; // 95% of 2019
         consensus.nMinerConfirmationWindow = 2016; // nPowTargetTimespan / nPowTargetSpacing
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].bit = 28;
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nStartTime = 1199145601; // January 1, 2008
@@ -134,14 +134,32 @@ public:
         pchMessageStart[2] = 0x6b;
         pchMessageStart[3] = 0xbd;
         vAlertPubKey = ParseHex("048240a8748a80a286b270ba126705ced4f2ce5a7847b3610ea3c06513150dade2a8512ed5ea86320824683fc0818f0ac019214973e677acd1244f6d0571fc5103");
-        nDefaultPort = 6888;
+        nDefaultPort = 6898;
         nMaxTipAge = 6 * 60 * 60; // ~144 blocks behind -> 2 x fork detection time, was 24 * 60 * 60 in bitcoin
         nDelayGetHeadersTime = 24 * 60 * 60;
         nPruneAfterHeight = 100000;
 
-        genesis = CreateGenesisBlock(1390095618, 4018513 , 0x1e0ffff0, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1532224190, 4018513 , 0x1e0ffff0, 1, 50 * COIN);
 
         consensus.hashGenesisBlock = genesis.GetHash();
+
+
+                        uint32_t nNonce;
+                        for(nNonce = 0; ; nNonce++){
+                            genesis.nNonce = nNonce;
+                            // You can also update genesis.nTime
+
+                            if (CheckProofOfWork(genesis.GetHash(), genesis.nBits, consensus)) {
+                                printf("hash: %s\n", genesis.GetHash().GetHex().c_str());
+                                printf("nonce: %i\n", nNonce);
+                                printf("hashMerkleRoot: %i\n",   genesis.hashMerkleRoot.GetHex().c_str());
+
+                                break;
+                               }
+                          }
+
+                printf("hashMerkleRoot: %s\n",   genesis.hashMerkleRoot.GetHex().c_str());
+                printf("GetHex: %s\n",   genesis.hashMerkleRoot.GetHex().c_str());
 
         assert(consensus.hashGenesisBlock == uint256S("0x0000008fb2cb1b3d7c579d619ba9b9e939e4fd79f621e31c2c1bd9fd5e0b54af"));
         assert(genesis.hashMerkleRoot == uint256S("0xaf36534aca01ec6a50255b349b1efbd8d4fdcd9a4253da1a4d9bcb1f40e1b214"));
@@ -149,21 +167,21 @@ public:
 		vFixedSeeds.clear();
         vSeeds.clear();
 		vSeeds.push_back(CDNSSeedData("0","18.191.209.224"));
-        vSeeds.push_back(CDNSSeedData("1","115.77.190.144"));
-		vSeeds.push_back(CDNSSeedData("2","18.216.217.124"));
-		vSeeds.push_back(CDNSSeedData("3","149.28.136.224"));
-        // ImgCash addresses start with 'X'
+        //vSeeds.push_back(CDNSSeedData("1","115.77.190.144"));
+		//vSeeds.push_back(CDNSSeedData("2","18.216.217.124"));
+		//vSeeds.push_back(CDNSSeedData("3","149.28.136.224"));
+        // ImageCoin addresses start with 'X'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,51);
-        // ImgCash script addresses start with '7'
+        // ImageCoin script addresses start with '7'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,16);
-        // ImgCash private keys start with '7' or 'X'
+        // ImageCoin private keys start with '7' or 'X'
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,204);
-        // ImgCash BIP32 pubkeys start with 'xpub' (Bitcoin defaults)
+        // ImageCoin BIP32 pubkeys start with 'xpub' (Bitcoin defaults)
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x88)(0xB2)(0x1E).convert_to_container<std::vector<unsigned char> >();
-        // ImgCash BIP32 prvkeys start with 'xprv' (Bitcoin defaults)
+        // ImageCoin BIP32 prvkeys start with 'xprv' (Bitcoin defaults)
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x04)(0x88)(0xAD)(0xE4).convert_to_container<std::vector<unsigned char> >();
 
-        // ImgCash BIP44 coin type is '5'
+        // ImageCoin BIP44 coin type is '5'
         nExtCoinType = 5;
 
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_main, pnSeed6_main + ARRAYLEN(pnSeed6_main));
@@ -183,7 +201,7 @@ public:
         checkpointData = (CCheckpointData){
                  boost::assign::map_list_of
 				 ( 0, uint256S("0x0000008fb2cb1b3d7c579d619ba9b9e939e4fd79f621e31c2c1bd9fd5e0b54af")),
-				 1390095618,
+				 1532224190,
 				 0,
                  500
              };
