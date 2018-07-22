@@ -259,7 +259,7 @@ private:
     void startThread();
 };
 
-#include "ImageCoin.moc"
+#include "imagecoin.moc"
 
 BitcoinCore::BitcoinCore():
     QObject()

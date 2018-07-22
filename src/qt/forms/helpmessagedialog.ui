@@ -76,7 +76,7 @@
         <bool>false</bool>
        </property>
        <property name="pixmap">
-        <pixmap resource="../ImageCoin.qrc">:/images/drkblue/about</pixmap>
+        <pixmap resource="../imagecoin.qrc">:/images/drkblue/about</pixmap>
        </property>
        <property name="scaledContents">
         <bool>false</bool>
@@ -172,7 +172,7 @@
   </layout>
  </widget>
  <resources>
-  <include location="../ImageCoin.qrc"/>
+  <include location="../imagecoin.qrc"/>
   <include location="../dash.qrc"/>
  </resources>
  <connections>
