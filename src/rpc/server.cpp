@@ -1,6 +1,6 @@
 // Copyright (c) 2010 Satoshi Nakamoto
 // Copyright (c) 2009-2015 The Bitcoin Core developers
-// Copyright (c) 2014-2017 The imgcash Core developers
+// Copyright (c) 2014-2017 The imagecoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -243,11 +243,11 @@ UniValue stop(const UniValue& params, bool fHelp)
     if (fHelp || params.size() > 1)
         throw runtime_error(
             "stop\n"
-            "\nStop imgcash Core server.");
+            "\nStop imagecoin Core server.");
     // Event loop will exit after current HTTP requests have been handled, so
     // this reply will get back to the client.
     StartShutdown();
-    return "imgcash Core server stopping";
+    return "imagecoin Core server stopping";
 }
 
 /**
@@ -343,20 +343,20 @@ static const CRPCCommand vRPCCommands[] =
     { "hidden",             "resendwallettransactions", &resendwallettransactions, true},
 #endif
 
-    /* imgcash features */
-    { "imgcash",               "masternode",             &masternode,             true  },
-    { "imgcash",               "masternodelist",         &masternodelist,         true  },
-    { "imgcash",               "masternodebroadcast",    &masternodebroadcast,    true  },
-    { "imgcash",               "gobject",                &gobject,                true  },
-    { "imgcash",               "getgovernanceinfo",      &getgovernanceinfo,      true  },
-    { "imgcash",               "getsuperblockbudget",    &getsuperblockbudget,    true  },
-    { "imgcash",               "voteraw",                &voteraw,                true  },
-    { "imgcash",               "mnsync",                 &mnsync,                 true  },
-    { "imgcash",               "spork",                  &spork,                  true  },
-    { "imgcash",               "getpoolinfo",            &getpoolinfo,            true  },
-    { "imgcash",               "sentinelping",           &sentinelping,           true  },
+    /* imagecoin features */
+    { "imagecoin",               "masternode",             &masternode,             true  },
+    { "imagecoin",               "masternodelist",         &masternodelist,         true  },
+    { "imagecoin",               "masternodebroadcast",    &masternodebroadcast,    true  },
+    { "imagecoin",               "gobject",                &gobject,                true  },
+    { "imagecoin",               "getgovernanceinfo",      &getgovernanceinfo,      true  },
+    { "imagecoin",               "getsuperblockbudget",    &getsuperblockbudget,    true  },
+    { "imagecoin",               "voteraw",                &voteraw,                true  },
+    { "imagecoin",               "mnsync",                 &mnsync,                 true  },
+    { "imagecoin",               "spork",                  &spork,                  true  },
+    { "imagecoin",               "getpoolinfo",            &getpoolinfo,            true  },
+    { "imagecoin",               "sentinelping",           &sentinelping,           true  },
 #ifdef ENABLE_WALLET
-    { "imgcash",               "privatesend",            &privatesend,            false },
+    { "imagecoin",               "privatesend",            &privatesend,            false },
 
     /* Wallet */
     { "wallet",             "keepass",                &keepass,                true },
@@ -580,7 +580,7 @@ std::vector<std::string> CRPCTable::listCommands() const
 
 std::string HelpExampleCli(const std::string& methodname, const std::string& args)
 {
-    return "> imgcash-cli " + methodname + " " + args + "\n";
+    return "> imagecoin-cli " + methodname + " " + args + "\n";
 }
 
 std::string HelpExampleRpc(const std::string& methodname, const std::string& args)

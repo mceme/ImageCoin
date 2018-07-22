@@ -734,8 +734,8 @@ boost::filesystem::path static GetAutostartFilePath()
 {
     std::string chain = ChainNameFromCommandLine();
     if (chain == CBaseChainParams::MAIN)
-        return GetAutostartDir() / "IMGcore.desktop";
-    return GetAutostartDir() / strprintf("IMGcore-%s.lnk", chain);
+        return GetAutostartDir() / "ImageCoincore.desktop";
+    return GetAutostartDir() / strprintf("ImageCoincore-%s.lnk", chain);
 }
 
 bool GetStartOnSystemStartup()
@@ -774,7 +774,7 @@ bool SetStartOnSystemStartup(bool fAutoStart)
         if (!optionFile.good())
             return false;
         std::string chain = ChainNameFromCommandLine();
-        // Write a IMGcore.desktop file to the autostart directory:
+        // Write a ImageCoincore.desktop file to the autostart directory:
         optionFile << "[Desktop Entry]\n";
         optionFile << "Type=Application\n";
         if (chain == CBaseChainParams::MAIN)
