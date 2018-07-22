@@ -1,7 +1,7 @@
-Dash Core 0.12.1
+ImageCoin Core 0.13.1
 =====================
 
-This is the official reference wallet for Dash digital currency and comprises the backbone of the Dash peer-to-peer network. You can [download Dash Core](https://www.dash.org/downloads/) or [build it yourself](#building) using the guides below.
+This is the official reference wallet for Dash digital currency and comprises the backbone of the Dash peer-to-peer network. You can [download ImageCoin Core](https://github.com/mceme/ImageCoin/) or [build it yourself](#building) using the guides below.
 
 Running
 ---------------------
@@ -11,8 +11,8 @@ The following are some helpful notes on how to run Dash on your native platform.
 
 Unpack the files into a directory and run:
 
-- `bin/dash-qt` (GUI) or
-- `bin/dashd` (headless)
+- `bin/ImageCoin-qt` (GUI) or
+- `bin/ImageCoind` (headless)
 
 ### Windows
 
