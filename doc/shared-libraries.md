@@ -7,7 +7,7 @@ The purpose of this library is to make the verification functionality that is cr
 
 ### API
 
-The interface is defined in the C header `imgconsensus.h` located in  `src/script/imagecoinconsensus.h`.
+The interface is defined in the C header `imagecoinconsensuss.h` located in  `src/script/imagecoinconsensus.h`.
 
 #### Version
 
