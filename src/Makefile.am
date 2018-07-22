@@ -414,13 +414,13 @@ nodist_libbitcoin_util_a_SOURCES = $(srcdir)/obj/build.h
 #
 
 # bitcoind binary #
-ImageCoind_SOURCES = ImageCoind.cpp
+ImageCoind_SOURCES = imagecoind.cpp
 ImageCoind_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 ImageCoind_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 ImageCoind_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-ImageCoind_SOURCES += ImageCoind-res.rc
+ImageCoind_SOURCES += imagecoind-res.rc
 endif
 
 ImageCoind_LDADD = \
