@@ -18,14 +18,14 @@ BEGIN
     BEGIN
         BLOCK "040904E4" // U.S. English - multilingual (hex)
         BEGIN
-            VALUE "CompanyName",        "IMGASH"
-            VALUE "FileDescription",    "imagecoin Core (GUI node for IMG)"
+            VALUE "CompanyName",        "IMAGECoin"
+            VALUE "FileDescription",    "ImageCoin Core (GUI node for IMG)"
             VALUE "FileVersion",        VER_FILEVERSION_STR
-            VALUE "InternalName",       "imagecoin-qt"
+            VALUE "InternalName",       "ImageCoin-qt"
             VALUE "LegalCopyright",     COPYRIGHT_STR
             VALUE "LegalTrademarks1",   "Distributed under the MIT software license, see the accompanying file COPYING or http://www.opensource.org/licenses/mit-license.php."
-            VALUE "OriginalFilename",   "imagecoin-qt.exe"
-            VALUE "ProductName",        "imagecoin Core"
+            VALUE "OriginalFilename",   "ImageCoin-qt.exe"
+            VALUE "ProductName",        "ImageCoin Core"
             VALUE "ProductVersion",     VER_PRODUCTVERSION_STR
         END
     END

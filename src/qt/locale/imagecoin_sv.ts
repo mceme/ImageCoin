@@ -58,12 +58,12 @@
         <translation>Mottagaradresser</translation>
     </message>
     <message>
-        <source>These are your ImageCoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>De här är dina ImageCoin-adresser för att skicka betalningar. Kontrollera alltid mängden och mottagaradressen innan du skickar mynt.</translation>
+        <source>These are your imagecoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>De här är dina imagecoin-adresser för att skicka betalningar. Kontrollera alltid mängden och mottagaradressen innan du skickar mynt.</translation>
     </message>
     <message>
-        <source>These are your ImageCoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>De här är dina ImageCoin-adresser för betalningsmottagningar. Det rekommenderas att använda en ny mottagaradress för varje transaktion.</translation>
+        <source>These are your imagecoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>De här är dina imagecoin-adresser för betalningsmottagningar. Det rekommenderas att använda en ny mottagaradress för varje transaktion.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -164,8 +164,8 @@
         <translation>Bekräfta plånbokskryptering</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR ImageCoin&lt;/b&gt;!</source>
-        <translation>Varning: Om du krypterar din plånbok och förlorar din lösenfras kommer du att &lt;b&gt;FÖRLORA ALLA DINA ImageCoin&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR imagecoin&lt;/b&gt;!</source>
+        <translation>Varning: Om du krypterar din plånbok och förlorar din lösenfras kommer du att &lt;b&gt;FÖRLORA ALLA DINA imagecoin&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -176,8 +176,8 @@
         <translation>Plånbok krypterad</translation>
     </message>
     <message>
-        <source>ImageCoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your ImageCoins from being stolen by malware infecting your computer.</source>
-        <translation>ImageCoin kommer nu att färdigställa krypteringsprocessen. Kom ihåg att krypteringen av din plånbok inte kan skydda dig helt och hållet från att dina ImageCoin stjäls av skadeprogram som har infekterat din dator.</translation>
+        <source>imagecoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your imagecoins from being stolen by malware infecting your computer.</source>
+        <translation>imagecoin kommer nu att färdigställa krypteringsprocessen. Kom ihåg att krypteringen av din plånbok inte kan skydda dig helt och hållet från att dina imagecoin stjäls av skadeprogram som har infekterat din dator.</translation>
     </message>
     <message>
         <source>IMPORTANT: Any previous backups you have made of your wallet file should be replaced with the newly generated, encrypted wallet file. For security reasons, previous backups of the unencrypted wallet file will become useless as soon as you start using the new, encrypted wallet.</source>
@@ -219,8 +219,8 @@
 <context>
     <name>BitcoinGUI</name>
     <message>
-        <source>ImageCoin Core</source>
-        <translation>ImageCoin Core
+        <source>imagecoin Core</source>
+        <translation>imagecoin Core
 </translation>
     </message>
     <message>
@@ -244,16 +244,16 @@
         <translation>&amp;Skicka</translation>
     </message>
     <message>
-        <source>Send coins to a ImageCoin address</source>
-        <translation>Skicka mynt till en ImageCoin-adress</translation>
+        <source>Send coins to a imagecoin address</source>
+        <translation>Skicka mynt till en imagecoin-adress</translation>
     </message>
     <message>
         <source>&amp;Receive</source>
         <translation>&amp;Motta</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and ImageCoin: URIs)</source>
-        <translation>Begär betalningar (genererar QR-koder och ImageCoin:-URI:s)</translation>
+        <source>Request payments (generates QR codes and imagecoin: URIs)</source>
+        <translation>Begär betalningar (genererar QR-koder och imagecoin:-URI:s)</translation>
     </message>
     <message>
         <source>&amp;Transactions</source>
@@ -272,8 +272,8 @@
         <translation>Avsluta applikationen</translation>
     </message>
     <message>
-        <source>&amp;About ImageCoin Core</source>
-        <translation>&amp;Om ImageCoin Core</translation>
+        <source>&amp;About imagecoin Core</source>
+        <translation>&amp;Om imagecoin Core</translation>
     </message>
     <message>
         <source>About &amp;Qt</source>
@@ -288,8 +288,8 @@
         <translation>&amp;Alternativ...</translation>
     </message>
     <message>
-        <source>Modify configuration options for ImageCoin</source>
-        <translation>Anpassa konfigurationsalternatv för ImageCoin</translation>
+        <source>Modify configuration options for imagecoin</source>
+        <translation>Anpassa konfigurationsalternatv för imagecoin</translation>
     </message>
     <message>
         <source>&amp;Show / Hide</source>
@@ -340,16 +340,16 @@
         <translation>Signera &amp;meddelande...</translation>
     </message>
     <message>
-        <source>Sign messages with your ImageCoin addresses to prove you own them</source>
-        <translation>Signera meddelanden med dina ImageCoin-adresser för att bevisa att du äger dem</translation>
+        <source>Sign messages with your imagecoin addresses to prove you own them</source>
+        <translation>Signera meddelanden med dina imagecoin-adresser för att bevisa att du äger dem</translation>
     </message>
     <message>
         <source>&amp;Verify message...</source>
         <translation>&amp;Bekräfta meddelande...</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified ImageCoin addresses</source>
-        <translation>Bekräfta meddelanden för att garantera att de signerades med de angivna ImageCoin-adresserna</translation>
+        <source>Verify messages to ensure they were signed with specified imagecoin addresses</source>
+        <translation>Bekräfta meddelanden för att garantera att de signerades med de angivna imagecoin-adresserna</translation>
     </message>
     <message>
         <source>&amp;Information</source>
@@ -404,16 +404,16 @@
         <translation>Öppna &amp;URI...</translation>
     </message>
     <message>
-        <source>Open a ImageCoin: URI or payment request</source>
-        <translation>Öppna en ImageCoin-URI eller betalningsbegäran</translation>
+        <source>Open a imagecoin: URI or payment request</source>
+        <translation>Öppna en imagecoin-URI eller betalningsbegäran</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
         <translation>&amp;Kommandoradalternativ</translation>
     </message>
     <message>
-        <source>Show the ImageCoin Core help message to get a list with possible ImageCoin command-line options</source>
-        <translation>Visa ImageCoin Core-hjälpmeddelandet för att få en lista med möjliga ImageCoin-kommandoradalternativ</translation>
+        <source>Show the imagecoin Core help message to get a list with possible imagecoin command-line options</source>
+        <translation>Visa imagecoin Core-hjälpmeddelandet för att få en lista med möjliga imagecoin-kommandoradalternativ</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -758,28 +758,28 @@ Adress: %4
         <translation>Vänligen välj en integritetsnivå.</translation>
     </message>
     <message>
-        <source>Use 2 separate masternodes to mix funds up to 1000 ImageCoin</source>
-        <translation>Använd 2 enskilda masternoder för att mixa medel upp till 1000 ImageCoin</translation>
+        <source>Use 2 separate masternodes to mix funds up to 1000 imagecoin</source>
+        <translation>Använd 2 enskilda masternoder för att mixa medel upp till 1000 imagecoin</translation>
     </message>
     <message>
-        <source>Use 8 separate masternodes to mix funds up to 1000 ImageCoin</source>
-        <translation>Använd 8 enskilda masternoder för att mixa medel upp till 1000 ImageCoin.</translation>
+        <source>Use 8 separate masternodes to mix funds up to 1000 imagecoin</source>
+        <translation>Använd 8 enskilda masternoder för att mixa medel upp till 1000 imagecoin.</translation>
     </message>
     <message>
         <source>Use 16 separate masternodes</source>
         <translation>Använd 16 enskilda masternoder</translation>
     </message>
     <message>
-        <source>This option is the quickest and will cost about ~0.025 ImageCoin to anonymize 1000 ImageCoin</source>
-        <translation>Detta alternativ är det snabbaste och kommer att kosta omkring ~0,025 ImageCoin för att anonymisera 1000 ImageCoin</translation>
+        <source>This option is the quickest and will cost about ~0.025 imagecoin to anonymize 1000 imagecoin</source>
+        <translation>Detta alternativ är det snabbaste och kommer att kosta omkring ~0,025 imagecoin för att anonymisera 1000 imagecoin</translation>
     </message>
     <message>
-        <source>This option is moderately fast and will cost about 0.05 ImageCoin to anonymize 1000 ImageCoin</source>
-        <translation>Detta alternativ är relativt snabbt och kommer att kosta omkring 0,05 ImageCoin för att anonymisera 1000 ImageCoin</translation>
+        <source>This option is moderately fast and will cost about 0.05 imagecoin to anonymize 1000 imagecoin</source>
+        <translation>Detta alternativ är relativt snabbt och kommer att kosta omkring 0,05 imagecoin för att anonymisera 1000 imagecoin</translation>
     </message>
     <message>
-        <source>0.1 ImageCoin per 1000 ImageCoin you anonymize.</source>
-        <translation>0,1 ImageCoin per 1000 ImageCoin du anonymiserar.</translation>
+        <source>0.1 imagecoin per 1000 imagecoin you anonymize.</source>
+        <translation>0,1 imagecoin per 1000 imagecoin du anonymiserar.</translation>
     </message>
     <message>
         <source>This is the slowest and most secure option. Using maximum anonymity will cost</source>
@@ -790,16 +790,16 @@ Adress: %4
         <translation>Darksend-konfiguration</translation>
     </message>
     <message>
-        <source>Darksend was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening ImageCoin's configuration screen.</source>
-        <translation>Darksend ställdes framgångsrikt om till grundläggande (%1 och 2 omgångar). Du kan ändra detta när som helst genom att öppna ImageCoin:s konfigurationsskärm.</translation>
+        <source>Darksend was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening imagecoin's configuration screen.</source>
+        <translation>Darksend ställdes framgångsrikt om till grundläggande (%1 och 2 omgångar). Du kan ändra detta när som helst genom att öppna imagecoin:s konfigurationsskärm.</translation>
     </message>
     <message>
-        <source>Darksend was successfully set to high (%1 and 8 rounds). You can change this at any time by opening ImageCoin's configuration screen.</source>
-        <translation>Darksend ställdes framgångsrikt in på hög (%1 och 8 omgångar). Du kan ändra detta när som helst genom att öppna ImageCoin:s konfigurationsskärm.</translation>
+        <source>Darksend was successfully set to high (%1 and 8 rounds). You can change this at any time by opening imagecoin's configuration screen.</source>
+        <translation>Darksend ställdes framgångsrikt in på hög (%1 och 8 omgångar). Du kan ändra detta när som helst genom att öppna imagecoin:s konfigurationsskärm.</translation>
     </message>
     <message>
-        <source>Darksend was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening ImageCoin's configuration screen.</source>
-        <translation>Darksend ställdes framgångsrikt in på maximal (%1 och 16 omgångar). Du kan ändra detta när som helst genom att öppna ImageCoin:s konfigurationsskärm</translation>
+        <source>Darksend was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening imagecoin's configuration screen.</source>
+        <translation>Darksend ställdes framgångsrikt in på maximal (%1 och 16 omgångar). Du kan ändra detta när som helst genom att öppna imagecoin:s konfigurationsskärm</translation>
     </message>
 </context>
 <context>
@@ -841,8 +841,8 @@ Adress: %4
         <translation>Redigera avsändaradress</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid ImageCoin address.</source>
-        <translation>Den angivna adressen "%1" är inte en giltig ImageCoin-adress.</translation>
+        <source>The entered address "%1" is not a valid imagecoin address.</source>
+        <translation>Den angivna adressen "%1" är inte en giltig imagecoin-adress.</translation>
     </message>
     <message>
         <source>The entered address "%1" is already in the address book.</source>
@@ -883,8 +883,8 @@ Adress: %4
 <context>
     <name>HelpMessageDialog</name>
     <message>
-        <source>ImageCoin Core</source>
-        <translation>ImageCoin Core
+        <source>imagecoin Core</source>
+        <translation>imagecoin Core
 </translation>
     </message>
     <message>
@@ -931,16 +931,16 @@ Adress: %4
         <translation>Välkommen</translation>
     </message>
     <message>
-        <source>Welcome to ImageCoin Core.</source>
-        <translation>Välkommen till ImageCoin Core.</translation>
+        <source>Welcome to imagecoin Core.</source>
+        <translation>Välkommen till imagecoin Core.</translation>
     </message>
     <message>
-        <source>As this is the first time the program is launched, you can choose where ImageCoin Core will store its data.</source>
-        <translation>Då detta är första gången programmet startas kan du välja var ImageCoin Core ska lagra sin data.</translation>
+        <source>As this is the first time the program is launched, you can choose where imagecoin Core will store its data.</source>
+        <translation>Då detta är första gången programmet startas kan du välja var imagecoin Core ska lagra sin data.</translation>
     </message>
     <message>
-        <source>ImageCoin Core will download and store a copy of the ImageCoin block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
-        <translation>ImageCoin Core kommer att laddas ned och lagra en kopia av ImageCoin:s blockkedja. Minst %1 GB data kommer att lagras i denna katalog och den kommer att växa med tiden. Plånboken kommer också att lagras i denna katalog.</translation>
+        <source>imagecoin Core will download and store a copy of the imagecoin block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
+        <translation>imagecoin Core kommer att laddas ned och lagra en kopia av imagecoin:s blockkedja. Minst %1 GB data kommer att lagras i denna katalog och den kommer att växa med tiden. Plånboken kommer också att lagras i denna katalog.</translation>
     </message>
     <message>
         <source>Use the default data directory</source>
@@ -989,12 +989,12 @@ Adress: %4
         <translation>&amp;Huvud</translation>
     </message>
     <message>
-        <source>Automatically start ImageCoin after logging in to the system.</source>
-        <translation>Starta ImageCoin automatiskt efter systeminloggning.</translation>
+        <source>Automatically start imagecoin after logging in to the system.</source>
+        <translation>Starta imagecoin automatiskt efter systeminloggning.</translation>
     </message>
     <message>
-        <source>&amp;Start ImageCoin on system login</source>
-        <translation>&amp;Starta ImageCoin vid systeminloggning</translation>
+        <source>&amp;Start imagecoin on system login</source>
+        <translation>&amp;Starta imagecoin vid systeminloggning</translation>
     </message>
     <message>
         <source>Size of &amp;database cache</source>
@@ -1021,8 +1021,8 @@ Adress: %4
         <translation>Denna mängd fungerar som en tröskel att stänga av Darksend då det har uppnåtts.</translation>
     </message>
     <message>
-        <source>Amount of ImageCoin to keep anonymized</source>
-        <translation>Mängd ImageCoin att bibehålla anonymiserade</translation>
+        <source>Amount of imagecoin to keep anonymized</source>
+        <translation>Mängd imagecoin att bibehålla anonymiserade</translation>
     </message>
     <message>
         <source>W&amp;allet</source>
@@ -1049,8 +1049,8 @@ Adress: %4
         <translation>&amp;Nätverk</translation>
     </message>
     <message>
-        <source>Automatically open the ImageCoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Öppna ImageCoin:s klientport automatiskt på routern. Detta fungerar bara om din router stöder UPnP och är aktiverad.</translation>
+        <source>Automatically open the imagecoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Öppna imagecoin:s klientport automatiskt på routern. Detta fungerar bara om din router stöder UPnP och är aktiverad.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -1101,14 +1101,14 @@ Adress: %4
         <translation>Användargränssnitt&amp;språk: </translation>
     </message>
     <message>
-        <source>The user interface language can be set here. This setting will take effect after restarting ImageCoin.</source>
-        <translation>Användargränssnittspråket kan ställas in här. Denna inställning träder i kraft efter att ImageCoin startats om.</translation>
+        <source>The user interface language can be set here. This setting will take effect after restarting imagecoin.</source>
+        <translation>Användargränssnittspråket kan ställas in här. Denna inställning träder i kraft efter att imagecoin startats om.</translation>
     </message>
     <message>
         <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/projects/p/ImageCoin/</source>
+https://www.transifex.com/projects/p/imagecoin/</source>
         <translation>Fattas språk eller är det en ofullständig översättning? Hjälp till att bidra med översättningar här:
-https://www.transifex.com/projects/p/ImageCoin/</translation>
+https://www.transifex.com/projects/p/imagecoin/</translation>
     </message>
     <message>
         <source>&amp;Unit to show amounts in:</source>
@@ -1182,8 +1182,8 @@ https://www.transifex.com/projects/p/ImageCoin/</translation>
         <translation>Formulär</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the ImageCoin network after a connection is established, but this process has not completed yet.</source>
-        <translation>Den visade informationen kan vara utdaterad. Din plånbok synkroniseras automatiskt med ImageCoin-nätverket efter att en anslutning har etablerats men denna process har ännu inte slutförts.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the imagecoin network after a connection is established, but this process has not completed yet.</source>
+        <translation>Den visade informationen kan vara utdaterad. Din plånbok synkroniseras automatiskt med imagecoin-nätverket efter att en anslutning har etablerats men denna process har ännu inte slutförts.</translation>
     </message>
     <message>
         <source>Available:</source>
@@ -1238,8 +1238,8 @@ https://www.transifex.com/projects/p/ImageCoin/</translation>
         <translation>Mängd och omgångar:</translation>
     </message>
     <message>
-        <source>0 ImageCoin / 0 Rounds</source>
-        <translation>0 ImageCoin/0 omgångar</translation>
+        <source>0 imagecoin / 0 Rounds</source>
+        <translation>0 imagecoin/0 omgångar</translation>
     </message>
     <message>
         <source>Submitted Denom:</source>
@@ -1335,8 +1335,8 @@ https://www.transifex.com/projects/p/ImageCoin/</translation>
         <translation>Fel vid betalningsbegäran</translation>
     </message>
     <message>
-        <source>Cannot start ImageCoin: click-to-pay handler</source>
-        <translation>Kan inte starta ImageCoin: klicka-för-att-betala hanterare</translation>
+        <source>Cannot start imagecoin: click-to-pay handler</source>
+        <translation>Kan inte starta imagecoin: klicka-för-att-betala hanterare</translation>
     </message>
     <message>
         <source>URI handling</source>
@@ -1435,8 +1435,8 @@ https://www.transifex.com/projects/p/ImageCoin/</translation>
         <translation>Antal anslutningar</translation>
     </message>
     <message>
-        <source>Open the ImageCoin debug log file from the current data directory. This can take a few seconds for large log files.</source>
-        <translation>Öppna ImageCoins avsökningsloggfil från den nuvarande datakatalogen. Detta kan ta ett par sekunder för stora loggfiler.</translation>
+        <source>Open the imagecoin debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <translation>Öppna imagecoins avsökningsloggfil från den nuvarande datakatalogen. Detta kan ta ett par sekunder för stora loggfiler.</translation>
     </message>
     <message>
         <source>&amp;Open</source>
@@ -1507,8 +1507,8 @@ https://www.transifex.com/projects/p/ImageCoin/</translation>
         <translation>Ut:</translation>
     </message>
     <message>
-        <source>Welcome to the ImageCoin RPC console.</source>
-        <translation>Välkommen till ImageCoins RPC-konsol.</translation>
+        <source>Welcome to the imagecoin RPC console.</source>
+        <translation>Välkommen till imagecoins RPC-konsol.</translation>
     </message>
     <message>
         <source>Use up and down arrows to navigate history, and &lt;b&gt;Ctrl-L&lt;/b&gt; to clear screen.</source>
@@ -1542,8 +1542,8 @@ https://www.transifex.com/projects/p/ImageCoin/</translation>
         <translation>Åt&amp;eranvänd en befintlig mottagaradress (rekommenderas inte)</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the ImageCoin network.</source>
-        <translation>Ett valfritt meddelande att bifoga betalningsbegärandet vilket kommer att visas när begärandet öppnas. Observera: Meddelandet kommer inte att skickas med betalningen över ImageCoin-nätverket.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the imagecoin network.</source>
+        <translation>Ett valfritt meddelande att bifoga betalningsbegärandet vilket kommer att visas när begärandet öppnas. Observera: Meddelandet kommer inte att skickas med betalningen över imagecoin-nätverket.</translation>
     </message>
     <message>
         <source>&amp;Message:</source>
@@ -1899,8 +1899,8 @@ https://www.transifex.com/projects/p/ImageCoin/</translation>
         <translation>Fel: Plånboken låstes upp enbart för att anonymisera mynt.</translation>
     </message>
     <message>
-        <source>Warning: Invalid ImageCoin address</source>
-        <translation>Varning: Ogiltig ImageCoin-adress</translation>
+        <source>Warning: Invalid imagecoin address</source>
+        <translation>Varning: Ogiltig imagecoin-adress</translation>
     </message>
     <message>
         <source>Warning: Unknown change address</source>
@@ -1958,8 +1958,8 @@ https://www.transifex.com/projects/p/ImageCoin/</translation>
         <translation>Meddelande:</translation>
     </message>
     <message>
-        <source>A message that was attached to the ImageCoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the ImageCoin network.</source>
-        <translation>Ett meddelande som bifogades till ImageCoin: URI vilket kommer att lagras med transaktionen så att du vet. Observera: Meddelandet kommer inte att skickas över ImageCoin-nätverket.</translation>
+        <source>A message that was attached to the imagecoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the imagecoin network.</source>
+        <translation>Ett meddelande som bifogades till imagecoin: URI vilket kommer att lagras med transaktionen så att du vet. Observera: Meddelandet kommer inte att skickas över imagecoin-nätverket.</translation>
     </message>
     <message>
         <source>This is an unverified payment request.</source>
@@ -1985,8 +1985,8 @@ https://www.transifex.com/projects/p/ImageCoin/</translation>
 <context>
     <name>ShutdownWindow</name>
     <message>
-        <source>ImageCoin Core is shutting down...</source>
-        <translation>ImageCoin Core stängs ned...</translation>
+        <source>imagecoin Core is shutting down...</source>
+        <translation>imagecoin Core stängs ned...</translation>
     </message>
     <message>
         <source>Do not shut down the computer until this window disappears.</source>
@@ -2036,8 +2036,8 @@ https://www.transifex.com/projects/p/ImageCoin/</translation>
         <translation>Kopiera den nuvarande valda signaturen till systemurklippet</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this ImageCoin address</source>
-        <translation>Signera meddelandet för att bevisa att du äger denna ImageCoin-adress</translation>
+        <source>Sign the message to prove you own this imagecoin address</source>
+        <translation>Signera meddelandet för att bevisa att du äger denna imagecoin-adress</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -2060,8 +2060,8 @@ https://www.transifex.com/projects/p/ImageCoin/</translation>
         <translation>Skriv in signeringsadressen, meddelandet, (försäkra dig om att du kopierar linjeavbrott, mellanslag, flikar med mera) och signera nedtill för att verifiera meddelandet. Var försiktig med att inte läsa in mer i signaturen än vad som finns i det signerade meddelandet för att undvika att bli lurad av en mellanhandattack.</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified ImageCoin address</source>
-        <translation>Bekräfta meddelandet för att försäkra dig om att den signerades med den angivna ImageCoin-adressen</translation>
+        <source>Verify the message to ensure it was signed with the specified imagecoin address</source>
+        <translation>Bekräfta meddelandet för att försäkra dig om att den signerades med den angivna imagecoin-adressen</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>
@@ -2127,8 +2127,8 @@ https://www.transifex.com/projects/p/ImageCoin/</translation>
 <context>
     <name>SplashScreen</name>
     <message>
-        <source>ImageCoin Core</source>
-        <translation>ImageCoin Core
+        <source>imagecoin Core</source>
+        <translation>imagecoin Core
 </translation>
     </message>
     <message>
@@ -2140,8 +2140,8 @@ https://www.transifex.com/projects/p/ImageCoin/</translation>
         <translation>Bitcoin Core-utvecklarna</translation>
     </message>
     <message>
-        <source>The ImageCoin Core developers</source>
-        <translation>ImageCoin Core-utvecklarna</translation>
+        <source>The imagecoin Core developers</source>
+        <translation>imagecoin Core-utvecklarna</translation>
     </message>
     <message>
         <source>[testnet]</source>
@@ -2656,14 +2656,14 @@ https://www.transifex.com/projects/p/ImageCoin/</translation>
     </message>
 </context>
 <context>
-    <name>ImageCoin-core</name>
+    <name>imagecoin-core</name>
     <message>
         <source>Bind to given address and always listen on it. Use [host]:port notation for IPv6</source>
         <translation>Sammanbind till fastställd adress och avlyssna alltid den. Använd [host]:port-notation för IPv6</translation>
     </message>
     <message>
-        <source>Cannot obtain a lock on data directory %s. ImageCoin Core is probably already running.</source>
-        <translation>Kan inte erhålla ett lås på datakatalog %s. ImageCoin Core körs förmodligen redan.</translation>
+        <source>Cannot obtain a lock on data directory %s. imagecoin Core is probably already running.</source>
+        <translation>Kan inte erhålla ett lås på datakatalog %s. imagecoin Core körs förmodligen redan.</translation>
     </message>
     <message>
         <source>Darksend uses exact denominated amounts to send funds, you might simply need to anonymize some more coins.</source>
@@ -2718,16 +2718,16 @@ https://www.transifex.com/projects/p/ImageCoin/</translation>
         <translation>Detta är en förhandsutgiven testkompilering - använd på egen risk - använd inte för utvinning eller handlarapplikationer.</translation>
     </message>
     <message>
-        <source>Unable to bind to %s on this computer. ImageCoin Core is probably already running.</source>
-        <translation>Det går inte att binda till %s till denna dator. ImageCoin Core körs förmodligen redan.</translation>
+        <source>Unable to bind to %s on this computer. imagecoin Core is probably already running.</source>
+        <translation>Det går inte att binda till %s till denna dator. imagecoin Core körs förmodligen redan.</translation>
     </message>
     <message>
         <source>Unable to locate enough Darksend denominated funds for this transaction.</source>
         <translation>Kunde inte hitta tillräckliga Darksend-denominationsmedel för denna transaktion.</translation>
     </message>
     <message>
-        <source>Unable to locate enough Darksend non-denominated funds for this transaction that are not equal 1000 ImageCoin.</source>
-        <translation>Kunde inte hitta tillräckliga Darksend-icke-denominationsmedel för denna transaktion som inte är likvärdiga 1000 ImageCoin.</translation>
+        <source>Unable to locate enough Darksend non-denominated funds for this transaction that are not equal 1000 imagecoin.</source>
+        <translation>Kunde inte hitta tillräckliga Darksend-icke-denominationsmedel för denna transaktion som inte är likvärdiga 1000 imagecoin.</translation>
     </message>
     <message>
         <source>Warning: -paytxfee is set very high! This is the transaction fee you will pay if you send a transaction.</source>
@@ -2942,8 +2942,8 @@ https://www.transifex.com/projects/p/ImageCoin/</translation>
         <translation>Information</translation>
     </message>
     <message>
-        <source>Initialization sanity check failed. ImageCoin Core is shutting down.</source>
-        <translation>Initialiseringstillståndkontroll misslyckades. ImageCoin Core stängs ned.</translation>
+        <source>Initialization sanity check failed. imagecoin Core is shutting down.</source>
+        <translation>Initialiseringstillståndkontroll misslyckades. imagecoin Core stängs ned.</translation>
     </message>
     <message>
         <source>Input is not valid.</source>

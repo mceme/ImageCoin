@@ -43,11 +43,11 @@
     </message>
     <message>
         <source>Choose the address to send coins to</source>
-        <translation>Wählen Sie die Adresse aus, an die Sie ImageCoin überweisen möchten</translation>
+        <translation>Wählen Sie die Adresse aus, an die Sie imagecoin überweisen möchten</translation>
     </message>
     <message>
         <source>Choose the address to receive coins with</source>
-        <translation>Wählen Sie die Adresse aus, über die Sie ImageCoin empfangen wollen</translation>
+        <translation>Wählen Sie die Adresse aus, über die Sie imagecoin empfangen wollen</translation>
     </message>
     <message>
         <source>C&amp;hoose</source>
@@ -62,12 +62,12 @@
         <translation>Empfangsadressen</translation>
     </message>
     <message>
-        <source>These are your ImageCoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Dies sind ihre ImageCoin-Adressen zum Tätigen von Überweisungen. Bitte prüfen Sie den Betrag und die Empfangsadresse, bevor Sie ImageCoin überweisen.</translation>
+        <source>These are your imagecoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Dies sind ihre imagecoin-Adressen zum Tätigen von Überweisungen. Bitte prüfen Sie den Betrag und die Empfangsadresse, bevor Sie imagecoin überweisen.</translation>
     </message>
     <message>
-        <source>These are your ImageCoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Dies sind ihre ImageCoin-Adressen zum Empfangen von Zahlungen. Es wird empfohlen für jede Transaktion eine neue Empfangsadresse zu verwenden.</translation>
+        <source>These are your imagecoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Dies sind ihre imagecoin-Adressen zum Empfangen von Zahlungen. Es wird empfohlen für jede Transaktion eine neue Empfangsadresse zu verwenden.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -176,8 +176,8 @@
         <translation>Wallet-Verschlüsselung bestätigen</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR ImageCoin&lt;/b&gt;!</source>
-        <translation>Warnung: Wenn Sie ihre Wallet verschlüsseln und ihre Passphrase verlieren werden Sie &lt;b&gt;alle ihre ImageCoin verlieren&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR imagecoin&lt;/b&gt;!</source>
+        <translation>Warnung: Wenn Sie ihre Wallet verschlüsseln und ihre Passphrase verlieren werden Sie &lt;b&gt;alle ihre imagecoin verlieren&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -188,8 +188,8 @@
         <translation>Wallet verschlüsselt</translation>
     </message>
     <message>
-        <source>ImageCoin Core will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your ImageCoins from being stolen by malware infecting your computer.</source>
-        <translation>ImageCoin wird jetzt beendet, um den Verschlüsselungsprozess abzuschließen. Bitte beachten Sie, dass die Wallet-Verschlüsselung nicht vollständig vor Diebstahl ihrer ImageCoin durch Schadsoftware schützt, die ihren Computer befallen könnte.</translation>
+        <source>imagecoin Core will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your imagecoins from being stolen by malware infecting your computer.</source>
+        <translation>imagecoin wird jetzt beendet, um den Verschlüsselungsprozess abzuschließen. Bitte beachten Sie, dass die Wallet-Verschlüsselung nicht vollständig vor Diebstahl ihrer imagecoin durch Schadsoftware schützt, die ihren Computer befallen könnte.</translation>
     </message>
     <message>
         <source>IMPORTANT: Any previous backups you have made of your wallet file should be replaced with the newly generated, encrypted wallet file. For security reasons, previous backups of the unencrypted wallet file will become useless as soon as you start using the new, encrypted wallet.</source>
@@ -242,12 +242,12 @@
 <context>
     <name>BitcoinGUI</name>
     <message>
-        <source>A fatal error occurred. ImageCoin Core can no longer continue safely and will quit.</source>
-        <translation>Ein kritischer Fehler ist aufgetreten. ImageCoin Core kann nicht mehr ausgeführt werden und wird nun beendet.</translation>
+        <source>A fatal error occurred. imagecoin Core can no longer continue safely and will quit.</source>
+        <translation>Ein kritischer Fehler ist aufgetreten. imagecoin Core kann nicht mehr ausgeführt werden und wird nun beendet.</translation>
     </message>
     <message>
-        <source>ImageCoin Core</source>
-        <translation>ImageCoin Core</translation>
+        <source>imagecoin Core</source>
+        <translation>imagecoin Core</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -270,16 +270,16 @@
         <translation>&amp;Überweisen</translation>
     </message>
     <message>
-        <source>Send coins to a ImageCoin address</source>
-        <translation>ImageCoin an eine ImageCoin-Adresse überweisen</translation>
+        <source>Send coins to a imagecoin address</source>
+        <translation>imagecoin an eine imagecoin-Adresse überweisen</translation>
     </message>
     <message>
         <source>&amp;Receive</source>
         <translation>&amp;Empfangen</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and ImageCoin: URIs)</source>
-        <translation>Zahlungen anfordern (erzeugt QR-Codes und "ImageCoin:"-URIs)</translation>
+        <source>Request payments (generates QR codes and imagecoin: URIs)</source>
+        <translation>Zahlungen anfordern (erzeugt QR-Codes und "imagecoin:"-URIs)</translation>
     </message>
     <message>
         <source>&amp;Transactions</source>
@@ -306,12 +306,12 @@
         <translation>Anwendung beenden</translation>
     </message>
     <message>
-        <source>&amp;About ImageCoin Core</source>
-        <translation>&amp;Über ImageCoin Core</translation>
+        <source>&amp;About imagecoin Core</source>
+        <translation>&amp;Über imagecoin Core</translation>
     </message>
     <message>
-        <source>Show information about ImageCoin Core</source>
-        <translation>Informationen über ImageCoin Core anzeigen</translation>
+        <source>Show information about imagecoin Core</source>
+        <translation>Informationen über imagecoin Core anzeigen</translation>
     </message>
     <message>
         <source>About &amp;Qt</source>
@@ -326,7 +326,7 @@
         <translation>&amp;Konfiguration...</translation>
     </message>
     <message>
-        <source>Modify configuration options for ImageCoin Core</source>
+        <source>Modify configuration options for imagecoin Core</source>
         <translation>Die Konfiguration des Clients bearbeiten</translation>
     </message>
     <message>
@@ -378,16 +378,16 @@
         <translation>Nachricht s&amp;ignieren...</translation>
     </message>
     <message>
-        <source>Sign messages with your ImageCoin addresses to prove you own them</source>
-        <translation>Nachrichten signieren, um den Besitz ihrer ImageCoin-Adressen zu beweisen</translation>
+        <source>Sign messages with your imagecoin addresses to prove you own them</source>
+        <translation>Nachrichten signieren, um den Besitz ihrer imagecoin-Adressen zu beweisen</translation>
     </message>
     <message>
         <source>&amp;Verify message...</source>
         <translation>Nachricht &amp;verifizieren...</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified ImageCoin addresses</source>
-        <translation>Nachrichten verifizieren, um sicherzustellen, dass diese mit den angegebenen ImageCoin-Adressen signiert wurden</translation>
+        <source>Verify messages to ensure they were signed with specified imagecoin addresses</source>
+        <translation>Nachrichten verifizieren, um sicherzustellen, dass diese mit den angegebenen imagecoin-Adressen signiert wurden</translation>
     </message>
     <message>
         <source>&amp;Information</source>
@@ -474,16 +474,16 @@
         <translation>&amp;URI öffnen...</translation>
     </message>
     <message>
-        <source>Open a ImageCoin: URI or payment request</source>
-        <translation>Eine "ImageCoin:"-URI oder Zahlungsanforderung öffnen</translation>
+        <source>Open a imagecoin: URI or payment request</source>
+        <translation>Eine "imagecoin:"-URI oder Zahlungsanforderung öffnen</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
         <translation>&amp;Kommandozeilenoptionen</translation>
     </message>
     <message>
-        <source>Show the ImageCoin Core help message to get a list with possible ImageCoin Core command-line options</source>
-        <translation>Zeige den "ImageCoin Core"-Hilfetext, um eine Liste mit möglichen Kommandozeilenoptionen zu erhalten</translation>
+        <source>Show the imagecoin Core help message to get a list with possible imagecoin Core command-line options</source>
+        <translation>Zeige den "imagecoin Core"-Hilfetext, um eine Liste mit möglichen Kommandozeilenoptionen zu erhalten</translation>
     </message>
     <message>
         <source>&amp;PrivateSend information</source>
@@ -514,12 +514,12 @@
         <translation>Registerkartenleiste</translation>
     </message>
     <message>
-        <source>ImageCoin Core client</source>
-        <translation>ImageCoin Core Client</translation>
+        <source>imagecoin Core client</source>
+        <translation>imagecoin Core Client</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to ImageCoin network</source>
-        <translation><numerusform>%n aktive Verbindung zum ImageCoin-Netzwerk</numerusform><numerusform>%n aktive Verbindungen zum ImageCoin-Netzwerk</numerusform></translation>
+        <source>%n active connection(s) to imagecoin network</source>
+        <translation><numerusform>%n aktive Verbindung zum imagecoin-Netzwerk</numerusform><numerusform>%n aktive Verbindungen zum imagecoin-Netzwerk</numerusform></translation>
     </message>
     <message>
         <source>Network activity disabled</source>
@@ -857,28 +857,28 @@
         <translation>Bitten wählen Sie eine Datenschutz-Stufe.</translation>
     </message>
     <message>
-        <source>Use 2 separate masternodes to mix funds up to 1000 ImageCoin</source>
-        <translation>Benutze 2 separate Masternodes um bis zu 1000 ImageCoin zu mixen</translation>
+        <source>Use 2 separate masternodes to mix funds up to 1000 imagecoin</source>
+        <translation>Benutze 2 separate Masternodes um bis zu 1000 imagecoin zu mixen</translation>
     </message>
     <message>
-        <source>Use 8 separate masternodes to mix funds up to 1000 ImageCoin</source>
-        <translation>Benutze 8 separate Masternodes um bis zu 1000 ImageCoin zu mixen</translation>
+        <source>Use 8 separate masternodes to mix funds up to 1000 imagecoin</source>
+        <translation>Benutze 8 separate Masternodes um bis zu 1000 imagecoin zu mixen</translation>
     </message>
     <message>
         <source>Use 16 separate masternodes</source>
         <translation>Benutze 16 separate Masternodes</translation>
     </message>
     <message>
-        <source>This option is the quickest and will cost about ~0.025 ImageCoin to anonymize 1000 ImageCoin</source>
-        <translation>Diese Option ist am Schnellsten und kostet ungefähr 0,025 ImageCoin, um 1000 ImageCoin zu anonymisieren</translation>
+        <source>This option is the quickest and will cost about ~0.025 imagecoin to anonymize 1000 imagecoin</source>
+        <translation>Diese Option ist am Schnellsten und kostet ungefähr 0,025 imagecoin, um 1000 imagecoin zu anonymisieren</translation>
     </message>
     <message>
-        <source>This option is moderately fast and will cost about 0.05 ImageCoin to anonymize 1000 ImageCoin</source>
-        <translation>Diese Option ist einigermaßen schnell und kostet ungefähr 0,05 ImageCoin, um 1000 ImageCoin zu anonymisieren</translation>
+        <source>This option is moderately fast and will cost about 0.05 imagecoin to anonymize 1000 imagecoin</source>
+        <translation>Diese Option ist einigermaßen schnell und kostet ungefähr 0,05 imagecoin, um 1000 imagecoin zu anonymisieren</translation>
     </message>
     <message>
-        <source>0.1 ImageCoin per 1000 ImageCoin you anonymize.</source>
-        <translation>0,1 ImageCoin pro 1000 zu anonymisierende ImageCoin.</translation>
+        <source>0.1 imagecoin per 1000 imagecoin you anonymize.</source>
+        <translation>0,1 imagecoin pro 1000 zu anonymisierende imagecoin.</translation>
     </message>
     <message>
         <source>This is the slowest and most secure option. Using maximum anonymity will cost</source>
@@ -889,16 +889,16 @@
         <translation>PrivateSend Konfiguration</translation>
     </message>
     <message>
-        <source>PrivateSend was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening ImageCoin's configuration screen.</source>
-        <translation>PrivateSend wurde erfolgreich auf einfachen Datenschutz (%1 und 2 Runden) gesetzt. Sie können dies jederzeit im Konfigurationsfenster von ImageCoin ändern.</translation>
+        <source>PrivateSend was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening imagecoin's configuration screen.</source>
+        <translation>PrivateSend wurde erfolgreich auf einfachen Datenschutz (%1 und 2 Runden) gesetzt. Sie können dies jederzeit im Konfigurationsfenster von imagecoin ändern.</translation>
     </message>
     <message>
-        <source>PrivateSend was successfully set to high (%1 and 8 rounds). You can change this at any time by opening ImageCoin's configuration screen.</source>
-        <translation>PrivateSend wurde erfolgreich auf hohen Datenschutz (%1 und 8 Runden) gesetzt. Sie können dies jederzeit im Konfigurationsfenster von ImageCoin ändern.</translation>
+        <source>PrivateSend was successfully set to high (%1 and 8 rounds). You can change this at any time by opening imagecoin's configuration screen.</source>
+        <translation>PrivateSend wurde erfolgreich auf hohen Datenschutz (%1 und 8 Runden) gesetzt. Sie können dies jederzeit im Konfigurationsfenster von imagecoin ändern.</translation>
     </message>
     <message>
-        <source>PrivateSend was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening ImageCoin's configuration screen.</source>
-        <translation>PrivateSend wurde erfolgreich auf maximalen Datenschutz (%1 und 16 Runden) gesetzt. Sie können dies jederzeit im Konfigurationsfenster von ImageCoin ändern.</translation>
+        <source>PrivateSend was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening imagecoin's configuration screen.</source>
+        <translation>PrivateSend wurde erfolgreich auf maximalen Datenschutz (%1 und 16 Runden) gesetzt. Sie können dies jederzeit im Konfigurationsfenster von imagecoin ändern.</translation>
     </message>
 </context>
 <context>
@@ -940,8 +940,8 @@
         <translation>Zahlungsadresse bearbeiten</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid ImageCoin address.</source>
-        <translation>Die eingegebene Adresse "%1" ist keine gültige ImageCoin-Adresse.</translation>
+        <source>The entered address "%1" is not a valid imagecoin address.</source>
+        <translation>Die eingegebene Adresse "%1" ist keine gültige imagecoin-Adresse.</translation>
     </message>
     <message>
         <source>The entered address "%1" is already in the address book.</source>
@@ -982,8 +982,8 @@
 <context>
     <name>HelpMessageDialog</name>
     <message>
-        <source>ImageCoin Core</source>
-        <translation>ImageCoin Core</translation>
+        <source>imagecoin Core</source>
+        <translation>imagecoin Core</translation>
     </message>
     <message>
         <source>version</source>
@@ -994,8 +994,8 @@
         <translation>(%1-Bit)</translation>
     </message>
     <message>
-        <source>About ImageCoin Core</source>
-        <translation>Über ImageCoin Core</translation>
+        <source>About imagecoin Core</source>
+        <translation>Über imagecoin Core</translation>
     </message>
     <message>
         <source>Command-line options</source>
@@ -1042,9 +1042,9 @@
         <translation>PrivateSend Informationen</translation>
     </message>
     <message>
-        <source>&lt;h3&gt;PrivateSend Basics&lt;/h3&gt; PrivateSend gives you true financial privacy by obscuring the origins of your funds. All the ImageCoin in your wallet is comprised of different "inputs" which you can think of as separate, discrete coins.&lt;br&gt; PrivateSend uses an innovative process to mix your inputs with the inputs of two other people, without having your coins ever leave your wallet. You retain control of your money at all times..&lt;hr&gt; &lt;b&gt;The PrivateSend process works like this:&lt;/b&gt;&lt;ol type="1"&gt; &lt;li&gt;PrivateSend begins by breaking your transaction inputs down into standard denominations. These denominations are 0.01 ImageCoin, 0.1 ImageCoin, 1 ImageCoin and 10 ImageCoin -- sort of like the paper money you use every day.&lt;/li&gt; &lt;li&gt;Your wallet then sends requests to specially configured software nodes on the network, called "masternodes." These masternodes are informed then that you are interested in mixing a certain denomination. No identifiable information is sent to the masternodes, so they never know "who" you are.&lt;/li&gt; &lt;li&gt;When two other people send similar messages, indicating that they wish to mix the same denomination, a mixing session begins. The masternode mixes up the inputs and instructs all three users' wallets to pay the now-transformed input back to themselves. Your wallet pays that denomination directly to itself, but in a different address (called a change address).&lt;/li&gt; &lt;li&gt;In order to fully obscure your funds, your wallet must repeat this process a number of times with each denomination. Each time the process is completed, it's called a "round." Each round of PrivateSend makes it exponentially more difficult to determine where your funds originated.&lt;/li&gt; &lt;li&gt;This mixing process happens in the background without any intervention on your part. When you wish to make a transaction, your funds will already be anonymized. No additional waiting is required.&lt;/li&gt; &lt;/ol&gt; &lt;hr&gt;&lt;b&gt;IMPORTANT:&lt;/b&gt; Your wallet only contains 1000 of these "change addresses." Every time a mixing event happens, up to 9 of your addresses are used up. This means those 1000 addresses last for about 100 mixing events. When 900 of them are used, your wallet must create more addresses. It can only do this, however, if you have automatic backups enabled.&lt;br&gt; Consequently, users who have backups disabled will also have PrivateSend disabled. &lt;hr&gt;For more info see &lt;a href="https://ImageCoinpay.atlassian.net/wiki/display/DOC/PrivateSend"&gt;https://ImageCoinpay.atlassian.net/wiki/display/DOC/PrivateSend&lt;/a&gt;         </source>
-        <translation>&lt;h3&gt;Basisinformation zu PrivateSend&lt;/h3&gt; PrivateSend bietet finanziellen Datenschutz durch geschickte Verschleierung der Herkunft Ihres Geldes. Die ImageCoin in Ihrer Geldbörse setzen sich aus völlig unterschiedlichen eigenständigen "Inputs" zusammen.&lt;br&gt; PrivateSend benutzt einen innovativen Prozeß, um Ihre "Inputs" mit denen von 2 anderen Personen zu mischen, ohne das Ihr Geld jemals Ihre Geldbörse verlassen muß, d.h. Sie haben während dieses Prozesses immer die Kontrolle über Ihr Geld.&lt;hr&gt;&lt;b&gt;Der PrivateSend-Prozess funktioniert folgendermaßen:&lt;/b&gt;&lt;ol type="1"&gt;&lt;li&gt;PrivateSend stückelt Ihre "Inputs" in kleinere Teile. Diese sind 0,01 ImageCoin, 0,1 ImageCoin, 1ImageCoin und 10 ImageCoin -- im Prinzip wie Münzen oder Scheine, wie wir sie jeden Tag benutzen.&lt;/li&gt; &lt;li&gt;Ihre Geldbörse sendet dann eine entsprechende Mixing Anforderungen an spezielle ImageCoin-Server im Internet, die sogenannten "Masternodes". Damit werden diese Masternodes darüber informiert, daß Sie Ihre gestückelten ImageCoin gerne mixen würden. Dabei wird keinerlei Information über Sie versendet, d.h. die Masternodes wissen nie, wer genau mixen möchte.&lt;/li&gt; &lt;li&gt; Sobald zwei andere Personen eine gleiche Mixing-Anforderung mit der gleichen Stückelung senden beginnt der Mixing-Prozeß. Der Masternode vermischt (daher das Wort "Mixing") die gestückelten Inputs und weist das Ergebnis wieder den Geldbörsen zu, allerdings mit neuen Empfängeradressen (die natürlich zu Ihrer Wallet gehören), so daß man sie nicht mehr den ursprünglichen Adressen zuordnen kann.. Man kann sich das so vorstellen wie wenn 3 Personen jeweils 100 Euro in der gleichen Anzahl von 10 Euro Scheinen, 5 Euro Scheinen, 2- und 1-Euro Münzen auf einen Tisch legen, alles einmal gut durchmischen, und sich anschießend ohne hinzusehen wieder 100 Euro vom Tischen nehmen. Jeder hat genau so viele Euro wie vorher, aber keiner weiß, wessen Scheine oder Münzen er letztendlich in seiner Geldbörse hat, oder wo sie herkommen. Und das Gute dabei ist, im ImageCoin Mixing Prozeß verlassen die Scheine oder Münzen niemals die Geldbörse ihres Besitzers, daher kann kein Betrug stattfinden.&lt;/li&gt; &lt;li&gt;Um die Herkunft Ihres Guthabens vollständig zu verschleiern muß dieser Prozeß mehrmals wiederholt werden, d.h. es gibt mehrere "Runden" des Mixing-Prozesses. Die Anzahl der Runden ist einstellbar, je mehr, desto besser ist die Herkunft Ihres Guthabens verschleiert, aber um so länger dauert der Prozeß.&lt;/li&gt; &lt;li&gt;
-Der Mixing-Prozeß läuft nach dem Start vollständig im Hintergrund, d.h. es ist keine Benutzerinteraktion mehr erforderlich. Das Wallet informiert Sie über den Fortschrittsbalken über den aktuellen Status des Prozesses.&lt;/li&gt; &lt;/ol&gt; &lt;hr&gt;&lt;b&gt;WICHTIG:&lt;/b&gt; beim Mischen der Inputs werden die einzelnen Stückelungen einer NEUEN Empfängeradresse zugeordnet (siehe Oben). Ihre Geldbörse hat bereits beim ersten Start 1000 dieser "Wechseladressen" auf Vorrat erzeugt. Bei jedem Mischen werden 9 dieser Wechseladressen verbraucht, d.h. nach ungefähr 100 Mischvorgänge sind diese 1000 Wechseladressen aufgebraucht. Die Geldbörse ist so eingestellt, daß sie bei Erreichen von 900 benutzen Wechseladressen wieder genug neue Wechseladressen erzeugt, damit man auch in der Zukunft wieder mischen kann. Die neuen Wechseladressen werden aber nur dann erzeugt, wenn man in den Einstellungen "Automatische Datensicherungen" aktiviert hat.&lt;br&gt; Daher ist bei Benutzern, die "Automatische Datensicherungen" deaktiviert haben, automatisch auch PrivateSend dekativiert.&lt;hr&gt; Weitere Information hierzu finden Sie auf  &lt;a href="https://ImageCoinpay.atlassian.net/wiki/display/DOC/PrivateSend"&gt;https://ImageCoinpay.atlassian.net/wiki/display/DOC/PrivateSend&lt;/a&gt;</translation>
+        <source>&lt;h3&gt;PrivateSend Basics&lt;/h3&gt; PrivateSend gives you true financial privacy by obscuring the origins of your funds. All the imagecoin in your wallet is comprised of different "inputs" which you can think of as separate, discrete coins.&lt;br&gt; PrivateSend uses an innovative process to mix your inputs with the inputs of two other people, without having your coins ever leave your wallet. You retain control of your money at all times..&lt;hr&gt; &lt;b&gt;The PrivateSend process works like this:&lt;/b&gt;&lt;ol type="1"&gt; &lt;li&gt;PrivateSend begins by breaking your transaction inputs down into standard denominations. These denominations are 0.01 imagecoin, 0.1 imagecoin, 1 imagecoin and 10 imagecoin -- sort of like the paper money you use every day.&lt;/li&gt; &lt;li&gt;Your wallet then sends requests to specially configured software nodes on the network, called "masternodes." These masternodes are informed then that you are interested in mixing a certain denomination. No identifiable information is sent to the masternodes, so they never know "who" you are.&lt;/li&gt; &lt;li&gt;When two other people send similar messages, indicating that they wish to mix the same denomination, a mixing session begins. The masternode mixes up the inputs and instructs all three users' wallets to pay the now-transformed input back to themselves. Your wallet pays that denomination directly to itself, but in a different address (called a change address).&lt;/li&gt; &lt;li&gt;In order to fully obscure your funds, your wallet must repeat this process a number of times with each denomination. Each time the process is completed, it's called a "round." Each round of PrivateSend makes it exponentially more difficult to determine where your funds originated.&lt;/li&gt; &lt;li&gt;This mixing process happens in the background without any intervention on your part. When you wish to make a transaction, your funds will already be anonymized. No additional waiting is required.&lt;/li&gt; &lt;/ol&gt; &lt;hr&gt;&lt;b&gt;IMPORTANT:&lt;/b&gt; Your wallet only contains 1000 of these "change addresses." Every time a mixing event happens, up to 9 of your addresses are used up. This means those 1000 addresses last for about 100 mixing events. When 900 of them are used, your wallet must create more addresses. It can only do this, however, if you have automatic backups enabled.&lt;br&gt; Consequently, users who have backups disabled will also have PrivateSend disabled. &lt;hr&gt;For more info see &lt;a href="https://imagecoinpay.atlassian.net/wiki/display/DOC/PrivateSend"&gt;https://imagecoinpay.atlassian.net/wiki/display/DOC/PrivateSend&lt;/a&gt;         </source>
+        <translation>&lt;h3&gt;Basisinformation zu PrivateSend&lt;/h3&gt; PrivateSend bietet finanziellen Datenschutz durch geschickte Verschleierung der Herkunft Ihres Geldes. Die imagecoin in Ihrer Geldbörse setzen sich aus völlig unterschiedlichen eigenständigen "Inputs" zusammen.&lt;br&gt; PrivateSend benutzt einen innovativen Prozeß, um Ihre "Inputs" mit denen von 2 anderen Personen zu mischen, ohne das Ihr Geld jemals Ihre Geldbörse verlassen muß, d.h. Sie haben während dieses Prozesses immer die Kontrolle über Ihr Geld.&lt;hr&gt;&lt;b&gt;Der PrivateSend-Prozess funktioniert folgendermaßen:&lt;/b&gt;&lt;ol type="1"&gt;&lt;li&gt;PrivateSend stückelt Ihre "Inputs" in kleinere Teile. Diese sind 0,01 imagecoin, 0,1 imagecoin, 1imagecoin und 10 imagecoin -- im Prinzip wie Münzen oder Scheine, wie wir sie jeden Tag benutzen.&lt;/li&gt; &lt;li&gt;Ihre Geldbörse sendet dann eine entsprechende Mixing Anforderungen an spezielle imagecoin-Server im Internet, die sogenannten "Masternodes". Damit werden diese Masternodes darüber informiert, daß Sie Ihre gestückelten imagecoin gerne mixen würden. Dabei wird keinerlei Information über Sie versendet, d.h. die Masternodes wissen nie, wer genau mixen möchte.&lt;/li&gt; &lt;li&gt; Sobald zwei andere Personen eine gleiche Mixing-Anforderung mit der gleichen Stückelung senden beginnt der Mixing-Prozeß. Der Masternode vermischt (daher das Wort "Mixing") die gestückelten Inputs und weist das Ergebnis wieder den Geldbörsen zu, allerdings mit neuen Empfängeradressen (die natürlich zu Ihrer Wallet gehören), so daß man sie nicht mehr den ursprünglichen Adressen zuordnen kann.. Man kann sich das so vorstellen wie wenn 3 Personen jeweils 100 Euro in der gleichen Anzahl von 10 Euro Scheinen, 5 Euro Scheinen, 2- und 1-Euro Münzen auf einen Tisch legen, alles einmal gut durchmischen, und sich anschießend ohne hinzusehen wieder 100 Euro vom Tischen nehmen. Jeder hat genau so viele Euro wie vorher, aber keiner weiß, wessen Scheine oder Münzen er letztendlich in seiner Geldbörse hat, oder wo sie herkommen. Und das Gute dabei ist, im imagecoin Mixing Prozeß verlassen die Scheine oder Münzen niemals die Geldbörse ihres Besitzers, daher kann kein Betrug stattfinden.&lt;/li&gt; &lt;li&gt;Um die Herkunft Ihres Guthabens vollständig zu verschleiern muß dieser Prozeß mehrmals wiederholt werden, d.h. es gibt mehrere "Runden" des Mixing-Prozesses. Die Anzahl der Runden ist einstellbar, je mehr, desto besser ist die Herkunft Ihres Guthabens verschleiert, aber um so länger dauert der Prozeß.&lt;/li&gt; &lt;li&gt;
+Der Mixing-Prozeß läuft nach dem Start vollständig im Hintergrund, d.h. es ist keine Benutzerinteraktion mehr erforderlich. Das Wallet informiert Sie über den Fortschrittsbalken über den aktuellen Status des Prozesses.&lt;/li&gt; &lt;/ol&gt; &lt;hr&gt;&lt;b&gt;WICHTIG:&lt;/b&gt; beim Mischen der Inputs werden die einzelnen Stückelungen einer NEUEN Empfängeradresse zugeordnet (siehe Oben). Ihre Geldbörse hat bereits beim ersten Start 1000 dieser "Wechseladressen" auf Vorrat erzeugt. Bei jedem Mischen werden 9 dieser Wechseladressen verbraucht, d.h. nach ungefähr 100 Mischvorgänge sind diese 1000 Wechseladressen aufgebraucht. Die Geldbörse ist so eingestellt, daß sie bei Erreichen von 900 benutzen Wechseladressen wieder genug neue Wechseladressen erzeugt, damit man auch in der Zukunft wieder mischen kann. Die neuen Wechseladressen werden aber nur dann erzeugt, wenn man in den Einstellungen "Automatische Datensicherungen" aktiviert hat.&lt;br&gt; Daher ist bei Benutzern, die "Automatische Datensicherungen" deaktiviert haben, automatisch auch PrivateSend dekativiert.&lt;hr&gt; Weitere Information hierzu finden Sie auf  &lt;a href="https://imagecoinpay.atlassian.net/wiki/display/DOC/PrivateSend"&gt;https://imagecoinpay.atlassian.net/wiki/display/DOC/PrivateSend&lt;/a&gt;</translation>
     </message>
 </context>
 <context>
@@ -1054,16 +1054,16 @@ Der Mixing-Prozeß läuft nach dem Start vollständig im Hintergrund, d.h. es is
         <translation>Willkommen</translation>
     </message>
     <message>
-        <source>Welcome to ImageCoin Core.</source>
-        <translation>Willkommen zu ImageCoin Core.</translation>
+        <source>Welcome to imagecoin Core.</source>
+        <translation>Willkommen zu imagecoin Core.</translation>
     </message>
     <message>
-        <source>As this is the first time the program is launched, you can choose where ImageCoin Core will store its data.</source>
-        <translation>Da dies das erste Mal ist, dass Sie ImageCoin Core starten, legen Sie jetzt bitte fest, an welchem Ort die Daten gespeichert werden sollen.</translation>
+        <source>As this is the first time the program is launched, you can choose where imagecoin Core will store its data.</source>
+        <translation>Da dies das erste Mal ist, dass Sie imagecoin Core starten, legen Sie jetzt bitte fest, an welchem Ort die Daten gespeichert werden sollen.</translation>
     </message>
     <message>
-        <source>ImageCoin Core will download and store a copy of the ImageCoin block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
-        <translation>ImageCoin Core wird jetzt die Blockchain laden und lokal speichern. Dafür sind mindestens %1GB freier Speicherplatz erforderlich. Der Speicherbedarf wird mit der Zeit anwachsen. Das Wallet wird ebenfalls in diesem Verzeichnis gespeichert.</translation>
+        <source>imagecoin Core will download and store a copy of the imagecoin block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
+        <translation>imagecoin Core wird jetzt die Blockchain laden und lokal speichern. Dafür sind mindestens %1GB freier Speicherplatz erforderlich. Der Speicherbedarf wird mit der Zeit anwachsen. Das Wallet wird ebenfalls in diesem Verzeichnis gespeichert.</translation>
     </message>
     <message>
         <source>Use the default data directory</source>
@@ -1074,8 +1074,8 @@ Der Mixing-Prozeß läuft nach dem Start vollständig im Hintergrund, d.h. es is
         <translation>Ein benutzerdefiniertes Datenverzeichnis verwenden:</translation>
     </message>
     <message>
-        <source>ImageCoin Core</source>
-        <translation>ImageCoin Core</translation>
+        <source>imagecoin Core</source>
+        <translation>imagecoin Core</translation>
     </message>
     <message>
         <source>Error: Specified data directory "%1" cannot be created.</source>
@@ -1220,12 +1220,12 @@ Der Mixing-Prozeß läuft nach dem Start vollständig im Hintergrund, d.h. es is
         <translation>Formular</translation>
     </message>
     <message>
-        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the ImageCoin network, as detailed below.</source>
-        <translation>Kontostand möglicherweise falsch, da die neuesten Transaktionen ggf. noch nicht sichtbar sind. Der Kontostand wird automatisch aktualisiert, sobald Ihre Wallet die Synchronisation mit dem ImageCoin Netzwerk abgeschlossen hat.</translation>
+        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the imagecoin network, as detailed below.</source>
+        <translation>Kontostand möglicherweise falsch, da die neuesten Transaktionen ggf. noch nicht sichtbar sind. Der Kontostand wird automatisch aktualisiert, sobald Ihre Wallet die Synchronisation mit dem imagecoin Netzwerk abgeschlossen hat.</translation>
     </message>
     <message>
-        <source>Attempting to spend ImageCoin that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
-        <translation>Der Versuch ImageCoin aus Transaktionen auszugeben, die noch nicht angezeigt werden, wird vom Netzwerk nicht akzeptiert.</translation>
+        <source>Attempting to spend imagecoin that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
+        <translation>Der Versuch imagecoin aus Transaktionen auszugeben, die noch nicht angezeigt werden, wird vom Netzwerk nicht akzeptiert.</translation>
     </message>
     <message>
         <source>Number of blocks left</source>
@@ -1318,20 +1318,20 @@ Der Mixing-Prozeß läuft nach dem Start vollständig im Hintergrund, d.h. es is
         <translation>(0 = automatisch, &lt;0 = so viele Kerne frei lassen)</translation>
     </message>
     <message>
-        <source>Amount of ImageCoin to keep anonymized</source>
-        <translation>Anzahl anonymisierter ImageCoin</translation>
+        <source>Amount of imagecoin to keep anonymized</source>
+        <translation>Anzahl anonymisierter imagecoin</translation>
     </message>
     <message>
         <source>W&amp;allet</source>
         <translation>W&amp;allet</translation>
     </message>
     <message>
-        <source>Automatically start ImageCoin Core after logging in to the system.</source>
-        <translation>ImageCoin Core nach der Anmeldung am System automatisch starten.</translation>
+        <source>Automatically start imagecoin Core after logging in to the system.</source>
+        <translation>imagecoin Core nach der Anmeldung am System automatisch starten.</translation>
     </message>
     <message>
-        <source>&amp;Start ImageCoin Core on system login</source>
-        <translation>&amp;Starte ImageCoin Core während der Systemanmeldung</translation>
+        <source>&amp;Start imagecoin Core on system login</source>
+        <translation>&amp;Starte imagecoin Core während der Systemanmeldung</translation>
     </message>
     <message>
         <source>Show additional tab listing all your masternodes in first sub-tab&lt;br/&gt;and all masternodes on the network in second sub-tab.</source>
@@ -1378,8 +1378,8 @@ Der Mixing-Prozeß läuft nach dem Start vollständig im Hintergrund, d.h. es is
         <translation>Beim Erreichen dieses Betrages wird PrivateSend ausgeschaltet.</translation>
     </message>
     <message>
-        <source>Automatically open the ImageCoin Core client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Automatisch den ImageCoin Core Clientport auf dem Router öffnen. Dies funktioniert nur, wenn Ihr Router UPnP unterstützt und dies aktiviert ist.</translation>
+        <source>Automatically open the imagecoin Core client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Automatisch den imagecoin Core Clientport auf dem Router öffnen. Dies funktioniert nur, wenn Ihr Router UPnP unterstützt und dies aktiviert ist.</translation>
     </message>
     <message>
         <source>Accept connections from outside</source>
@@ -1390,8 +1390,8 @@ Der Mixing-Prozeß läuft nach dem Start vollständig im Hintergrund, d.h. es is
         <translation>Eingehende Verbindungen erlauben</translation>
     </message>
     <message>
-        <source>Connect to the ImageCoin network through a SOCKS5 proxy.</source>
-        <translation>Über einen SOCKS5-Proxy mit dem ImageCoin-Netzwerk verbinden.</translation>
+        <source>Connect to the imagecoin network through a SOCKS5 proxy.</source>
+        <translation>Über einen SOCKS5-Proxy mit dem imagecoin-Netzwerk verbinden.</translation>
     </message>
     <message>
         <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
@@ -1402,8 +1402,8 @@ Der Mixing-Prozeß läuft nach dem Start vollständig im Hintergrund, d.h. es is
         <translation>Minimiert die Anwendung anstatt sie zu beenden wenn das Fenster geschlossen wird. Wenn dies aktiviert ist, müssen Sie das Programm über "Beenden" im Menü schließen.</translation>
     </message>
     <message>
-        <source>The user interface language can be set here. This setting will take effect after restarting ImageCoin Core.</source>
-        <translation>Legt die Sprache der Benutzeroberfläche fest. Diese Einstellung wird erst nach einem Neustart von ImageCoin Core aktiv.</translation>
+        <source>The user interface language can be set here. This setting will take effect after restarting imagecoin Core.</source>
+        <translation>Legt die Sprache der Benutzeroberfläche fest. Diese Einstellung wird erst nach einem Neustart von imagecoin Core aktiv.</translation>
     </message>
     <message>
         <source>Third party URLs (e.g. a block explorer) that appear in the transactions tab as context menu items.&lt;br/&gt;%s in the URL is replaced by transaction hash. Multiple URLs are separated by vertical bar |.</source>
@@ -1474,8 +1474,8 @@ Der Mixing-Prozeß läuft nach dem Start vollständig im Hintergrund, d.h. es is
         <translation>Tor</translation>
     </message>
     <message>
-        <source>Connect to the ImageCoin network through a separate SOCKS5 proxy for Tor hidden services.</source>
-        <translation>Über einen separaten SOCKS5-Proxy für versteckte Tor Dienste mit dem ImageCoin-Netzwerk verbinden.</translation>
+        <source>Connect to the imagecoin network through a separate SOCKS5 proxy for Tor hidden services.</source>
+        <translation>Über einen separaten SOCKS5-Proxy für versteckte Tor Dienste mit dem imagecoin-Netzwerk verbinden.</translation>
     </message>
     <message>
         <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services:</source>
@@ -1515,9 +1515,9 @@ Der Mixing-Prozeß läuft nach dem Start vollständig im Hintergrund, d.h. es is
     </message>
     <message>
         <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/projects/p/ImageCoin/</source>
+https://www.transifex.com/projects/p/imagecoin/</source>
         <translation>Fehlt eine Sprache oder ist unvollständig übersetzt? Hier können Sie helfen:
-https://www.transifex.com/projects/p/ImageCoin/</translation>
+https://www.transifex.com/projects/p/imagecoin/</translation>
     </message>
     <message>
         <source>User Interface Theme:</source>
@@ -1529,7 +1529,7 @@ https://www.transifex.com/projects/p/ImageCoin/</translation>
     </message>
     <message>
         <source>Choose the default subdivision unit to show in the interface and when sending coins.</source>
-        <translation>Wählen Sie die standardmäßige Untereinheit, die in der Benutzeroberfläche und beim Überweisen von ImageCoin angezeigt werden soll.</translation>
+        <translation>Wählen Sie die standardmäßige Untereinheit, die in der Benutzeroberfläche und beim Überweisen von imagecoin angezeigt werden soll.</translation>
     </message>
     <message>
         <source>Decimal digits</source>
@@ -1595,8 +1595,8 @@ https://www.transifex.com/projects/p/ImageCoin/</translation>
         <translation>Formular</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the ImageCoin network after a connection is established, but this process has not completed yet.</source>
-        <translation>Die angezeigten Informationen sind möglicherweise nicht mehr aktuell. Ihre Wallet wird automatisch synchronisiert, nachdem eine Verbindung zum ImageCoin-Netzwerk hergestellt wurde. Dieser Prozess ist jedoch derzeit noch nicht abgeschlossen.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the imagecoin network after a connection is established, but this process has not completed yet.</source>
+        <translation>Die angezeigten Informationen sind möglicherweise nicht mehr aktuell. Ihre Wallet wird automatisch synchronisiert, nachdem eine Verbindung zum imagecoin-Netzwerk hergestellt wurde. Dieser Prozess ist jedoch derzeit noch nicht abgeschlossen.</translation>
     </message>
     <message>
         <source>Available:</source>
@@ -1695,8 +1695,8 @@ https://www.transifex.com/projects/p/ImageCoin/</translation>
         <translation>Betrag und Runden:</translation>
     </message>
     <message>
-        <source>0 ImageCoin / 0 Rounds</source>
-        <translation>0 ImageCoin / 0 Runden</translation>
+        <source>0 imagecoin / 0 Rounds</source>
+        <translation>0 imagecoin / 0 Runden</translation>
     </message>
     <message>
         <source>Submitted Denom:</source>
@@ -1865,8 +1865,8 @@ https://www.transifex.com/projects/p/ImageCoin/</translation>
         <translation>Fehlerhafte Zahlungsanforderung</translation>
     </message>
     <message>
-        <source>Cannot start ImageCoin: click-to-pay handler</source>
-        <translation>ImageCoin kann nicht gestartet werden: click-to-pay handler</translation>
+        <source>Cannot start imagecoin: click-to-pay handler</source>
+        <translation>imagecoin kann nicht gestartet werden: click-to-pay handler</translation>
     </message>
     <message>
         <source>URI handling</source>
@@ -1881,8 +1881,8 @@ https://www.transifex.com/projects/p/ImageCoin/</translation>
         <translation>Ungültige Zahlungsadresse %1</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an invalid ImageCoin address or malformed URI parameters.</source>
-        <translation>URI konnte nicht erfolgreich verarbeitet werden. Höchstwahrscheinlich ist dies entweder keine gültige ImageCoin-Adresse oder die URI-Parameter sind falsch gesetzt. </translation>
+        <source>URI cannot be parsed! This can be caused by an invalid imagecoin address or malformed URI parameters.</source>
+        <translation>URI konnte nicht erfolgreich verarbeitet werden. Höchstwahrscheinlich ist dies entweder keine gültige imagecoin-Adresse oder die URI-Parameter sind falsch gesetzt. </translation>
     </message>
     <message>
         <source>Payment request file handling</source>
@@ -1971,8 +1971,8 @@ https://www.transifex.com/projects/p/ImageCoin/</translation>
 <context>
     <name>QObject</name>
     <message>
-        <source>ImageCoin Core</source>
-        <translation>ImageCoin Core</translation>
+        <source>imagecoin Core</source>
+        <translation>imagecoin Core</translation>
     </message>
     <message>
         <source>Error: Specified data directory "%1" does not exist.</source>
@@ -1991,16 +1991,16 @@ https://www.transifex.com/projects/p/ImageCoin/</translation>
         <translation>Fehler beim Lesen der Masternode Konfigurationsdatei: %1</translation>
     </message>
     <message>
-        <source>ImageCoin Core didn't yet exit safely...</source>
-        <translation>ImageCoin Core wurde noch nicht sicher beendet...</translation>
+        <source>imagecoin Core didn't yet exit safely...</source>
+        <translation>imagecoin Core wurde noch nicht sicher beendet...</translation>
     </message>
     <message>
         <source>Amount</source>
         <translation>Betrag</translation>
     </message>
     <message>
-        <source>Enter a ImageCoin address (e.g. %1)</source>
-        <translation>ImageCoin-Adresse eingeben (z.B. %1)</translation>
+        <source>Enter a imagecoin address (e.g. %1)</source>
+        <translation>imagecoin-Adresse eingeben (z.B. %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -2165,8 +2165,8 @@ https://www.transifex.com/projects/p/ImageCoin/</translation>
         <translation>Speicherbenutzung</translation>
     </message>
     <message>
-        <source>Open the ImageCoin Core debug log file from the current data directory. This can take a few seconds for large log files.</source>
-        <translation>Öffnet die ImageCoin-Debugprotokolldatei aus dem aktuellen Datenverzeichnis. Dies kann bei großen Protokolldateien einige Sekunden dauern.</translation>
+        <source>Open the imagecoin Core debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <translation>Öffnet die imagecoin-Debugprotokolldatei aus dem aktuellen Datenverzeichnis. Dies kann bei großen Protokolldateien einige Sekunden dauern.</translation>
     </message>
     <message>
         <source>&amp;Console</source>
@@ -2381,8 +2381,8 @@ https://www.transifex.com/projects/p/ImageCoin/</translation>
         <translation>Knoten wieder erla&amp;uben</translation>
     </message>
     <message>
-        <source>Welcome to the ImageCoin Core RPC console.</source>
-        <translation>Willkommen in der ImageCoin Core RPC-Console.</translation>
+        <source>Welcome to the imagecoin Core RPC console.</source>
+        <translation>Willkommen in der imagecoin Core RPC-Console.</translation>
     </message>
     <message>
         <source>Use up and down arrows to navigate history, and &lt;b&gt;Ctrl-L&lt;/b&gt; to clear screen.</source>
@@ -2464,8 +2464,8 @@ https://www.transifex.com/projects/p/ImageCoin/</translation>
         <translation>Vorhandene Empfangsadresse &amp;wiederverwenden (nicht empfohlen)</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the ImageCoin network.</source>
-        <translation>Eine optionale Nachricht, die an die Zahlungsanforderung angehängt wird. Sie wird angezeigt, wenn die Anforderung geöffnet wird. Hinweis: Diese Nachricht wird nicht mit der Zahlung über das ImageCoin-Netzwerk gesendet.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the imagecoin network.</source>
+        <translation>Eine optionale Nachricht, die an die Zahlungsanforderung angehängt wird. Sie wird angezeigt, wenn die Anforderung geöffnet wird. Hinweis: Diese Nachricht wird nicht mit der Zahlung über das imagecoin-Netzwerk gesendet.</translation>
     </message>
     <message>
         <source>&amp;Message:</source>
@@ -2476,8 +2476,8 @@ https://www.transifex.com/projects/p/ImageCoin/</translation>
         <translation>Eine optionale Bezeichnung, die der neuen Empfangsadresse zugeordnet wird.</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the ImageCoin network.</source>
-        <translation>Eine optionale Nachricht, die an die Zahlungsanforderung angehängt wird. Sie wird angezeigt, wenn die Anforderung geöffnet wird.&lt;br&gt; Hinweis: Diese Nachricht wird nicht mit der Zahlung über das ImageCoin-Netzwerk gesendet.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the imagecoin network.</source>
+        <translation>Eine optionale Nachricht, die an die Zahlungsanforderung angehängt wird. Sie wird angezeigt, wenn die Anforderung geöffnet wird.&lt;br&gt; Hinweis: Diese Nachricht wird nicht mit der Zahlung über das imagecoin-Netzwerk gesendet.</translation>
     </message>
     <message>
         <source>Use this form to request payments. All fields are &lt;b&gt;optional&lt;/b&gt;.</source>
@@ -2650,7 +2650,7 @@ https://www.transifex.com/projects/p/ImageCoin/</translation>
     <name>SendCoinsDialog</name>
     <message>
         <source>Send Coins</source>
-        <translation>ImageCoin überweisen</translation>
+        <translation>imagecoin überweisen</translation>
     </message>
     <message>
         <source>Coin Control Features</source>
@@ -2733,7 +2733,7 @@ https://www.transifex.com/projects/p/ImageCoin/</translation>
         <translation>Wenn die benutzerdefinierten Gebühren auf 1000 duffs gesetzt sind und eine Transaktion hat nur 250 Bytes, dann kostet "pro Kilobyte" nur 250 duffs Gebühren, während "mindestens" 1000 duffs kostet. Transaktionen größer als 1 Kilobyte werden immer pro Kilobyte bezahlt.</translation>
     </message>
     <message>
-        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for ImageCoin transactions than the network can process.</source>
+        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for imagecoin transactions than the network can process.</source>
         <translation>Nur die minimalen Gebühren zu zahlen ist völlig ausreichend so lange in einem neuen Block der Blockkette noch genug Platz für neue Transaktionen ist.&lt;br /&gt; Bitte beachten Sie dass wenn dies in der Zukunft nicht mehr der Fall sein sollte Ihre Transaktion eventuell niemals in einen neuen Block aufgenommen werden wird, also niemals bestätigt wird.</translation>
     </message>
     <message>
@@ -2911,7 +2911,7 @@ https://www.transifex.com/projects/p/ImageCoin/</translation>
     <message>
         <source>The transaction was rejected! This might happen if some of the coins in your wallet were already spent, such as if you used a copy of wallet.dat and coins were spent in the copy but not marked as spent here.</source>
         <translation>Die Transaktion wurde abgelehnt! 
-Dies kann passieren, wenn einige ImageCoin aus ihrer Wallet bereits ausgegeben wurden. Beispielsweise weil Sie eine Kopie ihrer wallet.dat nutzten und die ImageCoin dort ausgegeben haben. Diese Ausgaben sind in diesem Fall in der derzeit aktiven Wallet nicht vermerkt.</translation>
+Dies kann passieren, wenn einige imagecoin aus ihrer Wallet bereits ausgegeben wurden. Beispielsweise weil Sie eine Kopie ihrer wallet.dat nutzten und die imagecoin dort ausgegeben haben. Diese Ausgaben sind in diesem Fall in der derzeit aktiven Wallet nicht vermerkt.</translation>
     </message>
     <message>
         <source>A fee higher than %1 is considered an absurdly high fee.</source>
@@ -2930,8 +2930,8 @@ Dies kann passieren, wenn einige ImageCoin aus ihrer Wallet bereits ausgegeben w
         <translation><numerusform>Geschätzter Beginn der Bestätigung in %n Block.</numerusform><numerusform>Geschätzter Beginn der Bestätigung in %n Blöcken.</numerusform></translation>
     </message>
     <message>
-        <source>Warning: Invalid ImageCoin address</source>
-        <translation>Warnung: ungültige ImageCoin-Adresse</translation>
+        <source>Warning: Invalid imagecoin address</source>
+        <translation>Warnung: ungültige imagecoin-Adresse</translation>
     </message>
     <message>
         <source>Warning: Unknown change address</source>
@@ -2953,8 +2953,8 @@ Dies kann passieren, wenn einige ImageCoin aus ihrer Wallet bereits ausgegeben w
         <translation>E&amp;mpfänger:</translation>
     </message>
     <message>
-        <source>The ImageCoin address to send the payment to</source>
-        <translation>ImageCoin-Adresse, an die überwiesen werden soll</translation>
+        <source>The imagecoin address to send the payment to</source>
+        <translation>imagecoin-Adresse, an die überwiesen werden soll</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2989,7 +2989,7 @@ Dies kann passieren, wenn einige ImageCoin aus ihrer Wallet bereits ausgegeben w
         <translation>Betra&amp;g:</translation>
     </message>
     <message>
-        <source>The fee will be deducted from the amount being sent. The recipient will receive a lower amount of ImageCoin than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
+        <source>The fee will be deducted from the amount being sent. The recipient will receive a lower amount of imagecoin than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
         <translation>Die Gebühr wird von der versendeten  Summe abgezogen, daher wird der Empfänger einen  niedrigeren Betrag erhalten, als Sie im Feld "Betrag" angegeben haben. Bei mehreren Empfängern wird die Gebühre gleichmäßig auf alle Empfänger aufgeteilt.</translation>
     </message>
     <message>
@@ -3001,8 +3001,8 @@ Dies kann passieren, wenn einige ImageCoin aus ihrer Wallet bereits ausgegeben w
         <translation>Nachricht:</translation>
     </message>
     <message>
-        <source>A message that was attached to the ImageCoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the ImageCoin network.</source>
-        <translation>Eine an die "ImageCoin:"-URI angefügte Nachricht, die zusammen mit der Transaktion gespeichert wird. Hinweis: Diese Nachricht wird nicht über das ImageCoin-Netzwerk gesendet.</translation>
+        <source>A message that was attached to the imagecoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the imagecoin network.</source>
+        <translation>Eine an die "imagecoin:"-URI angefügte Nachricht, die zusammen mit der Transaktion gespeichert wird. Hinweis: Diese Nachricht wird nicht über das imagecoin-Netzwerk gesendet.</translation>
     </message>
     <message>
         <source>This is an unauthenticated payment request.</source>
@@ -3028,8 +3028,8 @@ Dies kann passieren, wenn einige ImageCoin aus ihrer Wallet bereits ausgegeben w
 <context>
     <name>ShutdownWindow</name>
     <message>
-        <source>ImageCoin Core is shutting down...</source>
-        <translation>ImageCoin-Core wird herunter gefahren...</translation>
+        <source>imagecoin Core is shutting down...</source>
+        <translation>imagecoin-Core wird herunter gefahren...</translation>
     </message>
     <message>
         <source>Do not shut down the computer until this window disappears.</source>
@@ -3047,12 +3047,12 @@ Dies kann passieren, wenn einige ImageCoin aus ihrer Wallet bereits ausgegeben w
         <translation>Nachricht &amp;signieren</translation>
     </message>
     <message>
-        <source>You can sign messages/agreements with your addresses to prove you can receive ImageCoin sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
+        <source>You can sign messages/agreements with your addresses to prove you can receive imagecoin sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
         <translation>Sie können Nachrichten mit ihren Adressen signieren, um den Besitz dieser Adressen zu beweisen. Bitte nutzen Sie diese Funktion mit Vorsicht und nehmen Sie sich vor Phishingangriffen in Acht. Signieren Sie nur Nachrichten, mit denen Sie vollständig einverstanden sind.</translation>
     </message>
     <message>
-        <source>The ImageCoin address to sign the message with</source>
-        <translation>ImageCoin-Adresse, mit der die Nachricht signiert werden soll</translation>
+        <source>The imagecoin address to sign the message with</source>
+        <translation>imagecoin-Adresse, mit der die Nachricht signiert werden soll</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -3083,8 +3083,8 @@ Dies kann passieren, wenn einige ImageCoin aus ihrer Wallet bereits ausgegeben w
         <translation>Aktuelle Signatur in die Zwischenablage kopieren</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this ImageCoin address</source>
-        <translation>Die Nachricht signieren, um den Besitz dieser ImageCoin-Adresse zu belegen</translation>
+        <source>Sign the message to prove you own this imagecoin address</source>
+        <translation>Die Nachricht signieren, um den Besitz dieser imagecoin-Adresse zu belegen</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -3107,12 +3107,12 @@ Dies kann passieren, wenn einige ImageCoin aus ihrer Wallet bereits ausgegeben w
         <translation>Geben Sie die signierende Adresse, Nachricht (achten Sie darauf Zeilenumbrüche, Leerzeichen, Tabulatoren usw. exakt zu kopieren) und Signatur unten ein, um die Nachricht zu verifizieren. Vorsicht, interpretieren Sie nicht mehr in die Signatur hinein, als in der signierten Nachricht selber enthalten ist, um nicht von einem Man-in-the-middle-Angriff hinters Licht geführt zu werden.</translation>
     </message>
     <message>
-        <source>The ImageCoin address the message was signed with</source>
-        <translation>ImageCoin-Adresse, mit der die Nachricht signiert worden ist</translation>
+        <source>The imagecoin address the message was signed with</source>
+        <translation>imagecoin-Adresse, mit der die Nachricht signiert worden ist</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified ImageCoin address</source>
-        <translation>Die Nachricht verifizieren, um sicherzustellen, dass diese mit der angegebenen ImageCoin-Adresse signiert wurde</translation>
+        <source>Verify the message to ensure it was signed with the specified imagecoin address</source>
+        <translation>Die Nachricht verifizieren, um sicherzustellen, dass diese mit der angegebenen imagecoin-Adresse signiert wurde</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>
@@ -3182,8 +3182,8 @@ Dies kann passieren, wenn einige ImageCoin aus ihrer Wallet bereits ausgegeben w
         <translation>[Testnetz]</translation>
     </message>
     <message>
-        <source>ImageCoin Core</source>
-        <translation>ImageCoin Core</translation>
+        <source>imagecoin Core</source>
+        <translation>imagecoin Core</translation>
     </message>
     <message>
         <source>Version %1</source>
@@ -3194,8 +3194,8 @@ Dies kann passieren, wenn einige ImageCoin aus ihrer Wallet bereits ausgegeben w
         <translation>Die "Bitcoin Core"-Entwickler</translation>
     </message>
     <message>
-        <source>The ImageCoin Core developers</source>
-        <translation>Die "ImageCoin Core"-Entwickler</translation>
+        <source>The imagecoin Core developers</source>
+        <translation>Die "imagecoin Core"-Entwickler</translation>
     </message>
 </context>
 <context>
@@ -3361,7 +3361,7 @@ Dies kann passieren, wenn einige ImageCoin aus ihrer Wallet bereits ausgegeben w
     </message>
     <message>
         <source>Generated coins must mature %1 blocks before they can be spent. When you generated this block, it was broadcast to the network to be added to the block chain. If it fails to get into the chain, its state will change to "not accepted" and it won't be spendable. This may occasionally happen if another node generates a block within a few seconds of yours.</source>
-        <translation>Erzeugte ImageCoin müssen %1 Blöcke lang reifen, bevor sie ausgegeben werden können. Als Sie diesen Block erzeugten, wurde er an das Netzwerk übertragen, um ihn der Blockkette hinzuzufügen. Falls dies fehlschlägt wird der Status in "nicht angenommen" geändert und Sie werden keine ImageCoin gutgeschrieben bekommen. Das kann gelegentlich passieren, wenn ein anderer Knoten einen Block fast zeitgleich erzeugt.</translation>
+        <translation>Erzeugte imagecoin müssen %1 Blöcke lang reifen, bevor sie ausgegeben werden können. Als Sie diesen Block erzeugten, wurde er an das Netzwerk übertragen, um ihn der Blockkette hinzuzufügen. Falls dies fehlschlägt wird der Status in "nicht angenommen" geändert und Sie werden keine imagecoin gutgeschrieben bekommen. Das kann gelegentlich passieren, wenn ein anderer Knoten einen Block fast zeitgleich erzeugt.</translation>
     </message>
     <message>
         <source>Debug information</source>
@@ -3735,11 +3735,11 @@ Dies kann passieren, wenn einige ImageCoin aus ihrer Wallet bereits ausgegeben w
     <name>WalletModel</name>
     <message>
         <source>Send Coins</source>
-        <translation>ImageCoin überweisen</translation>
+        <translation>imagecoin überweisen</translation>
     </message>
     <message>
-        <source>InstantSend doesn't support sending values that high yet. Transactions are currently limited to %1 ImageCoin.</source>
-        <translation>InstantSend unterstützt das Versenden von Beträgen dieser Höhe noch nicht. Transaktionen sind zur Zeit auf maximal %1 ImageCoin begrenzt.</translation>
+        <source>InstantSend doesn't support sending values that high yet. Transactions are currently limited to %1 imagecoin.</source>
+        <translation>InstantSend unterstützt das Versenden von Beträgen dieser Höhe noch nicht. Transaktionen sind zur Zeit auf maximal %1 imagecoin begrenzt.</translation>
     </message>
     <message>
         <source>Used way too many inputs (&gt;%1) for this InstantSend transaction, fees could be huge.</source>
@@ -3786,13 +3786,13 @@ Dies kann passieren, wenn einige ImageCoin aus ihrer Wallet bereits ausgegeben w
     </message>
 </context>
 <context>
-    <name>ImageCoin-core</name>
+    <name>imagecoin-core</name>
     <message>
         <source>Bind to given address and always listen on it. Use [host]:port notation for IPv6</source>
         <translation>An die angegebene Adresse binden und immer abhören. Für IPv6 "[Host]:Port"-Schreibweise verwenden</translation>
     </message>
     <message>
-        <source>Cannot obtain a lock on data directory %s. ImageCoin Core is probably already running.</source>
+        <source>Cannot obtain a lock on data directory %s. imagecoin Core is probably already running.</source>
         <translation>Das Programm kann das Daten-Verzeichnis %s nicht als "in Verwendung" markieren. Wahrscheinlich läuft das Programm bereits.</translation>
     </message>
     <message>
@@ -3832,8 +3832,8 @@ Dies kann passieren, wenn einige ImageCoin aus ihrer Wallet bereits ausgegeben w
         <translation>Dies ist eine Vorab-Testversion - Verwendung auf eigene Gefahr - nicht für Mining- oder Handelsanwendungen nutzen!</translation>
     </message>
     <message>
-        <source>Unable to bind to %s on this computer. ImageCoin Core is probably already running.</source>
-        <translation>ImageCoin Core den Prozess %s auf dem Computer nicht an sich binden. Wahrscheinlich läuft das Programm bereits.</translation>
+        <source>Unable to bind to %s on this computer. imagecoin Core is probably already running.</source>
+        <translation>imagecoin Core den Prozess %s auf dem Computer nicht an sich binden. Wahrscheinlich läuft das Programm bereits.</translation>
     </message>
     <message>
         <source>Warning: The network does not appear to fully agree! Some miners appear to be experiencing issues.</source>
@@ -4076,8 +4076,8 @@ Dies kann passieren, wenn einige ImageCoin aus ihrer Wallet bereits ausgegeben w
         <translation>Dieses Produkt enthält vom OpenSSL-Projekt entwickelte Software zur Benutzung des OpenSSL Toolkit &lt;https://www.openssl.org/&gt;, kryptographische Software geschrieben von Eric Young und UPnP Software geschrieben von Thomas Bernard.</translation>
     </message>
     <message>
-        <source>Unable to locate enough funds for this transaction that are not equal 1000 ImageCoin.</source>
-        <translation>Für diese Transaktion konnten nicht genug Beträge gefunden werden, die ungleich 1000 ImageCoin sind.</translation>
+        <source>Unable to locate enough funds for this transaction that are not equal 1000 imagecoin.</source>
+        <translation>Für diese Transaktion konnten nicht genug Beträge gefunden werden, die ungleich 1000 imagecoin sind.</translation>
     </message>
     <message>
         <source>Use hierarchical deterministic key generation (HD) after bip39/bip44. Only has effect during wallet creation/first start</source>
@@ -4148,8 +4148,8 @@ Dies kann passieren, wenn einige ImageCoin aus ihrer Wallet bereits ausgegeben w
         <translation>Copyright (C) 2009-%i Die "Bitcoin Core"-Entwickler</translation>
     </message>
     <message>
-        <source>Copyright (C) 2014-%i The ImageCoin Core Developers</source>
-        <translation>Copyright (C) 2014-%i Die "ImageCoin Core"-Entwickler</translation>
+        <source>Copyright (C) 2014-%i The imagecoin Core Developers</source>
+        <translation>Copyright (C) 2014-%i Die "imagecoin Core"-Entwickler</translation>
     </message>
     <message>
         <source>Enable the client to act as a masternode (0-1, default: %u)</source>
@@ -4168,8 +4168,8 @@ Dies kann passieren, wenn einige ImageCoin aus ihrer Wallet bereits ausgegeben w
         <translation>Fehler beim Laden von %s: Sie können HD nicht bei einer bestehenden HD Wallet deaktivieren</translation>
     </message>
     <message>
-        <source>Error loading wallet.dat: Wallet requires newer version of ImageCoin Core</source>
-        <translation>Fehler beim Laden von wallet.dat: Wallet benötigt neuere Version von ImageCoin Core</translation>
+        <source>Error loading wallet.dat: Wallet requires newer version of imagecoin Core</source>
+        <translation>Fehler beim Laden von wallet.dat: Wallet benötigt neuere Version von imagecoin Core</translation>
     </message>
     <message>
         <source>Failed to load fulfilled requests cache from</source>
@@ -4228,9 +4228,9 @@ Dies kann passieren, wenn einige ImageCoin aus ihrer Wallet bereits ausgegeben w
         <translation>Hinweis</translation>
     </message>
     <message>
-        <source>Initialization sanity check failed. ImageCoin Core is shutting down.</source>
+        <source>Initialization sanity check failed. imagecoin Core is shutting down.</source>
         <translation>Fehler beim Initialisieren (Plausibilitätsprüfung fehlgeschlagen).
-ImageCoin Core wird heruntergefahren.</translation>
+imagecoin Core wird heruntergefahren.</translation>
     </message>
     <message>
         <source>Input is not valid.</source>
@@ -4485,7 +4485,7 @@ ImageCoin Core wird heruntergefahren.</translation>
         <translation>Der "User Agent"-Text (%s) enthält unsichere Zeichen.</translation>
     </message>
     <message>
-        <source>Wallet needed to be rewritten: restart ImageCoin Core to complete</source>
+        <source>Wallet needed to be rewritten: restart imagecoin Core to complete</source>
         <translation>Die Wallet musste neu geschrieben werden. Bitte das Programm neu starten um den Vorgang abzuschließen</translation>
     </message>
     <message>
@@ -4529,7 +4529,7 @@ ImageCoin Core wird heruntergefahren.</translation>
         <translation>"KeePassHttp key" für die  AES-verschlüsselte Kommunikation mit "KeePass"</translation>
     </message>
     <message>
-        <source>Keep N ImageCoin anonymized (default: %u)</source>
+        <source>Keep N imagecoin anonymized (default: %u)</source>
         <translation>Betrag welcher anonymisiert vorgehalten wird. (Voreinstellung: %u)</translation>
     </message>
     <message>
@@ -4537,8 +4537,8 @@ ImageCoin Core wird heruntergefahren.</translation>
         <translation>Maximal &lt;n&gt; (noch) nicht einsortierte Zahlungen zwischenspeichern (Voreinstellung: %u)</translation>
     </message>
     <message>
-        <source>Disable all ImageCoin specific functionality (Masternodes, PrivateSend, InstantSend, Governance) (0-1, default: %u)</source>
-        <translation>Deaktiviere all ImageCoin-spezifischen Funktionen (Masternodes, PrivateSend, InstantSend, Governance) (0-1, Standard: %u)</translation>
+        <source>Disable all imagecoin specific functionality (Masternodes, PrivateSend, InstantSend, Governance) (0-1, default: %u)</source>
+        <translation>Deaktiviere all imagecoin-spezifischen Funktionen (Masternodes, PrivateSend, InstantSend, Governance) (0-1, Standard: %u)</translation>
     </message>
     <message>
         <source>Discover own IP addresses (default: 1 when listening and no -externalip or -proxy)</source>
@@ -4589,8 +4589,8 @@ ImageCoin Core wird heruntergefahren.</translation>
         <translation>Wenn &lt;category&gt; nicht angegeben wird oder &lt;category&gt; = 1, jegliche Debugginginformationen ausgeben.</translation>
     </message>
     <message>
-        <source>InstantSend doesn't support sending values that high yet. Transactions are currently limited to %1 ImageCoin.</source>
-        <translation>InstantSend unterstützt das Versenden von Beträgen dieser Höhe noch nicht. Transaktionen sind zur Zeit auf maximal %1 ImageCoin begrenzt.</translation>
+        <source>InstantSend doesn't support sending values that high yet. Transactions are currently limited to %1 imagecoin.</source>
+        <translation>InstantSend unterstützt das Versenden von Beträgen dieser Höhe noch nicht. Transaktionen sind zur Zeit auf maximal %1 imagecoin begrenzt.</translation>
     </message>
     <message>
         <source>InstantSend requires inputs with at least %d confirmations, you might need to wait a few minutes and try again.</source>
@@ -4617,16 +4617,16 @@ ImageCoin Core wird heruntergefahren.</translation>
         <translation>Maximale Gesamtgebühren (in %s) für eine einzelne Transaktion.  Sind diese Gebühren zu gering könnten große Transaktionen evtl. abgebrochen werden (Standard: %s)</translation>
     </message>
     <message>
-        <source>Please check that your computer's date and time are correct! If your clock is wrong ImageCoin Core will not work properly.</source>
-        <translation>Bitte überprüfen Sie die Datums- und Uhrzeiteinstellungen ihres Computers, da ImageCoin Core ansonsten nicht ordnungsgemäß funktionieren wird!</translation>
+        <source>Please check that your computer's date and time are correct! If your clock is wrong imagecoin Core will not work properly.</source>
+        <translation>Bitte überprüfen Sie die Datums- und Uhrzeiteinstellungen ihres Computers, da imagecoin Core ansonsten nicht ordnungsgemäß funktionieren wird!</translation>
     </message>
     <message>
         <source>PrivateSend uses exact denominated amounts to send funds, you might simply need to anonymize some more coins.</source>
-        <translation>PrivateSend benutzt exakt gestückelte Beträge zum Versenden, Sie müssen dafür möglicherweise noch mehr ImageCoin anonymisieren.</translation>
+        <translation>PrivateSend benutzt exakt gestückelte Beträge zum Versenden, Sie müssen dafür möglicherweise noch mehr imagecoin anonymisieren.</translation>
     </message>
     <message>
         <source>Provide liquidity to PrivateSend by infrequently mixing coins on a continual basis (0-100, default: %u, 1=very frequent, high fees, 100=very infrequent, low fees)</source>
-        <translation>Durch diese Einstellung können Sie dem PrivateSend-Netzwerk zusätzliche Liquidität zur Verfügung stellen in dem Sie von Zeit zu Zeit bereits anonymisierte ImageCoin wieder dem Mixing-Prozess zuführen. (0-100, 0=aus, 1=sehr oft, 100=sehr selten (wenig Gebühren). Standard: %u)</translation>
+        <translation>Durch diese Einstellung können Sie dem PrivateSend-Netzwerk zusätzliche Liquidität zur Verfügung stellen in dem Sie von Zeit zu Zeit bereits anonymisierte imagecoin wieder dem Mixing-Prozess zuführen. (0-100, 0=aus, 1=sehr oft, 100=sehr selten (wenig Gebühren). Standard: %u)</translation>
     </message>
     <message>
         <source>Prune configured below the minimum of %d MiB.  Please use a higher number.</source>
@@ -4677,8 +4677,8 @@ ImageCoin Core wird heruntergefahren.</translation>
         <translation>Für diese Transaktion konnten nicht genug mit PrivateSend gestückelte Beträge gefunden werden.</translation>
     </message>
     <message>
-        <source>Unable to locate enough PrivateSend non-denominated funds for this transaction that are not equal 1000 ImageCoin.</source>
-        <translation>Für diese Transaktion konnten nicht genug nicht mit PrivateSend gestückelte Beträge gefunden werden, die ungleich 1000 ImageCoin sind.</translation>
+        <source>Unable to locate enough PrivateSend non-denominated funds for this transaction that are not equal 1000 imagecoin.</source>
+        <translation>Für diese Transaktion konnten nicht genug nicht mit PrivateSend gestückelte Beträge gefunden werden, die ungleich 1000 imagecoin sind.</translation>
     </message>
     <message>
         <source>Unsupported argument -socks found. Setting SOCKS version isn't possible anymore, only SOCKS5 proxies are supported.</source>
@@ -4690,7 +4690,7 @@ ImageCoin Core wird heruntergefahren.</translation>
     </message>
     <message>
         <source>Use N separate masternodes for each denominated input to mix funds (2-16, default: %u)</source>
-        <translation>N unterschiedliche Masternodes benutzen, um ImageCoin zu anonymisieren (2-16, Standard: %u)</translation>
+        <translation>N unterschiedliche Masternodes benutzen, um imagecoin zu anonymisieren (2-16, Standard: %u)</translation>
     </message>
     <message>
         <source>Use UPnP to map the listening port (default: 1 when listening and no -proxy)</source>
