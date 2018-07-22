@@ -444,13 +444,13 @@ endif
 ImageCoind_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS)
 
 # ImageCoin-cli binary #
-ImageCoin_cli_SOURCES = ImageCoin-cli.cpp
+ImageCoin_cli_SOURCES = imagecoin-cli.cpp
 ImageCoin_cli_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
 ImageCoin_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 ImageCoin_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-ImageCoin_cli_SOURCES += ImageCoin-cli-res.rc
+ImageCoin_cli_SOURCES += imagecoin-cli-res.rc
 endif
 
 ImageCoin_cli_LDADD = \
@@ -461,13 +461,13 @@ ImageCoin_cli_LDADD += $(BOOST_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS)
 #
 
 # ImageCoin-tx binary #
-ImageCoin_tx_SOURCES = ImageCoin-tx.cpp
+ImageCoin_tx_SOURCES = imagecoin-tx.cpp
 ImageCoin_tx_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 ImageCoin_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 ImageCoin_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-ImageCoin_tx_SOURCES += ImageCoin-tx-res.rc
+ImageCoin_tx_SOURCES += imagecoin-tx-res.rc
 endif
 
 ImageCoin_tx_LDADD = \

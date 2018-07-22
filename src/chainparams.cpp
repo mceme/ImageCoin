@@ -152,7 +152,7 @@ public:
                             if (CheckProofOfWork(genesis.GetHash(), genesis.nBits, consensus)) {
                                 printf("hash: %s\n", genesis.GetHash().GetHex().c_str());
                                 printf("nonce: %i\n", nNonce);
-                                printf("hashMerkleRoot: %i\n",   genesis.hashMerkleRoot.GetHex().c_str());
+                                printf("hashMerkleRoot: %s\n",   genesis.hashMerkleRoot.GetHex().c_str());
 
                                 break;
                                }
