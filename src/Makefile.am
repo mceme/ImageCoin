@@ -49,8 +49,8 @@ EXTRA_LIBRARIES += libbitcoin_zmq.a
 endif
 
 if BUILD_BITCOIN_LIBS
-lib_LTLIBRARIES = libImageCoinconsensus.la
-LIBBITCOIN_CONSENSUS=libImageCoinconsensus.la
+lib_LTLIBRARIES = libimagecoinconsensus.la
+LIBBITCOIN_CONSENSUS=libimagecoinconsensus.la
 else
 LIBBITCOIN_CONSENSUS=
 endif
@@ -482,8 +482,8 @@ ImageCoin_tx_LDADD += $(BOOST_LIBS) $(CRYPTO_LIBS)
 
 # ImageCoinconsensus library #
 if BUILD_BITCOIN_LIBS
-include_HEADERS = script/ImageCoinconsensus.h
-libImageCoinconsensus_la_SOURCES = \
+include_HEADERS = script/imagecoinconsensus.h
+libimagecoinconsensus_la_SOURCES = \
   crypto/hmac_sha512.cpp \
   crypto/ripemd160.cpp \
   crypto/sha1.cpp \
@@ -492,20 +492,20 @@ libImageCoinconsensus_la_SOURCES = \
   hash.cpp \
   primitives/transaction.cpp \
   pubkey.cpp \
-  script/ImageCoinconsensus.cpp \
+  script/imagecoinconsensus.cpp \
   script/interpreter.cpp \
   script/script.cpp \
   uint256.cpp \
   utilstrencodings.cpp
 
 if GLIBC_BACK_COMPAT
-  libImageCoinconsensus_la_SOURCES += compat/glibc_compat.cpp
+  libimagecoinconsensus_la_SOURCES += compat/glibc_compat.cpp
 endif
 
-libImageCoinconsensus_la_LDFLAGS = $(AM_LDFLAGS) -no-undefined $(RELDFLAGS)
-libImageCoinconsensus_la_LIBADD = $(LIBSECP256K1)
-libImageCoinconsensus_la_CPPFLAGS = $(AM_CPPFLAGS) -I$(builddir)/obj -I$(srcdir)/secp256k1/include -DBUILD_BITCOIN_INTERNAL
-libImageCoinconsensus_la_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+libimagecoinconsensus_la_LDFLAGS = $(AM_LDFLAGS) -no-undefined $(RELDFLAGS)
+libimagecoinconsensus_la_LIBADD = $(LIBSECP256K1)
+libimagecoinconsensus_la_CPPFLAGS = $(AM_CPPFLAGS) -I$(builddir)/obj -I$(srcdir)/secp256k1/include -DBUILD_BITCOIN_INTERNAL
+libimagecoinconsensus_la_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 
 endif
 #
