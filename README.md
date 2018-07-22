@@ -1,10 +1,10 @@
-# ImageCash
+# ImageCoin
 This project consist create a blockchain to images buying/share/signed.
 
 Sign Images APP https://app.imagehosty.com/
 Website http://ImageCoin.imagehosty.com
 
-ImgCash Core staging tree
+ImageCoin Core staging tree
 ===============================
 
 Copyright (c) 2009-2016 Bitcoin Core Developers
