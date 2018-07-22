@@ -20,4 +20,4 @@ FORMS += \
     ../src/qt/forms/transactiondescdialog.ui
 
 RESOURCES += \
-    ../src/qt/ImageCoin.qrc
+    ../src/qt/imagecoin.qrc
