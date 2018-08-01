@@ -229,10 +229,10 @@ fi
 }
 
 function detect_ubuntu() {
- if [[ $(lsb_release -d) == *17.04* ]]; then
+ if [[ $(lsb_release -d) == *17.10* ]]; then
    UBUNTU_VERSION=17
 else
-   echo -e "${RED}You are not running Ubuntu  17.04 Installation is cancelled.${NC}"
+   echo -e "${RED}You are not running Ubuntu  17.10 Installation is cancelled.${NC}"
    exit 1
 fi
 }
