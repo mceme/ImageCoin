@@ -48,7 +48,7 @@ function compile_node() {
   COIN_VER=$(echo $COIN_ZIP | awk -F'/' '{print $NF}' | sed -n 's/.*\([0-9]\.[0-9]\.[0-9]\).*/\1/p')
   COIN_DIR=$(echo ${COIN_NAME,,}V1002$COIN_VER)
   echo -e ${COIN_DIR}/${COIN_NAME,,}
-  tar -xf $COIN_ZIP --strip=2 ${COIN_DIR}/${COIN_DAEMON_NAME} ${COIN_DIR}/${COIN_CLI_NAME} 2>&1
+  tar -xf $COIN_ZIP --strip=2 ${COIN_DAEMON_NAME} ${COIN_CLI_NAME} 2>&1
   compile_error
   rm -f $COIN_ZIP >/dev/null 2>&1
   cp ImageCoin* /usr/local/bin
