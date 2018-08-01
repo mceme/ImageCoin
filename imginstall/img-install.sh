@@ -44,9 +44,9 @@ function compile_node() {
   compile_error
   COIN_ZIP=$(echo $COIN_REPO | awk -F'/' '{print $NF}')
   COIN_VER=$(echo $COIN_ZIP | awk -F'/' '{print $NF}' | sed -n 's/.*\([0-9]\.[0-9]\.[0-9]\).*/\1/p')
-  COIN_DIR=$(echo ${COIN_NAME,,}-$COIN_VER)
-  echo -e ${COIN_DIR}/bin/${COIN_NAME,,}
-  tar -xf $COIN_ZIP --strip=2 ${COIN_DIR}/bin/${COIN_NAME,,}d ${COIN_DIR}/bin/${COIN_NAME,,}-cli 2>&1
+  COIN_DIR=$(echo ${COIN_NAME,,}V1002$COIN_VER)
+  echo -e ${COIN_DIR}/${COIN_NAME,,}
+  tar -xf $COIN_ZIP --strip=2 ${COIN_DIR}/${COIN_NAME,,}d ${COIN_DIR}/${COIN_NAME,,}-cli 2>&1
   compile_error
   rm -f $COIN_ZIP >/dev/null 2>&1
   cp ImageCoin* /usr/local/bin
