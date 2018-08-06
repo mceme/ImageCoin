@@ -16,7 +16,7 @@ CFLAGS        = -fno-keep-inline-dllexport -O2 -Wextra -Wall -W $(DEFINES)
 CXXFLAGS      = -fno-keep-inline-dllexport -O2 -std=gnu++11 -Wextra -Wall -W -fexceptions -mthreads $(DEFINES)
 INCPATH       = -I..\contrib -I. -I..\..\Qt\5.9.3\mingw53_32\include -I..\..\Qt\5.9.3\mingw53_32\include\QtGui -I..\..\Qt\5.9.3\mingw53_32\include\QtANGLE -I..\..\Qt\5.9.3\mingw53_32\include\QtCore -Irelease -I..\..\Qt\5.9.3\mingw53_32\mkspecs\win32-g++ 
 LINKER      =        g++
-LFLAGS        =        -Wl,-s -Wl,-subsystem,windows -mthreads
+LFLAGS        =        -shared -Wl,-s -Wl,-subsystem,windows -mthreads
 LIBS        =        -lmingw32 -LE:\Qt\5.9.3\mingw53_32\lib E:\Qt\5.9.3\mingw53_32\lib\libqtmain.a -LC:\utils\my_sql\my_sql\lib -LC:\utils\postgresql\pgsql\lib -lshell32 E:\Qt\5.9.3\mingw53_32\lib\libQt5Gui.a E:\Qt\5.9.3\mingw53_32\lib\libQt5Core.a 
 QMAKE         = E:\Qt\5.9.3\mingw53_32\bin\qmake.exe
 IDC           = idc

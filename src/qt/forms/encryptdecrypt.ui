@@ -110,7 +110,7 @@
        <enum>QLayout::SetMinAndMaxSize</enum>
       </property>
       <item>
-       <widget class="QLineEdit" name="lineEdit">
+       <widget class="QLineEdit" name="FileNamesTxt">
         <property name="enabled">
          <bool>false</bool>
         </property>

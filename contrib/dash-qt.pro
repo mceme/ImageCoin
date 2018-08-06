@@ -22,3 +22,9 @@ FORMS += \
 
 RESOURCES += \
     ../src/qt/imagecoin.qrc
+
+# Input
+DEPENDPATH += \
+../src/qt src
+
+win32:QMAKE_LFLAGS += -shared

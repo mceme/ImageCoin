@@ -95,6 +95,8 @@ BitcoinGUI::BitcoinGUI(const PlatformStyle *platformStyle, const NetworkStyle *n
     quitAction(0),
     sendCoinsAction(0),
     sendCoinsMenuAction(0),
+    EncryptDecryptAction(0),
+	EncryptDecryptMenuAction(0),
     usedSendingAddressesAction(0),
     usedReceivingAddressesAction(0),
     signMessageAction(0),
@@ -312,6 +314,30 @@ void BitcoinGUI::createActions()
     sendCoinsMenuAction->setStatusTip(sendCoinsAction->statusTip());
     sendCoinsMenuAction->setToolTip(sendCoinsMenuAction->statusTip());
 
+    //Encrypt
+
+
+    EncryptDecryptAction = new QAction(QIcon(":/icons/" + theme + "/send"), tr("&Send"), this);
+    EncryptDecryptAction->setStatusTip(tr("Encrypt Decrypt Files"));
+    EncryptDecryptAction->setToolTip(EncryptDecryptAction->statusTip());
+    EncryptDecryptAction->setCheckable(true);
+#ifdef Q_OS_MAC
+    sendCoinsAction->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_2));
+#else
+    EncryptDecryptAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_2));
+#endif
+    tabGroup->addAction(EncryptDecryptAction);
+
+    EncryptDecryptMenuAction = new QAction(QIcon(":/icons/" + theme + "/send"), EncryptDecryptAction->text(), this);
+    EncryptDecryptMenuAction->setStatusTip(EncryptDecryptAction->statusTip());
+    EncryptDecryptMenuAction->setToolTip(EncryptDecryptMenuAction->statusTip());
+
+
+
+
+
+
+
     receiveCoinsAction = new QAction(QIcon(":/icons/" + theme + "/receiving_addresses"), tr("&Receive"), this);
     receiveCoinsAction->setStatusTip(tr("Request payments (generates QR codes and ImageCoin: URIs)"));
     receiveCoinsAction->setToolTip(receiveCoinsAction->statusTip());
@@ -361,8 +387,12 @@ void BitcoinGUI::createActions()
     connect(overviewAction, SIGNAL(triggered()), this, SLOT(gotoOverviewPage()));
     connect(sendCoinsAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
     connect(sendCoinsAction, SIGNAL(triggered()), this, SLOT(gotoSendCoinsPage()));
+    connect(EncryptDecryptAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
+    connect(EncryptDecryptAction, SIGNAL(triggered()), this, SLOT(gotoEncryptDecryptPage()));
     connect(sendCoinsMenuAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
     connect(sendCoinsMenuAction, SIGNAL(triggered()), this, SLOT(gotoSendCoinsPage()));
+    connect(EncryptDecryptAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
+    connect(EncryptDecryptAction, SIGNAL(triggered()), this, SLOT(gotoEncryptDecryptPage()));
     connect(receiveCoinsAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
     connect(receiveCoinsAction, SIGNAL(triggered()), this, SLOT(gotoReceiveCoinsPage()));
     connect(receiveCoinsMenuAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
@@ -566,6 +596,7 @@ void BitcoinGUI::createToolBars()
         {
             toolbar->addAction(masternodeAction);
         }
+        toolbar->addAction(EncryptDecryptAction);
         toolbar->setMovable(false); // remove unused icon in upper left corner
         overviewAction->setChecked(true);
 
@@ -703,6 +734,8 @@ void BitcoinGUI::setWalletActionsEnabled(bool enabled)
     overviewAction->setEnabled(enabled);
     sendCoinsAction->setEnabled(enabled);
     sendCoinsMenuAction->setEnabled(enabled);
+    EncryptDecryptAction->setEnabled(enabled);
+    EncryptDecryptMenuAction->setEnabled(enabled);
     receiveCoinsAction->setEnabled(enabled);
     receiveCoinsMenuAction->setEnabled(enabled);
     historyAction->setEnabled(enabled);
@@ -896,6 +929,13 @@ void BitcoinGUI::gotoSendCoinsPage(QString addr)
     sendCoinsAction->setChecked(true);
     if (walletFrame) walletFrame->gotoSendCoinsPage(addr);
 }
+
+void BitcoinGUI::gotoEncryptDecryptPage()
+{
+	EncryptDecryptAction->setChecked(true);
+    if (walletFrame) walletFrame->gotoEncryptDecryptPage();
+}
+
 
 void BitcoinGUI::gotoSignMessageTab(QString addr)
 {
