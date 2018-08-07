@@ -23,7 +23,7 @@ EncryptDecryptDialog::EncryptDecryptDialog(const PlatformStyle *platformStyle, Q
 {
     ui->setupUi(this);
 
-    //setCurrentWidget(ui->EncryptDecryptDialogDialog);
+    //setCurrentWidget(ui->EncryptDecryptDialog);
 
     if (platformStyle->getUseExtraSpacing())
         ui->payToLayout->setSpacing(4);
