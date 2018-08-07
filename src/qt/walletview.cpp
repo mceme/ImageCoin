@@ -15,6 +15,7 @@
 #include "platformstyle.h"
 #include "receivecoinsdialog.h"
 #include "sendcoinsdialog.h"
+#include "encryptdecryptdialog.h"
 #include "signverifymessagedialog.h"
 #include "transactiontablemodel.h"
 #include "transactionview.h"
@@ -31,7 +32,7 @@
 #include <QPushButton>
 #include <QSettings>
 #include <QVBoxLayout>
-#include "encryptdecryptdialog.h"
+
 
 WalletView::WalletView(const PlatformStyle *platformStyle, QWidget *parent):
     QStackedWidget(parent),
@@ -107,7 +108,7 @@ WalletView::WalletView(const PlatformStyle *platformStyle, QWidget *parent):
     connect(sendCoinsPage, SIGNAL(message(QString,QString,unsigned int)), this, SIGNAL(message(QString,QString,unsigned int)));
 
     // Pass through messages from EncryptDecryptPage
-     connect(EncryptDecryptPage, SIGNAL(message(QString,QString,unsigned int)), this, SIGNAL(message(QString,QString,unsigned int)));
+    connect(EncryptDecryptPage, SIGNAL(message(QString,QString,unsigned int)), this, SIGNAL(message(QString,QString,unsigned int)));
 
 
     // Pass through messages from transactionView

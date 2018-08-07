@@ -14,6 +14,8 @@
 #include <QClipboard>
 #include "encryptdecryptdialog.h"
 
+
+
 EncryptDecryptDialog::EncryptDecryptDialog(const PlatformStyle *platformStyle, QWidget *parent) :
     QDialog(parent),
     ui(new Ui::EncryptDecryptDialog),
@@ -62,6 +64,16 @@ void EncryptDecryptDialog::setClientModel(ClientModel *clientModel)
     if (clientModel) {
     	  connect(model->getOptionsModel(), SIGNAL(displayUnitChanged(int)), this, SLOT(updateDisplayUnit()));
     }
+}
+
+void EncryptDecryptDialog::setModel(WalletModel *model)
+{
+    this->model = model;
+
+    if (model && model->getOptionsModel())
+        connect(model->getOptionsModel(), SIGNAL(displayUnitChanged(int)), this, SLOT(updateDisplayUnit()));
+
+    clear();
 }
 
 EncryptDecryptDialog::~EncryptDecryptDialog()
@@ -115,15 +127,7 @@ void EncryptDecryptDialog::on_payTo_textChanged(const QString &address)
     updateLabel(address);
 }
 
-void EncryptDecryptDialog::setModel(WalletModel *model)
-{
-    this->model = model;
 
-    if (model && model->getOptionsModel())
-        connect(model->getOptionsModel(), SIGNAL(displayUnitChanged(int)), this, SLOT(updateDisplayUnit()));
-
-    clear();
-}
 
 void EncryptDecryptDialog::clear()
 {
