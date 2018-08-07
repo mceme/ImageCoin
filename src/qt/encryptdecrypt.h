@@ -29,7 +29,9 @@ public:
     explicit EncryptDecrypt(const PlatformStyle *platformStyle, QWidget *parent = 0);
     ~EncryptDecrypt();
 
+    void setClientModel(ClientModel *clientModel);
     void setModel(WalletModel *model);
+
     bool validate();
     SendCoinsRecipient getValue();
 

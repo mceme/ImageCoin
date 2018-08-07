@@ -54,6 +54,17 @@ EncryptDecrypt::EncryptDecrypt(const PlatformStyle *platformStyle, QWidget *pare
     connect(ui->deleteButton_s, SIGNAL(clicked()), this, SLOT(deleteClicked()));
 }
 
+
+
+void EncryptDecrypt::setClientModel(ClientModel *clientModel)
+{
+    this->clientModel = clientModel;
+
+    if (clientModel) {
+        connect(clientModel, SIGNAL(numBlocksChanged(int,QDateTime,double,bool)), this, SLOT(updateSmartFeeLabel()));
+    }
+}
+
 EncryptDecrypt::~EncryptDecrypt()
 {
     delete ui;
