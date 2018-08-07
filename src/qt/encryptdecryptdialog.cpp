@@ -14,9 +14,9 @@
 #include <QClipboard>
 #include "encryptdecryptdialog.h"
 
-EncryptDecryptDialogDialog::EncryptDecryptDialogDialog(const PlatformStyle *platformStyle, QWidget *parent) :
+EncryptDecryptDialog::EncryptDecryptDialog(const PlatformStyle *platformStyle, QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::EncryptDecryptDialogDialog),
+    ui(new Ui::EncryptDecryptDialog),
 	clientModel(0),
     model(0),
     platformStyle(platformStyle)
