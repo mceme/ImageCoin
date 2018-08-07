@@ -2,17 +2,17 @@
 // Copyright (c) 2014-2017 The Dash Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
-
+#include "ui_encryptdecryptdialog.h"
 #include "addressbookpage.h"
 #include "addresstablemodel.h"
 #include "guiutil.h"
 #include "optionsmodel.h"
 #include "platformstyle.h"
 #include "walletmodel.h"
-
+#include "encryptdecryptdialog.h"
 #include <QApplication>
 #include <QClipboard>
-#include "encryptdecryptdialog.h"
+
 
 
 
