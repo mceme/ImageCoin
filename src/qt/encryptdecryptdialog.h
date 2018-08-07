@@ -32,13 +32,10 @@ class EncryptDecryptDialog : public QDialog
     Q_OBJECT
 
 public:
-    explicit EncryptDecryptDialog(const PlatformStyle *platformStyle, QWidget *parent);
+    explicit EncryptDecryptDialog(const PlatformStyle *platformStyle, QWidget *parent = 0);
     ~EncryptDecryptDialog();
-
-
     void setClientModel(ClientModel *clientModel);
     void setModel(WalletModel *model);
-
     bool validate();
     SendCoinsRecipient getValue();
 
@@ -72,13 +69,11 @@ private Q_SLOTS:
     void updateDisplayUnit();
 
 private:
-
     SendCoinsRecipient recipient;
     Ui::EncryptDecryptDialog *ui;
     ClientModel *clientModel;
     WalletModel *model;
     const PlatformStyle *platformStyle;
-
     bool updateLabel(const QString &address);
 };
 
