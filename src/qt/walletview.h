@@ -16,6 +16,7 @@ class OverviewPage;
 class PlatformStyle;
 class ReceiveCoinsDialog;
 class SendCoinsDialog;
+class EncryptDecrypt;
 class SendCoinsRecipient;
 class TransactionView;
 class WalletModel;
@@ -64,6 +65,7 @@ private:
     QWidget *transactionsPage;
     ReceiveCoinsDialog *receiveCoinsPage;
     SendCoinsDialog *sendCoinsPage;
+    EncryptDecrypt *EncryptDecryptPage;
     AddressBookPage *usedSendingAddressesPage;
     AddressBookPage *usedReceivingAddressesPage;
     MasternodeList *masternodeListPage;
@@ -87,7 +89,7 @@ public Q_SLOTS:
     void gotoSendCoinsPage(QString addr = "");
 
     /** Switch to send coins page */
-      void gotoEncryptDecryptPage();
+    void gotoEncryptDecryptPage();
 
     /** Show Sign/Verify Message dialog and switch to sign message tab */
     void gotoSignMessageTab(QString addr = "");
