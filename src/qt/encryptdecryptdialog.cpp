@@ -3,9 +3,6 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "encryptdecrypt.h"
-//#include "ui_sendcoinsentry.h"
-
 #include "addressbookpage.h"
 #include "addresstablemodel.h"
 #include "guiutil.h"
@@ -15,16 +12,18 @@
 
 #include <QApplication>
 #include <QClipboard>
+#include "encryptdecryptdialog.h"
 
-EncryptDecrypt::EncryptDecrypt(const PlatformStyle *platformStyle, QWidget *parent) :
-    QStackedWidget(parent),
-    ui(new Ui::EncryptDecrypt),
+EncryptDecryptDialogDialog::EncryptDecryptDialogDialog(const PlatformStyle *platformStyle, QWidget *parent) :
+    QDialog(parent),
+    ui(new Ui::EncryptDecryptDialogDialog),
+	clientModel(0),
     model(0),
     platformStyle(platformStyle)
 {
     ui->setupUi(this);
 
-    setCurrentWidget(ui->EncryptDecrypt);
+    //setCurrentWidget(ui->EncryptDecryptDialogDialog);
 
     if (platformStyle->getUseExtraSpacing())
         ui->payToLayout->setSpacing(4);
@@ -56,22 +55,22 @@ EncryptDecrypt::EncryptDecrypt(const PlatformStyle *platformStyle, QWidget *pare
 
 
 
-void EncryptDecrypt::setClientModel(ClientModel *clientModel)
+void EncryptDecryptDialog::setClientModel(ClientModel *clientModel)
 {
     this->clientModel = clientModel;
 
     if (clientModel) {
-        connect(clientModel, SIGNAL(numBlocksChanged(int,QDateTime,double,bool)), this, SLOT(updateSmartFeeLabel()));
+    	  connect(model->getOptionsModel(), SIGNAL(displayUnitChanged(int)), this, SLOT(updateDisplayUnit()));
     }
 }
 
-EncryptDecrypt::~EncryptDecrypt()
+EncryptDecryptDialog::~EncryptDecryptDialog()
 {
     delete ui;
 }
 
 
-void EncryptDecrypt::on_chooserButton_clicked()
+void EncryptDecryptDialog::on_chooserButton_clicked()
 {
     // Paste text from clipboard into recipient field
     QFileDialog dialog(this);
@@ -90,13 +89,13 @@ void EncryptDecrypt::on_chooserButton_clicked()
        }
 }
 
-void EncryptDecrypt::on_pasteButton_clicked()
+void EncryptDecryptDialog::on_pasteButton_clicked()
 {
     // Paste text from clipboard into recipient field
     ui->payTo->setText(QApplication::clipboard()->text());
 }
 
-void EncryptDecrypt::on_addressBookButton_clicked()
+void EncryptDecryptDialog::on_addressBookButton_clicked()
 {
     if(!model)
         return;
@@ -111,12 +110,12 @@ void EncryptDecrypt::on_addressBookButton_clicked()
     }
 }
 
-void EncryptDecrypt::on_payTo_textChanged(const QString &address)
+void EncryptDecryptDialog::on_payTo_textChanged(const QString &address)
 {
     updateLabel(address);
 }
 
-void EncryptDecrypt::setModel(WalletModel *model)
+void EncryptDecryptDialog::setModel(WalletModel *model)
 {
     this->model = model;
 
@@ -126,7 +125,7 @@ void EncryptDecrypt::setModel(WalletModel *model)
     clear();
 }
 
-void EncryptDecrypt::clear()
+void EncryptDecryptDialog::clear()
 {
     // clear UI elements for normal payment
     ui->payTo->clear();
@@ -150,12 +149,12 @@ void EncryptDecrypt::clear()
     //updateDisplayUnit();
 }
 
-void EncryptDecrypt::deleteClicked()
+void EncryptDecryptDialog::deleteClicked()
 {
     Q_EMIT removeEntry(this);
 }
 
-bool EncryptDecrypt::validate()
+bool EncryptDecryptDialog::validate()
 {
     if (!model)
         return false;
@@ -183,7 +182,7 @@ bool EncryptDecrypt::validate()
     return retval;
 }
 
-SendCoinsRecipient EncryptDecrypt::getValue()
+SendCoinsRecipient EncryptDecryptDialog::getValue()
 {
     // Payment request
     if (recipient.paymentRequest.IsInitialized())
@@ -199,7 +198,7 @@ SendCoinsRecipient EncryptDecrypt::getValue()
     return recipient;
 }
 
-QWidget *EncryptDecrypt::setupTabChain(QWidget *prev)
+QWidget *EncryptDecryptDialog::setupTabChain(QWidget *prev)
 {
     QWidget::setTabOrder(prev, ui->payTo);
     QWidget::setTabOrder(ui->payTo, ui->addAsLabel);
@@ -211,7 +210,7 @@ QWidget *EncryptDecrypt::setupTabChain(QWidget *prev)
     return ui->deleteButton;
 }
 
-void EncryptDecrypt::setValue(const SendCoinsRecipient &value)
+void EncryptDecryptDialog::setValue(const SendCoinsRecipient &value)
 {
     recipient = value;
 
@@ -249,23 +248,23 @@ void EncryptDecrypt::setValue(const SendCoinsRecipient &value)
     }
 }
 
-void EncryptDecrypt::setAddress(const QString &address)
+void EncryptDecryptDialog::setAddress(const QString &address)
 {
     ui->payTo->setText(address);
     //ui->payAmount->setFocus();
 }
 
-bool EncryptDecrypt::isClear()
+bool EncryptDecryptDialog::isClear()
 {
     return ui->payTo->text().isEmpty() && ui->payTo_is->text().isEmpty() && ui->payTo_s->text().isEmpty();
 }
 
-void EncryptDecrypt::setFocus()
+void EncryptDecryptDialog::setFocus()
 {
     ui->payTo->setFocus();
 }
 
-void EncryptDecrypt::updateDisplayUnit()
+void EncryptDecryptDialog::updateDisplayUnit()
 {
     if(model && model->getOptionsModel())
     {
@@ -276,7 +275,7 @@ void EncryptDecrypt::updateDisplayUnit()
     }
 }
 
-bool EncryptDecrypt::updateLabel(const QString &address)
+bool EncryptDecryptDialog::updateLabel(const QString &address)
 {
     if(!model)
         return false;

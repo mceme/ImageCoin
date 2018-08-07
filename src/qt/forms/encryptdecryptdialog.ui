@@ -16,7 +16,7 @@
   <property name="autoFillBackground">
    <bool>false</bool>
   </property>
-  <widget class="QFrame" name="EncryptDecrypt">
+  <widget class="QFrame" name="EncryptDecryptDialog">
    <property name="toolTip">
     <string>This is a normal payment.</string>
    </property>

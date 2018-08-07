@@ -9,11 +9,17 @@
 
 #include <QStackedWidget>
 
+
+#include <QDialog>
+#include <QString>
+
+
+class ClientModel;
 class WalletModel;
 class PlatformStyle;
 
 namespace Ui {
-    class EncryptDecrypt;
+    class EncryptDecryptDialog;
 }
 
 /**
@@ -21,13 +27,13 @@ namespace Ui {
  * Stacked widget, with different UIs for payment requests
  * with a strong payee identity.
  */
-class EncryptDecrypt : public QStackedWidget
+class EncryptDecryptDialog : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit EncryptDecrypt(const PlatformStyle *platformStyle, QWidget *parent = 0);
-    ~EncryptDecrypt();
+    explicit EncryptDecryptDialog(const PlatformStyle *platformStyle, QWidget *parent = 0);
+    ~EncryptDecryptDialog();
 
     void setClientModel(ClientModel *clientModel);
     void setModel(WalletModel *model);
@@ -52,7 +58,7 @@ public Q_SLOTS:
     void clear();
 
 Q_SIGNALS:
-    void removeEntry(EncryptDecrypt *entry);
+    void removeEntry(EncryptDecryptDialog *entry);
     void payAmountChanged();
     void subtractFeeFromAmountChanged();
 
@@ -66,7 +72,8 @@ private Q_SLOTS:
 
 private:
     SendCoinsRecipient recipient;
-    Ui::EncryptDecrypt *ui;
+    Ui::EncryptDecryptDialog *ui;
+    ClientModel *clientModel;
     WalletModel *model;
     const PlatformStyle *platformStyle;
 

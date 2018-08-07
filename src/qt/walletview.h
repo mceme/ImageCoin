@@ -16,7 +16,7 @@ class OverviewPage;
 class PlatformStyle;
 class ReceiveCoinsDialog;
 class SendCoinsDialog;
-class EncryptDecrypt;
+class EncryptDecryptDialog;
 class SendCoinsRecipient;
 class TransactionView;
 class WalletModel;
@@ -65,7 +65,7 @@ private:
     QWidget *transactionsPage;
     ReceiveCoinsDialog *receiveCoinsPage;
     SendCoinsDialog *sendCoinsPage;
-    EncryptDecrypt *EncryptDecryptPage;
+    EncryptDecryptDialog *EncryptDecryptPage;
     AddressBookPage *usedSendingAddressesPage;
     AddressBookPage *usedReceivingAddressesPage;
     MasternodeList *masternodeListPage;

@@ -15,7 +15,6 @@
 #include "platformstyle.h"
 #include "receivecoinsdialog.h"
 #include "sendcoinsdialog.h"
-#include "encryptdecrypt.h"
 #include "signverifymessagedialog.h"
 #include "transactiontablemodel.h"
 #include "transactionview.h"
@@ -32,6 +31,7 @@
 #include <QPushButton>
 #include <QSettings>
 #include <QVBoxLayout>
+#include "encryptdecryptdialog.h"
 
 WalletView::WalletView(const PlatformStyle *platformStyle, QWidget *parent):
     QStackedWidget(parent),
