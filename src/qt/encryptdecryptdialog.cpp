@@ -224,16 +224,16 @@ void EncryptDecryptDialog::setValue(const SendCoinsRecipient &value)
         {
             ui->payTo_is->setText(recipient.address);
             ui->memoTextLabel_is->setText(recipient.message);
-            ui->payAmount_is->setValue(recipient.amount);
-            ui->payAmount_is->setReadOnly(true);
-            setCurrentWidget(ui->SendCoins_UnauthenticatedPaymentRequest);
+           // ui->payAmount_is->setValue(recipient.amount);
+           // ui->payAmount_is->setReadOnly(true);
+           // setCurrentWidget(ui->SendCoins_UnauthenticatedPaymentRequest);
         }
         else // authenticated
         {
             ui->payTo_s->setText(recipient.authenticatedMerchant);
             ui->memoTextLabel_s->setText(recipient.message);
-            ui->payAmount_s->setValue(recipient.amount);
-            ui->payAmount_s->setReadOnly(true);
+            //ui->payAmount_s->setValue(recipient.amount);
+            //ui->payAmount_s->setReadOnly(true);
             setCurrentWidget(ui->SendCoins_AuthenticatedPaymentRequest);
         }
     }

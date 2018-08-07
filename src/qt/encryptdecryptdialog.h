@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_QT_ENCRYPTDECRYPT_H
-#define BITCOIN_QT_ENCRYPTDECRYPT_H
+#ifndef BITCOIN_QT_ENCRYPTDECRYPTDIALOG_H
+#define BITCOIN_QT_ENCRYPTDECRYPTDIALOG_H
 
 #include "walletmodel.h"
 
@@ -32,8 +32,9 @@ class EncryptDecryptDialog : public QDialog
     Q_OBJECT
 
 public:
-    explicit EncryptDecryptDialog(const PlatformStyle *platformStyle, QWidget *parent = 0);
+    explicit EncryptDecryptDialog(const PlatformStyle *platformStyle, QWidget *parent);
     ~EncryptDecryptDialog();
+
 
     void setClientModel(ClientModel *clientModel);
     void setModel(WalletModel *model);
@@ -71,6 +72,7 @@ private Q_SLOTS:
     void updateDisplayUnit();
 
 private:
+
     SendCoinsRecipient recipient;
     Ui::EncryptDecryptDialog *ui;
     ClientModel *clientModel;
