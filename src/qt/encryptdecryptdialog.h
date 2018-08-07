@@ -32,7 +32,7 @@ class EncryptDecryptDialog : public QDialog
     Q_OBJECT
 
 public:
-    explicit EncryptDecryptDialog(const PlatformStyle *platformStyle, QWidget *parent);
+    explicit EncryptDecryptDialog(const PlatformStyle *platformStyle, QWidget *parent = 0);
     ~EncryptDecryptDialog();
 
 
