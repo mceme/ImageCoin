@@ -235,6 +235,11 @@ void WalletView::gotoSendCoinsPage(QString addr)
         sendCoinsPage->setAddress(addr);
 }
 
+void WalletView::gotoEncryptDecryptPage()
+{
+    setCurrentWidget(EncryptDecryptPage);
+}
+
 void WalletView::gotoSignMessageTab(QString addr)
 {
     // calls show() in showTab_SM()
