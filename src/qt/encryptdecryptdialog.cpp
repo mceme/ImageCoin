@@ -16,7 +16,7 @@
 
 
 
-EncryptDecryptDialog::EncryptDecryptDialog(const PlatformStyle *platformStyle, QWidget *parent = 0) :
+EncryptDecryptDialog::EncryptDecryptDialog(const PlatformStyle *platformStyle, QWidget *parent) :
     QDialog(parent),
     ui(new Ui::EncryptDecryptDialog),
 	clientModel(0),
