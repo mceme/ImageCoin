@@ -57,8 +57,9 @@ public Q_SLOTS:
 
 Q_SIGNALS:
     void removeEntry(EncryptDecryptDialog *entry);
-    void payAmountChanged();
     void subtractFeeFromAmountChanged();
+    // Fired when a message should be reported to the user
+    void message(const QString &title, const QString &message, unsigned int style);
 
 private Q_SLOTS:
     void deleteClicked();
@@ -75,6 +76,9 @@ private:
     WalletModel *model;
     const PlatformStyle *platformStyle;
     bool updateLabel(const QString &address);
+
+
 };
+
 
 #endif // BITCOIN_QT_ENCRYPTDECRYPT_H
