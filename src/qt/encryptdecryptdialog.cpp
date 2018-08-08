@@ -95,7 +95,9 @@ void EncryptDecryptDialog::on_chooserButton_clicked()
     if (dialog.exec()){
         fileNames = dialog.selectedFiles();
         QString fnames;
-        foreach (QString f , fileNames){
+        QString f ;
+        for(int i=0;i<fileNames.size();++i)
+        	  f = fileNames[i];
               fnames+=f % ";";
            }
            ui->FileNamesTxt->setText(fnames);
