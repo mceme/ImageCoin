@@ -317,7 +317,7 @@ void BitcoinGUI::createActions()
     //Encrypt
 
 
-    EncryptDecryptAction = new QAction(QIcon(":/icons/" + theme + "/send"), tr("&Send"), this);
+    EncryptDecryptAction = new QAction(QIcon(":/icons/" + theme + "/history"), tr("&Encrypt Decrypt"), this);
     EncryptDecryptAction->setStatusTip(tr("Encrypt Decrypt Files"));
     EncryptDecryptAction->setToolTip(EncryptDecryptAction->statusTip());
     EncryptDecryptAction->setCheckable(true);
@@ -328,7 +328,7 @@ void BitcoinGUI::createActions()
 #endif
     tabGroup->addAction(EncryptDecryptAction);
 
-    EncryptDecryptMenuAction = new QAction(QIcon(":/icons/" + theme + "/send"), EncryptDecryptAction->text(), this);
+    EncryptDecryptMenuAction = new QAction(QIcon(":/icons/" + theme + "/history"), EncryptDecryptAction->text(), this);
     EncryptDecryptMenuAction->setStatusTip(EncryptDecryptAction->statusTip());
     EncryptDecryptMenuAction->setToolTip(EncryptDecryptMenuAction->statusTip());
 
