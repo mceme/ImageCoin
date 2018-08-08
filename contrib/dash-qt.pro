@@ -6,6 +6,7 @@ FORMS += \
     ../src/qt/forms/darksendconfig.ui \
     ../src/qt/forms/debugwindow.ui \
     ../src/qt/forms/editaddressdialog.ui \
+    ../src/qt/forms/encryptdecryptdialog.ui \
     ../src/qt/forms/helpmessagedialog.ui \
     ../src/qt/forms/intro.ui \
     ../src/qt/forms/masternodelist.ui \
@@ -17,14 +18,35 @@ FORMS += \
     ../src/qt/forms/sendcoinsdialog.ui \
     ../src/qt/forms/sendcoinsentry.ui \
     ../src/qt/forms/signverifymessagedialog.ui \
-    ../src/qt/forms/transactiondescdialog.ui \
-    ../src/qt/forms/encryptdecrypt.ui
+    ../src/qt/forms/transactiondescdialog.ui
 
 RESOURCES += \
     ../src/qt/imagecoin.qrc
 
+
+HEADERS += \
+    ../src/qt/encryptdecryptdialog.h \
+    ../src/qt/addressbookpage.h \
+   ../src/amount.h
+
+
+SOURCES += \
+ ../src/qt/encryptdecryptdialog.cpp \
+ ../src/qt/addressbookpage.cpp \
+ ../src/amount.cpp
+
 # Input
 DEPENDPATH += \
-../src/qt src
+../src/qt \
+../src/
+
+INCLUDEPATH += \
+  $$PWD ../src \
+  E:/boost/boost_1_61_0/ \
+  E:/protobuf/
+
+QT +=  widgets
 
 win32:QMAKE_LFLAGS += -shared
+
+LIBS += "-LE:/boost/boost_1_61_0/stage/lib/"

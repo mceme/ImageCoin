@@ -15,7 +15,7 @@
 #include <QClipboard>
 #include <QDialog>
 #include <QString>
-
+#include <QFileDialog>
 
 
 EncryptDecryptDialog::EncryptDecryptDialog(const PlatformStyle *platformStyle, QWidget *parent) :
