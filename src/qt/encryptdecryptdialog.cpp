@@ -28,8 +28,8 @@ EncryptDecryptDialog::EncryptDecryptDialog(const PlatformStyle *platformStyle, Q
 
     //setCurrentWidget(ui->EncryptDecryptDialog);
 
-    if (platformStyle->getUseExtraSpacing())
-        ui->payToLayout->setSpacing(4);
+    //if (platformStyle->getUseExtraSpacing())
+     //   ui->payToLayout->setSpacing(4);
 #if QT_VERSION >= 0x040700
     ui->addAsLabel->setPlaceholderText(tr("******"));
 #endif
@@ -44,16 +44,20 @@ EncryptDecryptDialog::EncryptDecryptDialog(const PlatformStyle *platformStyle, Q
     //ui->deleteButton_s->setIcon(QIcon(":/icons/" + theme + "/remove"));
       
     // normal dash address field
-    GUIUtil::setupAddressWidget(ui->payTo, this);
+    GUIUtil::setupAddressWidget(ui->FileNamesTxt, this);
     // just a label for displaying dash address(es)
-    ui->payTo_is->setFont(GUIUtil::fixedPitchFont());
+    ui->FileNamesTxt->setFont(GUIUtil::fixedPitchFont());
 
     // Connect signals
     //connect(ui->payAmount, SIGNAL(valueChanged()), this, SIGNAL(payAmountChanged()));
     //connect(ui->checkboxSubtractFeeFromAmount, SIGNAL(toggled(bool)), this, SIGNAL(subtractFeeFromAmountChanged()));
+
+
+	connect(ui->chooserButton, SIGNAL(clicked()), this, SLOT(on_chooserButton_clicked()));
+    connect(ui->addressBookButton, SIGNAL(clicked()), this, SLOT(on_addressBookButton_clicked()));
     connect(ui->deleteButton, SIGNAL(clicked()), this, SLOT(deleteClicked()));
-    connect(ui->deleteButton_is, SIGNAL(clicked()), this, SLOT(deleteClicked()));
-    connect(ui->deleteButton_s, SIGNAL(clicked()), this, SLOT(deleteClicked()));
+   // connect(ui->deleteButton_is, SIGNAL(clicked()), this, SLOT(deleteClicked()));
+   // connect(ui->deleteButton_s, SIGNAL(clicked()), this, SLOT(deleteClicked()));
 }
 
 
@@ -108,7 +112,7 @@ void EncryptDecryptDialog::on_chooserButton_clicked()
 void EncryptDecryptDialog::on_pasteButton_clicked()
 {
     // Paste text from clipboard into recipient field
-    ui->payTo->setText(QApplication::clipboard()->text());
+    ui->FileNamesTxt->setText(QApplication::clipboard()->text());
 }
 
 void EncryptDecryptDialog::on_addressBookButton_clicked()
@@ -119,7 +123,7 @@ void EncryptDecryptDialog::on_addressBookButton_clicked()
     dlg.setModel(model->getAddressTableModel());
     if(dlg.exec())
     {
-        ui->payTo->setText(dlg.getReturnValue());
+        ui->FileNamesTxt->setText(dlg.getReturnValue());
 
          ui->addAsLabel->setText(dlg.getReturnValue());
         //ui->payAmount->setFocus();
@@ -136,7 +140,7 @@ void EncryptDecryptDialog::on_payTo_textChanged(const QString &address)
 void EncryptDecryptDialog::clear()
 {
     // clear UI elements for normal payment
-    ui->payTo->clear();
+    ui->FileNamesTxt->clear();
     ui->addAsLabel->clear();
     //ui->payAmount->clear();
     //ui->checkboxSubtractFeeFromAmount->setCheckState(Qt::Unchecked);
@@ -174,9 +178,9 @@ bool EncryptDecryptDialog::validate()
     if (recipient.paymentRequest.IsInitialized())
         return retval;
 
-    if (!model->validateAddress(ui->payTo->text()))
+    if (!model->validateAddress(ui->FileNamesTxt->text()))
     {
-        ui->payTo->setValid(false);
+        ui->FileNamesTxt->setValid(false);
         retval = false;
     }
 
@@ -197,7 +201,7 @@ SendCoinsRecipient EncryptDecryptDialog::getValue()
         return recipient;
 
     // Normal payment
-    recipient.address = ui->payTo->text();
+    recipient.address = ui->FileNamesTxt->text();
     recipient.label = ui->addAsLabel->text();
     //recipient.amount = ui->payAmount->value();
     //recipient.message = ui->messageTextLabel->text();
@@ -208,8 +212,8 @@ SendCoinsRecipient EncryptDecryptDialog::getValue()
 
 QWidget *EncryptDecryptDialog::setupTabChain(QWidget *prev)
 {
-    QWidget::setTabOrder(prev, ui->payTo);
-    QWidget::setTabOrder(ui->payTo, ui->addAsLabel);
+    QWidget::setTabOrder(prev, ui->FileNamesTxt);
+    QWidget::setTabOrder(ui->FileNamesTxt, ui->addAsLabel);
     //QWidget *w = ui->payAmount->setupTabChain(ui->addAsLabel);
     //QWidget::setTabOrder(w, ui->checkboxSubtractFeeFromAmount);
     //QWidget::setTabOrder(ui->checkboxSubtractFeeFromAmount, ui->addressBookButton);
@@ -226,16 +230,17 @@ void EncryptDecryptDialog::setValue(const SendCoinsRecipient &value)
     {
         if (recipient.authenticatedMerchant.isEmpty()) // unauthenticated
         {
-            ui->payTo_is->setText(recipient.address);
-            ui->memoTextLabel_is->setText(recipient.message);
+            ui->FileNamesTxt->setText(recipient.address);
+            ui->addAsLabel->setText("************");
+           // ui->memoTextLabel_is->setText(recipient.message);
            // ui->payAmount_is->setValue(recipient.amount);
-           // ui->payAmount_is->setReadOnly(true);
+            ui->FileNamesTxt->setReadOnly(true);
            // setCurrentWidget(ui->SendCoins_UnauthenticatedPaymentRequest);
         }
         else // authenticated
         {
-            ui->payTo_s->setText(recipient.authenticatedMerchant);
-            ui->memoTextLabel_s->setText(recipient.message);
+            ui->FileNamesTxt->setText(recipient.authenticatedMerchant);
+            //ui->memoTextLabel_s->setText(recipient.message);
             //ui->payAmount_s->setValue(recipient.amount);
             //ui->payAmount_s->setReadOnly(true);
            // setCurrentWidget(ui->SendCoins_AuthenticatedPaymentRequest);
@@ -249,7 +254,7 @@ void EncryptDecryptDialog::setValue(const SendCoinsRecipient &value)
         //ui->messageLabel->setVisible(!recipient.message.isEmpty());
 
         ui->addAsLabel->clear();
-        ui->payTo->setText(recipient.address); // this may set a label from addressbook
+        ui->FileNamesTxt->setText(recipient.address); // this may set a label from addressbook
         if (!recipient.label.isEmpty()) // if a label had been set from the addressbook, don't overwrite with an empty label
             ui->addAsLabel->setText(recipient.label);
        // ui->payAmount->setValue(recipient.amount);
@@ -258,18 +263,18 @@ void EncryptDecryptDialog::setValue(const SendCoinsRecipient &value)
 
 void EncryptDecryptDialog::setAddress(const QString &address)
 {
-    ui->payTo->setText(address);
+    ui->FileNamesTxt->setText(address);
     //ui->payAmount->setFocus();
 }
 
 bool EncryptDecryptDialog::isClear()
 {
-    return ui->payTo->text().isEmpty() && ui->payTo_is->text().isEmpty() && ui->payTo_s->text().isEmpty();
+    return ui->FileNamesTxt->text().isEmpty() && ui->addAsLabel->text().isEmpty();
 }
 
 void EncryptDecryptDialog::setFocus()
 {
-    ui->payTo->setFocus();
+    ui->FileNamesTxt->setFocus();
 }
 
 void EncryptDecryptDialog::updateDisplayUnit()
