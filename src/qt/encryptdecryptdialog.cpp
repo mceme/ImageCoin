@@ -97,9 +97,10 @@ void EncryptDecryptDialog::on_chooserButton_clicked()
         QString fnames;
         QString f ;
         for(int i=0;i<fileNames.size();++i)
+         {
         	  f = fileNames[i];
-              fnames+=f % ";";
-           }
+              fnames+=f + ";";
+         }
            ui->FileNamesTxt->setText(fnames);
        }
 }
