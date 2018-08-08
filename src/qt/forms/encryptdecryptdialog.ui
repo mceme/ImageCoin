@@ -484,7 +484,7 @@
      <item>
       <widget class="QValidatedLineEdit" name="payTo">
        <property name="toolTip">
-        <string>The IMG address to send the payment to</string>
+        <string>The IMG address to Key Encrpyt / Decrpyt</string>
        </property>
       </widget>
      </item>

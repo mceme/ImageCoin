@@ -44,9 +44,9 @@ EncryptDecryptDialog::EncryptDecryptDialog(const PlatformStyle *platformStyle, Q
     //ui->deleteButton_s->setIcon(QIcon(":/icons/" + theme + "/remove"));
       
     // normal dash address field
-    GUIUtil::setupAddressWidget(ui->FileNamesTxt, this);
+    GUIUtil::setupAddressWidget(ui->payTo, this);
     // just a label for displaying dash address(es)
-    ui->FileNamesTxt->setFont(GUIUtil::fixedPitchFont());
+    ui->payTo->setFont(GUIUtil::fixedPitchFont());
 
     // Connect signals
     //connect(ui->payAmount, SIGNAL(valueChanged()), this, SIGNAL(payAmountChanged()));
