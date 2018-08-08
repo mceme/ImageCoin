@@ -180,7 +180,7 @@ bool EncryptDecryptDialog::validate()
 
     if (!model->validateAddress(ui->FileNamesTxt->text()))
     {
-        ui->FileNamesTxt->setValid(false);
+      //  ui->FileNamesTxt->setValid(false);
         retval = false;
     }
 
