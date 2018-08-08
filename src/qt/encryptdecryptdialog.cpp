@@ -179,10 +179,10 @@ bool EncryptDecryptDialog::validate()
 
 
     // Reject dust outputs:
-    if (retval && GUIUtil::isDust(ui->payTo->text(), ui->payAmount->value())) {
-        ui->payAmount->setValid(false);
-        retval = false;
-    }
+    //if (retval && GUIUtil::isDust(ui->payTo->text(), ui->payAmount->value())) {
+    //    ui->payAmount->setValid(false);
+    //    retval = false;
+    //}
 
     return retval;
 }
@@ -207,9 +207,9 @@ QWidget *EncryptDecryptDialog::setupTabChain(QWidget *prev)
 {
     QWidget::setTabOrder(prev, ui->payTo);
     QWidget::setTabOrder(ui->payTo, ui->addAsLabel);
-    QWidget *w = ui->payAmount->setupTabChain(ui->addAsLabel);
-    QWidget::setTabOrder(w, ui->checkboxSubtractFeeFromAmount);
-    QWidget::setTabOrder(ui->checkboxSubtractFeeFromAmount, ui->addressBookButton);
+    //QWidget *w = ui->payAmount->setupTabChain(ui->addAsLabel);
+    //QWidget::setTabOrder(w, ui->checkboxSubtractFeeFromAmount);
+    //QWidget::setTabOrder(ui->checkboxSubtractFeeFromAmount, ui->addressBookButton);
     QWidget::setTabOrder(ui->addressBookButton, ui->pasteButton);
     QWidget::setTabOrder(ui->pasteButton, ui->deleteButton);
     return ui->deleteButton;
@@ -235,21 +235,21 @@ void EncryptDecryptDialog::setValue(const SendCoinsRecipient &value)
             ui->memoTextLabel_s->setText(recipient.message);
             //ui->payAmount_s->setValue(recipient.amount);
             //ui->payAmount_s->setReadOnly(true);
-            setCurrentWidget(ui->SendCoins_AuthenticatedPaymentRequest);
+           // setCurrentWidget(ui->SendCoins_AuthenticatedPaymentRequest);
         }
     }
     else // normal payment
     {
         // message
-        ui->messageTextLabel->setText(recipient.message);
-        ui->messageTextLabel->setVisible(!recipient.message.isEmpty());
-        ui->messageLabel->setVisible(!recipient.message.isEmpty());
+        //ui->messageTextLabel->setText(recipient.message);
+        //ui->messageTextLabel->setVisible(!recipient.message.isEmpty());
+        //ui->messageLabel->setVisible(!recipient.message.isEmpty());
 
         ui->addAsLabel->clear();
         ui->payTo->setText(recipient.address); // this may set a label from addressbook
         if (!recipient.label.isEmpty()) // if a label had been set from the addressbook, don't overwrite with an empty label
             ui->addAsLabel->setText(recipient.label);
-        ui->payAmount->setValue(recipient.amount);
+       // ui->payAmount->setValue(recipient.amount);
     }
 }
 
