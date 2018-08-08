@@ -26,6 +26,7 @@ QT_FORMS_UI = \
   qt/forms/coincontroldialog.ui \
   qt/forms/darksendconfig.ui \
   qt/forms/editaddressdialog.ui \
+  qt/forms/encryptdecryptdialog.ui \
   qt/forms/helpmessagedialog.ui \
   qt/forms/intro.ui \
   qt/forms/modaloverlay.ui \
