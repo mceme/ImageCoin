@@ -23,8 +23,8 @@ EncryptDecryptDialog::EncryptDecryptDialog(const PlatformStyle *platformStyle, Q
     ui(new Ui::EncryptDecryptDialog),
 	clientModel(0),
     model(0),
-	fileNames(0),
-	privkey(0),
+	fileNames(""),
+	privkey(""),
     platformStyle(platformStyle)
 {
     ui->setupUi(this);
