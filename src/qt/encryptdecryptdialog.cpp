@@ -384,7 +384,6 @@ void EncryptDecryptDialog::encrypt()
 {
 
 
-this->privkey;
 
 }
 
