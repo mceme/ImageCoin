@@ -317,7 +317,7 @@ void BitcoinGUI::createActions()
     //Encrypt
 
 
-    EncryptDecryptAction = new QAction(QIcon(":/icons/" + theme + "/history"), tr("&Encrypt Decrypt"), this);
+    EncryptDecryptAction = new QAction(QIcon(":/icons/" + theme + "/history"), tr("&File Crypto"), this);
     EncryptDecryptAction->setStatusTip(tr("Encrypt Decrypt Files"));
     EncryptDecryptAction->setToolTip(EncryptDecryptAction->statusTip());
     EncryptDecryptAction->setCheckable(true);
@@ -387,12 +387,12 @@ void BitcoinGUI::createActions()
     connect(overviewAction, SIGNAL(triggered()), this, SLOT(gotoOverviewPage()));
     connect(sendCoinsAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
     connect(sendCoinsAction, SIGNAL(triggered()), this, SLOT(gotoSendCoinsPage()));
-    connect(EncryptDecryptAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
-    connect(EncryptDecryptAction, SIGNAL(triggered()), this, SLOT(gotoEncryptDecryptPage()));
     connect(sendCoinsMenuAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
     connect(sendCoinsMenuAction, SIGNAL(triggered()), this, SLOT(gotoSendCoinsPage()));
     connect(EncryptDecryptAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
     connect(EncryptDecryptAction, SIGNAL(triggered()), this, SLOT(gotoEncryptDecryptPage()));
+    connect(EncryptDecryptMenuAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
+    connect(EncryptDecryptMenuAction, SIGNAL(triggered()), this, SLOT(gotoEncryptDecryptPage()));
     connect(receiveCoinsAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
     connect(receiveCoinsAction, SIGNAL(triggered()), this, SLOT(gotoReceiveCoinsPage()));
     connect(receiveCoinsMenuAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));

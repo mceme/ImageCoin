@@ -67,13 +67,20 @@ private Q_SLOTS:
     void on_addressBookButton_clicked();
     void on_pasteButton_clicked();
     void on_chooserButton_clicked();
+    void on_DecryptButton_clicked();
+    void on_EncryptButton_clicked();
     void updateDisplayUnit();
+    void encrypt();
+    void decrypt();
+
 
 private:
     SendCoinsRecipient recipient;
     Ui::EncryptDecryptDialog *ui;
     ClientModel *clientModel;
     WalletModel *model;
+    QStringList *fileNames;
+    QString *privkey;
     const PlatformStyle *platformStyle;
     bool updateLabel(const QString &address);
 
