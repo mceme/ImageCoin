@@ -12,11 +12,13 @@
 
 #include <QDialog>
 #include <QString>
-
+#include <QStringList>
 
 class ClientModel;
 class WalletModel;
 class PlatformStyle;
+class QString;
+class QStringList;
 
 namespace Ui {
     class EncryptDecryptDialog;

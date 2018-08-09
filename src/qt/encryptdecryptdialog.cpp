@@ -14,6 +14,7 @@
 #include <QClipboard>
 #include <QDialog>
 #include <QString>
+#include <QStringList>
 #include <QFileDialog>
 
 
@@ -59,10 +60,7 @@ EncryptDecryptDialog::EncryptDecryptDialog(const PlatformStyle *platformStyle, Q
     connect(ui->decryptButton, SIGNAL(clicked()), this, SLOT(on_DecryptButton_clicked()));
 
 
-
-    //connect(ui->payAmount, SIGNAL(valueChanged()), this, SIGNAL(payAmountChanged()));
-    //connect(ui->checkboxSubtractFeeFromAmount, SIGNAL(toggled(bool)), this, SIGNAL(subtractFeeFromAmountChanged()));
-
+    ui->FileNamesTxt->setReadOnly(true);
 
 	 //connect(ui->addressBookButton, SIGNAL(clicked()), this, SLOT(on_addressBookButton_clicked()));
     //connect(ui->deleteButton, SIGNAL(clicked()), this, SLOT(deleteClicked()));
@@ -311,13 +309,14 @@ void EncryptDecryptDialog::setValue(const SendCoinsRecipient &value)
 
            // ui->memoTextLabel_is->setText(recipient.message);
            // ui->payAmount_is->setValue(recipient.amount);
-            ui->FileNamesTxt->setReadOnly(true);
-            ui->chooserButton->setReadOnly(true);
+
+            ui->chooserButton->setEnabled(false);
            // setCurrentWidget(ui->SendCoins_UnauthenticatedPaymentRequest);
         }
         else // authenticated
         {
             ui->addAsLabel->setText("*******");
+            ui->chooserButton->setEnabled(true);
             //ui->memoTextLabel_s->setText(recipient.message);
             //ui->payAmount_s->setValue(recipient.amount);
             //ui->payAmount_s->setReadOnly(true);
@@ -387,7 +386,7 @@ void EncryptDecryptDialog::encrypt()
 {
 
 
-this->privkey
+this->privkey;
 
 }
 
