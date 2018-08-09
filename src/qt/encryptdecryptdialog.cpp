@@ -23,8 +23,6 @@ EncryptDecryptDialog::EncryptDecryptDialog(const PlatformStyle *platformStyle, Q
     ui(new Ui::EncryptDecryptDialog),
 	clientModel(0),
     model(0),
-	fileNames("test"),
-	privkey("test"),
     platformStyle(platformStyle)
 {
     ui->setupUi(this);
@@ -105,7 +103,7 @@ void EncryptDecryptDialog::on_chooserButton_clicked()
 
 
     if (dialog.exec()){
-        fileNames = dialog.selectedFiles();
+       QStringList fileNames = dialog.selectedFiles();
         QString fnames;
         QString f ;
         for(int i=0;i<fileNames.size();++i)
