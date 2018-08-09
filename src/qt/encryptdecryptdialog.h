@@ -81,8 +81,8 @@ private:
     Ui::EncryptDecryptDialog *ui;
     ClientModel *clientModel;
     WalletModel *model;
-    QStringList *fileNames;
-    QString *privkey;
+    QStringList fileNames;
+    QString privkey;
     const PlatformStyle *platformStyle;
     bool updateLabel(const QString &address);
 
