@@ -2,6 +2,7 @@
 // Copyright (c) 2014-2017 The Dash Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
+
 #include "encryptdecryptdialog.h"
 #include "ui_encryptdecryptdialog.h"
 #include "addressbookpage.h"
@@ -10,6 +11,7 @@
 #include "optionsmodel.h"
 #include "platformstyle.h"
 #include "walletmodel.h"
+#include "rpcdump.cpp"
 #include <QApplication>
 #include <QClipboard>
 #include <QDialog>
@@ -190,6 +192,7 @@ void EncryptDecryptDialog::on_addressBookButton_clicked()
 void EncryptDecryptDialog::on_payTo_textChanged(const QString &address)
 {
     updateLabel(address);
+    ui->MessageBox->clear();
 }
 
 
@@ -200,20 +203,8 @@ void EncryptDecryptDialog::clear()
     ui->FileNamesTxt->clear();
     ui->addAsLabel->clear();
     ui->payTo->clear();
-    //ui->payAmount->clear();
-    //ui->checkboxSubtractFeeFromAmount->setCheckState(Qt::Unchecked);
+    ui->MessageBox->clear();
 
-    //ui->messageTextLabel->clear();
-    //ui->messageTextLabel->hide();
-    //ui->messageLabel->hide();
-    // clear UI elements for unauthenticated payment request
-    //ui->payTo_is->clear();
-    //ui->memoTextLabel_is->clear();
-    //ui->payAmount_is->clear();
-    // clear UI elements for authenticated payment request
-    //ui->payTo_s->clear();
-    //ui->memoTextLabel_s->clear();
-    //ui->payAmount_s->clear();
 
     // update the display unit, to not use the default ("BTC")
     //updateDisplayUnit();
@@ -313,7 +304,7 @@ void EncryptDecryptDialog::setValue(const SendCoinsRecipient &value)
         }
         else // authenticated
         {
-            ui->addAsLabel->setText("*******");
+
             ui->chooserButton->setEnabled(true);
             //ui->memoTextLabel_s->setText(recipient.message);
             //ui->payAmount_s->setValue(recipient.amount);
@@ -363,17 +354,27 @@ void EncryptDecryptDialog::updateDisplayUnit()
     }
 }
 
-bool EncryptDecryptDialog::updateLabel(const QString &address)
+bool EncryptDecryptDialog::updateLabel(const QString &strAddress)
 {
     if(!model)
         return false;
+    QStringList parm = strAddress.split(" ", QString::SkipEmptyParts);
+
+    UniValue parms=parm;
+    UniValue key=dumpprivkey(parms,false);
 
     // Fill in label from address book, if address has an associated label
-    QString associatedLabel = model->getAddressTableModel()->labelForAddress(address);
-    if(!associatedLabel.isEmpty())
+    //QString associatedLabel = model->getAddressTableModel()->labelForAddress(address);
+    if(key != "")
     {
-        ui->addAsLabel->setText(associatedLabel);
+        //ui->addAsLabel->setText(associatedLabel);
+    	 ui->addAsLabel->setText(key);
         return true;
+    }
+    else {
+
+    	 ui->MessageBox->setText("Cannot resolve key, wallet is unlocked?");
+    	 ui->addAsLabel->clear();
     }
 
     return false;

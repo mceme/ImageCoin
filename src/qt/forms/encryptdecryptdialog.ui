@@ -16,7 +16,7 @@
   <property name="autoFillBackground">
    <bool>true</bool>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0,0,0,0">
+  <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0,0,0,0,0">
    <property name="bottomMargin">
     <number>8</number>
    </property>
@@ -141,6 +141,17 @@
       <widget class="QPushButton" name="decryptButton">
        <property name="text">
         <string>Decrypt</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QLabel" name="MessageBox">
+       <property name="text">
+        <string/>
        </property>
       </widget>
      </item>
