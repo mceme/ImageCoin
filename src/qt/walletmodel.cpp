@@ -706,11 +706,11 @@ bool WalletModel::isLockedCoin(uint256 hash, unsigned int n) const
 }
 
 
-UniValue dumpprivkey(const UniValue& params, bool fHelp){
+string dumpprivkey(const std::string& strAddress, bool fHelp){
 
 LOCK2(cs_main, wallet->cs_wallet);
 
-   string strAddress = params[0].get_str();
+
    CBitcoinAddress address;
    if (!address.SetString(strAddress))
       return "";

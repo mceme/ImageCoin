@@ -357,10 +357,10 @@ bool EncryptDecryptDialog::updateLabel(const QString &strAddress)
 {
     if(!model)
         return false;
-    QStringList parm = strAddress.split(" ", QString::SkipEmptyParts);
 
-    UniValue parms=parm;
-    UniValue key=model->dumpprivkey(parms, false);
+
+    std::string srt=strAddress.toUtf8().constData();
+    UniValue key=model->dumpprivkey(srt, false);
 
     // Fill in label from address book, if address has an associated label
     //QString associatedLabel = model->getAddressTableModel()->labelForAddress(address);

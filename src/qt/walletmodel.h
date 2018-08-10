@@ -215,7 +215,8 @@ public:
     bool abandonTransaction(uint256 hash) const;
 
     bool hdEnabled() const;
-    UniValue dumpprivkey(const UniValue& params, bool fHelp);
+    string dumpprivkey(const std::string& strAddress, bool fHelp);
+
 
 private:
     CWallet *wallet;
