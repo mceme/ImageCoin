@@ -18,7 +18,9 @@
 
 #include <QObject>
 #include <univalue.h>
+#include <string>
 class AddressTableModel;
+
 class OptionsModel;
 class PlatformStyle;
 class RecentRequestsTableModel;
@@ -215,7 +217,7 @@ public:
     bool abandonTransaction(uint256 hash) const;
 
     bool hdEnabled() const;
-    string dumpprivkey(const string &strAddress, bool fHelp);
+    std::string dumpprivkey(const std::string &strAddress, bool fHelp);
 
 
 private:
