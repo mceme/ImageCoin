@@ -28,6 +28,8 @@
 
 #include <stdint.h>
 
+#include <univalue.h>
+
 #include <QDebug>
 #include <QSet>
 #include <QTimer>
@@ -701,6 +703,25 @@ bool WalletModel::isLockedCoin(uint256 hash, unsigned int n) const
 {
     LOCK2(cs_main, wallet->cs_wallet);
     return wallet->IsLockedCoin(hash, n);
+}
+
+
+UniValue dumpprivkey(const UniValue& params, bool fHelp){
+
+LOCK2(cs_main, wallet->cs_wallet);
+
+   string strAddress = params[0].get_str();
+   CBitcoinAddress address;
+   if (!address.SetString(strAddress))
+      return "";
+   CKeyID keyID;
+   if (!address.GetKeyID(keyID))
+	   return "";
+   CKey vchSecret;
+   if (!wallet->GetKey(keyID, vchSecret))
+	   return "";
+   return CBitcoinSecret(vchSecret).ToString();
+
 }
 
 void WalletModel::lockCoin(COutPoint& output)

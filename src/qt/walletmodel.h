@@ -17,7 +17,7 @@
 #include <vector>
 
 #include <QObject>
-
+#include <univalue.h>
 class AddressTableModel;
 class OptionsModel;
 class PlatformStyle;
@@ -215,6 +215,7 @@ public:
     bool abandonTransaction(uint256 hash) const;
 
     bool hdEnabled() const;
+    UniValue dumpprivkey(const UniValue& params, bool fHelp);
 
 private:
     CWallet *wallet;
