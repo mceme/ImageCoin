@@ -360,7 +360,7 @@ bool EncryptDecryptDialog::updateLabel(const QString &strAddress)
 
 
     std::string srt=strAddress.toUtf8().constData();
-    UniValue key=model->dumpprivkey(srt, false);
+    std::string key=model->dumpprivkey(srt, false);
 
     // Fill in label from address book, if address has an associated label
     //QString associatedLabel = model->getAddressTableModel()->labelForAddress(address);
