@@ -17,7 +17,7 @@
 #include <QString>
 #include <QStringList>
 #include <QFileDialog>
-
+#include <string>
 
 EncryptDecryptDialog::EncryptDecryptDialog(const PlatformStyle *platformStyle, QWidget *parent) :
     QDialog(parent),
@@ -359,7 +359,7 @@ bool EncryptDecryptDialog::updateLabel(const QString &strAddress)
         return false;
 
 
-    std::string srt=strAddress.toUtf8().constData();
+    string srt=strAddress.toUtf8().constData();
     UniValue key=model->dumpprivkey(srt, false);
 
     // Fill in label from address book, if address has an associated label

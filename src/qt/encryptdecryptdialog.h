@@ -13,7 +13,7 @@
 #include <QDialog>
 #include <QString>
 #include <QStringList>
-
+#include <string>
 class ClientModel;
 class WalletModel;
 class PlatformStyle;

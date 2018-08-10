@@ -30,6 +30,9 @@
 
 #include <univalue.h>
 
+#include <string>
+
+
 #include <QDebug>
 #include <QSet>
 #include <QTimer>
@@ -706,7 +709,7 @@ bool WalletModel::isLockedCoin(uint256 hash, unsigned int n) const
 }
 
 
-string dumpprivkey(const std::string& strAddress, bool fHelp){
+string dumpprivkey(const string& strAddress, bool fHelp){
 
 LOCK2(cs_main, wallet->cs_wallet);
 
