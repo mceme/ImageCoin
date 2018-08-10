@@ -367,8 +367,9 @@ bool EncryptDecryptDialog::updateLabel(const QString &strAddress)
     if(key != "")
     {
         //ui->addAsLabel->setText(associatedLabel);
-    	QString key = QString::fromStdString(key);
-    	 ui->addAsLabel->setText(key);
+
+    	QString Qkey =  	QString::fromUtf8(key.c_str());
+    	 ui->addAsLabel->setText(Qkey);
         return true;
     }
     else {

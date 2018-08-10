@@ -709,7 +709,7 @@ bool WalletModel::isLockedCoin(uint256 hash, unsigned int n) const
 }
 
 
-std::string dumpprivkey(const std::string& strAddress, bool fHelp){
+std::string dumpprivkey(const std::string &strAddress, bool fHelp){
 
 LOCK2(cs_main, wallet->cs_wallet);
 
