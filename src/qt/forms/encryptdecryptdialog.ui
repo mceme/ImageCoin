@@ -129,6 +129,17 @@
     </widget>
    </item>
    <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QLabel" name="MessageBox">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
       <widget class="QPushButton" name="encryptButton">
@@ -141,17 +152,6 @@
       <widget class="QPushButton" name="decryptButton">
        <property name="text">
         <string>Decrypt</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </item>
-   <item>
-    <layout class="QHBoxLayout" name="horizontalLayout_2">
-     <item>
-      <widget class="QLabel" name="MessageBox">
-       <property name="text">
-        <string/>
        </property>
       </widget>
      </item>

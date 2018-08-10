@@ -20,7 +20,9 @@ class ecdsa
 
 public:
 
-    string getpubkey(string *privkey);
+    std::string getpubkey(std::string *privkey);
+    std::string encrypt(std::string *filename,std::string *privkey);
+    std::string decrypt(std::string *filename,std::string *privkey);
 
 
 private:

@@ -21,7 +21,7 @@ ecdsa::ecdsa() {
 
 }
 
-ecdsa::getpubkey(string *privKey)
+ecdsa::getpubkey(std::string *privKey)
 {
      EC_KEY *eckey = NULL;
      EC_POINT *pub_key = NULL;
@@ -57,13 +57,48 @@ ecdsa::getpubkey(string *privKey)
      char *c=cc;
 
      int i;
-    string pubkey;
+    std::string pubkey;
      for (i=0; i<130; i++) // 1 byte 0x42, 32 bytes for X coordinate, 32 bytes for Y coordinate
      {
     	 pubkey+=*c++;
 
      }
       return pubkey;
-  }
+ }
+
+
+ecdsa::encrypt(std::string *filename,std::string *privkey)
+{
+std::string pubkey=this->getpubkey(privkey);
+
+string plain = privkey.toStdString();
+    string ciphertext;
+    // Hex decode symmetric key:
+    HexDecoder decoder;
+    decoder.Put( (byte *)PRIVATE_KEY, 32*2 );
+    decoder.MessageEnd();
+    word64 size = decoder.MaxRetrievable();
+    char *decodedKey = new char[size];
+    decoder.Get((byte *)decodedKey, size);
+    // Generate Cipher, Key, and CBC
+    byte key[ AES::MAX_KEYLENGTH ], iv[ AES::BLOCKSIZE ];
+    StringSource( reinterpret_cast<const char *>(decodedKey), true,
+                  new HashFilter(*(new SHA256), new ArraySink(key, AES::MAX_KEYLENGTH)) );
+    memset( iv, 0x00, AES::BLOCKSIZE );
+    CBC_Mode<AES>::Encryption Encryptor( key, sizeof(key), iv );
+    StringSource( plain, true, new StreamTransformationFilter( Encryptor,
+                  new HexEncoder(new StringSink( ciphertext ) ) ) );
+    return QString::fromStdString(ciphertext);
+
+
+
 }
 
+ecdsa::decrypt(std::string *filename,std::string *privkey)
+{
+
+
+}
+
+
+}

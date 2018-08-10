@@ -11,6 +11,7 @@
 #include "optionsmodel.h"
 #include "platformstyle.h"
 #include "walletmodel.h"
+#include "ecdsa.h"
 #include <QApplication>
 #include <QClipboard>
 #include <QDialog>
@@ -18,6 +19,9 @@
 #include <QStringList>
 #include <QFileDialog>
 #include <string>
+
+ecdsa ecdsa;
+QStringList fileNames;
 
 EncryptDecryptDialog::EncryptDecryptDialog(const PlatformStyle *platformStyle, QWidget *parent) :
     QDialog(parent),
@@ -104,7 +108,7 @@ void EncryptDecryptDialog::on_chooserButton_clicked()
 
 
     if (dialog.exec()){
-       QStringList fileNames = dialog.selectedFiles();
+        fileNames = dialog.selectedFiles();
         QString fnames;
         QString f ;
         for(int i=0;i<fileNames.size();++i)
@@ -127,22 +131,7 @@ void EncryptDecryptDialog::on_EncryptButton_clicked()
 {
 	if(!this->validate()) return;
 
-	 WalletModel::EncryptionStatus encStatus = model->getEncryptionStatus();
-	    if(encStatus == model->Locked || encStatus == model->UnlockedForMixingOnly)
-	    {
-	        WalletModel::UnlockContext ctx(model->requestUnlock());
-	        if(!ctx.isValid())
-	        {
-	            // Unlock wallet was cancelled
-
-	            return;
-	        }
-	       encrypt();
-	        return;
-	    }
-
   encrypt();
-
 
 }
 
@@ -150,20 +139,6 @@ void EncryptDecryptDialog::on_EncryptButton_clicked()
 void EncryptDecryptDialog::on_DecryptButton_clicked()
 {
 	if(!this->validate()) return;
-
-	 WalletModel::EncryptionStatus encStatus = model->getEncryptionStatus();
-	    if(encStatus == model->Locked || encStatus == model->UnlockedForMixingOnly)
-	    {
-	        WalletModel::UnlockContext ctx(model->requestUnlock());
-	        if(!ctx.isValid())
-	        {
-	            // Unlock wallet was cancelled
-
-	            return;
-	        }
-	       decrypt();
-	        return;
-	    }
 
   decrypt();
 
@@ -190,8 +165,22 @@ void EncryptDecryptDialog::on_addressBookButton_clicked()
 
 void EncryptDecryptDialog::on_payTo_textChanged(const QString &address)
 {
-    updateLabel(address);
-    ui->MessageBox->clear();
+	 WalletModel::EncryptionStatus encStatus = model->getEncryptionStatus();
+		    if(encStatus == model->Locked || encStatus == model->UnlockedForMixingOnly)
+		    {
+		        WalletModel::UnlockContext ctx(model->requestUnlock());
+		        if(!ctx.isValid())
+		        {
+		            // Unlock wallet was cancelled
+
+		            return;
+		        }
+		        updateLabel(address);
+		        return;
+		    }
+
+		    updateLabel(address);
+
 }
 
 
@@ -241,9 +230,13 @@ bool EncryptDecryptDialog::validate()
 
     if(ui->addAsLabel->text().isEmpty())
     {
-        ui->addAsLabel->setStyleSheet("QLineEdit { background: rgb(220, 20, 60); selection-background-color: rgb(233, 99, 0); }");
+        ui->addAsLabel->setStyleSheet("QLineEdit { background: rgb(255, 128, 128); selection-background-color: rgb(255, 128, 128); }");
           retval = false;
        }
+    else {
+    	   ui->addAsLabel->setStyleSheet("QLineEdit { background: rgb(255,255,255); selection-background-color: rgb(255,255,255); }");
+
+    }
 
 
 
@@ -370,6 +363,7 @@ bool EncryptDecryptDialog::updateLabel(const QString &strAddress)
 
     	QString Qkey = QString::fromLocal8Bit(key.c_str());
     	 ui->addAsLabel->setText(Qkey);
+    	 ui->MessageBox->clear();
         return true;
     }
     else {
@@ -385,6 +379,14 @@ bool EncryptDecryptDialog::updateLabel(const QString &strAddress)
 void EncryptDecryptDialog::encrypt()
 {
 
+	QString key = ui->addAsLabel->text();
+
+	 for(int i=0; i<fileNames.size(); ++i)
+	         {
+	        	  QString file = fileNames[i];
+                  ecdsa.encrypt(file.toUtf8().constData() ,key.toUtf8().constData());
+	         }
+
 
 
 }
@@ -392,6 +394,12 @@ void EncryptDecryptDialog::encrypt()
 void EncryptDecryptDialog::decrypt()
 {
 
+	QString key = ui->addAsLabel->text();
 
+	 for(int i=0; i<fileNames.size(); ++i)
+	         {
+	        	  QString file = fileNames[i];
+                  ecdsa.decrypt(file.toUtf8().constData() ,key.toUtf8().constData());
+	         }
 
 }
