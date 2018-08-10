@@ -11,7 +11,6 @@
 #include "optionsmodel.h"
 #include "platformstyle.h"
 #include "walletmodel.h"
-#include "rpcdump.cpp"
 #include <QApplication>
 #include <QClipboard>
 #include <QDialog>
