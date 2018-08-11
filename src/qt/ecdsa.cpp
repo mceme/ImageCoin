@@ -20,6 +20,8 @@
 #include <cstdio>
 #include <cstdlib>
 #include <algorithm>
+#include <cassert>
+#include <iterator>
 
 ecdsa::ecdsa() {
 
@@ -91,11 +93,11 @@ void ecdsa::encrypt(std::string filename,std::string privkey)
      en- and recrypt your data.  Note that ckey can be
      192 or 256 bits as well */
 
-  const char greeting[] =  privkey.c_str();
+  const char greeting[256] =  privkey.c_str();
   unsigned char ckey[sizeof(greeting)];
   std::copy(greeting, greeting + sizeof(greeting), ckey);
 
-  const char greeting2[] =  privkey.c_str();
+  const char greeting2[256] =  privkey.c_str();
   unsigned char ivec[sizeof(greeting2)];
   std::copy(greeting2, greeting2 + sizeof(greeting2), ivec);
 
@@ -108,12 +110,13 @@ void ecdsa::encrypt(std::string filename,std::string privkey)
   /* set where on the 128 bit encrypted block to begin encryption*/
   int num = 0;
 
-  FILE *ifp = fopen(filename, "rb");
+  FILE *ifp = fopen(filename.c_str(), "rb");
 
+   std::int position= filenameEN=filename.size()-5;
 
-  filename->insert(filename->size()-5, 1 , "EN" );
+  filename->insert(position, 1 , "EN" );
 
-  FILE *ofp = fopen(filename, "wb");
+  FILE *ofp = fopen(filename.c_str(), "wb");
 
   while (1) {
     bytes_read = fread(indata, 1, AES_BLOCK_SIZE, ifp);
@@ -142,11 +145,11 @@ void ecdsa::decrypt(std::string filename,std::string privkey)
 	     en- and recrypt your data.  Note that ckey can be
 	     192 or 256 bits as well */
 
-	  const char greeting[] =  privkey.c_str();
+	  const char greeting[256] =  privkey.c_str();
 	  unsigned char ckey[sizeof(greeting)];
 	  std::copy(greeting, greeting + sizeof(greeting), ckey);
 
-	  const char greeting2[] =  privkey.c_str();
+	  const char greeting2[256] =  privkey.c_str();
 	  unsigned char ivec[sizeof(greeting2)];
 	  std::copy(greeting2, greeting2 + sizeof(greeting2), ivec);
 
@@ -159,11 +162,14 @@ void ecdsa::decrypt(std::string filename,std::string privkey)
 	  /* set where on the 128 bit encrypted block to begin encryption*/
 	  int num = 0;
 
-	  FILE *ifp = fopen(filename, "rb");
+	  FILE *ifp = fopen(filename.c_str(), "rb");
 
-	  filename->insert(filename->size() - 5, 1 , "DE" );
 
-	  FILE *ofp = fopen(filename, "wb");
+	   std::int position= filenameEN=filename.size()-5;
+
+	  filename->insert(position, 1 , "DE" );
+
+	  FILE *ofp = fopen(filename.c_str(), "wb");
 
 	  while (1) {
 	    bytes_read = fread(indata, 1, AES_BLOCK_SIZE, ifp);
