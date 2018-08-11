@@ -8,7 +8,7 @@
 #include "walletmodel.h"
 
 #include <QStackedWidget>
-#include <QtWebKit/QWebView>
+#include <QtWebKitWidgets/QWebView>
 #include <QWidget>
 #include <QDialog>
 #include <QString>
@@ -29,7 +29,7 @@ namespace Ui {
  * Stacked widget, with different UIs for payment requests
  * with a strong payee identity.
  */
-class WebWindow : public QWebView
+class WebWindow : public QDialog
 {
     Q_OBJECT
 

@@ -17,18 +17,18 @@
 #include <QString>
 #include <QStringList>
 #include <QFileDialog>
-#include <QtWebKit/QWebView>
+#include <QtWebKitWidgets/QWebView>
 #include <string>
 
 
 WebWindow::WebWindow(const PlatformStyle *platformStyle, QWidget *parent) :
-    QWebView(parent),
+    QDialog(parent),
     ui(new Ui::WebWindow),
 	clientModel(0),
     model(0),
     platformStyle(platformStyle)
 {
-    ui->setupUi(this);
+   // ui->setupUi(this);
 
 
 
