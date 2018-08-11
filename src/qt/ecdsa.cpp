@@ -17,6 +17,7 @@
 #include <openssl/aes.h>
 #include <iostream>
 #include <string>
+#include <cstring>
 #include <cstdio>
 #include <cstdlib>
 #include <algorithm>
@@ -94,13 +95,13 @@ void ecdsa::encrypt(std::string filename,std::string privkey)
      192 or 256 bits as well */
 
   const char greeting[128];
-  strcpy(greeting, privkey.c_str());
+  std::strcpy(greeting, privkey.c_str());
 
   unsigned char ckey[sizeof(greeting)];
   std::copy(greeting, greeting + sizeof(greeting), ckey);
 
   const char greeting2[128];
-  strcpy(greeting2, privkey.c_str());
+  std::strcpy(greeting2, privkey.c_str());
   unsigned char ivec[sizeof(greeting2)];
   std::copy(greeting2, greeting2 + sizeof(greeting2), ivec);
 
@@ -116,7 +117,7 @@ void ecdsa::encrypt(std::string filename,std::string privkey)
 
   FILE *ifp = fopen(filename.c_str(), "rb");
 
-  std::int position =filename.size()-5;
+  int position =filename.size()-5;
 
   filename.insert(position, 1 , "EN" );
 
@@ -150,13 +151,13 @@ void ecdsa::decrypt(std::string filename,std::string privkey)
 	     192 or 256 bits as well */
 
 	  const char greeting[128];
-	  strcpy(greeting, privkey.c_str());
+	  std::strcpy(greeting, privkey.c_str());
 
 	  unsigned char ckey[sizeof(greeting)];
 	  std::copy(greeting, greeting + sizeof(greeting), ckey);
 
 	  const char greeting2[128];
-	  strcpy(greeting2, privkey.c_str());
+	  std::strcpy(greeting2, privkey.c_str());
 	  unsigned char ivec[sizeof(greeting2)];
 	  std::copy(greeting2, greeting2 + sizeof(greeting2), ivec);
 
@@ -172,7 +173,7 @@ void ecdsa::decrypt(std::string filename,std::string privkey)
 	  FILE *ifp = fopen(filename.c_str(), "rb");
 
 
-	   std::int position=filename.size()-5;
+	  int position=filename.size()-5;
 
 	  filename.insert(position, 1 , "DE" );
 
@@ -188,8 +189,5 @@ void ecdsa::decrypt(std::string filename,std::string privkey)
 	    if (bytes_read < AES_BLOCK_SIZE)
 	  break;
 	  }
-
-}
-
 
 }
