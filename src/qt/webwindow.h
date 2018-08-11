@@ -2,13 +2,13 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_QT_WebWindow_H
-#define BITCOIN_QT_WebWindow_H
+#ifndef BITCOIN_QT_WEBWINDOW_H
+#define BITCOIN_QT_WEBWINDOW_H
 
 #include "walletmodel.h"
 
 #include <QStackedWidget>
-
+#include <QWebView>
 #include <QWidget>
 #include <QDialog>
 #include <QString>
@@ -29,7 +29,7 @@ namespace Ui {
  * Stacked widget, with different UIs for payment requests
  * with a strong payee identity.
  */
-class WebWindow : public QDialog
+class WebWindow : public QWebView
 {
     Q_OBJECT
 
@@ -41,7 +41,6 @@ public:
 
 
 public Q_SLOTS:
-    void clear();
 
 Q_SIGNALS:
     void removeEntry(WebWindow *entry);
@@ -65,4 +64,4 @@ private:
 };
 
 
-#endif // BITCOIN_QT_ENCRYPTDECRYPT_H
+#endif // BITCOIN_QT_WEBWINDOW_H

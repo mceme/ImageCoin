@@ -17,11 +17,12 @@
 #include <QString>
 #include <QStringList>
 #include <QFileDialog>
+#include <QWebView>
 #include <string>
 
 
 WebWindow::WebWindow(const PlatformStyle *platformStyle, QWidget *parent) :
-    QDialog(parent),
+    QWebView(parent),
     ui(new Ui::WebWindow),
 	clientModel(0),
     model(0),
