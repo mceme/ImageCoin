@@ -105,7 +105,7 @@ void EncryptDecryptDialog::on_chooserButton_clicked()
     dialog.setFileMode(QFileDialog::ExistingFiles);
 
     dialog.setViewMode(QFileDialog::List);
-
+    dialog.setOption(QFileDialog.DontUseNativeDialog, true);
 
     if (dialog.exec()){
         fileNames = dialog.selectedFiles();
@@ -387,15 +387,14 @@ void EncryptDecryptDialog::encrypt()
 
 	QString key = ui->addAsLabel->text();
 
+	string filestr;
+	string keystr;
 	 for(int i=0; i<fileNames.size(); ++i)
 	         {
 	        	  QString file = fileNames[i];
-
-	        	  string filestr = file.toUtf8().constData()
-	        	  string keystr = key.toUtf8().constData();
-
-	        	  ecdsa.encrypt(filestr,keystr);
-
+	        	  filestr = file.toUtf8().constData()
+		           keystr = key.toUtf8().constData();
+                  ecdsa.encrypt(&filestr, &keystr);
 	         }
 	 clear();
 	 ui->MessageBox->setText("Encrypt Complete!");
@@ -407,13 +406,14 @@ void EncryptDecryptDialog::decrypt()
 {
 
 	QString key = ui->addAsLabel->text();
-
+	string filestr;
+	string keystr;
 	 for(int i=0; i<fileNames.size(); ++i)
 	         {
 	        	  QString file = fileNames[i];
-	        	  string filestr = file.toUtf8().constData()
-				  string keystr =key.toUtf8().constData();
-                  ecdsa.decrypt(filestr, keystr);
+	        	  filestr = file.toUtf8().constData()
+		           keystr = key.toUtf8().constData();
+                  ecdsa.decrypt(&filestr, &keystr);
 	         }
 	 clear();
 	 ui->MessageBox->setText("Decrypt Complete!");
