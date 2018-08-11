@@ -71,7 +71,7 @@ ecdsa::ecdsa() {
 // }
 
 
-ecdsa::encrypt(std::string &filename,std::string &privkey)
+ecdsa::encrypt(std::string filename,std::string privkey)
 {
 
 
@@ -85,8 +85,8 @@ ecdsa::encrypt(std::string &filename,std::string &privkey)
   /* ckey and ivec are the two 128-bits keys necesary to
      en- and recrypt your data.  Note that ckey can be
      192 or 256 bits as well */
-  unsigned char ckey[] =  privkey;
-  unsigned char ivec[] = privkey;
+  unsigned char ckey[] =  privkey.c_str();
+  unsigned char ivec[] = privkey.c_str();
 
   /* data structure that contains the key itself */
   AES_KEY key;
@@ -119,7 +119,7 @@ ecdsa::encrypt(std::string &filename,std::string &privkey)
 
 }
 
-ecdsa::decrypt(std::string &filename,std::string &privkey)
+ecdsa::decrypt(std::string filename,std::string privkey)
 {
 
 
@@ -132,8 +132,8 @@ ecdsa::decrypt(std::string &filename,std::string &privkey)
 	  /* ckey and ivec are the two 128-bits keys necesary to
 	     en- and recrypt your data.  Note that ckey can be
 	     192 or 256 bits as well */
-	  unsigned char ckey[] =  privkey;
-	  unsigned char ivec[] = privkey;
+	  unsigned char ckey[] =  privkey.c_str();
+	  unsigned char ivec[] =  privkey.c_str();
 
 	  /* data structure that contains the key itself */
 	  AES_KEY key;
