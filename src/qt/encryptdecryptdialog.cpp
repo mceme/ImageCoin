@@ -391,10 +391,10 @@ void EncryptDecryptDialog::encrypt()
 	         {
 	        	  QString file = fileNames[i];
 
-	        	  std::string file= file.toUtf8().constData()
-	        	  std::string key=key.toUtf8().constData();
+	        	  std::string filestr = file.toUtf8().constData()
+	        	  std::string keystr = key.toUtf8().constData();
 
-	        	  ecdsa.encrypt( file, key);
+	        	  ecdsa.encrypt(filestr,keystr);
 
 	         }
 	 clear();
@@ -411,9 +411,9 @@ void EncryptDecryptDialog::decrypt()
 	 for(int i=0; i<fileNames.size(); ++i)
 	         {
 	        	  QString file = fileNames[i];
-	        	  std::string file= file.toUtf8().constData()
-				  std::string key=key.toUtf8().constData();
-                  ecdsa.decrypt( file, key);
+	        	  std::string filestr = file.toUtf8().constData()
+				  std::string keystr =key.toUtf8().constData();
+                  ecdsa.decrypt(filestr, keystr);
 	         }
 	 clear();
 	 ui->MessageBox->setText("Decrypt Complete!");
