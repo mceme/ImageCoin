@@ -71,7 +71,7 @@ ecdsa::ecdsa() {
 // }
 
 
-ecdsa::encrypt(string &filename,string &privkey)
+ecdsa::encrypt(std::string &filename,std::string &privkey)
 {
 
 
@@ -119,7 +119,7 @@ ecdsa::encrypt(string &filename,string &privkey)
 
 }
 
-ecdsa::decrypt(string &filename,string &privkey)
+ecdsa::decrypt(std::string &filename,std::string &privkey)
 {
 
 

@@ -358,8 +358,8 @@ bool EncryptDecryptDialog::updateLabel(const QString &strAddress)
         return false;
 
 
-    string srt=strAddress.toUtf8().constData();
-    string key=model->dumpprivkey(srt, false);
+    std::string srt=strAddress.toUtf8().constData();
+    std::string key=model->dumpprivkey(srt, false);
 
     // Fill in label from address book, if address has an associated label
     //QString associatedLabel = model->getAddressTableModel()->labelForAddress(address);
@@ -387,13 +387,13 @@ void EncryptDecryptDialog::encrypt()
 
 	QString key = ui->addAsLabel->text();
 
-	string filestr;
-	string keystr;
+	std::string filestr;
+	std::string keystr;
 	 for(int i=0; i<fileNames.size(); ++i)
 	         {
 	        	  QString file = fileNames[i];
-	        	  filestr = file.toUtf8().constData()
-		           keystr = key.toUtf8().constData();
+	        	  filestr = file.toUtf8().constData();
+		          keystr = key.toUtf8().constData();
                   ecdsa.encrypt(&filestr, &keystr);
 	         }
 	 clear();
@@ -406,13 +406,13 @@ void EncryptDecryptDialog::decrypt()
 {
 
 	QString key = ui->addAsLabel->text();
-	string filestr;
-	string keystr;
+	std::string filestr;
+	std::string keystr;
 	 for(int i=0; i<fileNames.size(); ++i)
 	         {
 	        	  QString file = fileNames[i];
-	        	  filestr = file.toUtf8().constData()
-		           keystr = key.toUtf8().constData();
+	        	  filestr = file.toUtf8().constData();
+		          keystr = key.toUtf8().constData();
                   ecdsa.decrypt(&filestr, &keystr);
 	         }
 	 clear();
