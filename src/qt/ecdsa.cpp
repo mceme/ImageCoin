@@ -90,19 +90,25 @@ void ecdsa::encrypt(std::string filename,std::string privkey)
   /* ckey and ivec are the two 128-bits keys necesary to
      en- and recrypt your data.  Note that ckey can be
      192 or 256 bits as well */
-  unsigned char ckey[] =  privkey.c_str();
-  unsigned char ivec[] = privkey.c_str();
+
+  const char greeting[] =  privkey.c_str();
+  unsigned char ckey[sizeof(greeting)];
+  std::copy(greeting, greeting + sizeof(greeting), ckey);
+
+  const char greeting2[] =  privkey.c_str();
+  unsigned char ivec[sizeof(greeting2)];
+  std::copy(greeting2, greeting2 + sizeof(greeting2), ivec);
 
   /* data structure that contains the key itself */
   AES_KEY key;
 
   /* set the encryption key */
-  AES_set_encrypt_key(ckey, 256, &key);
+  AES_set_encrypt_key(ckey, 128, &key);
 
   /* set where on the 128 bit encrypted block to begin encryption*/
   int num = 0;
 
-  *ifp = fopen(filename, "rb");
+  FILE *ifp = fopen(filename, "rb");
 
 
   filename->insert(filename->size()-5, 1 , "EN" );
@@ -112,7 +118,7 @@ void ecdsa::encrypt(std::string filename,std::string privkey)
   while (1) {
     bytes_read = fread(indata, 1, AES_BLOCK_SIZE, ifp);
 
-    AES_cfb256_encrypt(indata, outdata, bytes_read, &key, ivec, &num,
+    AES_cfb128_encrypt(indata, outdata, bytes_read, &key, ivec, &num,
            AES_ENCRYPT);
 
     bytes_written = fwrite(outdata, 1, bytes_read, ofp);
@@ -135,19 +141,25 @@ void ecdsa::decrypt(std::string filename,std::string privkey)
 	  /* ckey and ivec are the two 128-bits keys necesary to
 	     en- and recrypt your data.  Note that ckey can be
 	     192 or 256 bits as well */
-	  unsigned char ckey[] =  privkey.c_str();
-	  unsigned char ivec[] =  privkey.c_str();
+
+	  const char greeting[] =  privkey.c_str();
+	  unsigned char ckey[sizeof(greeting)];
+	  std::copy(greeting, greeting + sizeof(greeting), ckey);
+
+	  const char greeting2[] =  privkey.c_str();
+	  unsigned char ivec[sizeof(greeting2)];
+	  std::copy(greeting2, greeting2 + sizeof(greeting2), ivec);
 
 	  /* data structure that contains the key itself */
 	  AES_KEY key;
 
 	  /* set the encryption key */
-	  AES_set_encrypt_key(ckey, 256, &key);
+	  AES_set_encrypt_key(ckey, 128, &key);
 
 	  /* set where on the 128 bit encrypted block to begin encryption*/
 	  int num = 0;
 
-	  *ifp = fopen(filename, "rb");
+	  FILE *ifp = fopen(filename, "rb");
 
 	  filename->insert(filename->size() - 5, 1 , "DE" );
 
@@ -156,7 +168,7 @@ void ecdsa::decrypt(std::string filename,std::string privkey)
 	  while (1) {
 	    bytes_read = fread(indata, 1, AES_BLOCK_SIZE, ifp);
 
-	    AES_cfb256_encrypt(indata, outdata, bytes_read, &key, ivec, &num,
+	    AES_cfb128_encrypt(indata, outdata, bytes_read, &key, ivec, &num,
 	           AES_DECRYPT);
 
 	    bytes_written = fwrite(outdata, 1, bytes_read, ofp);
