@@ -90,7 +90,8 @@ QT_MOC_CPP = \
   qt/moc_utilitydialog.cpp \
   qt/moc_walletframe.cpp \
   qt/moc_walletmodel.cpp \
-  qt/moc_walletview.cpp
+  qt/moc_walletview.cpp \
+  qt/moc_ecdsa.cpp
 
 BITCOIN_MM = \
   qt/macdockiconhandler.mm \
@@ -168,7 +169,8 @@ BITCOIN_QT_H = \
   qt/walletmodel.h \
   qt/walletmodeltransaction.h \
   qt/walletview.h \
-  qt/winshutdownmonitor.h
+  qt/winshutdownmonitor.h \
+  qt/ecdsa.h
 
 RES_ICONS = \
   qt/res/icons/bitcoin.ico \
@@ -451,7 +453,8 @@ BITCOIN_QT_CPP += \
   qt/walletframe.cpp \
   qt/walletmodel.cpp \
   qt/walletmodeltransaction.cpp \
-  qt/walletview.cpp
+  qt/walletview.cpp \
+  qt/ecdsa.cpp
 endif
 
 RES_IMAGES = \
