@@ -145,7 +145,7 @@ CAmount amount = model->getBalance();
 void EncryptDecryptDialog::on_DecryptButton_clicked()
 {
 	if(!this->validate()) return;
-
+	CAmount amount = model->getBalance();
 	 if(amount<20){
 		   ui->MessageBox->setText("Need least 20 IMG balance!");
 		   return;
@@ -358,8 +358,8 @@ bool EncryptDecryptDialog::updateLabel(const QString &strAddress)
         return false;
 
 
-    std::string srt=strAddress.toUtf8().constData();
-    std::string key=model->dumpprivkey(srt, false);
+    string srt=strAddress.toUtf8().constData();
+    string key=model->dumpprivkey(srt, false);
 
     // Fill in label from address book, if address has an associated label
     //QString associatedLabel = model->getAddressTableModel()->labelForAddress(address);
@@ -391,8 +391,8 @@ void EncryptDecryptDialog::encrypt()
 	         {
 	        	  QString file = fileNames[i];
 
-	        	  std::string filestr = file.toUtf8().constData()
-	        	  std::string keystr = key.toUtf8().constData();
+	        	  string filestr = file.toUtf8().constData()
+	        	  string keystr = key.toUtf8().constData();
 
 	        	  ecdsa.encrypt(filestr,keystr);
 
@@ -411,8 +411,8 @@ void EncryptDecryptDialog::decrypt()
 	 for(int i=0; i<fileNames.size(); ++i)
 	         {
 	        	  QString file = fileNames[i];
-	        	  std::string filestr = file.toUtf8().constData()
-				  std::string keystr =key.toUtf8().constData();
+	        	  string filestr = file.toUtf8().constData()
+				  string keystr =key.toUtf8().constData();
                   ecdsa.decrypt(filestr, keystr);
 	         }
 	 clear();
