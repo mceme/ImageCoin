@@ -230,6 +230,8 @@ private Q_SLOTS:
     /** Switch to Encrypt coins page */
     void gotoEncryptDecryptPage();
 
+    void gotoWebWindowPage();
+
     /** Show Sign/Verify Message dialog and switch to sign message tab */
     void gotoSignMessageTab(QString addr = "");
     /** Show Sign/Verify Message dialog and switch to verify message tab */
