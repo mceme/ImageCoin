@@ -29,7 +29,7 @@ namespace Ui {
  * Stacked widget, with different UIs for payment requests
  * with a strong payee identity.
  */
-class WebWindow : public QWidget
+class WebWindow : public QStackedWidget
 {
     Q_OBJECT
 

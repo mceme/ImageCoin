@@ -21,7 +21,7 @@
 
 
 WebWindow::WebWindow(const PlatformStyle *platformStyle, QWidget *parent) :
-    QWidget(parent),
+    QStackedWidget(parent),
     ui(new Ui::WebWindow),
 	clientModel(0),
     model(0),
