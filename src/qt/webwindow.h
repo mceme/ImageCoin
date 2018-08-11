@@ -8,8 +8,7 @@
 #include "walletmodel.h"
 
 #include <QStackedWidget>
-#include <QtWebKit>
-#include <QWebView>
+#include <QtWebKit/QWebView>
 #include <QWidget>
 #include <QDialog>
 #include <QString>
