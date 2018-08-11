@@ -16,7 +16,6 @@
 
 class ecdsa
 {
-    Q_OBJECT
 
 public:
 
