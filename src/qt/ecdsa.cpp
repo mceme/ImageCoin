@@ -117,8 +117,6 @@ ecdsa::encrypt(std::string filename,std::string privkey)
 }
 
 
-}
-
 ecdsa::decrypt(std::string filename,std::string privkey)
 {
 
