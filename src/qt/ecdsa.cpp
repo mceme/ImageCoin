@@ -119,7 +119,7 @@ void ecdsa::encrypt(std::string filename,std::string privkey)
 
   int position =filename.size()-5;
 
-  filename.insert(position, 1 , "EN" );
+  filename.insert(position, 1 , 'EN' );
 
   FILE *ofp = fopen(filename.c_str(), "wb");
 
@@ -175,7 +175,7 @@ void ecdsa::decrypt(std::string filename,std::string privkey)
 
 	  int position=filename.size()-5;
 
-	  filename.insert(position, 1 , "DE" );
+	  filename.insert(position, 1 , 'DE' );
 
 	  FILE *ofp = fopen(filename.c_str(), "wb");
 
