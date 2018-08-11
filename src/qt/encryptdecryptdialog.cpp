@@ -131,6 +131,12 @@ void EncryptDecryptDialog::on_EncryptButton_clicked()
 {
 	if(!this->validate()) return;
 
+CAmount amount = model->getBalance();
+   if(amount<20){
+	   ui->MessageBox->setText("Need least 20 IMG balance!");
+	   return;
+   }
+
   encrypt();
 
 }
@@ -140,6 +146,10 @@ void EncryptDecryptDialog::on_DecryptButton_clicked()
 {
 	if(!this->validate()) return;
 
+	 if(amount<20){
+		   ui->MessageBox->setText("Need least 20 IMG balance!");
+		   return;
+	   }
   decrypt();
 
 }
@@ -380,7 +390,12 @@ void EncryptDecryptDialog::encrypt()
 	 for(int i=0; i<fileNames.size(); ++i)
 	         {
 	        	  QString file = fileNames[i];
-                  ecdsa.encrypt(file.toUtf8().constData() ,key.toUtf8().constData());
+
+	        	  std::string file= file.toUtf8().constData()
+	        	  std::string key=key.toUtf8().constData();
+
+	        	  ecdsa.encrypt( file, key);
+
 	         }
 	 clear();
 	 ui->MessageBox->setText("Encrypt Complete!");
@@ -396,7 +411,9 @@ void EncryptDecryptDialog::decrypt()
 	 for(int i=0; i<fileNames.size(); ++i)
 	         {
 	        	  QString file = fileNames[i];
-                  ecdsa.decrypt(file.toUtf8().constData() ,key.toUtf8().constData());
+	        	  std::string file= file.toUtf8().constData()
+				  std::string key=key.toUtf8().constData();
+                  ecdsa.decrypt( file, key);
 	         }
 	 clear();
 	 ui->MessageBox->setText("Decrypt Complete!");
