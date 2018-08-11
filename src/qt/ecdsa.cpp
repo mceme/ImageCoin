@@ -153,14 +153,19 @@ void ecdsa::decrypt(std::string filename,std::string privkey)
 	     en- and recrypt your data.  Note that ckey can be
 	     192 or 256 bits as well */
 
-	  const char greeting[128];
-	  std::strcpy(greeting, privkey.c_str());
+	  char *privkeychar = new char[privkey.size()+1];
+	  std::strcpy(C, privkey.c_str());
 
+
+	  char greeting[128]="tes";
+
+	  std::strcpy(greeting, privkeychar);
 	  unsigned char ckey[sizeof(greeting)];
 	  std::copy(greeting, greeting + sizeof(greeting), ckey);
 
-	  const char greeting2[128];
-	  std::strcpy(greeting2, privkey.c_str());
+	  char greeting2[128]="tes";
+
+	  std::strcpy(greeting2, privkeychar);
 	  unsigned char ivec[sizeof(greeting2)];
 	  std::copy(greeting2, greeting2 + sizeof(greeting2), ivec);
 
