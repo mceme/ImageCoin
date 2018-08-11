@@ -25,6 +25,11 @@ ecdsa::ecdsa() {
 
 }
 
+ecdsa::~ecdsa()
+{
+
+}
+
 //ecdsa::getpubkey(std::string *privKey)
 //{
 //     EC_KEY *eckey = NULL;
@@ -71,7 +76,7 @@ ecdsa::ecdsa() {
 // }
 
 
-ecdsa::encrypt(std::string filename,std::string privkey)
+void ecdsa::encrypt(std::string filename,std::string privkey)
 {
 
 
@@ -117,7 +122,7 @@ ecdsa::encrypt(std::string filename,std::string privkey)
 }
 
 
-ecdsa::decrypt(std::string filename,std::string privkey)
+void ecdsa::decrypt(std::string filename,std::string privkey)
 {
 
 
