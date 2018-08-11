@@ -386,7 +386,8 @@ void EncryptDecryptDialog::encrypt()
 	        	  QString file = fileNames[i];
                   ecdsa.encrypt(file.toUtf8().constData() ,key.toUtf8().constData());
 	         }
-
+	 clear();
+	 ui->MessageBox->setText("Encrypt Complete!");
 
 
 }
@@ -401,5 +402,7 @@ void EncryptDecryptDialog::decrypt()
 	        	  QString file = fileNames[i];
                   ecdsa.decrypt(file.toUtf8().constData() ,key.toUtf8().constData());
 	         }
+	 clear();
+	 ui->MessageBox->setText("Decrypt Complete!");
 
 }
