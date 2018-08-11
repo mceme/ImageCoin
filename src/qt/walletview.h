@@ -17,6 +17,7 @@ class PlatformStyle;
 class ReceiveCoinsDialog;
 class SendCoinsDialog;
 class EncryptDecryptDialog;
+class WebWindow;
 class SendCoinsRecipient;
 class TransactionView;
 class WalletModel;
@@ -66,6 +67,9 @@ private:
     ReceiveCoinsDialog *receiveCoinsPage;
     SendCoinsDialog *sendCoinsPage;
     EncryptDecryptDialog *EncryptDecryptPage;
+
+    WebWindow *WebWindowPage;
+
     AddressBookPage *usedSendingAddressesPage;
     AddressBookPage *usedReceivingAddressesPage;
     MasternodeList *masternodeListPage;

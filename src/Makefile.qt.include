@@ -40,7 +40,8 @@ QT_FORMS_UI = \
   qt/forms/sendcoinsdialog.ui \
   qt/forms/sendcoinsentry.ui \
   qt/forms/signverifymessagedialog.ui \
-  qt/forms/transactiondescdialog.ui
+  qt/forms/transactiondescdialog.ui \
+  qt/forms/webwindow.ui
 
 QT_MOC_CPP = \
   qt/moc_addressbookpage.cpp \
@@ -91,7 +92,8 @@ QT_MOC_CPP = \
   qt/moc_walletframe.cpp \
   qt/moc_walletmodel.cpp \
   qt/moc_walletview.cpp \
-  qt/moc_ecdsa.cpp
+  qt/moc_ecdsa.cpp \
+  qt/moc_webwindow.cpp
 
 BITCOIN_MM = \
   qt/macdockiconhandler.mm \
@@ -170,7 +172,8 @@ BITCOIN_QT_H = \
   qt/walletmodeltransaction.h \
   qt/walletview.h \
   qt/winshutdownmonitor.h \
-  qt/ecdsa.h
+  qt/ecdsa.h \
+  qt/webwindow.h
 
 RES_ICONS = \
   qt/res/icons/bitcoin.ico \
@@ -454,7 +457,8 @@ BITCOIN_QT_CPP += \
   qt/walletmodel.cpp \
   qt/walletmodeltransaction.cpp \
   qt/walletview.cpp \
-  qt/ecdsa.cpp
+  qt/ecdsa.cpp \
+  qt/webwindow.cpp
 endif
 
 RES_IMAGES = \

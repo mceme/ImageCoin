@@ -75,6 +75,8 @@ WalletView::WalletView(const PlatformStyle *platformStyle, QWidget *parent):
     receiveCoinsPage = new ReceiveCoinsDialog(platformStyle);
     sendCoinsPage = new SendCoinsDialog(platformStyle);
     EncryptDecryptPage = new EncryptDecryptDialog(platformStyle);
+    WebWindowPage = new WebWindow(platformStyle);
+
     usedSendingAddressesPage = new AddressBookPage(platformStyle, AddressBookPage::ForEditing, AddressBookPage::SendingTab, this);
     usedReceivingAddressesPage = new AddressBookPage(platformStyle, AddressBookPage::ForEditing, AddressBookPage::ReceivingTab, this);
 
@@ -90,6 +92,8 @@ WalletView::WalletView(const PlatformStyle *platformStyle, QWidget *parent):
     }
 
     addWidget(EncryptDecryptPage);
+
+    addWidget(WebWindowPage);
 
     // Clicking on a transaction on the overview pre-selects the transaction on the transaction history page
     connect(overviewPage, SIGNAL(transactionClicked(QModelIndex)), transactionView, SLOT(focusTransaction(QModelIndex)));
@@ -109,6 +113,10 @@ WalletView::WalletView(const PlatformStyle *platformStyle, QWidget *parent):
 
     // Pass through messages from EncryptDecryptPage
     connect(EncryptDecryptPage, SIGNAL(message(QString,QString,unsigned int)), this, SIGNAL(message(QString,QString,unsigned int)));
+
+    // Pass through messages from EncryptDecryptPage
+    connect(WebWindowPage, SIGNAL(message(QString,QString,unsigned int)), this, SIGNAL(message(QString,QString,unsigned int)));
+
 
     // Pass through messages from transactionView
     connect(transactionView, SIGNAL(message(QString,QString,unsigned int)), this, SIGNAL(message(QString,QString,unsigned int)));
@@ -150,6 +158,9 @@ void WalletView::setClientModel(ClientModel *clientModel)
         masternodeListPage->setClientModel(clientModel);
     }
     EncryptDecryptPage->setClientModel(clientModel);
+
+    WebWindowPage->setClientModel(clientModel);
+
 }
 
 void WalletView::setWalletModel(WalletModel *walletModel)
@@ -166,6 +177,8 @@ void WalletView::setWalletModel(WalletModel *walletModel)
     receiveCoinsPage->setModel(walletModel);
     sendCoinsPage->setModel(walletModel);
     EncryptDecryptPage->setModel(walletModel);
+    WebWindowPage->setModel(walletModel);
+
     usedReceivingAddressesPage->setModel(walletModel->getAddressTableModel());
     usedSendingAddressesPage->setModel(walletModel->getAddressTableModel());
 
@@ -247,6 +260,11 @@ void WalletView::gotoSendCoinsPage(QString addr)
 void WalletView::gotoEncryptDecryptPage()
 {
     setCurrentWidget(EncryptDecryptPage);
+}
+
+void WalletView::gotoWebWindowPage()
+{
+    setCurrentWidget(WebWindowPage);
 }
 
 void WalletView::gotoSignMessageTab(QString addr)

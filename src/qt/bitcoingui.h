@@ -102,6 +102,8 @@ private:
     QAction *sendCoinsMenuAction;
     QAction *EncryptDecryptAction;
     QAction *EncryptDecryptMenuAction;
+    QAction *WebWindowAction;
+    QAction *WebWindowMenuAction;
     QAction *usedSendingAddressesAction;
     QAction *usedReceivingAddressesAction;
     QAction *signMessageAction;
