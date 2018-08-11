@@ -19,7 +19,7 @@
 #include <string>
 #include <cstdio>
 #include <cstdlib>
-
+#include <algorithm>
 
 ecdsa::ecdsa() {
 
