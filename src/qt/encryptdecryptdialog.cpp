@@ -144,10 +144,6 @@ void EncryptDecryptDialog::on_DecryptButton_clicked()
 
 }
 
-
-
-
-
 void EncryptDecryptDialog::on_addressBookButton_clicked()
 {
     if(!model)
