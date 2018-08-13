@@ -121,17 +121,6 @@ void ecdsa::encrypt(std::string filename, std::string privkey, bool *status)
   /* set where on the 128 bit encrypted block to begin encryption*/
   int num = 0;
 
-  std::string fullpath=filename;
-  boost::filesystem::path p(filename);
-
-  std::string wfilename=url_encode(p.filename());
-
-  if(wfilename!=p.filename())
-  {
-	  boost::replace_all(filename, p.filename(), wfilename);
-	  rename(fullpath,filename);
-  }
-
   FILE *ifp = fopen(filename.c_str(), "rb");
 
   int position =filename.size()-5;
@@ -198,17 +187,6 @@ void ecdsa::decrypt(std::string filename,std::string privkey,bool &status)
 
 	  /* set where on the 128 bit encrypted block to begin encryption*/
 	  int num = 0;
-	  std::string fullpath=filename;
-	  boost::filesystem::path p(filename);
-
-	  std::string wfilename=url_encode(p.filename());
-
-	  if(wfilename!=p.filename())
-	  {
-		  boost::replace_all(filename, p.filename(), wfilename);
-		  rename(fullpath,filename);
-
-	  }
 
 	  FILE *ifp = fopen(filename.c_str(), "rb");
 
@@ -245,7 +223,7 @@ std::string ecsdsa::url_encode( std::string str )
     static const std::string unreserved = "0123456789"
                                             "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
                                             "abcdefghijklmnopqrstuvwxyz"
-                                            "-_:\." ;
+                                            "-_:." ;
     std::string result ;
 
     for( unsigned char c : str )
