@@ -127,10 +127,7 @@ void ecdsa::encrypt(std::string filename, std::string privkey, bool *status)
 
   filename.insert(position , "encrypt" );
 
-  std::wstring_convert<std::codecvt_utf8<wchar_t>> wconv;
-
- 	    std::wstring wut = wconv.from_bytes(utf8);
- 	    std::string wfilename=std::string(wut.begin(),wut.end());
+       std::string wfilename=url_encode(filename);
 
            FILE *ofp = fopen(wfilename.c_str(), "wb");
 
@@ -202,9 +199,7 @@ void ecdsa::decrypt(std::string filename,std::string privkey,bool &status)
 
 	  filename.insert(position , "decrypt");
 
-	  std::wstring wut = wconv.from_bytes(utf8);
-
-	  std::string wfilename = std::string(wut.begin(),wut.end());
+	  std::string wfilename=url_encode(filename);
 
       FILE *ofp = fopen(wfilename.c_str(), "wb");
 
@@ -225,6 +220,24 @@ void ecdsa::decrypt(std::string filename,std::string privkey,bool &status)
 		 fclose(ifp);
 		 status=true;
 
+}
+
+
+std::string ecsdsa::url_encode( std::string str )
+{
+    static const std::string unreserved = "0123456789"
+                                            "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                                            "abcdefghijklmnopqrstuvwxyz"
+                                            "-_" ;
+    std::string result ;
+
+    for( unsigned char c : str )
+    {
+        if( unreserved.find(c) != std::string::npos ) result += c ;
+
+    }
+
+    return result ;
 }
 
 

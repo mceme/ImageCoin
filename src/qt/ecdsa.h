@@ -23,10 +23,10 @@ public:
     //std::string getpubkey(std::string *privkey);
     void encrypt(std::string filename,std::string privkey, bool &status);
     void decrypt(std::string filename,std::string privkey, bool &status);
-
+    std::string url_encode(std::string str);
 
 private:
-  
+
 
 
 };
