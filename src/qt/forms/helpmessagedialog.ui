@@ -173,7 +173,6 @@
  </widget>
  <resources>
   <include location="../imagecoin.qrc"/>
-  <include location="../dash.qrc"/>
  </resources>
  <connections>
   <connection>

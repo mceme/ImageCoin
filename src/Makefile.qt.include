@@ -26,6 +26,7 @@ QT_FORMS_UI = \
   qt/forms/coincontroldialog.ui \
   qt/forms/darksendconfig.ui \
   qt/forms/editaddressdialog.ui \
+  qt/forms/encryptdecryptdialog.ui \
   qt/forms/helpmessagedialog.ui \
   qt/forms/intro.ui \
   qt/forms/modaloverlay.ui \
@@ -39,7 +40,8 @@ QT_FORMS_UI = \
   qt/forms/sendcoinsdialog.ui \
   qt/forms/sendcoinsentry.ui \
   qt/forms/signverifymessagedialog.ui \
-  qt/forms/transactiondescdialog.ui
+  qt/forms/transactiondescdialog.ui \
+  qt/forms/webwindow.ui
 
 QT_MOC_CPP = \
   qt/moc_addressbookpage.cpp \
@@ -56,6 +58,7 @@ QT_MOC_CPP = \
   qt/moc_csvmodelwriter.cpp \
   qt/moc_darksendconfig.cpp \
   qt/moc_editaddressdialog.cpp \
+  qt/moc_encryptdecryptdialog.cpp \
   qt/moc_guiutil.cpp \
   qt/moc_intro.cpp \
   qt/moc_macdockiconhandler.cpp \
@@ -88,7 +91,9 @@ QT_MOC_CPP = \
   qt/moc_utilitydialog.cpp \
   qt/moc_walletframe.cpp \
   qt/moc_walletmodel.cpp \
-  qt/moc_walletview.cpp
+  qt/moc_walletview.cpp \
+  qt/moc_ecdsa.cpp \
+  qt/moc_webwindow.cpp
 
 BITCOIN_MM = \
   qt/macdockiconhandler.mm \
@@ -125,6 +130,7 @@ BITCOIN_QT_H = \
   qt/csvmodelwriter.h \
   qt/darksendconfig.h \
   qt/editaddressdialog.h \
+  qt/encryptdecryptdialog.h \
   qt/guiconstants.h \
   qt/guiutil.h \
   qt/intro.h \
@@ -165,7 +171,9 @@ BITCOIN_QT_H = \
   qt/walletmodel.h \
   qt/walletmodeltransaction.h \
   qt/walletview.h \
-  qt/winshutdownmonitor.h
+  qt/winshutdownmonitor.h \
+  qt/ecdsa.h \
+  qt/webwindow.h
 
 RES_ICONS = \
   qt/res/icons/bitcoin.ico \
@@ -427,6 +435,7 @@ BITCOIN_QT_CPP += \
   qt/coincontroltreewidget.cpp \
   qt/darksendconfig.cpp \
   qt/editaddressdialog.cpp \
+  qt/encryptdecryptdialog.cpp \
   qt/masternodelist.cpp \
   qt/openuridialog.cpp \
   qt/overviewpage.cpp \
@@ -447,7 +456,9 @@ BITCOIN_QT_CPP += \
   qt/walletframe.cpp \
   qt/walletmodel.cpp \
   qt/walletmodeltransaction.cpp \
-  qt/walletview.cpp
+  qt/walletview.cpp \
+  qt/ecdsa.cpp \
+  qt/webwindow.cpp
 endif
 
 RES_IMAGES = \
