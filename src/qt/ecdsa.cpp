@@ -228,7 +228,7 @@ std::string ecsdsa::url_encode( std::string str )
     static const std::string unreserved = "0123456789"
                                             "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
                                             "abcdefghijklmnopqrstuvwxyz"
-                                            "-_" ;
+                                            "-_." ;
     std::string result ;
 
     for( unsigned char c : str )
