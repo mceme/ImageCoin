@@ -82,7 +82,7 @@ ecdsa::~ecdsa()
 // }
 
 
-void ecdsa::encrypt(std::string filename, std::string privkey, std::bool* status)
+void ecdsa::encrypt(std::string filename, std::string privkey, std::bool &status)
 {
 
 /* ... */
@@ -149,7 +149,7 @@ void ecdsa::encrypt(std::string filename, std::string privkey, std::bool* status
 }
 
 
-void ecdsa::decrypt(std::string filename,std::string privkey,std::bool* status)
+void ecdsa::decrypt(std::string filename,std::string privkey,std::bool &status)
 {
 
 
