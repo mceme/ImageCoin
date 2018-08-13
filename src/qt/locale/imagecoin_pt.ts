@@ -99,6 +99,25 @@
     </message>
 </context>
 <context>
+    <name>EncryptDecryptPage</name>
+    <message>
+        <source>File Crypto</source>
+        <translation>Encriptação</translation>
+    </message>
+    <message>
+        <source>Chooser</source>
+        <translation>Selecionar</translation>
+    </message>
+    <message>
+        <source>Encrypt</source>
+        <translation>Encriptar</translation>
+    </message>
+	    <message>
+        <source>Decrypt</source>
+        <translation>Desencriptar</translation>
+    </message>
+</context>
+<context>
     <name>AddressTableModel</name>
     <message>
         <source>Label</source>

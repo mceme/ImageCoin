@@ -125,6 +125,24 @@
     </message>
 </context>
 <context>
+    <name>EncryptDecryptPage</name>
+    <message>
+        <location filename="../encryptdecryptdialog.ui" line="+5"/>
+        <source>Chooser</source>
+        <translation>Chooser</translation>
+    </message>
+    <message>
+        <location line="+10"/>
+        <source>Encrypt</source>
+        <translation>Encrypt</translation>
+    </message>
+    <message>
+        <location line="+36"/>
+        <source>Decrypt</source>
+        <translation>Decrypt</translation>
+    </message>
+</context>
+<context>
     <name>AddressTableModel</name>
     <message>
         <location filename="../addresstablemodel.cpp" line="+171"/>

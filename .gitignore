@@ -1,2 +1,27 @@
 
 src/RCa10760
+build-dash-qt-dat-Debug/debug/dash-qt.exe
+build-dash-qt-dat-Debug/ui_transactiondescdialog.h
+build-dash-qt-dat-Debug/ui_signverifymessagedialog.h
+build-dash-qt-dat-Debug/ui_sendcoinsentry.h
+build-dash-qt-dat-Debug/ui_sendcoinsdialog.h
+build-dash-qt-dat-Debug/ui_receiverequestdialog.h
+build-dash-qt-dat-Debug/ui_receivecoinsdialog.h
+build-dash-qt-dat-Debug/ui_overviewpage.h
+build-dash-qt-dat-Debug/ui_optionsdialog.h
+build-dash-qt-dat-Debug/ui_openuridialog.h
+build-dash-qt-dat-Debug/ui_masternodelist.h
+build-dash-qt-dat-Debug/ui_intro.h
+build-dash-qt-dat-Debug/ui_helpmessagedialog.h
+build-dash-qt-dat-Debug/ui_encryptdecryptdialog.h
+build-dash-qt-dat-Debug/ui_editaddressdialog.h
+build-dash-qt-dat-Debug/ui_debugwindow.h
+build-dash-qt-dat-Debug/ui_darksendconfig.h
+build-dash-qt-dat-Debug/ui_coincontroldialog.h
+build-dash-qt-dat-Debug/ui_askpassphrasedialog.h
+build-dash-qt-dat-Debug/ui_addressbookpage.h
+build-dash-qt-dat-Debug/ui_aboutdialog.h
+build-dash-qt-dat-Debug/Makefile.Release
+build-dash-qt-dat-Debug/Makefile.Debug
+build-dash-qt-dat-Debug/Makefile
+build-dash-qt-dat-Debug/debug/dash-qt.exe

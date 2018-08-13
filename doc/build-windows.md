@@ -24,6 +24,8 @@ To build executables for Windows 32-bit:
 
     cd depends
     make HOST=i686-w64-mingw32 -j4
+    wget https://github.com/annulen/webkit/releases/download/qtwebkit-tp5/qtwebkit-tp5-qt58-mingw530-x86.zip
+    extract and merge bin include directory in /depends/i686-w64-mingw32
     cd ..
     ./configure --prefix=`pwd`/depends/i686-w64-mingw32
     make
