@@ -19,6 +19,8 @@
 #include <QStringList>
 #include <QFileDialog>
 #include <string>
+#include <chrono>
+#include <thread>
 
 ecdsa ecdsa;
 QStringList fileNames;
@@ -105,7 +107,7 @@ void EncryptDecryptDialog::on_chooserButton_clicked()
     dialog.setFileMode(QFileDialog::ExistingFiles);
 
     dialog.setViewMode(QFileDialog::List);
-    dialog.setOption(QFileDialog::DontUseNativeDialog, true);
+    dialog.setOption(QFileDialog::DontUseNativeDialog, false);
 
     if (dialog.exec()){
         fileNames = dialog.selectedFiles();
@@ -389,13 +391,23 @@ void EncryptDecryptDialog::encrypt()
 
 	std::string filestr;
 	std::string keystr;
+	std::bool status=false;
 	 for(int i=0; i<fileNames.size(); ++i)
 	         {
+		      ui->MessageBox->setText("Encrypting file: "+fileNames[i]);
 	        	  QString file = fileNames[i];
 	        	  filestr = file.toUtf8().constData();
 		          keystr = key.toUtf8().constData();
-                  ecdsa.encrypt(filestr, keystr);
+                  ecdsa.encrypt(filestr, keystr, &status);
+
+
+                  while(status==false){
+
+                	     sleep_for(nanoseconds(1000));
+
+                  }
 	         }
+
 	 clear();
 	 ui->MessageBox->setText("Encrypt Complete!");
 
@@ -408,13 +420,23 @@ void EncryptDecryptDialog::decrypt()
 	QString key = ui->addAsLabel->text();
 	std::string filestr;
 	std::string keystr;
+	std::bool status=false;
 	 for(int i=0; i<fileNames.size(); ++i)
 	         {
+		      ui->MessageBox->setText("Decrypting file: "+fileNames[i]);
 	        	  QString file = fileNames[i];
 	        	  filestr = file.toUtf8().constData();
 		          keystr = key.toUtf8().constData();
-                  ecdsa.decrypt(filestr, keystr);
+                  ecdsa.decrypt(filestr, keystr, &status);
+
+
+                  while(status==false){
+
+                	     sleep_for(nanoseconds(1000));
+
+                  }
 	         }
+
 	 clear();
 	 ui->MessageBox->setText("Decrypt Complete!");
 

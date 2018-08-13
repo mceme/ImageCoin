@@ -2,12 +2,13 @@
  * ecdsa.cpp
  *
  *  Created on: 09/08/2018
- *      Author: manue
+ *      Author: mceme
  */
 
 
 // using figures on: https://en.bitcoin.it/wiki/Technical_background_of_version_1_Bitcoin_addresses
 // gcc -Wall ecdsapubkey.c -o ecdsapubkey -lcrypto
+
 #include "ecdsa.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -23,6 +24,8 @@
 #include <algorithm>
 #include <cassert>
 #include <iterator>
+#include <boost/locale.hpp>
+
 
 ecdsa::ecdsa() {
 
@@ -79,7 +82,7 @@ ecdsa::~ecdsa()
 // }
 
 
-void ecdsa::encrypt(std::string filename,std::string privkey)
+void ecdsa::encrypt(std::string filename, std::string privkey, std::bool* status)
 {
 
 /* ... */
@@ -96,13 +99,13 @@ void ecdsa::encrypt(std::string filename,std::string privkey)
      en- and recrypt your data.  Note that ckey can be
      192 or 256 bits as well */
 
-  char greeting[128]="tes";
+  char greeting[128]="initial";
 
   std::strcpy(greeting, privkeychar);
   unsigned char ckey[sizeof(greeting)];
   std::copy(greeting, greeting + sizeof(greeting), ckey);
 
-  char greeting2[128]="tes";
+  char greeting2[128]="initial";
 
   std::strcpy(greeting2, privkeychar);
   unsigned char ivec[sizeof(greeting2)];
@@ -122,24 +125,31 @@ void ecdsa::encrypt(std::string filename,std::string privkey)
 
   int position =filename.size()-5;
 
-  filename.insert(position, 1 , 'EN' );
+  filename.insert(position, 1 , 'ENCRY' );
 
-  FILE *ofp = fopen(filename.c_str(), "wb");
+  std::string iso_filename = from_utf(filename,"ISO8859-15");
 
-  while (1) {
+  FILE *ofp = fopen(iso_filename.c_str(), "wb");
+
+  while (1)
+  {
     bytes_read = fread(indata, 1, AES_BLOCK_SIZE, ifp);
 
     AES_cfb128_encrypt(indata, outdata, bytes_read, &key, ivec, &num,
            AES_ENCRYPT);
 
     bytes_written = fwrite(outdata, 1, bytes_read, ofp);
-    if (bytes_read < AES_BLOCK_SIZE)
-  break;
+     if (bytes_read < AES_BLOCK_SIZE){
+    	   *status=true;
+           break;
+       }
   }
+
+
 }
 
 
-void ecdsa::decrypt(std::string filename,std::string privkey)
+void ecdsa::decrypt(std::string filename,std::string privkey,std::bool* status)
 {
 
 
@@ -157,13 +167,13 @@ void ecdsa::decrypt(std::string filename,std::string privkey)
 	  std::strcpy(privkeychar, privkey.c_str());
 
 
-	  char greeting[128]="tes";
+	  char greeting[128]="initial";
 
 	  std::strcpy(greeting, privkeychar);
 	  unsigned char ckey[sizeof(greeting)];
 	  std::copy(greeting, greeting + sizeof(greeting), ckey);
 
-	  char greeting2[128]="tes";
+	  char greeting2[128]="initial";
 
 	  std::strcpy(greeting2, privkeychar);
 	  unsigned char ivec[sizeof(greeting2)];
@@ -183,19 +193,23 @@ void ecdsa::decrypt(std::string filename,std::string privkey)
 
 	  int position=filename.size()-5;
 
-	  filename.insert(position, 1 , 'DE' );
+	  filename.insert(position, 1 , 'DECRY' );
+	  std::string iso_filename = from_utf(filename,"ISO8859-15");
 
-	  FILE *ofp = fopen(filename.c_str(), "wb");
+	  FILE *ofp = fopen(iso_filename.c_str(), "wb");
 
-	  while (1) {
+	  while (1)
+	  {
 	    bytes_read = fread(indata, 1, AES_BLOCK_SIZE, ifp);
 
 	    AES_cfb128_encrypt(indata, outdata, bytes_read, &key, ivec, &num,
 	           AES_DECRYPT);
 
 	    bytes_written = fwrite(outdata, 1, bytes_read, ofp);
-	    if (bytes_read < AES_BLOCK_SIZE)
-	  break;
+	    if (bytes_read < AES_BLOCK_SIZE){
+	       	   *status=true;
+	              break;
+	          }
 	  }
 
 }

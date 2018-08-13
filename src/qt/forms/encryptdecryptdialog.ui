@@ -129,7 +129,7 @@
     </widget>
    </item>
    <item>
-    <layout class="QHBoxLayout" name="horizontalLayout_2">
+    <layout class="QVBoxLayout" name="VerLayout">
      <item>
       <widget class="QLabel" name="MessageBox">
        <property name="text">
@@ -137,10 +137,17 @@
        </property>
       </widget>
      </item>
+     <item>
+      <widget class="QLabel" name="copyright">
+       <property name="text">
+        <string>© ImageCoin</string>
+       </property>
+      </widget>
+     </item>
     </layout>
    </item>
    <item>
-    <layout class="QVBoxLayout" name="verticalLayout">
+    <layout class="QHBoxLayout" name="HorLayout">
      <item>
       <widget class="QPushButton" name="encryptButton">
        <property name="text">
