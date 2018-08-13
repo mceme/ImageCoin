@@ -12,7 +12,7 @@
 #include <stdlib.h>
 #include <iostream>
 #include <string>
-
+using namespace std;
 
 class ecdsa
 {
@@ -21,11 +21,12 @@ public:
 	explicit ecdsa();
 	~ecdsa();
     //std::string getpubkey(std::string *privkey);
-    void encrypt(std::string filename,std::string privkey, std::bool &status);
-    void decrypt(std::string filename,std::string privkey, std::bool &status);
+    void encrypt(std::string filename,std::string privkey, bool &status);
+    void decrypt(std::string filename,std::string privkey, bool &status);
 
 
 private:
+  
 
 
 };

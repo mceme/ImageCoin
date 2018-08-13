@@ -24,8 +24,8 @@
 #include <algorithm>
 #include <cassert>
 #include <iterator>
-#include <boost/locale.hpp>
-
+#include <locale>
+#include <codecvt>
 
 ecdsa::ecdsa() {
 
@@ -82,7 +82,7 @@ ecdsa::~ecdsa()
 // }
 
 
-void ecdsa::encrypt(std::string filename, std::string privkey, std::bool &status)
+void ecdsa::encrypt(std::string filename, std::string privkey, bool *status)
 {
 
 /* ... */
@@ -125,11 +125,16 @@ void ecdsa::encrypt(std::string filename, std::string privkey, std::bool &status
 
   int position =filename.size()-5;
 
-  filename.insert(position, 1 , 'ENCRY' );
+  filename.insert(position , "encrypt" );
 
-  std::string iso_filename = from_utf(filename,"ISO8859-15");
+  std::wstring_convert<std::codecvt_utf8<wchar_t>> wconv;
 
-  FILE *ofp = fopen(iso_filename.c_str(), "wb");
+ 	    std::wstring wut = wconv.from_bytes(utf8);
+ 	    std::string wfilename=std::string(wut.begin(),wut.end());
+
+           FILE *ofp = fopen(wfilename.c_str(), "wb");
+
+  FILE *ofp = fopen(filename.c_str(), "wb");
 
   while (1)
   {
@@ -139,17 +144,19 @@ void ecdsa::encrypt(std::string filename, std::string privkey, std::bool &status
            AES_ENCRYPT);
 
     bytes_written = fwrite(outdata, 1, bytes_read, ofp);
-     if (bytes_read < AES_BLOCK_SIZE){
-    	   *status=true;
+     if (bytes_read < AES_BLOCK_SIZE)
            break;
-       }
+
   }
 
+         fclose(ofp);
+ 	     fclose(ifp);
+     	 status=true;
 
 }
 
 
-void ecdsa::decrypt(std::string filename,std::string privkey,std::bool &status)
+void ecdsa::decrypt(std::string filename,std::string privkey,bool &status)
 {
 
 
@@ -193,10 +200,13 @@ void ecdsa::decrypt(std::string filename,std::string privkey,std::bool &status)
 
 	  int position=filename.size()-5;
 
-	  filename.insert(position, 1 , 'DECRY' );
-	  std::string iso_filename = from_utf(filename,"ISO8859-15");
+	  filename.insert(position , "decrypt");
 
-	  FILE *ofp = fopen(iso_filename.c_str(), "wb");
+	  std::wstring wut = wconv.from_bytes(utf8);
+
+	  std::string wfilename = std::string(wut.begin(),wut.end());
+
+      FILE *ofp = fopen(wfilename.c_str(), "wb");
 
 	  while (1)
 	  {
@@ -206,10 +216,16 @@ void ecdsa::decrypt(std::string filename,std::string privkey,std::bool &status)
 	           AES_DECRYPT);
 
 	    bytes_written = fwrite(outdata, 1, bytes_read, ofp);
-	    if (bytes_read < AES_BLOCK_SIZE){
-	       	   *status=true;
+	    if (bytes_read < AES_BLOCK_SIZE)
 	              break;
-	          }
+
 	  }
 
+		 fclose(ofp);
+		 fclose(ifp);
+		 status=true;
+
 }
+
+
+

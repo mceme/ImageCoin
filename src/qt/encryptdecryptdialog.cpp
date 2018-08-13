@@ -22,6 +22,7 @@
 #include <chrono>
 #include <thread>
 
+
 ecdsa ecdsa;
 QStringList fileNames;
 
@@ -391,21 +392,23 @@ void EncryptDecryptDialog::encrypt()
 
 	std::string filestr;
 	std::string keystr;
-	std::bool status=false;
+	bool status=false;
 	 for(int i=0; i<fileNames.size(); ++i)
 	         {
 		      ui->MessageBox->setText("Encrypting file: "+fileNames[i]);
 	        	  QString file = fileNames[i];
 	        	  filestr = file.toUtf8().constData();
 		          keystr = key.toUtf8().constData();
-                  ecdsa.encrypt(filestr, keystr, &status);
+                  ecdsa.encrypt(filestr, keystr, status);
 
 
-                  while(status==false){
+                  int f = 0;
+                     while(status==false && f < 60){
 
-                	     sleep_for(nanoseconds(1000));
-
-                  }
+                   	    int64_t timenano=1000;
+                   	     std::this_thread::sleep_for(std::chrono::nanoseconds(timenano));
+                   	     f++;
+                     }
 	         }
 
 	 clear();
@@ -420,20 +423,21 @@ void EncryptDecryptDialog::decrypt()
 	QString key = ui->addAsLabel->text();
 	std::string filestr;
 	std::string keystr;
-	std::bool status=false;
+	bool status=false;
 	 for(int i=0; i<fileNames.size(); ++i)
 	         {
 		      ui->MessageBox->setText("Decrypting file: "+fileNames[i]);
 	        	  QString file = fileNames[i];
 	        	  filestr = file.toUtf8().constData();
 		          keystr = key.toUtf8().constData();
-                  ecdsa.decrypt(filestr, keystr, &status);
+                  ecdsa.decrypt(filestr, keystr, status);
 
+                   int f = 0;
+                  while(status==false && f < 60){
 
-                  while(status==false){
-
-                	     sleep_for(nanoseconds(1000));
-
+                	    int64_t timenano=1000;
+                	     std::this_thread::sleep_for(std::chrono::nanoseconds(timenano));
+                	     f++;
                   }
 	         }
 
