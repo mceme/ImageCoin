@@ -107,7 +107,7 @@ void EncryptDecryptDialog::on_chooserButton_clicked()
     QFileDialog dialog(this);
     dialog.setFileMode(QFileDialog::ExistingFiles);
 
-    dialog.setViewMode(QFileDialog::List);
+    //dialog.setViewMode(QFileDialog::List);
     dialog.setOption(QFileDialog::DontUseNativeDialog, false);
 
     if (dialog.exec()){
