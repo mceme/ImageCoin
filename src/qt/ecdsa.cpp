@@ -196,7 +196,7 @@ void ecdsa::decrypt(std::string filename,std::string privkey,bool &status)
 	  filename.insert(position , "decrypt");
 
 
-      FILE *ofp = fopen(wfilename.c_str(), "wb");
+      FILE *ofp = fopen(filename.c_str(), "wb");
 
 	  while (1)
 	  {
