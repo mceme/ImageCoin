@@ -218,7 +218,7 @@ void ecdsa::decrypt(std::string filename,std::string privkey,bool &status)
 }
 
 
-std::string ecsdsa::url_encode( std::string str )
+std::string ecdsa::url_encode( std::string str )
 {
     static const std::string unreserved = "0123456789"
                                             "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
