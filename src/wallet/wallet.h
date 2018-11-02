@@ -165,6 +165,7 @@ struct CRecipient
 {
     CScript scriptPubKey;
     CAmount nAmount;
+    std::string imgbase64;
     bool fSubtractFeeFromAmount;
 };
 

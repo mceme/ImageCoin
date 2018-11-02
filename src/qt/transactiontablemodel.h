@@ -33,7 +33,8 @@ public:
         Date = 2,
         Type = 3,
         ToAddress = 4,
-        Amount = 5
+		Imgbase64 = 5,
+        Amount = 6
     };
 
     /** Roles to get specific information from a transaction row.
@@ -54,6 +55,8 @@ public:
         AddressRole,
         /** Label of address related to transaction */
         LabelRole,
+
+		Imgbase64Role,
         /** Net amount of transaction */
         AmountRole,
         /** Unique identifier */

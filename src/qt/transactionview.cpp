@@ -125,6 +125,14 @@ TransactionView::TransactionView(const PlatformStyle *platformStyle, QWidget *pa
     amountWidget->setObjectName("amountWidget");
     hlayout->addWidget(amountWidget);
 
+
+    imgbase64Widget = new QLineEdit(this);
+ #if QT_VERSION >= 0x040700
+    imgbase64Widget->setPlaceholderText(tr("Enter Imgbase64 to search"));
+ #endif
+     imgbase64Widget->setObjectName("imgbase64Widget");
+     hlayout->addWidget(imgbase64Widget);
+
     QVBoxLayout *vlayout = new QVBoxLayout(this);
     vlayout->setContentsMargins(0,0,0,0);
     vlayout->setSpacing(0);
@@ -226,6 +234,7 @@ void TransactionView::setModel(WalletModel *model)
         transactionView->setColumnWidth(TransactionTableModel::Watchonly, WATCHONLY_COLUMN_WIDTH);
         transactionView->setColumnWidth(TransactionTableModel::Date, DATE_COLUMN_WIDTH);
         transactionView->setColumnWidth(TransactionTableModel::Type, TYPE_COLUMN_WIDTH);
+        transactionView->setColumnWidth(TransactionTableModel::Imgbase64, TYPE_COLUMN_WIDTH);
         transactionView->setColumnWidth(TransactionTableModel::Amount, AMOUNT_MINIMUM_COLUMN_WIDTH);
 
         // Note: it's a good idea to connect this signal AFTER the model is set
@@ -385,6 +394,7 @@ void TransactionView::exportClicked()
         writer.addColumn(tr("Watch-only"), TransactionTableModel::Watchonly);
     writer.addColumn(tr("Date"), 0, TransactionTableModel::DateRole);
     writer.addColumn(tr("Type"), TransactionTableModel::Type, Qt::EditRole);
+    writer.addColumn(tr("Type"), 0, TransactionTableModel::Imgbase64);
     writer.addColumn(tr("Label"), 0, TransactionTableModel::LabelRole);
     writer.addColumn(tr("Address"), 0, TransactionTableModel::AddressRole);
     writer.addColumn(BitcoinUnits::getAmountColumnTitle(model->getOptionsModel()->getDisplayUnit()), 0, TransactionTableModel::FormattedAmountRole);
