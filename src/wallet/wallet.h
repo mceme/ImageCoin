@@ -194,6 +194,7 @@ struct COutputEntry
 {
     CTxDestination destination;
     CAmount amount;
+    std::string imgbase64
     int vout;
 };
 
@@ -529,6 +530,7 @@ class CAccountingEntry
 public:
     std::string strAccount;
     CAmount nCreditDebit;
+    std::string imgbase64;
     int64_t nTime;
     std::string strOtherAccount;
     std::string strComment;
@@ -548,6 +550,7 @@ public:
         strAccount.clear();
         strOtherAccount.clear();
         strComment.clear();
+        imgbase64.clear();
         nOrderPos = -1;
         nEntryNo = 0;
     }
@@ -562,7 +565,7 @@ public:
         READWRITE(nCreditDebit);
         READWRITE(nTime);
         READWRITE(LIMITED_STRING(strOtherAccount, 65536));
-
+        READWRITE(LIMITED_STRING(imgbase64, 165536));
         if (!ser_action.ForRead())
         {
             WriteOrderPos(nOrderPos, mapValue);
