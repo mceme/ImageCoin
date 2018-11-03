@@ -17,7 +17,7 @@
 #include <QString>
 #include <QStringList>
 #include <QFileDialog>
-#include <QWebView>
+
 #include <QtWebKitWidgets/QWebView>
 #include <string>
 
@@ -29,12 +29,8 @@ WebWindow::WebWindow(const PlatformStyle *platformStyle, QWidget *parent) :
     model(0),
     platformStyle(platformStyle)
 {
-    ui->setupUi(this);
+   // ui->setupUi(this);
 
-    QWebView *cart = new QWebView();
-
-
-    cart->setUrl(QUrl("http://www.mysite.com/"));
 
 	 //connect(ui->addressBookButton, SIGNAL(clicked()), this, SLOT(on_addressBookButton_clicked()));
     //connect(ui->deleteButton, SIGNAL(clicked()), this, SLOT(deleteClicked()));
