@@ -154,7 +154,7 @@ void ReceiveCoinsDialog::on_receiveButton_clicked()
         /* Generate new receiving address */
         address = model->getAddressTableModel()->addRow(AddressTableModel::Receive, label, "");
     }
-    SendCoinsRecipient info(address, label,
+    SendCoinsRecipient info(address, label,"",
         ui->reqAmount->value(), ui->reqMessage->text());
     info.fUseInstantSend = ui->checkUseInstantSend->isChecked();
     ReceiveRequestDialog *dialog = new ReceiveRequestDialog(this);
