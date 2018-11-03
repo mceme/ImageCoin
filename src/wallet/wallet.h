@@ -194,7 +194,7 @@ struct COutputEntry
 {
     CTxDestination destination;
     CAmount amount;
-    std::string imgbase64
+    std::string imgbase64;
     int vout;
 };
 

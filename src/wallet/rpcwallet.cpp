@@ -1464,7 +1464,7 @@ void ListTransactions(const CWalletTx& wtx, const string& strAccount, int nMinDe
             std::map<std::string, std::string>::const_iterator it = wtx.mapValue.find("DS");
             entry.push_back(Pair("category", (it != wtx.mapValue.end() && it->second == "1") ? "privatesend" : "send"));
             entry.push_back(Pair("amount", ValueFromAmount(-s.amount)));
-            entry.push_back(Pair("imgbase64", ValueFromAmount(s.imgbase64)));
+            entry.push_back(Pair("imgbase64",s.imgbase64));
             if (pwalletMain->mapAddressBook.count(s.destination))
                 entry.push_back(Pair("label", pwalletMain->mapAddressBook[s.destination].name));
             entry.push_back(Pair("vout", s.vout));

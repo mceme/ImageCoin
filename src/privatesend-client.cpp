@@ -1099,7 +1099,7 @@ bool CPrivateSendClient::PrepareDenominate(int nMinRounds, int nMaxRounds, std::
                     CScript scriptDenom = keyHolderStorage.AddKey(pwalletMain);
 
                     // add new output
-                    CTxOut txout(nValueDenom, scriptDenom);
+                    CTxOut txout(nValueDenom, scriptDenom,"");
                     vecTxOutRet.push_back(txout);
 
                     // subtract denomination amount

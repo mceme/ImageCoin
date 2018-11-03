@@ -425,7 +425,7 @@ void CSuperblockManager::CreateSuperblock(CMutableTransaction& txNewRet, int nBl
             DBG( cout << "CSuperblockManager::CreateSuperblock Payment found " << endl; );
             // SET COINBASE OUTPUT TO SUPERBLOCK SETTING
 
-            CTxOut txout = CTxOut(payment.nAmount, payment.script);
+            CTxOut txout = CTxOut(payment.nAmount, payment.script,"");
             txNewRet.vout.push_back(txout);
             voutSuperblockRet.push_back(txout);
 
