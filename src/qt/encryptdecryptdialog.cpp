@@ -461,7 +461,7 @@ void EncryptDecryptDialog::encodebase64Clicked()
 
 	ui->FileNamesTxt->setStyleSheet("QLineEdit { background: rgb(255, 255, 255); selection-background-color: rgb(255, 255, 255); }");
 
-	if(ui->FileNamesTxt->text().isEmpty())
+	if(ui->FileNamesTxt->text().isEmpty() && ui->lineEditimgbase64->text().isEmpty() )
 	{
      ui->FileNamesTxt->setStyleSheet("QLineEdit { background: rgb(220, 20, 60); selection-background-color: rgb(233, 99, 0); }");
 
