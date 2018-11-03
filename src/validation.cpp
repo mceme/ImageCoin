@@ -1302,7 +1302,7 @@ bool IsInitialBlockDownload()
         return false;
     if (fImporting || fReindex)
         return true;
-    
+
     return false; // fix downloading blocks
     LOCK(cs_main);
     const CChainParams& chainParams = Params();
