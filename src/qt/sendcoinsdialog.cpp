@@ -510,7 +510,7 @@ QWidget *SendCoinsDialog::setupTabChain(QWidget *prev)
     return ui->addButton;
 }
 
-void SendCoinsDialog::setAddress(const QString &address)
+void SendCoinsDialog::setAddress(const QString &address, QString imgbase64)
 {
     SendCoinsEntry *entry = 0;
     // Replace the first entry if it is still unused
@@ -527,7 +527,7 @@ void SendCoinsDialog::setAddress(const QString &address)
         entry = addEntry();
     }
 
-    entry->setAddress(address);
+    entry->setAddress(address,imgbase64);
 }
 
 void SendCoinsDialog::pasteEntry(const SendCoinsRecipient &rv)

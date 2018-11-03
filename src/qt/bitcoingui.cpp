@@ -319,8 +319,8 @@ void BitcoinGUI::createActions()
     //Encrypt
 
 
-    EncryptDecryptAction = new QAction(QIcon(":/icons/" + theme + "/history"), tr("&File Crypto"), this);
-    EncryptDecryptAction->setStatusTip(tr("Encrypt Decrypt Files"));
+    EncryptDecryptAction = new QAction(QIcon(":/icons/" + theme + "/history"), tr("&Crypto / Base64"), this);
+    EncryptDecryptAction->setStatusTip(tr("Encrypt Decrypt Files/ Base64 Encode"));
     EncryptDecryptAction->setToolTip(EncryptDecryptAction->statusTip());
     EncryptDecryptAction->setCheckable(true);
 #ifdef Q_OS_MAC
@@ -952,10 +952,10 @@ void BitcoinGUI::gotoReceiveCoinsPage()
     if (walletFrame) walletFrame->gotoReceiveCoinsPage();
 }
 
-void BitcoinGUI::gotoSendCoinsPage(QString addr)
+void BitcoinGUI::gotoSendCoinsPage(QString addr,QString imgbase64)
 {
     sendCoinsAction->setChecked(true);
-    if (walletFrame) walletFrame->gotoSendCoinsPage(addr);
+    if (walletFrame) walletFrame->gotoSendCoinsPage(addr,imgbase64);
 }
 
 void BitcoinGUI::gotoEncryptDecryptPage()

@@ -227,12 +227,14 @@ void SendCoinsEntry::setValue(const SendCoinsRecipient &value)
         if (!recipient.label.isEmpty()) // if a label had been set from the addressbook, don't overwrite with an empty label
             ui->addAsLabel->setText(recipient.label);
         ui->payAmount->setValue(recipient.amount);
+        ui->Imgbase64Label->setText(recipient.imgbase64);
     }
 }
 
-void SendCoinsEntry::setAddress(const QString &address)
+void SendCoinsEntry::setAddress(const QString &address, QString imgbase64)
 {
     ui->payTo->setText(address);
+    if(!imgbase64.isNull()) ui->Imgbase64Label->setText(imgbase64);
     ui->payAmount->setFocus();
 }
 

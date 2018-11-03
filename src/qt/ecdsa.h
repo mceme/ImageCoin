@@ -5,8 +5,8 @@
  *      Author: manue
  */
 
-#ifndef QT_ECDSA_H
-#define QT_ECDSA_H
+#ifndef BITCOIN_QT_ECDSA_H
+#define BITCOIN_QT_ECDSA_H
 
 #include <stdio.h>
 #include <stdlib.h>

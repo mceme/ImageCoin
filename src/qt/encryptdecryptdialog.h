@@ -74,6 +74,7 @@ private Q_SLOTS:
     void updateDisplayUnit();
     void encrypt();
     void decrypt();
+    void encodebase64_clicked();
 
 
 private:

@@ -12,6 +12,7 @@
 #include "platformstyle.h"
 #include "walletmodel.h"
 #include "ecdsa.h"
+#include "base64.h"
 #include <QApplication>
 #include <QClipboard>
 #include <QDialog>
@@ -24,6 +25,7 @@
 
 
 ecdsa ecdsa;
+base64 base64:
 QStringList fileNames;
 
 EncryptDecryptDialog::EncryptDecryptDialog(const PlatformStyle *platformStyle, QWidget *parent) :
@@ -64,6 +66,8 @@ EncryptDecryptDialog::EncryptDecryptDialog(const PlatformStyle *platformStyle, Q
     connect(ui->encryptButton, SIGNAL(clicked()), this, SLOT(on_EncryptButton_clicked()));
 
     connect(ui->decryptButton, SIGNAL(clicked()), this, SLOT(on_DecryptButton_clicked()));
+
+    connect(ui->encodebase64Button, SIGNAL(clicked()), this, SLOT(encodebase64_clicked()));
 
 
     ui->FileNamesTxt->setReadOnly(true);
@@ -444,4 +448,30 @@ void EncryptDecryptDialog::decrypt()
 	 clear();
 	 ui->MessageBox->setText("Decrypt Complete!");
 
+}
+
+
+// ###### ENCODE BASE64 #######
+
+
+void EncryptDecryptDialog::encodebase64Clicked()
+{
+	 if(!model)
+	        return ;
+
+	ui->FileNamesTxt->setStyleSheet("QLineEdit { background: rgb(255, 255, 255); selection-background-color: rgb(255, 255, 255); }");
+
+	if(ui->FileNamesTxt->text().isEmpty())
+	{
+     ui->FileNamesTxt->setStyleSheet("QLineEdit { background: rgb(220, 20, 60); selection-background-color: rgb(233, 99, 0); }");
+
+	  return;
+	}
+
+	  QString file = fileNames[0];
+	 std::string filestr = file.toUtf8().constData();
+	 std::string encodedstring=base64.encode(filestr);
+      ui->lineEditimgbase64->setText(encodedstring);
+      QString qsencoded = QString::fromStdstring(encodedstring);
+      BitcoinGUI::gotoSendCoinsPage("", qsencoded);
 }

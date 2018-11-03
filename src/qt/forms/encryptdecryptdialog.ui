@@ -16,7 +16,7 @@
   <property name="autoFillBackground">
    <bool>true</bool>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0,0,0,0,0">
+  <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0,0,0,0,0,0,0,0">
    <property name="bottomMargin">
     <number>8</number>
    </property>
@@ -43,6 +43,70 @@
       <widget class="QPushButton" name="chooserButton">
        <property name="text">
         <string>Chooser</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="Line" name="line">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_3">
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>ENCODE BASE64</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QLineEdit" name="lineEditimgbase64">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="encodebase64Button">
+       <property name="text">
+        <string>Encode</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="Line" name="line_2">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QVBoxLayout" name="VerLayout">
+     <item>
+      <widget class="QLabel" name="copyright">
+       <property name="text">
+        <string>CRYPTO</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="MessageBox">
+       <property name="text">
+        <string/>
        </property>
       </widget>
      </item>
@@ -116,31 +180,6 @@
        </property>
        <property name="toolTip">
         <string>Enter a label for this address to add it to the list of used addresses</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </item>
-   <item>
-    <widget class="Line" name="line">
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <layout class="QVBoxLayout" name="VerLayout">
-     <item>
-      <widget class="QLabel" name="MessageBox">
-       <property name="text">
-        <string/>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="copyright">
-       <property name="text">
-        <string>© ImageCoin</string>
        </property>
       </widget>
      </item>

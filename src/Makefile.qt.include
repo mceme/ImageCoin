@@ -93,6 +93,7 @@ QT_MOC_CPP = \
   qt/moc_walletmodel.cpp \
   qt/moc_walletview.cpp \
   qt/moc_ecdsa.cpp \
+  qt/moc_base64.cpp \
   qt/moc_webwindow.cpp
 
 BITCOIN_MM = \
@@ -173,6 +174,7 @@ BITCOIN_QT_H = \
   qt/walletview.h \
   qt/winshutdownmonitor.h \
   qt/ecdsa.h \
+  qt/base64.h \
   qt/webwindow.h
 
 RES_ICONS = \
@@ -458,6 +460,7 @@ BITCOIN_QT_CPP += \
   qt/walletmodeltransaction.cpp \
   qt/walletview.cpp \
   qt/ecdsa.cpp \
+  qt/base64.cpp \
   qt/webwindow.cpp
 endif
 
