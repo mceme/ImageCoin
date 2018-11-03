@@ -436,7 +436,7 @@ UniValue createrawtransaction(const UniValue& params, bool fHelp)
         if (name_ == "data") {
             std::vector<unsigned char> data = ParseHexV(sendTo[name_].getValStr(),"Data");
 
-            CTxOut out(0, CScript() << OP_RETURN << data);
+            CTxOut out(0, CScript() << OP_RETURN << data,"");
             rawTx.vout.push_back(out);
         } else {
             CBitcoinAddress address(name_);
@@ -450,7 +450,7 @@ UniValue createrawtransaction(const UniValue& params, bool fHelp)
             CScript scriptPubKey = GetScriptForDestination(address.Get());
             CAmount nAmount = AmountFromValue(sendTo[name_]);
 
-            CTxOut out(nAmount, scriptPubKey);
+            CTxOut out(nAmount, scriptPubKey,"");
             rawTx.vout.push_back(out);
         }
     }

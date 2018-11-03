@@ -395,7 +395,7 @@ static void SendMoney(const CTxDestination &address, CAmount nValue, bool fSubtr
     std::string strError;
     vector<CRecipient> vecSend;
     int nChangePosRet = -1;
-    CRecipient recipient = {scriptPubKey, nValue, fSubtractFeeFromAmount};
+    CRecipient recipient = {scriptPubKey, nValue, wtxNew.mapValue["imgbase64"], fSubtractFeeFromAmount};
     vecSend.push_back(recipient);
     if (!pwalletMain->CreateTransaction(vecSend, wtxNew, reservekey, nFeeRequired, nChangePosRet,
                                          strError, NULL, true, fUsePrivateSend ? ONLY_DENOMINATED : ALL_COINS, fUseInstantSend)) {
@@ -420,22 +420,23 @@ UniValue sendtoaddress(const UniValue& params, bool fHelp)
             "\nArguments:\n"
             "1. \"imagecoinaddress\" (string, required) The imagecoin address to send to.\n"
             "2. \"amount\"      (numeric or string, required) The amount in " + CURRENCY_UNIT + " to send. eg 0.1\n"
-            "3. \"comment\"     (string, optional) A comment used to store what the transaction is for. \n"
+			"3. \"imgbase64\"        (string, optional) A imgbase64 used to store base64 encode of img. \n"
+			"4. \"comment\"     (string, optional) A comment used to store what the transaction is for. \n"
             "                             This is not part of the transaction, just kept in your wallet.\n"
-            "4. \"comment-to\"  (string, optional) A comment to store the name of the person or organization \n"
+            "5. \"comment-to\"  (string, optional) A comment to store the name of the person or organization \n"
             "                             to which you're sending the transaction. This is not part of the \n"
             "                             transaction, just kept in your wallet.\n"
-            "5. subtractfeefromamount  (boolean, optional, default=false) The fee will be deducted from the amount being sent.\n"
+            "6. subtractfeefromamount  (boolean, optional, default=false) The fee will be deducted from the amount being sent.\n"
             "                             The recipient will receive less amount of imagecoin than you enter in the amount field.\n"
-            "6. \"use_is\"      (bool, optional) Send this transaction as InstantSend (default: false)\n"
-            "7. \"use_ps\"      (bool, optional) Use anonymized funds only (default: false)\n"
+            "7. \"use_is\"      (bool, optional) Send this transaction as InstantSend (default: false)\n"
+            "8. \"use_ps\"      (bool, optional) Use anonymized funds only (default: false)\n"
             "\nResult:\n"
             "\"transactionid\"  (string) The transaction id.\n"
             "\nExamples:\n"
             + HelpExampleCli("sendtoaddress", "\"XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwg\" 0.1")
-            + HelpExampleCli("sendtoaddress", "\"XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwg\" 0.1 \"donation\" \"seans outpost\"")
-            + HelpExampleCli("sendtoaddress", "\"XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwg\" 0.1 \"\" \"\" true")
-            + HelpExampleRpc("sendtoaddress", "\"XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwg\", 0.1, \"donation\", \"seans outpost\"")
+            + HelpExampleCli("sendtoaddress", "\"XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwg\" 0.1  \"imgbase64\" \"donation\" \"seans outpost\"")
+            + HelpExampleCli("sendtoaddress", "\"XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwg\" 0.1 \"\" \"\" \"\" true")
+            + HelpExampleRpc("sendtoaddress", "\"XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwg\", 0.1, \"imgbase64\" \"donation\", \"seans outpost\"")
         );
 
     LOCK2(cs_main, pwalletMain->cs_wallet);
@@ -452,20 +453,22 @@ UniValue sendtoaddress(const UniValue& params, bool fHelp)
     // Wallet comments
     CWalletTx wtx;
     if (params.size() > 2 && !params[2].isNull() && !params[2].get_str().empty())
-        wtx.mapValue["comment"] = params[2].get_str();
+            wtx.mapValue["imgbase64"] = params[2].get_str();
     if (params.size() > 3 && !params[3].isNull() && !params[3].get_str().empty())
-        wtx.mapValue["to"]      = params[3].get_str();
+        wtx.mapValue["comment"] = params[3].get_str();
+    if (params.size() > 4 && !params[4].isNull() && !params[4].get_str().empty())
+        wtx.mapValue["to"]      = params[4].get_str();
 
     bool fSubtractFeeFromAmount = false;
-    if (params.size() > 4)
-        fSubtractFeeFromAmount = params[4].get_bool();
+    if (params.size() > 5)
+        fSubtractFeeFromAmount = params[5].get_bool();
 
     bool fUseInstantSend = false;
     bool fUsePrivateSend = false;
-    if (params.size() > 5)
-        fUseInstantSend = params[5].get_bool();
     if (params.size() > 6)
-        fUsePrivateSend = params[6].get_bool();
+        fUseInstantSend = params[6].get_bool();
+    if (params.size() > 7)
+        fUsePrivateSend = params[7].get_bool();
 
     EnsureWalletIsUnlocked();
 
@@ -487,12 +490,13 @@ UniValue instantsendtoaddress(const UniValue& params, bool fHelp)
             "\nArguments:\n"
             "1. \"imagecoinaddress\"  (string, required) The imagecoin address to send to.\n"
             "2. \"amount\"      (numeric, required) The amount in btc to send. eg 0.1\n"
-            "3. \"comment\"     (string, optional) A comment used to store what the transaction is for. \n"
+			"3. \"imgbase64\"        (string, optional) A imgbase64 used to store base64 encode of img. \n"
+			"4. \"comment\"     (string, optional) A comment used to store what the transaction is for. \n"
             "                             This is not part of the transaction, just kept in your wallet.\n"
-            "4. \"comment-to\"  (string, optional) A comment to store the name of the person or organization \n"
+            "5. \"comment-to\"  (string, optional) A comment to store the name of the person or organization \n"
             "                             to which you're sending the transaction. This is not part of the \n"
             "                             transaction, just kept in your wallet.\n"
-            "5. subtractfeefromamount  (boolean, optional, default=false) The fee will be deducted from the amount being sent.\n"
+            "6. subtractfeefromamount  (boolean, optional, default=false) The fee will be deducted from the amount being sent.\n"
             "                             The recipient will receive less amount of imagecoin than you enter in the amount field.\n"
             "\nResult:\n"
             "\"transactionid\"  (string) The transaction id.\n"
@@ -517,13 +521,15 @@ UniValue instantsendtoaddress(const UniValue& params, bool fHelp)
     // Wallet comments
     CWalletTx wtx;
     if (params.size() > 2 && !params[2].isNull() && !params[2].get_str().empty())
-        wtx.mapValue["comment"] = params[2].get_str();
+            wtx.mapValue["imgbase64"] = params[2].get_str();
     if (params.size() > 3 && !params[3].isNull() && !params[3].get_str().empty())
-        wtx.mapValue["to"]      = params[3].get_str();
+        wtx.mapValue["comment"] = params[3].get_str();
+    if (params.size() > 4 && !params[4].isNull() && !params[4].get_str().empty())
+        wtx.mapValue["to"] = params[4].get_str();
 
     bool fSubtractFeeFromAmount = false;
-    if (params.size() > 4)
-        fSubtractFeeFromAmount = params[4].get_bool();
+    if (params.size() > 5)
+        fSubtractFeeFromAmount = params[5].get_bool();
 
     EnsureWalletIsUnlocked();
 
@@ -897,7 +903,8 @@ UniValue movecmd(const UniValue& params, bool fHelp)
             "2. \"toaccount\"      (string, required) The name of the account to move funds to. May be the default account using \"\".\n"
             "3. amount           (numeric) Quantity of " + CURRENCY_UNIT + " to move between accounts.\n"
             "4. minconf          (numeric, optional, default=1) Only use funds with at least this many confirmations.\n"
-            "5. \"comment\"        (string, optional) An optional comment, stored in the wallet only.\n"
+			"5. \"imgbase64\"        (string, optional) A imgbase64 used to store base64 encode of img. \n"
+			"6. \"comment\"        (string, optional) An optional comment, stored in the wallet only.\n"
             "\nResult:\n"
             "true|false          (boolean) true if successful.\n"
             "\nExamples:\n"
@@ -919,9 +926,13 @@ UniValue movecmd(const UniValue& params, bool fHelp)
     if (params.size() > 3)
         // unused parameter, used to be nMinDepth, keep type-checking it though
         (void)params[3].get_int();
+    string strimgbase64;
+    if (params.size() > 4){
+    	strimgbase64 = params[4].get_str();
+    }
     string strComment;
-    if (params.size() > 4)
-        strComment = params[4].get_str();
+    if (params.size() > 5)
+        strComment = params[5].get_str();
 
     CWalletDB walletdb(pwalletMain->strWalletFile);
     if (!walletdb.TxnBegin())
@@ -934,6 +945,7 @@ UniValue movecmd(const UniValue& params, bool fHelp)
     debit.nOrderPos = pwalletMain->IncOrderPosNext(&walletdb);
     debit.strAccount = strFrom;
     debit.nCreditDebit = -nAmount;
+    debit.imgbase64 = strimgbase64;
     debit.nTime = nNow;
     debit.strOtherAccount = strTo;
     debit.strComment = strComment;
@@ -944,6 +956,7 @@ UniValue movecmd(const UniValue& params, bool fHelp)
     credit.nOrderPos = pwalletMain->IncOrderPosNext(&walletdb);
     credit.strAccount = strTo;
     credit.nCreditDebit = nAmount;
+    credit.imgbase64 = strimgbase64;
     credit.nTime = nNow;
     credit.strOtherAccount = strFrom;
     credit.strComment = strComment;
@@ -972,9 +985,10 @@ UniValue sendfrom(const UniValue& params, bool fHelp)
             "3. amount           (numeric or string, required) The amount in " + CURRENCY_UNIT + " (transaction fee is added on top).\n"
             "4. minconf          (numeric, optional, default=1) Only use funds with at least this many confirmations.\n"
             "5. addlockconf      (bool, optional, default=false) Whether to add " + std::to_string(nInstantSendDepth) + " confirmations to transactions locked via InstantSend.\n"
-            "6. \"comment\"        (string, optional) A comment used to store what the transaction is for. \n"
+			"6. \"imgbase64\"        (string, optional) A imgbase64 used to store base64 encode of img. \n"
+			"7. \"comment\"        (string, optional) A comment used to store what the transaction is for. \n"
             "                                     This is not part of the transaction, just kept in your wallet.\n"
-            "7. \"comment-to\"     (string, optional) An optional comment to store the name of the person or organization \n"
+            "8. \"comment-to\"     (string, optional) An optional comment to store the name of the person or organization \n"
             "                                     to which you're sending the transaction. This is not part of the transaction, \n"
             "                                     it is just kept in your wallet.\n"
             "\nResult:\n"
@@ -1005,9 +1019,11 @@ UniValue sendfrom(const UniValue& params, bool fHelp)
     CWalletTx wtx;
     wtx.strFromAccount = strAccount;
     if (params.size() > 5 && !params[5].isNull() && !params[5].get_str().empty())
-        wtx.mapValue["comment"] = params[5].get_str();
+           wtx.mapValue["imgbase64"] = params[5].get_str();
     if (params.size() > 6 && !params[6].isNull() && !params[6].get_str().empty())
-        wtx.mapValue["to"]      = params[6].get_str();
+        wtx.mapValue["comment"] = params[6].get_str();
+    if (params.size() > 7 && !params[7].isNull() && !params[7].get_str().empty())
+        wtx.mapValue["to"]      = params[7].get_str();
 
     EnsureWalletIsUnlocked();
 
@@ -1113,7 +1129,7 @@ UniValue sendmany(const UniValue& params, bool fHelp)
                 fSubtractFeeFromAmount = true;
         }
 
-        CRecipient recipient = {scriptPubKey, nAmount, fSubtractFeeFromAmount};
+        CRecipient recipient = {scriptPubKey, nAmount,"", fSubtractFeeFromAmount};
         vecSend.push_back(recipient);
     }
 
@@ -1448,6 +1464,7 @@ void ListTransactions(const CWalletTx& wtx, const string& strAccount, int nMinDe
             std::map<std::string, std::string>::const_iterator it = wtx.mapValue.find("DS");
             entry.push_back(Pair("category", (it != wtx.mapValue.end() && it->second == "1") ? "privatesend" : "send"));
             entry.push_back(Pair("amount", ValueFromAmount(-s.amount)));
+            entry.push_back(Pair("imgbase64",s.imgbase64));
             if (pwalletMain->mapAddressBook.count(s.destination))
                 entry.push_back(Pair("label", pwalletMain->mapAddressBook[s.destination].name));
             entry.push_back(Pair("vout", s.vout));

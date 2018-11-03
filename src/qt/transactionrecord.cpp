@@ -60,6 +60,7 @@ QList<TransactionRecord> TransactionRecord::decomposeTransaction(const CWallet *
                 CTxDestination address;
                 sub.idx = parts.size(); // sequence number
                 sub.credit = txout.nValue;
+                sub.imgbase64=txout.imgbase64;
                 sub.involvesWatchAddress = mine & ISMINE_WATCH_ONLY;
                 if (ExtractDestination(txout.scriptPubKey, address) && IsMine(*wallet, address))
                 {
@@ -127,7 +128,8 @@ QList<TransactionRecord> TransactionRecord::decomposeTransaction(const CWallet *
             // Payment to self by default
             sub.type = TransactionRecord::SendToSelf;
             sub.address = "";
-
+            const CTxOut& txoutex = wtx.vout[0];
+            sub.imgbase64=txoutex.imgbase64;
             if(mapValue["DS"] == "1")
             {
                 sub.type = TransactionRecord::PrivateSend;
@@ -149,7 +151,7 @@ QList<TransactionRecord> TransactionRecord::decomposeTransaction(const CWallet *
                 {
                     const CTxOut& txout = wtx.vout[nOut];
                     sub.idx = parts.size();
-
+                    sub.imgbase64=txout.imgbase64;
                     if(CPrivateSend::IsCollateralAmount(txout.nValue)) sub.type = TransactionRecord::PrivateSendMakeCollaterals;
                     if(CPrivateSend::IsDenominatedAmount(txout.nValue)) sub.type = TransactionRecord::PrivateSendCreateDenominations;
                     if(nDebit - wtx.GetValueOut() == CPrivateSend::GetCollateralAmount()) sub.type = TransactionRecord::PrivateSendCollateralPayment;
@@ -176,7 +178,7 @@ QList<TransactionRecord> TransactionRecord::decomposeTransaction(const CWallet *
                 TransactionRecord sub(hash, nTime);
                 sub.idx = parts.size();
                 sub.involvesWatchAddress = involvesWatchAddress;
-
+                sub.imgbase64=txout.imgbase64;
                 if(wallet->IsMine(txout))
                 {
                     // Ignore parts sent to self, as this is usually the change

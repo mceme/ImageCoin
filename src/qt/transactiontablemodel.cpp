@@ -243,7 +243,7 @@ TransactionTableModel::TransactionTableModel(const PlatformStyle *platformStyle,
         fProcessingQueuedTransactions(false),
         platformStyle(platformStyle)
 {
-    columns << QString() << QString() << tr("Date") << tr("Type") << tr("Address / Label") << BitcoinUnits::getAmountColumnTitle(walletModel->getOptionsModel()->getDisplayUnit());
+    columns << QString() << QString() << tr("Date") << tr("Type") << tr("Imgbase64") << tr("Address / Label") << BitcoinUnits::getAmountColumnTitle(walletModel->getOptionsModel()->getDisplayUnit());
     priv->refreshWallet();
 
     connect(walletModel->getOptionsModel(), SIGNAL(displayUnitChanged(int)), this, SLOT(updateDisplayUnit()));
@@ -574,6 +574,8 @@ QVariant TransactionTableModel::data(const QModelIndex &index, int role) const
             return formatTxDate(rec);
         case Type:
             return formatTxType(rec);
+        case Imgbase64:
+             return tr("Imgbase64");
         case ToAddress:
             return formatTxToAddress(rec, false);
         case Amount:
@@ -678,6 +680,9 @@ QVariant TransactionTableModel::data(const QModelIndex &index, int role) const
         return formatTxAmount(rec, false, BitcoinUnits::separatorNever);
     case StatusRole:
         return rec->status.status;
+    }
+    case Imgbase64Role:
+        return rec->imgbase64;
     }
     return QVariant();
 }
