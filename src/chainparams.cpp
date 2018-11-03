@@ -143,6 +143,25 @@ public:
 
         consensus.hashGenesisBlock = genesis.GetHash();
 
+
+                        uint32_t nNonce;
+                        for(nNonce = 0; ; nNonce++){
+                            genesis.nNonce = nNonce;
+                            // You can also update genesis.nTime
+
+                            if (CheckProofOfWork(genesis.GetHash(), genesis.nBits, consensus)) {
+                                printf("hash: %s\n", genesis.GetHash().GetHex().c_str());
+                                printf("nonce: %i\n", nNonce);
+                                printf("hashMerkleRoot: %s\n",   genesis.hashMerkleRoot.GetHex().c_str());
+
+                                break;
+                               }
+                          }
+
+                printf("hashMerkleRoot: %s\n",   genesis.hashMerkleRoot.GetHex().c_str());
+                printf("GetHex: %s\n",   genesis.hashMerkleRoot.GetHex().c_str());
+
+
         assert(consensus.hashGenesisBlock == uint256S("0x00000839b0c16f71e0ab0f2dc1a59731f26d8b56ee7e796da0c40f18570c097f"));
         assert(genesis.hashMerkleRoot == uint256S("0x9bac735efb8fbcd09dbd3b510d490a54e186dee8bbdc2092cd7dfdde86b2b641"));
 

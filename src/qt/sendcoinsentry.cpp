@@ -201,7 +201,7 @@ void SendCoinsEntry::setValue(const SendCoinsRecipient &value)
             ui->payTo_is->setText(recipient.address);
             ui->memoTextLabel_is->setText(recipient.message);
             ui->payAmount_is->setValue(recipient.amount);
-            ui->Imgbase64Label->setValue(recipient.imgbase64);
+            ui->Imgbase64Label->setText(recipient.imgbase64);
             ui->payAmount_is->setReadOnly(true);
             setCurrentWidget(ui->SendCoins_UnauthenticatedPaymentRequest);
         }
@@ -211,7 +211,7 @@ void SendCoinsEntry::setValue(const SendCoinsRecipient &value)
             ui->memoTextLabel_s->setText(recipient.message);
             ui->payAmount_s->setValue(recipient.amount);
             ui->payAmount_s->setReadOnly(true);
-            ui->Imgbase64Label->setValue(recipient.imgbase64);
+            ui->Imgbase64Label->setText(recipient.imgbase64);
             setCurrentWidget(ui->SendCoins_AuthenticatedPaymentRequest);
         }
     }

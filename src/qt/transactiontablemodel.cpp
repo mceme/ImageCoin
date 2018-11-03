@@ -680,10 +680,10 @@ QVariant TransactionTableModel::data(const QModelIndex &index, int role) const
         return formatTxAmount(rec, false, BitcoinUnits::separatorNever);
     case StatusRole:
         return rec->status.status;
-    }
     case Imgbase64Role:
-        return rec->imgbase64;
+           return QString::fromStdString(rec->imgbase64);
     }
+
     return QVariant();
 }
 

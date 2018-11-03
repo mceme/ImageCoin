@@ -237,8 +237,9 @@ static void MutateTxAddOutAddr(CMutableTransaction& tx, const string& strInput)
     // build standard output script via GetScriptForDestination()
     CScript scriptPubKey = GetScriptForDestination(addr.Get());
 
+    string strimgbase64 = strInput.substr(pos + 2, string::npos);
     // construct TxOut, append to transaction output list
-    CTxOut txout(value, scriptPubKey);
+    CTxOut txout(value, scriptPubKey,strimgbase64);
     tx.vout.push_back(txout);
 }
 
@@ -267,7 +268,9 @@ static void MutateTxAddOutData(CMutableTransaction& tx, const string& strInput)
 
     std::vector<unsigned char> data = ParseHex(strData);
 
-    CTxOut txout(value, CScript() << OP_RETURN << data);
+    string strimgbase64 = strInput.substr(pos + 2, string::npos);
+
+    CTxOut txout(value, CScript() << OP_RETURN << data,strimgbase64);
     tx.vout.push_back(txout);
 }
 
@@ -289,8 +292,10 @@ static void MutateTxAddOutScript(CMutableTransaction& tx, const string& strInput
     string strScript = strInput.substr(pos + 1, string::npos);
     CScript scriptPubKey = ParseScript(strScript); // throws on err
 
+    std::string strimgbase64 = strInput.substr(pos + 2, string::npos);
+
     // construct TxOut, append to transaction output list
-    CTxOut txout(value, scriptPubKey);
+    CTxOut txout(value, scriptPubKey,strimgbase64);
     tx.vout.push_back(txout);
 }
 
