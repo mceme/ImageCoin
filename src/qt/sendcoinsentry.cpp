@@ -12,6 +12,7 @@
 #include "optionsmodel.h"
 #include "platformstyle.h"
 #include "walletmodel.h"
+#include "base64.h"
 
 #include <QApplication>
 #include <QClipboard>
@@ -138,6 +139,13 @@ bool SendCoinsEntry::validate()
     {
         ui->payTo->setValid(false);
         retval = false;
+    }
+
+    if (!ui->Imgbase64Label->text().isEmpty())
+    {
+    	std::string imgbase64=QString::toStdstring(ui->Imgbase64Label->text());
+    	if(base64::decode(imgbase64)==NULL)
+            retval = false;
     }
 
     if (!ui->payAmount->validate())
