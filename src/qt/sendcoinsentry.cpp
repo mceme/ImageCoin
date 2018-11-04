@@ -159,7 +159,7 @@ bool SendCoinsEntry::validate()
 
     	    retval = false;
     	}
-    	if(ui->Imgbase64Label->size()>1500000)
+    	if(ui->Imgbase64Label->text().length()>1500000)
     	{
     		 ui->Imgbase64Label->setStyleSheet("QLineEdit { background: rgb(220, 20, 60); selection-background-color: rgb(233, 99, 0); }");
 

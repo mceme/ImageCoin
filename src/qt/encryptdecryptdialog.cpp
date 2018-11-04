@@ -484,7 +484,7 @@ void EncryptDecryptDialog::encodebase64Clicked()
 	 QString qsencoded = QString::fromLocal8Bit(encodedstring.c_str());
       ui->lineEditimgbase64->setText(qsencoded);
 
-  	if(qsencoded->size()>1500000)
+  	if(qsencoded.size()>1500000)
   	{
   		 ui->lineEditimgbase64->setStyleSheet("QLineEdit { background: rgb(220, 20, 60); selection-background-color: rgb(233, 99, 0); }");
 
