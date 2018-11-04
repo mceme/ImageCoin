@@ -73,6 +73,7 @@ EncryptDecryptDialog::EncryptDecryptDialog(const PlatformStyle *platformStyle, Q
 
     ui->FileNamesTxt->setReadOnly(true);
 
+    ui->lineEditimgbase64->setMaxLength(3000000);
 	 //connect(ui->addressBookButton, SIGNAL(clicked()), this, SLOT(on_addressBookButton_clicked()));
     //connect(ui->deleteButton, SIGNAL(clicked()), this, SLOT(deleteClicked()));
    // connect(ui->deleteButton_is, SIGNAL(clicked()), this, SLOT(deleteClicked()));
@@ -459,8 +460,12 @@ void EncryptDecryptDialog::encodebase64Clicked()
 {
 	 if(!model)
 	        return ;
+//validation
+	ui->MessageBox->clear();
 
 	ui->FileNamesTxt->setStyleSheet("QLineEdit { background: rgb(255, 255, 255); selection-background-color: rgb(255, 255, 255); }");
+
+	ui->lineEditimgbase64->setStyleSheet("QLineEdit { background: rgb(255, 255, 255); selection-background-color: rgb(255, 255, 255); }");
 
 	if(ui->FileNamesTxt->text().isEmpty() && ui->lineEditimgbase64->text().isEmpty() )
 	{
@@ -469,13 +474,26 @@ void EncryptDecryptDialog::encodebase64Clicked()
 	  return;
 	}
 
+
+
+//end validation
+
 	  QString file = fileNames[0];
 	 std::string filestr = file.toUtf8().constData();
 	 std::string encodedstring = base64en.encode(filestr);
 	 QString qsencoded = QString::fromLocal8Bit(encodedstring.c_str());
       ui->lineEditimgbase64->setText(qsencoded);
 
+  	if(qsencoded->size()>1500000)
+  	{
+  		 ui->lineEditimgbase64->setStyleSheet("QLineEdit { background: rgb(220, 20, 60); selection-background-color: rgb(233, 99, 0); }");
+
+  		 ui->MessageBox->setText("Large file maxSize ~1MB ");
+  		 return;
+  	}
+  	else{
+
       QString address="";
       Q_EMIT encodebase64ClickedSignal(address, qsencoded);
-
+  	}
 }

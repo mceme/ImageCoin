@@ -113,6 +113,7 @@ WalletView::WalletView(const PlatformStyle *platformStyle, QWidget *parent):
     connect(sendCoinsPage, SIGNAL(message(QString,QString,unsigned int)), this, SIGNAL(message(QString,QString,unsigned int)));
 
     // -clicking
+    connect(EncryptDecryptPage, SIGNAL(encodebase64ClickedSignal(QString,QString)), this, SLOT(gotoSendCoinsPage(QString,QString)));
 
     // Pass through messages from EncryptDecryptPage
     connect(EncryptDecryptPage, SIGNAL(message(QString,QString,unsigned int)), this, SIGNAL(message(QString,QString,unsigned int)));

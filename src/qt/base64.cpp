@@ -51,7 +51,7 @@ std::string base64::encode(std::string filename)
 	while ( ifp.read(reinterpret_cast<char*>(v.data()), 100) )
 	{
 	   // Find out how many characters were actually read.
-	   auto count = file.gcount();
+	   auto count = ifp.gcount();
 
 	   // Use v up to count BTYEs.
 		 encodedData += base64_encode(reinterpret_cast<BYTE*>(v.data()),count);
@@ -149,13 +149,13 @@ std::vector<BYTE> base64::base64_decode(std::string encoded_string) {
 
     for (j = 0; (j < i - 1); j++) ret.push_back(char_array_3[j]);
   }
-
+  LogPrintf("success: %s","decodebase64");
     return ret;
   }
   catch(std::exception& e) {
         //Other errors
-		std::vector<BYTE> vempty(100);
-		LogPrintf("exception decode",e.what());
+		std::vector<BYTE> vempty;
+		LogPrintf("exception decode: %s",e.what());
 	  return vempty;
      }
 }

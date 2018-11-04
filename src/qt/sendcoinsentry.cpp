@@ -46,6 +46,8 @@ SendCoinsEntry::SendCoinsEntry(const PlatformStyle *platformStyle, QWidget *pare
     ui->deleteButton_is->setIcon(QIcon(":/icons/" + theme + "/remove"));
     ui->deleteButton_s->setIcon(QIcon(":/icons/" + theme + "/remove"));
       
+    ui->Imgbase64Label->setMaxLength(3000000);
+
     // normal dash address field
     GUIUtil::setupAddressWidget(ui->payTo, this);
     // just a label for displaying dash address(es)
@@ -151,9 +153,17 @@ bool SendCoinsEntry::validate()
     {
 
     	std::string imgbase64=ui->Imgbase64Label->text().toUtf8().constData();
-    	if(!base64.decode(imgbase64).empty()){
-    	    ui->Imgbase64Label->setStyleSheet("QLineEdit { background: rgb(220, 20, 60); selection-background-color: rgb(233, 99, 0); }");
-            retval = false;
+    	if(base64.decode(imgbase64).empty()){
+
+    		ui->Imgbase64Label->setStyleSheet("QLineEdit { background: rgb(220, 20, 60); selection-background-color: rgb(233, 99, 0); }");
+
+    	    retval = false;
+    	}
+    	if(ui->Imgbase64Label->size()>1500000)
+    	{
+    		 ui->Imgbase64Label->setStyleSheet("QLineEdit { background: rgb(220, 20, 60); selection-background-color: rgb(233, 99, 0); }");
+
+    		 retval = false;
     	}
     }
 
