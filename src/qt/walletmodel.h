@@ -43,7 +43,7 @@ class SendCoinsRecipient
 {
 public:
     explicit SendCoinsRecipient() : amount(0), fSubtractFeeFromAmount(false), nVersion(SendCoinsRecipient::CURRENT_VERSION) { }
-    explicit SendCoinsRecipient(const QString &addr, const QString &label,const std::string &imgbase64, const CAmount& amount, const QString &message):
+    explicit SendCoinsRecipient(const QString &addr, const QString &label,const QString &imgbase64, const CAmount& amount, const QString &message):
         address(addr), label(label), imgbase64(imgbase64) , amount(amount), message(message), fSubtractFeeFromAmount(false), nVersion(SendCoinsRecipient::CURRENT_VERSION) {}
 
     // If from an unauthenticated payment request, this is used for storing

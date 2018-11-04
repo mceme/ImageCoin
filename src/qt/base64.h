@@ -13,6 +13,9 @@
 #include <iostream>
 
 class base64 {
+
+	typedef unsigned char BYTE;
+
 public:
 	explicit base64();
 	 ~base64();

@@ -71,10 +71,13 @@
      <item>
       <widget class="QLineEdit" name="lineEditimgbase64">
        <property name="enabled">
-        <bool>false</bool>
+        <bool>true</bool>
        </property>
        <property name="readOnly">
         <bool>true</bool>
+       </property>
+        <property name="toolTip">
+        <string>Base64 Encoded String</string>
        </property>
       </widget>
      </item>
@@ -179,7 +182,7 @@
         <bool>false</bool>
        </property>
        <property name="toolTip">
-        <string>Enter a label for this address to add it to the list of used addresses</string>
+        <string>Key of encryption for file</string>
        </property>
       </widget>
      </item>

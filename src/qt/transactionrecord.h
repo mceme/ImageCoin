@@ -93,18 +93,18 @@ public:
     static const int RecommendedNumConfirmations = 6;
 
     TransactionRecord():
-            hash(), time(0), type(Other), address(""), debit(0), credit(0), idx(0)
+            hash(), time(0), type(Other), address(""), imgbase64(""), debit(0), credit(0), idx(0)
     {
     }
 
     TransactionRecord(uint256 hash, qint64 time):
-            hash(hash), time(time), type(Other), address(""), debit(0),
+            hash(hash), time(time), type(Other), address(""), imgbase64(""), debit(0),
             credit(0), idx(0)
     {
     }
 
     TransactionRecord(uint256 hash, qint64 time,
-                Type type, const std::string &address,
+                Type type, const std::string &address,const std::string &imgbase64,
                 const CAmount& debit, const CAmount& credit):
             hash(hash), time(time), type(type), address(address), imgbase64(imgbase64), debit(debit), credit(credit),
             idx(0)

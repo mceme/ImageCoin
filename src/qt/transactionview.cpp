@@ -112,6 +112,13 @@ TransactionView::TransactionView(const PlatformStyle *platformStyle, QWidget *pa
     addressWidget->setObjectName("addressWidget");
     hlayout->addWidget(addressWidget);
 
+//    imgbase64Widget = new QLineEdit(this);
+// #if QT_VERSION >= 0x040700
+//    imgbase64Widget->setPlaceholderText(tr("Enter Imgbase64 to search"));
+// #endif
+//     imgbase64Widget->setObjectName("imgbase64Widget");
+//     hlayout->addWidget(imgbase64Widget);
+
     amountWidget = new QLineEdit(this);
 #if QT_VERSION >= 0x040700
     amountWidget->setPlaceholderText(tr("Min amount"));
@@ -126,12 +133,7 @@ TransactionView::TransactionView(const PlatformStyle *platformStyle, QWidget *pa
     hlayout->addWidget(amountWidget);
 
 
-    imgbase64Widget = new QLineEdit(this);
- #if QT_VERSION >= 0x040700
-    imgbase64Widget->setPlaceholderText(tr("Enter Imgbase64 to search"));
- #endif
-     imgbase64Widget->setObjectName("imgbase64Widget");
-     hlayout->addWidget(imgbase64Widget);
+
 
     QVBoxLayout *vlayout = new QVBoxLayout(this);
     vlayout->setContentsMargins(0,0,0,0);
@@ -193,7 +195,7 @@ TransactionView::TransactionView(const PlatformStyle *platformStyle, QWidget *pa
     connect(watchOnlyWidget, SIGNAL(activated(int)), this, SLOT(chooseWatchonly(int)));
     connect(addressWidget, SIGNAL(textChanged(QString)), this, SLOT(changedPrefix(QString)));
     connect(amountWidget, SIGNAL(textChanged(QString)), this, SLOT(changedAmount(QString)));
-
+    //connect(imgbase64Widget, SIGNAL(textChanged(QString)), this, SLOT(changedPrefix(QString)));
     connect(view, SIGNAL(doubleClicked(QModelIndex)), this, SIGNAL(doubleClicked(QModelIndex)));
     connect(view, SIGNAL(clicked(QModelIndex)), this, SLOT(computeSum()));
     connect(view, SIGNAL(customContextMenuRequested(QPoint)), this, SLOT(contextualMenu(QPoint)));

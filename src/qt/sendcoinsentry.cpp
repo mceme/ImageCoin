@@ -19,6 +19,8 @@
 
 
 base64 base64;
+typedef unsigned char BYTE;
+
 SendCoinsEntry::SendCoinsEntry(const PlatformStyle *platformStyle, QWidget *parent) :
     QStackedWidget(parent),
     ui(new Ui::SendCoinsEntry),

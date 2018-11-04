@@ -6,7 +6,7 @@
  */
 
 #include "base64.h"
-#include <window.h>
+#include "util.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <iostream>
@@ -33,6 +33,8 @@ static const std::string base64_chars =
              "abcdefghijklmnopqrstuvwxyz"
              "0123456789+/";
 
+
+typedef unsigned char BYTE;
 
 static inline bool is_base64(BYTE c) {
   return (isalnum(c) || (c == '+') || (c == '/'));
@@ -153,6 +155,7 @@ std::vector<BYTE> base64::base64_decode(std::string encoded_string) {
   catch(std::exception& e) {
         //Other errors
 		std::vector<BYTE> vempty(100);
+		LogPrintf("exception decode",e.what());
 	  return vempty;
      }
 }
