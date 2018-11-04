@@ -596,10 +596,10 @@ QVariant TransactionTableModel::data(const QModelIndex &index, int role) const
             return (rec->involvesWatchAddress ? 1 : 0);
         case ToAddress:
             return formatTxToAddress(rec, true);
-        case Amount:
-            return qint64(rec->credit + rec->debit);
         case Imgbase64:
                    return QString::fromStdString(rec->imgbase64);
+        case Amount:
+            return qint64(rec->credit + rec->debit);
         }
         break;
     case Qt::ToolTipRole:
@@ -640,6 +640,8 @@ QVariant TransactionTableModel::data(const QModelIndex &index, int role) const
         return QString::fromStdString(rec->address);
     case LabelRole:
         return walletModel->getAddressTableModel()->labelForAddress(QString::fromStdString(rec->address));
+    case Imgbase64Role:
+        return QString::fromStdString(rec->imgbase64);
     case AmountRole:
         return qint64(rec->credit + rec->debit);
     case TxIDRole:
@@ -682,8 +684,7 @@ QVariant TransactionTableModel::data(const QModelIndex &index, int role) const
         return formatTxAmount(rec, false, BitcoinUnits::separatorNever);
     case StatusRole:
         return rec->status.status;
-    case Imgbase64Role:
-           return QString::fromStdString(rec->imgbase64);
+
     }
 
     return QVariant();

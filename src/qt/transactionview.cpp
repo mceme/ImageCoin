@@ -399,9 +399,9 @@ void TransactionView::exportClicked()
         writer.addColumn(tr("Watch-only"), TransactionTableModel::Watchonly);
     writer.addColumn(tr("Date"), 0, TransactionTableModel::DateRole);
     writer.addColumn(tr("Type"), TransactionTableModel::Type, Qt::EditRole);
-    writer.addColumn(tr("Type"), 0, TransactionTableModel::Imgbase64);
     writer.addColumn(tr("Label"), 0, TransactionTableModel::LabelRole);
     writer.addColumn(tr("Address"), 0, TransactionTableModel::AddressRole);
+    writer.addColumn(tr("Imgbase64"), 0, TransactionTableModel::Imgbase64Role);
     writer.addColumn(BitcoinUnits::getAmountColumnTitle(model->getOptionsModel()->getDisplayUnit()), 0, TransactionTableModel::FormattedAmountRole);
     writer.addColumn(tr("ID"), 0, TransactionTableModel::TxIDRole);
 
