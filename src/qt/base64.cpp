@@ -6,6 +6,7 @@
  */
 
 #include "base64.h"
+#include <window.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <iostream>
@@ -43,15 +44,18 @@ std::string base64::encode(std::string filename)
 	std::ifstream ifp (filename, std::ifstream::binary);
 
 	std::vector<BYTE> v(100);
+
+	std::string encodedData;
 	while ( ifp.read(reinterpret_cast<char*>(v.data()), 100) )
 	{
 	   // Find out how many characters were actually read.
 	   auto count = file.gcount();
 
 	   // Use v up to count BTYEs.
+		 encodedData += base64_encode(reinterpret_cast<BYTE*>(v.data()),count);
 	}
 
-	std::string encodedData = base64_encode(&v, v.size());
+
 
 	return encodedData;
 
@@ -148,7 +152,8 @@ std::vector<BYTE> base64::base64_decode(std::string encoded_string) {
   }
   catch(std::exception& e) {
         //Other errors
-	  return NULL;
+		std::vector<BYTE> vempty(100);
+	  return vempty;
      }
 }
 

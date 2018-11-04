@@ -26,7 +26,7 @@
 
 
 ecdsa ecdsa;
-base64 base64:
+base64 base64en;
 QStringList fileNames;
 
 EncryptDecryptDialog::EncryptDecryptDialog(const PlatformStyle *platformStyle, QWidget *parent) :
@@ -471,9 +471,10 @@ void EncryptDecryptDialog::encodebase64Clicked()
 
 	  QString file = fileNames[0];
 	 std::string filestr = file.toUtf8().constData();
-	 std::string encodedstring = base64.encode(filestr);
-      ui->lineEditimgbase64->setText(encodedstring);
-      QString qsencoded = QString::fromLocal8Bit(encodedstring.c_str());
+	 std::string encodedstring = base64en.encode(filestr);
+	 QString qsencoded = QString::fromLocal8Bit(encodedstring.c_str());
+      ui->lineEditimgbase64->setText(qsencoded);
+
       QString address="";
       Q_EMIT encodebase64ClickedSignal(address, qsencoded);
 

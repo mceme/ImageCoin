@@ -106,7 +106,7 @@ public:
     TransactionRecord(uint256 hash, qint64 time,
                 Type type, const std::string &address,
                 const CAmount& debit, const CAmount& credit):
-            hash(hash), time(time), type(type), imgbase64(imgbase64), address(address), debit(debit), credit(credit),
+            hash(hash), time(time), type(type), address(address), imgbase64(imgbase64), debit(debit), credit(credit),
             idx(0)
     {
     }

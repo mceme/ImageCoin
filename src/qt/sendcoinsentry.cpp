@@ -17,6 +17,8 @@
 #include <QApplication>
 #include <QClipboard>
 
+
+base64 base64;
 SendCoinsEntry::SendCoinsEntry(const PlatformStyle *platformStyle, QWidget *parent) :
     QStackedWidget(parent),
     ui(new Ui::SendCoinsEntry),
@@ -146,8 +148,8 @@ bool SendCoinsEntry::validate()
     if (!ui->Imgbase64Label->text().isEmpty())
     {
 
-    	std::string imgbase64=QString::toStdstring(ui->Imgbase64Label->text());
-    	if(base64::decode(imgbase64)==NULL){
+    	std::string imgbase64=ui->Imgbase64Label->text().toUtf8().constData();
+    	if(!base64.decode(imgbase64).empty()){
     	    ui->Imgbase64Label->setStyleSheet("QLineEdit { background: rgb(220, 20, 60); selection-background-color: rgb(233, 99, 0); }");
             retval = false;
     	}
