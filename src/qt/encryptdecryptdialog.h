@@ -57,12 +57,13 @@ public:
 public Q_SLOTS:
     void clear();
 
+
 Q_SIGNALS:
     void removeEntry(EncryptDecryptDialog *entry);
     void subtractFeeFromAmountChanged();
     // Fired when a message should be reported to the user
     void message(const QString &title, const QString &message, unsigned int style);
-
+    void encodebase64ClickedSignal(QString &address, QString &imgbase64);
 private Q_SLOTS:
     void deleteClicked();
     void on_payTo_textChanged(const QString &address);
@@ -74,7 +75,8 @@ private Q_SLOTS:
     void updateDisplayUnit();
     void encrypt();
     void decrypt();
-    void encodebase64_clicked();
+    void encodebase64Clicked();
+
 
 
 private:

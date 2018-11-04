@@ -8,6 +8,7 @@
 #include "addressbookpage.h"
 #include "addresstablemodel.h"
 #include "guiutil.h"
+#include "walletview.h"
 #include "optionsmodel.h"
 #include "platformstyle.h"
 #include "walletmodel.h"
@@ -67,7 +68,7 @@ EncryptDecryptDialog::EncryptDecryptDialog(const PlatformStyle *platformStyle, Q
 
     connect(ui->decryptButton, SIGNAL(clicked()), this, SLOT(on_DecryptButton_clicked()));
 
-    connect(ui->encodebase64Button, SIGNAL(clicked()), this, SLOT(encodebase64_clicked()));
+    connect(ui->encodebase64Button, SIGNAL(clicked()), this, SLOT(encodebase64Clicked()));
 
 
     ui->FileNamesTxt->setReadOnly(true);
@@ -470,8 +471,10 @@ void EncryptDecryptDialog::encodebase64Clicked()
 
 	  QString file = fileNames[0];
 	 std::string filestr = file.toUtf8().constData();
-	 std::string encodedstring=base64.encode(filestr);
+	 std::string encodedstring = base64.encode(filestr);
       ui->lineEditimgbase64->setText(encodedstring);
-      QString qsencoded = QString::fromStdstring(encodedstring);
-      BitcoinGUI::gotoSendCoinsPage("", qsencoded);
+      QString qsencoded = QString::fromLocal8Bit(encodedstring.c_str());
+      QString address="";
+      Q_EMIT encodebase64ClickedSignal(address, qsencoded);
+
 }

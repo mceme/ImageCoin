@@ -112,6 +112,8 @@ WalletView::WalletView(const PlatformStyle *platformStyle, QWidget *parent):
     // Pass through messages from sendCoinsPage
     connect(sendCoinsPage, SIGNAL(message(QString,QString,unsigned int)), this, SIGNAL(message(QString,QString,unsigned int)));
 
+    // -clicking
+
     // Pass through messages from EncryptDecryptPage
     connect(EncryptDecryptPage, SIGNAL(message(QString,QString,unsigned int)), this, SIGNAL(message(QString,QString,unsigned int)));
 
@@ -133,6 +135,9 @@ void WalletView::setBitcoinGUI(BitcoinGUI *gui)
     {
         // Clicking on a transaction on the overview page simply sends you to transaction history page
         connect(overviewPage, SIGNAL(transactionClicked(QModelIndex)), gui, SLOT(gotoHistoryPage()));
+
+        //
+        connect(EncryptDecryptPage, SIGNAL(encodebase64ClickedSignal(QString,QString)), gui, SLOT(gotoSendCoinsPage(QString,QString)));
 
         // Receive and report messages
         connect(this, SIGNAL(message(QString,QString,unsigned int)), gui, SLOT(message(QString,QString,unsigned int)));
