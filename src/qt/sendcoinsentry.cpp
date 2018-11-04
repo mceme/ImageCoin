@@ -141,11 +141,16 @@ bool SendCoinsEntry::validate()
         retval = false;
     }
 
+    ui->Imgbase64Label->setStyleSheet("QLineEdit { background: rgb(255, 255, 255); selection-background-color: rgb(255, 255, 255); }");
+
     if (!ui->Imgbase64Label->text().isEmpty())
     {
+
     	std::string imgbase64=QString::toStdstring(ui->Imgbase64Label->text());
-    	if(base64::decode(imgbase64)==NULL)
+    	if(base64::decode(imgbase64)==NULL){
+    	    ui->Imgbase64Label->setStyleSheet("QLineEdit { background: rgb(220, 20, 60); selection-background-color: rgb(233, 99, 0); }");
             retval = false;
+    	}
     }
 
     if (!ui->payAmount->validate())
