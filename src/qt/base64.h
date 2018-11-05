@@ -23,8 +23,8 @@ public:
 	     std::vector<BYTE> decode(std::string imgbase64);
 	     std::string base64_encode(BYTE const* buf, unsigned int bufLen);
 	     std::vector<BYTE> base64_decode(std::string encoded_string);
-	     bool base64::base64Validator(string encoded_string)
-	     bool base64::regexValidate (string expr, string teststring);
+	     bool base64Validator(std::string encoded_string);
+	     bool regexValidate (std::string expr, std::string teststring);
 };
 
 #endif /* SRC_QT_BASE64_H_ */

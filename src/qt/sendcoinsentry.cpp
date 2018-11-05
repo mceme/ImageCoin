@@ -65,7 +65,7 @@ SendCoinsEntry::SendCoinsEntry(const PlatformStyle *platformStyle, QWidget *pare
     connect(ui->deleteButton_is, SIGNAL(clicked()), this, SLOT(deleteClicked()));
     connect(ui->deleteButton_s, SIGNAL(clicked()), this, SLOT(deleteClicked()));
     //connect(ui->chooserButton, SIGNAL(clicked()), this, SLOT(on_chooserButton_clicked()));
-    connect(ui->pasteButtonBase64, SIGNAL(clicked()), this, SLOT(on_pasteButtonBase64()));
+    connect(ui->pasteButtonBase64, SIGNAL(clicked()), this, SLOT(on_pasteButtonBase64_clicked()));
 
 }
 

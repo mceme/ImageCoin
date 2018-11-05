@@ -61,7 +61,7 @@ private Q_SLOTS:
     void on_pasteButton_clicked();
     void updateDisplayUnit();
     void on_chooserButton_clicked();
-    void on_pasteButtonBase64();
+    void on_pasteButtonBase64_clicked();
 
 private:
     SendCoinsRecipient recipient;

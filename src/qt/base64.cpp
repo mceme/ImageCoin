@@ -149,9 +149,9 @@ try {
 
 
 
-bool base64::base64Validator(string encoded_string)
+bool base64::base64Validator(std::string encoded_string)
 {
-	string expr="^([A-Za-z0-9+/]{4})*([A-Za-z0-9+/]{4}|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{2}==)$";
+	std::string expr="^([A-Za-z0-9+/]{4})*([A-Za-z0-9+/]{4}|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{2}==)$";
 
 	 return base64::regexValidate(expr,encoded_string);
 
@@ -159,15 +159,11 @@ bool base64::base64Validator(string encoded_string)
 
 
 
-bool base64::regexValidate(string expr, string teststring)
+bool base64::regexValidate(std::string expr, std::string teststring)
 {
     boost::regex ex(expr);
     if ( boost::regex_match (teststring,ex) ) {
-
         return true;
-
     }
     return false;
 }
-
-
