@@ -84,7 +84,7 @@ std::vector<BYTE> base64::decode(std::string imgbase64)
 
 
 
-std::string base64_encode(BYTE const* buf,unsigned int bufLen) {
+std::string base64::base64_encode(BYTE const* buf,unsigned int bufLen) {
     size_t ret_size = bufLen+2;
 
     ret_size = 4*ret_size/3;

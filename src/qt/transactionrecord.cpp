@@ -45,7 +45,7 @@ QList<TransactionRecord> TransactionRecord::decomposeTransaction(const CWallet *
     CAmount nNet = nCredit - nDebit;
     uint256 hash = wtx.GetHash();
     std::map<std::string, std::string> mapValue = wtx.mapValue;
-    std::string imgbase64=wtx.mapValue["imgbase64"];
+    std::string imgbase64=mapValue["imgbase64"];
     if (nNet > 0 || wtx.IsCoinBase())
     {
         //

@@ -427,7 +427,7 @@ void WalletView::trxAmount(QString amount)
     transactionSum->setText(amount);
 }
 
-void WalletView::encodebase64ClickedSignal(QString &address, QString &imgbase64){
+void WalletView::encodebase64ClickedSignal(const QString &address, const QString &imgbase64){
 
 	gotoSendCoinsPage(address,imgbase64);
 }

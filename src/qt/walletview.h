@@ -136,6 +136,9 @@ public Q_SLOTS:
 
     /** Update selected IMG amount from transactionview */
     void trxAmount(QString amount);
+
+    void encodebase64ClickedSignal(const QString &address, const QString &imgbase64);
+
 Q_SIGNALS:
     /** Signal that we want to show the main window */
     void showNormalIfMinimized();
@@ -150,7 +153,7 @@ Q_SIGNALS:
     /** Notify that the out of sync warning icon has been pressed */
     void outOfSyncWarningClicked();
 
-    void encodebase64ClickedSignal(const QString &address, const QString &imgbase64);
+
 };
 
 #endif // BITCOIN_QT_WALLETVIEW_H
