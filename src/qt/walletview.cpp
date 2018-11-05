@@ -113,7 +113,7 @@ WalletView::WalletView(const PlatformStyle *platformStyle, QWidget *parent):
     connect(sendCoinsPage, SIGNAL(message(QString,QString,unsigned int)), this, SIGNAL(message(QString,QString,unsigned int)));
 
     // -clicking
-    connect(EncryptDecryptPage, SIGNAL(encodebase64ClickedSignal(QString,QString)), this, SLOT(gotoSendCoinsPage(QString,QString)));
+    connect(EncryptDecryptPage, SIGNAL(encodebase64ClickedSignal(QString,QString)), this, SLOT(encodebase64ClickedSignal(QString,QString)));
 
     // Pass through messages from EncryptDecryptPage
     connect(EncryptDecryptPage, SIGNAL(message(QString,QString,unsigned int)), this, SIGNAL(message(QString,QString,unsigned int)));
@@ -138,7 +138,7 @@ void WalletView::setBitcoinGUI(BitcoinGUI *gui)
         connect(overviewPage, SIGNAL(transactionClicked(QModelIndex)), gui, SLOT(gotoHistoryPage()));
 
         //
-        connect(EncryptDecryptPage, SIGNAL(encodebase64ClickedSignal(QString,QString)), gui, SLOT(gotoSendCoinsPage(QString,QString)));
+        connect(EncryptDecryptPage, SIGNAL(encodebase64ClickedSignal(QString,QString)), gui, SLOT(encodebase64ClickedSignal(QString,QString)));
 
         // Receive and report messages
         connect(this, SIGNAL(message(QString,QString,unsigned int)), gui, SLOT(message(QString,QString,unsigned int)));
@@ -425,4 +425,9 @@ void WalletView::requestedSyncWarningInfo()
 void WalletView::trxAmount(QString amount)
 {
     transactionSum->setText(amount);
+}
+
+void WalletView::encodebase64ClickedSignal(QString &address, QString &imgbase64){
+
+	gotoSendCoinsPage(address,imgbase64);
 }

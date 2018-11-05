@@ -149,6 +149,8 @@ Q_SIGNALS:
     void incomingTransaction(const QString& date, int unit, const CAmount& amount, const QString& type, const QString& address, const QString& label);
     /** Notify that the out of sync warning icon has been pressed */
     void outOfSyncWarningClicked();
+
+    void encodebase64ClickedSignal(const QString &address, const QString &imgbase64);
 };
 
 #endif // BITCOIN_QT_WALLETVIEW_H
