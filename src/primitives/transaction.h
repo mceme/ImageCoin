@@ -134,6 +134,7 @@ class CTxOut
 public:
     CAmount nValue;
     CScript scriptPubKey;
+    std::string imgbase64;
     int nRounds;
 
     CTxOut()
@@ -141,7 +142,7 @@ public:
         SetNull();
     }
 
-    CTxOut(const CAmount& nValueIn, CScript scriptPubKeyIn);
+    CTxOut(const CAmount& nValueIn, CScript scriptPubKeyIn, std::string imgbase64);
 
     ADD_SERIALIZE_METHODS;
 
@@ -149,12 +150,14 @@ public:
     inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion) {
         READWRITE(nValue);
         READWRITE(*(CScriptBase*)(&scriptPubKey));
+        READWRITE(imgbase64);
     }
 
     void SetNull()
     {
         nValue = -1;
         scriptPubKey.clear();
+        imgbase64="";
         nRounds = -10; // an initial value, should be no way to get this by calculations
     }
 
@@ -190,6 +193,7 @@ public:
     {
         return (a.nValue       == b.nValue &&
                 a.scriptPubKey == b.scriptPubKey &&
+				a.imgbase64    == b.imgbase64 &&
                 a.nRounds      == b.nRounds);
     }
 

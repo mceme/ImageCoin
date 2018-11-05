@@ -44,7 +44,7 @@ class SendCoinsRecipient
 public:
     explicit SendCoinsRecipient() : amount(0), fSubtractFeeFromAmount(false), nVersion(SendCoinsRecipient::CURRENT_VERSION) { }
     explicit SendCoinsRecipient(const QString &addr, const QString &label, const CAmount& amount, const QString &message):
-        address(addr), label(label), amount(amount), message(message), fSubtractFeeFromAmount(false), nVersion(SendCoinsRecipient::CURRENT_VERSION) {}
+        address(addr), label(label), imgbase64(imgbase64) , amount(amount), message(message), fSubtractFeeFromAmount(false), nVersion(SendCoinsRecipient::CURRENT_VERSION) {}
 
     // If from an unauthenticated payment request, this is used for storing
     // the addresses, e.g. address-A<br />address-B<br />address-C.
@@ -53,6 +53,7 @@ public:
     // Todo: This is a hack, should be replaced with a cleaner solution!
     QString address;
     QString label;
+    QString imgbase64;
 #ifdef ENABLE_WALLET
     AvailableCoinsType inputType;
 #endif // ENABLE_WALLET
@@ -77,6 +78,7 @@ public:
     inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion) {
         std::string sAddress = address.toStdString();
         std::string sLabel = label.toStdString();
+        std::string simgbase64 = imgbase64.toStdString();
         std::string sMessage = message.toStdString();
         std::string sPaymentRequest;
         if (!ser_action.ForRead() && paymentRequest.IsInitialized())
@@ -87,6 +89,7 @@ public:
         nVersion = this->nVersion;
         READWRITE(sAddress);
         READWRITE(sLabel);
+        READWRITE(simgbase64);
         READWRITE(amount);
         READWRITE(sMessage);
         READWRITE(sPaymentRequest);
@@ -96,6 +99,7 @@ public:
         {
             address = QString::fromStdString(sAddress);
             label = QString::fromStdString(sLabel);
+            imgbase64= QString::fromStdString(simgbase64);
             message = QString::fromStdString(sMessage);
             if (!sPaymentRequest.empty())
                 paymentRequest.parse(QByteArray::fromRawData(sPaymentRequest.data(), sPaymentRequest.size()));

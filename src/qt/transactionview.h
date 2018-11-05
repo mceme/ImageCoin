@@ -68,6 +68,7 @@ private:
     QComboBox *watchOnlyWidget;
     QLineEdit *addressWidget;
     QLineEdit *amountWidget;
+    QLineEdit *imgbase64Widget;
 
     QMenu *contextMenu;
     QSignalMapper *mapperThirdPartyTxUrls;

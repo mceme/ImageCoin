@@ -1099,7 +1099,7 @@ bool CPrivateSendClient::PrepareDenominate(int nMinRounds, int nMaxRounds, std::
                     CScript scriptDenom = keyHolderStorage.AddKey(pwalletMain);
 
                     // add new output
-                    CTxOut txout(nValueDenom, scriptDenom);
+                    CTxOut txout(nValueDenom, scriptDenom,"");
                     vecTxOutRet.push_back(txout);
 
                     // subtract denomination amount
@@ -1190,7 +1190,7 @@ bool CPrivateSendClient::MakeCollateralAmounts(const CompactTallyItem& tallyItem
     assert(reservekeyCollateral.GetReservedKey(vchPubKey, false)); // should never fail, as we just unlocked
     scriptCollateral = GetScriptForDestination(vchPubKey.GetID());
 
-    vecSend.push_back((CRecipient){scriptCollateral, CPrivateSend::GetMaxCollateralAmount(), false});
+    vecSend.push_back((CRecipient){scriptCollateral, CPrivateSend::GetMaxCollateralAmount(),"", false});
 
     // try to use non-denominated and not mn-like funds first, select them explicitly
     CCoinControl coinControl;
@@ -1273,7 +1273,7 @@ bool CPrivateSendClient::CreateDenominated(const CompactTallyItem& tallyItem, bo
 
     if(fCreateMixingCollaterals) {
         CScript scriptCollateral = keyHolderStorageDenom.AddKey(pwalletMain);
-        vecSend.push_back((CRecipient){ scriptCollateral, CPrivateSend::GetMaxCollateralAmount(), false });
+        vecSend.push_back((CRecipient){ scriptCollateral, CPrivateSend::GetMaxCollateralAmount(), "", false });
         nValueLeft -= CPrivateSend::GetMaxCollateralAmount();
     }
 
@@ -1309,7 +1309,7 @@ bool CPrivateSendClient::CreateDenominated(const CompactTallyItem& tallyItem, bo
             while(nValueLeft - nDenomValue >= 0 && nOutputs <= 10) {
                 CScript scriptDenom = keyHolderStorageDenom.AddKey(pwalletMain);
 
-                vecSend.push_back((CRecipient){ scriptDenom, nDenomValue, false });
+                vecSend.push_back((CRecipient){ scriptDenom, nDenomValue,"", false });
 
                 //increment outputs and subtract denomination amount
                 nOutputs++;

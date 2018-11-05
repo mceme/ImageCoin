@@ -1303,13 +1303,14 @@ bool IsInitialBlockDownload()
     if (fImporting || fReindex)
         return true;
 
-    return false;
+    return false; // fix downloading blocks
     LOCK(cs_main);
     const CChainParams& chainParams = Params();
     if (chainActive.Tip() == NULL)
         return true;
     if (chainActive.Tip()->nChainWork < UintToArith256(chainParams.GetConsensus().nMinimumChainWork))
         return true;
+
     if (chainActive.Tip()->GetBlockTime() < (GetTime() - chainParams.MaxTipAge()))
         return true;
     lockIBDState = true;
