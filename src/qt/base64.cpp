@@ -17,7 +17,7 @@
 #include <cstdlib>
 #include <vector>
 #include <string>
-
+#include <boost/regex.hpp>
 base64::base64() {
 	// TODO Auto-generated constructor stub
 
@@ -146,4 +146,28 @@ try {
 	  return vempty;
      }
 }
+
+
+
+bool base64::base64Validator(string encoded_string)
+{
+	string expr="^([A-Za-z0-9+/]{4})*([A-Za-z0-9+/]{4}|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{2}==)$";
+
+	 return base64::regexValidate(expr,encoded_string);
+
+}
+
+
+
+bool base64::regexValidate(string expr, string teststring)
+{
+    boost::regex ex(expr);
+    if ( boost::regex_match (teststring,ex) ) {
+
+        return true;
+
+    }
+    return false;
+}
+
 

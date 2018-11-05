@@ -193,7 +193,7 @@ bool SendCoinsEntry::validate()
 
     // Check input validity
     bool retval = true;
-
+    ui->messageTextLabel->setText("");
     // Skip checks for payment request
     if (recipient.paymentRequest.IsInitialized())
         return retval;
@@ -210,16 +210,16 @@ bool SendCoinsEntry::validate()
     {
 
     	std::string imgbase64=ui->Imgbase64Edit->text().toUtf8().constData();
-    	if(base64.decode(imgbase64).empty()){
+    	if(!base64.base64Validator(imgbase64)){
 
     		ui->Imgbase64Edit->setStyleSheet("QLineEdit { background: rgb(220, 20, 60); selection-background-color: rgb(233, 99, 0); }");
-
+    		ui->messageTextLabel->setText("Base64 string not valid.");
     	    retval = false;
     	}
     	if(ui->Imgbase64Edit->text().length()>1500000)
     	{
     		 ui->Imgbase64Edit->setStyleSheet("QLineEdit { background: rgb(220, 20, 60); selection-background-color: rgb(233, 99, 0); }");
-
+    		 ui->messageTextLabel->setText("Large file maxSize ~1MB ");
     		 retval = false;
     	}
     }
