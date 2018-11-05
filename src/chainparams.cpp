@@ -148,7 +148,7 @@ public:
 
 		vFixedSeeds.clear();
         vSeeds.clear();
-		vSeeds.push_back(CDNSSeedData("0","18.191.209.224"));
+		vSeeds.push_back(CDNSSeedData("0","23.101.61.34"));
         //vSeeds.push_back(CDNSSeedData("1","115.77.190.144"));
 		//vSeeds.push_back(CDNSSeedData("2","18.216.217.124"));
 		//vSeeds.push_back(CDNSSeedData("3","149.28.136.224"));
