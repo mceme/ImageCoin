@@ -245,12 +245,12 @@
          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
         </property>
         <property name="buddy">
-         <cstring>Imgbase64Label</cstring>
+         <cstring>Imgbase64Edit</cstring>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="Imgbase64Label">
+       <widget class="QLineEdit" name="Imgbase64Edit">
         <property name="toolTip">
          <string>Enter a Image base 64 for this tx.</string>
         </property>

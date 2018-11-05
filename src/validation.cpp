@@ -1250,13 +1250,13 @@ CAmount GetBlockSubsidy(int nPrevBits, int nPrevHeight, const Consensus::Params&
         // CPU mining era
         // 11111/(((x+51)/6)^2)
         nSubsidyBase = (11111.0 / (pow((dDiff+51.0)/6.0,2.0)));
-        if(nSubsidyBase > 18) nSubsidyBase = 18;
-        else if(nSubsidyBase < 18) nSubsidyBase = 18;
+        if(nSubsidyBase > 18) nSubsidyBase = 1800;
+        else if(nSubsidyBase < 18) nSubsidyBase = 1000;
     } else {
         // GPU/ASIC mining era
         // 2222222/(((x+2600)/9)^2)
         nSubsidyBase = (2222222.0 / (pow((dDiff+2600.0)/9.0,2.0)));
-        if(nSubsidyBase > 18) nSubsidyBase = 18;
+        if(nSubsidyBase > 8) nSubsidyBase = 8;
         else if(nSubsidyBase < 5) nSubsidyBase = 5;
     }
 

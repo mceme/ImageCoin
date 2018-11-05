@@ -70,7 +70,7 @@
      <item>
       <widget class="QLabel" name="label">
        <property name="text">
-        <string>ENCODE BASE64 :</string>
+        <string>ENCODE BASE64</string>
        </property>
       </widget>
      </item>
@@ -78,6 +78,9 @@
    </item>
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <property name="spacing">
+      <number>0</number>
+     </property>
      <item>
       <widget class="QLineEdit" name="lineEditimgbase64">
        <property name="enabled">
@@ -85,6 +88,9 @@
        </property>
        <property name="toolTip">
         <string>Base64 Encoded String</string>
+       </property>
+       <property name="maxLength">
+        <number>3000000</number>
        </property>
        <property name="readOnly">
         <bool>true</bool>
@@ -128,14 +134,14 @@
      <item>
       <widget class="QLabel" name="copyright">
        <property name="text">
-        <string>CRYPTO :</string>
+        <string>CRYPTO</string>
        </property>
       </widget>
      </item>
     </layout>
    </item>
    <item>
-    <layout class="QHBoxLayout" name="payToLayout">
+    <layout class="QHBoxLayout" name="payToLayout" stretch="0,0,0">
      <property name="spacing">
       <number>0</number>
      </property>
@@ -239,7 +245,6 @@
  </customwidgets>
  <tabstops>
   <tabstop>payTo</tabstop>
-  <tabstop>pasteButton</tabstop>
  </tabstops>
  <resources/>
  <connections/>

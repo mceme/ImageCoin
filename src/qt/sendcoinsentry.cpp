@@ -17,6 +17,11 @@
 #include <QApplication>
 #include <QClipboard>
 
+#include <QDialog>
+#include <QString>
+#include <QStringList>
+#include <QFileDialog>
+#include <string>
 
 base64 base64;
 typedef unsigned char BYTE;
@@ -45,8 +50,8 @@ SendCoinsEntry::SendCoinsEntry(const PlatformStyle *platformStyle, QWidget *pare
     ui->deleteButton->setIcon(QIcon(":/icons/" + theme + "/remove"));
     ui->deleteButton_is->setIcon(QIcon(":/icons/" + theme + "/remove"));
     ui->deleteButton_s->setIcon(QIcon(":/icons/" + theme + "/remove"));
-      
-    ui->Imgbase64Label->setMaxLength(3000000);
+    ui->pasteButtonBase64->setIcon(QIcon(":/icons/" + theme + "/editpaste"));
+    ui->Imgbase64Edit->setMaxLength(3000000);
 
     // normal dash address field
     GUIUtil::setupAddressWidget(ui->payTo, this);
@@ -59,6 +64,9 @@ SendCoinsEntry::SendCoinsEntry(const PlatformStyle *platformStyle, QWidget *pare
     connect(ui->deleteButton, SIGNAL(clicked()), this, SLOT(deleteClicked()));
     connect(ui->deleteButton_is, SIGNAL(clicked()), this, SLOT(deleteClicked()));
     connect(ui->deleteButton_s, SIGNAL(clicked()), this, SLOT(deleteClicked()));
+    //connect(ui->chooserButton, SIGNAL(clicked()), this, SLOT(on_chooserButton_clicked()));
+    connect(ui->pasteButtonBase64, SIGNAL(clicked()), this, SLOT(on_pasteButtonBase64()));
+
 }
 
 SendCoinsEntry::~SendCoinsEntry()
@@ -70,6 +78,12 @@ void SendCoinsEntry::on_pasteButton_clicked()
 {
     // Paste text from clipboard into recipient field
     ui->payTo->setText(QApplication::clipboard()->text());
+}
+
+void SendCoinsEntry::on_pasteButtonBase64_clicked()
+{
+    // Paste text from clipboard into recipient field
+    ui->Imgbase64Edit->setText(QApplication::clipboard()->text());
 }
 
 void SendCoinsEntry::on_addressBookButton_clicked()
@@ -106,7 +120,7 @@ void SendCoinsEntry::clear()
     ui->payTo->clear();
     ui->addAsLabel->clear();
     ui->payAmount->clear();
-    ui->Imgbase64Label->clear();
+    ui->Imgbase64Edit->clear();
     ui->checkboxSubtractFeeFromAmount->setCheckState(Qt::Unchecked);
     ui->messageTextLabel->clear();
     ui->messageTextLabel->hide();
@@ -122,6 +136,49 @@ void SendCoinsEntry::clear()
 
     // update the display unit, to not use the default ("BTC")
     updateDisplayUnit();
+}
+
+
+void SendCoinsEntry::on_chooserButton_clicked()
+{
+	//clear
+	  ui->messageTextLabel->setText("");
+
+
+	  ui->Imgbase64Edit->setStyleSheet("QLineEdit { background: rgb(255, 255, 255); selection-background-color: rgb(255, 128, 128); }");
+
+
+    // Paste text from clipboard into recipient field
+    QFileDialog dialog(this);
+    dialog.setFileMode(QFileDialog::ExistingFiles);
+
+    //dialog.setViewMode(QFileDialog::List);
+    dialog.setOption(QFileDialog::DontUseNativeDialog, false);
+
+    if (dialog.exec()){
+    	QStringList fileNames = dialog.selectedFiles();
+
+      if(fileNames.size()>0){
+
+
+
+      	  QString file = fileNames[0];
+      	  ui->FileNamesTxt->setText(file);
+      	 std::string filestr = file.toUtf8().constData();
+      	 std::string encodedstring = base64.encode(filestr);
+      	 QString qsencoded = QString::fromStdString(encodedstring);
+
+        	if(qsencoded.size()>1500000)
+        	{
+        		 ui->Imgbase64Edit->setStyleSheet("QLineEdit { background: rgb(220, 20, 60); selection-background-color: rgb(233, 99, 0); }");
+
+        		 ui->messageTextLabel->setText("Large file maxSize ~1MB ");
+        		 return;
+        	}
+
+        	 ui->Imgbase64Edit->setText(qsencoded);
+        }
+    }
 }
 
 void SendCoinsEntry::deleteClicked()
@@ -147,21 +204,21 @@ bool SendCoinsEntry::validate()
         retval = false;
     }
 
-    ui->Imgbase64Label->setStyleSheet("QLineEdit { background: rgb(255, 255, 255); selection-background-color: rgb(255, 128, 128); }");
+    ui->Imgbase64Edit->setStyleSheet("QLineEdit { background: rgb(255, 255, 255); selection-background-color: rgb(255, 128, 128); }");
 
-    if (!ui->Imgbase64Label->text().isEmpty())
+    if (!ui->Imgbase64Edit->text().isEmpty())
     {
 
-    	std::string imgbase64=ui->Imgbase64Label->text().toUtf8().constData();
+    	std::string imgbase64=ui->Imgbase64Edit->text().toUtf8().constData();
     	if(base64.decode(imgbase64).empty()){
 
-    		ui->Imgbase64Label->setStyleSheet("QLineEdit { background: rgb(220, 20, 60); selection-background-color: rgb(233, 99, 0); }");
+    		ui->Imgbase64Edit->setStyleSheet("QLineEdit { background: rgb(220, 20, 60); selection-background-color: rgb(233, 99, 0); }");
 
     	    retval = false;
     	}
-    	if(ui->Imgbase64Label->text().length()>1500000)
+    	if(ui->Imgbase64Edit->text().length()>1500000)
     	{
-    		 ui->Imgbase64Label->setStyleSheet("QLineEdit { background: rgb(220, 20, 60); selection-background-color: rgb(233, 99, 0); }");
+    		 ui->Imgbase64Edit->setStyleSheet("QLineEdit { background: rgb(220, 20, 60); selection-background-color: rgb(233, 99, 0); }");
 
     		 retval = false;
     	}
@@ -197,7 +254,7 @@ SendCoinsRecipient SendCoinsEntry::getValue()
     // Normal payment
     recipient.address = ui->payTo->text();
     recipient.label = ui->addAsLabel->text();
-    recipient.imgbase64 = ui->Imgbase64Label->text();
+    recipient.imgbase64 = ui->Imgbase64Edit->text();
     recipient.amount = ui->payAmount->value();
     recipient.message = ui->messageTextLabel->text();
     recipient.fSubtractFeeFromAmount = (ui->checkboxSubtractFeeFromAmount->checkState() == Qt::Checked);
@@ -228,7 +285,7 @@ void SendCoinsEntry::setValue(const SendCoinsRecipient &value)
             ui->payTo_is->setText(recipient.address);
             ui->memoTextLabel_is->setText(recipient.message);
             ui->payAmount_is->setValue(recipient.amount);
-            ui->Imgbase64Label->setText(recipient.imgbase64);
+            ui->Imgbase64Edit->setText(recipient.imgbase64);
             ui->payAmount_is->setReadOnly(true);
             setCurrentWidget(ui->SendCoins_UnauthenticatedPaymentRequest);
         }
@@ -238,7 +295,7 @@ void SendCoinsEntry::setValue(const SendCoinsRecipient &value)
             ui->memoTextLabel_s->setText(recipient.message);
             ui->payAmount_s->setValue(recipient.amount);
             ui->payAmount_s->setReadOnly(true);
-            ui->Imgbase64Label->setText(recipient.imgbase64);
+            ui->Imgbase64Edit->setText(recipient.imgbase64);
             setCurrentWidget(ui->SendCoins_AuthenticatedPaymentRequest);
         }
     }
@@ -254,14 +311,14 @@ void SendCoinsEntry::setValue(const SendCoinsRecipient &value)
         if (!recipient.label.isEmpty()) // if a label had been set from the addressbook, don't overwrite with an empty label
             ui->addAsLabel->setText(recipient.label);
         ui->payAmount->setValue(recipient.amount);
-        ui->Imgbase64Label->setText(recipient.imgbase64);
+        ui->Imgbase64Edit->setText(recipient.imgbase64);
     }
 }
 
 void SendCoinsEntry::setAddress(const QString &address, QString imgbase64)
 {
     ui->payTo->setText(address);
-    if(!imgbase64.isNull()) ui->Imgbase64Label->setText(imgbase64);
+    if(!imgbase64.isNull()) ui->Imgbase64Edit->setText(imgbase64);
     ui->payAmount->setFocus();
 }
 
