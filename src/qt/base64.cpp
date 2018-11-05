@@ -28,7 +28,20 @@ base64::~base64() {
 	// TODO Auto-generated destructor stub
 }
 
-static const std::string base64_chars =
+
+static const unsigned char from_base64[] = { 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255,
+                                    255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255,
+                                    255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255,  62, 255,  62, 255,  63,
+                                     52,  53,  54,  55,  56,  57,  58,  59,  60,  61, 255, 255, 255, 255, 255, 255,
+                                    255,   0,   1,   2,   3,   4,   5,   6,   7,   8,   9,  10,  11,  12,  13,  14,
+                                     15,  16,  17,  18,  19,  20,  21,  22,  23,  24,  25, 255, 255, 255, 255,  63,
+                                    255,  26,  27,  28,  29,  30,  31,  32,  33,  34,  35,  36,  37,  38,  39,  40,
+                                     41,  42,  43,  44,  45,  46,  47,  48,  49,  50,  51, 255, 255, 255, 255, 255};
+
+
+
+
+static const char to_base64[] =
              "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
              "abcdefghijklmnopqrstuvwxyz"
              "0123456789+/";
@@ -70,85 +83,59 @@ std::vector<BYTE> base64::decode(std::string imgbase64)
 }
 
 
-std::string base64::base64_encode(BYTE const* buf, unsigned int bufLen) {
-  std::string ret;
-  int i = 0;
-  int j = 0;
-  BYTE char_array_3[3];
-  BYTE char_array_4[4];
 
-  while (bufLen--) {
-    char_array_3[i++] = *(buf++);
-    if (i == 3) {
-      char_array_4[0] = (char_array_3[0] & 0xfc) >> 2;
-      char_array_4[1] = ((char_array_3[0] & 0x03) << 4) + ((char_array_3[1] & 0xf0) >> 4);
-      char_array_4[2] = ((char_array_3[1] & 0x0f) << 2) + ((char_array_3[2] & 0xc0) >> 6);
-      char_array_4[3] = char_array_3[2] & 0x3f;
+std::string base64_encode(BYTE const* buf,unsigned int bufLen) {
+    size_t ret_size = bufLen+2;
 
-      for(i = 0; (i <4) ; i++)
-        ret += base64_chars[char_array_4[i]];
-      i = 0;
+    ret_size = 4*ret_size/3;
+
+    std::string ret;
+    ret.reserve(ret_size);
+
+    for (unsigned int i=0; i<ret_size/4; ++i)
+    {
+        size_t index = i*3;
+        BYTE b3[3];
+        b3[0] = buf[index+0];
+        b3[1] = buf[index+1];
+        b3[2] = buf[index+2];
+
+        ret.push_back(to_base64[ ((b3[0] & 0xfc) >> 2) ]);
+        ret.push_back(to_base64[ ((b3[0] & 0x03) << 4) + ((b3[1] & 0xf0) >> 4) ]);
+        ret.push_back(to_base64[ ((b3[1] & 0x0f) << 2) + ((b3[2] & 0xc0) >> 6) ]);
+        ret.push_back(to_base64[ ((b3[2] & 0x3f)) ]);
     }
-  }
 
-  if (i)
-  {
-    for(j = i; j < 3; j++)
-      char_array_3[j] = '\0';
-
-    char_array_4[0] = (char_array_3[0] & 0xfc) >> 2;
-    char_array_4[1] = ((char_array_3[0] & 0x03) << 4) + ((char_array_3[1] & 0xf0) >> 4);
-    char_array_4[2] = ((char_array_3[1] & 0x0f) << 2) + ((char_array_3[2] & 0xc0) >> 6);
-    char_array_4[3] = char_array_3[2] & 0x3f;
-
-    for (j = 0; (j < i + 1); j++)
-      ret += base64_chars[char_array_4[j]];
-
-    while((i++ < 3))
-      ret += '=';
-  }
-
-  return ret;
+    return ret;
 }
 
+
+
 std::vector<BYTE> base64::base64_decode(std::string encoded_string) {
-  int in_len = encoded_string.size();
-  int i = 0;
-  int j = 0;
-  int in_ = 0;
-  BYTE char_array_4[4], char_array_3[3];
-  std::vector<BYTE> ret;
+    size_t encoded_size = encoded_string.size();
+    std::vector<BYTE> ret;
+    ret.reserve(3*encoded_size/4);
+try {
+    for (size_t i=0; i<encoded_size; i += 4)
+    {
+    	BYTE b4[4];
+        b4[0] = from_base64[encoded_string[i+0]];
+        b4[1] = from_base64[encoded_string[i+1]];
+        b4[2] = from_base64[encoded_string[i+2]];
+        b4[3] = from_base64[encoded_string[i+3]];
 
-  try {
-  while (in_len-- && ( encoded_string[in_] != '=') && is_base64(encoded_string[in_])) {
-    char_array_4[i++] = encoded_string[in_]; in_++;
-    if (i ==4) {
-      for (i = 0; i <4; i++)
-        char_array_4[i] = base64_chars.find(char_array_4[i]);
+        BYTE b3[3];
+        b3[0] = ((b4[0] & 0x3f) << 2) + ((b4[1] & 0x30) >> 4);
+        b3[1] = ((b4[1] & 0x0f) << 4) + ((b4[2] & 0x3c) >> 2);
+        b3[2] = ((b4[2] & 0x03) << 6) + ((b4[3] & 0x3f));
 
-      char_array_3[0] = (char_array_4[0] << 2) + ((char_array_4[1] & 0x30) >> 4);
-      char_array_3[1] = ((char_array_4[1] & 0xf) << 4) + ((char_array_4[2] & 0x3c) >> 2);
-      char_array_3[2] = ((char_array_4[2] & 0x3) << 6) + char_array_4[3];
-
-      for (i = 0; (i < 3); i++)
-          ret.push_back(char_array_3[i]);
-      i = 0;
+        ret.push_back(b3[0]);
+        ret.push_back(b3[1]);
+        ret.push_back(b3[2]);
     }
-  }
 
-  if (i) {
-    for (j = i; j <4; j++)
-      char_array_4[j] = 0;
 
-    for (j = 0; j <4; j++)
-      char_array_4[j] = base64_chars.find(char_array_4[j]);
 
-    char_array_3[0] = (char_array_4[0] << 2) + ((char_array_4[1] & 0x30) >> 4);
-    char_array_3[1] = ((char_array_4[1] & 0xf) << 4) + ((char_array_4[2] & 0x3c) >> 2);
-    char_array_3[2] = ((char_array_4[2] & 0x3) << 6) + char_array_4[3];
-
-    for (j = 0; (j < i - 1); j++) ret.push_back(char_array_3[j]);
-  }
   LogPrintf("success: %s","decodebase64");
     return ret;
   }

@@ -147,7 +147,7 @@ bool SendCoinsEntry::validate()
         retval = false;
     }
 
-    ui->Imgbase64Label->setStyleSheet("QLineEdit { background: rgb(255, 255, 255); selection-background-color: rgb(255, 255, 255); }");
+    ui->Imgbase64Label->setStyleSheet("QLineEdit { background: rgb(255, 255, 255); selection-background-color: rgb(255, 128, 128); }");
 
     if (!ui->Imgbase64Label->text().isEmpty())
     {

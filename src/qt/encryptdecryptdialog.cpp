@@ -51,10 +51,8 @@ EncryptDecryptDialog::EncryptDecryptDialog(const PlatformStyle *platformStyle, Q
     // These icons are needed on Mac also!
    // ui->addressBookButton->setIcon(QIcon(":/icons/" + theme + "/address-book"));
     ui->pasteButton->setIcon(QIcon(":/icons/" + theme + "/editpaste"));
-    //ui->deleteButton->setIcon(QIcon(":/icons/" + theme + "/remove"));
-    //ui->deleteButton_is->setIcon(QIcon(":/icons/" + theme + "/remove"));
-    //ui->deleteButton_s->setIcon(QIcon(":/icons/" + theme + "/remove"));
-      
+    ui->copyEncodedButton->setIcon(QIcon(":/icons/" + theme + "/editcopy"));
+
     // normal dash address field
     GUIUtil::setupAddressWidget(ui->payTo, this);
     // just a label for displaying dash address(es)
@@ -63,6 +61,8 @@ EncryptDecryptDialog::EncryptDecryptDialog(const PlatformStyle *platformStyle, Q
     // Connect signals
 
     connect(ui->chooserButton, SIGNAL(clicked()), this, SLOT(on_chooserButton_clicked()));
+
+    connect(ui->copyEncodedButton, SIGNAL(clicked()), this, SLOT(on_copyEncodedButton_clicked()));
 
     connect(ui->encryptButton, SIGNAL(clicked()), this, SLOT(on_EncryptButton_clicked()));
 
@@ -129,12 +129,18 @@ void EncryptDecryptDialog::on_chooserButton_clicked()
        }
 }
 
+void EncryptDecryptDialog::on_copyEncodedButton_clicked()
+{
+    // copy text to clipboard
+
+    GUIUtil::setClipboard(ui->lineEditimgbase64->text());
+}
+
 void EncryptDecryptDialog::on_pasteButton_clicked()
 {
     // Paste text from clipboard into recipient field
     ui->payTo->setText(QApplication::clipboard()->text());
 }
-
 
 void EncryptDecryptDialog::on_EncryptButton_clicked()
 {
@@ -463,9 +469,9 @@ void EncryptDecryptDialog::encodebase64Clicked()
 //validation
 	ui->MessageBox->clear();
 
-	ui->FileNamesTxt->setStyleSheet("QLineEdit { background: rgb(255, 255, 255); selection-background-color: rgb(255, 255, 255); }");
+	ui->FileNamesTxt->setStyleSheet("QLineEdit { background: rgb(255, 255, 255); selection-background-color: rgb(255, 128, 128); }");
 
-	ui->lineEditimgbase64->setStyleSheet("QLineEdit { background: rgb(255, 255, 255); selection-background-color: rgb(255, 255, 255); }");
+	ui->lineEditimgbase64->setStyleSheet("QLineEdit { background: rgb(255, 255, 255); selection-background-color: rgb(255, 128, 128); }");
 
 	if(ui->FileNamesTxt->text().isEmpty() && ui->lineEditimgbase64->text().isEmpty() )
 	{
