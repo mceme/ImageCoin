@@ -21,7 +21,7 @@ public:
 	 ~base64();
 	     std::string encode(std::string filename);
 	     std::vector<BYTE> decode(std::string imgbase64);
-	     std::string base64_encode(BYTE const* buf, unsigned int bufLen);
+	     std::string base64_encode(char const* buf, unsigned int bufLen);
 	     std::vector<BYTE> base64_decode(std::string encoded_string);
 	     bool base64Validator(std::string encoded_string);
 	     bool regexValidate (std::string expr, std::string teststring);

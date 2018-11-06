@@ -61,13 +61,13 @@ std::string base64::encode(std::string filename)
 	std::vector<BYTE> v(100);
 
 	std::string encodedData;
-	while ( ifp.read(reinterpret_cast<BYTE*>(v.data()),  v.size() ) )
+	while ( ifp.read(reinterpret_cast<char*>(v.data()),  v.size() ) )
 	{
 	   // Find out how many characters were actually read.
 	    auto count = ifp.gcount();
 		 v.resize(count);
 	   // Use v up to count BTYEs.
-		 encodedData += base64::base64_encode(reinterpret_cast<BYTE*>(v.data()),count);
+		 encodedData += base64::base64_encode(reinterpret_cast<char*>(v.data()),count);
 		 v.resize(100);
 	}
 
@@ -85,7 +85,7 @@ std::vector<BYTE> base64::decode(std::string imgbase64)
 
 
 
-std::string base64::base64_encode(BYTE const* buf,unsigned int bufLen) {
+std::string base64::base64_encode(char const* buf,unsigned int bufLen) {
     size_t ret_size = bufLen+2;
 
     ret_size = 4*ret_size/3;
@@ -165,9 +165,9 @@ bool base64::regexValidate(std::string expr, std::string teststring)
     std::regex ex(expr);
 
     if(teststring.size()>1000)
-    std::string shortstring=teststring.substr(0,1000);
+    teststring.substr(0,1000);
 
-    if ( std::regex_match (shortstring,ex) ) {
+    if ( std::regex_match (teststring,ex) ) {
         return true;
     }
 
