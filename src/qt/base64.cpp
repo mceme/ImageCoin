@@ -163,8 +163,13 @@ bool base64::base64Validator(std::string encoded_string)
 bool base64::regexValidate(std::string expr, std::string teststring)
 {
     std::regex ex(expr);
-    if ( std::regex_match (teststring,ex) ) {
+
+    if(teststring.size()>1000)
+    std::string shortstring=teststring.substr(0,1000);
+
+    if ( std::regex_match (shortstring,ex) ) {
         return true;
     }
+
     return false;
 }

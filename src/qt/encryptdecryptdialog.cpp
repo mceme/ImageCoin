@@ -60,7 +60,7 @@ EncryptDecryptDialog::EncryptDecryptDialog(const PlatformStyle *platformStyle, Q
 
     // Connect signals
 
-    connect(ui->chooserButton, SIGNAL(clicked()), this, SLOT(on_chooserButton_clicked()));
+   // connect(ui->chooserButton, SIGNAL(clicked()), this, SLOT(on_chooserButton_clicked()));
 
     connect(ui->copyEncodedButton, SIGNAL(clicked()), this, SLOT(on_copyEncodedButton_clicked()));
 
