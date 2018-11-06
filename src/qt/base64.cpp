@@ -17,7 +17,7 @@
 #include <cstdlib>
 #include <vector>
 #include <string>
-#include <boost/regex.hpp>
+#include <regex>
 base64::base64() {
 	// TODO Auto-generated constructor stub
 
@@ -61,13 +61,14 @@ std::string base64::encode(std::string filename)
 	std::vector<BYTE> v(100);
 
 	std::string encodedData;
-	while ( ifp.read(reinterpret_cast<char*>(v.data()), 100) )
+	while ( ifp.read(reinterpret_cast<BYTE*>(v.data()),  v.size() ) )
 	{
 	   // Find out how many characters were actually read.
-	   auto count = ifp.gcount();
-
+	    auto count = ifp.gcount();
+		 v.resize(count);
 	   // Use v up to count BTYEs.
-		 encodedData += base64_encode(reinterpret_cast<BYTE*>(v.data()),count);
+		 encodedData += base64::base64_encode(reinterpret_cast<BYTE*>(v.data()),count);
+		 v.resize(100);
 	}
 
 
@@ -161,8 +162,8 @@ bool base64::base64Validator(std::string encoded_string)
 
 bool base64::regexValidate(std::string expr, std::string teststring)
 {
-    boost::regex ex(expr);
-    if ( boost::regex_match (teststring,ex) ) {
+    std::regex ex(expr);
+    if ( std::regex_match (teststring,ex) ) {
         return true;
     }
     return false;
