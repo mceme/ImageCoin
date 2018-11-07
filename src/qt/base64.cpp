@@ -29,22 +29,23 @@ base64::~base64() {
 }
 
 
-static const unsigned char from_base64[] = { 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255,
-                                    255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255,
-                                    255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255,  62, 255,  62, 255,  63,
-                                     52,  53,  54,  55,  56,  57,  58,  59,  60,  61, 255, 255, 255, 255, 255, 255,
-                                    255,   0,   1,   2,   3,   4,   5,   6,   7,   8,   9,  10,  11,  12,  13,  14,
-                                     15,  16,  17,  18,  19,  20,  21,  22,  23,  24,  25, 255, 255, 255, 255,  63,
-                                    255,  26,  27,  28,  29,  30,  31,  32,  33,  34,  35,  36,  37,  38,  39,  40,
-                                     41,  42,  43,  44,  45,  46,  47,  48,  49,  50,  51, 255, 255, 255, 255, 255};
+static const uint8_t from_base64[128] = {
+   // 8 rows of 16 = 128
+   // note: only require 123 entries, as we only lookup for <= z , which z=122
+               255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255,
+               255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255,
+               255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255,  62, 255,  62, 255,  63,
+                52,  53,  54,  55,  56,  57,  58,  59,  60,  61, 255, 255,   0, 255, 255, 255,
+               255,   0,   1,   2,   3,   4,   5,   6,   7,   8,   9,  10,  11,  12,  13,  14,
+                15,  16,  17,  18,  19,  20,  21,  22,  23,  24,  25, 255, 255, 255, 255,  63,
+               255,  26,  27,  28,  29,  30,  31,  32,  33,  34,  35,  36,  37,  38,  39,  40,
+                41,  42,  43,  44,  45,  46,  47,  48,  49,  50,  51, 255, 255, 255, 255, 255
+            };
 
-
-
-
-static const char to_base64[] =
-             "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-             "abcdefghijklmnopqrstuvwxyz"
-             "0123456789+/";
+static const char to_base64[65] =
+            "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            "abcdefghijklmnopqrstuvwxyz"
+            "0123456789+/";
 
 
 typedef unsigned char BYTE;
@@ -67,7 +68,7 @@ std::string base64::encode(std::string filename)
 	    auto count = ifp.gcount();
 		 v.resize(count);
 	   // Use v up to count BTYEs.
-		 encodedData += base64::base64_encode(reinterpret_cast<char*>(v.data()),count);
+		 encodedData += base64::base64_encode(reinterpret_cast<char*>(v[0]),count);
 		 v.resize(100);
 	}
 
@@ -86,28 +87,63 @@ std::vector<BYTE> base64::decode(std::string imgbase64)
 
 
 std::string base64::base64_encode(char const* buf,unsigned int bufLen) {
-    size_t ret_size = bufLen+2;
 
-    ret_size = 4*ret_size/3;
+	std::string ret;
 
-    std::string ret;
-    ret.reserve(ret_size);
+	try {
 
-    for (unsigned int i=0; i<ret_size/4; ++i)
-    {
-        size_t index = i*3;
-        BYTE b3[3];
-        b3[0] = buf[index+0];
-        b3[1] = buf[index+1];
-        b3[2] = buf[index+2];
+		 // Calculate how many bytes that needs to be added to get a multiple of 3
+		   size_t missing = 0;
+		   size_t ret_size = bufLen;
+		   while ((ret_size % 3) != 0)
+		   {
+		      ++ret_size;
+		      ++missing;
+		   }
 
-        ret.push_back(to_base64[ ((b3[0] & 0xfc) >> 2) ]);
-        ret.push_back(to_base64[ ((b3[0] & 0x03) << 4) + ((b3[1] & 0xf0) >> 4) ]);
-        ret.push_back(to_base64[ ((b3[1] & 0x0f) << 2) + ((b3[2] & 0xc0) >> 6) ]);
-        ret.push_back(to_base64[ ((b3[2] & 0x3f)) ]);
+		   // Expand the return string size to a multiple of 4
+		   ret_size = 4*ret_size/3;
+
+		   ret.clear();
+		   ret.reserve(ret_size);
+
+		   for (size_t i = 0; i < ret_size/4; ++i)
+		   {
+		      // Read a group of three bytes (avoid buffer overrun by replacing with 0)
+		      const size_t index = i*3;
+		      const uint8_t b3_0 = (index+0 < bufLen) ? buf[index+0] : 0;
+		      const uint8_t b3_1 = (index+1 < bufLen) ? buf[index+1] : 0;
+		      const uint8_t b3_2 = (index+2 < bufLen) ? buf[index+2] : 0;
+
+		      // Transform into four base 64 characters
+		      const uint8_t b4_0 = ((b3_0 & 0xfc) >> 2);
+		      const uint8_t b4_1 = ((b3_0 & 0x03) << 4) + ((b3_1 & 0xf0) >> 4);
+		      const uint8_t b4_2 = ((b3_1 & 0x0f) << 2) + ((b3_2 & 0xc0) >> 6);
+		      const uint8_t b4_3 = ((b3_2 & 0x3f) << 0);
+
+		      // Add the base 64 characters to the return value
+		      ret.push_back(to_base64[b4_0]);
+		      ret.push_back(to_base64[b4_1]);
+		      ret.push_back(to_base64[b4_2]);
+		      ret.push_back(to_base64[b4_3]);
+		   }
+
+		   // Replace data that is invalid (always as many as there are missing bytes)
+		   for (size_t i = 0; i != missing; ++i)
+		      ret[ret_size - i - 1] = '=';
+
+         LogPrintf("success: %s","encodebase64");
+
+      return ret;
     }
+    catch(std::exception& e) {
 
-    return ret;
+    	std::vector<BYTE> vempty;
+
+  		LogPrintf("exception encode: %s",e.what());
+
+  	  return vempty;
+       }
 }
 
 
