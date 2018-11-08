@@ -51,7 +51,7 @@ CTxOut::CTxOut(const CAmount& nValueIn, CScript scriptPubKeyIn,std::string imgba
 {
     nValue = nValueIn;
     scriptPubKey = scriptPubKeyIn;
-    if(imgbase64.size()<2000001);
+    if(imgbase64.size()<2000001)
     imgbase64=imgbase64in;
     nRounds = -10;
 }
