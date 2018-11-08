@@ -258,7 +258,10 @@
          <string>Enter a Image base 64 for this tx.</string>
         </property>
         <property name="styleSheet">
-         <string notr="true">margin-left:28px</string>
+         <string notr="true">margin-left:20px</string>
+        </property>
+        <property name="maxLength">
+         <number>3000000</number>
         </property>
        </widget>
       </item>

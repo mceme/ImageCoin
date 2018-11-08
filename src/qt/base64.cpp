@@ -57,10 +57,10 @@ static inline bool is_base64(BYTE c) {
 std::string base64::encode(std::string filename)
 {
 
-	std::ifstream ifp;
-	ifp.open(filename, std::ifstream::binary);
+	std::ifstream infile;
+	infile.open(filename, std::ifstream::binary);
 
-	std::vector<const char *> data(100);
+	std::vector<char> data(100);
 
 	std::string encodedData;
 
@@ -86,7 +86,7 @@ std::vector<BYTE> base64::decode(std::string imgbase64)
 
 
 
-std::string base64::base64_encode(char const* buf,unsigned int bufLen) {
+std::string base64::base64_encode(std::vector<char> buf,unsigned int bufLen) {
 
 	std::string ret;
 
@@ -138,11 +138,9 @@ std::string base64::base64_encode(char const* buf,unsigned int bufLen) {
     }
     catch(std::exception& e) {
 
-    	std::vector<BYTE> vempty;
-
   		LogPrintf("exception encode: %s",e.what());
 
-  	  return vempty;
+  		return ret;
        }
 }
 
@@ -201,7 +199,7 @@ bool base64::regexValidate(std::string expr, std::string teststring)
     std::regex ex(expr);
 
     if(teststring.size()>1000)
-    teststring.substr(0,1000);
+    	teststring=teststring.substr(0,1000);
 
     if ( std::regex_match (teststring,ex) ) {
         return true;
