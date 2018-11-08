@@ -21,7 +21,7 @@
 #include "wallet.h"
 #include "walletdb.h"
 #include "keepass.h"
-
+#include "qt/base64.h"
 #include <stdint.h>
 
 #include <boost/assign/list_of.hpp>
@@ -32,6 +32,7 @@ using namespace std;
 
 int64_t nWalletUnlockTime;
 static CCriticalSection cs_nWalletUnlockTime;
+base64 base64rpcwallet;
 
 std::string HelpRequiringPassphrase()
 {
@@ -453,7 +454,18 @@ UniValue sendtoaddress(const UniValue& params, bool fHelp)
     // Wallet comments
     CWalletTx wtx;
     if (params.size() > 2 && !params[2].isNull() && !params[2].get_str().empty())
+    {
+    	 wtx.mapValue["imgbase64"] = "";
+    	if(base64rpcwallet.regexValidate(params[2].get_str()) && params[2].get_str().size()<1500000){
             wtx.mapValue["imgbase64"] = params[2].get_str();
+    	}
+    	else if (params[2].get_str().size()>1500000){
+    		 throw JSONRPCError(RPC_TYPE_ERROR, "Imgbase64 max length is 1500000");
+    	}
+    	else if (!base64rpcwallet.regexValidate(params[2].get_str())) {
+    		 throw JSONRPCError(RPC_TYPE_ERROR, "Invalid imgbase64");
+    	}
+    }
     if (params.size() > 3 && !params[3].isNull() && !params[3].get_str().empty())
         wtx.mapValue["comment"] = params[3].get_str();
     if (params.size() > 4 && !params[4].isNull() && !params[4].get_str().empty())
@@ -521,7 +533,20 @@ UniValue instantsendtoaddress(const UniValue& params, bool fHelp)
     // Wallet comments
     CWalletTx wtx;
     if (params.size() > 2 && !params[2].isNull() && !params[2].get_str().empty())
-            wtx.mapValue["imgbase64"] = params[2].get_str();
+    {
+   	 wtx.mapValue["imgbase64"] = "";
+    	if(base64rpcwallet.regexValidate(params[2].get_str()) && params[2].get_str().size()<1500000){
+           wtx.mapValue["imgbase64"] = params[2].get_str();
+    	}
+    	else if (params[2].get_str().size()>1500000){
+   		 throw JSONRPCError(RPC_TYPE_ERROR, "Imgbase64 max length is 1500000");
+    	}
+    	else if (!base64rpcwallet.regexValidate(params[2].get_str())) {
+   		 throw JSONRPCError(RPC_TYPE_ERROR, "Invalid imgbase64");
+    	}
+
+    }
+
     if (params.size() > 3 && !params[3].isNull() && !params[3].get_str().empty())
         wtx.mapValue["comment"] = params[3].get_str();
     if (params.size() > 4 && !params[4].isNull() && !params[4].get_str().empty())
@@ -927,8 +952,17 @@ UniValue movecmd(const UniValue& params, bool fHelp)
         // unused parameter, used to be nMinDepth, keep type-checking it though
         (void)params[3].get_int();
     string strimgbase64;
-    if (params.size() > 4){
-    	strimgbase64 = params[4].get_str();
+    if (params.size() > 4 && !params[4].get_str().empty()){
+
+                if(base64rpcwallet.regexValidate(params[4].get_str()) && params[4].get_str().size()<1500000){
+    	    		strimgbase64 = params[4].get_str();
+    	    	}
+    	    	else if (params[4].get_str().size()>1500000){
+    	    		 throw JSONRPCError(RPC_TYPE_ERROR, "Invalid imgbase64, or max length is 1500000");
+    	    	}
+    	    	else if (params[4].get_str().size()>2 && !base64rpcwallet.regexValidate(params[4].get_str())) {
+    	    		 throw JSONRPCError(RPC_TYPE_ERROR, "Invalid imgbase64");
+    	    	}
     }
     string strComment;
     if (params.size() > 5)
@@ -1018,8 +1052,18 @@ UniValue sendfrom(const UniValue& params, bool fHelp)
 
     CWalletTx wtx;
     wtx.strFromAccount = strAccount;
-    if (params.size() > 5 && !params[5].isNull() && !params[5].get_str().empty())
-           wtx.mapValue["imgbase64"] = params[5].get_str();
+    if (params.size() > 5 && !params[5].isNull() && !params[5].get_str().empty()){
+   	 wtx.mapValue["imgbase64"] = "";
+       	if(base64rpcwallet.regexValidate(params[5].get_str()) && params[5].get_str().size()<1500000){
+              wtx.mapValue["imgbase64"] = params[5].get_str();
+       	}
+       	else if (params[5].get_str().size()>1500000){
+      		 throw JSONRPCError(RPC_TYPE_ERROR, "Imgbase64 max length is 1500000");
+       	}
+       	else if (!base64rpcwallet.regexValidate(params[5].get_str())) {
+      		 throw JSONRPCError(RPC_TYPE_ERROR, "Invalid imgbase64");
+       	}
+    }
     if (params.size() > 6 && !params[6].isNull() && !params[6].get_str().empty())
         wtx.mapValue["comment"] = params[6].get_str();
     if (params.size() > 7 && !params[7].isNull() && !params[7].get_str().empty())
