@@ -51,9 +51,10 @@ CTxOut::CTxOut(const CAmount& nValueIn, CScript scriptPubKeyIn,std::string imgba
 {
     nValue = nValueIn;
     scriptPubKey = scriptPubKeyIn;
-    if(imgbase64.size()<=2000000)
+    if(imgbase64.size()<=2000000){
     imgbase64=imgbase64in;
-    else imgbase64="";
+    }
+    else throw std::runtime_error("CTxOut::Imgbase64in(): value out of range");
     nRounds = -10;
 }
 
