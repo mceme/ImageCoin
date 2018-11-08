@@ -4,7 +4,6 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include "primitives/transaction.h"
-#include "policy/policy.h"
 #include "hash.h"
 #include "tinyformat.h"
 #include "utilstrencodings.h"
