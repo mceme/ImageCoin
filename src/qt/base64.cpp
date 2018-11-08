@@ -57,22 +57,22 @@ static inline bool is_base64(BYTE c) {
 std::string base64::encode(std::string filename)
 {
 
-	std::ifstream ifp (filename, std::ifstream::binary);
+	std::ifstream ifp;
+	ifp.open(filename, std::ifstream::binary);
 
-	std::vector<BYTE> v(100);
+	std::vector<const char *> data(100);
 
 	std::string encodedData;
-	while ( ifp.read(reinterpret_cast<char*>(v.data()),  v.size() ) )
-	{
-	   // Find out how many characters were actually read.
-	    auto count = ifp.gcount();
-		 v.resize(count);
-	   // Use v up to count BTYEs.
-		 encodedData += base64::base64_encode(reinterpret_cast<char*>(v[0]),count);
-		 v.resize(100);
-	}
+
+	infile.seekg(0, std::ios::end);
+	size_t file_size_in_byte = infile.tellg();
+	data.resize(file_size_in_byte);
+
+	infile.seekg(0, std::ios::beg);
+	infile.read(&data[0], file_size_in_byte);
 
 
+	encodedData = base64::base64_encode(data[0],data.size());
 
 	return encodedData;
 
