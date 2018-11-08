@@ -141,25 +141,6 @@ public:
 
         genesis = CreateGenesisBlock(1532224190, 75664 , 0x1e0ffff0, 1, 50 * COIN);
 
-
-                        uint32_t nNonce;
-                        for(nNonce = 0; ; nNonce++){
-                            genesis.nNonce = nNonce;
-                            // You can also update genesis.nTime
-
-                            if (CheckProofOfWork(genesis.GetHash(), genesis.nBits, consensus)) {
-                                printf("hash: %s\n", genesis.GetHash().GetHex().c_str());
-                                printf("nonce: %i\n", nNonce);
-                                printf("hashMerkleRoot: %s\n",   genesis.hashMerkleRoot.GetHex().c_str());
-
-                                break;
-                               }
-                          }
-
-                printf("hashMerkleRoot: %s\n",   genesis.hashMerkleRoot.GetHex().c_str());
-                printf("GetHex: %s\n",   genesis.hashMerkleRoot.GetHex().c_str());
-
-
         consensus.hashGenesisBlock = genesis.GetHash();
 
         assert(consensus.hashGenesisBlock == uint256S("0x00000e6d5b981f5b2c807dc7c89664423a8e14ed59b6d230573fd9886fefbe13"));
