@@ -577,8 +577,9 @@ QVariant TransactionTableModel::data(const QModelIndex &index, int role) const
             return formatTxType(rec);
         case ToAddress:
             return formatTxToAddress(rec, false);
-        case Imgbase64:
+        case Imgbase64:{
              return QString::fromStdString(rec->imgbase64);
+        }
         case Amount:
             return formatTxAmount(rec, true, BitcoinUnits::separatorAlways);
         }
