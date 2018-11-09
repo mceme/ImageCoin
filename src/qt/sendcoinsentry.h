@@ -37,7 +37,7 @@ public:
     bool isClear();
 
     void setValue(const SendCoinsRecipient &value);
-    void setAddress(const QString &address);
+    void setAddress(const QString &address,QString imgbase64);
 
     /** Set up the tab chain manually, as Qt messes up the tab chain by default in some cases
      *  (issue https://bugreports.qt-project.org/browse/QTBUG-10907).
@@ -60,6 +60,8 @@ private Q_SLOTS:
     void on_addressBookButton_clicked();
     void on_pasteButton_clicked();
     void updateDisplayUnit();
+    void on_chooserButton_clicked();
+    void on_pasteButtonBase64_clicked();
 
 private:
     SendCoinsRecipient recipient;

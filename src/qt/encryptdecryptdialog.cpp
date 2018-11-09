@@ -8,10 +8,12 @@
 #include "addressbookpage.h"
 #include "addresstablemodel.h"
 #include "guiutil.h"
+#include "walletview.h"
 #include "optionsmodel.h"
 #include "platformstyle.h"
 #include "walletmodel.h"
 #include "ecdsa.h"
+#include "base64.h"
 #include <QApplication>
 #include <QClipboard>
 #include <QDialog>
@@ -24,6 +26,7 @@
 
 
 ecdsa ecdsa;
+base64 base64en;
 QStringList fileNames;
 
 EncryptDecryptDialog::EncryptDecryptDialog(const PlatformStyle *platformStyle, QWidget *parent) :
@@ -48,10 +51,8 @@ EncryptDecryptDialog::EncryptDecryptDialog(const PlatformStyle *platformStyle, Q
     // These icons are needed on Mac also!
    // ui->addressBookButton->setIcon(QIcon(":/icons/" + theme + "/address-book"));
     ui->pasteButton->setIcon(QIcon(":/icons/" + theme + "/editpaste"));
-    //ui->deleteButton->setIcon(QIcon(":/icons/" + theme + "/remove"));
-    //ui->deleteButton_is->setIcon(QIcon(":/icons/" + theme + "/remove"));
-    //ui->deleteButton_s->setIcon(QIcon(":/icons/" + theme + "/remove"));
-      
+    ui->copyEncodedButton->setIcon(QIcon(":/icons/" + theme + "/editcopy"));
+
     // normal dash address field
     GUIUtil::setupAddressWidget(ui->payTo, this);
     // just a label for displaying dash address(es)
@@ -59,15 +60,20 @@ EncryptDecryptDialog::EncryptDecryptDialog(const PlatformStyle *platformStyle, Q
 
     // Connect signals
 
-    connect(ui->chooserButton, SIGNAL(clicked()), this, SLOT(on_chooserButton_clicked()));
+   // connect(ui->chooserButton, SIGNAL(clicked()), this, SLOT(on_chooserButton_clicked()));
+
+    connect(ui->copyEncodedButton, SIGNAL(clicked()), this, SLOT(on_copyEncodedButton_clicked()));
 
     connect(ui->encryptButton, SIGNAL(clicked()), this, SLOT(on_EncryptButton_clicked()));
 
     connect(ui->decryptButton, SIGNAL(clicked()), this, SLOT(on_DecryptButton_clicked()));
 
+    connect(ui->encodebase64Button, SIGNAL(clicked()), this, SLOT(encodebase64Clicked()));
+
 
     ui->FileNamesTxt->setReadOnly(true);
 
+    ui->lineEditimgbase64->setMaxLength(3000000);
 	 //connect(ui->addressBookButton, SIGNAL(clicked()), this, SLOT(on_addressBookButton_clicked()));
     //connect(ui->deleteButton, SIGNAL(clicked()), this, SLOT(deleteClicked()));
    // connect(ui->deleteButton_is, SIGNAL(clicked()), this, SLOT(deleteClicked()));
@@ -123,12 +129,18 @@ void EncryptDecryptDialog::on_chooserButton_clicked()
        }
 }
 
+void EncryptDecryptDialog::on_copyEncodedButton_clicked()
+{
+    // copy text to clipboard
+
+    GUIUtil::setClipboard(ui->lineEditimgbase64->text());
+}
+
 void EncryptDecryptDialog::on_pasteButton_clicked()
 {
     // Paste text from clipboard into recipient field
     ui->payTo->setText(QApplication::clipboard()->text());
 }
-
 
 void EncryptDecryptDialog::on_EncryptButton_clicked()
 {
@@ -444,4 +456,50 @@ void EncryptDecryptDialog::decrypt()
 	 clear();
 	 ui->MessageBox->setText("Decrypt Complete!");
 
+}
+
+
+// ###### ENCODE BASE64 #######
+
+
+void EncryptDecryptDialog::encodebase64Clicked()
+{
+	 if(!model)
+	        return ;
+//validation
+	ui->MessageBox->clear();
+
+	ui->FileNamesTxt->setStyleSheet("QLineEdit { background: rgb(255, 255, 255); selection-background-color: rgb(255, 128, 128); }");
+
+	ui->lineEditimgbase64->setStyleSheet("QLineEdit { background: rgb(255, 255, 255); selection-background-color: rgb(255, 128, 128); }");
+
+	if(ui->FileNamesTxt->text().isEmpty() && ui->lineEditimgbase64->text().isEmpty() )
+	{
+     ui->FileNamesTxt->setStyleSheet("QLineEdit { background: rgb(220, 20, 60); selection-background-color: rgb(233, 99, 0); }");
+
+	  return;
+	}
+
+
+
+//end validation
+
+	  QString file = fileNames[0];
+	 std::string filestr = file.toUtf8().constData();
+	 std::string encodedstring = base64en.encode(filestr);
+	 QString qsencoded = QString::fromLocal8Bit(encodedstring.c_str());
+      ui->lineEditimgbase64->setText(qsencoded);
+
+  	if(qsencoded.size()>1500000)
+  	{
+  		 ui->lineEditimgbase64->setStyleSheet("QLineEdit { background: rgb(220, 20, 60); selection-background-color: rgb(233, 99, 0); }");
+
+  		 ui->MessageBox->setText("Large file maxSize ~1MB ");
+  		 return;
+  	}
+  	else{
+
+      QString address="";
+      Q_EMIT encodebase64ClickedSignal(address, qsencoded);
+  	}
 }

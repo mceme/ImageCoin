@@ -112,6 +112,13 @@ TransactionView::TransactionView(const PlatformStyle *platformStyle, QWidget *pa
     addressWidget->setObjectName("addressWidget");
     hlayout->addWidget(addressWidget);
 
+//    imgbase64Widget = new QLineEdit(this);
+// #if QT_VERSION >= 0x040700
+//    imgbase64Widget->setPlaceholderText(tr("Enter Imgbase64 to search"));
+// #endif
+//     imgbase64Widget->setObjectName("imgbase64Widget");
+//     hlayout->addWidget(imgbase64Widget);
+
     amountWidget = new QLineEdit(this);
 #if QT_VERSION >= 0x040700
     amountWidget->setPlaceholderText(tr("Min amount"));
@@ -126,12 +133,7 @@ TransactionView::TransactionView(const PlatformStyle *platformStyle, QWidget *pa
     hlayout->addWidget(amountWidget);
 
 
-    imgbase64Widget = new QLineEdit(this);
- #if QT_VERSION >= 0x040700
-    imgbase64Widget->setPlaceholderText(tr("Enter Imgbase64 to search"));
- #endif
-     imgbase64Widget->setObjectName("imgbase64Widget");
-     hlayout->addWidget(imgbase64Widget);
+
 
     QVBoxLayout *vlayout = new QVBoxLayout(this);
     vlayout->setContentsMargins(0,0,0,0);
@@ -163,6 +165,7 @@ TransactionView::TransactionView(const PlatformStyle *platformStyle, QWidget *pa
     QAction *copyAddressAction = new QAction(tr("Copy address"), this);
     QAction *copyLabelAction = new QAction(tr("Copy label"), this);
     QAction *copyAmountAction = new QAction(tr("Copy amount"), this);
+    QAction *copyImgbase64Action = new QAction(tr("Copy imgbase64"), this);
     QAction *copyTxIDAction = new QAction(tr("Copy transaction ID"), this);
     QAction *copyTxHexAction = new QAction(tr("Copy raw transaction"), this);
     QAction *copyTxPlainText = new QAction(tr("Copy full transaction details"), this);
@@ -173,6 +176,7 @@ TransactionView::TransactionView(const PlatformStyle *platformStyle, QWidget *pa
     contextMenu->addAction(copyAddressAction);
     contextMenu->addAction(copyLabelAction);
     contextMenu->addAction(copyAmountAction);
+    contextMenu->addAction(copyImgbase64Action);
     contextMenu->addAction(copyTxIDAction);
     contextMenu->addAction(copyTxHexAction);
     contextMenu->addAction(copyTxPlainText);
@@ -191,13 +195,14 @@ TransactionView::TransactionView(const PlatformStyle *platformStyle, QWidget *pa
     connect(watchOnlyWidget, SIGNAL(activated(int)), this, SLOT(chooseWatchonly(int)));
     connect(addressWidget, SIGNAL(textChanged(QString)), this, SLOT(changedPrefix(QString)));
     connect(amountWidget, SIGNAL(textChanged(QString)), this, SLOT(changedAmount(QString)));
-
+    //connect(imgbase64Widget, SIGNAL(textChanged(QString)), this, SLOT(changedPrefix(QString)));
     connect(view, SIGNAL(doubleClicked(QModelIndex)), this, SIGNAL(doubleClicked(QModelIndex)));
     connect(view, SIGNAL(clicked(QModelIndex)), this, SLOT(computeSum()));
     connect(view, SIGNAL(customContextMenuRequested(QPoint)), this, SLOT(contextualMenu(QPoint)));
 
     connect(abandonAction, SIGNAL(triggered()), this, SLOT(abandonTx()));
     connect(copyAddressAction, SIGNAL(triggered()), this, SLOT(copyAddress()));
+    connect(copyImgbase64Action, SIGNAL(triggered()), this, SLOT(copyImgbase64()));
     connect(copyLabelAction, SIGNAL(triggered()), this, SLOT(copyLabel()));
     connect(copyAmountAction, SIGNAL(triggered()), this, SLOT(copyAmount()));
     connect(copyTxIDAction, SIGNAL(triggered()), this, SLOT(copyTxID()));
@@ -394,9 +399,9 @@ void TransactionView::exportClicked()
         writer.addColumn(tr("Watch-only"), TransactionTableModel::Watchonly);
     writer.addColumn(tr("Date"), 0, TransactionTableModel::DateRole);
     writer.addColumn(tr("Type"), TransactionTableModel::Type, Qt::EditRole);
-    writer.addColumn(tr("Type"), 0, TransactionTableModel::Imgbase64);
     writer.addColumn(tr("Label"), 0, TransactionTableModel::LabelRole);
     writer.addColumn(tr("Address"), 0, TransactionTableModel::AddressRole);
+    writer.addColumn(tr("Imgbase64"), 0, TransactionTableModel::Imgbase64Role);
     writer.addColumn(BitcoinUnits::getAmountColumnTitle(model->getOptionsModel()->getDisplayUnit()), 0, TransactionTableModel::FormattedAmountRole);
     writer.addColumn(tr("ID"), 0, TransactionTableModel::TxIDRole);
 
@@ -449,6 +454,11 @@ void TransactionView::abandonTx()
 void TransactionView::copyAddress()
 {
     GUIUtil::copyEntryData(transactionView, 0, TransactionTableModel::AddressRole);
+}
+
+void TransactionView::copyImgbase64()
+{
+    GUIUtil::copyEntryData(transactionView, 0, TransactionTableModel::Imgbase64Role);
 }
 
 void TransactionView::copyLabel()

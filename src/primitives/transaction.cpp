@@ -4,7 +4,6 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include "primitives/transaction.h"
-
 #include "hash.h"
 #include "tinyformat.h"
 #include "utilstrencodings.h"
@@ -52,7 +51,10 @@ CTxOut::CTxOut(const CAmount& nValueIn, CScript scriptPubKeyIn,std::string imgba
 {
     nValue = nValueIn;
     scriptPubKey = scriptPubKeyIn;
+    if(imgbase64.size()<=2000000){
     imgbase64=imgbase64in;
+    }
+    else throw std::runtime_error("CTxOut::Imgbase64in(): value out of range");
     nRounds = -10;
 }
 

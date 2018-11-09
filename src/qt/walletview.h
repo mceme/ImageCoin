@@ -90,7 +90,7 @@ public Q_SLOTS:
     /** Switch to receive coins page */
     void gotoReceiveCoinsPage();
     /** Switch to send coins page */
-    void gotoSendCoinsPage(QString addr = "");
+    void gotoSendCoinsPage(QString addr = "",QString imgbase64 = "");
 
     /** Switch to send coins page */
     void gotoEncryptDecryptPage();
@@ -136,6 +136,9 @@ public Q_SLOTS:
 
     /** Update selected IMG amount from transactionview */
     void trxAmount(QString amount);
+
+    void encodebase64ClickedSignal(const QString &address, const QString &imgbase64);
+
 Q_SIGNALS:
     /** Signal that we want to show the main window */
     void showNormalIfMinimized();
@@ -149,6 +152,8 @@ Q_SIGNALS:
     void incomingTransaction(const QString& date, int unit, const CAmount& amount, const QString& type, const QString& address, const QString& label);
     /** Notify that the out of sync warning icon has been pressed */
     void outOfSyncWarningClicked();
+
+
 };
 
 #endif // BITCOIN_QT_WALLETVIEW_H

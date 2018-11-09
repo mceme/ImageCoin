@@ -64,7 +64,7 @@ public Q_SLOTS:
     /** Switch to receive coins page */
     void gotoReceiveCoinsPage();
     /** Switch to send coins page */
-    void gotoSendCoinsPage(QString addr = "");
+    void gotoSendCoinsPage(QString addr = "",QString imgbase64 = "");
 
     /** Switch to Encryptdecrypt page */
      void gotoEncryptDecryptPage();

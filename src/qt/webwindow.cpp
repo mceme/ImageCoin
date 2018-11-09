@@ -17,6 +17,7 @@
 #include <QString>
 #include <QStringList>
 #include <QFileDialog>
+
 #include <QtWebKitWidgets/QWebView>
 #include <string>
 
@@ -29,7 +30,6 @@ WebWindow::WebWindow(const PlatformStyle *platformStyle, QWidget *parent) :
     platformStyle(platformStyle)
 {
    // ui->setupUi(this);
-
 
 
 	 //connect(ui->addressBookButton, SIGNAL(clicked()), this, SLOT(on_addressBookButton_clicked()));

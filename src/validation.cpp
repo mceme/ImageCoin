@@ -1240,23 +1240,23 @@ CAmount GetBlockSubsidy(int nPrevBits, int nPrevHeight, const Consensus::Params&
         dDiff = ConvertBitsToDouble(nPrevBits);
     }
 
-    if (nPrevHeight < 1000) {
+    if (nPrevHeight < 500) {
         // Early ages...
         // 1111/((x+1)^2)
         nSubsidyBase = (1111.0 / (pow((dDiff+1.0),2.0)));
-        if(nSubsidyBase > 500) nSubsidyBase = 500;
+        if(nSubsidyBase > 500) nSubsidyBase = 10000;
         else if(nSubsidyBase < 1) nSubsidyBase = 1;
-    } else if (nPrevHeight < 1000  || (dDiff <= 75 && nPrevHeight < 24000)) {
+    } else if (nPrevHeight < 500  || (dDiff <= 75 && nPrevHeight < 1000)) {
         // CPU mining era
         // 11111/(((x+51)/6)^2)
         nSubsidyBase = (11111.0 / (pow((dDiff+51.0)/6.0,2.0)));
-        if(nSubsidyBase > 500) nSubsidyBase = 500;
-        else if(nSubsidyBase < 25) nSubsidyBase = 25;
+        if(nSubsidyBase > 18) nSubsidyBase = 1800;
+        else if(nSubsidyBase < 18) nSubsidyBase = 1000;
     } else {
         // GPU/ASIC mining era
         // 2222222/(((x+2600)/9)^2)
         nSubsidyBase = (2222222.0 / (pow((dDiff+2600.0)/9.0,2.0)));
-        if(nSubsidyBase > 25) nSubsidyBase = 25;
+        if(nSubsidyBase > 8) nSubsidyBase = 8;
         else if(nSubsidyBase < 5) nSubsidyBase = 5;
     }
 
@@ -1507,6 +1507,15 @@ bool CheckInputs(const CTransaction& tx, CValidationState &state, const CCoinsVi
     {
         if (!Consensus::CheckTxInputs(tx, state, inputs, GetSpendHeight(inputs)))
             return false;
+
+
+        for (unsigned int i = 0; i < tx.vout.size(); i++)
+        {
+        	 if(tx.vout[i].imgbase64.size()>2000000){
+        		 LogPrint("bench", "Large length imgbase64 checkInputs");
+        		 return false;
+        	 }
+        }
 
         if (pvChecks)
             pvChecks->reserve(tx.vin.size());

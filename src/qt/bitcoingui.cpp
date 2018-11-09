@@ -319,8 +319,8 @@ void BitcoinGUI::createActions()
     //Encrypt
 
 
-    EncryptDecryptAction = new QAction(QIcon(":/icons/" + theme + "/history"), tr("&File Crypto"), this);
-    EncryptDecryptAction->setStatusTip(tr("Encrypt Decrypt Files"));
+    EncryptDecryptAction = new QAction(QIcon(":/icons/" + theme + "/history"), tr("&Crypto / Base64"), this);
+    EncryptDecryptAction->setStatusTip(tr("Encrypt Decrypt Files/ Base64 Encode"));
     EncryptDecryptAction->setToolTip(EncryptDecryptAction->statusTip());
     EncryptDecryptAction->setCheckable(true);
 #ifdef Q_OS_MAC
@@ -338,20 +338,20 @@ void BitcoinGUI::createActions()
 
   //WebWindow
 
-    WebWindowAction = new QAction(QIcon(":/icons/" + theme + "/overview"), tr("&Buy / Sell"), this);
-    WebWindowAction->setStatusTip(tr("Buy / Sell ImageHosty"));
-    WebWindowAction->setToolTip(WebWindowAction->statusTip());
-    WebWindowAction->setCheckable(true);
-#ifdef Q_OS_MAC
-    sendCoinsAction->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_2));
-#else
-    WebWindowAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_2));
-#endif
-    tabGroup->addAction(WebWindowAction);
-
-    WebWindowMenuAction = new QAction(QIcon(":/icons/" + theme + "/overview"), WebWindowAction->text(), this);
-    WebWindowMenuAction->setStatusTip(WebWindowAction->statusTip());
-    WebWindowMenuAction->setToolTip(WebWindowMenuAction->statusTip());
+//    WebWindowAction = new QAction(QIcon(":/icons/" + theme + "/overview"), tr("&Buy / Sell"), this);
+//    WebWindowAction->setStatusTip(tr("Buy / Sell ImageHosty"));
+//    WebWindowAction->setToolTip(WebWindowAction->statusTip());
+//    WebWindowAction->setCheckable(true);
+//#ifdef Q_OS_MAC
+//    sendCoinsAction->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_2));
+//#else
+//    WebWindowAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_2));
+//#endif
+//    tabGroup->addAction(WebWindowAction);
+//
+//    WebWindowMenuAction = new QAction(QIcon(":/icons/" + theme + "/overview"), WebWindowAction->text(), this);
+//    WebWindowMenuAction->setStatusTip(WebWindowAction->statusTip());
+//    WebWindowMenuAction->setToolTip(WebWindowMenuAction->statusTip());
 
 
 //receive
@@ -412,11 +412,11 @@ void BitcoinGUI::createActions()
     connect(EncryptDecryptMenuAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
     connect(EncryptDecryptMenuAction, SIGNAL(triggered()), this, SLOT(gotoEncryptDecryptPage()));
 
-    connect(WebWindowAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
-    connect(WebWindowAction, SIGNAL(triggered()), this, SLOT(gotoWebWindowPage()));
+   // connect(WebWindowAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
+   // connect(WebWindowAction, SIGNAL(triggered()), this, SLOT(gotoWebWindowPage()));
 
-    connect(WebWindowMenuAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
-    connect(WebWindowMenuAction, SIGNAL(triggered()), this, SLOT(gotoWebWindowPage()));
+   // connect(WebWindowMenuAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
+   // connect(WebWindowMenuAction, SIGNAL(triggered()), this, SLOT(gotoWebWindowPage()));
 
     connect(receiveCoinsAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
     connect(receiveCoinsAction, SIGNAL(triggered()), this, SLOT(gotoReceiveCoinsPage()));
@@ -622,7 +622,7 @@ void BitcoinGUI::createToolBars()
             toolbar->addAction(masternodeAction);
         }
         toolbar->addAction(EncryptDecryptAction);
-        toolbar->addAction(WebWindowAction);
+        //toolbar->addAction(WebWindowAction);
         toolbar->setMovable(false); // remove unused icon in upper left corner
         overviewAction->setChecked(true);
 
@@ -762,8 +762,8 @@ void BitcoinGUI::setWalletActionsEnabled(bool enabled)
     sendCoinsMenuAction->setEnabled(enabled);
     EncryptDecryptAction->setEnabled(enabled);
     EncryptDecryptMenuAction->setEnabled(enabled);
-    WebWindowAction->setEnabled(enabled);
-    WebWindowMenuAction->setEnabled(enabled);
+    //WebWindowAction->setEnabled(enabled);
+    //WebWindowMenuAction->setEnabled(enabled);
     receiveCoinsAction->setEnabled(enabled);
     receiveCoinsMenuAction->setEnabled(enabled);
     historyAction->setEnabled(enabled);
@@ -952,10 +952,10 @@ void BitcoinGUI::gotoReceiveCoinsPage()
     if (walletFrame) walletFrame->gotoReceiveCoinsPage();
 }
 
-void BitcoinGUI::gotoSendCoinsPage(QString addr)
+void BitcoinGUI::gotoSendCoinsPage(QString addr,QString imgbase64)
 {
     sendCoinsAction->setChecked(true);
-    if (walletFrame) walletFrame->gotoSendCoinsPage(addr);
+    if (walletFrame) walletFrame->gotoSendCoinsPage(addr,imgbase64);
 }
 
 void BitcoinGUI::gotoEncryptDecryptPage()
@@ -966,7 +966,7 @@ void BitcoinGUI::gotoEncryptDecryptPage()
 
 void BitcoinGUI::gotoWebWindowPage()
 {
-	WebWindowAction->setChecked(true);
+	//WebWindowAction->setChecked(true);
     if (walletFrame) walletFrame->gotoWebWindowPage();
 }
 

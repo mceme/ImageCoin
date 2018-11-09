@@ -565,7 +565,7 @@ public:
         READWRITE(nCreditDebit);
         READWRITE(nTime);
         READWRITE(LIMITED_STRING(strOtherAccount, 65536));
-        READWRITE(LIMITED_STRING(imgbase64, 165536));
+        READWRITE(LIMITED_STRING(imgbase64, 1655366));
         if (!ser_action.ForRead())
         {
             WriteOrderPos(nOrderPos, mapValue);

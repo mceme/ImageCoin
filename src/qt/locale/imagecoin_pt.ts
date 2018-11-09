@@ -101,8 +101,8 @@
 <context>
     <name>EncryptDecryptPage</name>
     <message>
-        <source>File Crypto</source>
-        <translation>Encriptação</translation>
+        <source>Crypto / Base64</source>
+        <translation>cripto / Base64</translation>
     </message>
     <message>
         <source>Chooser</source>
