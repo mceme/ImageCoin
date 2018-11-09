@@ -72,7 +72,7 @@ std::string base64::encode(std::string filename)
 	infile.read(&data[0], file_size_in_byte);
 
 
-	encodedData = base64::base64_encode(data[0],data.size());
+	encodedData = base64::base64_encode(data,data.size());
 
 	return encodedData;
 
