@@ -208,12 +208,11 @@ void EncryptDecryptDialog::on_payTo_textChanged(const QString &address)
 
 void EncryptDecryptDialog::clear()
 {
-    // clear UI elements for normal payment
+    // clear UI elements
     ui->FileNamesTxt->clear();
     ui->addAsLabel->clear();
     ui->payTo->clear();
     ui->MessageBox->clear();
-
 
     // update the display unit, to not use the default ("BTC")
     //updateDisplayUnit();
@@ -467,20 +466,20 @@ void EncryptDecryptDialog::encodebase64Clicked()
 	 if(!model)
 	        return ;
 //validation
-	ui->MessageBox->clear();
+	 ui->lineEditimgbase64->setText("");
 
-	ui->FileNamesTxt->setStyleSheet("QLineEdit { background: rgb(255, 255, 255); selection-background-color: rgb(255, 128, 128); }");
+	 ui->MessageBox->setText("");
 
-	ui->lineEditimgbase64->setStyleSheet("QLineEdit { background: rgb(255, 255, 255); selection-background-color: rgb(255, 128, 128); }");
+	 ui->FileNamesTxt->setStyleSheet("QLineEdit { background: rgb(255, 255, 255); selection-background-color: rgb(255, 128, 128); }");
+
+	 ui->lineEditimgbase64->setStyleSheet("QLineEdit { background: rgb(255, 255, 255); selection-background-color: rgb(255, 128, 128); }");
 
 	if(ui->FileNamesTxt->text().isEmpty() && ui->lineEditimgbase64->text().isEmpty() )
 	{
-     ui->FileNamesTxt->setStyleSheet("QLineEdit { background: rgb(220, 20, 60); selection-background-color: rgb(233, 99, 0); }");
+      ui->FileNamesTxt->setStyleSheet("QLineEdit { background: rgb(220, 20, 60); selection-background-color: rgb(233, 99, 0); }");
 
 	  return;
 	}
-
-
 
 //end validation
 
@@ -488,7 +487,7 @@ void EncryptDecryptDialog::encodebase64Clicked()
 	 std::string filestr = file.toUtf8().constData();
 	 std::string encodedstring = base64en.encode(filestr);
 	 QString qsencoded = QString::fromLocal8Bit(encodedstring.c_str());
-      ui->lineEditimgbase64->setText(qsencoded);
+
 
   	if(qsencoded.size()>1500000)
   	{
@@ -498,7 +497,8 @@ void EncryptDecryptDialog::encodebase64Clicked()
   		 return;
   	}
   	else{
-
+      ui->lineEditimgbase64->setText(qsencoded);
+      ui->MessageBox->setText("Encode base64 complete! ");
       QString address="";
       Q_EMIT encodebase64ClickedSignal(address, qsencoded);
   	}

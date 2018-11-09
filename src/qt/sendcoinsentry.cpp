@@ -205,7 +205,7 @@ bool SendCoinsEntry::validate()
     }
 
     ui->Imgbase64Edit->setStyleSheet("QLineEdit { background: rgb(255, 255, 255); selection-background-color: rgb(255, 128, 128); }");
-
+    ui->Imgbase64Edit->setToolTip("Enter base64 string for this tx. ");
     if (!ui->Imgbase64Edit->text().isEmpty())
     {
 
@@ -213,13 +213,15 @@ bool SendCoinsEntry::validate()
     	if(!base64.base64Validator(imgbase64)){
 
     		ui->Imgbase64Edit->setStyleSheet("QLineEdit { background: rgb(220, 20, 60); selection-background-color: rgb(233, 99, 0); }");
-    		ui->messageTextLabel->setText("Base64 string not valid.");
+    		ui->Imgbase64Edit->setToolTip("Base64 string not valid.");
+    		ui->Imgbase64Edit->setText("");
     	    retval = false;
     	}
     	if(ui->Imgbase64Edit->text().length()>1500000)
     	{
     		 ui->Imgbase64Edit->setStyleSheet("QLineEdit { background: rgb(220, 20, 60); selection-background-color: rgb(233, 99, 0); }");
-    		 ui->messageTextLabel->setText("Large file maxSize ~1MB ");
+    		 ui->Imgbase64Edit->setToolTip("Large file maxSize ~1MB ");
+    		 ui->Imgbase64Edit->setText("");
     		 retval = false;
     	}
     }
