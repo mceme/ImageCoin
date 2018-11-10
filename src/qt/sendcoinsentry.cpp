@@ -142,11 +142,9 @@ void SendCoinsEntry::clear()
 void SendCoinsEntry::on_chooserButton_clicked()
 {
 	//clear
-	  ui->messageTextLabel->setText("");
-
 
 	  ui->Imgbase64Edit->setStyleSheet("QLineEdit { background: rgb(255, 255, 255); selection-background-color: rgb(255, 128, 128); }");
-
+	  ui->Imgbase64Edit->setToolTip("Enter base64 string for this tx. ");
 
     // Paste text from clipboard into recipient field
     QFileDialog dialog(this);
@@ -168,11 +166,18 @@ void SendCoinsEntry::on_chooserButton_clicked()
       	 std::string encodedstring = base64.encode(filestr);
       	 QString qsencoded = QString::fromStdString(encodedstring);
 
+        	if(!base64.base64Validator(encodedstring)){
+
+        		ui->Imgbase64Edit->setStyleSheet("QLineEdit { background: rgb(220, 20, 60); selection-background-color: rgb(233, 99, 0); }");
+        		ui->Imgbase64Edit->setToolTip("Base64 string not valid.");
+        		ui->Imgbase64Edit->setText("");
+        		 return;
+        	}
         	if(qsencoded.size()>1500000)
         	{
         		 ui->Imgbase64Edit->setStyleSheet("QLineEdit { background: rgb(220, 20, 60); selection-background-color: rgb(233, 99, 0); }");
-
-        		 ui->messageTextLabel->setText("Large file maxSize ~1MB ");
+        		 ui->Imgbase64Edit->setToolTip("Large file maxSize ~1MB ");
+        		 ui->Imgbase64Edit->setText("");
         		 return;
         	}
 
@@ -193,7 +198,7 @@ bool SendCoinsEntry::validate()
 
     // Check input validity
     bool retval = true;
-    ui->messageTextLabel->setText("");
+
     // Skip checks for payment request
     if (recipient.paymentRequest.IsInitialized())
         return retval;
