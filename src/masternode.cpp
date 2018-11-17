@@ -250,11 +250,14 @@ bool CMasternode::IsInputAssociatedWithPubkey()
     CScript payee;
     payee = GetScriptForDestination(pubKeyCollateralAddress.GetID());
 
+    int MASTERNODE_PRICE = 1000;
+            if (chainActive.Height() > 40000) MASTERNODE_PRICE = 10000;
+
     CTransaction tx;
     uint256 hash;
     if(GetTransaction(vin.prevout.hash, tx, Params().GetConsensus(), hash, true)) {
         BOOST_FOREACH(CTxOut out, tx.vout)
-            if(out.nValue == 10000*COIN && out.scriptPubKey == payee) return true;
+            if(out.nValue == MASTERNODE_PRICE*COIN && out.scriptPubKey == payee) return true;
     }
 
     return false;
