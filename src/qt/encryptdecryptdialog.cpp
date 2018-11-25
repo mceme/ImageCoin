@@ -84,6 +84,9 @@ EncryptDecryptDialog::EncryptDecryptDialog(const PlatformStyle *platformStyle, Q
     ui->FileNamesTxt->setReadOnly(true);
 
     ui->lineEditimgbase64->setMaxLength(3000000);
+
+    ui->cmdShowSave->setVisible(false);
+    ui->graphicsView->setVisible(false);
 	 //connect(ui->addressBookButton, SIGNAL(clicked()), this, SLOT(on_addressBookButton_clicked()));
     //connect(ui->deleteButton, SIGNAL(clicked()), this, SLOT(deleteClicked()));
    // connect(ui->deleteButton_is, SIGNAL(clicked()), this, SLOT(deleteClicked()));
@@ -566,10 +569,11 @@ void EncryptDecryptDialog::decodebase64Clicked()
   		   item.setPos( 0, 0 );
   		   scene->addItem( &item );
 
-
+  		   ui->graphicsView->setVisible(true);
   		   ui->graphicsView->setScene( scene );
   		   ui->graphicsView->show();
   		  ui->MessageBox->setText("Decoding base64 complete! ");
+  		 ui->cmdShowSave->setVisible(true);
 
 
   	}
