@@ -6,7 +6,7 @@ COIN_DAEMON='/usr/local/bin/ImageCoind'
 COIN_DAEMON_NAME='ImageCoind'
 COIN_CLI_NAME='ImageCoin-cli'
 COIN_CLI='/usr/local/bin/ImageCoin-cli'
-COIN_REPO='https://github.com/mceme/ImageCoin/releases/download/1.0.2/imagecoin_linux.tar.xz'
+COIN_REPO='https://github.com/mceme/ImageCoin/releases/download/1.0.10/ImageCoin_linux86_64.tar.xz'
 COIN_NAME='ImageCoin'
 COIN_PORT=6998
 
@@ -230,10 +230,10 @@ fi
 }
 
 function detect_ubuntu() {
- if [[ $(lsb_release -d) == *17.10* ]]; then
-   UBUNTU_VERSION=17
+ if [[ $(lsb_release -d) == *18.04* ]]; then
+   UBUNTU_VERSION=18
 else
-   echo -e "${RED}You are not running Ubuntu  17.10 Installation is cancelled.${NC}"
+   echo -e "${RED}You are not running Ubuntu  18.04 Installation is cancelled.${NC}"
    exit 1
 fi
 }
@@ -262,7 +262,7 @@ function important_information() {
  echo -e "================================================================================"
  echo -e "$COIN_NAME Masternode is up and running listening on port ${RED}$COIN_PORT${NC}."
  echo -e "Configuration file is: ${RED}$CONFIGFOLDER/$CONFIG_FILE${NC}"
- if (( $UBUNTU_VERSION == 17 )); then
+ if (( $UBUNTU_VERSION == 18 )); then
    echo -e "Start: ${RED}systemctl start $COIN_NAME.service${NC}"
    echo -e "Stop: ${RED}systemctl stop $COIN_NAME.service${NC}"
    echo -e "Status: ${RED}systemctl status $COIN_NAME.service${NC}"
@@ -288,7 +288,7 @@ function setup_node() {
   update_config
   enable_firewall
   important_information
-  if (( $UBUNTU_VERSION == 17 )); then
+  if (( $UBUNTU_VERSION == 18 )); then
     configure_systemd
   else
     configure_startup
