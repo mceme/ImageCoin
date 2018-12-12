@@ -557,23 +557,22 @@ void EncryptDecryptDialog::decodebase64Clicked()
   	{
 
 
-
-  		 base64decodearray = new QByteArray(reinterpret_cast<unsigned char>(&bytesarray[0]), bytesarray.size());
-
-  		  QImage *image = new QImage;
-  		  image->loadFromData(base64decodearray, "JPG");
-
-  		   QGraphicsPixmapItem item( QPixmap::fromImage( image ) );
-  		   QGraphicsScene* scene = new QGraphicsScene;
-
-  		   item.setPos( 0, 0 );
-  		   scene->addItem( &item );
-
-  		   ui->graphicsView->setVisible(true);
-  		   ui->graphicsView->setScene( scene );
-  		   ui->graphicsView->show();
-  		  ui->MessageBox->setText("Decoding base64 complete! ");
-  		 ui->cmdShowSave->setVisible(true);
+//  		   base64decodearray = new QByteArray(reinterpret_cast<unsigned char>(&bytesarray[0]), bytesarray.size());
+//
+//  		   QImage *image = new QImage;
+//  		   image->loadFromData(base64decodearray, "JPG");
+//
+//  		   QGraphicsPixmapItem item( QPixmap::fromImage( image ) );
+//  		   QGraphicsScene* scene = new QGraphicsScene;
+//
+//  		   item.setPos( 0, 0 );
+//  		   scene->addItem( &item );
+//
+//  		   ui->graphicsView->setVisible(true);
+//  		   ui->graphicsView->setScene( scene );
+//  		   ui->graphicsView->show();
+//  		   ui->MessageBox->setText("Decoding base64 complete! ");
+//  		   ui->cmdShowSave->setVisible(true);
 
 
   	}
@@ -590,16 +589,16 @@ void EncryptDecryptDialog::decodebase64Clicked()
 
 void EncryptDecryptDialog::on_cmdShowSave_clicked()
    {
-	QString fileNamesave = QFileDialog::getSaveFileName(this, tr("Save File"),
-	                            "c:/image.png",
-	                            tr("Files (*.png *.jpeg *.jpg *.gif *.tiff *.bmp *.mp4 *.avi *.mpeg)"));
-
-	QByteArray base64decodearray;
-	// ... fill the array with data ...
-
-	QFile file(fileNamesave.toUtf8().constData());
-	file.open(QIODevice::WriteOnly);
-	file.write(base64decodearray);
-	file.close();
+//	QString fileNamesave = QFileDialog::getSaveFileName(this, tr("Save File"),
+//	                            "c:/image.png",
+//	                            tr("Files (*.png *.jpeg *.jpg *.gif *.tiff *.bmp *.mp4 *.avi *.mpeg)"));
+//
+//	QByteArray base64decodearray;
+//	// ... fill the array with data ...
+//
+//	QFile file(fileNamesave.toUtf8().constData());
+//	file.open(QIODevice::WriteOnly);
+//	file.write(base64decodearray);
+//	file.close();
 
    }
