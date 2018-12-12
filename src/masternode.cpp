@@ -112,7 +112,7 @@ CMasternode::CollateralStatus CMasternode::CheckCollateral(const COutPoint& outp
     AssertLockHeld(cs_main);
 
     int MASTERNODE_PRICE = 10000;
-    if (chainActive.Height() > 40000) MASTERNODE_PRICE = 10000;
+
     Coin coin;
     if(!GetUTXOCoin(outpoint, coin)) {
         return COLLATERAL_UTXO_NOT_FOUND;
@@ -251,7 +251,6 @@ bool CMasternode::IsInputAssociatedWithPubkey()
     payee = GetScriptForDestination(pubKeyCollateralAddress.GetID());
 
     int MASTERNODE_PRICE = 10000;
-            if (chainActive.Height() > 40000) MASTERNODE_PRICE = 10000;
 
     CTransaction tx;
     uint256 hash;
