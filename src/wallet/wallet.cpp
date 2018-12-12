@@ -2353,7 +2353,7 @@ void CWallet::AvailableCoins(vector<COutput>& vCoins, bool fOnlyConfirmed, const
 {
     vCoins.clear();
 
-    int MASTERNODE_PRICE = 1000 ;
+    int MASTERNODE_PRICE = 10000 ;
     if (chainActive.Height() > 40000) MASTERNODE_PRICE = 10000 ;
 
     {
@@ -2823,7 +2823,7 @@ struct CompareByAmount
 bool CWallet::SelectCoinsGrouppedByAddresses(std::vector<CompactTallyItem>& vecTallyRet, bool fSkipDenominated, bool fAnonymizable, bool fSkipUnconfirmed) const
 {
 
-	int MASTERNODE_PRICE = 1000;
+	int MASTERNODE_PRICE = 10000;
 			if (chainActive.Height() > 40000) MASTERNODE_PRICE = 10000 ;
 
     LOCK2(cs_main, cs_wallet);
@@ -2926,7 +2926,7 @@ bool CWallet::SelectCoinsGrouppedByAddresses(std::vector<CompactTallyItem>& vecT
 bool CWallet::SelectCoinsDark(CAmount nValueMin, CAmount nValueMax, std::vector<CTxIn>& vecTxInRet, CAmount& nValueRet, int nPrivateSendRoundsMin, int nPrivateSendRoundsMax) const
 {
 
-	int MASTERNODE_PRICE = 1000;
+	int MASTERNODE_PRICE = 10000;
 		if (chainActive.Height() > 40000) MASTERNODE_PRICE = 10000 ;
     CCoinControl *coinControl=NULL;
 

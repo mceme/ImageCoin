@@ -76,7 +76,10 @@ private Q_SLOTS:
     void encrypt();
     void decrypt();
     void encodebase64Clicked();
+    void decodebase64Clicked();
+    void on_cmdShowSave_clicked();
     void on_copyEncodedButton_clicked();
+    void on_pasteEncodedButton_clicked();
 
 
 
