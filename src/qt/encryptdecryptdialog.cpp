@@ -30,7 +30,7 @@
 #include <chrono>
 #include <thread>
 
-QGraphicsPixmapItem
+
 ecdsa ecdsa;
 base64 base64en;
 QStringList fileNames;
@@ -49,7 +49,7 @@ EncryptDecryptDialog::EncryptDecryptDialog(const PlatformStyle *platformStyle, Q
     //if (platformStyle->getUseExtraSpacing())
      //   ui->payToLayout->setSpacing(4);
 #if QT_VERSION >= 0x040700
-    ui->addAsLabel->setPlaceholderText(tr("******"));
+   // ui->addAsLabel->setPlaceholderText(tr("******"));
 #endif
 
     QString theme = GUIUtil::getThemeName();
@@ -229,7 +229,7 @@ void EncryptDecryptDialog::clear()
 {
     // clear UI elements
     ui->FileNamesTxt->clear();
-    ui->addAsLabel->clear();
+    //ui->addAsLabel->clear();
     ui->payTo->clear();
     ui->MessageBox->clear();
 
@@ -561,7 +561,7 @@ void EncryptDecryptDialog::decodebase64Clicked()
   		 base64decodearray = new QByteArray(reinterpret_cast<unsigned char>(&bytesarray[0]), bytesarray.size());
 
   		  QImage *image = new QImage;
-  		  image->loadFromData(barray, "JPG");
+  		  image->loadFromData(base64decodearray, "JPG");
 
   		   QGraphicsPixmapItem item( QPixmap::fromImage( image ) );
   		   QGraphicsScene* scene = new QGraphicsScene;
@@ -599,7 +599,7 @@ void EncryptDecryptDialog::on_cmdShowSave_clicked()
 
 	QFile file(fileNamesave.toUtf8().constData());
 	file.open(QIODevice::WriteOnly);
-	file.write(data);
+	file.write(base64decodearray);
 	file.close();
 
    }
