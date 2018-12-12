@@ -111,7 +111,7 @@ CMasternode::CollateralStatus CMasternode::CheckCollateral(const COutPoint& outp
 {
     AssertLockHeld(cs_main);
 
-    int MASTERNODE_PRICE = 1000;
+    int MASTERNODE_PRICE = 10000;
     if (chainActive.Height() > 40000) MASTERNODE_PRICE = 10000;
     Coin coin;
     if(!GetUTXOCoin(outpoint, coin)) {
@@ -250,7 +250,7 @@ bool CMasternode::IsInputAssociatedWithPubkey()
     CScript payee;
     payee = GetScriptForDestination(pubKeyCollateralAddress.GetID());
 
-    int MASTERNODE_PRICE = 1000;
+    int MASTERNODE_PRICE = 10000;
             if (chainActive.Height() > 40000) MASTERNODE_PRICE = 10000;
 
     CTransaction tx;
