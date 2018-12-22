@@ -52,8 +52,7 @@ TransactionDescDialog::TransactionDescDialog(const QModelIndex &idx, QWidget *pa
                       ui->graphicsView->setVisible(true);
                       ui->graphicsView->setGeometry(QRect(0, 0, 400, 250));
      		   ui->graphicsView->show();
-     		   ui->MessageBox->setText("Decoding base64 complete! ");
-     		   ui->cmdShowSave->setVisible(true);
+
 
                      	}
      	}
