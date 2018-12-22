@@ -14,7 +14,7 @@
 
 class base64 {
 
-	typedef unsigned char* BYTE;
+	typedef unsigned char BYTE;
 
 public:
 	explicit base64();

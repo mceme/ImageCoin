@@ -17,12 +17,47 @@ TransactionDescDialog::TransactionDescDialog(const QModelIndex &idx, QWidget *pa
     ui(new Ui::TransactionDescDialog)
 {
     ui->setupUi(this);
-
+    ui->graphicsView->setVisible(false);
     /* Open CSS when configured */
     this->setStyleSheet(GUIUtil::loadStyleSheet());
 
     QString desc = idx.data(TransactionTableModel::LongDescriptionRole).toString();
     ui->detailText->setHtml(desc);
+
+    /* Start ImageView */
+    std::string encodestr = idx.data(TransactionTableModel::Imgbase64).toString();
+
+    if(encodestr.size()>0)
+         	{
+
+             std::vector<unsigned char> bytesarray = base64en.decode(encodestr);
+
+             if(bytesarray.size()>0)
+                     	{
+     		  base64decodearray = new QByteArray(reinterpret_cast<const char*>(bytesarray.data()), bytesarray.size());
+
+
+     		  QBuffer buffer(base64decodearray);
+     		  QImageReader reader(&buffer);
+     		  QImage image = reader.read();
+                     QPixmap imagePixmap =  QPixmap::fromImage(image);
+                     QPixmap newPixmap = imagePixmap.scaled(QSize(400,250),  Qt::KeepAspectRatio);
+
+     		  QGraphicsScene* scene = new QGraphicsScene(QRect(0, 0, 400, 250));
+
+     		   scene->addPixmap(newPixmap);
+
+
+     		   ui->graphicsView->setScene( scene );
+                      ui->graphicsView->setVisible(true);
+                      ui->graphicsView->setGeometry(QRect(0, 0, 400, 250));
+     		   ui->graphicsView->show();
+     		   ui->MessageBox->setText("Decoding base64 complete! ");
+     		   ui->cmdShowSave->setVisible(true);
+
+                     	}
+     	}
+
 }
 
 TransactionDescDialog::~TransactionDescDialog()

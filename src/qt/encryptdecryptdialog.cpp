@@ -22,6 +22,7 @@
 #include <QFileDialog>
 #include <QByteArray>
 #include <QImage>
+#include <QSize>
 #include <QBuffer>
 #include <QImageReader>
 #include <QPixmap>
@@ -37,8 +38,9 @@
 ecdsa ecdsa;
 base64 base64en;
 QStringList fileNames;
-QByteArray base64decodearray;
-typedef unsigned char* BYTE;
+QByteArray *base64decodearray;
+
+typedef unsigned char BYTE;
 
 EncryptDecryptDialog::EncryptDecryptDialog(const PlatformStyle *platformStyle, QWidget *parent) :
     QDialog(parent),
@@ -434,7 +436,7 @@ void EncryptDecryptDialog::encrypt()
 	        	  QString file = fileNames[i];
 	        	  filestr = file.toUtf8().constData();
 		          keystr = key.toUtf8().constData();
-                  ecdsa.encrypt(filestr, keystr, status);
+                          ecdsa.encrypt(filestr, keystr, status);
 
 
                   int f = 0;
@@ -448,7 +450,6 @@ void EncryptDecryptDialog::encrypt()
 
 	 clear();
 	 ui->MessageBox->setText("Encrypt Complete!");
-
 
 }
 
@@ -465,7 +466,7 @@ void EncryptDecryptDialog::decrypt()
 	        	  QString file = fileNames[i];
 	        	  filestr = file.toUtf8().constData();
 		          keystr = key.toUtf8().constData();
-                  ecdsa.decrypt(filestr, keystr, status);
+                          ecdsa.decrypt(filestr, keystr, status);
 
                    int f = 0;
                   while(status==false && f < 60){
@@ -555,28 +556,29 @@ void EncryptDecryptDialog::decodebase64Clicked()
 
 	  QString encodestringqt = ui->lineEditimgbase64->text();
 	 std::string encodestr = encodestringqt.toUtf8().constData();
-	 std::vector<BYTE> bytesarray = base64en.decode(encodestr);
+	 std::vector<unsigned char> bytesarray = base64en.decode(encodestr);
 
 
   	if(bytesarray.size()>0)
   	{
 
-  		   base64decodearray = new QByteArray(reinterpret_cast<BYTE>(&bytesarray[0]), bytesarray.size());
+  		  base64decodearray = new QByteArray(reinterpret_cast<const char*>(bytesarray.data()), bytesarray.size());
 
 
-  		 base64decodearray = QByteArray::fromRawData(reinterpret_cast<const char*>(bytesarray.data()), bytesarray.size());
   		  QBuffer buffer(base64decodearray);
   		  QImageReader reader(&buffer);
   		  QImage image = reader.read();
+                  QPixmap imagePixmap =  QPixmap::fromImage(image);
+                  QPixmap newPixmap = imagePixmap.scaled(QSize(500,250),  Qt::KeepAspectRatio);
+  		 
+  		  QGraphicsScene* scene = new QGraphicsScene(QRect(0, 0, 500, 250));
 
-  		   QGraphicsPixmapItem item( QPixmap::fromImage( image ) );
-  		   QGraphicsScene* scene = new QGraphicsScene;
+  		   scene->addPixmap(newPixmap);
 
-  		   item.setPos( 0, 0 );
-  		   scene->addItem( &item );
-
-  		   ui->graphicsView->setVisible(true);
+  	
   		   ui->graphicsView->setScene( scene );
+                   ui->graphicsView->setVisible(true);
+                   ui->graphicsView->setGeometry(QRect(0, 0, 500, 250));
   		   ui->graphicsView->show();
   		   ui->MessageBox->setText("Decoding base64 complete! ");
   		   ui->cmdShowSave->setVisible(true);
@@ -596,14 +598,18 @@ void EncryptDecryptDialog::on_cmdShowSave_clicked()
    {
 	QString fileNamesave = QFileDialog::getSaveFileName(this, tr("Save File"),
 	                            "c:/image.png",
-	                            tr("Files (*.png *.jpeg *.jpg *.gif *.tiff *.bmp *.mp4 *.avi *.mpeg)"));
+	                            tr("Files (*.png *.jpeg *.jpg *.gif *.tiff *.bmp)"));
 
+        QByteArray base64decodefilearray;
 
+        base64decodefilearray.setRawData(base64decodearray->data(), base64decodearray->size());
 	// ... fill the array with data ...
 
 	QFile file(fileNamesave.toUtf8().constData());
 	file.open(QIODevice::WriteOnly);
-	file.write(base64decodearray);
+        
+
+	file.write(base64decodefilearray);
 	file.close();
 
    }

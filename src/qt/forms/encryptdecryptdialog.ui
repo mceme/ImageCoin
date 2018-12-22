@@ -226,7 +226,10 @@
       </widget>
      </item>
      <item>
-      <widget class="QToolButton" name="pasteEncodedButton">
+      <widget class="QToolButton" name="copyEncodedButton">
+       <property name="toolTip">
+        <string>Copy encoded base 64 string</string>
+       </property>
        <property name="text">
         <string/>
        </property>
@@ -239,9 +242,9 @@
       </widget>
      </item>
      <item>
-      <widget class="QToolButton" name="copyEncodedButton">
+      <widget class="QToolButton" name="pasteEncodedButton">
        <property name="toolTip">
-        <string>Copy encoded base 64 string</string>
+        <string>Paste encoded base 64 string</string>
        </property>
        <property name="text">
         <string/>
@@ -263,6 +266,9 @@
      </item>
      <item>
       <widget class="QPushButton" name="decodebase64Button">
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
        <property name="text">
         <string>Decode</string>
        </property>
