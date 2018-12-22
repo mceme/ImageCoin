@@ -7,10 +7,23 @@
 #include "ui_transactiondescdialog.h"
 
 #include "transactiontablemodel.h"
-
+#include "base64.h"
 #include <QModelIndex>
 #include <QSettings>
 #include <QString>
+#include <QByteArray>
+#include <QImage>
+#include <QSize>
+#include <QBuffer>
+#include <QImageReader>
+#include <QPixmap>
+#include <QGraphicsView>
+#include <QGraphicsScene>
+#include <string>
+#include <vector>
+
+
+
 
 TransactionDescDialog::TransactionDescDialog(const QModelIndex &idx, QWidget *parent) :
     QDialog(parent),
@@ -25,15 +38,18 @@ TransactionDescDialog::TransactionDescDialog(const QModelIndex &idx, QWidget *pa
     ui->detailText->setHtml(desc);
 
     /* Start ImageView */
-    std::string encodestr = idx.data(TransactionTableModel::Imgbase64).toString();
-
+    QString encodeqstring = idx.data(TransactionTableModel::Imgbase64).toString();
+     std::string  encodestr = encodeqstring.toUtf8().constData();
+   
+    
     if(encodestr.size()>0)
          	{
-
-             std::vector<unsigned char> bytesarray = base64en.decode(encodestr);
+			base64 base64trdialog;
+             std::vector<unsigned char> bytesarray = base64trdialog.decode(encodestr);
 
              if(bytesarray.size()>0)
                      	{
+                  QByteArray *base64decodearray;
      		  base64decodearray = new QByteArray(reinterpret_cast<const char*>(bytesarray.data()), bytesarray.size());
 
 
@@ -52,7 +68,7 @@ TransactionDescDialog::TransactionDescDialog(const QModelIndex &idx, QWidget *pa
                       ui->graphicsView->setVisible(true);
                       ui->graphicsView->setGeometry(QRect(0, 0, 400, 250));
      		   ui->graphicsView->show();
-
+     		 
 
                      	}
      	}
