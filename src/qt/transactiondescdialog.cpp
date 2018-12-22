@@ -38,7 +38,7 @@ TransactionDescDialog::TransactionDescDialog(const QModelIndex &idx, QWidget *pa
     ui->detailText->setHtml(desc);
 
     /* Start ImageView */
-    QString encodeqstring = idx.data(TransactionTableModel::Imgbase64).toString();
+    QString encodeqstring = idx.data(TransactionTableModel::Imgbase64Role).toString();
      std::string  encodestr = encodeqstring.toUtf8().constData();
    
     
