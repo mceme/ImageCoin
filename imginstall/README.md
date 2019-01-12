@@ -1,5 +1,5 @@
 # ImageCoin
-Shell script to install a [ImageCoin Masternode](https://www.imagecoin.imagehosty.com/) on a Linux server running Ubuntu 17.04 or higher. Use it on your own risk.
+Shell script to install a [ImageCoin Masternode](https://www.imagecoin.imagehosty.com/) on a Linux server running Ubuntu 18.04 or higher. Use it on your own risk.
 
 ***
 ## Installation:
@@ -46,7 +46,7 @@ ImageCoin-cli masternode status
 ```
 Also, if you want to check/start/stop **ImageCoin** , run one of the following commands as **root**:
 
-**Ubuntu 17.04**:
+**Ubuntu 18.04**:
 ```
 systemctl status ImageCoin #To check the service is running.
 systemctl start ImageCoin #To start ImageCoin service.
