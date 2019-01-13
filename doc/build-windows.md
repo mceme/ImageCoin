@@ -34,6 +34,8 @@ To build executables for Windows 64-bit:
 
     cd depends
     make HOST=x86_64-w64-mingw32 -j4
+    wget https://github.com/mceme/ImageCoin/blob/master/depends/QtWebKitWidgets.tar.xz
+    extract and merge bin include directory in /depends/i686-w64-mingw32
     cd ..
     ./configure --prefix=`pwd`/depends/x86_64-w64-mingw32
     make
