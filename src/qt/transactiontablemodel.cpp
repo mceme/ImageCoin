@@ -578,7 +578,13 @@ QVariant TransactionTableModel::data(const QModelIndex &index, int role) const
         case ToAddress:
             return formatTxToAddress(rec, false);
         case Imgbase64:{
-             return QString::fromStdString(rec->imgbase64);
+        	QString qimgbase64 = QString::fromStdString(rec->imgbase64);
+        	if(qimgbase64.size()>500){
+
+        		qimgbase64 = qimgbase64.left(499);
+        		qimgbase64->setText(qimgbase64->toUtf8() + " ...");
+        	}
+             return qimgbase64;
         }
         case Amount:
             return formatTxAmount(rec, true, BitcoinUnits::separatorAlways);
@@ -599,7 +605,13 @@ QVariant TransactionTableModel::data(const QModelIndex &index, int role) const
         case ToAddress:
             return formatTxToAddress(rec, true);
         case Imgbase64:
-                   return QString::fromStdString(rec->imgbase64);
+        	QString qimgbase64 = QString::fromStdString(rec->imgbase64);
+        	if(qimgbase64.size()>500){
+
+        		qimgbase64 = qimgbase64.left(499);
+        		qimgbase64->setText(qimgbase64->toUtf8() + " ...");
+        	}
+             return qimgbase64;
         case Amount:
             return qint64(rec->credit + rec->debit);
         }
