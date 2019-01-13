@@ -2391,7 +2391,7 @@ void CWallet::AvailableCoins(vector<COutput>& vCoins, bool fOnlyConfirmed, const
                     found = !CPrivateSend::IsDenominatedAmount(pcoin->vout[i].nValue);
                     if(found && fMasterNode) found = (pcoin->vout[i].nValue == MASTERNODE_PRICE * COIN); // do not use Hot MN funds
                 } else if(nCoinType == ONLY_1000) {
-                	 found = (fMasterNode && (pcoin->vout[i].nValue == MASTERNODE_PRICE * COIN));
+                	 found = (pcoin->vout[i].nValue == MASTERNODE_PRICE * COIN);
                 } else if(nCoinType == ONLY_PRIVATESEND_COLLATERAL) {
                     found = CPrivateSend::IsCollateralAmount(pcoin->vout[i].nValue);
                 } else {
