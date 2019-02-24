@@ -7,8 +7,8 @@
 #define BITCOIN_CONSENSUS_CONSENSUS_H
 
 /** The maximum allowed size for a serialized block, in bytes (network rule) */
-static const unsigned int MAX_LEGACY_BLOCK_SIZE = 10000000;
-static const unsigned int MAX_DIP0001_BLOCK_SIZE = 15000000;
+static const unsigned int MAX_LEGACY_BLOCK_SIZE = 50000000;
+static const unsigned int MAX_DIP0001_BLOCK_SIZE = 55000000;
 inline unsigned int MaxBlockSize(bool fDIP0001Active /*= false */)
 {
     return fDIP0001Active ? MAX_DIP0001_BLOCK_SIZE : MAX_LEGACY_BLOCK_SIZE;

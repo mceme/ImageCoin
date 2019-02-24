@@ -93,7 +93,7 @@
       <item>
        <widget class="QLabel" name="Imagelabel">
         <property name="text">
-         <string>Image:</string>
+         <string>Image/Video:</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
