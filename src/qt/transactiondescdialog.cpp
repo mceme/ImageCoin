@@ -15,10 +15,14 @@
 #include <QImage>
 #include <QSize>
 #include <QBuffer>
+#include <QIODevice>
 #include <QImageReader>
 #include <QPixmap>
 #include <QGraphicsView>
 #include <QGraphicsScene>
+#include <QLabel>
+#include <QMovie>
+#include <QGraphicsProxyWidget>
 #include <string>
 #include <vector>
 
@@ -40,31 +44,29 @@ TransactionDescDialog::TransactionDescDialog(const QModelIndex &idx, QWidget *pa
     /* Start ImageView */
     QString encodeqstring = idx.data(TransactionTableModel::Imgbase64Role).toString();
      std::string  encodestr = encodeqstring.toUtf8().constData();
-   std::int mediatype = 0;
+
    std::string extension = "png";
-
-
+    float delctype = 0;
     
     if(encodestr.size()>5)
          	{
 
-    	std::string typebase64 = str.substr(0, 1);
+    	std::string typebase64 = encodestr.substr(0, 1);
              if(typebase64=="J" /*pdf*/ || typebase64=="V"){
-            	 mediatype = 2;
+            	 delctype = 2;
              }
              else if(typebase64=="A" /*mp4*/ || typebase64=="R" /*gif*/|| typebase64=="U" /*avi*/ || typebase64=="S" /*mp3*/)
              {
-            	 mediatype = 1;
+            	 delctype = 1;
              }
-             else
-            	 mediatype = 0;
 
-			base64 base64trdialog;
+	 base64 base64trdialog;
 
              std::vector<unsigned char> bytesarray = base64trdialog.decode(encodestr);
 
              if(bytesarray.size()>0)
                      	{
+
               QByteArray *base64decodearray;
      		  base64decodearray = new QByteArray(reinterpret_cast<const char*>(bytesarray.data()), bytesarray.size());
 
@@ -72,7 +74,7 @@ TransactionDescDialog::TransactionDescDialog(const QModelIndex &idx, QWidget *pa
      		  QBuffer buffer(base64decodearray);
      		 QGraphicsScene* scene = new QGraphicsScene(QRect(0, 0, 400, 250));
      		   /* Start ImageView */
-     		  if(mediatype==0){
+     		  if(delctype==0){
 
      		  QImageReader reader(&buffer);
      		  QImage image = reader.read();
@@ -88,33 +90,42 @@ TransactionDescDialog::TransactionDescDialog(const QModelIndex &idx, QWidget *pa
      		 
      		             }
      		   /* Start MovieView */
-     		  else if(mediatype==1){
-     		 QLabel *gif_anim = new QLabel();
-     		 QMovie *movie = new QMovie(buffer);
-     		 gif_anim->setMovie(movie);
-     		 movie->start();
-     		 QGraphicsProxyWidget *proxy = scene.addWidget(gif_anim);
-     		              ui->graphicsView->setScene( scene );
-     		              ui->graphicsView->setVisible(true);
+     		  else if(delctype==1){
+		ui->graphicsView->setVisible(true);
      		              ui->graphicsView->setGeometry(QRect(0, 0, 400, 250));
      		     		  ui->graphicsView->show();
+
+     		 QLabel *gif_anim = new QLabel();
+ 		 gif_anim->setGeometry(0, 0, 400, 250);
+     		  QBuffer buffermov(base64decodearray);
+                buffermov.open(QIODevice::ReadOnly);
+		buffermov.seek(0);
+                QMovie *movie = new QMovie(&buffermov);
+
+     		 gif_anim->setMovie(movie);
+     		 movie->start();
+     		 QGraphicsProxyWidget *proxy = scene->addWidget(gif_anim);
+                  scene->addWidget(gif_anim);
+     		              ui->graphicsView->setScene( scene );
+
      		       }
     		   /* Start Document */
-     		  else (mediatype==2)
+     		  else if (delctype==2)
     		  {
     			  encodestr = "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";
     		      std::vector<unsigned char> bytesarraydoc = base64trdialog.decode(encodestr);
 
     			  QByteArray *base64decodearraydoc;
     			  base64decodearraydoc = new QByteArray(reinterpret_cast<const char*>(bytesarraydoc.data()), bytesarraydoc.size());
-    		  QImageReader reader(&buffer);
+                  QBuffer bufferdoc(base64decodearraydoc);
+		  QImageReader reader(&bufferdoc);
     		  QImage image = reader.read();
              QPixmap imagePixmap =  QPixmap::fromImage(image);
              QPixmap newPixmap = imagePixmap.scaled(QSize(400,250),  Qt::KeepAspectRatio);
     		  scene->addPixmap(newPixmap);
     		  ui->graphicsView->setScene( scene );
-             ui->graphicsView->setVisible(true);
-             ui->graphicsView->setGeometry(QRect(0, 0, 400, 250));
+                  ui->graphicsView->setVisible(true);
+                  ui->graphicsView->setGeometry(QRect(0, 0, 400, 250));
     		  ui->graphicsView->show();
 
     		   }
