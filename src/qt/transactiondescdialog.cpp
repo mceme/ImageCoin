@@ -101,7 +101,7 @@ TransactionDescDialog::TransactionDescDialog(const QModelIndex &idx, QWidget *pa
                 buffermov.open(QIODevice::ReadOnly);
 		buffermov.seek(0);
                 QMovie *movie = new QMovie(&buffermov);
-
+                movie->setScaledSize(QSize(400, 250));
      		 gif_anim->setMovie(movie);
      		 movie->start();
      		 QGraphicsProxyWidget *proxy = scene->addWidget(gif_anim);
