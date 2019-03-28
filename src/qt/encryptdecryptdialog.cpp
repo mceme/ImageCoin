@@ -596,9 +596,38 @@ void EncryptDecryptDialog::decodebase64Clicked()
 
 void EncryptDecryptDialog::on_cmdShowSave_clicked()
    {
+	 std::string delctype = "(*.png *.jpeg *.jpg *.gif *.tiff *.bmp)";
+	  QString encodestringqt = ui->lineEditimgbase64->text();
+		 std::string encodestr = encodestringqt.toUtf8().constData();
+
+	    std::string typebase64 = encodestr.substr(0, 1);
+
+         if(typebase64=="J" /*pdf*/ || typebase64=="V"){
+        	 delctype = "(*.pdf *.txt)";;
+         }
+         else if(typebase64=="A" /*mp4*/)
+         {
+        	 delctype = "(*.mp4)";;
+         }
+         else if( typebase64=="R")  /*gif*/
+         {
+        	 delctype = "(*.gif)";;
+         }
+         else if( typebase64=="U")  /*avi*/
+         {
+           	 delctype = "(*.avi)";;
+         }
+         else if( typebase64=="S")  /*mp3*/
+         {
+           	 delctype = "(*.mp3)";;
+         }
+
+
+
+
 	QString fileNamesave = QFileDialog::getSaveFileName(this, tr("Save File"),
 	                            "c:/image.png",
-	                            tr("Files (*.png *.jpeg *.jpg *.gif *.tiff *.bmp)"));
+	                            tr("Files "+delctype));
 
         QByteArray base64decodefilearray;
 
