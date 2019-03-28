@@ -16,7 +16,7 @@
   <property name="autoFillBackground">
    <bool>true</bool>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0,0,0,0,0,0,0,0">
+  <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0,0,0,0,0,0,0,0,0">
    <property name="bottomMargin">
     <number>8</number>
    </property>
@@ -242,13 +242,42 @@
       </widget>
      </item>
      <item>
+      <widget class="QToolButton" name="pasteEncodedButton">
+       <property name="toolTip">
+        <string>Paste encoded base 64 string</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>22</width>
+         <height>22</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item>
       <widget class="QPushButton" name="encodebase64Button">
        <property name="text">
         <string>Encode</string>
        </property>
       </widget>
      </item>
+     <item>
+      <widget class="QPushButton" name="decodebase64Button">
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="text">
+        <string>Decode</string>
+       </property>
+      </widget>
+     </item>
     </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_3"/>
    </item>
    <item>
     <widget class="Line" name="line_2">
@@ -256,6 +285,20 @@
       <enum>Qt::Horizontal</enum>
      </property>
     </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="_2">
+     <item>
+      <widget class="QGraphicsView" name="graphicsView"/>
+     </item>
+     <item>
+      <widget class="QPushButton" name="cmdShowSave">
+       <property name="text">
+        <string>Download</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </item>
    <item>
     <layout class="QVBoxLayout" name="VerLayout">
@@ -312,33 +355,6 @@
        </property>
        <property name="toolButtonStyle">
         <enum>Qt::ToolButtonIconOnly</enum>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </item>
-   <item>
-    <layout class="QHBoxLayout" name="horizontalLayout">
-     <item>
-      <widget class="QLabel" name="labellLabel">
-       <property name="text">
-        <string>&amp;Private Key:</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-       </property>
-       <property name="buddy">
-        <cstring>addAsLabel</cstring>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLineEdit" name="addAsLabel">
-       <property name="enabled">
-        <bool>false</bool>
-       </property>
-       <property name="toolTip">
-        <string>Key of encryption for file</string>
        </property>
       </widget>
      </item>

@@ -93,7 +93,7 @@
       <item>
        <widget class="QLabel" name="Imagelabel">
         <property name="text">
-         <string>Image:</string>
+         <string>Image/Video:</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -254,6 +254,9 @@
       </item>
       <item>
        <widget class="QLineEdit" name="Imgbase64Edit">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
         <property name="toolTip">
          <string>Enter a Image base 64 for this tx.</string>
         </property>
@@ -267,6 +270,9 @@
       </item>
       <item>
        <widget class="QToolButton" name="pasteButtonBase64">
+        <property name="toolTip">
+         <string>Paste encoded base 64 string</string>
+        </property>
         <property name="text">
          <string/>
         </property>

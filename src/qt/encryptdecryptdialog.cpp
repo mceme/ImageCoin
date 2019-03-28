@@ -20,7 +20,17 @@
 #include <QString>
 #include <QStringList>
 #include <QFileDialog>
+#include <QByteArray>
+#include <QImage>
+#include <QSize>
+#include <QBuffer>
+#include <QImageReader>
+#include <QPixmap>
+#include <QGraphicsView>
+#include <QGraphicsPixmapItem>
+#include <QGraphicsScene>
 #include <string>
+#include <vector>
 #include <chrono>
 #include <thread>
 
@@ -28,6 +38,9 @@
 ecdsa ecdsa;
 base64 base64en;
 QStringList fileNames;
+QByteArray *base64decodearray;
+
+typedef unsigned char BYTE;
 
 EncryptDecryptDialog::EncryptDecryptDialog(const PlatformStyle *platformStyle, QWidget *parent) :
     QDialog(parent),
@@ -43,7 +56,7 @@ EncryptDecryptDialog::EncryptDecryptDialog(const PlatformStyle *platformStyle, Q
     //if (platformStyle->getUseExtraSpacing())
      //   ui->payToLayout->setSpacing(4);
 #if QT_VERSION >= 0x040700
-    ui->addAsLabel->setPlaceholderText(tr("******"));
+   // ui->addAsLabel->setPlaceholderText(tr("******"));
 #endif
 
     QString theme = GUIUtil::getThemeName();
@@ -52,6 +65,7 @@ EncryptDecryptDialog::EncryptDecryptDialog(const PlatformStyle *platformStyle, Q
    // ui->addressBookButton->setIcon(QIcon(":/icons/" + theme + "/address-book"));
     ui->pasteButton->setIcon(QIcon(":/icons/" + theme + "/editpaste"));
     ui->copyEncodedButton->setIcon(QIcon(":/icons/" + theme + "/editcopy"));
+    ui->pasteEncodedButton->setIcon(QIcon(":/icons/" + theme + "/editpaste"));
 
     // normal dash address field
     GUIUtil::setupAddressWidget(ui->payTo, this);
@@ -64,16 +78,22 @@ EncryptDecryptDialog::EncryptDecryptDialog(const PlatformStyle *platformStyle, Q
 
     connect(ui->copyEncodedButton, SIGNAL(clicked()), this, SLOT(on_copyEncodedButton_clicked()));
 
+    connect(ui->pasteEncodedButton, SIGNAL(clicked()), this, SLOT(on_pasteEncodedButton_clicked()));
+
     connect(ui->encryptButton, SIGNAL(clicked()), this, SLOT(on_EncryptButton_clicked()));
 
     connect(ui->decryptButton, SIGNAL(clicked()), this, SLOT(on_DecryptButton_clicked()));
 
     connect(ui->encodebase64Button, SIGNAL(clicked()), this, SLOT(encodebase64Clicked()));
 
+    connect(ui->decodebase64Button, SIGNAL(clicked()), this, SLOT(decodebase64Clicked()));
 
     ui->FileNamesTxt->setReadOnly(true);
 
-    ui->lineEditimgbase64->setMaxLength(3000000);
+    ui->lineEditimgbase64->setMaxLength(8000000);
+
+    ui->cmdShowSave->setVisible(false);
+    ui->graphicsView->setVisible(false);
 	 //connect(ui->addressBookButton, SIGNAL(clicked()), this, SLOT(on_addressBookButton_clicked()));
     //connect(ui->deleteButton, SIGNAL(clicked()), this, SLOT(deleteClicked()));
    // connect(ui->deleteButton_is, SIGNAL(clicked()), this, SLOT(deleteClicked()));
@@ -142,13 +162,19 @@ void EncryptDecryptDialog::on_pasteButton_clicked()
     ui->payTo->setText(QApplication::clipboard()->text());
 }
 
+void EncryptDecryptDialog::on_pasteEncodedButton_clicked()
+{
+    // Paste text from clipboard into recipient field
+    ui->lineEditimgbase64->setText(QApplication::clipboard()->text());
+}
+
 void EncryptDecryptDialog::on_EncryptButton_clicked()
 {
 	if(!this->validate()) return;
 
 CAmount amount = model->getBalance();
-   if(amount<20){
-	   ui->MessageBox->setText("Need least 20 IMG balance!");
+   if(amount<1){
+           ui->MessageBox->setText("Need least 1 IMG balance!");
 	   return;
    }
 
@@ -161,8 +187,8 @@ void EncryptDecryptDialog::on_DecryptButton_clicked()
 {
 	if(!this->validate()) return;
 	CAmount amount = model->getBalance();
-	 if(amount<20){
-		   ui->MessageBox->setText("Need least 20 IMG balance!");
+         if(amount<1){
+                   ui->MessageBox->setText("Need least 1 IMG balance!");
 		   return;
 	   }
   decrypt();
@@ -210,7 +236,7 @@ void EncryptDecryptDialog::clear()
 {
     // clear UI elements
     ui->FileNamesTxt->clear();
-    ui->addAsLabel->clear();
+    //ui->addAsLabel->clear();
     ui->payTo->clear();
     ui->MessageBox->clear();
 
@@ -248,15 +274,15 @@ bool EncryptDecryptDialog::validate()
     	  retval = false;
     }
 
-    if(ui->addAsLabel->text().isEmpty())
-    {
-        ui->addAsLabel->setStyleSheet("QLineEdit { background: rgb(255, 128, 128); selection-background-color: rgb(255, 128, 128); }");
-          retval = false;
-       }
-    else {
-    	   ui->addAsLabel->setStyleSheet("QLineEdit { background: rgb(255,255,255); selection-background-color: rgb(255,255,255); }");
-
-    }
+//    if(ui->addAsLabel->text().isEmpty())
+//    {
+//        ui->addAsLabel->setStyleSheet("QLineEdit { background: rgb(255, 128, 128); selection-background-color: rgb(255, 128, 128); }");
+//          retval = false;
+//       }
+//    else {
+//    	   ui->addAsLabel->setStyleSheet("QLineEdit { background: rgb(255,255,255); selection-background-color: rgb(255,255,255); }");
+//
+//    }
 
 
 
@@ -277,7 +303,7 @@ SendCoinsRecipient EncryptDecryptDialog::getValue()
 
     // Normal payment
     recipient.address = ui->payTo->text();
-    recipient.label = ui->addAsLabel->text();
+    //recipient.label = ui->addAsLabel->text();
     //recipient.amount = ui->payAmount->value();
     //recipient.message = ui->messageTextLabel->text();
     //recipient.fSubtractFeeFromAmount = (ui->checkboxSubtractFeeFromAmount->checkState() == Qt::Checked);
@@ -288,7 +314,7 @@ SendCoinsRecipient EncryptDecryptDialog::getValue()
 QWidget *EncryptDecryptDialog::setupTabChain(QWidget *prev)
 {
     QWidget::setTabOrder(prev, ui->FileNamesTxt);
-    QWidget::setTabOrder(ui->FileNamesTxt, ui->addAsLabel);
+    QWidget::setTabOrder(ui->FileNamesTxt, ui->payTo);
     //QWidget *w = ui->payAmount->setupTabChain(ui->addAsLabel);
     //QWidget::setTabOrder(w, ui->checkboxSubtractFeeFromAmount);
     //QWidget::setTabOrder(ui->checkboxSubtractFeeFromAmount, ui->addressBookButton);
@@ -306,7 +332,7 @@ void EncryptDecryptDialog::setValue(const SendCoinsRecipient &value)
         if (recipient.authenticatedMerchant.isEmpty()) // unauthenticated
         {
             ui->payTo->setText(recipient.address);
-            ui->addAsLabel->clear();
+            //ui->addAsLabel->clear();
 
            // ui->memoTextLabel_is->setText(recipient.message);
            // ui->payAmount_is->setValue(recipient.amount);
@@ -331,7 +357,7 @@ void EncryptDecryptDialog::setValue(const SendCoinsRecipient &value)
         //ui->messageTextLabel->setVisible(!recipient.message.isEmpty());
         //ui->messageLabel->setVisible(!recipient.message.isEmpty());
 
-        ui->addAsLabel->clear();
+        //ui->addAsLabel->clear();
         ui->payTo->setText(recipient.address); // this may set a label from addressbook
        // if (!recipient.label.isEmpty()) // if a label had been set from the addressbook, don't overwrite with an empty label
        //     ui->addAsLabel->setText(recipient.label);
@@ -347,7 +373,7 @@ void EncryptDecryptDialog::setAddress(const QString &address)
 
 bool EncryptDecryptDialog::isClear()
 {
-    return ui->FileNamesTxt->text().isEmpty() && ui->addAsLabel->text().isEmpty() &&  ui->payTo->text().isEmpty();
+    return ui->FileNamesTxt->text().isEmpty() &&  ui->payTo->text().isEmpty();
 }
 
 void EncryptDecryptDialog::setFocus()
@@ -372,8 +398,8 @@ bool EncryptDecryptDialog::updateLabel(const QString &strAddress)
         return false;
 
 
-    std::string srt=strAddress.toUtf8().constData();
-    std::string key=model->dumpprivkey(srt, false);
+    std::string key=strAddress.toUtf8().constData();
+   // std::string key=model->dumpprivkey(srt, false);
 
     // Fill in label from address book, if address has an associated label
     //QString associatedLabel = model->getAddressTableModel()->labelForAddress(address);
@@ -381,15 +407,15 @@ bool EncryptDecryptDialog::updateLabel(const QString &strAddress)
     {
         //ui->addAsLabel->setText(associatedLabel);
 
-    	QString Qkey = QString::fromLocal8Bit(key.c_str());
-    	 ui->addAsLabel->setText(Qkey);
+    	//QString Qkey = QString::fromLocal8Bit(key.c_str());
+    	// ui->addAsLabel->setText(Qkey);
     	 ui->MessageBox->clear();
         return true;
     }
     else {
 
-    	 ui->MessageBox->setText("Cannot resolve key, wallet is unlocked?");
-    	 ui->addAsLabel->clear();
+    	 ui->MessageBox->setText("Please provide address.");
+    	// ui->addAsLabel->clear();
     }
 
     return false;
@@ -399,7 +425,7 @@ bool EncryptDecryptDialog::updateLabel(const QString &strAddress)
 void EncryptDecryptDialog::encrypt()
 {
 
-	QString key = ui->addAsLabel->text();
+	QString key = ui->payTo->text();
 
 	std::string filestr;
 	std::string keystr;
@@ -410,7 +436,7 @@ void EncryptDecryptDialog::encrypt()
 	        	  QString file = fileNames[i];
 	        	  filestr = file.toUtf8().constData();
 		          keystr = key.toUtf8().constData();
-                  ecdsa.encrypt(filestr, keystr, status);
+                          ecdsa.encrypt(filestr, keystr, status);
 
 
                   int f = 0;
@@ -425,13 +451,12 @@ void EncryptDecryptDialog::encrypt()
 	 clear();
 	 ui->MessageBox->setText("Encrypt Complete!");
 
-
 }
 
 void EncryptDecryptDialog::decrypt()
 {
 
-	QString key = ui->addAsLabel->text();
+	QString key = ui->payTo->text();
 	std::string filestr;
 	std::string keystr;
 	bool status=false;
@@ -441,7 +466,7 @@ void EncryptDecryptDialog::decrypt()
 	        	  QString file = fileNames[i];
 	        	  filestr = file.toUtf8().constData();
 		          keystr = key.toUtf8().constData();
-                  ecdsa.decrypt(filestr, keystr, status);
+                          ecdsa.decrypt(filestr, keystr, status);
 
                    int f = 0;
                   while(status==false && f < 60){
@@ -489,11 +514,11 @@ void EncryptDecryptDialog::encodebase64Clicked()
 	 QString qsencoded = QString::fromLocal8Bit(encodedstring.c_str());
 
 
-  	if(qsencoded.size()>1500000)
+  	if(qsencoded.size()>8000000)
   	{
   		 ui->lineEditimgbase64->setStyleSheet("QLineEdit { background: rgb(220, 20, 60); selection-background-color: rgb(233, 99, 0); }");
 
-  		 ui->MessageBox->setText("Large file maxSize ~1MB ");
+  		 ui->MessageBox->setText("Large file maxSize ~5MB ");
   		 return;
   	}
   	else{
@@ -503,3 +528,88 @@ void EncryptDecryptDialog::encodebase64Clicked()
       Q_EMIT encodebase64ClickedSignal(address, qsencoded);
   	}
 }
+
+
+// ###### DECODE BASE64 #######
+
+
+void EncryptDecryptDialog::decodebase64Clicked()
+{
+	 if(!model)
+	        return ;
+//validation
+
+	 ui->MessageBox->setText("");
+
+	 ui->FileNamesTxt->setStyleSheet("QLineEdit { background: rgb(255, 255, 255); selection-background-color: rgb(255, 128, 128); }");
+
+	 ui->lineEditimgbase64->setStyleSheet("QLineEdit { background: rgb(255, 255, 255); selection-background-color: rgb(255, 128, 128); }");
+
+	if(ui->lineEditimgbase64->text().isEmpty() )
+	{
+      ui->lineEditimgbase64->setStyleSheet("QLineEdit { background: rgb(220, 20, 60); selection-background-color: rgb(233, 99, 0); }");
+
+	  return;
+	}
+
+//end validation decode
+
+	  QString encodestringqt = ui->lineEditimgbase64->text();
+	 std::string encodestr = encodestringqt.toUtf8().constData();
+	 std::vector<unsigned char> bytesarray = base64en.decode(encodestr);
+
+
+  	if(bytesarray.size()>0)
+  	{
+
+  		  base64decodearray = new QByteArray(reinterpret_cast<const char*>(bytesarray.data()), bytesarray.size());
+
+
+  		  QBuffer buffer(base64decodearray);
+  		  QImageReader reader(&buffer);
+  		  QImage image = reader.read();
+                  QPixmap imagePixmap =  QPixmap::fromImage(image);
+                  QPixmap newPixmap = imagePixmap.scaled(QSize(500,250),  Qt::KeepAspectRatio);
+  		 
+  		  QGraphicsScene* scene = new QGraphicsScene(QRect(0, 0, 500, 250));
+
+  		   scene->addPixmap(newPixmap);
+
+  	
+  		   ui->graphicsView->setScene( scene );
+                   ui->graphicsView->setVisible(true);
+                   ui->graphicsView->setGeometry(QRect(0, 0, 500, 250));
+  		   ui->graphicsView->show();
+  		   ui->MessageBox->setText("Decoding base64 complete! ");
+  		   ui->cmdShowSave->setVisible(true);
+
+
+  	}
+  	else {
+       ui->lineEditimgbase64->setText("");
+       ui->MessageBox->setText("Error decoding base64 complete! ");
+  	}
+}
+
+//DECODE END  ##########
+
+
+void EncryptDecryptDialog::on_cmdShowSave_clicked()
+   {
+	QString fileNamesave = QFileDialog::getSaveFileName(this, tr("Save File"),
+	                            "c:/image.png",
+	                            tr("Files (*.png *.jpeg *.jpg *.gif *.tiff *.bmp)"));
+
+        QByteArray base64decodefilearray;
+
+        base64decodefilearray.setRawData(base64decodearray->data(), base64decodearray->size());
+	// ... fill the array with data ...
+
+	QFile file(fileNamesave.toUtf8().constData());
+	file.open(QIODevice::WriteOnly);
+        
+
+	file.write(base64decodefilearray);
+	file.close();
+
+   }

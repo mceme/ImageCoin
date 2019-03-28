@@ -2354,6 +2354,10 @@ void CWallet::AvailableCoins(vector<COutput>& vCoins, bool fOnlyConfirmed, const
     vCoins.clear();
 
     int MASTERNODE_PRICE = 10000 ;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8669bcd71f0c9d2798f452ba53a4d3a71f24da03
 
     {
         LOCK2(cs_main, cs_wallet);
@@ -2390,7 +2394,11 @@ void CWallet::AvailableCoins(vector<COutput>& vCoins, bool fOnlyConfirmed, const
                     found = !CPrivateSend::IsDenominatedAmount(pcoin->vout[i].nValue);
                     if(found && fMasterNode) found = (pcoin->vout[i].nValue == MASTERNODE_PRICE * COIN); // do not use Hot MN funds
                 } else if(nCoinType == ONLY_1000) {
+<<<<<<< HEAD
                 	 found = (fMasterNode && (pcoin->vout[i].nValue == MASTERNODE_PRICE * COIN));
+=======
+                	 found = (pcoin->vout[i].nValue == MASTERNODE_PRICE * COIN);
+>>>>>>> 8669bcd71f0c9d2798f452ba53a4d3a71f24da03
                 } else if(nCoinType == ONLY_PRIVATESEND_COLLATERAL) {
                     found = CPrivateSend::IsCollateralAmount(pcoin->vout[i].nValue);
                 } else {
@@ -2874,7 +2882,11 @@ bool CWallet::SelectCoinsGrouppedByAddresses(std::vector<CompactTallyItem>& vecT
             if(fAnonymizable) {
                 // ignore collaterals
                 if(CPrivateSend::IsCollateralAmount(wtx.vout[i].nValue)) continue;
+<<<<<<< HEAD
                 if(fMasterNode && wtx.vout[i].nValue == MASTERNODE_PRICE * COIN) continue;
+=======
+                if((fMasterNode && wtx.vout[i].nValue == MASTERNODE_PRICE * COIN)) continue;
+>>>>>>> 8669bcd71f0c9d2798f452ba53a4d3a71f24da03
                 // ignore outputs that are 10 times smaller then the smallest denomination
                 // otherwise they will just lead to higher fee / lower priority
                 if(wtx.vout[i].nValue <= nSmallestDenom/10) continue;
