@@ -18,7 +18,7 @@
 #include <QStringList>
 #include <QFileDialog>
 
-#include <QtWebKitWidgets/QWebView>
+//#include <QtWebKitWidgets/QWebView>
 #include <string>
 
 
