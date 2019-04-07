@@ -6,7 +6,7 @@ COIN_DAEMON='/usr/local/bin/ImageCoind'
 COIN_DAEMON_NAME='ImageCoind'
 COIN_CLI_NAME='ImageCoin-cli'
 COIN_CLI='/usr/local/bin/ImageCoin-cli'
-COIN_REPO='https://github.com/mceme/ImageCoin/releases/download/1.0.20/ImageCoin-linux18_x64_86_70215.tar.xz'
+COIN_REPO='https://github.com/mceme/ImageCoin/releases/download/1.0.21/ImageCoinlinux18_x86_64.tar.xz'
 COIN_NAME='ImageCoin'
 COIN_PORT=6998
 
