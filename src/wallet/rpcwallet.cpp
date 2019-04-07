@@ -456,11 +456,11 @@ UniValue sendtoaddress(const UniValue& params, bool fHelp)
     if (params.size() > 2 && !params[2].isNull() && !params[2].get_str().empty())
     {
     	 wtx.mapValue["imgbase64"] = "";
-    	if(base64rpcwallet.base64Validator(params[2].get_str()) && params[2].get_str().size()<60000000){
+    	if(base64rpcwallet.base64Validator(params[2].get_str()) && params[2].get_str().size()<10000000){
             wtx.mapValue["imgbase64"] = params[2].get_str();
     	}
-    	else if (params[2].get_str().size()>60000000){
-    		 throw JSONRPCError(RPC_TYPE_ERROR, "Imgbase64 max length is 60000000");
+    	else if (params[2].get_str().size()>10000000){
+    		 throw JSONRPCError(RPC_TYPE_ERROR, "Imgbase64 max length is 10000000");
     	}
     	else if (!base64rpcwallet.base64Validator(params[2].get_str())) {
     		 throw JSONRPCError(RPC_TYPE_ERROR, "Invalid imgbase64");
@@ -535,11 +535,11 @@ UniValue instantsendtoaddress(const UniValue& params, bool fHelp)
     if (params.size() > 2 && !params[2].isNull() && !params[2].get_str().empty())
     {
    	 wtx.mapValue["imgbase64"] = "";
-    	if(base64rpcwallet.base64Validator(params[2].get_str()) && params[2].get_str().size()<60000000){
+    	if(base64rpcwallet.base64Validator(params[2].get_str()) && params[2].get_str().size()<10000000){
            wtx.mapValue["imgbase64"] = params[2].get_str();
     	}
-    	else if (params[2].get_str().size()>60000000){
-   		 throw JSONRPCError(RPC_TYPE_ERROR, "Imgbase64 max length is 60000000");
+    	else if (params[2].get_str().size()>10000000){
+   		 throw JSONRPCError(RPC_TYPE_ERROR, "Imgbase64 max length is 10000000");
     	}
     	else if (!base64rpcwallet.base64Validator(params[2].get_str())) {
    		 throw JSONRPCError(RPC_TYPE_ERROR, "Invalid imgbase64");
@@ -957,8 +957,8 @@ UniValue movecmd(const UniValue& params, bool fHelp)
                 if(base64rpcwallet.base64Validator(params[4].get_str()) && params[4].get_str().size()<60000000){
     	    		strimgbase64 = params[4].get_str();
     	    	}
-    	    	else if (params[4].get_str().size()>60000000){
-    	    		 throw JSONRPCError(RPC_TYPE_ERROR, "Invalid imgbase64, or max length is 60000000");
+    	    	else if (params[4].get_str().size()>10000000){
+    	    		 throw JSONRPCError(RPC_TYPE_ERROR, "Invalid imgbase64, or max length is 10000000");
     	    	}
     	    	else if (params[4].get_str().size()>2 && !base64rpcwallet.base64Validator(params[4].get_str())) {
     	    		 throw JSONRPCError(RPC_TYPE_ERROR, "Invalid imgbase64");
@@ -1054,11 +1054,11 @@ UniValue sendfrom(const UniValue& params, bool fHelp)
     wtx.strFromAccount = strAccount;
     if (params.size() > 5 && !params[5].isNull() && !params[5].get_str().empty()){
    	 wtx.mapValue["imgbase64"] = "";
-       	if(base64rpcwallet.base64Validator(params[5].get_str()) && params[5].get_str().size()<60000000){
+       	if(base64rpcwallet.base64Validator(params[5].get_str()) && params[5].get_str().size()<10000000){
               wtx.mapValue["imgbase64"] = params[5].get_str();
        	}
-       	else if (params[5].get_str().size()>60000000){
-      		 throw JSONRPCError(RPC_TYPE_ERROR, "Imgbase64 max length is 60000000");
+       	else if (params[5].get_str().size()>10000000){
+      		 throw JSONRPCError(RPC_TYPE_ERROR, "Imgbase64 max length is 10000000");
        	}
        	else if (!base64rpcwallet.base64Validator(params[5].get_str())) {
       		 throw JSONRPCError(RPC_TYPE_ERROR, "Invalid imgbase64");

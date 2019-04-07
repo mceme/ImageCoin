@@ -90,7 +90,7 @@ EncryptDecryptDialog::EncryptDecryptDialog(const PlatformStyle *platformStyle, Q
 
     ui->FileNamesTxt->setReadOnly(true);
 
-    ui->lineEditimgbase64->setMaxLength(60000000);
+    ui->lineEditimgbase64->setMaxLength(10000000);
 
     ui->cmdShowSave->setVisible(false);
     ui->graphicsView->setVisible(false);
@@ -514,11 +514,11 @@ void EncryptDecryptDialog::encodebase64Clicked()
 	 QString qsencoded = QString::fromLocal8Bit(encodedstring.c_str());
 
 
-  	if(qsencoded.size()>60000000)
+  	if(qsencoded.size()>10000000)
   	{
   		 ui->lineEditimgbase64->setStyleSheet("QLineEdit { background: rgb(220, 20, 60); selection-background-color: rgb(233, 99, 0); }");
 
-  		 ui->MessageBox->setText("Large file maxSize ~50MB ");
+  		 ui->MessageBox->setText("Large file maxSize ~8MB ");
   		 return;
   	}
   	else{
