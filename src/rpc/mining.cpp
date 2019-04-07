@@ -505,9 +505,9 @@ UniValue getblocktemplate(const UniValue& params, bool fHelp)
     CScript payee;
     if (sporkManager.IsSporkActive(SPORK_8_MASTERNODE_PAYMENT_ENFORCEMENT)
         && !masternodeSync.IsWinnersListSynced()
-        && !mnpayments.GetBlockPayee(chainActive.Height() + 1, payee))
-            throw JSONRPCError(RPC_CLIENT_IN_INITIAL_DOWNLOAD, "imagecoin Core is downloading masternode winners...");
-
+        && !mnpayments.GetBlockPayee(chainActive.Height() + 1, payee)){
+           // throw JSONRPCError(RPC_CLIENT_IN_INITIAL_DOWNLOAD, "imagecoin Core is downloading masternode winners...");
+    }
     // next bock is a superblock and we need governance info to correctly construct it
     if (sporkManager.IsSporkActive(SPORK_9_SUPERBLOCKS_ENABLED)
         && !masternodeSync.IsSynced()
