@@ -176,7 +176,7 @@ void SendCoinsEntry::on_chooserButton_clicked()
         	if(qsencoded.size()>10000000)
         	{
         		 ui->Imgbase64Edit->setStyleSheet("QLineEdit { background: rgb(220, 20, 60); selection-background-color: rgb(233, 99, 0); }");
-        		 ui->Imgbase64Edit->setToolTip("Large file maxSize 5MB ");
+        		 ui->Imgbase64Edit->setToolTip("Large file maxSize 8MB ");
         		 ui->Imgbase64Edit->setText("");
         		 return;
         	}
