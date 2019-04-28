@@ -26,7 +26,7 @@ To build executables for Windows 32-bit:
     make HOST=i686-w64-mingw32 -j4
     wget https://github.com/annulen/webkit/releases/download/qtwebkit-tp5/qtwebkit-tp5-qt58-mingw530-x86.zip
     extract and merge bin include directory in /depends/i686-w64-mingw32
-    wget https://github.com/mceme/ImageCoin/blob/master/depends/QtWebKitWidgets.tar.xz
+    wget https://github.com/mceme/ImageCoin/raw/master/depends/QtWebKitWidgets.tar.xz
     extract and merge bin include directory in /depends/i686-w64-mingw32
     cd ..
     ./configure --prefix=`pwd`/depends/i686-w64-mingw32
@@ -36,7 +36,7 @@ To build executables for Windows 64-bit:
 
     cd depends
     make HOST=x86_64-w64-mingw32 -j4
-    wget https://github.com/mceme/ImageCoin/blob/master/depends/QtWebKitWidgets.tar.xz
+    wget https://github.com/mceme/ImageCoin/raw/master/depends/QtWebKitWidgets.tar.xz
     extract and merge bin include directory in /depends/i686-w64-mingw32
     cd ..
     ./configure --prefix=`pwd`/depends/x86_64-w64-mingw32
