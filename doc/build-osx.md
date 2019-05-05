@@ -40,10 +40,10 @@ NOTE: Building with Qt4 is still supported, however, doing so could result in a 
 
 1. Clone the GitHub tree to get the source code and go into the directory.
 
-        git clone https://github.com/dashpay/dash.git
+        git clone https://github.com/mceme/ImageCoin.git
         cd dash
 
-2.  Build Dash Core:
+2.  Build ImageCoin Core:
     This will configure and build the headless dash binaries as well as the gui (if Qt is found).
     You can disable the gui build by passing `--without-gui` to configure.
 
