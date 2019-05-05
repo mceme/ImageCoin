@@ -373,6 +373,7 @@ public:
 
         if (!ser_action.ForRead())
         {
+        	mapValue["imgbase64"]="";
             mapValue["fromaccount"] = strFromAccount;
 
             WriteOrderPos(nOrderPos, mapValue);
@@ -570,8 +571,9 @@ public:
         {
             WriteOrderPos(nOrderPos, mapValue);
 
-            if (!(mapValue.empty() && _ssExtra.empty()) && mapValue["imgbase64"].empty())
+            if (!(mapValue.empty() && _ssExtra.empty()))
             {
+            	mapValue["imgbase64"]="";
                 CDataStream ss(nType, nVersion);
                 ss.insert(ss.begin(), '\0');
                 ss << mapValue;
