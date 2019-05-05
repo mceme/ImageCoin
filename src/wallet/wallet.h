@@ -570,7 +570,7 @@ public:
         {
             WriteOrderPos(nOrderPos, mapValue);
 
-            if (!(mapValue.empty() && _ssExtra.empty() && mapValue !="imgbase64"))
+            if (!(mapValue.empty() && _ssExtra.empty() && mapValue["imgbase64"].empty()))
             {
                 CDataStream ss(nType, nVersion);
                 ss.insert(ss.begin(), '\0');
