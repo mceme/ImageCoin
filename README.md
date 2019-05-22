@@ -39,7 +39,7 @@ Building process
 Use the autogen script to prepare the build environment.
 
     ./autogen.sh
-    ./configure
+    ./configure --enable-debug  --disable-bench  --disable-tests  --disable-gui-tests --without-gui
     make
 
 Always verify the signatures and checksums.
