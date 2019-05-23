@@ -2,17 +2,8 @@
 
 CURDIR=`dirname $0`
 
-imagecli stop
-
-sleep 5
-${CURDIR}/../src/ImageCoind $@
-
-sleep 3
-ps -ef|grep ImageCoind|grep -v grep
-
-/querytcpbyport.sh ImageCoin
-
-
+rm -rf /Users/oak/.go/src/github.com/mceme/ImageCoin/build/cache/*
+cp -rf /Users/oak/.go/src/github.com/mceme/ImageCoin/build/__home/.image_coin_cache/* /Users/oak/.go/src/github.com/mceme/ImageCoin/build/cache/
 exit
 
 imagecli getreceivedbyaddress Mjbv4mtvtU7dPQEV5NPatec47Ag5dPLE8P

@@ -42,3 +42,12 @@ tests_config.py
 aclocal.m4
 libimagecoinconsensus.pc
 setup.nsi
+src/config
+src/ImageCoin*
+libimagecoinconsensus.la
+buildenv.py
+share/qt
+config.*
+configure
+libtool
+daemon.usage.txt

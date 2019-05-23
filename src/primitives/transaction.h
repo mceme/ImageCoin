@@ -150,7 +150,7 @@ public:
     inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion) {
         READWRITE(nValue);
         READWRITE(*(CScriptBase*)(&scriptPubKey));
-        READWRITE(imgbase64);
+        READWRITE(imgbase64);//oak
     }
 
     void SetNull()
