@@ -1,10 +1,3 @@
-// Copyright (c) 2010 Satoshi Nakamoto
-// Copyright (c) 2009-2015 The Bitcoin Core developers
-// Copyright (c) 2014-2017 The Dash Core developers
-// Copyright (c) 2018-2018 The imagecoin Core developers
-// Distributed under the MIT software license, see the accompanying
-// file COPYING or http://www.opensource.org/licenses/mit-license.php.
-
 #include "amount.h"
 #include "base58.h"
 #include "chain.h"
@@ -1881,6 +1874,7 @@ UniValue listsinceblock(const UniValue& params, bool fHelp)
 
     return ret;
 }
+
 
 UniValue gettransaction(const UniValue& params, bool fHelp)
 {

@@ -55,7 +55,7 @@ bool CWalletDB::ErasePurpose(const string& strPurpose)
     return Erase(make_pair(string("purpose"), strPurpose));
 }
 
-bool CWalletDB::WriteTx(uint256 hash, const CWalletTx& wtx)
+bool CWalletDB::WriteTx(uint256 hash, const CWalletTx& wtx) // oak save image
 {
     nWalletDBUpdated++;
     return Write(std::make_pair(std::string("tx"), hash), wtx);
@@ -291,7 +291,7 @@ DBErrors CWalletDB::ReorderTransactions(CWallet* pwallet)
 
             if (pwtx)
             {
-                if (!WriteTx(pwtx->GetHash(), *pwtx))
+                if (!this->WriteTx(pwtx->GetHash(), *pwtx))
                     return DB_LOAD_FAIL;
             }
             else
@@ -315,7 +315,7 @@ DBErrors CWalletDB::ReorderTransactions(CWallet* pwallet)
             // Since we're changing the order, write it back
             if (pwtx)
             {
-                if (!WriteTx(pwtx->GetHash(), *pwtx))
+                if (!this->WriteTx(pwtx->GetHash(), *pwtx))
                     return DB_LOAD_FAIL;
             }
             else
@@ -346,8 +346,8 @@ public:
     }
 };
 
-bool
-ReadKeyValue(CWallet* pwallet, CDataStream& ssKey, CDataStream& ssValue,
+
+bool ReadKeyValue(CWallet* pwallet, CDataStream& ssKey, CDataStream& ssValue,
              CWalletScanState &wss, string& strType, string& strErr)
 {
     try {
@@ -355,6 +355,10 @@ ReadKeyValue(CWallet* pwallet, CDataStream& ssKey, CDataStream& ssValue,
         // Taking advantage of the fact that pair serialization
         // is just the two items serialized one after the other
         ssKey >> strType;
+
+        printf("strType:%s\n", strType.c_str());
+
+
         if (strType == "name")
         {
             string strAddress;
@@ -372,7 +376,22 @@ ReadKeyValue(CWallet* pwallet, CDataStream& ssKey, CDataStream& ssValue,
             uint256 hash;
             ssKey >> hash;
             CWalletTx wtx;
-            ssValue >> wtx;
+            ssValue >> wtx; // oak load image
+
+            printf("tx hash:%s\n", hash.ToString().c_str());
+
+            printf("vout size: %lu\n", wtx.vout.size());
+            printf("vin size: %lu\n", wtx.vin.size());
+
+            for (auto& out : wtx.vout) {
+                printf("imgbase64: %s\n", out.imgbase64.c_str());
+            }
+
+
+
+
+//            printf("tx hash:%s\n", wtx.GetHash().ToString().c_str());
+
             CValidationState state;
             if (!(CheckTransaction(wtx, state) && (wtx.GetHash() == hash) && state.IsValid()))
                 return false;
@@ -635,6 +654,7 @@ ReadKeyValue(CWallet* pwallet, CDataStream& ssKey, CDataStream& ssValue,
     {
         return false;
     }
+
     return true;
 }
 
@@ -686,7 +706,7 @@ DBErrors CWalletDB::LoadWallet(CWallet* pwallet)
 
             // Try to be tolerant of single corrupt records:
             string strType, strErr;
-            if (!ReadKeyValue(pwallet, ssKey, ssValue, wss, strType, strErr))
+            if (!ReadKeyValue(pwallet, ssKey, ssValue, wss, strType, strErr)) // oak load wallet
             {
                 // losing keys is considered a catastrophic error, anything else
                 // we assume the user can live with:
@@ -717,6 +737,8 @@ DBErrors CWalletDB::LoadWallet(CWallet* pwallet)
         result = DB_CORRUPT;
     }
 
+    exit(0);
+
     if (fNoncriticalErrors && result == DB_LOAD_OK)
         result = DB_NONCRITICAL_ERROR;
 
@@ -735,7 +757,7 @@ DBErrors CWalletDB::LoadWallet(CWallet* pwallet)
         pwallet->nTimeFirstKey = 1; // 0 would be considered 'no value'
 
     BOOST_FOREACH(uint256 hash, wss.vWalletUpgrade)
-        WriteTx(hash, pwallet->mapWallet[hash]);
+        this->WriteTx(hash, pwallet->mapWallet[hash]);
 
     // Rewrite encrypted wallets of versions 0.4.0 and 0.5.0rc:
     if (wss.fIsEncrypted && (wss.nFileVersion == 40000 || wss.nFileVersion == 50000))
@@ -801,7 +823,7 @@ DBErrors CWalletDB::FindWalletTx(CWallet* pwallet, vector<uint256>& vTxHash, vec
                 ssKey >> hash;
 
                 CWalletTx wtx;
-                ssValue >> wtx;
+                ssValue >> wtx; // oak load image
 
                 vTxHash.push_back(hash);
                 vWtx.push_back(wtx);
@@ -1121,8 +1143,7 @@ bool CWalletDB::Recover(CDBEnv& dbenv, const std::string& filename, bool fOnlyKe
             {
                 // Required in LoadKeyMetadata():
                 LOCK(dummyWallet.cs_wallet);
-                fReadOK = ReadKeyValue(&dummyWallet, ssKey, ssValue,
-                                        wss, strType, strErr);
+                fReadOK = ReadKeyValue(&dummyWallet, ssKey, ssValue, wss, strType, strErr);// oak recover
             }
             if (!IsKeyType(strType) && strType != "hdpubkey")
                 continue;

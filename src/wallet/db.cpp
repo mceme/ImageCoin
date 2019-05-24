@@ -76,9 +76,13 @@ bool CDBEnv::Open(const boost::filesystem::path& pathIn)
     if (fDbEnvInit)
         return true;
 
+
     boost::this_thread::interruption_point();
 
     strPath = pathIn.string();
+
+    printf("CDBEnv::Open: %s\n", strPath.c_str());
+
     boost::filesystem::path pathLogDir = pathIn / "database";
     TryCreateDirectory(pathLogDir);
     boost::filesystem::path pathErrorFile = pathIn / "db.log";

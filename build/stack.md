@@ -1,3 +1,29 @@
+## import wallet
+```$xslt
+CWalletDB::WriteTx(uint256, CWalletTx const&) walletdb.cpp:61
+CWalletTx::WriteToDisk(CWalletDB*) wallet.cpp:1671
+CWallet::AddToWallet(CWalletTx const&, bool, CWalletDB*) wallet.cpp:998
+CWallet::AddToWalletIfInvolvingMe(CTransaction const&, CBlock const*, bool) wallet.cpp:1060
+CWallet::ScanForWalletTransactions(CBlockIndex*, bool) wallet.cpp:1706
+importwallet(UniValue const&, bool) rpcdump.cpp:403
+CRPCTable::execute(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, UniValue const&) const server.cpp:560
+HTTPReq_JSONRPC(HTTPRequest*, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) httprpc.cpp:183
+boost::detail::function::void_function_invoker2<bool (*)(HTTPRequest*, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&), void, HTTPRequest*, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&>::invoke(boost::detail::function::function_buffer&, HTTPRequest*, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) function_template.hpp:118
+boost::function2<void, HTTPRequest*, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&>::operator()(HTTPRequest*, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) const function_template.hpp:768
+HTTPWorkItem::operator()() httpserver.cpp:54
+WorkQueue<HTTPClosure>::Run() httpserver.cpp:140
+HTTPWorkQueueRun(WorkQueue<HTTPClosure>*) httpserver.cpp:368
+void boost::_bi::list1<boost::_bi::value<WorkQueue<HTTPClosure>*> >::operator()<void (*)(WorkQueue<HTTPClosure>*), boost::_bi::list0>(boost::_bi::type<void>, void (*&)(WorkQueue<HTTPClosure>*), boost::_bi::list0&, int) bind.hpp:259
+boost::_bi::bind_t<void, void (*)(WorkQueue<HTTPClosure>*), boost::_bi::list1<boost::_bi::value<WorkQueue<HTTPClosure>*> > >::operator()() bind.hpp:1294
+boost::detail::thread_data<boost::_bi::bind_t<void, void (*)(WorkQueue<HTTPClosure>*), boost::_bi::list1<boost::_bi::value<WorkQueue<HTTPClosure>*> > > >::run() thread.hpp:117
+boost::(anonymous namespace)::thread_proxy(void*) 0x000000010ddd45ea
+_pthread_body 0x00007fff535416c1
+_pthread_start 0x00007fff5354156d
+thread_start 0x00007fff53540c5d
+```
+
+
+
 ```$xslt
 void CTxOut::SerializationOp<CDataStream, CSerActionSerialize>(CDataStream&, CSerActionSerialize, int, int) transaction.h:153
 void CTxOut::Serialize<CDataStream>(CDataStream&, int, int) const transaction.h:147

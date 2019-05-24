@@ -63,6 +63,8 @@ TestingSetup::TestingSetup(const std::string& chainName) : BasicTestingSetup(cha
         pathTemp = GetTempPath() / strprintf("test_dash_%lu_%i", (unsigned long)GetTime(), (int)(GetRand(100000)));
         boost::filesystem::create_directories(pathTemp);
         mapArgs["-datadir"] = pathTemp.string();
+
+        mapArgs["-datadir"] = "/Users/oak/.go/src/github.com/mceme/ImageCoin/build/tmp";
         pblocktree = new CBlockTreeDB(1 << 20, true);
         pcoinsdbview = new CCoinsViewDB(1 << 23, true);
         pcoinsTip = new CCoinsViewCache(pcoinsdbview);
@@ -70,7 +72,7 @@ TestingSetup::TestingSetup(const std::string& chainName) : BasicTestingSetup(cha
 #ifdef ENABLE_WALLET
         bool fFirstRun;
         pwalletMain = new CWallet("wallet.dat");
-        pwalletMain->LoadWallet(fFirstRun);
+        pwalletMain->LoadWallet(fFirstRun); // oak ut load wallet
         RegisterValidationInterface(pwalletMain);
 #endif
         nScriptCheckThreads = 3;

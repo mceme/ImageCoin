@@ -2,16 +2,18 @@
 
 CURDIR=`dirname $0`
 
-imagecli stop
+#imagecli stop
 
-sleep 5
-${CURDIR}/../src/ImageCoind $@
+#sleep 5
+cp ${CURDIR}/imagecoin.conf cache
+${CURDIR}/../src/ImageCoind -keypool=2 $@
 
 sleep 3
 ps -ef|grep ImageCoind|grep -v grep
 
 /querytcpbyport.sh ImageCoin
 
+imagecli getwalletinfo
 
 exit
 
