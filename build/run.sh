@@ -5,7 +5,7 @@ CURDIR=`dirname $0`
 #imagecli stop
 
 #sleep 5
-cp ${CURDIR}/imagecoin.conf cache
+cp ${CURDIR}/_imagecoin.conf cache/imagecoin.conf
 ${CURDIR}/../src/ImageCoind -keypool=2 $@
 
 sleep 3

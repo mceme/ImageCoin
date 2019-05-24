@@ -165,7 +165,7 @@ struct CRecipient
 {
     CScript scriptPubKey;
     CAmount nAmount;
-    std::string imgbase64;
+    std::string imgbase64; // oak CRecipient
     bool fSubtractFeeFromAmount;
 };
 
@@ -194,7 +194,8 @@ struct COutputEntry
 {
     CTxDestination destination;
     CAmount amount;
-    std::string imgbase64;
+    std::string imgbase64; // oak COutputEntry
+
     int vout;
 };
 
@@ -530,7 +531,7 @@ class CAccountingEntry
 public:
     std::string strAccount;
     CAmount nCreditDebit;
-    std::string imgbase64;
+    std::string imgbase64; // oak CAccountingEntry
     int64_t nTime;
     std::string strOtherAccount;
     std::string strComment;
@@ -994,7 +995,7 @@ public:
     void Flush(bool shutdown=false);
 
     //! Verify the wallet database and perform salvage if required
-    static bool Verify(const std::string& walletFile, std::string& warningString, std::string& errorString);
+    static bool Verify2(const std::string& walletFile, std::string& warningString, std::string& errorString);
     
     /** 
      * Address book entry changed.

@@ -122,7 +122,7 @@ public:
     qint64 time;
     Type type;
     std::string address;
-    std::string imgbase64;
+    std::string imgbase64; // oak qt TransactionRecord
     CAmount debit;
     CAmount credit;
     /**@}*/

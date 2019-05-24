@@ -1,3 +1,34 @@
+## Unserialize
+```$xslt
+void CTxOut::SerializationOp<CDataStream, CSerActionUnserialize>(CDataStream&, CSerActionUnserialize, int, int) transaction.h:165
+void CTxOut::Unserialize<CDataStream>(CDataStream&, int, int) transaction.h:161
+void Unserialize<CDataStream, CTxOut>(CDataStream&, CTxOut&, long, int) serialize.h:604
+void Unserialize_impl<CDataStream, CTxOut, std::__1::allocator<CTxOut>, CTxOut>(CDataStream&, std::__1::vector<CTxOut, std::__1::allocator<CTxOut> >&, int, int, CTxOut const&) serialize.h:807
+void Unserialize<CDataStream, CTxOut, std::__1::allocator<CTxOut> >(CDataStream&, std::__1::vector<CTxOut, std::__1::allocator<CTxOut> >&, int, int) serialize.h:814
+void SerReadWrite<CDataStream, std::__1::vector<CTxOut, std::__1::allocator<CTxOut> > >(CDataStream&, std::__1::vector<CTxOut, std::__1::allocator<CTxOut> >&, int, int, CSerActionUnserialize) serialize.h:970
+void CTransaction::SerializationOp<CDataStream, CSerActionUnserialize>(CDataStream&, CSerActionUnserialize, int, int) transaction.h:271
+void CTransaction::Unserialize<CDataStream>(CDataStream&, int, int) transaction.h:264
+void Unserialize<CDataStream, CTransaction>(CDataStream&, CTransaction&, long, int) serialize.h:604
+void SerReadWrite<CDataStream, CTransaction>(CDataStream&, CTransaction&, int, int, CSerActionUnserialize) serialize.h:970
+void CMerkleTx::SerializationOp<CDataStream, CSerActionUnserialize>(CDataStream&, CSerActionUnserialize, int, int) wallet.h:240
+void CMerkleTx::Unserialize<CDataStream>(CDataStream&, int, int) wallet.h:235
+void Unserialize<CDataStream, CMerkleTx>(CDataStream&, CMerkleTx&, long, int) serialize.h:604
+void SerReadWrite<CDataStream, CMerkleTx>(CDataStream&, CMerkleTx&, int, int, CSerActionUnserialize) serialize.h:970
+void CWalletTx::SerializationOp<CDataStream, CSerActionUnserialize>(CDataStream&, CSerActionUnserialize, int, int) wallet.h:385
+void CWalletTx::Unserialize<CDataStream>(CDataStream&, int, int) wallet.h:367
+void Unserialize<CDataStream, CWalletTx>(CDataStream&, CWalletTx&, long, int) serialize.h:604
+CDataStream& CDataStream::operator>><CWalletTx>(CWalletTx&) streams.h:302
+ReadKeyValue(CWallet*, CDataStream&, CDataStream&, CWalletScanState&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >&) walletdb.cpp:213
+CWalletDB::LoadWallet(CWallet*) walletdb.cpp:113
+CWallet::LoadWallet(bool&) wallet.cpp:3616
+AppInit2(boost::thread_group&, CScheduler&) init.cpp:1705
+AppInit(int, char**) imagecoind.cpp:171
+main imagecoind.cpp:200
+start 0x00007fff532b6115
+start 0x00007fff532b6115
+```
+
+
 ## import wallet
 ```$xslt
 CWalletDB::WriteTx(uint256, CWalletTx const&) walletdb.cpp:61

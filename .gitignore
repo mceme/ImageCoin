@@ -1,4 +1,4 @@
-
+src/test/data
 src/RCa10760
 build-dash-qt-dat-Debug/debug/dash-qt.exe
 build-dash-qt-dat-Debug/ui_transactiondescdialog.h
@@ -51,3 +51,6 @@ config.*
 configure
 libtool
 daemon.usage.txt
+test_dash
+__wallet_code
+__home

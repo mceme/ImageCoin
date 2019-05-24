@@ -74,13 +74,40 @@ public:
     }
 };
 
+
+////////////////////////////////////////////////////////
+// Access to the image database (image.wallet.dat)
+////////////////////////////////////////////////////////
+class CImageDB : public CDB
+{
+public:
+    CImageDB(const std::string& strFilename, const char* pszMode = "r+", bool fFlushOnClose = true);
+
+//    bool WriteImage(uint256 hash, const std::vector<CTxOut>& vout);
+    bool WriteImage(uint256 hash, const std::vector<std::string>& image);
+    const std::vector<std::string>& ReadImage(uint256 hash);
+    bool EraseImage(uint256 hash);
+
+    bool WriteMinVersion(int nVersion);
+
+    DBErrors ReorderTransactions(CWallet* pwallet);
+    DBErrors LoadWallet(CWallet* pwallet);
+    DBErrors FindWalletTx(CWallet* pwallet, std::vector<uint256>& vTxHash, std::vector<CWalletTx>& vWtx);
+    DBErrors ZapWalletTx(CWallet* pwallet, std::vector<CWalletTx>& vWtx);
+
+//private:
+//    CWalletDB(const CWalletDB&);
+//    void operator=(const CWalletDB&);
+//
+};
+
+
 /** Access to the wallet database (wallet.dat) */
 class CWalletDB : public CDB
 {
+    CImageDB imageDB;
 public:
-    CWalletDB(const std::string& strFilename, const char* pszMode = "r+", bool fFlushOnClose = true) : CDB(strFilename, pszMode, fFlushOnClose)
-    {
-    }
+    CWalletDB(const std::string& strFilename, const char* pszMode = "r+", bool fFlushOnClose = true);
 
     bool WriteName(const std::string& strAddress, const std::string& strName);
     bool EraseName(const std::string& strAddress);
@@ -145,6 +172,7 @@ private:
 
     bool WriteAccountingEntry(const uint64_t nAccEntryNum, const CAccountingEntry& acentry);
 };
+
 
 bool BackupWallet(const CWallet& wallet, const std::string& strDest);
 void ThreadFlushWalletDB(const std::string& strFile);
