@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
+/Users/oak/go/src/github.com/mceme/ImageCoin/src/qt/imagecoin-qt
 
+exit
 CURDIR=`dirname $0`
+/Users/oak/go/src/github.com/mceme/ImageCoin/src/qt/imagecoin-qt
 imagecli stop
 
 sleep 5

@@ -1,3 +1,4 @@
+depends
 src/test/data
 src/RCa10760
 build-dash-qt-dat-Debug/debug/dash-qt.exe

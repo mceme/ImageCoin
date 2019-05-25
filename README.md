@@ -30,6 +30,8 @@ License
 ImageCoin Core is released under the terms of the MIT license. See [COPYING](COPYING) for more
 information or see http://opensource.org/licenses/MIT.
 
+./configure --enable-debug --disable-bench --disable-gui-tests
+./configure --enable-debug --disable-bench --disable-gui-tests --without-gui
 
 Building process
 -----------------
