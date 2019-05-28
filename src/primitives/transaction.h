@@ -148,6 +148,8 @@ public:
     CAmount nValue;
     CScript scriptPubKey;
     std::string imgbase64; // oak CTxOut
+    void setImage(const std::string& input);
+
     int nRounds;
     CSplit split;
 

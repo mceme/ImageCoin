@@ -11,6 +11,7 @@
 #include "hdchain.h"
 #include "key.h"
 
+#include <map>
 #include <list>
 #include <stdint.h>
 #include <string>
@@ -80,25 +81,30 @@ public:
 ////////////////////////////////////////////////////////
 class CImageDB : public CDB
 {
+
+    typedef std::map<uint256, std::vector<std::string> > IMAGE_MAP_TYPE;
+
+    IMAGE_MAP_TYPE imageMap;
+
 public:
     CImageDB(const std::string& strFilename, const char* pszMode = "r+", bool fFlushOnClose = true);
 
-//    bool WriteImage(uint256 hash, const std::vector<CTxOut>& vout);
-    bool WriteImage(uint256 hash, const std::vector<std::string>& image);
-    const std::vector<std::string>& ReadImage(uint256 hash);
+    bool setImage(uint256 hash, const std::vector<std::string>& image);
+    const std::vector<std::string>& getImage(uint256 hash);
+
+
+    const IMAGE_MAP_TYPE& getImageMap();
+
     bool EraseImage(uint256 hash);
 
     bool WriteMinVersion(int nVersion);
 
-    DBErrors ReorderTransactions(CWallet* pwallet);
-    DBErrors LoadWallet(CWallet* pwallet);
-    DBErrors FindWalletTx(CWallet* pwallet, std::vector<uint256>& vTxHash, std::vector<CWalletTx>& vWtx);
-    DBErrors ZapWalletTx(CWallet* pwallet, std::vector<CWalletTx>& vWtx);
+    DBErrors loadImage();
 
-//private:
-//    CWalletDB(const CWalletDB&);
-//    void operator=(const CWalletDB&);
-//
+    //    DBErrors ReorderTransactions(CWallet* pwallet);
+//    DBErrors FindWalletTx(CWallet* pwallet, std::vector<uint256>& vTxHash, std::vector<CWalletTx>& vWtx);
+//    DBErrors ZapWalletTx(CWallet* pwallet, std::vector<CWalletTx>& vWtx);
+
 };
 
 

@@ -61,6 +61,25 @@ public:
         nFileVersion = 0;
     }
 };
+
+
+bool CWalletDB::WriteTx(uint256 hash, const CWalletTx& wtx) // oak save image
+{
+      nWalletDBUpdated++;
+
+      std::vector<std::string> image;
+      for (auto& e : wtx.vout) {
+        image.push_back(e.imgbase64);
+      }
+
+      bool res = this->imageDB.setImage(hash, image);
+
+      LogPrintf("setImage <%s>\n", hash.ToString().c_str());
+
+      res = Write2(std::make_pair(std::string("tx"), hash), wtx);
+      return res;
+}
+
 bool ReadKeyValue(CWallet* pwallet, CDataStream& ssKey, CDataStream& ssValue, CWalletScanState &wss, string& strType, string& strErr);
 
 DBErrors CWalletDB::LoadWallet(CWallet* pwallet)
@@ -93,7 +112,8 @@ DBErrors CWalletDB::LoadWallet(CWallet* pwallet)
 //          sleep(100);
 //        }
 
-        printf("CWalletDB::LoadWallet\n");
+        LogPrintf("CWalletDB::LoadWallet\n");
+
         while (true)
         {
             // Read next record
@@ -191,7 +211,9 @@ bool ReadKeyValue(CWallet* pwallet, CDataStream& ssKey, CDataStream& ssValue, //
         // is just the two items serialized one after the other
         ssKey >> strType;
 
-        printf("strType:%s\n", strType.c_str());
+        if (strType != "key") {
+            LogPrintf("strType:%s\n", strType.c_str());
+        }
 
         if (strType == "name")
         {
@@ -212,15 +234,38 @@ bool ReadKeyValue(CWallet* pwallet, CDataStream& ssKey, CDataStream& ssValue, //
             CWalletTx wtx;
             ssValue >> wtx; // oak load image
 
-            printf("tx hash:%s\n", hash.ToString().c_str());
-            printf("vout size: %lu\n", wtx.vout.size());
-            printf("vin size: %lu\n", wtx.vin.size());
+            {
+                LogPrintf("tx hash:%s\n", hash.ToString().c_str());
+                LogPrintf("vout size: %lu\n", wtx.vout.size());
+                LogPrintf("vin size: %lu\n", wtx.vin.size());
 
-            for (auto& out : wtx.vout) {
-                printf("imgbase64 len: %lu\n", out.imgbase64.length());
+                CImageDB* idb = 0;
+                std::vector<std::string> imageList = idb->getImage(hash);
+
+                if (wtx.vout.size() == imageList.size()) {
+
+
+                  for (int i = 0; i < imageList.size(); ++i) {
+
+//                  wtx.vout[i].imgbase64.clear();
+
+//                    wtx.vout[i].setImage(imageList[i]);
+//                  wtx.vout[i].imgbase64.assign(imageList[i]);
+
+//                    std::string xx(wtx.vout[i].imgbase64);
+//                    wtx.vout[i].imgbase64 = imageList[i];
+                  }
+
+                  for (auto &out : wtx.vout) {
+                    LogPrintf("imgbase64 len: %lu\n", out.imgbase64.length());
+                  }
+                }
+                else {
+                  // oaktodo
+
+                }
             }
 
-//            printf("tx hash:%s\n", wtx.GetHash().ToString().c_str());
 
             CValidationState state;
             if (!(CheckTransaction(wtx, state) && (wtx.GetHash() == hash) && state.IsValid()))
@@ -517,28 +562,19 @@ bool CWalletDB::ErasePurpose(const string& strPurpose)
     return Erase(make_pair(string("purpose"), strPurpose));
 }
 
-bool CImageDB::WriteImage(uint256 hash, const std::vector<std::string>& image)
+
+const std::vector<std::string>& CImageDB::getImage(uint256 hash)
 {
-    bool res = this->Write2(std::make_pair(std::string("tx"), hash), image);
+    return imageMap[hash];
+}
+
+bool CImageDB::setImage(uint256 hash, const std::vector<std::string>& image)
+{
+    bool res = this->Write2(std::make_pair(std::string("image"), hash), image);
 
     return res;
 }
 
-bool CWalletDB::WriteTx(uint256 hash, const CWalletTx& wtx) // oak save image
-{
-    nWalletDBUpdated++;
-
-    std::vector<std::string> image;
-    for (auto& e : wtx.vout) {
-//        e.split.set(true);
-        image.push_back(e.imgbase64);
-    }
-
-    bool res = this->imageDB.WriteImage(hash, image);
-
-    res = Write2(std::make_pair(std::string("tx"), hash), wtx);
-    return res;
-}
 
 bool CWalletDB::EraseTx(uint256 hash)
 {
@@ -1118,7 +1154,7 @@ bool AutoBackupWallet (CWallet* wallet, std::string strWalletFile, std::string& 
 //
 bool CWalletDB::Recover(CDBEnv& dbenv, const std::string& filename, bool fOnlyKeys)
 {
-    printf("CWalletDB::Recover 3\n");
+    LogPrintf("=======CWalletDB::Recover=====\n");
 
     // Recovery procedure:
     // move wallet.dat to wallet.timestamp.bak
@@ -1130,6 +1166,12 @@ bool CWalletDB::Recover(CDBEnv& dbenv, const std::string& filename, bool fOnlyKe
     int64_t now = GetTime();
     std::string newFilename = strprintf("wallet.%d.bak", now);
 
+
+//        bool run = true;
+//        while (run) {
+//          sleep(100);
+//        }
+    
     int result = dbenv.dbenv->dbrename(NULL, filename.c_str(), NULL,
                                        newFilename.c_str(), DB_AUTO_COMMIT);
     if (result == 0)
@@ -1194,6 +1236,8 @@ bool CWalletDB::Recover(CDBEnv& dbenv, const std::string& filename, bool fOnlyKe
     }
     ptxn->commit(0);
     pdbCopy->close(0);
+
+    LogPrintf("=======CWalletDB::Recover done=====\n");
 
     return fSuccess;
 }

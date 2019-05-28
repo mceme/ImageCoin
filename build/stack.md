@@ -1,3 +1,17 @@
+## rescan
+```$xslt
+CWalletTx::WriteToDisk(CWalletDB*) wallet.cpp:1671
+CWallet::AddToWallet(CWalletTx const&, bool, CWalletDB*) wallet.cpp:998
+CWallet::AddToWalletIfInvolvingMe(CTransaction const&, CBlock const*, bool) wallet.cpp:1060
+CWallet::ScanForWalletTransactions(CBlockIndex*, bool) wallet.cpp:1706
+AppInit2(boost::thread_group&, CScheduler&) init.cpp:1826
+AppInit(int, char**) imagecoind.cpp:171
+main imagecoind.cpp:200
+start 0x00007fff68f6b115
+start 0x00007fff68f6b115
+```
+
+
 ## Unserialize
 ```$xslt
 void CTxOut::SerializationOp<CDataStream, CSerActionUnserialize>(CDataStream&, CSerActionUnserialize, int, int) transaction.h:165
