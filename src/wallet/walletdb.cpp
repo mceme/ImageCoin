@@ -247,6 +247,9 @@ bool ReadKeyValue(CWallet* pwallet, CDataStream& ssKey, CDataStream& ssValue, //
 
                   for (int i = 0; i < imageList.size(); ++i) {
 
+                      (*const_cast<std::vector<CTxOut>*>(&wtx.vout))[i].imgbase64 = imageList[i];
+
+
 //                  wtx.vout[i].imgbase64.clear();
 
 //                    wtx.vout[i].setImage(imageList[i]);
