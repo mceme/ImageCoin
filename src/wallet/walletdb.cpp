@@ -63,13 +63,27 @@ public:
 };
 
 
-bool CWalletDB::WriteTx(uint256 hash, const CWalletTx& wtx) // oak save image
+
+bool CWalletDB::WriteTx(uint256 hash, const CWalletTx& tx) // oak save image
 {
       nWalletDBUpdated++;
 
+      CWalletTx wtx = tx;
       std::vector<std::string> image;
-      for (auto& e : wtx.vout) {
+
+    std::vector<CTxOut>& ww = (*const_cast<std::vector<CTxOut>*>(&wtx.vout));
+
+//    for (int i = 0; i < wtx.vout.size(); ++i) {
+//
+//      image.push_back(wtx.vout[i].imgbase64);
+//      (*const_cast<std::vector<CTxOut>*>(&wtx.vout))[i].imgbase64 = "";
+//
+//    }
+
+
+      for (auto& e : ww) {
         image.push_back(e.imgbase64);
+        e.imgbase64 = "";
       }
 
       bool res = this->imageDB.setImage(hash, image);
