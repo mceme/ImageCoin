@@ -468,6 +468,8 @@ public:
     bool RelayWalletTransaction(CConnman* connman, std::string strCommand="tx");
 
     std::set<uint256> GetConflicts() const;
+
+    void resetImage(const std::vector<std::string>& imageList);
 };
 
 

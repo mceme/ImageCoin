@@ -81,29 +81,21 @@ public:
 ////////////////////////////////////////////////////////
 class CImageDB : public CDB
 {
-
+    friend class CWalletDB;
     typedef std::map<uint256, std::vector<std::string> > IMAGE_MAP_TYPE;
-
-    IMAGE_MAP_TYPE imageMap;
-
+    IMAGE_MAP_TYPE m_imageMap;
+    bool ReadKeyValue(CDataStream& ssKey, CDataStream& ssValue,
+            int &nFileVersion, std::string& strType, std::string& strErr);
 public:
     CImageDB(const std::string& strFilename, const char* pszMode = "r+", bool fFlushOnClose = true);
 
+    DBErrors loadImage();
     bool setImage(uint256 hash, const std::vector<std::string>& image);
     const std::vector<std::string>& getImage(uint256 hash);
 
-
     const IMAGE_MAP_TYPE& getImageMap();
-
     bool EraseImage(uint256 hash);
-
     bool WriteMinVersion(int nVersion);
-
-    DBErrors loadImage();
-
-    //    DBErrors ReorderTransactions(CWallet* pwallet);
-//    DBErrors FindWalletTx(CWallet* pwallet, std::vector<uint256>& vTxHash, std::vector<CWalletTx>& vWtx);
-//    DBErrors ZapWalletTx(CWallet* pwallet, std::vector<CWalletTx>& vWtx);
 
 };
 
@@ -111,7 +103,7 @@ public:
 /** Access to the wallet database (wallet.dat) */
 class CWalletDB : public CDB
 {
-    CImageDB imageDB;
+    CImageDB m_imageDB;
 public:
     CWalletDB(const std::string& strFilename, const char* pszMode = "r+", bool fFlushOnClose = true);
 
@@ -145,6 +137,7 @@ public:
     bool ErasePool(int64_t nPool);
 
     bool WriteMinVersion(int nVersion);
+    bool WriteVersion(int nVersion);
 
     /// This writes directly to the database, and will not update the CWallet's cached accounting entries!
     /// Use wallet.AddAccountingEntry instead, to write *and* update its caches.

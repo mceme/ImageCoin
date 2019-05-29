@@ -68,10 +68,6 @@ std::string CTxOut::ToString() const
     return strprintf("CTxOut(nValue=%d.%08d, scriptPubKey=%s, imgbase64=%s)", nValue / COIN, nValue % COIN, HexStr(scriptPubKey).substr(0, 30),imgbase64);
 }
 
-void CTxOut::setImage(const std::string& input) {
-    imgbase64 = input;
-}
-
 CMutableTransaction::CMutableTransaction() : nVersion(CTransaction::CURRENT_VERSION), nLockTime(0) {}
 CMutableTransaction::CMutableTransaction(const CTransaction& tx) : nVersion(tx.nVersion), vin(tx.vin), vout(tx.vout), nLockTime(tx.nLockTime) {}
 

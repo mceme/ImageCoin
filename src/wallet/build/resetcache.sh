@@ -4,7 +4,7 @@ CURDIR=`dirname $0`
 
 
 SRC_DIR=/Users/oak/__app_support/imagecoinCore
-DST_DIR=/Users/oak/.go/src/github.com/mceme/ImageCoin/build/__home/.image_coin_cache
+DST_DIR=/Users/oak/.image_coin_cache
 
 rm -rf $SRC_DIR
 cp -rf $DST_DIR/$1 $SRC_DIR

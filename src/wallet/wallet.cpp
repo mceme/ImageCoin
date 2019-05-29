@@ -883,8 +883,13 @@ bool CWallet::AddToWallet(const CWalletTx& wtxIn, bool fFromLoadWallet, CWalletD
 
     if (fFromLoadWallet)
     {
-        mapWallet[hash] = wtxIn;
+        mapWallet[hash] = wtxIn;        // oak mapWallet
+
+
         CWalletTx& wtx = mapWallet[hash];
+
+        LogPrintf("CWallet::AddToWallet: txhash <%s>, CWallet::mapWallet size <%d>\n", hash.ToString().c_str(), mapWallet.size());
+
         wtx.BindWallet(this);
         wtxOrdered.insert(make_pair(wtx.nOrderPos, TxPair(&wtx, (CAccountingEntry*)0)));
         AddToSpends(hash);
@@ -905,6 +910,10 @@ bool CWallet::AddToWallet(const CWalletTx& wtxIn, bool fFromLoadWallet, CWalletD
         CWalletTx& wtx = (*ret.first).second;
         wtx.BindWallet(this);
         bool fInsertedNew = ret.second;
+
+        LogPrintf("CWallet::AddToWallet: txhash <%s>, CWallet::mapWallet size<%d>, new<%d>\n",
+                  hash.ToString().c_str(), mapWallet.size(), fInsertedNew);
+
         if (fInsertedNew)
         {
             wtx.nTimeReceived = GetAdjustedTime();

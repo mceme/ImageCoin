@@ -4,8 +4,7 @@ CURDIR=`dirname $0`
 
 img=`cat ${CURDIR}/imagebase64.txt`
 
-#${CURDIR}/../src/ImageCoin-cli sendtoaddress Md32YNezzrVgfSKjVo3zYuBDyAGwdQVRzx 0.001 $img
-${CURDIR}/../src/ImageCoin-cli sendtoaddress MY7KddiJ1dw23anwHbMqJm22SKqUvgvEzH 0.001 $img
+imagecli sendtoaddress MY7KddiJ1dw23anwHbMqJm22SKqUvgvEzH 0.001 $img
 
 
 exit
