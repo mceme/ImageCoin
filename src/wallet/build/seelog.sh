@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
 
-tail -f /Users/oak/.go/src/github.com/mceme/ImageCoin/build/cache/debug.log
+tail -f /Users/oak/__app_support/imagecoinCore/debug.log
+
+
+ln -svfn /Users/oak/__app_support/imagecoinCore cache
+
 

@@ -76,15 +76,18 @@ bool CDBEnv::Open(const boost::filesystem::path& pathIn)
     if (fDbEnvInit)
         return true;
 
-
     boost::this_thread::interruption_point();
 
     strPath = pathIn.string();
 
-    printf("CDBEnv::Open: %s\n", strPath.c_str());
+    LogPrintf("CDBEnv::Open: %s\n", strPath.c_str());
 
     boost::filesystem::path pathLogDir = pathIn / "database";
     TryCreateDirectory(pathLogDir);
+
+    boost::filesystem::path pathImageDir = pathIn / "image";
+    TryCreateDirectory(pathImageDir);
+
     boost::filesystem::path pathErrorFile = pathIn / "db.log";
     LogPrintf("CDBEnv::Open: LogDir=%s ErrorFile=%s\n", pathLogDir.string(), pathErrorFile.string());
 

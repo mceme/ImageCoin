@@ -88,6 +88,7 @@ class CImageDB : public CDB
             int &nFileVersion, std::string& strType, std::string& strErr);
 public:
     CImageDB(const std::string& strFilename, const char* pszMode = "r+", bool fFlushOnClose = true);
+    ~CImageDB();
 
     DBErrors loadImage();
     bool setImage(uint256 hash, const std::vector<std::string>& image);
@@ -103,9 +104,10 @@ public:
 /** Access to the wallet database (wallet.dat) */
 class CWalletDB : public CDB
 {
-    CImageDB m_imageDB;
+    CImageDB* m_imageDB;
 public:
     CWalletDB(const std::string& strFilename, const char* pszMode = "r+", bool fFlushOnClose = true);
+    ~CWalletDB();
 
     bool WriteName(const std::string& strAddress, const std::string& strName);
     bool EraseName(const std::string& strAddress);

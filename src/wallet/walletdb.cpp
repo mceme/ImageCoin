@@ -26,12 +26,15 @@ using namespace std;
 static uint64_t nAccountingEntryNumber = 0;
 
 
-//===========================================================================
-//===========================================================================
-//  CImageDB
+// =====================================================
+// ====================  CImageDB ======================
 CImageDB::CImageDB(const std::string& strFilename, const char* pszMode, bool fFlushOnClose)
 : CDB(strFilename, pszMode, fFlushOnClose)
+{}
+
+CImageDB::~CImageDB()
 {
+//    LogPrintf("CImageDB::~CImageDB\n");
 }
 
 const std::vector<std::string>& CImageDB::getImage(uint256 hash)
@@ -60,14 +63,31 @@ bool CImageDB::setImage(uint256 hash, const std::vector<std::string>& image)
     return this->Write2(std::make_pair(std::string("image"), hash), image);
 }
 
-// CImageDB
-//===========================================================================
-//===========================================================================
-
+// ======================================================
+// ====================  CWalletDB ======================
 CWalletDB::CWalletDB(const std::string& strFilename, const char* pszMode, bool fFlushOnClose)
 : CDB(strFilename, pszMode, fFlushOnClose)
-, m_imageDB("image." + strFilename, pszMode, fFlushOnClose)
+, m_imageDB(0)
 {
+    boost::filesystem::path imageFile(GetArg("-image", ""));
+
+    if (imageFile.string().length() > 0)
+    {
+        LogPrintf("CWalletDB::CWalletDB: Image file: <%s>\n", imageFile.c_str());
+        boost::filesystem::path file = "image" / imageFile;
+        m_imageDB = new CImageDB(file.string(), pszMode, fFlushOnClose);
+    }
+    else
+    {
+        LogPrintf("CWalletDB::CWalletDB: Image file disabled\n");
+    }
+}
+
+CWalletDB::~CWalletDB()
+{
+    if (m_imageDB != 0) {
+        delete m_imageDB;
+    }
 }
 
 static bool IsKeyType(string strType)
@@ -99,20 +119,29 @@ public:
 bool CWalletDB::WriteTx(uint256 hash, const CWalletTx &tx) // oak save image
 {
     nWalletDBUpdated++;
-    CWalletTx wtx = tx;
-    std::vector<std::string> image;
 
-    std::vector<CTxOut> &vout = (*const_cast<std::vector<CTxOut>*>(&wtx.vout));
-
-    for (auto &e : vout) {
-        image.push_back(e.imgbase64);
-        e.imgbase64 = "";
+    bool res = false;
+    if (m_imageDB == 0)
+    {
+        Write2(std::make_pair(std::string("tx"), hash), tx);
     }
+    else
+    {
+        CWalletTx wtx = tx;
+        std::vector<std::string> image;
 
-    bool res = this->m_imageDB.setImage(hash, image);
-    if (res) {
-        res = Write2(std::make_pair(std::string("tx"), hash), wtx);
-        LogPrintf("CWalletDB::WriteTx: hash<%s>, success<%d>\n", hash.ToString().c_str(), res);
+        std::vector<CTxOut> &vout = (*const_cast<std::vector<CTxOut>*>(&wtx.vout));
+
+        for (auto &e : vout) {
+            image.push_back(e.imgbase64);
+            e.imgbase64 = "";
+        }
+
+        res = m_imageDB->setImage(hash, image);
+        if (res) {
+            res = Write2(std::make_pair(std::string("tx"), hash), wtx);
+            LogPrintf("CWalletDB::WriteTx: hash<%s>, success<%d>\n", hash.ToString().c_str(), res);
+        }
     }
 
     return res;
@@ -216,7 +245,6 @@ DBErrors CImageDB::loadImage()
             if (!this->ReadKeyValue(ssKey, ssValue, nFileVersion, strType, strErr)) // oak load image
             {
                 // read error
-
                 if (strType == "image")
                 {
                     // rescan if failed to read an image
@@ -268,7 +296,10 @@ DBErrors CWalletDB::LoadWallet(CWallet *pwallet) {
 
     try {
         LOCK(pwallet->cs_wallet);
-        this->m_imageDB.loadImage();
+        if (m_imageDB != 0)
+        {
+            this->m_imageDB->loadImage();
+        }
 
         LogPrintf("======CWalletDB::LoadWallet start======\n");
         int nMinVersion = 0;
@@ -306,7 +337,7 @@ DBErrors CWalletDB::LoadWallet(CWallet *pwallet) {
 
             // Try to be tolerant of single corrupt records:
             string strType, strErr;
-            if (!ReadKeyValue(pwallet, ssKey, ssValue, wss, strType, strErr, &this->m_imageDB)) // oak load wallet
+            if (!ReadKeyValue(pwallet, ssKey, ssValue, wss, strType, strErr, this->m_imageDB)) // oak load wallet
             {
                 // losing keys is considered a catastrophic error, anything else
                 // we assume the user can live with:
@@ -336,8 +367,6 @@ DBErrors CWalletDB::LoadWallet(CWallet *pwallet) {
     catch (...) {
         result = DB_CORRUPT;
     }
-
-//    exit(0);
 
     if (fNoncriticalErrors && result == DB_LOAD_OK)
         result = DB_NONCRITICAL_ERROR;
@@ -386,7 +415,7 @@ void CWalletTx::resetImage(const std::vector<std::string>& imageList)
 {
     if (this->vout.size() == imageList.size()) {
 
-        LogPrintf("======CWalletTx::resetImage======\n");
+        LogPrintf("CWalletTx::resetImage\n");
 
         for (size_t i = 0; i < imageList.size(); ++i) {
             std::vector<CTxOut> &txOut = *const_cast<std::vector<CTxOut>*>(&this->vout);
@@ -401,7 +430,6 @@ void CWalletTx::resetImage(const std::vector<std::string>& imageList)
         LogPrintf("txHash with image: %s\n", this->GetHash().ToString().c_str());
 
     } else {
-        // oaktodo
         LogPrintf("wtx.vout.size() != imageList.size()\n");
     }
 }
@@ -733,10 +761,19 @@ bool ReadKeyValue(CWallet* pwallet, CDataStream& ssKey, CDataStream& ssValue, //
 
 bool CWalletDB::WriteVersion(int nVersion)
 {
-    bool res = this->m_imageDB.WriteVersion(nVersion);
-    if (res) {
-        CDB::WriteVersion(nVersion);
+    bool res = false;
+    if (m_imageDB != 0)
+    {
+        res = m_imageDB->WriteVersion(nVersion);
+        if (res) {
+            res = CDB::WriteVersion(nVersion);
+        }
     }
+    else
+    {
+        res = CDB::WriteVersion(nVersion);
+    }
+
     return res;
 }
 
@@ -879,10 +916,17 @@ bool CWalletDB::ErasePool(int64_t nPool)
 
 bool CWalletDB::WriteMinVersion(int nVersion)
 {
-    bool res = this->m_imageDB.Write(std::string("minversion"), nVersion);
-
-    if (res) {
-        Write(std::string("minversion"), nVersion);
+    bool res = false;
+    if (m_imageDB != 0)
+    {
+        res = m_imageDB->Write(std::string("minversion"), nVersion);
+        if (res) {
+            res = Write(std::string("minversion"), nVersion);
+        }
+    }
+    else
+    {
+        res = Write(std::string("minversion"), nVersion);
     }
     return res;
 }

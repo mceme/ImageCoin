@@ -1,3 +1,12 @@
+## init
+* salvage wallet
+* zap wallet(clear all k-vs from DB except for txs)
+* load wallet
+* rescan tx from network if necessary
+* restore zapped txs
+*
+
+
 ## rescan
 ```$xslt
 CWalletTx::WriteToDisk(CWalletDB*) wallet.cpp:1671
