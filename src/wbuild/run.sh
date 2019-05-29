@@ -8,7 +8,7 @@ cp ${CURDIR}/_imagecoin.conf cache/imagecoin.conf
 
 #/Users/oak/.go/src/github.com/mceme/ImageCoin/src/ImageCoind -keypool=2 -rescan$@
 #/Users/oak/.go/src/github.com/mceme/ImageCoin/src/ImageCoind -keypool=2 $@
-/Users/oak/.go/src/github.com/mceme/ImageCoin/src/ImageCoind -keypool=2 -salvagewallet $@
+${CURDIR}/../ImageCoind -keypool=2 $@
 
 sleep 3
 ps -ef|grep ImageCoind|grep -v grep
