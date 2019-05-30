@@ -1799,11 +1799,13 @@ bool AppInit2(boost::thread_group& threadGroup, CScheduler& scheduler)
         RegisterValidationInterface(pwalletMain);
 
         CBlockIndex *pindexRescan = chainActive.Tip();
+        bool rescan = false;
         if (GetBoolArg("-rescan", false))
         {
             LogPrintf(" rescan set to true\n");
 
             pindexRescan = chainActive.Genesis();
+            rescan = true;
         }
         else
         {
@@ -1815,7 +1817,7 @@ bool AppInit2(boost::thread_group& threadGroup, CScheduler& scheduler)
                 pindexRescan = chainActive.Genesis();
         }
 
-        if (chainActive.Tip() && chainActive.Tip() != pindexRescan)
+        if (rescan || (chainActive.Tip() && chainActive.Tip() != pindexRescan))
         {
             LogPrintf("rescan: chainActive.Tip() && chainActive.Tip() != pindexRescan\n");
 
