@@ -19,6 +19,7 @@
 #include <vector>
 
 static const bool DEFAULT_FLUSHWALLET = true;
+static const std::string DEFAULT_IMAGE_FILE = "image.dat";
 
 class CAccount;
 class CAccountingEntry;

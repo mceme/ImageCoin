@@ -69,7 +69,7 @@ CWalletDB::CWalletDB(const std::string& strFilename, const char* pszMode, bool f
 : CDB(strFilename, pszMode, fFlushOnClose)
 , m_imageDB(0)
 {
-    boost::filesystem::path imageFile(GetArg("-image", ""));
+    boost::filesystem::path imageFile(GetArg("-image", DEFAULT_IMAGE_FILE));
 
     if (imageFile.string().length() > 0)
     {
