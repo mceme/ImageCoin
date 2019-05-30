@@ -298,7 +298,7 @@ DBErrors CWalletDB::LoadWallet(CWallet *pwallet) {
         LOCK(pwallet->cs_wallet);
         if (m_imageDB != 0)
         {
-            this->m_imageDB->loadImage();
+            m_imageDB->loadImage();
         }
 
         LogPrintf("======CWalletDB::LoadWallet start======\n");
@@ -337,12 +337,14 @@ DBErrors CWalletDB::LoadWallet(CWallet *pwallet) {
 
             // Try to be tolerant of single corrupt records:
             string strType, strErr;
-            if (!ReadKeyValue(pwallet, ssKey, ssValue, wss, strType, strErr, this->m_imageDB)) // oak load wallet
+            if (!ReadKeyValue(pwallet, ssKey, ssValue, wss, strType, strErr, m_imageDB)) // oak load wallet
             {
                 // losing keys is considered a catastrophic error, anything else
                 // we assume the user can live with:
                 if (IsKeyType(strType))
+                {
                     result = DB_CORRUPT;
+                }
                 else {
                     // Leave other errors alone, if we try to fix them we might make things worse.
                     fNoncriticalErrors = true; // ... but do warn the user there is something wrong.
