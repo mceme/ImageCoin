@@ -2055,9 +2055,7 @@ bool AppInit2(boost::thread_group& threadGroup, CScheduler& scheduler)
 
     // ********************************************************* Step 12: start node
 
-    LogPrintf("Quit!\n");
-
-//    return false;
+    LogPrintf("Start node!\n");
 
     if (!CheckDiskSpace())
         return false;

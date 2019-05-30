@@ -20,6 +20,7 @@
 #include <boost/foreach.hpp>
 #include <boost/scoped_ptr.hpp>
 #include <boost/thread.hpp>
+#include "map"
 
 using namespace std;
 
@@ -63,6 +64,19 @@ bool CImageDB::setImage(uint256 hash, const std::vector<std::string>& image)
     return this->Write(std::make_pair(std::string("image"), hash), image);
 }
 
+void dumpWalletDBState(const std::map<string, int>& input, string context) {
+
+    std::map<string, int>::const_iterator iter = input.begin();
+    LogPrintf("Dump <%s> keys in Wallet DB:\n", context.c_str());
+
+    while (iter != input.end()) {
+        LogPrintf("    key <%s>: %d %s\n",
+                  iter->first.c_str(),
+                  iter->second,
+                context.c_str());
+        iter++;
+    }
+}
 // ======================================================
 // ====================  CWalletDB ======================
 CWalletDB::CWalletDB(const std::string& strFilename, const char* pszMode, bool fFlushOnClose)
@@ -319,12 +333,8 @@ DBErrors CWalletDB::LoadWallet(CWallet *pwallet) {
             return DB_CORRUPT;
         }
 
-//        bool run = true;
-//        run = false;
-//
-//        while (run) {
-//          sleep(100);
-//        }
+        std::map<string, int> failedKey;
+        std::map<string, int> successKey;
 
         while (true) {
             // Read next record
@@ -342,6 +352,7 @@ DBErrors CWalletDB::LoadWallet(CWallet *pwallet) {
             string strType, strErr;
             if (!ReadKeyValue(pwallet, ssKey, ssValue, wss, strType, strErr, m_imageDB)) // oak load wallet
             {
+                failedKey[strType]++;
                 // losing keys is considered a catastrophic error, anything else
                 // we assume the user can live with:
                 if (IsKeyType(strType))
@@ -357,9 +368,16 @@ DBErrors CWalletDB::LoadWallet(CWallet *pwallet) {
                     }
                 }
             }
+            else
+            {
+                successKey[strType]++;
+            }
             if (!strErr.empty())
                 LogPrintf("%s\n", strErr);
         }
+
+        dumpWalletDBState(successKey, "success");
+        dumpWalletDBState(failedKey, "failed");
         pcursor->close();
 
         // Store initial external keypool size since we mostly use external keys in mixing
@@ -457,7 +475,7 @@ bool ReadKeyValue(CWallet* pwallet, CDataStream& ssKey, CDataStream& ssValue, //
         // is just the two items serialized one after the other
         ssKey >> strType;
 
-        if (strType != "key" && strType != "keymeta") {
+        if (strType != "key" && strType != "keymeta" && strType != "pool") {
             LogPrintf("==============================================\n");
             LogPrintf("strType: %s\n", strType.c_str());
         }
@@ -774,8 +792,6 @@ bool ReadKeyValue(CWallet* pwallet, CDataStream& ssKey, CDataStream& ssValue, //
 //
 // CWalletDB
 //
-
-
 bool CWalletDB::WriteVersion(int nVersion)
 {
     bool res = false;
@@ -1432,12 +1448,6 @@ bool CWalletDB::Recover(CDBEnv& dbenv, const std::string& filename, bool fOnlyKe
     int64_t now = GetTime();
     std::string newFilename = strprintf("wallet.%d.bak", now);
 
-
-//        bool run = true;
-//        while (run) {
-//          sleep(100);
-//        }
-    
     int result = dbenv.dbenv->dbrename(NULL, filename.c_str(), NULL,
                                        newFilename.c_str(), DB_AUTO_COMMIT);
     if (result == 0)
@@ -1472,6 +1482,8 @@ bool CWalletDB::Recover(CDBEnv& dbenv, const std::string& filename, bool fOnlyKe
     CWallet dummyWallet;
     CWalletScanState wss;
 
+    std::map<string, int> failedKey;
+    std::map<string, int> successKey;
     DbTxn* ptxn = dbenv.TxnBegin();
     BOOST_FOREACH(CDBEnv::KeyValPair& row, salvagedData)
     {
@@ -1486,6 +1498,16 @@ bool CWalletDB::Recover(CDBEnv& dbenv, const std::string& filename, bool fOnlyKe
                 LOCK(dummyWallet.cs_wallet);
                 fReadOK = ReadKeyValue(&dummyWallet, ssKey, ssValue, wss, strType, strErr, 0);// oak recover
             }
+
+            if (fReadOK)
+            {
+                successKey[strType]++;
+            }
+            else
+            {
+                failedKey[strType]++;
+            }
+
             if (!IsKeyType(strType) && strType != "hdpubkey")
                 continue;
             if (!fReadOK)
@@ -1500,6 +1522,10 @@ bool CWalletDB::Recover(CDBEnv& dbenv, const std::string& filename, bool fOnlyKe
         if (ret2 > 0)
             fSuccess = false;
     }
+
+    dumpWalletDBState(successKey, "success");
+    dumpWalletDBState(failedKey, "failed");
+
     ptxn->commit(0);
     pdbCopy->close(0);
 
