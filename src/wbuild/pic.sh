@@ -4,7 +4,7 @@ CURDIR=`dirname $0`
 
 img=`cat ${CURDIR}/imagebase64.txt`
 
-imagecli sendtoaddress MY7KddiJ1dw23anwHbMqJm22SKqUvgvEzH 0.001 $img
+imagecli sendtoaddress Mjbv4mtvtU7dPQEV5NPatec47Ag5dPLE8P 39.00 $img
 
 
 exit

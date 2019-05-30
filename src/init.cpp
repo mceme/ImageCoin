@@ -1729,6 +1729,14 @@ bool AppInit2(boost::thread_group& threadGroup, CScheduler& scheduler)
                 strErrors << _("Error loading wallet.dat") << "\n";
         }
 
+        std::string imageFile = GetArg("-image", "");
+        if (imageFile.length() > 0) {
+
+            if (FEATURE_IMAGE_ISOLATION > pwalletMain->GetVersion()) {
+                pwalletMain->SetMinVersion(FEATURE_IMAGE_ISOLATION); // permanently upgrade the wallet immediately
+            }
+        }
+
         if (GetBoolArg("-upgradewallet", fFirstRun))
         {
             int nMaxVersion = GetArg("-upgradewallet", 0);

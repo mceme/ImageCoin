@@ -445,7 +445,7 @@ bool ReadKeyValue(CWallet* pwallet, CDataStream& ssKey, CDataStream& ssValue, //
         // is just the two items serialized one after the other
         ssKey >> strType;
 
-        if (strType != "key") {
+        if (strType != "key" && strType != "keymeta") {
             LogPrintf("==============================================\n");
             LogPrintf("strType: %s\n", strType.c_str());
         }
