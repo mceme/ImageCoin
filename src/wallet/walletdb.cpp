@@ -430,7 +430,7 @@ bool CWalletTx::resetImage(uint256 expectedHash, const std::vector<std::string>&
 
         int i = 0;
         for (auto &out : this->vout) {
-            LogPrintf("    image.dat: imgbase64p[%d] len: %lu\n", i++, out.imgbase64.length());
+            LogPrintf("    image.dat: imgbase64[%d] len: %lu\n", i++, out.imgbase64.length());
         }
         this->UpdateHash();
         LogPrintf("txHash with image: %s\n", this->GetHash().ToString().c_str());
