@@ -1875,6 +1875,11 @@ bool AppInit2(boost::thread_group& threadGroup, CScheduler& scheduler)
     LogPrintf("No wallet support compiled in!\n");
 #endif // !ENABLE_WALLET
 
+    bool testonly = GetBoolArg("-testonly", false);
+    if (testonly) {
+        return InitError(_("Test only mode."));
+    }
+
     // ********************************************************* Step 9: data directory maintenance
 
     // if pruning, unset the service bit and perform the initial blockstore prune

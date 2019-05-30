@@ -88,9 +88,7 @@ enum WalletFeature
                             // which uses on-the-fly private key derivation
 
     FEATURE_IMAGE_ISOLATION = 130102,
-
-
-    FEATURE_LATEST = 61000
+    FEATURE_LATEST = FEATURE_IMAGE_ISOLATION
 };
 
 enum AvailableCoinsType
