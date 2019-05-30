@@ -154,11 +154,6 @@ protected:
         return (ret == 0);
     }
 
-    template <typename K, typename T>
-    bool Write2(const K& key, const T& value, bool fOverwrite = true) // oak
-    {
-        return Write(key, value, fOverwrite);
-    }
 
     template <typename K, typename T>
     bool Write(const K& key, const T& value, bool fOverwrite = true) // oak

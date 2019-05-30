@@ -60,7 +60,7 @@ bool CImageDB::setImage(uint256 hash, const std::vector<std::string>& image)
     for (size_t i = 0; i < image.size(); ++i) {
         LogPrintf("    image[%d] size <%d>\n", i, image[i].length());
     }
-    return this->Write2(std::make_pair(std::string("image"), hash), image);
+    return this->Write(std::make_pair(std::string("image"), hash), image);
 }
 
 // ======================================================
@@ -123,7 +123,7 @@ bool CWalletDB::WriteTx(uint256 hash, const CWalletTx &tx) // oak save image
     bool res = false;
     if (m_imageDB == 0)
     {
-        Write2(std::make_pair(std::string("tx"), hash), tx);
+        this->Write(std::make_pair(std::string("tx"), hash), tx);
     }
     else
     {
@@ -139,7 +139,7 @@ bool CWalletDB::WriteTx(uint256 hash, const CWalletTx &tx) // oak save image
 
         res = m_imageDB->setImage(hash, image);
         if (res) {
-            res = Write2(std::make_pair(std::string("tx"), hash), wtx);
+            res = this-Write(std::make_pair(std::string("tx"), hash), wtx);
             LogPrintf("CWalletDB::WriteTx: hash<%s>, success<%d>\n", hash.ToString().c_str(), res);
         }
     }
