@@ -1,12 +1,12 @@
 ## case 1. startup with -image
 * no image.dat
 * has wallet.dat, v=isolation
-* 报错，要求用 salvage启动，rescan重新下载image
+* load wallet报错，自动rescan, 重新下载image
 
 ## case 2. startup with -image
 * no image.dat
 * has wallet.dat, v=before isolation
-* 报错，要求用 salvage启动，rescan重新下载image
+* load wallet报错，自动rescan, 重新下载image
 
 
 ## case 3. startup with -image

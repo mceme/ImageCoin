@@ -470,7 +470,7 @@ public:
 
     std::set<uint256> GetConflicts() const;
 
-    void resetImage(const std::vector<std::string>& imageList);
+    bool resetImage(uint256 hash, const std::vector<std::string>& imageList);
 };
 
 

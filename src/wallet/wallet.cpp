@@ -527,12 +527,15 @@ void CWallet::SetBestChain(const CBlockLocator& loc)
 bool CWallet::SetMinVersion(enum WalletFeature nVersion, CWalletDB* pwalletdbIn, bool fExplicit)
 {
     LOCK(cs_wallet); // nWalletVersion
+
+    LogPrintf("CWallet::SetMinVersion %d\n", nVersion);
+
     if (nWalletVersion >= nVersion)
         return true;
 
     // when doing an explicit upgrade, if we pass the max version permitted, upgrade all the way
     if (fExplicit && nVersion > nWalletMaxVersion)
-            nVersion = FEATURE_LATEST;
+        nVersion = FEATURE_LATEST;
 
     nWalletVersion = nVersion;
 

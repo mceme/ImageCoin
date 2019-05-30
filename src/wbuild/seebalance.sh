@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
+
+imagecli listaddressgroupings |grep -v '\[' |grep -v '\]'
+
+
 imagecli getwalletinfo
-
-imagecli listaddressgroupings
-
-
 
 
 exit

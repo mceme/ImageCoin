@@ -180,7 +180,7 @@ bool CImageDB::ReadKeyValue(CDataStream& ssKey, CDataStream& ssValue,
         else if (strType == "version")
         {
             ssValue >> nFileVersion;
-            LogPrintf("CImageDB nFileVersion: %d\n", nFileVersion);
+            LogPrintf("CImageDB::ReadKeyValue version: %d\n", nFileVersion);
 
             if (nFileVersion == 10300)
                 nFileVersion = 300;
@@ -189,7 +189,7 @@ bool CImageDB::ReadKeyValue(CDataStream& ssKey, CDataStream& ssValue,
         {
             int minversion;
             ssValue >> minversion;
-            LogPrintf("CImageDB minversion: %d\n", minversion);
+            LogPrintf("CImageDB::ReadKeyValue minversion: %d\n", minversion);
         }
     } catch (...)
     {
@@ -211,9 +211,8 @@ DBErrors CImageDB::loadImage()
         if (Read2((string)"minversion", nMinVersion))
         {
             LogPrintf("CImageDB::loadImage: nMinVersion is %d\n", nMinVersion);
-
-//            if (nMinVersion > CLIENT_VERSION)
-//                return DB_TOO_NEW;
+            if (nMinVersion > CLIENT_VERSION)
+                return DB_TOO_NEW;
         }
         else
         {
@@ -304,8 +303,12 @@ DBErrors CWalletDB::LoadWallet(CWallet *pwallet) {
         LogPrintf("======CWalletDB::LoadWallet start======\n");
         int nMinVersion = 0;
         if (Read2((string) "minversion", nMinVersion)) {
+
+            LogPrintf("CWalletDb::LoadWallet ReadKeyValue: minversion: %d\n", nMinVersion);
+
             if (nMinVersion > CLIENT_VERSION)
                 return DB_TOO_NEW;
+
             pwallet->LoadMinVersion(nMinVersion);
         }
 
@@ -413,8 +416,9 @@ DBErrors CWalletDB::LoadWallet(CWallet *pwallet) {
 }
 
 
-void CWalletTx::resetImage(const std::vector<std::string>& imageList)
+bool CWalletTx::resetImage(uint256 expectedHash, const std::vector<std::string>& imageList)
 {
+    bool res = false;
     if (this->vout.size() == imageList.size()) {
 
         LogPrintf("CWalletTx::resetImage\n");
@@ -431,9 +435,17 @@ void CWalletTx::resetImage(const std::vector<std::string>& imageList)
         this->UpdateHash();
         LogPrintf("txHash with image: %s\n", this->GetHash().ToString().c_str());
 
+        if (this->GetHash() == expectedHash) {
+            res = true;
+        } else {
+            LogPrintf("Invalid tx hash! expected hash<%s>, updated hash<%s>\n",
+                      expectedHash.ToString().c_str(), GetHash().ToString().c_str());
+        }
+
     } else {
         LogPrintf("wtx.vout.size() != imageList.size()\n");
     }
+    return res;
 }
 
 bool ReadKeyValue(CWallet* pwallet, CDataStream& ssKey, CDataStream& ssValue, // oak
@@ -455,9 +467,7 @@ bool ReadKeyValue(CWallet* pwallet, CDataStream& ssKey, CDataStream& ssValue, //
             string strAddress;
             ssKey >> strAddress;
             ssValue >> pwallet->mapAddressBook[CBitcoinAddress(strAddress).Get()].name;
-
             LogPrintf("%s->%s\n", strAddress.c_str(), pwallet->mapAddressBook[CBitcoinAddress(strAddress).Get()].name.c_str());
-
         }
         else if (strType == "purpose")
         {
@@ -485,7 +495,10 @@ bool ReadKeyValue(CWallet* pwallet, CDataStream& ssKey, CDataStream& ssValue, //
 
             if (idb != 0) {
                 std::vector <std::string> imageList = idb->getImage(hash);
-                wtx.resetImage(imageList);
+                if (!wtx.resetImage(hash, imageList)) {
+                    LogPrintf("Image is invalid! TxHash as key in DB: %s\n", hash.ToString().c_str());
+                    return false;
+                }
             }
 
             CValidationState state;
@@ -680,6 +693,8 @@ bool ReadKeyValue(CWallet* pwallet, CDataStream& ssKey, CDataStream& ssValue, //
             ssValue >> wss.nFileVersion;
             if (wss.nFileVersion == 10300)
                 wss.nFileVersion = 300;
+
+            LogPrintf("CWalletDb ReadKeyValue: version: %d\n", wss.nFileVersion);
         }
         else if (strType == "cscript")
         {
@@ -919,15 +934,21 @@ bool CWalletDB::ErasePool(int64_t nPool)
 bool CWalletDB::WriteMinVersion(int nVersion)
 {
     bool res = false;
+
     if (m_imageDB != 0)
     {
+
+        LogPrintf("<------ CImageDB::WriteMinVersion %d\n", nVersion);
         res = m_imageDB->Write(std::string("minversion"), nVersion);
         if (res) {
+
+            LogPrintf("<------ CWalletDB::WriteMinVersion %d\n", nVersion);
             res = Write(std::string("minversion"), nVersion);
         }
     }
     else
     {
+        LogPrintf("<------ CWalletDB::WriteMinVersion %d\n", nVersion);
         res = Write(std::string("minversion"), nVersion);
     }
     return res;
@@ -1098,6 +1119,8 @@ DBErrors CWalletDB::FindWalletTx(CWallet* pwallet, vector<uint256>& vTxHash, vec
         int nMinVersion = 0;
         if (Read2((string)"minversion", nMinVersion))
         {
+            LogPrintf("CWalletDb::FindWalletTx ReadKeyValue: minversion: %d\n", nMinVersion);
+
             if (nMinVersion > CLIENT_VERSION)
                 return DB_TOO_NEW;
             pwallet->LoadMinVersion(nMinVersion);
