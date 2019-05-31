@@ -78,7 +78,7 @@ public:
 
 
 ////////////////////////////////////////////////////////
-// Access to the image database (image.wallet.dat)
+// Access to the image database (image.dat)
 ////////////////////////////////////////////////////////
 class CImageDB : public CDB
 {
@@ -90,18 +90,18 @@ public:
     DBErrors loadImage();
     bool setImage(uint256 hash, const std::vector<std::string>& image);
     const std::vector<std::string>& getImage(uint256 hash);
-//    bool WriteMinVersion(int nVersion);
 //    bool EraseImage(uint256 hash);
 private:
-    bool ReadKeyValue(CDataStream& ssKey, CDataStream& ssValue,
-                      int &nFileVersion, std::string& strType, std::string& strErr);
+    bool readKeyValue(CDataStream& ssKey, CDataStream& ssValue,
+                      int &nFileVersion, std::string& strType);
 
     typedef std::map<uint256, std::vector<std::string> > IMAGE_MAP_TYPE;
     IMAGE_MAP_TYPE m_imageMap;
 };
 
-
-/** Access to the wallet database (wallet.dat) */
+////////////////////////////////////////////////////////
+// Access to the wallet database (wallet.dat)
+////////////////////////////////////////////////////////
 class CWalletDB : public CDB
 {
 public:

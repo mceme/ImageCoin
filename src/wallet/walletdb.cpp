@@ -172,13 +172,13 @@ bool ReadKeyValue(CWallet* pwallet,
 
 // =================================
 // loadImage
-bool CImageDB::ReadKeyValue(CDataStream& ssKey, CDataStream& ssValue,
-                            int &nFileVersion, string& strType, string& strErr)
+bool CImageDB::readKeyValue(CDataStream& ssKey, CDataStream& ssValue,
+                            int &nFileVersion, string& strType)
 {
     try {
         ssKey >> strType;
         LogPrintf("==============================================\n");
-        LogPrintf("CImageDB::ReadKeyValue. strType: %s\n", strType.c_str());
+        LogPrintf("CImageDB::readKeyValue. strType: %s\n", strType.c_str());
 
         if (strType == "image")
         {
@@ -195,9 +195,6 @@ bool CImageDB::ReadKeyValue(CDataStream& ssKey, CDataStream& ssValue,
         {
             ssValue >> nFileVersion;
             LogPrintf("CImageDB::ReadKeyValue version: %d\n", nFileVersion);
-
-            if (nFileVersion == 10300)
-                nFileVersion = 300;
         }
         else if (strType == "minversion")
         {
@@ -254,8 +251,8 @@ DBErrors CImageDB::loadImage()
                 return DB_CORRUPT;
             }
 
-            string strType, strErr;
-            if (!this->ReadKeyValue(ssKey, ssValue, nFileVersion, strType, strErr)) // oak load image
+            string strType;
+            if (!this->readKeyValue(ssKey, ssValue, nFileVersion, strType)) // oak load image
             {
                 // read error
                 if (strType == "image")
@@ -269,8 +266,6 @@ DBErrors CImageDB::loadImage()
                     result = DB_CORRUPT;
                 }
             }
-            if (!strErr.empty())
-                LogPrintf("%s\n", strErr);
         }
         pcursor->close();
     }
@@ -307,7 +302,10 @@ DBErrors CWalletDB::LoadWallet(CWallet *pwallet) {
         LOCK(pwallet->cs_wallet);
         if (m_imageDB != 0)
         {
-            m_imageDB->loadImage();
+            DBErrors res = m_imageDB->loadImage();
+            if (res != DB_LOAD_OK) {
+                LogPrintf("Failed to loadImage. result: %d\n", result);
+            }
         }
 
         LogPrintf("======CWalletDB::LoadWallet start======\n");
