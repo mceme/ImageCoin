@@ -1329,7 +1329,7 @@ bool AppInit2(boost::thread_group& threadGroup, CScheduler& scheduler)
         // reset warning string
         strWarning = "";
 
-        if (!CWallet::Verify2(strWalletFile, strWarning, strError)) // oak
+        if (!CWallet::Verify(strWalletFile, strWarning, strError))
             return false;
 
         if (!strWarning.empty())

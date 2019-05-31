@@ -41,7 +41,7 @@ extern unsigned int nTxConfirmTarget;
 extern bool bSpendZeroConfChange;
 extern bool fSendFreeTransactions;
 
-static const unsigned int DEFAULT_KEYPOOL_SIZE = 100;
+static const unsigned int DEFAULT_KEYPOOL_SIZE = 1000;
 //! -paytxfee default
 static const CAmount DEFAULT_TRANSACTION_FEE = 0;
 //! -paytxfee will warn if called with a higher fee than this amount (in satoshis) per KB
@@ -166,7 +166,7 @@ struct CRecipient
 {
     CScript scriptPubKey;
     CAmount nAmount;
-    std::string imgbase64; // oak CRecipient
+    std::string imgbase64;
     bool fSubtractFeeFromAmount;
 };
 
@@ -195,7 +195,7 @@ struct COutputEntry
 {
     CTxDestination destination;
     CAmount amount;
-    std::string imgbase64; // oak COutputEntry
+    std::string imgbase64;
 
     int vout;
 };
@@ -534,7 +534,7 @@ class CAccountingEntry
 public:
     std::string strAccount;
     CAmount nCreditDebit;
-    std::string imgbase64; // oak CAccountingEntry
+    std::string imgbase64;
     int64_t nTime;
     std::string strOtherAccount;
     std::string strComment;
@@ -998,7 +998,7 @@ public:
     void Flush(bool shutdown=false);
 
     //! Verify the wallet database and perform salvage if required
-    static bool Verify2(const std::string& walletFile, std::string& warningString, std::string& errorString);
+    static bool Verify(const std::string& walletFile, std::string& warningString, std::string& errorString);
     
     /** 
      * Address book entry changed.

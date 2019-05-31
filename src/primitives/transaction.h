@@ -126,19 +126,6 @@ public:
     std::string ToString() const;
 };
 
-class CSplit{
-    bool splitImgbase64;
-public:
-    CSplit():splitImgbase64(false) { }
-
-    bool value() {
-      return splitImgbase64;
-    }
-    void set(bool split) {
-      splitImgbase64 = split;
-    }
-};
-
 /** An output of a transaction.  It contains the public key that the next input
  * must be able to sign with to claim it.
  */
@@ -147,11 +134,9 @@ class CTxOut
 public:
     CAmount nValue;
     CScript scriptPubKey;
-    std::string imgbase64; // oak CTxOut
-    void setImage(const std::string& input);
+    std::string imgbase64;
 
     int nRounds;
-    CSplit split;
 
     CTxOut()
     {
@@ -166,9 +151,7 @@ public:
     inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion) {
         READWRITE(nValue);
         READWRITE(*(CScriptBase*)(&scriptPubKey));
-        if (!split.value()) {
-            READWRITE(imgbase64); //oak
-        }
+        READWRITE(imgbase64);
     }
 
     void SetNull()

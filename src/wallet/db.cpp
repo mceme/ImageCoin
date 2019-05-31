@@ -155,7 +155,7 @@ void CDBEnv::MakeMock()
     fMockDb = true;
 }
 
-CDBEnv::VerifyResult CDBEnv::Verify3(const std::string& strFile, bool (*recoverFunc)(CDBEnv& dbenv, const std::string& strFile))
+CDBEnv::VerifyResult CDBEnv::Verify(const std::string& strFile, bool (*recoverFunc)(CDBEnv& dbenv, const std::string& strFile))
 {
     LOCK(cs_db);
     assert(mapFileUseCount.count(strFile) == 0);

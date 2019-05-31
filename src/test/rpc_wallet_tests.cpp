@@ -64,10 +64,7 @@ BOOST_AUTO_TEST_CASE(rpc_addmultisig)
 
 
 
-//MYVxdZNp7sLTXGdwADGMQY73qe7tWUmeNf
-//MYVxdZNp7sLTXGdwADGMQY73qe7tWUmeNf
-
-BOOST_AUTO_TEST_CASE(rpc_wallet2)
+BOOST_AUTO_TEST_CASE(rpc_wallet)
 {
     // Test RPC calls for various wallet statistics
     UniValue r;

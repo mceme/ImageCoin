@@ -989,7 +989,7 @@ UniValue movecmd(const UniValue& params, bool fHelp)
     credit.strComment = strComment;
     pwalletMain->AddAccountingEntry(credit, walletdb);
 
-    if (!walletdb.TxnCommit()) // oak
+    if (!walletdb.TxnCommit())
         throw JSONRPCError(RPC_DATABASE_ERROR, "database error");
 
     return true;

@@ -594,7 +594,7 @@ void CWallet::Flush(bool shutdown)
     bitdb.Flush(shutdown);
 }
 
-bool CWallet::Verify2(const string& walletFile, string& warningString, string& errorString)
+bool CWallet::Verify(const string& walletFile, string& warningString, string& errorString)
 {
     if (!bitdb.Open(GetDataDir()))
     {
@@ -626,7 +626,7 @@ bool CWallet::Verify2(const string& walletFile, string& warningString, string& e
     
     if (boost::filesystem::exists(GetDataDir() / walletFile))
     {
-        CDBEnv::VerifyResult r = bitdb.Verify3(walletFile, CWalletDB::Recover);
+        CDBEnv::VerifyResult r = bitdb.Verify(walletFile, CWalletDB::Recover);
         if (r == CDBEnv::RECOVER_OK)
         {
             warningString += strprintf(_("Warning: wallet.dat corrupt, data salvaged!"
@@ -886,9 +886,7 @@ bool CWallet::AddToWallet(const CWalletTx& wtxIn, bool fFromLoadWallet, CWalletD
 
     if (fFromLoadWallet)
     {
-        mapWallet[hash] = wtxIn;        // oak mapWallet
-
-
+        mapWallet[hash] = wtxIn;
         CWalletTx& wtx = mapWallet[hash];
 
         LogPrintf("CWallet::AddToWallet: txhash <%s>, CWallet::mapWallet size <%d>\n", hash.ToString().c_str(), mapWallet.size());

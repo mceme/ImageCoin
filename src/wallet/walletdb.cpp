@@ -130,7 +130,7 @@ public:
 };
 
 
-bool CWalletDB::WriteTx(uint256 hash, const CWalletTx &tx) // oak save image
+bool CWalletDB::WriteTx(uint256 hash, const CWalletTx &tx)
 {
     nWalletDBUpdated++;
 
@@ -252,7 +252,7 @@ DBErrors CImageDB::loadImage()
             }
 
             string strType;
-            if (!this->readKeyValue(ssKey, ssValue, nFileVersion, strType)) // oak load image
+            if (!this->readKeyValue(ssKey, ssValue, nFileVersion, strType))
             {
                 // read error
                 if (strType == "image")
@@ -344,7 +344,7 @@ DBErrors CWalletDB::LoadWallet(CWallet *pwallet) {
 
             // Try to be tolerant of single corrupt records:
             string strType, strErr;
-            if (!ReadKeyValue(pwallet, ssKey, ssValue, wss, strType, strErr, m_imageDB)) // oak load wallet
+            if (!ReadKeyValue(pwallet, ssKey, ssValue, wss, strType, strErr, m_imageDB))
             {
                 failedKey[strType]++;
                 // losing keys is considered a catastrophic error, anything else
@@ -460,7 +460,7 @@ bool CWalletTx::resetImage(uint256 expectedHash, const std::vector<std::string>&
     return res;
 }
 
-bool ReadKeyValue(CWallet* pwallet, CDataStream& ssKey, CDataStream& ssValue, // oak
+bool ReadKeyValue(CWallet* pwallet, CDataStream& ssKey, CDataStream& ssValue,
                   CWalletScanState &wss, string& strType, string& strErr, CImageDB* idb)
 {
     try {
@@ -492,7 +492,7 @@ bool ReadKeyValue(CWallet* pwallet, CDataStream& ssKey, CDataStream& ssValue, //
             uint256 hash;
             ssKey >> hash;
             CWalletTx wtx;
-            ssValue >> wtx; // oak load image
+            ssValue >> wtx;
 
             LogPrintf("txHash as key in DB: %s\n", hash.ToString().c_str());
             LogPrintf("txHash without image: %s\n", wtx.GetHash().ToString().c_str());
@@ -1165,7 +1165,7 @@ DBErrors CWalletDB::FindWalletTx(CWallet* pwallet, vector<uint256>& vTxHash, vec
                 ssKey >> hash;
 
                 CWalletTx wtx;
-                ssValue >> wtx; // oak load image
+                ssValue >> wtx;
 
                 vTxHash.push_back(hash);
                 vWtx.push_back(wtx);
@@ -1490,7 +1490,7 @@ bool CWalletDB::Recover(CDBEnv& dbenv, const std::string& filename, bool fOnlyKe
             {
                 // Required in LoadKeyMetadata():
                 LOCK(dummyWallet.cs_wallet);
-                fReadOK = ReadKeyValue(&dummyWallet, ssKey, ssValue, wss, strType, strErr, 0);// oak recover
+                fReadOK = ReadKeyValue(&dummyWallet, ssKey, ssValue, wss, strType, strErr, 0);
             }
 
             if (fReadOK)
@@ -1523,16 +1523,12 @@ bool CWalletDB::Recover(CDBEnv& dbenv, const std::string& filename, bool fOnlyKe
     ptxn->commit(0);
     pdbCopy->close(0);
 
-
     LogPrintf("======CWalletDB::Recover exit======\n");
-
     return fSuccess;
 }
 
 bool CWalletDB::Recover(CDBEnv& dbenv, const std::string& filename)
 {
-//    printf("CWalletDB::Recover 2\n");
-
     return CWalletDB::Recover(dbenv, filename, false);
 }
 

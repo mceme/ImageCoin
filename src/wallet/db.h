@@ -59,7 +59,7 @@ public:
                         RECOVER_OK,
                         RECOVER_FAIL };
 
-    VerifyResult Verify3(const std::string& strFile, bool (*recoverFunc)(CDBEnv& dbenv, const std::string& strFile));
+    VerifyResult Verify(const std::string& strFile, bool (*recoverFunc)(CDBEnv& dbenv, const std::string& strFile));
     /**
      * Salvage data from a file that Verify says is bad.
      * fAggressive sets the DB_AGGRESSIVE flag (see berkeley DB->verify() method documentation).
@@ -115,7 +115,7 @@ private:
 protected:
 
     template <typename K, typename T>
-    bool Read(const K& key, T& value) // oak
+    bool Read(const K& key, T& value)
     {
         if (!pdb)
             return false;
@@ -150,7 +150,7 @@ protected:
 
 
     template <typename K, typename T>
-    bool Write(const K& key, const T& value, bool fOverwrite = true) // oak
+    bool Write(const K& key, const T& value, bool fOverwrite = true)
     {
         if (!this->pdb)
             return false;

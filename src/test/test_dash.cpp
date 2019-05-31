@@ -72,7 +72,7 @@ TestingSetup::TestingSetup(const std::string& chainName) : BasicTestingSetup(cha
 #ifdef ENABLE_WALLET
         bool fFirstRun;
         pwalletMain = new CWallet("wallet.dat");
-        pwalletMain->LoadWallet(fFirstRun); // oak ut load wallet
+        pwalletMain->LoadWallet(fFirstRun);
         RegisterValidationInterface(pwalletMain);
 #endif
         nScriptCheckThreads = 3;
