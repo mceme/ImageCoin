@@ -115,13 +115,7 @@ private:
 protected:
 
     template <typename K, typename T>
-    bool Read2(const K& key, T& value) // oak
-    {
-        return __read_(key, value);
-    }
-
-    template <typename K, typename T>
-    bool __read_(const K& key, T& value) // oak
+    bool Read(const K& key, T& value) // oak
     {
         if (!pdb)
             return false;
@@ -262,7 +256,7 @@ public:
     bool ReadVersion(int& nVersion)
     {
         nVersion = 0;
-        return Read2(std::string("version"), nVersion);
+        return Read(std::string("version"), nVersion);
     }
 
     bool WriteVersion(int nVersion)

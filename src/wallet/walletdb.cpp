@@ -222,7 +222,7 @@ DBErrors CImageDB::loadImage()
     try {
 
         int nMinVersion = 0;
-        if (Read2((string)"minversion", nMinVersion))
+        if (Read((string)"minversion", nMinVersion))
         {
             LogPrintf("CImageDB::loadImage: nMinVersion is %d\n", nMinVersion);
             if (nMinVersion > CLIENT_VERSION)
@@ -284,12 +284,8 @@ DBErrors CImageDB::loadImage()
     if (fNoncriticalErrors && result == DB_LOAD_OK)
         result = DB_NONCRITICAL_ERROR;
 
-    // Any wallet corruption at all: skip any rewriting or
-    // upgrading, we don't want to make it worse.
     if (result != DB_LOAD_OK)
         return result;
-
-    LogPrintf("nFileVersion = %d\n", nFileVersion);
 
     if (nFileVersion < CLIENT_VERSION) // Update
         this->WriteVersion(CLIENT_VERSION);
@@ -316,7 +312,7 @@ DBErrors CWalletDB::LoadWallet(CWallet *pwallet) {
 
         LogPrintf("======CWalletDB::LoadWallet start======\n");
         int nMinVersion = 0;
-        if (Read2((string) "minversion", nMinVersion)) {
+        if (Read((string) "minversion", nMinVersion)) {
 
             LogPrintf("CWalletDb::LoadWallet ReadKeyValue: minversion: %d\n", nMinVersion);
 
@@ -914,8 +910,8 @@ bool CWalletDB::WriteBestBlock(const CBlockLocator& locator)
 
 bool CWalletDB::ReadBestBlock(CBlockLocator& locator)
 {
-    if (Read2(std::string("bestblock"), locator) && !locator.vHave.empty()) return true;
-    return Read2(std::string("bestblock_nomerkle"), locator);
+    if (Read(std::string("bestblock"), locator) && !locator.vHave.empty()) return true;
+    return Read(std::string("bestblock_nomerkle"), locator);
 }
 
 bool CWalletDB::WriteOrderPosNext(int64_t nOrderPosNext)
@@ -932,7 +928,7 @@ bool CWalletDB::WriteDefaultKey(const CPubKey& vchPubKey)
 
 bool CWalletDB::ReadPool(int64_t nPool, CKeyPool& keypool)
 {
-    return Read2(std::make_pair(std::string("pool"), nPool), keypool);
+    return Read(std::make_pair(std::string("pool"), nPool), keypool);
 }
 
 bool CWalletDB::WritePool(int64_t nPool, const CKeyPool& keypool)
@@ -973,7 +969,7 @@ bool CWalletDB::WriteMinVersion(int nVersion)
 bool CWalletDB::ReadAccount(const string& strAccount, CAccount& account)
 {
     account.SetNull();
-    return Read2(make_pair(string("acc"), strAccount), account);
+    return Read(make_pair(string("acc"), strAccount), account);
 }
 
 bool CWalletDB::WriteAccount(const string& strAccount, const CAccount& account)
@@ -1133,7 +1129,7 @@ DBErrors CWalletDB::FindWalletTx(CWallet* pwallet, vector<uint256>& vTxHash, vec
     try {
         LOCK(pwallet->cs_wallet);
         int nMinVersion = 0;
-        if (Read2((string)"minversion", nMinVersion))
+        if (Read((string)"minversion", nMinVersion))
         {
             LogPrintf("CWalletDb::FindWalletTx ReadKeyValue: minversion: %d\n", nMinVersion);
 
