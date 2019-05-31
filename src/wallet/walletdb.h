@@ -83,10 +83,6 @@ public:
 class CImageDB : public CDB
 {
     friend class CWalletDB;
-    typedef std::map<uint256, std::vector<std::string> > IMAGE_MAP_TYPE;
-    IMAGE_MAP_TYPE m_imageMap;
-    bool ReadKeyValue(CDataStream& ssKey, CDataStream& ssValue,
-            int &nFileVersion, std::string& strType, std::string& strErr);
 public:
     CImageDB(const std::string& strFilename, const char* pszMode = "r+", bool fFlushOnClose = true);
     ~CImageDB();
@@ -94,18 +90,20 @@ public:
     DBErrors loadImage();
     bool setImage(uint256 hash, const std::vector<std::string>& image);
     const std::vector<std::string>& getImage(uint256 hash);
+//    bool WriteMinVersion(int nVersion);
+//    bool EraseImage(uint256 hash);
+private:
+    bool ReadKeyValue(CDataStream& ssKey, CDataStream& ssValue,
+                      int &nFileVersion, std::string& strType, std::string& strErr);
 
-    const IMAGE_MAP_TYPE& getImageMap();
-    bool EraseImage(uint256 hash);
-    bool WriteMinVersion(int nVersion);
-
+    typedef std::map<uint256, std::vector<std::string> > IMAGE_MAP_TYPE;
+    IMAGE_MAP_TYPE m_imageMap;
 };
 
 
 /** Access to the wallet database (wallet.dat) */
 class CWalletDB : public CDB
 {
-    CImageDB* m_imageDB;
 public:
     CWalletDB(const std::string& strFilename, const char* pszMode = "r+", bool fFlushOnClose = true);
     ~CWalletDB();
@@ -173,12 +171,11 @@ private:
     void operator=(const CWalletDB&);
 
     bool WriteAccountingEntry(const uint64_t nAccEntryNum, const CAccountingEntry& acentry);
+    CImageDB* m_imageDB;
 };
-
 
 bool BackupWallet(const CWallet& wallet, const std::string& strDest);
 void ThreadFlushWalletDB(const std::string& strFile);
-
 bool AutoBackupWallet (CWallet* wallet, std::string strWalletFile, std::string& strBackupWarning, std::string& strBackupError);
 
 #endif // BITCOIN_WALLET_WALLETDB_H
