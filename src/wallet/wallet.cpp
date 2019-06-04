@@ -908,9 +908,6 @@ bool CWallet::AddToWallet(const CWalletTx& wtxIn, bool fFromLoadWallet, CWalletD
         if (fInsertedNew)
         {
 
-        	  for(int i = 0; i < wtx.vout.size(); ++i) {
-        	                wtx.vout[i].imgbase64="";
-        	            }
 
             wtx.nTimeReceived = GetAdjustedTime();
             wtx.nOrderPos = IncOrderPosNext(pwalletdb);
