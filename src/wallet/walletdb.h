@@ -40,7 +40,8 @@ enum DBErrors
     DB_NONCRITICAL_ERROR,
     DB_TOO_NEW,
     DB_LOAD_FAIL,
-    DB_NEED_REWRITE
+    DB_NEED_REWRITE,
+    DB_RESCAN_IMAGE
 };
 
 class CKeyMetadata

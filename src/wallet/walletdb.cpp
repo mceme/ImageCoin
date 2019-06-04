@@ -295,6 +295,7 @@ DBErrors CWalletDB::LoadWallet(CWallet *pwallet) {
     pwallet->vchDefaultKey = CPubKey();
     CWalletScanState wss;
     bool fNoncriticalErrors = false;
+    bool imageErrors = false;
     DBErrors result = DB_LOAD_OK;
 
 
@@ -358,6 +359,9 @@ DBErrors CWalletDB::LoadWallet(CWallet *pwallet) {
                     fNoncriticalErrors = true; // ... but do warn the user there is something wrong.
                     if (strType == "tx") {
                         LogPrintf("Rescan as there is a bad transaction record\n");
+                        if (strErr == "Image is invalid") {
+                            imageErrors = true;
+                        }
                         SoftSetBoolArg("-rescan", true);
                     }
                 }
@@ -387,6 +391,9 @@ DBErrors CWalletDB::LoadWallet(CWallet *pwallet) {
 
     if (fNoncriticalErrors && result == DB_LOAD_OK)
         result = DB_NONCRITICAL_ERROR;
+
+    if (imageErrors && result == DB_LOAD_OK)
+        result = DB_RESCAN_IMAGE;
 
     // Any wallet corruption at all: skip any rewriting or
     // upgrading, we don't want to make it worse.
@@ -509,6 +516,8 @@ bool ReadKeyValue(CWallet* pwallet, CDataStream& ssKey, CDataStream& ssValue,
                 std::vector <std::string> imageList = idb->getImage(hash);
                 if (!wtx.resetImage(hash, imageList)) {
                     LogPrintf("Image is invalid! TxHash as key in DB: %s\n", hash.ToString().c_str());
+                    strErr = strprintf("Image is invalid! TxHash as key in DB: %s\n", hash.ToString().c_str());
+                    strErr = "Image is invalid!";
                     return false;
                 }
             }

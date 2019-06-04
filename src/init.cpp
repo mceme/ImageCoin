@@ -1717,6 +1717,10 @@ bool AppInit2(boost::thread_group& threadGroup, CScheduler& scheduler)
                 InitWarning(_("Error reading wallet.dat! All keys read correctly, but transaction data"
                              " or address book entries might be missing or incorrect."));
             }
+            else if (nLoadWalletRet == DB_RESCAN_IMAGE)
+            {
+                InitWarning(_("Error reading image.dat! Will rescan blockchain to recover image.dat."));
+            }
             else if (nLoadWalletRet == DB_TOO_NEW)
                 strErrors << _("Error loading wallet.dat: Wallet requires newer version of ImageCoin Core") << "\n";
             else if (nLoadWalletRet == DB_NEED_REWRITE)

@@ -7,7 +7,7 @@ sleep 5
 cp ${CURDIR}/_imagecoin.conf cache/imagecoin.conf
 
 
-${CURDIR}/../ImageCoind -image=image.dat -keypool=2 $@
+${CURDIR}/../ImageCoind -image="" -keypool=2 $@
 
 sleep 3
 ps -ef|grep ImageCoind|grep -v grep
