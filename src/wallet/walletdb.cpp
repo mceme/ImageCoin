@@ -957,17 +957,17 @@ bool CWalletDB::WriteMinVersion(int nVersion)
     if (m_imageDB != 0)
     {
 
-        LogPrintf("<------ CImageDB::WriteMinVersion %d\n", nVersion);
+        LogPrintf("CImageDB::WriteMinVersion %d\n", nVersion);
         res = m_imageDB->Write(std::string("minversion"), nVersion);
         if (res) {
 
-            LogPrintf("<------ CWalletDB::WriteMinVersion %d\n", nVersion);
+            LogPrintf("CWalletDB::WriteMinVersion %d\n", nVersion);
             res = Write(std::string("minversion"), nVersion);
         }
     }
     else
     {
-        LogPrintf("<------ CWalletDB::WriteMinVersion %d\n", nVersion);
+        LogPrintf("CWalletDB::WriteMinVersion %d\n", nVersion);
         res = Write(std::string("minversion"), nVersion);
     }
     return res;
