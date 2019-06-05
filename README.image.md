@@ -65,4 +65,11 @@
 * 之后image数据会被保存在~/.imagecoind/image/image.dat
 * 其他数据保存在~/.imagecoind/wallet.dat
 
+## config
+```
+./configure LDFLAGS="-L/root/qzhong/imagec/db4/lib/" CPPFLAGS="-I/root/qzhong/imagec/db4/include/" --enable-debug --disable-bench --disable-gui-tests --disable-tests
 
+./configure --enable-debug --disable-bench --disable-gui-tests --disable-tests
+./configure --enable-debug --disable-bench --disable-gui-tests --without-gui 
+./configure --enable-debug --disable-bench --disable-gui-tests --without-gui --disable-tests 
+```
