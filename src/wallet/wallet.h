@@ -370,7 +370,7 @@ public:
         if (ser_action.ForRead())
             Init(NULL);
         char fSpent = false;
-    	mapValue["imgbase64"]="";
+        
         if (!ser_action.ForRead())
         {
 
@@ -563,18 +563,16 @@ public:
         if (!(nType & SER_GETHASH))
             READWRITE(nVersion);
         //! Note: strAccount is serialized as part of the key, not here.
-        mapValue["imgbase64"]="";
         READWRITE(nCreditDebit);
         READWRITE(nTime);
         READWRITE(LIMITED_STRING(strOtherAccount, 65536));
-        //READWRITE(LIMITED_STRING(imgbase64, 1655366));
+        READWRITE(LIMITED_STRING(imgbase64, 1655366));
         if (!ser_action.ForRead())
         {
             WriteOrderPos(nOrderPos, mapValue);
 
             if (!(mapValue.empty() && _ssExtra.empty()))
             {
-
                 CDataStream ss(nType, nVersion);
                 ss.insert(ss.begin(), '\0');
                 ss << mapValue;
