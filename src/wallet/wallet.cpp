@@ -527,12 +527,15 @@ void CWallet::SetBestChain(const CBlockLocator& loc)
 bool CWallet::SetMinVersion(enum WalletFeature nVersion, CWalletDB* pwalletdbIn, bool fExplicit)
 {
     LOCK(cs_wallet); // nWalletVersion
+
+    LogPrintf("CWallet::SetMinVersion %d\n", nVersion);
+
     if (nWalletVersion >= nVersion)
         return true;
 
     // when doing an explicit upgrade, if we pass the max version permitted, upgrade all the way
     if (fExplicit && nVersion > nWalletMaxVersion)
-            nVersion = FEATURE_LATEST;
+        nVersion = FEATURE_LATEST;
 
     nWalletVersion = nVersion;
 
@@ -885,6 +888,9 @@ bool CWallet::AddToWallet(const CWalletTx& wtxIn, bool fFromLoadWallet, CWalletD
     {
         mapWallet[hash] = wtxIn;
         CWalletTx& wtx = mapWallet[hash];
+
+        LogPrintf("CWallet::AddToWallet: txhash <%s>, CWallet::mapWallet size <%d>\n", hash.ToString().c_str(), mapWallet.size());
+
         wtx.BindWallet(this);
         wtxOrdered.insert(make_pair(wtx.nOrderPos, TxPair(&wtx, (CAccountingEntry*)0)));
         AddToSpends(hash);
@@ -905,6 +911,10 @@ bool CWallet::AddToWallet(const CWalletTx& wtxIn, bool fFromLoadWallet, CWalletD
         CWalletTx& wtx = (*ret.first).second;
         wtx.BindWallet(this);
         bool fInsertedNew = ret.second;
+
+        LogPrintf("CWallet::AddToWallet: txhash <%s>, CWallet::mapWallet size<%d>, new<%d>\n",
+                  hash.ToString().c_str(), mapWallet.size(), fInsertedNew);
+
         if (fInsertedNew)
         {
             wtx.nTimeReceived = GetAdjustedTime();
@@ -991,7 +1001,7 @@ bool CWallet::AddToWallet(const CWalletTx& wtxIn, bool fFromLoadWallet, CWalletD
         }
 
         //// debug print
-        LogPrintf("AddToWallet %s  %s%s\n", wtxIn.GetHash().ToString(), (fInsertedNew ? "new" : ""), (fUpdated ? "update" : ""));
+        LogPrintf("AddToWallet <%s>  %s%s\n", wtxIn.GetHash().ToString(), (fInsertedNew ? "new" : ""), (fUpdated ? "update" : ""));
 
         // Write to disk
         if (fInsertedNew || fUpdated)

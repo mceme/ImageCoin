@@ -496,6 +496,7 @@ std::string HelpMessage(HelpMessageMode mode)
     strUsage += HelpMessageOpt("-hdseed", _("User defined seed for HD wallet (should be in hex). Only has effect during wallet creation/first start (default: randomly generated)"));
     strUsage += HelpMessageOpt("-upgradewallet", _("Upgrade wallet to latest format on startup"));
     strUsage += HelpMessageOpt("-wallet=<file>", _("Specify wallet file (within data directory)") + " " + strprintf(_("(default: %s)"), "wallet.dat"));
+    strUsage += HelpMessageOpt("-image=<file>", _("Specify image file (within ${datadir}/image directory)") + " " + strprintf(_("(default: %s)"), "image.dat"));
     strUsage += HelpMessageOpt("-walletbroadcast", _("Make the wallet broadcast transactions") + " " + strprintf(_("(default: %u)"), DEFAULT_WALLETBROADCAST));
     strUsage += HelpMessageOpt("-walletnotify=<cmd>", _("Execute command when a wallet transaction changes (%s in cmd is replaced by TxID)"));
     strUsage += HelpMessageOpt("-zapwallettxes=<mode>", _("Delete all wallet transactions and only recover those parts of the blockchain through -rescan on startup") +
@@ -1679,10 +1680,12 @@ bool AppInit2(boost::thread_group& threadGroup, CScheduler& scheduler)
         pwalletMain = NULL;
         LogPrintf("Wallet disabled!\n");
     } else {
+        // 0. recover wallet
 
         // needed to restore wallet transaction meta data after -zapwallettxes
         std::vector<CWalletTx> vWtx;
 
+        // 1. zapwallettxes
         if (GetBoolArg("-zapwallettxes", false)) {
             uiInterface.InitMessage(_("Zapping all transactions from wallet..."));
 
@@ -1702,6 +1705,8 @@ bool AppInit2(boost::thread_group& threadGroup, CScheduler& scheduler)
         nStart = GetTimeMillis();
         bool fFirstRun = true;
         pwalletMain = new CWallet(strWalletFile);
+
+        // 2. LoadWallet
         DBErrors nLoadWalletRet = pwalletMain->LoadWallet(fFirstRun);
         if (nLoadWalletRet != DB_LOAD_OK)
         {
@@ -1711,6 +1716,10 @@ bool AppInit2(boost::thread_group& threadGroup, CScheduler& scheduler)
             {
                 InitWarning(_("Error reading wallet.dat! All keys read correctly, but transaction data"
                              " or address book entries might be missing or incorrect."));
+            }
+            else if (nLoadWalletRet == DB_RESCAN_IMAGE)
+            {
+                InitWarning(_("Error reading image.dat! Will rescan blockchain to recover image.dat."));
             }
             else if (nLoadWalletRet == DB_TOO_NEW)
                 strErrors << _("Error loading wallet.dat: Wallet requires newer version of ImageCoin Core") << "\n";
@@ -1723,6 +1732,7 @@ bool AppInit2(boost::thread_group& threadGroup, CScheduler& scheduler)
             else
                 strErrors << _("Error loading wallet.dat") << "\n";
         }
+
 
         if (GetBoolArg("-upgradewallet", fFirstRun))
         {
@@ -1738,6 +1748,14 @@ bool AppInit2(boost::thread_group& threadGroup, CScheduler& scheduler)
             if (nMaxVersion < pwalletMain->GetVersion())
                 strErrors << _("Cannot downgrade wallet") << "\n";
             pwalletMain->SetMaxVersion(nMaxVersion);
+        }
+
+        std::string imageFile = GetArg("-image", DEFAULT_IMAGE_FILE);
+        if (imageFile.length() > 0) {
+
+            if (FEATURE_IMAGE_ISOLATION > pwalletMain->GetVersion()) {
+                pwalletMain->SetMinVersion(FEATURE_IMAGE_ISOLATION); // permanently upgrade the wallet immediately
+            }
         }
 
         if (fFirstRun)
@@ -1794,8 +1812,14 @@ bool AppInit2(boost::thread_group& threadGroup, CScheduler& scheduler)
         RegisterValidationInterface(pwalletMain);
 
         CBlockIndex *pindexRescan = chainActive.Tip();
+        bool rescan = false;
         if (GetBoolArg("-rescan", false))
+        {
+            LogPrintf(" rescan set to true\n");
+
             pindexRescan = chainActive.Genesis();
+            rescan = true;
+        }
         else
         {
             CWalletDB walletdb(strWalletFile);
@@ -1805,8 +1829,11 @@ bool AppInit2(boost::thread_group& threadGroup, CScheduler& scheduler)
             else
                 pindexRescan = chainActive.Genesis();
         }
-        if (chainActive.Tip() && chainActive.Tip() != pindexRescan)
+
+        if (rescan || (chainActive.Tip() && chainActive.Tip() != pindexRescan))
         {
+            LogPrintf("rescan: chainActive.Tip() && chainActive.Tip() != pindexRescan\n");
+
             //We can't rescan beyond non-pruned blocks, stop and throw an error
             //this might happen if a user uses a old wallet within a pruned node
             // or if he ran -disablewallet for a longer time, then decided to re-enable
@@ -1854,6 +1881,8 @@ bool AppInit2(boost::thread_group& threadGroup, CScheduler& scheduler)
             }
         }
         pwalletMain->SetBroadcastTransactions(GetBoolArg("-walletbroadcast", DEFAULT_WALLETBROADCAST));
+
+
     } // (!fDisableWallet)
 #else // ENABLE_WALLET
     LogPrintf("No wallet support compiled in!\n");
