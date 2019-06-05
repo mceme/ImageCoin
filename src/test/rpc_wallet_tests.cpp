@@ -62,8 +62,6 @@ BOOST_AUTO_TEST_CASE(rpc_addmultisig)
     BOOST_CHECK_THROW(addmultisig(createArgs(2, short2.c_str()), false), runtime_error);
 }
 
-
-
 BOOST_AUTO_TEST_CASE(rpc_wallet)
 {
     // Test RPC calls for various wallet statistics
@@ -78,9 +76,6 @@ BOOST_AUTO_TEST_CASE(rpc_wallet)
 
         demoPubkey = pwalletMain->GenerateNewKey(0, false);
         demoAddress = CBitcoinAddress(CTxDestination(demoPubkey.GetID()));
-
-//        printf("%s:%s\n", demoPubkey.ToString(), demoAddress.ToString());
-        printf("%s:%s\n", demoAddress.ToString().c_str(), demoAddress.ToString().c_str());
         string strPurpose = "receive";
         BOOST_CHECK_NO_THROW({ /*Initialize Wallet with an account */
             CWalletDB walletdb(pwalletMain->strWalletFile);
@@ -89,137 +84,6 @@ BOOST_AUTO_TEST_CASE(rpc_wallet)
             pwalletMain->SetAddressBook(account.vchPubKey.GetID(), strAccount, strPurpose);
             walletdb.WriteAccount(strAccount, account);
         });
-
-        CPubKey setaccountDemoPubkey = pwalletMain->GenerateNewKey(0, false);
-        setaccountDemoAddress = CBitcoinAddress(CTxDestination(setaccountDemoPubkey.GetID()));
-    }
-    /*********************************
-     * 			setaccount
-     *********************************/
-    BOOST_CHECK_NO_THROW(CallRPC("setaccount " + setaccountDemoAddress.ToString() + " nullaccount"));
-    /* XnhQgp2Y11hPGWaCB7rdGF5xLxjf2kBZCb is not owned by the test wallet. */
-    BOOST_CHECK_THROW(CallRPC("setaccount XnhQgp2Y11hPGWaCB7rdGF5xLxjf2kBZCb nullaccount"), runtime_error);
-    BOOST_CHECK_THROW(CallRPC("setaccount"), runtime_error);
-    /* XnhQgp2Y11hPGWaCB7rdGF5xLxjf2kBZC (33 chars) is an illegal address (should be 34 chars) */
-    BOOST_CHECK_THROW(CallRPC("setaccount XnhQgp2Y11hPGWaCB7rdGF5xLxjf2kBZC nullaccount"), runtime_error);
-
-
-    /*********************************
-     *                  getbalance
-     *********************************/
-    BOOST_CHECK_NO_THROW(CallRPC("getbalance"));
-    BOOST_CHECK_NO_THROW(CallRPC("getbalance " + demoAddress.ToString()));
-
-    /*********************************
-     * 			listunspent
-     *********************************/
-    BOOST_CHECK_NO_THROW(CallRPC("listunspent"));
-    BOOST_CHECK_THROW(CallRPC("listunspent string"), runtime_error);
-    BOOST_CHECK_THROW(CallRPC("listunspent 0 string"), runtime_error);
-    BOOST_CHECK_THROW(CallRPC("listunspent 0 1 not_array"), runtime_error);
-    BOOST_CHECK_THROW(CallRPC("listunspent 0 1 [] extra"), runtime_error);
-    BOOST_CHECK_NO_THROW(r = CallRPC("listunspent 0 1 []"));
-    BOOST_CHECK(r.get_array().empty());
-
-    /*********************************
-     * 		listreceivedbyaddress
-     *********************************/
-    BOOST_CHECK_NO_THROW(CallRPC("listreceivedbyaddress"));
-    BOOST_CHECK_NO_THROW(CallRPC("listreceivedbyaddress 0"));
-    BOOST_CHECK_THROW(CallRPC("listreceivedbyaddress not_int"), runtime_error);
-    BOOST_CHECK_THROW(CallRPC("listreceivedbyaddress 0 not_bool"), runtime_error);
-    BOOST_CHECK_NO_THROW(CallRPC("listreceivedbyaddress 0 true"));
-    BOOST_CHECK_THROW(CallRPC("listreceivedbyaddress 0 true extra"), runtime_error);
-
-    /*********************************
-     * 		listreceivedbyaccount
-     *********************************/
-    BOOST_CHECK_NO_THROW(CallRPC("listreceivedbyaccount"));
-    BOOST_CHECK_NO_THROW(CallRPC("listreceivedbyaccount 0"));
-    BOOST_CHECK_THROW(CallRPC("listreceivedbyaccount not_int"), runtime_error);
-    BOOST_CHECK_THROW(CallRPC("listreceivedbyaccount 0 not_bool"), runtime_error);
-    BOOST_CHECK_NO_THROW(CallRPC("listreceivedbyaccount 0 true"));
-    BOOST_CHECK_THROW(CallRPC("listreceivedbyaccount 0 true extra"), runtime_error);
-
-    /*********************************
-     *          listsinceblock
-     *********************************/
-    BOOST_CHECK_NO_THROW(CallRPC("listsinceblock"));
-
-    /*********************************
-     *          listtransactions
-     *********************************/
-    BOOST_CHECK_NO_THROW(CallRPC("listtransactions"));
-    BOOST_CHECK_NO_THROW(CallRPC("listtransactions " + demoAddress.ToString()));
-    BOOST_CHECK_NO_THROW(CallRPC("listtransactions " + demoAddress.ToString() + " 20"));
-    BOOST_CHECK_NO_THROW(CallRPC("listtransactions " + demoAddress.ToString() + " 20 0"));
-    BOOST_CHECK_THROW(CallRPC("listtransactions " + demoAddress.ToString() + " not_int"), runtime_error);
-
-    /*********************************
-     *          listlockunspent
-     *********************************/
-    BOOST_CHECK_NO_THROW(CallRPC("listlockunspent"));
-
-    /*********************************
-     *          listaccounts
-     *********************************/
-    BOOST_CHECK_NO_THROW(CallRPC("listaccounts"));
-
-    /*********************************
-     *          listaddressgroupings
-     *********************************/
-    BOOST_CHECK_NO_THROW(CallRPC("listaddressgroupings"));
-
-    /*********************************
-     * 		getrawchangeaddress
-     *********************************/
-    BOOST_CHECK_NO_THROW(CallRPC("getrawchangeaddress"));
-
-    /*********************************
-     * 		getnewaddress
-     *********************************/
-    BOOST_CHECK_NO_THROW(CallRPC("getnewaddress"));
-    BOOST_CHECK_NO_THROW(CallRPC("getnewaddress getnewaddress_demoaccount"));
-
-    /*********************************
-     * 		getaccountaddress
-     *********************************/
-    BOOST_CHECK_NO_THROW(CallRPC("getaccountaddress \"\""));
-    BOOST_CHECK_NO_THROW(CallRPC("getaccountaddress accountThatDoesntExists")); // Should generate a new account
-    BOOST_CHECK_NO_THROW(retValue = CallRPC("getaccountaddress " + strAccount));
-    BOOST_CHECK(CBitcoinAddress(retValue.get_str()).Get() == demoAddress.Get());
-
-    /*********************************
-     * 			getaccount
-     *********************************/
-    BOOST_CHECK_THROW(CallRPC("getaccount"), runtime_error);
-    BOOST_CHECK_NO_THROW(CallRPC("getaccount " + demoAddress.ToString()));
-}
-
-
-
-BOOST_AUTO_TEST_CASE(rpc_wallet)
-    {
-        // Test RPC calls for various wallet statistics
-        UniValue r;
-    CPubKey demoPubkey;
-    CBitcoinAddress demoAddress;
-    UniValue retValue;
-    string strAccount = "walletDemoAccount";
-    CBitcoinAddress setaccountDemoAddress;
-    {
-        LOCK(pwalletMain->cs_wallet);
-
-        demoPubkey = pwalletMain->GenerateNewKey(0, false);
-        demoAddress = CBitcoinAddress(CTxDestination(demoPubkey.GetID()));
-        string strPurpose = "receive";
-        BOOST_CHECK_NO_THROW({ /*Initialize Wallet with an account */
-                                 CWalletDB walletdb(pwalletMain->strWalletFile);
-            CAccount account;
-            account.vchPubKey = demoPubkey;
-            pwalletMain->SetAddressBook(account.vchPubKey.GetID(), strAccount, strPurpose);
-            walletdb.WriteAccount(strAccount, account);
-                             });
 
         CPubKey setaccountDemoPubkey = pwalletMain->GenerateNewKey(0, false);
         setaccountDemoAddress = CBitcoinAddress(CTxDestination(setaccountDemoPubkey.GetID()));
@@ -360,6 +224,6 @@ BOOST_AUTO_TEST_CASE(rpc_wallet)
      *********************************/
     BOOST_CHECK_THROW(CallRPC("fundrawtransaction 28z"), runtime_error);
     BOOST_CHECK_THROW(CallRPC("fundrawtransaction 01000000000180969800000000001976a91450ce0a4b0ee0ddeb633da85199728b940ac3fe9488ac00000000"), runtime_error);
-    }
+}
 
 BOOST_AUTO_TEST_SUITE_END()
