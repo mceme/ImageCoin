@@ -87,7 +87,7 @@ CWalletDB::CWalletDB(const std::string& strFilename, const char* pszMode, bool f
 
     if (imageFile.string().length() > 0)
     {
-        LogPrintf("CWalletDB::CWalletDB: Image file: <%s>\n", imageFile.c_str());
+        LogPrintf("CWalletDB::CWalletDB: Image file: <%s>\n", imageFile.string().c_str());
         boost::filesystem::path file = "image" / imageFile;
         m_imageDB = new CImageDB(file.string(), pszMode, fFlushOnClose);
     }
