@@ -181,8 +181,6 @@ UniValue RPCConvertValues(const std::string &strMethod, const std::vector<std::s
     UniValue params(UniValue::VARR);
 
     for (unsigned int idx = 0; idx < strParams.size(); idx++) {
-
-
         const std::string& strVal = strParams[idx];
 
         if (!rpcCvtTable.convert(strMethod, idx)) {
