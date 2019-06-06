@@ -1680,9 +1680,14 @@ bool AppInit2(boost::thread_group& threadGroup, CScheduler& scheduler)
         pwalletMain = NULL;
         LogPrintf("Wallet disabled!\n");
     } else {
+
+        // 0. recover wallet
+
+
         // needed to restore wallet transaction meta data after -zapwallettxes
         std::vector<CWalletTx> vWtx;
 
+        // 1. zapwallettxes
         if (GetBoolArg("-zapwallettxes", false)) {
             uiInterface.InitMessage(_("Zapping all transactions from wallet..."));
 
@@ -1702,6 +1707,9 @@ bool AppInit2(boost::thread_group& threadGroup, CScheduler& scheduler)
         nStart = GetTimeMillis();
         bool fFirstRun = true;
         pwalletMain = new CWallet(strWalletFile);
+
+
+        // 2. LoadWallet
 
         DBErrors nLoadWalletRet = pwalletMain->LoadWallet(fFirstRun);
         if (nLoadWalletRet != DB_LOAD_OK)
@@ -1811,7 +1819,9 @@ bool AppInit2(boost::thread_group& threadGroup, CScheduler& scheduler)
         bool rescan = false;
         if (GetBoolArg("-rescan", false))
         {
+
             LogPrintf("rescan is set to true\n");
+
             pindexRescan = chainActive.Genesis();
             rescan = true;
         }
@@ -1827,6 +1837,8 @@ bool AppInit2(boost::thread_group& threadGroup, CScheduler& scheduler)
 
         if (rescan || (chainActive.Tip() && chainActive.Tip() != pindexRescan))
         {
+            LogPrintf("rescan: chainActive.Tip() && chainActive.Tip() != pindexRescan\n");
+
             //We can't rescan beyond non-pruned blocks, stop and throw an error
             //this might happen if a user uses a old wallet within a pruned node
             // or if he ran -disablewallet for a longer time, then decided to re-enable

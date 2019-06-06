@@ -58,6 +58,7 @@ public:
     enum VerifyResult { VERIFY_OK,
                         RECOVER_OK,
                         RECOVER_FAIL };
+
     VerifyResult Verify(const std::string& strFile, bool (*recoverFunc)(CDBEnv& dbenv, const std::string& strFile));
     /**
      * Salvage data from a file that Verify says is bad.
@@ -112,6 +113,7 @@ private:
     void operator=(const CDB&);
 
 protected:
+
     template <typename K, typename T>
     bool Read(const K& key, T& value)
     {
@@ -146,10 +148,11 @@ protected:
         return (ret == 0);
     }
 
+
     template <typename K, typename T>
     bool Write(const K& key, const T& value, bool fOverwrite = true)
     {
-        if (!pdb)
+        if (!this->pdb)
             return false;
         if (fReadOnly)
             assert(!"Write called on database in read-only mode");

@@ -85,6 +85,7 @@ class CImageDB : public CDB
 {
     friend class CWalletDB;
 public:
+
     const std::vector<std::string>& getImage(uint256 hash);
 
 private:
@@ -94,6 +95,7 @@ private:
     bool setImage(uint256 hash, const std::vector<std::string>& image);
     bool readKeyValue(CDataStream& ssKey, CDataStream& ssValue,
                       int &nFileVersion, std::string& strType);
+
     typedef std::map<uint256, std::vector<std::string> > IMAGE_MAP_TYPE;
     IMAGE_MAP_TYPE m_imageMap;
 };

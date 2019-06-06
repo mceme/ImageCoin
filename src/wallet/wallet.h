@@ -196,6 +196,7 @@ struct COutputEntry
     CTxDestination destination;
     CAmount amount;
     std::string imgbase64;
+
     int vout;
 };
 
@@ -371,9 +372,10 @@ public:
         if (ser_action.ForRead())
             Init(NULL);
         char fSpent = false;
-
+        
         if (!ser_action.ForRead())
         {
+
             mapValue["fromaccount"] = strFromAccount;
 
             WriteOrderPos(nOrderPos, mapValue);
