@@ -46,7 +46,7 @@
 * Not affected by any
 
 ## Download compiled code
-* git clone https://github.com/zhongqiuwood/ImageCoin -b dev
+* git clone https://github.com/mceme/ImageCoin -b master
 * The compilation steps are unchanged
 
 ## case1: Back up and then upgrade
