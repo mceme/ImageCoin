@@ -45,7 +45,6 @@
 ## 10. movecmd, transfer
 * Not affected by any
 
-#图币分离程序使用
 ## Download compiled code
 * git clone https://github.com/zhongqiuwood/ImageCoin -b dev
 * The compilation steps are unchanged
