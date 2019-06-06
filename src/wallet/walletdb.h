@@ -85,14 +85,14 @@ class CImageDB : public CDB
 {
     friend class CWalletDB;
 public:
+
+    const std::vector<std::string>& getImage(uint256 hash);
+
+private:
     CImageDB(const std::string& strFilename, const char* pszMode = "r+", bool fFlushOnClose = true);
     ~CImageDB();
-
     DBErrors loadImage();
     bool setImage(uint256 hash, const std::vector<std::string>& image);
-    const std::vector<std::string>& getImage(uint256 hash);
-//    bool EraseImage(uint256 hash);
-private:
     bool readKeyValue(CDataStream& ssKey, CDataStream& ssValue,
                       int &nFileVersion, std::string& strType);
 

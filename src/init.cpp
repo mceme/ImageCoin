@@ -1680,7 +1680,9 @@ bool AppInit2(boost::thread_group& threadGroup, CScheduler& scheduler)
         pwalletMain = NULL;
         LogPrintf("Wallet disabled!\n");
     } else {
+
         // 0. recover wallet
+
 
         // needed to restore wallet transaction meta data after -zapwallettxes
         std::vector<CWalletTx> vWtx;
@@ -1706,7 +1708,9 @@ bool AppInit2(boost::thread_group& threadGroup, CScheduler& scheduler)
         bool fFirstRun = true;
         pwalletMain = new CWallet(strWalletFile);
 
+
         // 2. LoadWallet
+
         DBErrors nLoadWalletRet = pwalletMain->LoadWallet(fFirstRun);
         if (nLoadWalletRet != DB_LOAD_OK)
         {
@@ -1815,7 +1819,8 @@ bool AppInit2(boost::thread_group& threadGroup, CScheduler& scheduler)
         bool rescan = false;
         if (GetBoolArg("-rescan", false))
         {
-            LogPrintf(" rescan set to true\n");
+
+            LogPrintf("rescan is set to true\n");
 
             pindexRescan = chainActive.Genesis();
             rescan = true;

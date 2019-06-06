@@ -80,6 +80,7 @@ bool CDBEnv::Open(const boost::filesystem::path& pathIn)
 
     strPath = pathIn.string();
 
+
     LogPrintf("CDBEnv::Open: %s\n", strPath.c_str());
 
     boost::filesystem::path pathLogDir = pathIn / "database";
