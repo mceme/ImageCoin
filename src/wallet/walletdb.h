@@ -11,6 +11,7 @@
 #include "hdchain.h"
 #include "key.h"
 
+#include <map>
 #include <list>
 #include <stdint.h>
 #include <string>
@@ -18,6 +19,7 @@
 #include <vector>
 
 static const bool DEFAULT_FLUSHWALLET = true;
+static const std::string DEFAULT_IMAGE_FILE = "image.dat";
 
 class CAccount;
 class CAccountingEntry;
@@ -38,7 +40,8 @@ enum DBErrors
     DB_NONCRITICAL_ERROR,
     DB_TOO_NEW,
     DB_LOAD_FAIL,
-    DB_NEED_REWRITE
+    DB_NEED_REWRITE,
+    DB_RESCAN_IMAGE
 };
 
 class CKeyMetadata
@@ -74,13 +77,37 @@ public:
     }
 };
 
-/** Access to the wallet database (wallet.dat) */
+
+////////////////////////////////////////////////////////
+// Access to the image database (image.dat)
+////////////////////////////////////////////////////////
+class CImageDB : public CDB
+{
+    friend class CWalletDB;
+public:
+
+    const std::vector<std::string>& getImage(uint256 hash);
+
+private:
+    CImageDB(const std::string& strFilename, const char* pszMode = "r+", bool fFlushOnClose = true);
+    ~CImageDB();
+    DBErrors loadImage();
+    bool setImage(uint256 hash, const std::vector<std::string>& image);
+    bool readKeyValue(CDataStream& ssKey, CDataStream& ssValue,
+                      int &nFileVersion, std::string& strType);
+
+    typedef std::map<uint256, std::vector<std::string> > IMAGE_MAP_TYPE;
+    IMAGE_MAP_TYPE m_imageMap;
+};
+
+////////////////////////////////////////////////////////
+// Access to the wallet database (wallet.dat)
+////////////////////////////////////////////////////////
 class CWalletDB : public CDB
 {
 public:
-    CWalletDB(const std::string& strFilename, const char* pszMode = "r+", bool fFlushOnClose = true) : CDB(strFilename, pszMode, fFlushOnClose)
-    {
-    }
+    CWalletDB(const std::string& strFilename, const char* pszMode = "r+", bool fFlushOnClose = true);
+    ~CWalletDB();
 
     bool WriteName(const std::string& strAddress, const std::string& strName);
     bool EraseName(const std::string& strAddress);
@@ -112,6 +139,7 @@ public:
     bool ErasePool(int64_t nPool);
 
     bool WriteMinVersion(int nVersion);
+    bool WriteVersion(int nVersion);
 
     /// This writes directly to the database, and will not update the CWallet's cached accounting entries!
     /// Use wallet.AddAccountingEntry instead, to write *and* update its caches.
@@ -144,11 +172,11 @@ private:
     void operator=(const CWalletDB&);
 
     bool WriteAccountingEntry(const uint64_t nAccEntryNum, const CAccountingEntry& acentry);
+    CImageDB* m_imageDB;
 };
 
 bool BackupWallet(const CWallet& wallet, const std::string& strDest);
 void ThreadFlushWalletDB(const std::string& strFile);
-
 bool AutoBackupWallet (CWallet* wallet, std::string strWalletFile, std::string& strBackupWarning, std::string& strBackupError);
 
 #endif // BITCOIN_WALLET_WALLETDB_H
