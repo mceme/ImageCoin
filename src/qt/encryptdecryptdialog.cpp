@@ -597,36 +597,50 @@ void EncryptDecryptDialog::decodebase64Clicked()
 void EncryptDecryptDialog::on_cmdShowSave_clicked()
    {
 	 std::string delctype = "Files (*.png *.jpeg *.jpg *.gif *.tiff *.bmp)";
-	  QString encodestringqt = ui->lineEditimgbase64->text();
+	 std::string savefile= "c:/image.png";
+
+	 QString encodestringqt = ui->lineEditimgbase64->text();
 		 std::string encodestr = encodestringqt.toUtf8().constData();
 
 	    std::string typebase64 = encodestr.substr(0, 1);
 
-         if(typebase64=="J" /*pdf*/ || typebase64=="V"){
-        	 delctype = "Files (*.pdf *.txt)";;
-         }
-         else if(typebase64=="A" /*mp4*/)
-         {
-        	 delctype = "Files (*.mp4)";;
-         }
-         else if( typebase64=="R")  /*gif*/
-         {
-        	 delctype = "Files (*.gif)";;
-         }
-         else if( typebase64=="U")  /*avi*/
-         {
-           	 delctype = "Files (*.avi)";;
-         }
-         else if( typebase64=="S")  /*mp3*/
-         {
-           	 delctype = "Files (*.mp3)";;
-         }
+	    if(typebase64=="J" /*pdf*/ ){
+	           	 delctype = "Files (*.pdf)";
+	           	  savefile = "c:/doc.pdf";
+	            }
+	            else if(typebase64=="V" /*txt*/)
+	            {
+	            delctype = "Files (*.txt)";
+	            savefile = "c:/text.txt";
+	            }
+	            else if(typebase64=="A" /*mp4*/)
+	            {
+	           	 delctype = "Files (*.mp4)";
+	           	 savefile = "c:/movie.mp4";
+	            }
+	            else if( typebase64=="R")  /*gif*/
+	            {
+	           	 delctype = "Files (*.gif)";
+	           	 savefile = "c:/image.gif";
+	            }
+	            else if( typebase64=="U")  /*avi*/
+	            {
+	              	 delctype = "Files (*.avi)";
+	              	 savefile = "c:/movie.avi";
+	            }
+	            else if( typebase64=="S")  /*mp3*/
+	            {
+	              	 delctype = "Files (*.mp3)";
+	              	 savefile = "c:/music.mp3";
+	            }
+
+
 
 
 
 
 	QString fileNamesave = QFileDialog::getSaveFileName(this, tr("Save File"),
-	                            "c:/image.png",
+	                            savefile,
 	                            tr(delctype.c_str()));
 
         QByteArray base64decodefilearray;

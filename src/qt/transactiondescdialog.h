@@ -26,6 +26,7 @@ public:
 
 private:
     Ui::TransactionDescDialog *ui;
+    void on_DownloadButton_clicked();
 };
 
 #endif // BITCOIN_QT_TRANSACTIONDESCDIALOG_H

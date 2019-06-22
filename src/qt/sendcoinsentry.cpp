@@ -26,6 +26,8 @@
 base64 base64;
 typedef unsigned char BYTE;
 
+bool fileselected=false;
+
 SendCoinsEntry::SendCoinsEntry(const PlatformStyle *platformStyle, QWidget *parent) :
     QStackedWidget(parent),
     ui(new Ui::SendCoinsEntry),
@@ -121,6 +123,8 @@ void SendCoinsEntry::clear()
     ui->addAsLabel->clear();
     ui->payAmount->clear();
     ui->Imgbase64Edit->clear();
+    ui->Imgbase64Edit->setEnable(1);
+    fileselected=false;
     ui->checkboxSubtractFeeFromAmount->setCheckState(Qt::Unchecked);
     ui->messageTextLabel->clear();
     ui->messageTextLabel->hide();
@@ -156,15 +160,15 @@ void SendCoinsEntry::on_chooserButton_clicked()
     if (dialog.exec()){
     	QStringList fileNames = dialog.selectedFiles();
 
-      if(fileNames.size()>0){
+         if(fileNames.size()>0){
 
 
 
       	  QString file = fileNames[0];
       	  ui->FileNamesTxt->setText(file);
-      	 std::string filestr = file.toUtf8().constData();
-      	 std::string encodedstring = base64.encode(filestr);
-      	 QString qsencoded = QString::fromStdString(encodedstring);
+      	  std::string filestr = file.toUtf8().constData();
+      	  std::string encodedstring = base64.encode(filestr);
+      	  QString qsencoded = QString::fromStdString(encodedstring);
 
         	if(!base64.base64Validator(encodedstring)){
 
@@ -180,8 +184,9 @@ void SendCoinsEntry::on_chooserButton_clicked()
         		 ui->Imgbase64Edit->setText("");
         		 return;
         	}
-
+        	 fileselected=true;
         	 ui->Imgbase64Edit->setText(qsencoded);
+        	 ui->Imgbase64Edit->setDisabled(1);
         }
     }
 }
@@ -262,6 +267,9 @@ SendCoinsRecipient SendCoinsEntry::getValue()
     recipient.address = ui->payTo->text();
     recipient.label = ui->addAsLabel->text();
     recipient.imgbase64 = ui->Imgbase64Edit->text();
+    if(ui->Imgbase64Edit->size()>0 && !fileselected){ //message
+    recipient.imgbase64 ="message:"+ ui->Imgbase64Edit->text();
+    }
     recipient.amount = ui->payAmount->value();
     recipient.message = ui->messageTextLabel->text();
     recipient.fSubtractFeeFromAmount = (ui->checkboxSubtractFeeFromAmount->checkState() == Qt::Checked);
