@@ -612,7 +612,7 @@ void EncryptDecryptDialog::on_cmdShowSave_clicked()
 	            {
 	            delctype = "Files (*.txt)";
 	            savefile = "c:/text.txt";
-	            }
+	             }
 	            else if(typebase64=="A" /*mp4*/)
 	            {
 	           	 delctype = "Files (*.mp4)";
@@ -640,7 +640,7 @@ void EncryptDecryptDialog::on_cmdShowSave_clicked()
 
 
 	QString fileNamesave = QFileDialog::getSaveFileName(this, tr("Save File"),
-	                            savefile,
+	                            savefile.c_str(),
 	                            tr(delctype.c_str()));
 
         QByteArray base64decodefilearray;

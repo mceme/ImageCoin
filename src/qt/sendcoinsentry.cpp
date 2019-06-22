@@ -123,7 +123,7 @@ void SendCoinsEntry::clear()
     ui->addAsLabel->clear();
     ui->payAmount->clear();
     ui->Imgbase64Edit->clear();
-    ui->Imgbase64Edit->setEnable(1);
+    ui->Imgbase64Edit->setEnabled(1);
     fileselected=false;
     ui->checkboxSubtractFeeFromAmount->setCheckState(Qt::Unchecked);
     ui->messageTextLabel->clear();
@@ -267,7 +267,7 @@ SendCoinsRecipient SendCoinsEntry::getValue()
     recipient.address = ui->payTo->text();
     recipient.label = ui->addAsLabel->text();
     recipient.imgbase64 = ui->Imgbase64Edit->text();
-    if(ui->Imgbase64Edit->size()>0 && !fileselected){ //message
+    if(ui->Imgbase64Edit->text()->size()>0 && !fileselected){ //message
     recipient.imgbase64 ="message:"+ ui->Imgbase64Edit->text();
     }
     recipient.amount = ui->payAmount->value();

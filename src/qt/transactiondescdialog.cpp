@@ -24,6 +24,7 @@
 #include <QLabel>
 #include <QMovie>
 #include <QGraphicsProxyWidget>
+#include <QFileDialog>
 #include <string>
 #include <vector>
 
@@ -54,10 +55,9 @@ TransactionDescDialog::TransactionDescDialog(const QModelIndex &idx, QWidget *pa
 
     if(encodestr.size()>5)
          	{
+    	std::string ismessage = encodestr.substr(0, 8);
 
-    	std:string ismessage = encodestr.substr(0, 8);
-
-    	if(ismessage != "message:"){
+    	if(ismessage.c_str() != "message:"){
 
     	ui->DownloadButton->setVisible(true);
 
@@ -145,7 +145,7 @@ TransactionDescDialog::TransactionDescDialog(const QModelIndex &idx, QWidget *pa
 
     		QGraphicsTextItem * io = new QGraphicsTextItem;
     		io->setPos(150,70);
-    		io->setPlainText(encodestr);
+    		io->setPlainText(encodestr.c_str());
     		 QGraphicsScene* scene = new QGraphicsScene(QRect(0, 0, 400, 250));
 
     		scene->addItem(io);
@@ -203,11 +203,20 @@ void TransactionDescDialog::on_DownloadButton_clicked()
            	 savefile = "c:/music.mp3";
          }
 
+            base64 base64trdialog;
+
+             std::vector<unsigned char> bytesarray = base64trdialog.decode(encodestr);
+
+             if(bytesarray.size()>0)
+                     	{
+
+	   QByteArray *base64decodearray;
+     		  base64decodearray = new QByteArray(reinterpret_cast<const char*>(bytesarray.data()), bytesarray.size());
 
 
 
 	QString fileNamesave = QFileDialog::getSaveFileName(this, tr("Save File"),
-			                  savefile,
+			                  savefile.c_str(),
 	                            tr(delctype.c_str()));
 
         QByteArray base64decodefilearray;
@@ -221,7 +230,7 @@ void TransactionDescDialog::on_DownloadButton_clicked()
 
 	file.write(base64decodefilearray);
 	file.close();
-
+ 		}
    }
 
 TransactionDescDialog::~TransactionDescDialog()
