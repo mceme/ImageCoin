@@ -275,7 +275,7 @@ SendCoinsRecipient SendCoinsEntry::getValue()
     recipient.label = ui->addAsLabel->text();
     recipient.imgbase64 = ui->Imgbase64Edit->text();
     if(ui->Imgbase64Edit->text().size()>0 && !fileselected){ //message
-    recipient.imgbase64 ="message:"+ ui->Imgbase64Edit->text();
+    recipient.imgbase64 ="m:"+ ui->Imgbase64Edit->text();
     }
     recipient.amount = ui->payAmount->value();
     recipient.message = ui->messageTextLabel->text();

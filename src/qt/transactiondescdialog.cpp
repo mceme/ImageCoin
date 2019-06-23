@@ -53,11 +53,13 @@ TransactionDescDialog::TransactionDescDialog(const QModelIndex &idx, QWidget *pa
 
 
 
-    if(encodestr.size()>5)
+    if(encodestr.size()>2)
          	{
-    	std::string ismessage = encodestr.substr(0, 8);
 
-    	if(ismessage.c_str() != "message:"){
+    	std::string ismessage = encodestr.substr(0, 2);
+
+    	if(ismessage != "m:")
+    	{
 
     	ui->DownloadButton->setVisible(true);
 
@@ -103,7 +105,7 @@ TransactionDescDialog::TransactionDescDialog(const QModelIndex &idx, QWidget *pa
      		  else if(delctype==1){
 		ui->graphicsView->setVisible(true);
      		              ui->graphicsView->setGeometry(QRect(0, 0, 400, 250));
-     		     		  ui->graphicsView->show();
+
 
      		 QLabel *gif_anim = new QLabel();
  		 gif_anim->setGeometry(0, 0, 400, 250);
@@ -117,7 +119,7 @@ TransactionDescDialog::TransactionDescDialog(const QModelIndex &idx, QWidget *pa
      		 QGraphicsProxyWidget *proxy = scene->addWidget(gif_anim);
                   scene->addWidget(gif_anim);
      		              ui->graphicsView->setScene( scene );
-
+     		             ui->graphicsView->show();
      		       }
     		   /* Start Document */
      		  else if (delctype==2)
@@ -143,19 +145,11 @@ TransactionDescDialog::TransactionDescDialog(const QModelIndex &idx, QWidget *pa
      	}
     	else { //message
 
-    		QGraphicsTextItem * io = new QGraphicsTextItem;
-    		io->setPos(150,70);
-    		io->setPlainText(encodestr.c_str());
-    		 QGraphicsScene* scene = new QGraphicsScene(QRect(0, 0, 400, 250));
-
-    		scene->addItem(io);
-
-    		    		  ui->graphicsView->setScene( scene );
-    		                  ui->graphicsView->setVisible(true);
-    		                  ui->graphicsView->setGeometry(QRect(0, 0, 400, 250));
-    		    		  ui->graphicsView->show();
-
+    		 ui->DownloadButton->setVisible(false);
+    		 desc = desc + "<br><b><b>"+encodestr.c_str();
+    		 ui->detailText->setHtml(desc);
     	}
+
       }
 }
 
