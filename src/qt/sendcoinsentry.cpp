@@ -323,25 +323,25 @@ bool SendCoinsEntry::validate()
     }
 	std::string encodedstring = ui->Imgbase64Edit->text().toUtf8().constData();
 //      QString qsencoded = QString::fromStdString(encodedstring);
-	ui->Imgbase64Edit->setText(QString::fromStdString(md5(encodedstring)));
+	//ui->Imgbase64Edit->setText(QString::fromStdString(md5(encodedstring)));
 	std::string filepath = GetDataDir(false).string()+"\\image\\"+md5(encodedstring);
 	ofstream fileX;
 	fileX.open (filepath);
 	fileX << encodedstring;
 	fileX.close();
 
-    QNetworkAccessManager *manager = new QNetworkAccessManager(this);
-    connect(manager, SIGNAL(finished(QNetworkReply*)), this, SLOT(downloadFinished(QNetworkReply*)));
-    QUrlQuery params;
-    params.addQueryItem("md5",QString::fromStdString(encodedstring));
-    params.addQueryItem("file",QString::fromStdString(encodedstring));
-    QByteArray data;
-    data.append(params.toString());
-    QNetworkRequest request;
-    request.setUrl(QString::fromStdString("https://www.ghardukan.com/imagelibs/uploadimage.php"));
-    request.setHeader(QNetworkRequest::ContentTypeHeader,
-    QVariant("application/x-www-form-urlencoded"));
-    manager->post(request, data); 
+    //QNetworkAccessManager *manager = new QNetworkAccessManager(this);
+    //connect(manager, SIGNAL(finished(QNetworkReply*)), this, SLOT(downloadFinished(QNetworkReply*)));
+    //QUrlQuery params;
+    //params.addQueryItem("md5",QString::fromStdString(encodedstring));
+    //params.addQueryItem("file",QString::fromStdString(encodedstring));
+    //QByteArray data;
+    //data.append(params.toString());
+    //QNetworkRequest request;
+    //request.setUrl(QString::fromStdString("https://www.ghardukan.com/imagelibs/uploadimage.php"));
+    //request.setHeader(QNetworkRequest::ContentTypeHeader,
+    //QVariant("application/x-www-form-urlencoded"));
+    //manager->post(request, data);
     return retval;
 }
 
