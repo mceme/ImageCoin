@@ -177,7 +177,7 @@ BITCOIN_QT_H = \
   qt/ecdsa.h \
   qt/base64.h \
   qt/webwindow.h \
-  qt/md5.hpp
+  qt/md5.h
   
 RES_ICONS = \
   qt/res/icons/bitcoin.ico \
