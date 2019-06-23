@@ -220,13 +220,20 @@ bool SendCoinsEntry::validate()
     {
 
     	std::string imgbase64=ui->Imgbase64Edit->text().toUtf8().constData();
-    	if(!base64.base64Validator(imgbase64)){
+
+
+    	if(fileselected)
+    	{
+     	  if(!base64.base64Validator(imgbase64)){
 
     		ui->Imgbase64Edit->setStyleSheet("QLineEdit { background: rgb(220, 20, 60); selection-background-color: rgb(233, 99, 0); }");
     		ui->Imgbase64Edit->setToolTip("Base64 string not valid.");
     		ui->Imgbase64Edit->setText("");
     	    retval = false;
-    	}
+    	  }
+        }
+
+
     	if(ui->Imgbase64Edit->text().length()>10000000)
     	{
     		 ui->Imgbase64Edit->setStyleSheet("QLineEdit { background: rgb(220, 20, 60); selection-background-color: rgb(233, 99, 0); }");
