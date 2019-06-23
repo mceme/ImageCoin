@@ -165,7 +165,7 @@ TransactionView::TransactionView(const PlatformStyle *platformStyle, QWidget *pa
     QAction *copyAddressAction = new QAction(tr("Copy address"), this);
     QAction *copyLabelAction = new QAction(tr("Copy label"), this);
     QAction *copyAmountAction = new QAction(tr("Copy amount"), this);
-    QAction *copyImgbase64Action = new QAction(tr("Copy imgbase64"), this);
+    QAction *copyImgbase64Action = new QAction(tr("Copy img"), this);
     QAction *copyTxIDAction = new QAction(tr("Copy transaction ID"), this);
     QAction *copyTxHexAction = new QAction(tr("Copy raw transaction"), this);
     QAction *copyTxPlainText = new QAction(tr("Copy full transaction details"), this);

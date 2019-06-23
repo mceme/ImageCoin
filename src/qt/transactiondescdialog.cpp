@@ -20,14 +20,16 @@
 #include <QPixmap>
 #include <QGraphicsView>
 #include <QGraphicsScene>
+#include <QGraphicsTextItem>
 #include <QLabel>
 #include <QMovie>
 #include <QGraphicsProxyWidget>
+#include <QFileDialog>
 #include <string>
 #include <vector>
 
 
-
+ QString encodeqstring ;
 
 TransactionDescDialog::TransactionDescDialog(const QModelIndex &idx, QWidget *parent) :
     QDialog(parent),
@@ -35,6 +37,7 @@ TransactionDescDialog::TransactionDescDialog(const QModelIndex &idx, QWidget *pa
 {
     ui->setupUi(this);
     ui->graphicsView->setVisible(false);
+    ui->DownloadButton->setVisible(false);
     /* Open CSS when configured */
     this->setStyleSheet(GUIUtil::loadStyleSheet());
 
@@ -42,14 +45,23 @@ TransactionDescDialog::TransactionDescDialog(const QModelIndex &idx, QWidget *pa
     ui->detailText->setHtml(desc);
 
     /* Start ImageView */
-    QString encodeqstring = idx.data(TransactionTableModel::Imgbase64Role).toString();
+     encodeqstring = idx.data(TransactionTableModel::Imgbase64Role).toString();
      std::string  encodestr = encodeqstring.toUtf8().constData();
 
    std::string extension = "png";
     float delctype = 0;
-    
-    if(encodestr.size()>5)
+
+
+
+    if(encodestr.size()>2)
          	{
+
+    	std::string ismessage = encodestr.substr(0, 2);
+
+    	if(ismessage != "m:")
+    	{
+
+    	ui->DownloadButton->setVisible(true);
 
     	std::string typebase64 = encodestr.substr(0, 1);
              if(typebase64=="J" /*pdf*/ || typebase64=="V"){
@@ -93,7 +105,7 @@ TransactionDescDialog::TransactionDescDialog(const QModelIndex &idx, QWidget *pa
      		  else if(delctype==1){
 		ui->graphicsView->setVisible(true);
      		              ui->graphicsView->setGeometry(QRect(0, 0, 400, 250));
-     		     		  ui->graphicsView->show();
+
 
      		 QLabel *gif_anim = new QLabel();
  		 gif_anim->setGeometry(0, 0, 400, 250);
@@ -107,7 +119,7 @@ TransactionDescDialog::TransactionDescDialog(const QModelIndex &idx, QWidget *pa
      		 QGraphicsProxyWidget *proxy = scene->addWidget(gif_anim);
                   scene->addWidget(gif_anim);
      		              ui->graphicsView->setScene( scene );
-
+     		             ui->graphicsView->show();
      		       }
     		   /* Start Document */
      		  else if (delctype==2)
@@ -131,8 +143,89 @@ TransactionDescDialog::TransactionDescDialog(const QModelIndex &idx, QWidget *pa
     		   }
             }
      	}
+    	else { //message
 
+    		 ui->DownloadButton->setVisible(false);
+    		 desc = desc + "<br><b><b>"+encodestr.c_str();
+    		 ui->detailText->setHtml(desc);
+    	}
+
+      }
 }
+
+void TransactionDescDialog::on_DownloadButton_clicked()
+   {
+
+
+	     std::string delctype = "Files (*.png *.jpeg *.jpg *.gif *.tiff *.bmp)";
+
+	     std::string savefile = "c:/image.png";
+
+		 std::string encodestr = encodeqstring.toUtf8().constData();
+
+	    std::string typebase64 = encodestr.substr(0, 1);
+
+
+
+         if(typebase64=="J" /*pdf*/ ){
+        	 delctype = "Files (*.pdf)";
+        	  savefile = "c:/doc.pdf";
+         }
+         else if(typebase64=="V" /*txt*/)
+                 {
+              delctype = "Files (*.txt)";
+              savefile = "c:/text.txt";
+                 }
+         else if(typebase64=="A" /*mp4*/)
+         {
+        	 delctype = "Files (*.mp4)";
+        	 savefile = "c:/movie.mp4";
+         }
+         else if( typebase64=="R")  /*gif*/
+         {
+        	 delctype = "Files (*.gif)";
+        	 savefile = "c:/image.gif";
+         }
+         else if( typebase64=="U")  /*avi*/
+         {
+           	 delctype = "Files (*.avi)";
+           	 savefile = "c:/movie.avi";
+         }
+         else if( typebase64=="S")  /*mp3*/
+         {
+           	 delctype = "Files (*.mp3)";
+           	 savefile = "c:/music.mp3";
+         }
+
+            base64 base64trdialog;
+
+             std::vector<unsigned char> bytesarray = base64trdialog.decode(encodestr);
+
+             if(bytesarray.size()>0)
+                     	{
+
+	   QByteArray *base64decodearray;
+     		  base64decodearray = new QByteArray(reinterpret_cast<const char*>(bytesarray.data()), bytesarray.size());
+
+
+
+	QString fileNamesave = QFileDialog::getSaveFileName(this, tr("Save File"),
+			                  savefile.c_str(),
+	                            tr(delctype.c_str()));
+
+        QByteArray base64decodefilearray;
+
+        base64decodefilearray.setRawData(base64decodearray->data(), base64decodearray->size());
+	// ... fill the array with data ...
+
+	QFile file(fileNamesave.toUtf8().constData());
+	file.open(QIODevice::WriteOnly);
+
+
+	file.write(base64decodefilearray);
+	file.close();
+ 		}
+   }
 
 TransactionDescDialog::~TransactionDescDialog()
 {

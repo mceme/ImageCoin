@@ -242,7 +242,7 @@
       <item>
        <widget class="QLabel" name="Labelimgbase64">
         <property name="text">
-         <string>Base64:</string>
+         <string>Message:</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>

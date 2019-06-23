@@ -24,8 +24,13 @@ public:
     explicit TransactionDescDialog(const QModelIndex &idx, QWidget *parent = 0);
     ~TransactionDescDialog();
 
+
 private:
     Ui::TransactionDescDialog *ui;
+
+private Q_SLOTS:
+    void on_DownloadButton_clicked();
+
 };
 
 #endif // BITCOIN_QT_TRANSACTIONDESCDIALOG_H
