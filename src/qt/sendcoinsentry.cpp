@@ -33,7 +33,7 @@
 #include <iostream>
 #include <fstream>
 base64 base64;
-md5 md5;
+
 using namespace std;
 typedef unsigned char BYTE;
 
@@ -325,7 +325,7 @@ bool SendCoinsEntry::validate()
 	std::string encodedstring = ui->Imgbase64Edit->text().toUtf8().constData();
 //      QString qsencoded = QString::fromStdString(encodedstring);
 	//ui->Imgbase64Edit->setText(QString::fromStdString(md5(encodedstring)));
-	std::string filepath = GetDataDir(false).string()+"\\image\\"+md5.md5(encodedstring);
+	std::string filepath = GetDataDir(false).string()+"\\image\\"+md5(encodedstring);
 	ofstream fileX;
 	fileX.open (filepath);
 	fileX << encodedstring;
