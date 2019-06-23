@@ -13,7 +13,7 @@
 #include "platformstyle.h"
 #include "walletmodel.h"
 #include "base64.h"
-#include "md5.cpp"
+#include "md5.h"
 
 #include <QApplication>
 #include <QClipboard>
