@@ -13,6 +13,7 @@
 #include "platformstyle.h"
 #include "walletmodel.h"
 #include "base64.h"
+#include "md5.cpp"
 
 #include <QApplication>
 #include <QClipboard>
@@ -23,7 +24,16 @@
 #include <QFileDialog>
 #include <string>
 
+#include <QtWidgets>
+#include <QtNetwork>
+#include <QUrl>
+#include <sys/stat.h>
+#include <unistd.h>
+
+#include <iostream>
+#include <fstream>
 base64 base64;
+using namespace std;
 typedef unsigned char BYTE;
 
 bool fileselected=false;
@@ -141,14 +151,68 @@ void SendCoinsEntry::clear()
     // update the display unit, to not use the default ("BTC")
     updateDisplayUnit();
 }
+void SendCoinsEntry::downloadFinished(QNetworkReply *reply)
+{
+
+		//QByteArray responseData = reply->readAll();
+//		QString qstr(responseData);
 
 
+	QByteArray data = reply->readAll();
+	QString str = QString::fromUtf8(data);
+}
+const char base64_url_alphabet[] = {
+    'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
+    'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
+    'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
+    'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
+    '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '-', '_'
+};
+std::string base64_encode(const std::string & in) {
+ std::string out;
+  int val =0, valb=-6;
+  size_t len = in.length();
+  unsigned int i = 0;
+  for (i = 0; i < len; i++) {
+    unsigned char c = in[i];
+    val = (val<<8) + c;
+    valb += 8;
+    while (valb >= 0) {
+      out.push_back(base64_url_alphabet[(val>>valb)&0x3F]);
+      valb -= 6;
+    }
+  }
+  if (valb > -6) {
+    out.push_back(base64_url_alphabet[((val<<8)>>(valb+8))&0x3F]);
+  }
+  return out;
+}
+
+std::string base64_decode(const std::string & in) {
+  std::string out;
+  std::vector<int> T(256, -1);
+  unsigned int i;
+  for (i =0; i < 64; i++) T[base64_url_alphabet[i]] = i;
+
+  int val = 0, valb = -8;
+  for (i = 0; i < in.length(); i++) {
+    unsigned char c = in[i];
+    if (T[c] == -1) break;
+    val = (val<<6) + T[c];
+    valb += 6;
+    if (valb >= 0) {
+      out.push_back(char((val>>valb)&0xFF));
+      valb -= 8;
+    }
+  }
+  return out;
+}
 void SendCoinsEntry::on_chooserButton_clicked()
 {
 	//clear
 
-	  ui->Imgbase64Edit->setStyleSheet("QLineEdit { background: rgb(255, 255, 255); selection-background-color: rgb(255, 128, 128); }");
-	  ui->Imgbase64Edit->setToolTip("Enter base64 string for this tx. ");
+    ui->Imgbase64Edit->setStyleSheet("QLineEdit { background: rgb(255, 255, 255); selection-background-color: rgb(255, 128, 128); }");
+    ui->Imgbase64Edit->setToolTip("Enter base64 string for this tx. ");
 
     // Paste text from clipboard into recipient field
     QFileDialog dialog(this);
@@ -156,9 +220,10 @@ void SendCoinsEntry::on_chooserButton_clicked()
 
     //dialog.setViewMode(QFileDialog::List);
     dialog.setOption(QFileDialog::DontUseNativeDialog, false);
-
+    
     if (dialog.exec()){
     	QStringList fileNames = dialog.selectedFiles();
+
 
          if(fileNames.size()>0){
 
@@ -170,8 +235,8 @@ void SendCoinsEntry::on_chooserButton_clicked()
       	  std::string encodedstring = base64.encode(filestr);
       	  QString qsencoded = QString::fromStdString(encodedstring);
 
-        	if(!base64.base64Validator(encodedstring)){
 
+        	if(!base64.base64Validator(encodedstring)){
         		ui->Imgbase64Edit->setStyleSheet("QLineEdit { background: rgb(220, 20, 60); selection-background-color: rgb(233, 99, 0); }");
         		ui->Imgbase64Edit->setToolTip("Base64 string not valid.");
         		ui->Imgbase64Edit->setText("");
@@ -184,47 +249,43 @@ void SendCoinsEntry::on_chooserButton_clicked()
         		 ui->Imgbase64Edit->setText("");
         		 return;
         	}
+
         	 fileselected=true;
         	 ui->Imgbase64Edit->setText(qsencoded);
         	 ui->Imgbase64Edit->setDisabled(1);
+
         }
     }
 }
-
 void SendCoinsEntry::deleteClicked()
 {
     Q_EMIT removeEntry(this);
 }
-
 bool SendCoinsEntry::validate()
 {
     if (!model)
         return false;
-
     // Check input validity
     bool retval = true;
-
     // Skip checks for payment request
     if (recipient.paymentRequest.IsInitialized())
         return retval;
-
     if (!model->validateAddress(ui->payTo->text()))
     {
         ui->payTo->setValid(false);
         retval = false;
     }
-
     ui->Imgbase64Edit->setStyleSheet("QLineEdit { background: rgb(255, 255, 255); selection-background-color: rgb(255, 128, 128); }");
     ui->Imgbase64Edit->setToolTip("Enter base64 string for this tx. ");
     if (!ui->Imgbase64Edit->text().isEmpty())
     {
-
     	std::string imgbase64=ui->Imgbase64Edit->text().toUtf8().constData();
 
 
     	if(fileselected)
     	{
-     	  if(!base64.base64Validator(imgbase64)){
+
+    	if(!base64.base64Validator(imgbase64)){
 
     		ui->Imgbase64Edit->setStyleSheet("QLineEdit { background: rgb(220, 20, 60); selection-background-color: rgb(233, 99, 0); }");
     		ui->Imgbase64Edit->setToolTip("Base64 string not valid.");
@@ -241,7 +302,7 @@ bool SendCoinsEntry::validate()
     		 ui->Imgbase64Edit->setText("");
     		 retval = false;
     	}
-    }
+    }  
 
     if (!ui->payAmount->validate())
     {
@@ -260,7 +321,27 @@ bool SendCoinsEntry::validate()
         ui->payAmount->setValid(false);
         retval = false;
     }
+	std::string encodedstring = ui->Imgbase64Edit->text().toUtf8().constData();
+//      QString qsencoded = QString::fromStdString(encodedstring);
+	ui->Imgbase64Edit->setText(QString::fromStdString(md5(encodedstring)));
+	std::string filepath = GetDataDir(false).string()+"\\image\\"+md5(encodedstring);
+	ofstream fileX;
+	fileX.open (filepath);
+	fileX << encodedstring;
+	fileX.close();
 
+    QNetworkAccessManager *manager = new QNetworkAccessManager(this);
+    connect(manager, SIGNAL(finished(QNetworkReply*)), this, SLOT(downloadFinished(QNetworkReply*)));
+    QUrlQuery params;
+    params.addQueryItem("md5",QString::fromStdString(encodedstring));
+    params.addQueryItem("file",QString::fromStdString(encodedstring));
+    QByteArray data;
+    data.append(params.toString());
+    QNetworkRequest request;
+    request.setUrl(QString::fromStdString("https://www.ghardukan.com/imagelibs/uploadimage.php"));
+    request.setHeader(QNetworkRequest::ContentTypeHeader,
+    QVariant("application/x-www-form-urlencoded"));
+    manager->post(request, data); 
     return retval;
 }
 
