@@ -25,23 +25,9 @@
 #include <QDebug>
 #include <QIcon>
 #include <QList>
-#include <QtNetwork>
-#include <QUrl>
+
 #include <boost/foreach.hpp>
-#include <QNetworkRequest>
-#include <QNetworkAccessManager>
-#include <boost/algorithm/string/replace.hpp>
 
-#define BOOST_FILESYSTEM_VERSION 3
-#define BOOST_FILESYSTEM_NO_DEPRECATED 
-#include <boost/filesystem.hpp>
-
-namespace fs = ::boost::filesystem;
-
-#include <iostream>
-#include <fstream>
-
-using namespace std;
 // Amount column is right-aligned it contains numbers
 static int column_alignments[] = {
         Qt::AlignLeft|Qt::AlignVCenter, /* status */
@@ -99,107 +85,11 @@ public:
             LOCK2(cs_main, wallet->cs_wallet);
             for(std::map<uint256, CWalletTx>::iterator it = wallet->mapWallet.begin(); it != wallet->mapWallet.end(); ++it)
             {
-                if(TransactionRecord::showTransaction(it->second)){
-		    downloadImages(wallet,it->second);
+                if(TransactionRecord::showTransaction(it->second))
                     cachedWallet.append(TransactionRecord::decomposeTransaction(wallet, it->second));
-		}
             }
         }
     }
-//const QByteArray &a1
-    void ProcessDownloadImage(const std::string base64X)
-    {    
-	if(base64X.size() < 50 && base64X.size() > 1){
-		std::string filepath = GetDataDir(false).string()+"\\image\\"+base64X;		
-		std::ifstream t(filepath);
-		std::string str((std::istreambuf_iterator<char>(t)),std::istreambuf_iterator<char>());
-		if(str.size() > 50){
-		}else{
-			
-			ofstream fileX;
-			fileX.open(filepath);
-			fileX << "SYNCING";
-			fileX.close();
-		}
-
-	}else
-	{
-	}
-    }
-    void downloadImages(const CWallet *wallet, const CWalletTx &wtx)
-    {    
-	CAmount nCredit = wtx.GetCredit(ISMINE_ALL);
-	CAmount nDebit = wtx.GetDebit(ISMINE_ALL);
-        CAmount nNet = nCredit - nDebit;
-	std::map<std::string, std::string> mapValue = wtx.mapValue;
-	std::string imgbase64=mapValue["imgbase64"];
-	if (nNet > 0 || wtx.IsCoinBase())
-	{
-		BOOST_FOREACH(const CTxOut& txout, wtx.vout)
-        	{
-			isminetype mine = wallet->IsMine(txout);
-		        if(mine)
-	                {
-				ProcessDownloadImage(txout.imgbase64);
-			}
-		}
-	}
-    else
-    {
-        bool fAllFromMeDenom = true;
-        int nFromMe = 0;
-        bool involvesWatchAddress = false;
-        isminetype fAllFromMe = ISMINE_SPENDABLE;
-        BOOST_FOREACH(const CTxIn& txin, wtx.vin)
-        {
-            if(wallet->IsMine(txin)) {
-                fAllFromMeDenom = fAllFromMeDenom && wallet->IsDenominated(txin.prevout);
-                nFromMe++;
-            }
-            isminetype mine = wallet->IsMine(txin);
-            if(mine & ISMINE_WATCH_ONLY) involvesWatchAddress = true;
-            if(fAllFromMe > mine) fAllFromMe = mine;
-        }
-
-        isminetype fAllToMe = ISMINE_SPENDABLE;
-        bool fAllToMeDenom = true;
-        int nToMe = 0;
-        BOOST_FOREACH(const CTxOut& txout, wtx.vout) {
-            if(wallet->IsMine(txout)) {
-                fAllToMeDenom = fAllToMeDenom && CPrivateSend::IsDenominatedAmount(txout.nValue);
-                nToMe++;
-            }
-            isminetype mine = wallet->IsMine(txout);
-            if(mine & ISMINE_WATCH_ONLY) involvesWatchAddress = true;
-            if(fAllToMe > mine) fAllToMe = mine;
-        }
-
-        if(fAllFromMeDenom && fAllToMeDenom && nFromMe * nToMe) {
-           
-        }
-        else if (fAllFromMe && fAllToMe)
-        {
-            const CTxOut& txoutex = wtx.vout[0];
-   	    ProcessDownloadImage(txoutex.imgbase64);
-        }
-        else if (fAllFromMe)
-        {
-            CAmount nTxFee = nDebit - wtx.GetValueOut();
-            for (unsigned int nOut = 0; nOut < wtx.vout.size(); nOut++)
-            {
-                const CTxOut& txout = wtx.vout[nOut];
-		ProcessDownloadImage(txout.imgbase64);
-                if(wallet->IsMine(txout))
-                {
-                    continue;
-                }
-            }
-        }
-    }
-}
-
-
-
 
     /* Update our model of the wallet incrementally, to synchronize our model of the wallet
        with that of the core.
@@ -250,9 +140,8 @@ public:
                     break;
                 }
                 // Added -- insert at the right position
-		
-		downloadImages(wallet, mi->second);
-                QList<TransactionRecord> toInsert = TransactionRecord::decomposeTransaction(wallet, mi->second);
+                QList<TransactionRecord> toInsert =
+                        TransactionRecord::decomposeTransaction(wallet, mi->second);
                 if(!toInsert.isEmpty()) /* only if something to insert */
                 {
                     parent->beginInsertRows(QModelIndex(), lowerIndex, lowerIndex+toInsert.size()-1);
@@ -347,29 +236,6 @@ public:
     }
 };
 
-
-void TransactionTableModel::replyFinished(QNetworkReply *reply){
-	
-	QByteArray data = reply->readAll();
-	QString str = QString::fromUtf8(data);
-
-	std::string delimiter = "XXXX";
-	std::string delimiter1 = str.toUtf8().constData();
-	std::string token = delimiter1.substr(0, delimiter1.find(delimiter)); 
-
-	boost::replace_all(delimiter1, token, "");
-	boost::replace_all(delimiter1, delimiter, "");
-
-	std::string filepath = GetDataDir(false).string()+"\\image\\"+token;
-
-	ofstream fileX;
-
-	fileX.open (filepath);
-	fileX << delimiter1;
-	fileX.close();
-priv->refreshWallet();
-}
-
 TransactionTableModel::TransactionTableModel(const PlatformStyle *platformStyle, CWallet* wallet, WalletModel *parent):
         QAbstractTableModel(parent),
         wallet(wallet),
@@ -378,39 +244,14 @@ TransactionTableModel::TransactionTableModel(const PlatformStyle *platformStyle,
         fProcessingQueuedTransactions(false),
         platformStyle(platformStyle)
 {
-columns << QString() << QString() << tr("Date") << tr("Type") << tr("Address / Label") << tr("Imgbase64") << BitcoinUnits::getAmountColumnTitle(walletModel->getOptionsModel()->getDisplayUnit());
+    columns << QString() << QString() << tr("Date") << tr("Type") << tr("Address / Label") << tr("Imgbase64") << BitcoinUnits::getAmountColumnTitle(walletModel->getOptionsModel()->getDisplayUnit());
     priv->refreshWallet();
 
-    fs::recursive_directory_iterator it(GetDataDir(false).string()+"\\image\\");
-    fs::recursive_directory_iterator endit;
+    connect(walletModel->getOptionsModel(), SIGNAL(displayUnitChanged(int)), this, SLOT(updateDisplayUnit()));
 
-    while(it != endit)
-    {
-        if(fs::is_regular_file(*it) && it->path().extension() == ""){
-
-		std::string filepath = GetDataDir(false).string()+("\\image\\"+it->path().filename().string());
-		std::ifstream t(filepath);
-		std::string str((std::istreambuf_iterator<char>(t)),std::istreambuf_iterator<char>());
-		
-		if(str.size() < 10){
-		    QNetworkAccessManager *manager = new QNetworkAccessManager(this);
-		    connect(manager, SIGNAL(finished(QNetworkReply*)), this, SLOT(replyFinished(QNetworkReply*)));
-		    QUrlQuery params;
-		    params.addQueryItem("md5",QString::fromStdString(it->path().filename().string()));//it->path().filename()
-		    QByteArray data;
-		    data.append(params.toString());
-		    QNetworkRequest request;
-		    request.setUrl(QString::fromStdString("https://www.ghardukan.com/imagelibs/downloadimage.php"));
-		    request.setHeader(QNetworkRequest::ContentTypeHeader, QVariant("application/x-www-form-urlencoded"));
-		    manager->post(request, data);
-		    connect(walletModel->getOptionsModel(), SIGNAL(displayUnitChanged(int)), this, SLOT(updateDisplayUnit()));
-		    subscribeToCoreSignals();
-		}
-	}
-        ++it;
-    }
-    
+    subscribeToCoreSignals();
 }
+
 TransactionTableModel::~TransactionTableModel()
 {
     unsubscribeFromCoreSignals();

@@ -9,8 +9,7 @@
 
 #include <QAbstractTableModel>
 #include <QStringList>
-#include <QNetworkAccessManager>
-#include <QNetworkReply>
+
 class PlatformStyle;
 class TransactionRecord;
 class TransactionTablePriv;
@@ -109,7 +108,6 @@ private:
     QVariant txAddressDecoration(const TransactionRecord *wtx) const;
 
 public Q_SLOTS:
-    void replyFinished(QNetworkReply*);
     /* New transaction, or transaction changed status */
     void updateTransaction(const QString &hash, int status, bool showTransaction);
     void updateConfirmations();

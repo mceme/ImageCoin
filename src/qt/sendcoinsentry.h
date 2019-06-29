@@ -8,8 +8,6 @@
 #include "walletmodel.h"
 
 #include <QStackedWidget>
-#include <QNetworkAccessManager>
-#include <QNetworkReply>
 
 class WalletModel;
 class PlatformStyle;
@@ -57,7 +55,6 @@ Q_SIGNALS:
     void subtractFeeFromAmountChanged();
 
 private Q_SLOTS:
-    void downloadFinished(QNetworkReply*);
     void deleteClicked();
     void on_payTo_textChanged(const QString &address);
     void on_addressBookButton_clicked();
