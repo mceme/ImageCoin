@@ -61,3 +61,7 @@ debug.log
 image.wallet.dat
 libbitcoin_server_a*
 cache
+bin/org_bitcoin_NativeSecp256k1.h
+bin/org_bitcoin_NativeSecp256k1.c
+bin/org_bitcoin_NativeSecp256k1.h
+bin/org_bitcoin_NativeSecp256k1.c
