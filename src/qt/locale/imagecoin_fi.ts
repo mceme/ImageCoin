@@ -2982,6 +2982,10 @@ Näillä toiminnoilla voit korjata korruptoituneen lohkoketjun tai puuttuvat/van
         <source>&amp;Label:</source>
         <translation>&amp;Nimi:</translation>
     </message>
+	<message>
+        <source>Image/Video:</source>
+        <translation>Kuva/Video/asiakirja:</translation>
+    </message>
     <message>
         <source>Enter a label for this address to add it to the list of used addresses</source>
         <translation>Aseta nimi tälle osoitteelle lisätäksesi sen käytettyjen osoitteiden listaan</translation>

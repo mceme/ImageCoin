@@ -2388,6 +2388,10 @@ Più URL vengono separati da una barra verticale |.</translation>
         <source>&amp;Label:</source>
         <translation>&amp;Etichetta</translation>
     </message>
+	<message>
+        <source>Image/Video:</source>
+        <translation>Immagine/Video/Doc:</translation>
+    </message>
     <message>
         <source>Enter a label for this address to add it to the list of used addresses</source>
         <translation>Inserisci un'etichetta per questo indirizzo per aggiungerlo alla lista degli indirizzi utilizzati</translation>

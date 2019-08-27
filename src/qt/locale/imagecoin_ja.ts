@@ -1855,6 +1855,10 @@
         <source>&amp;Label:</source>
         <translation>ラベル (&amp;L)：</translation>
     </message>
+	<message>
+        <source>Image/Video:</source>
+        <translation>画像/ビデオ/ドキュメント：</translation>
+    </message>
     <message>
         <source>Enter a label for this address to add it to the list of used addresses</source>
         <translation>このアドレスに対するラベルを入力することで、使用済みアドレスの一覧に追加することができます</translation>

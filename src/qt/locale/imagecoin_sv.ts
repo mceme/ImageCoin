@@ -1945,6 +1945,10 @@ https://www.transifex.com/projects/p/imagecoin/</translation>
         <source>&amp;Label:</source>
         <translation>&amp;Etikett:</translation>
     </message>
+	<message>
+        <source>Image/Video:</source>
+        <translation>Bild/Video/Doc:</translation>
+    </message>
     <message>
         <source>Enter a label for this address to add it to the list of used addresses</source>
         <translation>Ange en etikett för denna adress att läggas till i listan för använda adresser</translation>
@@ -1985,8 +1989,8 @@ https://www.transifex.com/projects/p/imagecoin/</translation>
 <context>
     <name>ShutdownWindow</name>
     <message>
-        <source>imagecoin Core is shutting down...</source>
-        <translation>imagecoin Core stängs ned...</translation>
+        <source>Imagecoin Core is shutting down...</source>
+        <translation>Imagecoin Core stängs ned...</translation>
     </message>
     <message>
         <source>Do not shut down the computer until this window disappears.</source>
@@ -2127,8 +2131,8 @@ https://www.transifex.com/projects/p/imagecoin/</translation>
 <context>
     <name>SplashScreen</name>
     <message>
-        <source>imagecoin Core</source>
-        <translation>imagecoin Core
+        <source>Imagecoin Core</source>
+        <translation>Imagecoin Core
 </translation>
     </message>
     <message>
@@ -2140,8 +2144,8 @@ https://www.transifex.com/projects/p/imagecoin/</translation>
         <translation>Bitcoin Core-utvecklarna</translation>
     </message>
     <message>
-        <source>The imagecoin Core developers</source>
-        <translation>imagecoin Core-utvecklarna</translation>
+        <source>The Imagecoin Core developers</source>
+        <translation>Imagecoin Core-utvecklarna</translation>
     </message>
     <message>
         <source>[testnet]</source>

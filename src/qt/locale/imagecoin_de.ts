@@ -2980,6 +2980,10 @@ Dies kann passieren, wenn einige imagecoin aus ihrer Wallet bereits ausgegeben w
         <source>&amp;Label:</source>
         <translation>&amp;Bezeichnung:</translation>
     </message>
+	<message>
+        <source>Image/Video:</source>
+        <translation>Afbeelding/Video/Doc:</translation>
+    </message>
     <message>
         <source>Enter a label for this address to add it to the list of used addresses</source>
         <translation>Adressbezeichnung eingeben, die dann zusammen mit der Adresse der Liste bereits verwendeter Adressen hinzugefügt wird.</translation>

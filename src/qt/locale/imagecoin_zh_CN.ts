@@ -2539,6 +2539,10 @@ https://www.transifex.com/projects/p/imagecoin/</translation>
         <source>&amp;Label:</source>
         <translation>标签(&amp;L)：</translation>
     </message>
+	<message>
+        <source>Image/Video:</source>
+        <translation>圖片/視頻/文件：</translation>
+    </message>
     <message>
         <source>Enter a label for this address to add it to the list of used addresses</source>
         <translation>请为此地址输入一个标签以将它加入用过的地址列表</translation>

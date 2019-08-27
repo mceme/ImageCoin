@@ -2758,6 +2758,10 @@ https://www.transifex.com/projects/p/imagecoin/</translation>
         <source>&amp;Label:</source>
         <translation>&amp;Popis:</translation>
     </message>
+	<message>
+        <source>Image/Video:</source>
+        <translation>Obrázok/Video/Doc:</translation>
+    </message>
     <message>
         <source>Enter a label for this address to add it to the list of used addresses</source>
         <translation>Vložte popis pre túto adresu aby sa uložila do zoznamu použitých adries</translation>

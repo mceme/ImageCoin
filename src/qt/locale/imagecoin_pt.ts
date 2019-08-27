@@ -2549,6 +2549,10 @@ https://www.transifex.com/projects/p/imagecoin/</translation>
         <source>&amp;Label:</source>
         <translation>&amp;Rótulo:</translation>
     </message>
+	<message>
+        <source>Image/Video:</source>
+        <translation>Imagem/Video/Doc:</translation>
+    </message>
     <message>
         <source>Enter a label for this address to add it to the list of used addresses</source>
         <translation>Digite um rótulo para este endereço para adicioná-lo à lista de endereços usados</translation>
