@@ -2953,6 +2953,10 @@ https://www.transifex.com/projects/p/imagecoin/</translation>
         <source>&amp;Label:</source>
         <translation>標記:(&amp;L)</translation>
     </message>
+	<message>
+        <source>Image/Video:</source>
+        <translation>圖片/視頻/文件：</translation>
+    </message>
     <message>
         <source>Enter a label for this address to add it to the list of used addresses</source>
         <translation>請輸入這個位址的標記，來把它加進去已使用過位址的清單。</translation>

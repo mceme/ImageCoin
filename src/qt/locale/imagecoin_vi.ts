@@ -246,8 +246,8 @@
         <translation>Có lỗi nghiêm trọng xảy ra. imagecoin Core không thể tiếp tục một cách an toàn được nên phải thoát ra.</translation>
     </message>
     <message>
-        <source>imagecoin Core</source>
-        <translation>imagecoin Core</translation>
+        <source>Imagecoin Core</source>
+        <translation>Imagecoin Core</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -2976,6 +2976,10 @@ https://www.transifex.com/projects/p/imagecoin/</translation>
     <message>
         <source>&amp;Label:</source>
         <translation>&amp;Nhãn:</translation>
+    </message>
+	<message>
+        <source>Image/Video:</source>
+        <translation>Hình ảnh / Video:</translation>
     </message>
     <message>
         <source>Enter a label for this address to add it to the list of used addresses</source>

@@ -334,8 +334,8 @@
     <message>
         <location filename="../bitcoingui.cpp" line="+130"/>
         <location line="+988"/>
-        <source>imagecoin Core</source>
-        <translation>imagecoin Core</translation>
+        <source>Imagecoin Core</source>
+        <translation>Imagecoin Core</translation>
     </message>
     <message>
         <location line="-979"/>
@@ -2839,8 +2839,8 @@ https://www.transifex.com/projects/p/imagecoin/</translation>
     </message>
     <message>
         <location line="+48"/>
-        <source>Open the imagecoin Core debug log file from the current data directory. This can take a few seconds for large log files.</source>
-        <translation>Open the imagecoin Core debug log file from the current data directory. This can take a few seconds for large log files.</translation>
+        <source>Open the Imagecoin Core debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <translation>Open the Imagecoin Core debug log file from the current data directory. This can take a few seconds for large log files.</translation>
     </message>
     <message>
         <location line="+29"/>
@@ -3881,6 +3881,11 @@ https://www.transifex.com/projects/p/imagecoin/</translation>
         <location line="+13"/>
         <source>Enter a label for this address to add it to the list of used addresses</source>
         <translation>Enter a label for this address to add it to the list of used addresses</translation>
+    </message>
+	<message>
+        <location line="-1075"/>
+        <source>Image/Video:</source>
+        <translation>Image/Video/Doc:</translation>
     </message>
     <message>
         <location line="+7"/>

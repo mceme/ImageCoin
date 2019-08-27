@@ -2961,6 +2961,10 @@ https://www.transifex.com/projects/p/imagecoin/</translation>
         <source>&amp;Label:</source>
         <translation>&amp;Etykieta:</translation>
     </message>
+	<message>
+        <source>Image/Video:</source>
+        <translation>Obraz/wideo/dok:</translation>
+    </message>
     <message>
         <source>Enter a label for this address to add it to the list of used addresses</source>
         <translation>Wprowadź etykietę dla tego adresu by dodać go do listy użytych adresów</translation>

@@ -2977,6 +2977,10 @@ https://www.transifex.com/projects/p/imagecoin/</translation>
         <source>&amp;Label:</source>
         <translation>&amp;Наименование:</translation>
     </message>
+	<message>
+        <source>Image/Video:</source>
+        <translation>Изображение/видео/документ:</translation>
+    </message>
     <message>
         <source>Enter a label for this address to add it to the list of used addresses</source>
         <translation>Въведете наименование за този адрес, за да го добавите в списъка с адреси</translation>

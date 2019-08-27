@@ -2977,6 +2977,10 @@ https://www.transifex.com/projects/p/imagecoin/</translation>
         <source>&amp;Label:</source>
         <translation>É&amp;tiquette :</translation>
     </message>
+	<message>
+        <source>Image/Video:</source>
+        <translation>Image/Vidéo/Doc:</translation>
+    </message>
     <message>
         <source>Enter a label for this address to add it to the list of used addresses</source>
         <translation>Saisir une étiquette pour cette adresse afin de l'ajouter à la liste d'adresses utilisées</translation>

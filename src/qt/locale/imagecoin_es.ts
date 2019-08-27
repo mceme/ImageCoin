@@ -231,8 +231,8 @@
 <context>
     <name>BitcoinGUI</name>
     <message>
-        <source>imagecoin Core</source>
-        <translation>imagecoin Core</translation>
+        <source>Imagecoin Core</source>
+        <translation>Imagecoin Core</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -1048,16 +1048,16 @@ Dirección: %4
         <translation>Bienvenido</translation>
     </message>
     <message>
-        <source>Welcome to imagecoin Core.</source>
-        <translation>Bienvenido a imagecoin Core</translation>
+        <source>Welcome to Imagecoin Core.</source>
+        <translation>Bienvenido a Imagecoin Core</translation>
     </message>
     <message>
         <source>As this is the first time the program is launched, you can choose where imagecoin Core will store its data.</source>
         <translation>Al ser la primera vez que se ejecuta el programa, puede elegir dónde almacenará sus datos imagecoin Core.</translation>
     </message>
     <message>
-        <source>imagecoin Core will download and store a copy of the imagecoin block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
-        <translation>imagecoin Core va a descargar y guardar una copia de la cadena de bloques de imagecoin. Se almacenará al menos %1GB de datos en este directorio, que irá creciendo con el tiempo. El monedero se guardará también en este directorio.</translation>
+        <source>Imagecoin Core will download and store a copy of the Imagecoin block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
+        <translation>Imagecoin Core va a descargar y guardar una copia de la cadena de bloques de imagecoin. Se almacenará al menos %1GB de datos en este directorio, que irá creciendo con el tiempo. El monedero se guardará también en este directorio.</translation>
     </message>
     <message>
         <source>Use the default data directory</source>
@@ -2549,6 +2549,10 @@ https://www.transifex.com/projects/p/imagecoin/</translation>
     <message>
         <source>Enter a label for this address to add it to the list of used addresses</source>
         <translation>Introduce una etiqueta para esta dirección para añadirla a la lista de direcciones utilizadas</translation>
+    </message>
+	 <message>
+        <source>Image/Video:</source>
+        <translation>Imagen/Video:</translation>
     </message>
     <message>
         <source>A&amp;mount:</source>
