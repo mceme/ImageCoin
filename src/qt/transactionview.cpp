@@ -357,7 +357,7 @@ void TransactionView::changedPrefix(const QString &prefix)
 {
     if(!transactionProxyModel)
         return;
-    transactionProxyModel->setAddressPrefix(prefix);
+    transactionProxyModel->setAddressPrefix(prefix, QString(""));
 }
 
 void TransactionView::changedAmount(const QString &amount)
