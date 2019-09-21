@@ -189,7 +189,7 @@ void ChatEntry::checkaddresstransactions(const QString &address)
 		   transactionView->setColumnWidth(TransactionTableModel::Date, DATE_COLUMN_WIDTH);
 		   transactionView->setColumnWidth(TransactionTableModel::Type, TYPE_COLUMN_WIDTH);
 		   transactionView->setColumnWidth(TransactionTableModel::Imgbase64, TYPE_COLUMN_WIDTH);
-		   transactionView->setColumnWidth(TransactionTableModel::Amount, AMOUNT_MINIMUM_COLUMN_WIDTH);
+		   //transactionView->setColumnWidth(TransactionTableModel::Amount, AMOUNT_MINIMUM_COLUMN_WIDTH);
 		      // Actions
 
 

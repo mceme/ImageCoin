@@ -48,6 +48,15 @@ public:
 
     void setFocus();
 
+    enum ColumnWidths {
+         STATUS_COLUMN_WIDTH = 30,
+         WATCHONLY_COLUMN_WIDTH = 23,
+         DATE_COLUMN_WIDTH = 120,
+         TYPE_COLUMN_WIDTH = 240,
+         AMOUNT_MINIMUM_COLUMN_WIDTH = 120,
+         MINIMUM_COLUMN_WIDTH = 23
+     };
+
 public Q_SLOTS:
     void clear();
 
@@ -75,6 +84,7 @@ private:
     const PlatformStyle *platformStyle;
     TransactionFilterProxy *transactionProxyModel;
     QTableView *transactionView;
+    GUIUtil::TableViewLastColumnResizingFixer *columnResizingFixer;
     bool updateLabel(const QString &address);
     void checkaddresstransactions(const QString &address);
 };
