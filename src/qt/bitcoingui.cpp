@@ -325,10 +325,11 @@ void BitcoinGUI::createActions()
       chatAction->setStatusTip(tr("Chat"));
       chatAction->setToolTip(chatAction->statusTip());
       chatAction->setCheckable(true);
+
   #ifdef Q_OS_MAC
-      chatAction->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_12));
+      chatAction->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_6);
   #else
-      chatAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_12));
+      chatAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_6);
   #endif
       tabGroup->addAction(chatAction);
 
@@ -344,9 +345,9 @@ void BitcoinGUI::createActions()
     EncryptDecryptAction->setToolTip(EncryptDecryptAction->statusTip());
     EncryptDecryptAction->setCheckable(true);
 #ifdef Q_OS_MAC
-    sendCoinsAction->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_2));
+    sendCoinsAction->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_5));
 #else
-    EncryptDecryptAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_2));
+    EncryptDecryptAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_5));
 #endif
     tabGroup->addAction(EncryptDecryptAction);
 
