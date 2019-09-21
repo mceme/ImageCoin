@@ -210,9 +210,6 @@ void ChatEntry::checkaddresstransactions(const QString &address)
 		          // Watch-only signal
 		         // connect(model, SIGNAL(notifyWatchonlyChanged(bool)), this, SLOT(updateWatchOnlyColumn(bool)));
 
-		          // Update transaction list with persisted settings
-		          chooseType(settings.value("transactionType").toInt());
-		          chooseDate(settings.value("transactionDate").toInt());
 
 	    }
 }
@@ -237,7 +234,7 @@ void ChatEntry::clear()
     ui->Imgbase64Edit->clear();
     ui->Imgbase64Edit->setEnabled(1);
     fileselected=false;
-    ui->checkboxSubtractFeeFromAmount->setCheckState(Qt::Unchecked);
+    //ui->checkboxSubtractFeeFromAmount->setCheckState(Qt::Unchecked);
     ui->messageTextLabel->clear();
     ui->messageTextLabel->hide();
     ui->messageLabel->hide();
