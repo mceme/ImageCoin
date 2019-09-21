@@ -54,7 +54,7 @@ ChatDialog::ChatDialog(const PlatformStyle *platformStyle, QWidget *parent) :
 
     }
 
-    GUIUtil::setupAddressWidget(ui->lineEditCoinControlChange, this);
+   // GUIUtil::setupAddressWidget(ui->lineEditCoinControlChange, this);
 
     addEntry();
 
@@ -67,9 +67,9 @@ ChatDialog::ChatDialog(const PlatformStyle *platformStyle, QWidget *parent) :
    // connect(ui->lineEditCoinControlChange, SIGNAL(textEdited(const QString &)), this, SLOT(coinControlChangeEdited(const QString &)));
 
     // Dash specific
-//    QSettings settings;
-//    if (!settings.contains("bUseDarkSend"))
-//        settings.setValue("bUseDarkSend", false);
+    QSettings settings;
+    if (!settings.contains("bUseDarkSend"))
+         settings.setValue("bUseDarkSend", false);
     if (!settings.contains("bUseInstantX"))
         settings.setValue("bUseInstantX", false);
 //
@@ -89,7 +89,7 @@ ChatDialog::ChatDialog(const PlatformStyle *platformStyle, QWidget *parent) :
 //        CoinControlDialog::coinControl->fUseInstantSend = fUseInstantSend;
    }
 //
-//    connect(ui->checkUsePrivateSend, SIGNAL(stateChanged ( int )), this, SLOT(updateDisplayUnit()));
+      connect(ui->checkUsePrivateSend, SIGNAL(stateChanged ( int )), this, SLOT(updateDisplayUnit()));
       connect(ui->checkUseInstantSend, SIGNAL(stateChanged ( int )), this, SLOT(updateInstantSend()));
 //
 //    // Coin Control: clipboard actions
