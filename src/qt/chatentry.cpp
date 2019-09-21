@@ -9,6 +9,7 @@
 #include "addressbookpage.h"
 #include "addresstablemodel.h"
 #include "transactionfilterproxy.h"
+#include "transactiontablemodel.h"
 #include "guiutil.h"
 #include "optionsmodel.h"
 #include "platformstyle.h"
@@ -219,13 +220,11 @@ void ChatEntry::checkaddresstransactions(const QString &address)
 
 		          // show/hide column Watch-only
 
-		          transactionView->setColumnHidden(1, true); //Watchonly
+		          transactionView->setColumnHidden(TransactionTableModel::Watchonly, true); //Watchonly
 
-		          transactionView->setColumnHidden(3, true); //Type
+		          transactionView->setColumnHidden(TransactionTableModel::ToAddress, true); //To address
 
-		          transactionView->setColumnHidden(4, true); //To address
-
-		          transactionView->setColumnHidden(6, true); // Amount
+		          transactionView->setColumnHidden(TransactionTableModel::Amount, true); // Amount
 
 		          // Watch-only signal
 		         // connect(model, SIGNAL(notifyWatchonlyChanged(bool)), this, SLOT(updateWatchOnlyColumn(bool)));
