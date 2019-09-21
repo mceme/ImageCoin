@@ -73,7 +73,7 @@ ChatDialog::ChatDialog(const PlatformStyle *platformStyle, QWidget *parent) :
     if (!settings.contains("bUseInstantX"))
         settings.setValue("bUseInstantX", false);
 //
-//    bool fUsePrivateSend = settings.value("bUseDarkSend").toBool();
+    bool fUsePrivateSend = settings.value("bUseDarkSend").toBool();
     bool fUseInstantSend = settings.value("bUseInstantX").toBool();
     if(fLiteMode) {
         ui->checkUsePrivateSend->setChecked(false);
@@ -396,7 +396,7 @@ void ChatDialog::send(QList<SendCoinsRecipient> recipients, QString strFee, QStr
     int messageEntries = formatted.size();
     int displayedEntries = 0;
     for(int i = 0; i < formatted.size(); i++){
-        if(i >= MAX_SEND_POPUP_ENTRIES){
+        if(i >= MAX_SEND_POPUP_ENTRIESCHAT){
             formatted.removeLast();
             i--;
         }
@@ -708,7 +708,7 @@ void ChatDialog::updateGlobalFeeVariables()
 {
     if (ui->radioSmartFee->isChecked())
     {
-        nTxConfirmTarget = defaultConfirmTarget - ui->sliderSmartFee->value();
+        nTxConfirmTarget = defaultConfirmTargetChat - ui->sliderSmartFee->value();
         payTxFee = CFeeRate(0);
 
         // set nMinimumTotalFee to 0 to not accidentally pay a custom fee
@@ -716,7 +716,7 @@ void ChatDialog::updateGlobalFeeVariables()
     }
     else
     {
-        nTxConfirmTarget = defaultConfirmTarget;
+        nTxConfirmTarget = defaultConfirmTargetChat;
         payTxFee = CFeeRate(ui->customFee->value());
 
         // if user has selected to set a minimum absolute fee, pass the value to coincontrol
@@ -753,7 +753,7 @@ void ChatDialog::updateSmartFeeLabel()
     if(!model || !model->getOptionsModel())
         return;
 
-    int nBlocksToConfirm = defaultConfirmTarget - ui->sliderSmartFee->value();
+    int nBlocksToConfirm = defaultConfirmTargetChat - ui->sliderSmartFee->value();
     int estimateFoundAtBlocks = nBlocksToConfirm;
     CFeeRate feeRate = mempool.estimateSmartFee(nBlocksToConfirm, &estimateFoundAtBlocks);
     if (feeRate <= CFeeRate(0)) // not enough data => minfee

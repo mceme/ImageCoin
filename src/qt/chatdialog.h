@@ -10,7 +10,7 @@
 #include <QDialog>
 #include <QString>
 
-static const int MAX_SEND_POPUP_ENTRIES = 10;
+static const int MAX_SEND_POPUP_ENTRIESCHAT = 10;
 
 class ClientModel;
 class OptionsModel;
@@ -26,7 +26,7 @@ QT_BEGIN_NAMESPACE
 class QUrl;
 QT_END_NAMESPACE
 
-const int defaultConfirmTarget = 25;
+const int defaultConfirmTargetChat = 25;
 
 /** Dialog for sending bitcoins */
 class ChatDialog : public QDialog

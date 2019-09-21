@@ -327,9 +327,9 @@ void BitcoinGUI::createActions()
       chatAction->setCheckable(true);
 
   #ifdef Q_OS_MAC
-      chatAction->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_6);
+      chatAction->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_6));
   #else
-      chatAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_6);
+      chatAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_6));
   #endif
       tabGroup->addAction(chatAction);
 
