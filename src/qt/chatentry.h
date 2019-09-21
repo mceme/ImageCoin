@@ -7,7 +7,7 @@
 #define BITCOIN_QT_CHATENTRY_H
 
 #include "walletmodel.h"
-
+#include "guiutil.h"
 #include <QStackedWidget>
 
 class WalletModel;
