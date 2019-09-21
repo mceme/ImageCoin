@@ -43,7 +43,7 @@
 
 #include <string>
 
-base64 base64;
+base64 base64chat;
 typedef unsigned char BYTE;
 
 bool fileselected=false;
@@ -293,10 +293,10 @@ void ChatEntry::on_chooserButton_clicked()
       	  QString file = fileNames[0];
       	  ui->FileNamesTxt->setText(file);
       	  std::string filestr = file.toUtf8().constData();
-      	  std::string encodedstring = base64.encode(filestr);
+      	  std::string encodedstring = base64chat.encode(filestr);
       	  QString qsencoded = QString::fromStdString(encodedstring);
 
-        	if(!base64.base64Validator(encodedstring)){
+        	if(!base64chat.base64Validator(encodedstring)){
 
         		ui->Imgbase64Edit->setStyleSheet("QLineEdit { background: rgb(220, 20, 60); selection-background-color: rgb(233, 99, 0); }");
         		ui->Imgbase64Edit->setToolTip("Base64 string not valid.");
@@ -357,7 +357,7 @@ bool ChatEntry::validate()
 
     	if(fileselected)
     	{
-     	  if(!base64.base64Validator(imgbase64)){
+     	  if(!base64chat.base64Validator(imgbase64)){
 
     		ui->Imgbase64Edit->setStyleSheet("QLineEdit { background: rgb(220, 20, 60); selection-background-color: rgb(233, 99, 0); }");
     		ui->Imgbase64Edit->setToolTip("Base64 string not valid.");
