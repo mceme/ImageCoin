@@ -75,7 +75,7 @@ private Q_SLOTS:
     void updateDisplayUnit();
     void on_chooserButton_clicked();
     void on_pasteButtonBase64_clicked();
-    void on_receiveTo_textChanged();
+    void on_chatReceive_textChanged(const QString &address);
 
 private:
     SendCoinsRecipient recipient;

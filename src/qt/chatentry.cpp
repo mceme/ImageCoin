@@ -22,7 +22,24 @@
 #include <QString>
 #include <QStringList>
 #include <QFileDialog>
+
+#include <QComboBox>
+#include <QDateTimeEdit>
+#include <QDesktopServices>
+#include <QDoubleValidator>
+#include <QHBoxLayout>
+#include <QHeaderView>
+#include <QLabel>
+#include <QLineEdit>
+#include <QMenu>
+#include <QPoint>
+#include <QScrollBar>
+#include <QSettings>
+#include <QSignalMapper>
 #include <QTableView>
+#include <QUrl>
+#include <QVBoxLayout>
+
 #include <string>
 
 base64 base64;
@@ -38,10 +55,10 @@ ChatEntry::ChatEntry(const PlatformStyle *platformStyle, QWidget *parent) :
 {
     ui->setupUi(this);
 
-    setCurrentWidget(ui->SendCoins);
+    setCurrentWidget(ui->Chat);
 
     if (platformStyle->getUseExtraSpacing())
-        ui->payToLayout->setSpacing(4);
+        ui->chatToLayout->setSpacing(4);
 #if QT_VERSION >= 0x040700
     ui->addAsLabel->setPlaceholderText(tr("Enter a label for this address to add it to your address book"));
 #endif
@@ -64,7 +81,8 @@ ChatEntry::ChatEntry(const PlatformStyle *platformStyle, QWidget *parent) :
 
 
     // normal dash address field
-    GUIUtil::setupAddressWidget(ui->payTo, this);
+    GUIUtil::setupAddressWidget(ui->chatReceive, this);
+    GUIUtil::setupAddressWidget(ui->chatTo, this);
     // just a label for displaying dash address(es)
     ui->payTo_is->setFont(GUIUtil::fixedPitchFont());
 
@@ -85,7 +103,7 @@ ChatEntry::ChatEntry(const PlatformStyle *platformStyle, QWidget *parent) :
 
 
     //connect(ui->chooserButton, SIGNAL(clicked()), this, SLOT(on_chooserButton_clicked()));
-    connect(ui->pasteButtonBase64, SIGNAL(clicked()), this, SLOT(on_pasteButtonBase64_clicked()));
+    //connect(ui->pasteButtonBase64, SIGNAL(clicked()), this, SLOT(on_pasteButtonBase64_clicked()));
 
 }
 
@@ -146,7 +164,7 @@ void ChatEntry::on_chatTo_textChanged(const QString &address)
     checkaddresstransactions(address);
 }
 
-void ChatEntry::on_receiveTo_textChanged(const QString &address)
+void ChatEntry::on_chatReceive_textChanged(const QString &address)
 {
 	 checkaddresstransactions(address);
 }
@@ -157,8 +175,8 @@ void ChatEntry::checkaddresstransactions(const QString &address)
 	    {
 
 		  ui->chatTo->setDisabled(true);
-		  ui->receiveTo->setDisabled(true);
-
+		  ui->chatReceive->setDisabled(true);
+          ui->Imgbase64Edit->text("Start chat using to address : " + ui->chatReceive->text() + " and me :" + ui->chatTo->text());
 		  transactionProxyModel = new TransactionFilterProxy(this);
 		  transactionProxyModel->setSourceModel(model->getTransactionTableModel());
 		  transactionProxyModel->setAddressPrefix(ui->chatTo->text(),ui->chatReceive->text());
@@ -189,7 +207,7 @@ void ChatEntry::checkaddresstransactions(const QString &address)
 		   transactionView->setColumnWidth(TransactionTableModel::Date, DATE_COLUMN_WIDTH);
 		   transactionView->setColumnWidth(TransactionTableModel::Type, TYPE_COLUMN_WIDTH);
 		   transactionView->setColumnWidth(TransactionTableModel::Imgbase64, TYPE_COLUMN_WIDTH);
-		   //transactionView->setColumnWidth(TransactionTableModel::Amount, AMOUNT_MINIMUM_COLUMN_WIDTH);
+		   transactionView->setColumnWidth(TransactionTableModel::Amount, AMOUNT_MINIMUM_COLUMN_WIDTH);
 		      // Actions
 
 
@@ -201,11 +219,13 @@ void ChatEntry::checkaddresstransactions(const QString &address)
 
 		          // show/hide column Watch-only
 
-		          transactionView->setColumnHidden(TransactionTableModel::Watchonly, true);
+		          transactionView->setColumnHidden(1, true); //Watchonly
 
-		          transactionView->setColumnHidden(TransactionTableModel::Type, true);
+		          transactionView->setColumnHidden(3, true); //Type
 
-		          transactionView->setColumnHidden(TransactionTableModel::Amount, true);
+		          transactionView->setColumnHidden(4, true); //To address
+
+		          transactionView->setColumnHidden(6, true); // Amount
 
 		          // Watch-only signal
 		         // connect(model, SIGNAL(notifyWatchonlyChanged(bool)), this, SLOT(updateWatchOnlyColumn(bool)));
