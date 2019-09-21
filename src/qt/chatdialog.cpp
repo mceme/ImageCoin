@@ -450,12 +450,12 @@ void ChatDialog::clear()
 
 void ChatDialog::reject()
 {
-    clear();
+   // clear();
 }
 
 void ChatDialog::accept()
 {
-    clear();
+   // clear();
 }
 
 ChatEntry *ChatDialog::addEntry()
