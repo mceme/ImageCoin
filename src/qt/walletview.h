@@ -16,6 +16,7 @@ class OverviewPage;
 class PlatformStyle;
 class ReceiveCoinsDialog;
 class SendCoinsDialog;
+class ChatDialog;
 class EncryptDecryptDialog;
 class WebWindow;
 class SendCoinsRecipient;
@@ -66,6 +67,9 @@ private:
     QWidget *transactionsPage;
     ReceiveCoinsDialog *receiveCoinsPage;
     SendCoinsDialog *sendCoinsPage;
+
+    ChatDialog *ChatPage;
+
     EncryptDecryptDialog *EncryptDecryptPage;
 
     WebWindow *WebWindowPage;
@@ -92,9 +96,11 @@ public Q_SLOTS:
     /** Switch to send coins page */
     void gotoSendCoinsPage(QString addr = "",QString imgbase64 = "");
 
-    /** Switch to send coins page */
-    void gotoEncryptDecryptPage();
+    /** Switch to chat page */
+    void gotoChatPage();
 
+    /** Switch to encryt page */
+    void gotoEncryptDecryptPage();
 
     void gotoWebWindowPage();
 

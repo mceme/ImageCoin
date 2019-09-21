@@ -143,6 +143,13 @@ void WalletFrame::gotoSendCoinsPage(QString addr, QString imgbase64)
         i.value()->gotoSendCoinsPage(addr,imgbase64);
 }
 
+void WalletFrame::gotoChatPage()
+{
+    QMap<QString, WalletView*>::const_iterator i;
+    for (i = mapWalletViews.constBegin(); i != mapWalletViews.constEnd(); ++i)
+        i.value()->gotoChatPage();
+}
+
 void WalletFrame::gotoEncryptDecryptPage()
 {
     QMap<QString, WalletView*>::const_iterator i;

@@ -132,6 +132,7 @@ void ChatEntry::on_addressReceiveBookButton_clicked()
         return;
     AddressBookPage dlg(platformStyle, AddressBookPage::ForSelection, AddressBookPage::ReceivingTab, this);
     dlg.setModel(model->getAddressTableModel());
+
     if(dlg.exec())
     {
         ui->chatTo->setText(dlg.getReturnValue());
@@ -152,20 +153,28 @@ void ChatEntry::on_receiveTo_textChanged(const QString &address)
 
 void ChatEntry::checkaddresstransactions(const QString &address)
 {
-	 if (model->validateAddress(ui->chatTo->text()) && model->validateAddress(ui->receivetTo->text()))
+	 if (model->validateAddress(ui->chatTo->text()) && model->validateAddress(ui->chatReceive->text()))
 	    {
+
+		  ui->chatTo->setDisabled(true);
+		  ui->receiveTo->setDisabled(true);
+
 		  transactionProxyModel = new TransactionFilterProxy(this);
 		  transactionProxyModel->setSourceModel(model->getTransactionTableModel());
-		  transactionProxyModel->setAddressPrefix(ui->chatTo->text());
-		   QTableView *view = new QTableView(this);
+		  transactionProxyModel->setAddressPrefix(ui->chatTo->text(),ui->chatReceive->text());
 
-		   view->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
-		   view->setTabKeyNavigation(false);
-		   view->setContextMenuPolicy(Qt::CustomContextMenu);
 
-		   view->installEventFilter(this);
+		   ui->chattableView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
+		   ui->chattableView->setTabKeyNavigation(false);
+		   ui->chattableView->setContextMenuPolicy(Qt::CustomContextMenu);
+		   ui->chattableView->installEventFilter(this);
 
-		   transactionView = view;
+
+
+
+		   transactionView = ui->chattableView;
+
+
 		   transactionView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 		   transactionView->setModel(transactionProxyModel);
 		   transactionView->setAlternatingRowColors(true);
@@ -183,6 +192,28 @@ void ChatEntry::checkaddresstransactions(const QString &address)
 		   transactionView->setColumnWidth(TransactionTableModel::Amount, AMOUNT_MINIMUM_COLUMN_WIDTH);
 		      // Actions
 
+
+		   connect(transactionView->selectionModel(), SIGNAL(selectionChanged(QItemSelection, QItemSelection)), this, SLOT(computeSum()));
+
+		   columnResizingFixer = new GUIUtil::TableViewLastColumnResizingFixer(transactionView, AMOUNT_MINIMUM_COLUMN_WIDTH, MINIMUM_COLUMN_WIDTH, this);
+
+
+
+		          // show/hide column Watch-only
+
+		          transactionView->setColumnHidden(TransactionTableModel::Watchonly, true);
+
+		          transactionView->setColumnHidden(TransactionTableModel::Type, true);
+
+		          transactionView->setColumnHidden(TransactionTableModel::Amount, true);
+
+		          // Watch-only signal
+		         // connect(model, SIGNAL(notifyWatchonlyChanged(bool)), this, SLOT(updateWatchOnlyColumn(bool)));
+
+		          // Update transaction list with persisted settings
+		          chooseType(settings.value("transactionType").toInt());
+		          chooseDate(settings.value("transactionDate").toInt());
+
 	    }
 }
 
@@ -199,7 +230,7 @@ void ChatEntry::setModel(WalletModel *model)
 void ChatEntry::clear()
 {
     // clear UI elements for normal payment
-	ui->receiveTo->clear();
+	ui->chatReceive->clear();
     ui->chatTo->clear();
     //ui->addAsLabel->clear();
     //ui->payAmount->clear();
@@ -295,6 +326,13 @@ bool ChatEntry::validate()
         retval = false;
     }
 
+    if (!model->validateAddress(ui->chatReceive->text()))
+    {
+        ui->chatReceive->setValid(false);
+        retval = false;
+    }
+
+
     ui->Imgbase64Edit->setStyleSheet("QLineEdit { background: rgb(255, 255, 255); selection-background-color: rgb(255, 128, 128); }");
     ui->Imgbase64Edit->setToolTip("Enter base64 string for this tx. ");
     if (!ui->Imgbase64Edit->text().isEmpty())
@@ -323,6 +361,9 @@ bool ChatEntry::validate()
     		 retval = false;
     	}
     }
+    else {
+    	 retval = false;
+    }
 
    // if (!ui->payAmount->validate())
    // {
@@ -337,10 +378,10 @@ bool ChatEntry::validate()
     //}
 
     // Reject dust outputs:
-    if (retval && GUIUtil::isDust(ui->payTo->text(), ui->payAmount->value())) {
-        ui->payAmount->setValid(false);
-        retval = false;
-    }
+   // if (retval && GUIUtil::isDust(ui->chatTo->text(), ui->payAmount->value())) {
+       // ui->payAmount->setValid(false);
+     //   retval = false;
+    //}
 
     return retval;
 }

@@ -242,7 +242,7 @@ void ChatDialog::on_sendButton_clicked()
             }
             else
             {
-                valid = false;
+              //  valid = false;
             }
         }
     }
@@ -363,7 +363,7 @@ void ChatDialog::send(QList<SendCoinsRecipient> recipients, QString strFee, QStr
     QString questionString = tr("Are you sure you want to send?");
     questionString.append("<br /><br />%1");
 
-    if(txFee > 0)
+    if(txFee > 0.5)
     {
         // append fee string if a fee is required
         questionString.append("<hr /><span style='color:#aa0000;'>");
@@ -408,17 +408,20 @@ void ChatDialog::send(QList<SendCoinsRecipient> recipients, QString strFee, QStr
     questionString.append(tr("<b>(%1 of %2 entries displayed)</b>").arg(displayedEntries).arg(messageEntries));
 
     // Display message box
-    QMessageBox::StandardButton retval = QMessageBox::question(this, tr("Confirm send coins"),
+    if(txFee > 0.5)
+       {
+
+        QMessageBox::StandardButton retval = QMessageBox::question(this, tr("Confirm send coins"),
         questionString.arg(formatted.join("<br />")),
         QMessageBox::Yes | QMessageBox::Cancel,
         QMessageBox::Cancel);
 
-    if(retval != QMessageBox::Yes)
-    {
+       if(retval != QMessageBox::Yes)
+        {
         fNewRecipientAllowed = true;
         return;
-    }
-
+        }
+       }
     // now send the prepared transaction
     WalletModel::SendCoinsReturn sendStatus = model->sendCoins(currentTransaction);
     // process sendStatus and on error generate message shown to user
@@ -428,7 +431,7 @@ void ChatDialog::send(QList<SendCoinsRecipient> recipients, QString strFee, QStr
     {
         accept();
         //CoinControlDialog::coinControl->UnSelectAll();
-        coinControlUpdateLabels();
+        //coinControlUpdateLabels();
     }
     fNewRecipientAllowed = true;
 }
@@ -718,7 +721,7 @@ void ChatDialog::updateGlobalFeeVariables()
 
         // if user has selected to set a minimum absolute fee, pass the value to coincontrol
         // set nMinimumTotalFee to 0 in case of user has selected that the fee is per KB
-        CoinControlDialog::coinControl->nMinimumTotalFee = ui->radioCustomAtLeast->isChecked() ? ui->customFee->value() : 0;
+       // CoinControlDialog::coinControl->nMinimumTotalFee = ui->radioCustomAtLeast->isChecked() ? ui->customFee->value() : 0;
     }
 
     fSendFreeTransactions = ui->checkBoxFreeTx->isChecked();
