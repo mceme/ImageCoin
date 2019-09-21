@@ -175,7 +175,7 @@ void ChatEntry::checkaddresstransactions(const QString &address)
 
 		  ui->chatTo->setDisabled(true);
 		  ui->chatReceive->setDisabled(true);
-          ui->Imgbase64Edit->text("Start chat using to address : " + ui->chatReceive->text() + " and me :" + ui->chatTo->text());
+          ui->Imgbase64Edit->setText("Start chat using to address : " + ui->chatReceive->text() + " and me :" + ui->chatTo->text());
 		  transactionProxyModel = new TransactionFilterProxy(this);
 		  transactionProxyModel->setSourceModel(model->getTransactionTableModel());
 		  transactionProxyModel->setAddressPrefix(ui->chatTo->text(),ui->chatReceive->text());
