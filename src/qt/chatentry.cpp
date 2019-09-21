@@ -60,9 +60,7 @@ ChatEntry::ChatEntry(const PlatformStyle *platformStyle, QWidget *parent) :
 
     if (platformStyle->getUseExtraSpacing())
         ui->chatToLayout->setSpacing(4);
-#if QT_VERSION >= 0x040700
-    ui->addAsLabel->setPlaceholderText(tr("Enter a label for this address to add it to your address book"));
-#endif
+
 
     QString theme = GUIUtil::getThemeName();
 
@@ -72,7 +70,7 @@ ChatEntry::ChatEntry(const PlatformStyle *platformStyle, QWidget *parent) :
     ui->deleteButton->setIcon(QIcon(":/icons/" + theme + "/remove"));
     ui->deleteButton_is->setIcon(QIcon(":/icons/" + theme + "/remove"));
     ui->deleteButton_s->setIcon(QIcon(":/icons/" + theme + "/remove"));
-    ui->pasteButtonBase64->setIcon(QIcon(":/icons/" + theme + "/editpaste"));
+    //ui->pasteButtonBase64->setIcon(QIcon(":/icons/" + theme + "/editpaste"));
     ui->Imgbase64Edit->setMaxLength(10000000);
 
     //receive address icons
@@ -154,7 +152,7 @@ void ChatEntry::on_addressReceiveBookButton_clicked()
 
     if(dlg.exec())
     {
-        ui->chatTo->setText(dlg.getReturnValue());
+        ui->chatReceive->setText(dlg.getReturnValue());
         //ui->payAmount->setFocus();
     }
 }
