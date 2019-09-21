@@ -46,7 +46,7 @@
 base64 base64chat;
 typedef unsigned char BYTE;
 
-bool fileselectedchatchat=false;
+bool fileselectedchat=false;
 
 ChatEntry::ChatEntry(const PlatformStyle *platformStyle, QWidget *parent) :
     QStackedWidget(parent),

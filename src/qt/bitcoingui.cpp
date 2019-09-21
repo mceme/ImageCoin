@@ -314,7 +314,7 @@ void BitcoinGUI::createActions()
 #endif
     tabGroup->addAction(sendCoinsAction);
 
-    sendCoinsMenuAction = new QAction(QIcon(":/icons/" + theme + "/send"), sendCoinsAction->text(), this);
+	sendCoinsMenuAction = new QAction(QIcon(":/icons/" + theme + "/send"), sendCoinsAction->text(), this);
     sendCoinsMenuAction->setStatusTip(sendCoinsAction->statusTip());
     sendCoinsMenuAction->setToolTip(sendCoinsMenuAction->statusTip());
 
@@ -649,6 +649,7 @@ void BitcoinGUI::createToolBars()
         {
             toolbar->addAction(masternodeAction);
         }
+        toolbar->addAction(chatAction);
         toolbar->addAction(EncryptDecryptAction);
         //toolbar->addAction(WebWindowAction);
         toolbar->setMovable(false); // remove unused icon in upper left corner
@@ -790,6 +791,8 @@ void BitcoinGUI::setWalletActionsEnabled(bool enabled)
     sendCoinsMenuAction->setEnabled(enabled);
     EncryptDecryptAction->setEnabled(enabled);
     EncryptDecryptMenuAction->setEnabled(enabled);
+    chatAction->setEnabled(enabled);
+    chatMenuAction->setEnabled(enabled);
     //WebWindowAction->setEnabled(enabled);
     //WebWindowMenuAction->setEnabled(enabled);
     receiveCoinsAction->setEnabled(enabled);
@@ -988,7 +991,7 @@ void BitcoinGUI::gotoSendCoinsPage(QString addr,QString imgbase64)
 
 void BitcoinGUI::gotoChatPage()
 {
-	//WebWindowAction->setChecked(true);
+	chatAction->setChecked(true);
     if (walletFrame) walletFrame->gotoChatPage();
 }
 
