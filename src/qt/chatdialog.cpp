@@ -515,7 +515,7 @@ QWidget *ChatDialog::setupTabChain(QWidget *prev)
     return ui->addButton;
 }
 
-void SendCoinsDialog::setAddress(const QString &address, QString imgbase64)
+void ChatDialog::setAddress(const QString &address, QString imgbase64)
 {
     ChatEntry *entry = 0;
     // Replace the first entry if it is still unused
