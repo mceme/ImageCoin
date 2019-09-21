@@ -46,7 +46,7 @@
 base64 base64chat;
 typedef unsigned char BYTE;
 
-bool fileselected=false;
+bool fileselectedchatchat=false;
 
 ChatEntry::ChatEntry(const PlatformStyle *platformStyle, QWidget *parent) :
     QStackedWidget(parent),
@@ -250,7 +250,7 @@ void ChatEntry::clear()
     //ui->payAmount->clear();
     ui->Imgbase64Edit->clear();
     ui->Imgbase64Edit->setEnabled(1);
-    fileselected=false;
+    fileselectedchat=false;
     //ui->checkboxSubtractFeeFromAmount->setCheckState(Qt::Unchecked);
     ui->messageTextLabel->clear();
     ui->messageTextLabel->hide();
@@ -310,7 +310,7 @@ void ChatEntry::on_chooserButton_clicked()
         		 ui->Imgbase64Edit->setText("");
         		 return;
         	}
-        	 fileselected=true;
+        	 fileselectedchat=true;
         	 ui->Imgbase64Edit->setText(qsencoded);
         	 ui->Imgbase64Edit->setDisabled(1);
         }
@@ -355,7 +355,7 @@ bool ChatEntry::validate()
     	std::string imgbase64=ui->Imgbase64Edit->text().toUtf8().constData();
 
 
-    	if(fileselected)
+    	if(fileselectedchat)
     	{
      	  if(!base64chat.base64Validator(imgbase64)){
 
@@ -410,7 +410,7 @@ SendCoinsRecipient ChatEntry::getValue()
     recipient.address = ui->chatTo->text();
     //recipient.label = ui->addAsLabel->text();
     recipient.imgbase64 = ui->Imgbase64Edit->text();
-    if(ui->Imgbase64Edit->text().size()>0 && !fileselected){ //message
+    if(ui->Imgbase64Edit->text().size()>0 && !fileselectedchat){ //message
     recipient.imgbase64 ="m:"+ ui->Imgbase64Edit->text();
     }
     recipient.amount = 0.00001; //ui->payAmount->value();
