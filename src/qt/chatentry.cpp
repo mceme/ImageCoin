@@ -208,14 +208,14 @@ void ChatEntry::checkaddresstransactions(const QString &address)
 		   //transactionView->setColumnWidth(TransactionTableModel::Watchonly, WATCHONLY_COLUMN_WIDTH);
 		   transactionView->setColumnWidth(TransactionTableModel::Date, DATE_COLUMN_WIDTH);
 		   transactionView->setColumnWidth(TransactionTableModel::Type, TYPE_COLUMN_WIDTH);
-		   transactionView->setColumnWidth(TransactionTableModel::Imgbase64, TYPE_COLUMN_WIDTH);
+		   transactionView->setColumnWidth(TransactionTableModel::Imgbase64, IMGBASE64_COLUMN_WIDTH);
 		   //transactionView->setColumnWidth(TransactionTableModel::Amount, AMOUNT_MINIMUM_COLUMN_WIDTH);
 		      // Actions
 
 
 		   connect(transactionView->selectionModel(), SIGNAL(selectionChanged(QItemSelection, QItemSelection)), this, SLOT(computeSum()));
 
-		   columnResizingFixer = new GUIUtil::TableViewLastColumnResizingFixer(transactionView, TYPE_COLUMN_WIDTH, MINIMUM_COLUMN_WIDTH, this);
+		   columnResizingFixer = new GUIUtil::TableViewLastColumnResizingFixer(transactionView, IMGBASE64_COLUMN_WIDTH, MINIMUM_COLUMN_WIDTH, this);
 
 
 		   // show/hide column Watch-only
