@@ -79,7 +79,7 @@ ChatEntry::ChatEntry(const PlatformStyle *platformStyle, QWidget *parent) :
      ui->pasteReceiveButton->setIcon(QIcon(":/icons/" + theme + "/editpaste"));
 
 
-     ui->payAmount->setValue(0.0001);
+     ui->payAmount->setValue(0,0001);
     // ui->payAmount->setVisible(false);
 
     // normal dash address field
@@ -175,7 +175,7 @@ void ChatEntry::checkaddresstransactions(const QString &address)
 {
 	 if (model->validateAddress(ui->chatTo->text()) && model->validateAddress(ui->chatReceive->text()))
 	    {
-
+		  ui->payAmount->setValue(0,0001);
 		  ui->chatTo->setDisabled(true);
 		  ui->chatReceive->setDisabled(true);
           ui->Imgbase64Edit->setText("Start chat using to address : " + ui->chatReceive->text() + " and me :" + ui->chatTo->text());
