@@ -52,7 +52,7 @@
            <x>0</x>
            <y>0</y>
            <width>649</width>
-           <height>183</height>
+           <height>200</height>
           </rect>
          </property>
          <widget class="QTableView" name="chattableView">
@@ -61,8 +61,14 @@
             <x>-5</x>
             <y>0</y>
             <width>661</width>
-            <height>201</height>
+            <height>400</height>
            </rect>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>600</width>
+            <height>400</height>
+           </size>
           </property>
          </widget>
         </widget>
@@ -321,9 +327,6 @@
         <property name="enabled">
          <bool>false</bool>
         </property>
-        <property name="visibled">
-         <bool>false</bool>
-        </property>
        </widget>
       </item>
       <item>
@@ -331,7 +334,7 @@
         <property name="enabled">
          <bool>false</bool>
         </property>
-        <property name="visibled">
+        <property name="visible">
          <bool>false</bool>
         </property>
         <property name="toolTip">

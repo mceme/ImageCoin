@@ -80,7 +80,7 @@ ChatEntry::ChatEntry(const PlatformStyle *platformStyle, QWidget *parent) :
 
 
      ui->payAmount->setValue(0.0001);
-     ui->payAmount->setVisible(false);
+    // ui->payAmount->setVisible(false);
 
     // normal dash address field
     GUIUtil::setupAddressWidget(ui->chatReceive, this);
@@ -386,7 +386,7 @@ bool ChatEntry::validate()
         retval = false;
     }
 
-    Sending a zero amount is invalid
+   // Sending a zero amount is invalid
     if (ui->payAmount->value(0) <= 0)
     {
         ui->payAmount->setValid(false);
