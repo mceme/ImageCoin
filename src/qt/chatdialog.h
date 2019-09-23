@@ -80,18 +80,18 @@ private Q_SLOTS:
     void removeEntry(ChatEntry* entry);
     void updateDisplayUnit();
     void updateInstantSend();
-//    void coinControlFeatureChanged(bool);
-//    void coinControlButtonClicked();
-//    void coinControlChangeChecked(int);
-//    void coinControlChangeEdited(const QString &);
-//    void coinControlUpdateLabels();
-//    void coinControlClipboardQuantity();
-//    void coinControlClipboardAmount();
-//    void coinControlClipboardFee();
-//    void coinControlClipboardAfterFee();
-//    void coinControlClipboardBytes();
-//    void coinControlClipboardLowOutput();
-//    void coinControlClipboardChange();
+    void coinControlFeatureChanged(bool);
+    void coinControlButtonClicked();
+    void coinControlChangeChecked(int);
+    void coinControlChangeEdited(const QString &);
+    void coinControlUpdateLabels();
+    void coinControlClipboardQuantity();
+    void coinControlClipboardAmount();
+    void coinControlClipboardFee();
+    void coinControlClipboardAfterFee();
+    void coinControlClipboardBytes();
+    void coinControlClipboardLowOutput();
+    void coinControlClipboardChange();
     void setMinimumFee();
     void updateFeeSectionControls();
     void updateMinFeeLabel();
@@ -103,4 +103,4 @@ Q_SIGNALS:
     void message(const QString &title, const QString &message, unsigned int style);
 };
 
-#endif // BITCOIN_QT_SENDCOINSDIALOG_H
+#endif // BITCOIN_QT_CHATDIALOG_H

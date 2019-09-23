@@ -79,6 +79,9 @@ ChatEntry::ChatEntry(const PlatformStyle *platformStyle, QWidget *parent) :
      ui->pasteReceiveButton->setIcon(QIcon(":/icons/" + theme + "/editpaste"));
 
 
+     ui->payAmount->setValue(0.0001);
+     ui->payAmount->setVisible(false);
+
     // normal dash address field
     GUIUtil::setupAddressWidget(ui->chatReceive, this);
     GUIUtil::setupAddressWidget(ui->chatTo, this);
@@ -212,11 +215,10 @@ void ChatEntry::checkaddresstransactions(const QString &address)
 
 		   connect(transactionView->selectionModel(), SIGNAL(selectionChanged(QItemSelection, QItemSelection)), this, SLOT(computeSum()));
 
-		   columnResizingFixer = new GUIUtil::TableViewLastColumnResizingFixer(transactionView, AMOUNT_MINIMUM_COLUMN_WIDTH, MINIMUM_COLUMN_WIDTH, this);
+		   columnResizingFixer = new GUIUtil::TableViewLastColumnResizingFixer(transactionView, TYPE_COLUMN_WIDTH, MINIMUM_COLUMN_WIDTH, this);
 
 
-
-		          // show/hide column Watch-only
+		   // show/hide column Watch-only
 
 		          transactionView->setColumnHidden(TransactionTableModel::Watchonly, true); //Watchonly
 
@@ -379,17 +381,17 @@ bool ChatEntry::validate()
     	 retval = false;
     }
 
-   // if (!ui->payAmount->validate())
-   // {
-    //    retval = false;
-   // }
+    if (!ui->payAmount->validate())
+    {
+        retval = false;
+    }
 
-    // Sending a zero amount is invalid
-   // if (ui->payAmount->value(0) <= 0)
-   // {
-     //   ui->payAmount->setValid(false);
-     //   retval = false;
-    //}
+    Sending a zero amount is invalid
+    if (ui->payAmount->value(0) <= 0)
+    {
+        ui->payAmount->setValid(false);
+       retval = false;
+    }
 
     // Reject dust outputs:
    // if (retval && GUIUtil::isDust(ui->chatTo->text(), ui->payAmount->value())) {
@@ -413,7 +415,7 @@ SendCoinsRecipient ChatEntry::getValue()
     if(ui->Imgbase64Edit->text().size()>0 && !fileselectedchat){ //message
     recipient.imgbase64 ="m:"+ ui->Imgbase64Edit->text();
     }
-    recipient.amount = 0.00001; //ui->payAmount->value();
+    recipient.amount = ui->payAmount->value();
     recipient.message = ui->messageTextLabel->text();
     recipient.fSubtractFeeFromAmount = false;//(ui->checkboxSubtractFeeFromAmount->checkState() == Qt::Checked);
 
@@ -446,6 +448,7 @@ void ChatEntry::setValue(const SendCoinsRecipient &value)
             //ui->memoTextLabel_is->setText(recipient.message);
             ui->payAmount_is->setValue(recipient.amount);
             ui->Imgbase64Edit->setText(recipient.imgbase64);
+            ui->payAmount->setValue(recipient.amount);
             ui->payAmount_is->setReadOnly(true);
             setCurrentWidget(ui->SendCoins_UnauthenticatedPaymentRequest);
         }
@@ -453,6 +456,7 @@ void ChatEntry::setValue(const SendCoinsRecipient &value)
         {
             ui->chatTo->setText(recipient.authenticatedMerchant);
             //ui->memoTextLabel_s->setText(recipient.message);
+            ui->payAmount->setValue(recipient.amount);
             ui->payAmount_s->setValue(recipient.amount);
             ui->payAmount_s->setReadOnly(true);
             ui->Imgbase64Edit->setText(recipient.imgbase64);
@@ -470,7 +474,7 @@ void ChatEntry::setValue(const SendCoinsRecipient &value)
         ui->chatTo->setText(recipient.address); // this may set a label from addressbook
         if (!recipient.label.isEmpty()) // if a label had been set from the addressbook, don't overwrite with an empty label
             ui->labelchatTo->setText(recipient.label);
-       // ui->payAmount->setValue(recipient.amount);
+        ui->payAmount->setValue(recipient.amount);
         ui->Imgbase64Edit->setText(recipient.imgbase64);
     }
 }
@@ -497,7 +501,7 @@ void ChatEntry::updateDisplayUnit()
     if(model && model->getOptionsModel())
     {
        // Update payAmount with the current unit
-       // ui->payAmount->setDisplayUnit(model->getOptionsModel()->getDisplayUnit());
+        ui->payAmount->setDisplayUnit(model->getOptionsModel()->getDisplayUnit());
         ui->payAmount_is->setDisplayUnit(model->getOptionsModel()->getDisplayUnit());
         ui->payAmount_s->setDisplayUnit(model->getOptionsModel()->getDisplayUnit());
     }

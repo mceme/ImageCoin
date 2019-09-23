@@ -52,7 +52,7 @@ public:
          STATUS_COLUMN_WIDTH = 30,
          WATCHONLY_COLUMN_WIDTH = 23,
          DATE_COLUMN_WIDTH = 120,
-         TYPE_COLUMN_WIDTH = 240,
+         TYPE_COLUMN_WIDTH = 320,
          AMOUNT_MINIMUM_COLUMN_WIDTH = 120,
          MINIMUM_COLUMN_WIDTH = 23
      };

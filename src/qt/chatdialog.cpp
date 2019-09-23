@@ -430,7 +430,7 @@ void ChatDialog::send(QList<SendCoinsRecipient> recipients, QString strFee, QStr
     if (sendStatus.status == WalletModel::OK)
     {
         accept();
-        //CoinControlDialog::coinControl->UnSelectAll();
+        CoinControlDialog::coinControl->UnSelectAll();
         coinControlUpdateLabels();
     }
     fNewRecipientAllowed = true;
@@ -666,7 +666,7 @@ void ChatDialog::minimizeFeeSection(bool fMinimize)
     ui->labelFeeMinimized->setVisible(fMinimize);
     ui->buttonChooseFee  ->setVisible(fMinimize);
     ui->buttonMinimizeFee->setVisible(!fMinimize);
-    ui->frameFeeSelection->setVisible(true);
+    ui->frameFeeSelection->setVisible(!fMinimize);
     ui->horizontalLayoutSmartFee->setContentsMargins(0, (fMinimize ? 0 : 6), 0, 0);
     fFeeMinimized = fMinimize;
 }
