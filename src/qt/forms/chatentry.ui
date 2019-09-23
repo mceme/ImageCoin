@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>729</width>
-    <height>374</height>
+    <height>405</height>
    </rect>
   </property>
   <property name="focusPolicy">
@@ -49,7 +49,7 @@
     <item row="14" column="0">
      <widget class="QLabel" name="messageLabel">
       <property name="text">
-       <string>Info:</string>
+       <string/>
       </property>
       <property name="alignment">
        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -116,7 +116,7 @@
            <x>0</x>
            <y>0</y>
            <width>649</width>
-           <height>168</height>
+           <height>199</height>
           </rect>
          </property>
          <widget class="QTableView" name="chattableView">
@@ -127,19 +127,6 @@
             <width>661</width>
             <height>201</height>
            </rect>
-          </property>
-         </widget>
-         <widget class="QScrollBar" name="verticalScrollBar">
-          <property name="geometry">
-           <rect>
-            <x>0</x>
-            <y>0</y>
-            <width>20</width>
-            <height>201</height>
-           </rect>
-          </property>
-          <property name="orientation">
-           <enum>Qt::Vertical</enum>
           </property>
          </widget>
         </widget>

@@ -202,11 +202,11 @@ void ChatEntry::checkaddresstransactions(const QString &address)
 		   transactionView->verticalHeader()->hide();
 
 		   transactionView->setColumnWidth(TransactionTableModel::Status, STATUS_COLUMN_WIDTH);
-		   transactionView->setColumnWidth(TransactionTableModel::Watchonly, WATCHONLY_COLUMN_WIDTH);
+		   //transactionView->setColumnWidth(TransactionTableModel::Watchonly, WATCHONLY_COLUMN_WIDTH);
 		   transactionView->setColumnWidth(TransactionTableModel::Date, DATE_COLUMN_WIDTH);
 		   transactionView->setColumnWidth(TransactionTableModel::Type, TYPE_COLUMN_WIDTH);
 		   transactionView->setColumnWidth(TransactionTableModel::Imgbase64, TYPE_COLUMN_WIDTH);
-		   transactionView->setColumnWidth(TransactionTableModel::Amount, AMOUNT_MINIMUM_COLUMN_WIDTH);
+		   //transactionView->setColumnWidth(TransactionTableModel::Amount, AMOUNT_MINIMUM_COLUMN_WIDTH);
 		      // Actions
 
 
@@ -444,17 +444,17 @@ void ChatEntry::setValue(const SendCoinsRecipient &value)
         {
             ui->chatTo->setText(recipient.address);
             //ui->memoTextLabel_is->setText(recipient.message);
-            //ui->payAmount_is->setValue(recipient.amount);
+            ui->payAmount_is->setValue(recipient.amount);
             ui->Imgbase64Edit->setText(recipient.imgbase64);
-            //ui->payAmount_is->setReadOnly(true);
+            ui->payAmount_is->setReadOnly(true);
             setCurrentWidget(ui->SendCoins_UnauthenticatedPaymentRequest);
         }
         else // authenticated
         {
             ui->chatTo->setText(recipient.authenticatedMerchant);
             //ui->memoTextLabel_s->setText(recipient.message);
-            //ui->payAmount_s->setValue(recipient.amount);
-            //ui->payAmount_s->setReadOnly(true);
+            ui->payAmount_s->setValue(recipient.amount);
+            ui->payAmount_s->setReadOnly(true);
             ui->Imgbase64Edit->setText(recipient.imgbase64);
             setCurrentWidget(ui->SendCoins_AuthenticatedPaymentRequest);
         }
@@ -498,8 +498,8 @@ void ChatEntry::updateDisplayUnit()
     {
        // Update payAmount with the current unit
        // ui->payAmount->setDisplayUnit(model->getOptionsModel()->getDisplayUnit());
-       // ui->payAmount_is->setDisplayUnit(model->getOptionsModel()->getDisplayUnit());
-       // ui->payAmount_s->setDisplayUnit(model->getOptionsModel()->getDisplayUnit());
+        ui->payAmount_is->setDisplayUnit(model->getOptionsModel()->getDisplayUnit());
+        ui->payAmount_s->setDisplayUnit(model->getOptionsModel()->getDisplayUnit());
     }
 }
 
