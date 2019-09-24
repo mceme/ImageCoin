@@ -42,7 +42,14 @@ bool TransactionFilterProxy::filterAcceptsRow(int sourceRow, const QModelIndex &
     int status = index.data(TransactionTableModel::StatusRole).toInt();
 
     if(!showInactive && status == TransactionStatus::Conflicted)
-        return false;
+           return false;
+
+    if(!addrPrefix.isEmpty() && !addrPrefix2.isEmpty())
+      {
+    	 if ((address.contains(addrPrefix, Qt::CaseInsensitive) || address.contains(addrPrefix2, Qt::CaseInsensitive) ))
+    		  return true;
+      }
+
     if(!(TYPE(type) & typeFilter))
         return false;
     if (involvesWatchAddress && watchOnlyFilter == WatchOnlyFilter_No)
@@ -53,11 +60,7 @@ bool TransactionFilterProxy::filterAcceptsRow(int sourceRow, const QModelIndex &
         return false;
     if (!address.contains(addrPrefix, Qt::CaseInsensitive) && addrPrefix2.isEmpty() &&  !label.contains(addrPrefix, Qt::CaseInsensitive))
         return false;
-    if(!addrPrefix.isEmpty() && !addrPrefix2.isEmpty())
-      {
-    	 if (( !address.contains(addrPrefix, Qt::CaseInsensitive) || (!address.contains(addrPrefix2, Qt::CaseInsensitive) ))
-    		  return false;
-      }
+
 
     if(amount < minAmount)
         return false;
