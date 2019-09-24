@@ -178,7 +178,7 @@ void ChatEntry::checkaddresstransactions(const QString &address)
 {
 	 if (model->validateAddress(ui->chatTo->text()) && model->validateAddress(ui->chatReceive->text()))
 	    {
-		  ui->payAmount->setValue(0.0001);
+
 		  ui->chatTo->setDisabled(true);
 		  ui->chatReceive->setDisabled(true);
           ui->Imgbase64Edit->setText("Start chat using to address : " + ui->chatReceive->text() + " and me :" + ui->chatTo->text());
@@ -333,6 +333,9 @@ bool ChatEntry::validate()
     if (!model)
         return false;
 
+    CAmount value=0.001;
+
+    ui->payAmount->setValue(value);
     // Check input validity
     bool retval = true;
 
