@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>729</width>
-    <height>405</height>
+    <height>500</height>
    </rect>
   </property>
   <property name="focusPolicy">
@@ -44,7 +44,7 @@
       <property name="minimumSize">
        <size>
         <width>600</width>
-        <height>400</height>
+        <height>280</height>
        </size>
       </property>
      </widget>
@@ -153,7 +153,7 @@
       <item>
        <widget class="BitcoinAmountField" name="payAmount" native="true">
         <property name="enabled">
-         <bool>false</bool>
+         <bool>true</bool>
         </property>
        </widget>
       </item>

@@ -78,7 +78,7 @@ ChatEntry::ChatEntry(const PlatformStyle *platformStyle, QWidget *parent) :
      ui->ReceiveAddressBookButton->setIcon(QIcon(":/icons/" + theme + "/address-book"));
      ui->pasteReceiveButton->setIcon(QIcon(":/icons/" + theme + "/editpaste"));
 
-     ui->payAmount->setDisabled(true);
+     //ui->payAmount->setDisabled(true);
      ui->payAmount->setValue(0.0001);
     // ui->payAmount->setVisible(false);
 
