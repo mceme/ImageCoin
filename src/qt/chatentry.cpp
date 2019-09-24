@@ -79,8 +79,10 @@ ChatEntry::ChatEntry(const PlatformStyle *platformStyle, QWidget *parent) :
      ui->pasteReceiveButton->setIcon(QIcon(":/icons/" + theme + "/editpaste"));
 
      //ui->payAmount->setDisabled(true);
-     ui->payAmount->setValue(0.0001);
-     ui->payAmount->setText(0.0001);
+     CAmount val = 0.0001;
+     ui->payAmount->setValue(val);
+
+
     // ui->payAmount->setVisible(false);
 
     // normal dash address field
@@ -181,8 +183,9 @@ void ChatEntry::checkaddresstransactions(const QString &address)
 		  ui->chatReceive->setDisabled(true);
           ui->Imgbase64Edit->setText("Start chat using to address : " + ui->chatReceive->text() + " and me :" + ui->chatTo->text());
 		  transactionProxyModel = new TransactionFilterProxy(this);
-		  transactionProxyModel->setSourceModel(model->getTransactionTableModel());
 		  transactionProxyModel->setAddressPrefix(ui->chatTo->text(),ui->chatReceive->text());
+		  transactionProxyModel->setSourceModel(model->getTransactionTableModel());
+
 
 
 		   ui->chattableView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
@@ -204,7 +207,7 @@ void ChatEntry::checkaddresstransactions(const QString &address)
 		   transactionView->setSortingEnabled(false);
 		   transactionView->sortByColumn(TransactionTableModel::Date, Qt::AscendingOrder);
 		   transactionView->verticalHeader()->hide();
-		   transactionView->horizontalHeader()->hide();
+		  // transactionView->horizontalHeader()->hide();
 		   transactionView->setColumnWidth(TransactionTableModel::Status, STATUS_COLUMN_WIDTH);
 		   //transactionView->setColumnWidth(TransactionTableModel::Watchonly, WATCHONLY_COLUMN_WIDTH);
 		   transactionView->setColumnWidth(TransactionTableModel::Date, DATE_COLUMN_WIDTH);

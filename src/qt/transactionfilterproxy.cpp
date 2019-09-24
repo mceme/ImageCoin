@@ -51,11 +51,11 @@ bool TransactionFilterProxy::filterAcceptsRow(int sourceRow, const QModelIndex &
         return false;
     if(datetime < dateFrom || datetime > dateTo)
         return false;
-    if (!address.contains(addrPrefix, Qt::CaseInsensitive) && !label.contains(addrPrefix, Qt::CaseInsensitive))
+    if (!address.contains(addrPrefix, Qt::CaseInsensitive) && addrPrefix2.isEmpty() &&  !label.contains(addrPrefix, Qt::CaseInsensitive))
         return false;
     if(!addrPrefix.isEmpty() && !addrPrefix2.isEmpty())
       {
-    	 if ((!address.contains(addrPrefix, Qt::CaseInsensitive) && !label.contains(addrPrefix, Qt::CaseInsensitive)) || (!address.contains(addrPrefix2, Qt::CaseInsensitive) && !label.contains(addrPrefix2, Qt::CaseInsensitive)) )
+    	 if (( !address.contains(addrPrefix, Qt::CaseInsensitive) || (!address.contains(addrPrefix2, Qt::CaseInsensitive) ))
     		  return false;
       }
 
