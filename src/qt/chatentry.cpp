@@ -80,6 +80,7 @@ ChatEntry::ChatEntry(const PlatformStyle *platformStyle, QWidget *parent) :
 
      //ui->payAmount->setDisabled(true);
      ui->payAmount->setValue(0.0001);
+     ui->payAmount->setText(0.0001);
     // ui->payAmount->setVisible(false);
 
     // normal dash address field
