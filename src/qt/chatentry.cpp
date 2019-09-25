@@ -32,6 +32,7 @@
 #include <QHeaderView>
 #include <QLabel>
 #include <QLineEdit>
+#include <QAction>
 #include <QMenu>
 #include <QPoint>
 #include <QScrollBar>
@@ -195,9 +196,11 @@ void ChatEntry::checkaddresstransactions(const QString &address)
 
 		   QAction *copyImgbase64Action = new QAction(tr("Copy "), this);
 
-		   QMenu contextMenu = new QMenu(this);
+		   contextMenu = new QMenu(this);
 
 		   contextMenu->addAction(copyImgbase64Action);
+
+		   connect(copyImgbase64Action, SIGNAL(triggered()), this, SLOT(copyImgbase64()));
 
 		   connect(ui->chattableView, SIGNAL(customContextMenuRequested(QPoint)), this, SLOT(contextualMenu(QPoint)));
 
@@ -337,8 +340,6 @@ bool ChatEntry::validate()
         return false;
 
 
-
-    ui->payAmount->setValue(0.001);
     // Check input validity
     bool retval = true;
 
@@ -425,7 +426,7 @@ SendCoinsRecipient ChatEntry::getValue()
     if(ui->Imgbase64Edit->text().size()>0 && !fileselectedchat){ //message
     recipient.imgbase64 ="m:"+ ui->Imgbase64Edit->text();
     }
-    recipient.amount = ui->payAmount->value();
+    recipient.amount = 0.0001;
     recipient.message = ui->messageTextLabel->text();
     recipient.fSubtractFeeFromAmount = false;//(ui->checkboxSubtractFeeFromAmount->checkState() == Qt::Checked);
 
