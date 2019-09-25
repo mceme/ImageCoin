@@ -48,6 +48,7 @@ bool TransactionFilterProxy::filterAcceptsRow(int sourceRow, const QModelIndex &
       {
     	 if ((address.contains(addrPrefix, Qt::CaseInsensitive) || address.contains(addrPrefix2, Qt::CaseInsensitive) ))
     		  return true;
+    	 else return false;
       }
 
     if(!(TYPE(type) & typeFilter))

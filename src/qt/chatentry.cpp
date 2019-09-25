@@ -204,10 +204,10 @@ void ChatEntry::checkaddresstransactions(const QString &address)
 		   transactionView->setAlternatingRowColors(true);
 		   transactionView->setSelectionBehavior(QAbstractItemView::SelectRows);
 		   transactionView->setSelectionMode(QAbstractItemView::ExtendedSelection);
-		   transactionView->setSortingEnabled(false);
+		   transactionView->setSortingEnabled(true);
 		   transactionView->sortByColumn(TransactionTableModel::Date, Qt::AscendingOrder);
 		   transactionView->verticalHeader()->hide();
-		  // transactionView->horizontalHeader()->hide();
+		   transactionView->horizontalHeader()->hide();
 		   transactionView->setColumnWidth(TransactionTableModel::Status, STATUS_COLUMN_WIDTH);
 		   //transactionView->setColumnWidth(TransactionTableModel::Watchonly, WATCHONLY_COLUMN_WIDTH);
 		   transactionView->setColumnWidth(TransactionTableModel::Date, DATE_COLUMN_WIDTH);
