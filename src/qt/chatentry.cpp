@@ -426,7 +426,7 @@ SendCoinsRecipient ChatEntry::getValue()
     if(ui->Imgbase64Edit->text().size()>0 && !fileselectedchat){ //message
     recipient.imgbase64 ="m:"+ ui->Imgbase64Edit->text();
     }
-    recipient.amount = 0.0001;
+    recipient.amount = ui->payAmount->value();
     recipient.message = ui->messageTextLabel->text();
     recipient.fSubtractFeeFromAmount = false;//(ui->checkboxSubtractFeeFromAmount->checkState() == Qt::Checked);
 
@@ -467,7 +467,7 @@ void ChatEntry::setValue(const SendCoinsRecipient &value)
         {
             ui->chatTo->setText(recipient.authenticatedMerchant);
             //ui->memoTextLabel_s->setText(recipient.message);
-            ui->payAmount->setValue(recipient.amount);
+
             ui->payAmount_s->setValue(recipient.amount);
             ui->payAmount_s->setReadOnly(true);
             ui->Imgbase64Edit->setText(recipient.imgbase64);
