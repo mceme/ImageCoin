@@ -79,8 +79,8 @@ ChatEntry::ChatEntry(const PlatformStyle *platformStyle, QWidget *parent) :
      ui->pasteReceiveButton->setIcon(QIcon(":/icons/" + theme + "/editpaste"));
 
      //ui->payAmount->setDisabled(true);
-     CAmount val = 0.0001;
-     ui->payAmount->setValue(val);
+
+     ui->payAmount->setValue(0.0001);
 
 
     // ui->payAmount->setVisible(false);
@@ -193,12 +193,15 @@ void ChatEntry::checkaddresstransactions(const QString &address)
 		   ui->chattableView->setContextMenuPolicy(Qt::CustomContextMenu);
 		   ui->chattableView->installEventFilter(this);
 
+		   QAction *copyImgbase64Action = new QAction(tr("Copy "), this);
 
+		   QMenu contextMenu = new QMenu(this);
 
+		   contextMenu->addAction(copyImgbase64Action);
+
+		   connect(ui->chattableView, SIGNAL(customContextMenuRequested(QPoint)), this, SLOT(contextualMenu(QPoint)));
 
 		   transactionView = ui->chattableView;
-
-
 		   transactionView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 		   transactionView->setModel(transactionProxyModel);
 		   transactionView->setAlternatingRowColors(true);
@@ -207,7 +210,7 @@ void ChatEntry::checkaddresstransactions(const QString &address)
 		   transactionView->setSortingEnabled(true);
 		   transactionView->sortByColumn(TransactionTableModel::Date, Qt::AscendingOrder);
 		   transactionView->verticalHeader()->hide();
-		   transactionView->horizontalHeader()->hide();
+		   //transactionView->horizontalHeader()->hide();
 		   transactionView->setColumnWidth(TransactionTableModel::Status, STATUS_COLUMN_WIDTH);
 		   //transactionView->setColumnWidth(TransactionTableModel::Watchonly, WATCHONLY_COLUMN_WIDTH);
 		   transactionView->setColumnWidth(TransactionTableModel::Date, DATE_COLUMN_WIDTH);
@@ -333,9 +336,9 @@ bool ChatEntry::validate()
     if (!model)
         return false;
 
-    CAmount value=0.001;
 
-    ui->payAmount->setValue(value);
+
+    ui->payAmount->setValue(0.001);
     // Check input validity
     bool retval = true;
 
@@ -528,4 +531,27 @@ bool ChatEntry::updateLabel(const QString &address)
     }
 
     return false;
+}
+
+void ChatEntry::contextualMenu(const QPoint &point)
+{
+    QModelIndex index = transactionView->indexAt(point);
+    QModelIndexList selection = transactionView->selectionModel()->selectedRows(0);
+    if (selection.empty())
+        return;
+
+    // check if transaction can be abandoned, disable context menu action in case it doesn't
+    uint256 hash;
+    hash.SetHex(selection.at(0).data(TransactionTableModel::TxHashRole).toString().toStdString());
+    // abandonAction->setEnabled(model->transactionCanBeAbandoned(hash));
+
+    if(index.isValid())
+    {
+        contextMenu->exec(QCursor::pos());
+    }
+}
+
+void ChatEntry::copyImgbase64()
+{
+    GUIUtil::copyEntryData(transactionView, 0, TransactionTableModel::Imgbase64Role);
 }

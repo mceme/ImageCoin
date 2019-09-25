@@ -9,11 +9,14 @@
 #include "walletmodel.h"
 #include "guiutil.h"
 #include <QStackedWidget>
+#include <QKeyEvent>
 
 class WalletModel;
 class PlatformStyle;
 class TransactionFilterProxy;
 class QTableView;
+class QMenu;
+
 namespace Ui {
     class ChatEntry;
 }
@@ -53,7 +56,7 @@ public:
          WATCHONLY_COLUMN_WIDTH = 23,
          DATE_COLUMN_WIDTH = 120,
          TYPE_COLUMN_WIDTH = 180,
-		 IMGBASE64_COLUMN_WIDTH = 380,
+		 IMGBASE64_COLUMN_WIDTH = 580,
          AMOUNT_MINIMUM_COLUMN_WIDTH = 120,
          MINIMUM_COLUMN_WIDTH = 23
      };
@@ -76,6 +79,8 @@ private Q_SLOTS:
     void updateDisplayUnit();
     void on_chooserButton_clicked();
     void on_pasteButtonBase64_clicked();
+    void copyImgbase64();
+    void contextualMenu(const QPoint &);
     void on_chatReceive_textChanged(const QString &address);
 
 private:
@@ -85,6 +90,7 @@ private:
     const PlatformStyle *platformStyle;
     TransactionFilterProxy *transactionProxyModel;
     QTableView *transactionView;
+    QMenu *contextMenu;
     GUIUtil::TableViewLastColumnResizingFixer *columnResizingFixer;
     bool updateLabel(const QString &address);
     void checkaddresstransactions(const QString &address);
