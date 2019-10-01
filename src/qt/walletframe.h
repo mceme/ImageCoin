@@ -66,9 +66,11 @@ public Q_SLOTS:
     /** Switch to send coins page */
     void gotoSendCoinsPage(QString addr = "",QString imgbase64 = "");
 
+    /** Switch to WebWindow page */
+     void gotoChatPage();
+
     /** Switch to Encryptdecrypt page */
      void gotoEncryptDecryptPage();
-
 
      /** Switch to WebWindow page */
      void gotoWebWindowPage();

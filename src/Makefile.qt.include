@@ -41,8 +41,10 @@ QT_FORMS_UI = \
   qt/forms/sendcoinsentry.ui \
   qt/forms/signverifymessagedialog.ui \
   qt/forms/transactiondescdialog.ui \
-  qt/forms/webwindow.ui
-
+  qt/forms/webwindow.ui \
+  qt/forms/chatdialog.ui \
+  qt/forms/chatentry.ui
+  
 QT_MOC_CPP = \
   qt/moc_addressbookpage.cpp \
   qt/moc_addresstablemodel.cpp \
@@ -94,8 +96,10 @@ QT_MOC_CPP = \
   qt/moc_walletview.cpp \
   qt/moc_ecdsa.cpp \
   qt/moc_base64.cpp \
-  qt/moc_webwindow.cpp
-
+  qt/moc_webwindow.cpp \
+  qt/moc_chatentry.cpp \
+  qt/moc_chatdialog.cpp
+  
 BITCOIN_MM = \
   qt/macdockiconhandler.mm \
   qt/macnotificationhandler.mm
@@ -175,7 +179,9 @@ BITCOIN_QT_H = \
   qt/winshutdownmonitor.h \
   qt/ecdsa.h \
   qt/base64.h \
-  qt/webwindow.h
+  qt/webwindow.h \
+  qt/chatentry.h \
+  qt/chatdialog.h
 
 RES_ICONS = \
   qt/res/icons/bitcoin.ico \
@@ -461,7 +467,9 @@ BITCOIN_QT_CPP += \
   qt/walletview.cpp \
   qt/ecdsa.cpp \
   qt/base64.cpp \
-  qt/webwindow.cpp
+  qt/webwindow.cpp \
+  qt/chatdialog.cpp \
+  qt/chatentry.cpp
 endif
 
 RES_IMAGES = \

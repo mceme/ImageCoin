@@ -15,6 +15,7 @@
 #include "platformstyle.h"
 #include "receivecoinsdialog.h"
 #include "sendcoinsdialog.h"
+#include "chatdialog.h"
 #include "encryptdecryptdialog.h"
 #include "webwindow.h"
 #include "signverifymessagedialog.h"
@@ -75,6 +76,7 @@ WalletView::WalletView(const PlatformStyle *platformStyle, QWidget *parent):
 
     receiveCoinsPage = new ReceiveCoinsDialog(platformStyle);
     sendCoinsPage = new SendCoinsDialog(platformStyle);
+    ChatPage = new ChatDialog(platformStyle);
     EncryptDecryptPage = new EncryptDecryptDialog(platformStyle);
     WebWindowPage = new WebWindow(platformStyle);
 
@@ -91,7 +93,7 @@ WalletView::WalletView(const PlatformStyle *platformStyle, QWidget *parent):
         masternodeListPage = new MasternodeList(platformStyle);
         addWidget(masternodeListPage);
     }
-
+    addWidget(ChatPage);
     addWidget(EncryptDecryptPage);
 
     addWidget(WebWindowPage);
@@ -111,6 +113,10 @@ WalletView::WalletView(const PlatformStyle *platformStyle, QWidget *parent):
 
     // Pass through messages from sendCoinsPage
     connect(sendCoinsPage, SIGNAL(message(QString,QString,unsigned int)), this, SIGNAL(message(QString,QString,unsigned int)));
+
+    // Pass through messages from ChatPage
+    connect(ChatPage, SIGNAL(message(QString,QString,unsigned int)), this, SIGNAL(message(QString,QString,unsigned int)));
+
 
     // -clicking
     connect(EncryptDecryptPage, SIGNAL(encodebase64ClickedSignal(QString,QString)), this, SLOT(encodebase64ClickedSignal(QString,QString)));
@@ -160,10 +166,13 @@ void WalletView::setClientModel(ClientModel *clientModel)
 
     overviewPage->setClientModel(clientModel);
     sendCoinsPage->setClientModel(clientModel);
+
     QSettings settings;
     if (settings.value("fShowMasternodesTab").toBool()) {
         masternodeListPage->setClientModel(clientModel);
     }
+    ChatPage->setClientModel(clientModel);
+
     EncryptDecryptPage->setClientModel(clientModel);
 
     WebWindowPage->setClientModel(clientModel);
@@ -183,6 +192,7 @@ void WalletView::setWalletModel(WalletModel *walletModel)
     }
     receiveCoinsPage->setModel(walletModel);
     sendCoinsPage->setModel(walletModel);
+    ChatPage->setModel(walletModel);
     EncryptDecryptPage->setModel(walletModel);
     WebWindowPage->setModel(walletModel);
 
@@ -263,6 +273,11 @@ void WalletView::gotoSendCoinsPage(QString addr,QString imgbase64)
 
     if (!addr.isEmpty() || !imgbase64.isEmpty())
         sendCoinsPage->setAddress(addr, imgbase64);
+}
+
+void WalletView::gotoChatPage()
+{
+    setCurrentWidget(ChatPage);
 }
 
 void WalletView::gotoEncryptDecryptPage()

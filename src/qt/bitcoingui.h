@@ -100,6 +100,8 @@ private:
     QAction *quitAction;
     QAction *sendCoinsAction;
     QAction *sendCoinsMenuAction;
+    QAction *chatAction;
+    QAction *chatMenuAction;
     QAction *EncryptDecryptAction;
     QAction *EncryptDecryptMenuAction;
     QAction *WebWindowAction;
@@ -227,9 +229,11 @@ private Q_SLOTS:
     void gotoReceiveCoinsPage();
     /** Switch to send coins page */
     void gotoSendCoinsPage(QString addr = "", QString imgbase64="");
+    /** Switch to chat coins page */
+    void gotoChatPage();
     /** Switch to Encrypt coins page */
     void gotoEncryptDecryptPage();
-
+    /** Switch to WebWindows  page */
     void gotoWebWindowPage();
 
     /** Show Sign/Verify Message dialog and switch to sign message tab */

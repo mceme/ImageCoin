@@ -42,7 +42,15 @@ bool TransactionFilterProxy::filterAcceptsRow(int sourceRow, const QModelIndex &
     int status = index.data(TransactionTableModel::StatusRole).toInt();
 
     if(!showInactive && status == TransactionStatus::Conflicted)
-        return false;
+           return false;
+
+    if(!addrPrefix.isEmpty() && !addrPrefix2.isEmpty())
+      {
+    	 if ((address.contains(addrPrefix, Qt::CaseInsensitive) || address.contains(addrPrefix2, Qt::CaseInsensitive) ))
+    		  return true;
+    	 else return false;
+      }
+
     if(!(TYPE(type) & typeFilter))
         return false;
     if (involvesWatchAddress && watchOnlyFilter == WatchOnlyFilter_No)
@@ -51,8 +59,10 @@ bool TransactionFilterProxy::filterAcceptsRow(int sourceRow, const QModelIndex &
         return false;
     if(datetime < dateFrom || datetime > dateTo)
         return false;
-    if (!address.contains(addrPrefix, Qt::CaseInsensitive) && !label.contains(addrPrefix, Qt::CaseInsensitive))
+    if (!address.contains(addrPrefix, Qt::CaseInsensitive) && addrPrefix2.isEmpty() &&  !label.contains(addrPrefix, Qt::CaseInsensitive))
         return false;
+
+
     if(amount < minAmount)
         return false;
 
@@ -66,9 +76,10 @@ void TransactionFilterProxy::setDateRange(const QDateTime &from, const QDateTime
     invalidateFilter();
 }
 
-void TransactionFilterProxy::setAddressPrefix(const QString &addrPrefix)
+void TransactionFilterProxy::setAddressPrefix(const QString &addrPrefix , const QString &addrPrefix2)
 {
     this->addrPrefix = addrPrefix;
+    this->addrPrefix2 = addrPrefix2;
     invalidateFilter();
 }
 

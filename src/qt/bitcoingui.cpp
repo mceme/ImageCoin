@@ -95,6 +95,8 @@ BitcoinGUI::BitcoinGUI(const PlatformStyle *platformStyle, const NetworkStyle *n
     quitAction(0),
     sendCoinsAction(0),
     sendCoinsMenuAction(0),
+	chatAction(0),
+	chatMenuAction(0),
     EncryptDecryptAction(0),
 	EncryptDecryptMenuAction(0),
 	WebWindowAction(0),
@@ -312,21 +314,40 @@ void BitcoinGUI::createActions()
 #endif
     tabGroup->addAction(sendCoinsAction);
 
-    sendCoinsMenuAction = new QAction(QIcon(":/icons/" + theme + "/send"), sendCoinsAction->text(), this);
+	sendCoinsMenuAction = new QAction(QIcon(":/icons/" + theme + "/send"), sendCoinsAction->text(), this);
     sendCoinsMenuAction->setStatusTip(sendCoinsAction->statusTip());
     sendCoinsMenuAction->setToolTip(sendCoinsMenuAction->statusTip());
 
-    //Encrypt
 
+    //chat
+
+      chatAction = new QAction(QIcon(":/icons/" + theme + "/overview"), tr("&Messenger"), this);
+      chatAction->setStatusTip(tr("Messenger"));
+      chatAction->setToolTip(chatAction->statusTip());
+      chatAction->setCheckable(true);
+
+  #ifdef Q_OS_MAC
+      chatAction->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_6));
+  #else
+      chatAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_6));
+  #endif
+      tabGroup->addAction(chatAction);
+
+      chatMenuAction = new QAction(QIcon(":/icons/" + theme + "/overview"), chatAction->text(), this);
+      chatMenuAction->setStatusTip(chatAction->statusTip());
+      chatMenuAction->setToolTip(chatMenuAction->statusTip());
+
+
+    //Encrypt
 
     EncryptDecryptAction = new QAction(QIcon(":/icons/" + theme + "/history"), tr("&Crypto / Base64"), this);
     EncryptDecryptAction->setStatusTip(tr("Encrypt Decrypt Files/ Base64 Encode"));
     EncryptDecryptAction->setToolTip(EncryptDecryptAction->statusTip());
     EncryptDecryptAction->setCheckable(true);
 #ifdef Q_OS_MAC
-    sendCoinsAction->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_2));
+    sendCoinsAction->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_5));
 #else
-    EncryptDecryptAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_2));
+    EncryptDecryptAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_5));
 #endif
     tabGroup->addAction(EncryptDecryptAction);
 
@@ -407,6 +428,13 @@ void BitcoinGUI::createActions()
     connect(sendCoinsAction, SIGNAL(triggered()), this, SLOT(gotoSendCoinsPage()));
     connect(sendCoinsMenuAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
     connect(sendCoinsMenuAction, SIGNAL(triggered()), this, SLOT(gotoSendCoinsPage()));
+
+    connect(chatAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
+    connect(chatAction, SIGNAL(triggered()), this, SLOT(gotoChatPage()));
+
+    connect(chatMenuAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
+    connect(chatMenuAction, SIGNAL(triggered()), this, SLOT(gotoChatPage()));
+
     connect(EncryptDecryptAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
     connect(EncryptDecryptAction, SIGNAL(triggered()), this, SLOT(gotoEncryptDecryptPage()));
     connect(EncryptDecryptMenuAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
@@ -621,6 +649,7 @@ void BitcoinGUI::createToolBars()
         {
             toolbar->addAction(masternodeAction);
         }
+        toolbar->addAction(chatAction);
         toolbar->addAction(EncryptDecryptAction);
         //toolbar->addAction(WebWindowAction);
         toolbar->setMovable(false); // remove unused icon in upper left corner
@@ -762,6 +791,8 @@ void BitcoinGUI::setWalletActionsEnabled(bool enabled)
     sendCoinsMenuAction->setEnabled(enabled);
     EncryptDecryptAction->setEnabled(enabled);
     EncryptDecryptMenuAction->setEnabled(enabled);
+    chatAction->setEnabled(enabled);
+    chatMenuAction->setEnabled(enabled);
     //WebWindowAction->setEnabled(enabled);
     //WebWindowMenuAction->setEnabled(enabled);
     receiveCoinsAction->setEnabled(enabled);
@@ -957,6 +988,13 @@ void BitcoinGUI::gotoSendCoinsPage(QString addr,QString imgbase64)
     sendCoinsAction->setChecked(true);
     if (walletFrame) walletFrame->gotoSendCoinsPage(addr,imgbase64);
 }
+
+void BitcoinGUI::gotoChatPage()
+{
+	chatAction->setChecked(true);
+    if (walletFrame) walletFrame->gotoChatPage();
+}
+
 
 void BitcoinGUI::gotoEncryptDecryptPage()
 {
