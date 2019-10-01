@@ -430,7 +430,7 @@ void ChatDialog::send(QList<SendCoinsRecipient> recipients, QString strFee, QStr
     if (sendStatus.status == WalletModel::OK)
     {
         accept();
-        CoinControlDialog::coinControl->UnSelectAll();
+        //CoinControlDialog::coinControl->UnSelectAll();
         coinControlUpdateLabels();
     }
     fNewRecipientAllowed = true;

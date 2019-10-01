@@ -321,8 +321,8 @@ void BitcoinGUI::createActions()
 
     //chat
 
-      chatAction = new QAction(QIcon(":/icons/" + theme + "/overview"), tr("&Chat"), this);
-      chatAction->setStatusTip(tr("Chat"));
+      chatAction = new QAction(QIcon(":/icons/" + theme + "/overview"), tr("&Messenger"), this);
+      chatAction->setStatusTip(tr("Messenger"));
       chatAction->setToolTip(chatAction->statusTip());
       chatAction->setCheckable(true);
 
