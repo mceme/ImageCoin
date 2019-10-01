@@ -57,8 +57,10 @@ TransactionDescDialog::TransactionDescDialog(const QModelIndex &idx, QWidget *pa
          	{
 
     	std::string ismessage = encodestr.substr(0, 2);
+    	std::string ismensenger = encodestr.substr(0, 5);
 
-    	if(ismessage != "m:")
+
+    	if(ismessage != "m:" || ismensenger != "from:")
     	{
 
     	ui->DownloadButton->setVisible(true);
