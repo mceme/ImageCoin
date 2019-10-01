@@ -38,6 +38,7 @@ bool TransactionFilterProxy::filterAcceptsRow(int sourceRow, const QModelIndex &
     bool involvesWatchAddress = index.data(TransactionTableModel::WatchonlyRole).toBool();
     QString address = index.data(TransactionTableModel::AddressRole).toString();
     QString label = index.data(TransactionTableModel::LabelRole).toString();
+    QString qimgbase64 = index.data(TransactionTableModel::Imgbase64Role).toString();
     qint64 amount = llabs(index.data(TransactionTableModel::AmountRole).toLongLong());
     int status = index.data(TransactionTableModel::StatusRole).toInt();
 
@@ -46,8 +47,24 @@ bool TransactionFilterProxy::filterAcceptsRow(int sourceRow, const QModelIndex &
 
     if(!addrPrefix.isEmpty() && !addrPrefix2.isEmpty())
       {
-    	 if ((address.contains(addrPrefix, Qt::CaseInsensitive) || address.contains(addrPrefix2, Qt::CaseInsensitive) ))
-    		  return true;
+    	 if ((address.contains(addrPrefix, Qt::CaseInsensitive) || address.contains(addrPrefix2, Qt::CaseInsensitive) )){
+
+    		 if(qimgbase64.size() > 5) {
+    			QString mensage = qimgbase64.section(":", 0, 0, QString::SectionSkipEmpty);
+
+    			  if(mensage=="from"){
+    					QString fromaddress = qimgbase64.section(":", 1, 1, QString::SectionSkipEmpty);
+
+    					if(fromaddress==addrPrefix1 )
+    					  {
+    						  return true;
+
+    					  }
+    			  }
+    		 }
+
+    		 return false;
+    	 }
     	 else return false;
       }
 
