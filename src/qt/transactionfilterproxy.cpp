@@ -55,11 +55,16 @@ bool TransactionFilterProxy::filterAcceptsRow(int sourceRow, const QModelIndex &
     			  if(mensage=="from"){
     					QString fromaddress = qimgbase64.section(":", 1, 1, QString::SectionSkipEmpty);
 
-    					if(fromaddress==addrPrefix1 )
+    					if(fromaddress==addrPrefix2 && (type==2 || type==3 || type==6 || type==8 || type==9 || type==10 || type==11 || type==12 ) )
     					  {
     						  return true;
 
     					  }
+    					 if(fromaddress==addrPrefix && (type==4 || type==5 || type==7 ) )
+    		    		 {
+    		    			  return true;
+
+    		    		 }
     			  }
     		 }
 
