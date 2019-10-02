@@ -57,9 +57,17 @@ TransactionDescDialog::TransactionDescDialog(const QModelIndex &idx, QWidget *pa
          	{
 
     	std::string ismessage = encodestr.substr(0, 2);
+    	std::string ismensenger = encodestr.substr(0, 5);
 
-    	if(ismessage != "m:")
-    	{
+
+    	if(ismessage == "m:" || ismensenger == "from:")
+        	 { //message
+
+        		 ui->DownloadButton->setVisible(false);
+        		 desc = desc + "<br><b><b>"+encodestr.c_str();
+        		 ui->detailText->setHtml(desc);
+        	}
+    	else{
 
     	ui->DownloadButton->setVisible(true);
 
@@ -142,13 +150,8 @@ TransactionDescDialog::TransactionDescDialog(const QModelIndex &idx, QWidget *pa
 
     		   }
             }
-     	}
-    	else { //message
+     	}  //end image
 
-    		 ui->DownloadButton->setVisible(false);
-    		 desc = desc + "<br><b><b>"+encodestr.c_str();
-    		 ui->detailText->setHtml(desc);
-    	}
 
       }
 }
