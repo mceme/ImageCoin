@@ -1,5 +1,5 @@
 # ImageCoin
-A Coin that allow send private images in own blockchain (Image Coin) ! 
+A Coin that allow send private images, private messages and private data in blockchain (ImageCoin) ! 
 
 Sign Images APP https://app.imagehosty.com/
 Website http://ImageCoin.imagehosty.com
