@@ -152,7 +152,7 @@ public:
         //vSeeds.push_back(CDNSSeedData("1","115.77.190.144"));
 		//vSeeds.push_back(CDNSSeedData("2","18.216.217.124"));
 		//vSeeds.push_back(CDNSSeedData("3","149.28.136.224"));
-        // ImageCoin addresses start with 'X'
+        // ImageCoin addresses start with 'M'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,51);
         // ImageCoin script addresses start with '7'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,16);
