@@ -152,7 +152,7 @@ public:
         //vSeeds.push_back(CDNSSeedData("1","115.77.190.144"));
 		//vSeeds.push_back(CDNSSeedData("2","18.216.217.124"));
 		//vSeeds.push_back(CDNSSeedData("3","149.28.136.224"));
-        // ImageCoin addresses start with 'X'
+        // ImageCoin addresses start with 'M'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,51);
         // ImageCoin script addresses start with '7'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,16);
@@ -163,8 +163,8 @@ public:
         // ImageCoin BIP32 prvkeys start with 'xprv' (Bitcoin defaults)
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x04)(0x88)(0xAD)(0xE4).convert_to_container<std::vector<unsigned char> >();
 
-        // ImageCoin BIP44 coin type is '5'
-        nExtCoinType = 5;
+        // ImageCoin BIP44 coin type is '388'
+        nExtCoinType = 388;
 
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_main, pnSeed6_main + ARRAYLEN(pnSeed6_main));
 
