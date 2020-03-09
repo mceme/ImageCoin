@@ -149,9 +149,9 @@ public:
 		vFixedSeeds.clear();
         vSeeds.clear();
 		vSeeds.push_back(CDNSSeedData("0","23.101.61.34"));
-        vSeeds.push_back(CDNSSeedData("1","15.164.152.188"));
-		vSeeds.push_back(CDNSSeedData("2","123.132.232.10"));
-		vSeeds.push_back(CDNSSeedData("3","51.158.102.232"));
+        //vSeeds.push_back(CDNSSeedData("1","115.77.190.144"));
+		//vSeeds.push_back(CDNSSeedData("2","18.216.217.124"));
+		//vSeeds.push_back(CDNSSeedData("3","149.28.136.224"));
         // ImageCoin addresses start with 'X'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,51);
         // ImageCoin script addresses start with '7'
