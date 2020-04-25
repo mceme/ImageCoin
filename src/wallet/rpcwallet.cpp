@@ -61,6 +61,7 @@ void EnsureWalletIsUnlocked()
 
 void WalletTxToJSON(const CWalletTx& wtx, UniValue& entry)
 {
+	  EnsureWalletIsUnlocked();
     int confirms = wtx.GetDepthInMainChain(false);
     bool fLocked = instantsend.IsLockedInstantSendTransaction(wtx.GetHash());
     entry.push_back(Pair("confirmations", confirms));
@@ -225,6 +226,8 @@ UniValue getaccountaddress(const UniValue& params, bool fHelp)
 
 UniValue getrawchangeaddress(const UniValue& params, bool fHelp)
 {
+	  EnsureWalletIsUnlocked();
+
     if (!EnsureWalletIsAvailable(fHelp))
         return NullUniValue;
 
@@ -1485,6 +1488,8 @@ static void MaybePushAddress(UniValue & entry, const CTxDestination &dest)
 
 void ListTransactions(const CWalletTx& wtx, const string& strAccount, int nMinDepth, bool fLong, UniValue& ret, const isminefilter& filter)
 {
+     EnsureWalletIsUnlocked();
+
     CAmount nFee;
     string strSentAccount;
     list<COutputEntry> listReceived;
@@ -1563,6 +1568,8 @@ void ListTransactions(const CWalletTx& wtx, const string& strAccount, int nMinDe
 
 void AcentryToJSON(const CAccountingEntry& acentry, const string& strAccount, UniValue& ret)
 {
+	  EnsureWalletIsUnlocked();
+
     bool fAllAccounts = (strAccount == string("*"));
 
     if (fAllAccounts || acentry.strAccount == strAccount)
