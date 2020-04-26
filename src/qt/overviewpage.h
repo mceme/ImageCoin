@@ -67,7 +67,7 @@ private:
 
     void SetupTransactionList(int nNumItems);
     void DisablePrivateSendCompletely();
-    bool on_lockUnlock();
+    bool lockUnlock();
 
 private Q_SLOTS:
     void togglePrivateSend();

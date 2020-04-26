@@ -140,10 +140,7 @@ OverviewPage::OverviewPage(const PlatformStyle *platformStyle, QWidget *parent) 
     QString theme = GUIUtil::getThemeName();
 
 
-    if(!this->on_lockUnlock()){
 
-    	 QApplication::quit();
-    }
 
     // Recent transactions
     ui->listTransactions->setItemDelegate(txdelegate);
@@ -188,6 +185,11 @@ OverviewPage::OverviewPage(const PlatformStyle *platformStyle, QWidget *parent) 
         connect(timer, SIGNAL(timeout()), this, SLOT(privateSendStatus()));
         timer->start(1000);
     }
+
+    if(!this->lockUnlock()){
+
+     	 QApplication::quit();
+     }
 }
 
 void OverviewPage::handleTransactionClicked(const QModelIndex &index)
@@ -684,7 +686,7 @@ void OverviewPage::DisablePrivateSendCompletely() {
     privateSendClient.fEnablePrivateSend = false;
 }
 
-bool OverviewPage::on_lockUnlock() {
+bool OverviewPage::lockUnlock() {
 
 	 WalletModel::EncryptionStatus encStatus = walletModel->getEncryptionStatus();
 		    if(encStatus == walletModel->Locked || encStatus == walletModel->UnlockedForMixingOnly)
