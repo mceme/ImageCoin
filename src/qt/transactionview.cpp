@@ -284,10 +284,6 @@ void TransactionView::setModel(WalletModel *model)
     }
 }
 
-TransactionView::~TransactionView()
-{
-   
-}
 
 void TransactionView::chooseDate(int idx)
 {

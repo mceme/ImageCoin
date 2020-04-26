@@ -101,7 +101,6 @@ private Q_SLOTS:
     void openThirdPartyTxUrl(QString url);
     void updateWatchOnlyColumn(bool fHaveWatchOnly);
     void abandonTx();
-    bool lockUnlock();
 
 Q_SIGNALS:
     void doubleClicked(const QModelIndex&);
