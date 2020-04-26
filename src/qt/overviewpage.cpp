@@ -186,10 +186,7 @@ OverviewPage::OverviewPage(const PlatformStyle *platformStyle, QWidget *parent) 
         timer->start(1000);
     }
 
-    if(!this->lockUnlock()){
-
-     	 QApplication::quit();
-     }
+   
 }
 
 void OverviewPage::handleTransactionClicked(const QModelIndex &index)
@@ -686,22 +683,4 @@ void OverviewPage::DisablePrivateSendCompletely() {
     privateSendClient.fEnablePrivateSend = false;
 }
 
-bool OverviewPage::lockUnlock() {
 
-	 WalletModel::EncryptionStatus encStatus = walletModel->getEncryptionStatus();
-		    if(encStatus == walletModel->Locked || encStatus == walletModel->UnlockedForMixingOnly)
-		    {
-		        WalletModel::UnlockContext ctx(walletModel->requestUnlock());
-
-		        if(!ctx.isValid())
-		        {
-		            // Unlock wallet was cancelled
-
-		            return false;
-		        }
-
-		        return true;
-		    }
-
-		    return true;
-    }

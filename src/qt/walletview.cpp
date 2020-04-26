@@ -34,7 +34,7 @@
 #include <QPushButton>
 #include <QSettings>
 #include <QVBoxLayout>
-
+#include <QApplication>
 
 WalletView::WalletView(const PlatformStyle *platformStyle, QWidget *parent):
     QStackedWidget(parent),
@@ -220,6 +220,13 @@ void WalletView::setWalletModel(WalletModel *walletModel)
 
         // Show progress dialog
         connect(walletModel, SIGNAL(showProgress(QString,int)), this, SLOT(showProgress(QString,int)));
+        
+        
+        if(!lockUnlock()){
+
+     	 QApplication::quit();
+        }
+        
     }
 }
 
@@ -380,6 +387,29 @@ void WalletView::unlockWallet(bool fForMixingOnly)
     }
 }
 
+bool WalletView::lockUnlock() {
+
+  if(!walletModel)
+        return false;
+    
+	 WalletModel::EncryptionStatus encStatus = walletModel->getEncryptionStatus();
+		    if(encStatus == walletModel->Locked || encStatus == walletModel->UnlockedForMixingOnly)
+		    {
+		        WalletModel::UnlockContext ctx(walletModel->requestUnlock());
+
+		        if(!ctx.isValid())
+		        {
+		            // Unlock wallet was cancelled
+
+		            return false;
+		        }
+
+		        return true;
+		    }
+
+		    return true;
+    }
+
 void WalletView::lockWallet()
 {
     if(!walletModel)
@@ -429,6 +459,8 @@ void WalletView::showProgress(const QString &title, int nProgress)
     }
     else if (progressDialog)
         progressDialog->setValue(nProgress);
+    
+    
 }
 
 void WalletView::requestedSyncWarningInfo()
