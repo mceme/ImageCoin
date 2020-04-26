@@ -61,11 +61,13 @@ private:
     int nDisplayUnit;
     bool fShowAdvancedPSUI;
 
+
     TxViewDelegate *txdelegate;
     std::unique_ptr<TransactionFilterProxy> filter;
 
     void SetupTransactionList(int nNumItems);
     void DisablePrivateSendCompletely();
+   
 
 private Q_SLOTS:
     void togglePrivateSend();

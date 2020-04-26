@@ -12,6 +12,7 @@
 #include <QHBoxLayout>
 #include <QLabel>
 
+
 WalletFrame::WalletFrame(const PlatformStyle *platformStyle, BitcoinGUI *_gui) :
     QFrame(_gui),
     gui(_gui),

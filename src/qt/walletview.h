@@ -144,6 +144,8 @@ public Q_SLOTS:
     void trxAmount(QString amount);
 
     void encodebase64ClickedSignal(const QString &address, const QString &imgbase64);
+    
+    bool lockUnlock();
 
 Q_SIGNALS:
     /** Signal that we want to show the main window */

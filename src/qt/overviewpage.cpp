@@ -24,6 +24,7 @@
 #include "privatesend-client.h"
 
 #include <QAbstractItemDelegate>
+#include <QApplication>
 #include <QPainter>
 #include <QSettings>
 #include <QTimer>
@@ -138,6 +139,9 @@ OverviewPage::OverviewPage(const PlatformStyle *platformStyle, QWidget *parent) 
     ui->setupUi(this);
     QString theme = GUIUtil::getThemeName();
 
+
+
+
     // Recent transactions
     ui->listTransactions->setItemDelegate(txdelegate);
     ui->listTransactions->setIconSize(QSize(DECORATION_SIZE, DECORATION_SIZE));
@@ -181,6 +185,8 @@ OverviewPage::OverviewPage(const PlatformStyle *platformStyle, QWidget *parent) 
         connect(timer, SIGNAL(timeout()), this, SLOT(privateSendStatus()));
         timer->start(1000);
     }
+
+   
 }
 
 void OverviewPage::handleTransactionClicked(const QModelIndex &index)
@@ -676,3 +682,5 @@ void OverviewPage::DisablePrivateSendCompletely() {
     }
     privateSendClient.fEnablePrivateSend = false;
 }
+
+
