@@ -11,22 +11,7 @@
 #include <string>
 #include <univalue.h>
 
-struct Researcher
-{
-	std::string nickname;
-	int teamid = 0;
-	std::string country;
-	int64_t creationtime = 0;
-	double totalcredit = 0;
-	double wcgpoints = 0;
-	double rac = 0;
-	int id = 0;
-	std::string cpid;
-	bool found = false;
-	bool unbanked = false;
-	double CoinAge = 0;
-	std::string CPK;
-};
+class  Researcher;
 
 std::string strReplace(std::string& str, const std::string& oldStr, const std::string& newStr);
 double GetCryptoPrice(std::string sURL);
