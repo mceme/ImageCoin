@@ -105,6 +105,8 @@ BitcoinGUI::BitcoinGUI(const PlatformStyle *platformStyle, const NetworkStyle *n
     usedReceivingAddressesAction(0),
     signMessageAction(0),
     verifyMessageAction(0),
+    proposalsListAction(0),
+    proposalAddAction(0),
     aboutAction(0),
     receiveCoinsAction(0),
     receiveCoinsMenuAction(0),
@@ -579,7 +581,7 @@ void BitcoinGUI::createActions()
         connect(usedReceivingAddressesAction, SIGNAL(triggered()), walletFrame, SLOT(usedReceivingAddresses()));
         connect(openAction, SIGNAL(triggered()), this, SLOT(openClicked()));
         connect(proposalAddAction, SIGNAL(triggered()), walletFrame, SLOT(gotoProposalAddPage()));
-        connect(proposalListAction, SIGNAL(triggered()), walletFrame, SLOT(gotoProposalsListPage()));
+        connect(proposalsListAction, SIGNAL(triggered()), walletFrame, SLOT(gotoProposalsListPage()));
 
     }
 #endif // ENABLE_WALLET
