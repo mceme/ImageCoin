@@ -191,9 +191,9 @@ bool GetTransactionTimeAndAmount(uint256 txhash, int nVout, int64_t& nTime, CAmo
 	if (GetTransaction(txhash, tx2, Params().GetConsensus(), hashBlock, true))
 	{
 		   BlockMap::iterator mi = mapBlockIndex.find(hashBlock);
-           if (mi != mapBlockIndex.end() && (*mi).second) 
+           if (mi != mapBlockIndex.end() && (*mi).second)
 		   {
-              CBlockIndex* pMNIndex = (*mi).second; 
+              CBlockIndex* pMNIndex = (*mi).second;
 			  nTime = pMNIndex->GetBlockTime();
 		      nAmount = tx2->vout[nVout].nValue;
 			  return true;
