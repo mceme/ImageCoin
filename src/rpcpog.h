@@ -11,6 +11,7 @@
 #include "utilstrencodings.h"
 #include "validation.h"
 #include <univalue.h>
+#include <string>
 
 class CWallet;
 

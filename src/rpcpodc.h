@@ -8,7 +8,7 @@
 #include "hash.h"
 #include "net.h"
 #include "utilstrencodings.h"
-
+#include <string>
 #include <univalue.h>
 
 std::string strReplace(std::string& str, const std::string& oldStr, const std::string& newStr);
