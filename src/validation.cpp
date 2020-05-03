@@ -40,6 +40,8 @@
 #include "masternodeman.h"
 #include "masternode-payments.h"
 
+
+
 #include <sstream>
 
 #include <boost/algorithm/string/replace.hpp>
@@ -85,6 +87,16 @@ uint64_t nPruneTarget = 0;
 bool fAlerts = DEFAULT_ALERTS;
 bool fEnableReplacement = DEFAULT_ENABLE_REPLACEMENT;
 
+
+int nProposalModulus = 0;
+
+bool fProposalNeedsSubmitted= false;
+int64_t nProposalStartTime = 0;
+uint256 uTxIdFee = uint256S("0x0");
+int nProposalPrepareHeight = 0;
+
+std::string msProposalResult;
+std::string msProposalHex;
 std::atomic<bool> fDIP0001WasLockedIn{false};
 std::atomic<bool> fDIP0001ActiveAtTip{false};
 

@@ -110,6 +110,8 @@ private:
     QAction *usedReceivingAddressesAction;
     QAction *signMessageAction;
     QAction *verifyMessageAction;
+    QAction *proposalsListAction;
+    QAction *proposalAddAction;
     QAction *aboutAction;
     QAction *receiveCoinsAction;
     QAction *receiveCoinsMenuAction;
@@ -235,6 +237,12 @@ private Q_SLOTS:
     void gotoEncryptDecryptPage();
     /** Switch to WebWindows  page */
     void gotoWebWindowPage();
+
+    /** Switch to ProposalsList page */
+      void gotoProposalsListPage();
+
+      /** Switch to ProposalAdd page */
+      void gotoProposalAddPage();
 
     /** Show Sign/Verify Message dialog and switch to sign message tab */
     void gotoSignMessageTab(QString addr = "");

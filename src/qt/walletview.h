@@ -23,6 +23,8 @@ class SendCoinsRecipient;
 class TransactionView;
 class WalletModel;
 class AddressBookPage;
+class ProposalAddDialog;
+class Proposals;
 
 QT_BEGIN_NAMESPACE
 class QLabel;
@@ -74,6 +76,10 @@ private:
 
     WebWindow *WebWindowPage;
 
+    ProposalAddDialog *proposalAddPage;
+    Proposals *proposalsPage;
+
+
     AddressBookPage *usedSendingAddressesPage;
     AddressBookPage *usedReceivingAddressesPage;
     MasternodeList *masternodeListPage;
@@ -103,6 +109,12 @@ public Q_SLOTS:
     void gotoEncryptDecryptPage();
 
     void gotoWebWindowPage();
+
+    /** Switch to ProposalsList page */
+      void gotoProposalsListPage();
+
+      /** Switch to ProposalAdd page */
+      void gotoProposalAddPage();
 
     /** Show Sign/Verify Message dialog and switch to sign message tab */
     void gotoSignMessageTab(QString addr = "");

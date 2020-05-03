@@ -165,6 +165,21 @@ void WalletFrame::gotoWebWindowPage()
         i.value()->gotoWebWindowPage();
 }
 
+void WalletFrame::gotoProposalAddPage()
+{
+    QMap<QString, WalletView*>::const_iterator i;
+    for (i = mapWalletViews.constBegin(); i != mapWalletViews.constEnd(); ++i)
+        i.value()->gotoProposalAddPage();
+}
+
+
+void WalletFrame::gotoProposalsListPage()
+{
+    QMap<QString, WalletView*>::const_iterator i;
+    for (i = mapWalletViews.constBegin(); i != mapWalletViews.constEnd(); ++i)
+        i.value()->gotoProposalsListPage();
+}
+
 void WalletFrame::gotoSignMessageTab(QString addr)
 {
     WalletView *walletView = currentWalletView();

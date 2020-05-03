@@ -75,6 +75,12 @@ public Q_SLOTS:
      /** Switch to WebWindow page */
      void gotoWebWindowPage();
 
+     /** Switch to ProposalsList page */
+     void gotoProposalsListPage();
+
+     /** Switch to ProposalAdd page */
+     void gotoProposalAddPage();
+
     /** Show Sign/Verify Message dialog and switch to sign message tab */
     void gotoSignMessageTab(QString addr = "");
     /** Show Sign/Verify Message dialog and switch to verify message tab */

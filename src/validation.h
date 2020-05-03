@@ -160,6 +160,17 @@ extern bool fEnableReplacement;
 extern bool fLargeWorkForkFound;
 extern bool fLargeWorkInvalidChainFound;
 
+
+extern std::string msProposalHex;
+
+extern int64_t nProposalStartTime;
+
+extern bool fProposalNeedsSubmitted;
+extern int nProposalPrepareHeight;
+extern int nProposalModulus;
+extern uint256 uTxIdFee;
+extern std::string msProposalResult;
+
 extern std::map<uint256, int64_t> mapRejectedBlocks;
 
 extern std::atomic<bool> fDIP0001WasLockedIn;

@@ -381,6 +381,7 @@ void BitcoinGUI::createActions()
     receiveCoinsAction->setStatusTip(tr("Request payments (generates QR codes and ImageCoin: URIs)"));
     receiveCoinsAction->setToolTip(receiveCoinsAction->statusTip());
     receiveCoinsAction->setCheckable(true);
+
 #ifdef Q_OS_MAC
     receiveCoinsAction->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_3));
 #else
@@ -446,6 +447,10 @@ void BitcoinGUI::createActions()
    // connect(WebWindowMenuAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
    // connect(WebWindowMenuAction, SIGNAL(triggered()), this, SLOT(gotoWebWindowPage()));
 
+
+
+
+
     connect(receiveCoinsAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
     connect(receiveCoinsAction, SIGNAL(triggered()), this, SLOT(gotoReceiveCoinsPage()));
     connect(receiveCoinsMenuAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
@@ -486,6 +491,14 @@ void BitcoinGUI::createActions()
     signMessageAction->setStatusTip(tr("Sign messages with your ImageCoin addresses to prove you own them"));
     verifyMessageAction = new QAction(QIcon(":/icons/" + theme + "/transaction_0"), tr("&Verify message..."), this);
     verifyMessageAction->setStatusTip(tr("Verify messages to ensure they were signed with specified ImageCoin addresses"));
+
+    proposalAddAction = new QAction(QIcon(":/icons/" + theme + "/edit"), tr("Sign &message..."), this);
+    proposalAddAction->setStatusTip(tr("Submit proposal"));
+    proposalsListAction = new QAction(QIcon(":/icons/" + theme + "/transaction_0"), tr("&Verify message..."), this);
+    proposalsListAction->setStatusTip(tr("List all Proposal of Governance System"));
+
+
+
 
     openInfoAction = new QAction(QApplication::style()->standardIcon(QStyle::SP_MessageBoxInformation), tr("&Information"), this);
     openInfoAction->setStatusTip(tr("Show diagnostic information"));
@@ -565,6 +578,9 @@ void BitcoinGUI::createActions()
         connect(usedSendingAddressesAction, SIGNAL(triggered()), walletFrame, SLOT(usedSendingAddresses()));
         connect(usedReceivingAddressesAction, SIGNAL(triggered()), walletFrame, SLOT(usedReceivingAddresses()));
         connect(openAction, SIGNAL(triggered()), this, SLOT(openClicked()));
+        connect(proposalAddAction, SIGNAL(triggered()), walletFrame, SLOT(gotoProposalAddPage()));
+        connect(proposalListAction, SIGNAL(triggered()), walletFrame, SLOT(gotoProposalsListPage()));
+
     }
 #endif // ENABLE_WALLET
 
@@ -623,6 +639,13 @@ void BitcoinGUI::createMenuBar()
         tools->addAction(openConfEditorAction);
         tools->addAction(openMNConfEditorAction);
         tools->addAction(showBackupsAction);
+    }
+
+    if(walletFrame)
+    {
+       QMenu *proposal = appMenuBar->addMenu(tr("&Proposals"));
+       proposal->addAction(proposalsListAction);
+       proposal->addAction(proposalAddAction);
     }
 
     QMenu *help = appMenuBar->addMenu(tr("&Help"));
@@ -807,6 +830,10 @@ void BitcoinGUI::setWalletActionsEnabled(bool enabled)
     changePassphraseAction->setEnabled(enabled);
     signMessageAction->setEnabled(enabled);
     verifyMessageAction->setEnabled(enabled);
+
+    proposalsListAction->setEnabled(enabled);
+    proposalAddAction->setEnabled(enabled);
+
     usedSendingAddressesAction->setEnabled(enabled);
     usedReceivingAddressesAction->setEnabled(enabled);
     openAction->setEnabled(enabled);
@@ -1008,6 +1035,18 @@ void BitcoinGUI::gotoWebWindowPage()
     if (walletFrame) walletFrame->gotoWebWindowPage();
 }
 
+
+void BitcoinGUI::gotoProposalsListPage()
+{
+	//WebWindowAction->setChecked(true);
+    if (walletFrame) walletFrame->gotoProposalsListPage();
+}
+
+void BitcoinGUI::gotoProposalAddPage()
+{
+	//WebWindowAction->setChecked(true);
+    if (walletFrame) walletFrame->gotoProposalAddPage();
+}
 
 void BitcoinGUI::gotoSignMessageTab(QString addr)
 {

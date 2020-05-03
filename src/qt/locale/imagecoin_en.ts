@@ -6686,4 +6686,184 @@ https://www.transifex.com/projects/p/imagecoin/</translation>
         <translation>wallet.dat corrupt, salvage failed</translation>
     </message>
 </context>
+<context>
+    <name>ProposalAddDialog</name>
+    <message>
+        <location filename="../forms/proposaladddialog.ui" line="+41"/>
+        <source>Proposal Amount</source>
+        <translation>Proposal Amount</translation>
+    </message>
+    <message>
+        <location line="+10"/>
+        <source>Enter Proposal Amount</source>
+        <translation>Enter Proposal Amount</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>&amp;Proposal Amount:</source>
+        <translation>&amp;Proposal Amount:</translation>
+    </message>
+    <message>
+        <location line="+13"/>
+        <location line="+7"/>
+        <source>Discussion URL</source>
+        <translation>Discussion URL</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>&amp;Discussion URL:</source>
+        <translation>&amp;Discussion URL:</translation>
+    </message>
+    <message>
+        <location line="+13"/>
+        <location line="+14"/>
+        <source>Enter Proposal Name</source>
+        <translation>Enter Proposal Name</translation>
+    </message>
+    <message>
+        <location line="-7"/>
+        <source>ImageCoin - Add New Proposal - v1.1&lt;br&gt;</source>
+        <translation>ImageCoin - Add New Proposal - v1.1&lt;br&gt;</translation>
+    </message>
+    <message>
+        <location line="+10"/>
+        <source>&amp;Proposal Name:</source>
+        <translation>&amp;Proposal Name:</translation>
+    </message>
+    <message>
+        <location line="+21"/>
+        <source>&amp;Submit Proposal</source>
+        <translation>&amp;Submit Proposal</translation>
+    </message>
+    <message>
+        <location line="+32"/>
+        <source>Expense Type</source>
+        <translation>Expense Type</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Expense Type:</source>
+        <translation>Expense Type:</translation>
+    </message>
+    <message>
+        <location line="+10"/>
+        <source>Address</source>
+        <translation>Address</translation>
+    </message>
+    <message>
+        <location line="+13"/>
+        <source>Receiving Address</source>
+        <translation>Receiving Address</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Funding Receiving Address:</source>
+        <translation>Funding Receiving Address:</translation>
+    </message>
+    <message>
+        <location line="+49"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-style:italic;&quot;&gt;ImageCoin Governance System&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-style:italic;&quot;&gt;ImageCoin Governance System&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <location line="+16"/>
+        <source>...</source>
+        <translation>...</translation>
+    </message>
+    <message>
+        <location filename="../proposaladddialog.cpp" line="+188"/>
+        <source>Proposal Add Result</source>
+        <translation>Proposal Add Result</translation>
+    </message>
+</context>
+<context>
+    <name>Proposals</name>
+    <message>
+        <location filename="../forms/proposals.ui" line="+20"/>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <location filename="../proposals.cpp" line="+18"/>
+        <source>Proposal ID</source>
+        <translation>Proposal ID</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Proposal Name</source>
+        <translation>Proposal Name</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Amount</source>
+        <translation>Amount</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Expense Type</source>
+        <translation>Expense Type</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Created</source>
+        <translation>Created</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Yes Ct</source>
+        <translation>Yes Ct</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>No Ct</source>
+        <translation>No Ct</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Abstain Ct</source>
+        <translation>Abstain Ct</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Url</source>
+        <translation>Url</translation>
+    </message>
+    <message>
+        <location line="+102"/>
+        <source>Vote For</source>
+        <translation>Vote For</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Vote Against</source>
+        <translation>Vote Against</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Vote Abstain</source>
+        <translation>Vote Abstain</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Chart Proposal</source>
+        <translation>Chart Proposal</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>View Proposal</source>
+        <translation>View Proposal</translation>
+    </message>
+    <message>
+        <location line="+24"/>
+        <source>Voting Outcome</source>
+        <translation>Voting Outcome</translation>
+    </message>
+    <message>
+        <location line="+19"/>
+        <location line="+18"/>
+        <location line="+18"/>
+        <source>Proposal</source>
+        <translation>Proposal</translation>
+    </message>
+</context>
 </TS>

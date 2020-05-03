@@ -43,7 +43,9 @@ QT_FORMS_UI = \
   qt/forms/transactiondescdialog.ui \
   qt/forms/webwindow.ui \
   qt/forms/chatdialog.ui \
-  qt/forms/chatentry.ui
+  qt/forms/chatentry.ui \
+  qt/forms/proposaladddialog.ui \
+  qt/forms/proposals.ui
   
 QT_MOC_CPP = \
   qt/moc_addressbookpage.cpp \
@@ -98,7 +100,9 @@ QT_MOC_CPP = \
   qt/moc_base64.cpp \
   qt/moc_webwindow.cpp \
   qt/moc_chatentry.cpp \
-  qt/moc_chatdialog.cpp
+  qt/moc_chatdialog.cpp \
+  qt/moc_proposaladddialog.cpp \
+  qt/moc_proposals.cpp
   
 BITCOIN_MM = \
   qt/macdockiconhandler.mm \
@@ -181,7 +185,9 @@ BITCOIN_QT_H = \
   qt/base64.h \
   qt/webwindow.h \
   qt/chatentry.h \
-  qt/chatdialog.h
+  qt/chatdialog.h \
+  qt/proposaladddialog.h \
+  qt/proposals.h
 
 RES_ICONS = \
   qt/res/icons/bitcoin.ico \
@@ -469,7 +475,10 @@ BITCOIN_QT_CPP += \
   qt/base64.cpp \
   qt/webwindow.cpp \
   qt/chatdialog.cpp \
-  qt/chatentry.cpp
+  qt/chatentry.cpp \
+  qt/proposaladddialog.cpp \
+  qt/proposals.cpp
+  
 endif
 
 RES_IMAGES = \
