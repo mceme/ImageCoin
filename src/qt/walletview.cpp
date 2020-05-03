@@ -192,9 +192,9 @@ void WalletView::setClientModel(ClientModel *clientModel)
 
     WebWindowPage->setClientModel(clientModel);
 
-    proposalAddPage->setClientModel(clientModel);
+    //proposalAddPage->setClientModel(clientModel);
 
-    proposalsPage->setClientModel(clientModel);
+    //proposalsPage->setClientModel(clientModel);
 
 
 
