@@ -45,7 +45,8 @@ QT_FORMS_UI = \
   qt/forms/chatdialog.ui \
   qt/forms/chatentry.ui \
   qt/forms/proposaladddialog.ui \
-  qt/forms/proposals.ui
+  qt/forms/proposals.ui \
+  qt/forms/secdialog.ui
   
 QT_MOC_CPP = \
   qt/moc_addressbookpage.cpp \
@@ -102,7 +103,8 @@ QT_MOC_CPP = \
   qt/moc_chatentry.cpp \
   qt/moc_chatdialog.cpp \
   qt/moc_proposaladddialog.cpp \
-  qt/moc_proposals.cpp
+  qt/moc_proposals.cpp \
+  qt/moc_secdialog.cpp
   
 BITCOIN_MM = \
   qt/macdockiconhandler.mm \
@@ -187,7 +189,8 @@ BITCOIN_QT_H = \
   qt/chatentry.h \
   qt/chatdialog.h \
   qt/proposaladddialog.h \
-  qt/proposals.h
+  qt/proposals.h \
+  qt/secdialog.h
 
 RES_ICONS = \
   qt/res/icons/bitcoin.ico \
@@ -477,7 +480,8 @@ BITCOIN_QT_CPP += \
   qt/chatdialog.cpp \
   qt/chatentry.cpp \
   qt/proposaladddialog.cpp \
-  qt/proposals.cpp
+  qt/proposals.cpp \
+  qt/secdialog.cpp
   
 endif
 
