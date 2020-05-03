@@ -12,6 +12,10 @@
 #include "serialize.h"
 #include "uint256.h"
 
+#include <math.h>   // For floor
+
+#include <memory>
+
 /** An outpoint - a combination of a transaction hash and an index n into its vout */
 class COutPoint
 {
