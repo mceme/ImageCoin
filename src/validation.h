@@ -183,7 +183,7 @@ struct Researcher;
 
 extern std::map<std::string, Researcher> mvResearchers;
 
-
+int BLOCKS_PER_DAY = 205;
 /** Block hash whose ancestors we will assume to have valid scripts without checking them. */
 extern uint256 hashAssumeValid;
 

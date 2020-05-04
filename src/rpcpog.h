@@ -18,7 +18,7 @@ class CWallet;
 
 
 
-int BLOCKS_PER_DAY = 205;
+
 
 std::string RetrieveMd5(std::string s1);
 

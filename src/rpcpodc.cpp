@@ -11,6 +11,7 @@
 #include "masternode-sync.h"
 #include "smartcontract-server.h"
 #include "rpcpog.h"
+#include "validation.h"
 #include <boost/lexical_cast.hpp>
 #include <boost/algorithm/string/case_conv.hpp> // for to_lower()
 #include <boost/algorithm/string.hpp> // for trim()

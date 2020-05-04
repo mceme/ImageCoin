@@ -3,8 +3,8 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "randomx_bbp.h"
 #include "hash.h"
+#include "randomx.h"
 
 static std::map<int, randomx_cache*> rxcache;
 static std::map<int, randomx_vm*> myvm;

@@ -198,7 +198,7 @@ BITCOIN_CORE_H = \
   qt/base64.h \
   rpcpodc.h \
   rpcpog.h \
-  randomx_bbp.h \
+  randomx.h \
   smartcontract-client.h \
   smartcontract-server.h \
   netmessagemaker.h \
