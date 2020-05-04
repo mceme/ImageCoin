@@ -11,7 +11,6 @@
 #include <string>
 #include <univalue.h>
 
-class  Researcher;
 
 std::string strReplace(std::string& str, const std::string& oldStr, const std::string& newStr);
 double GetCryptoPrice(std::string sURL);
