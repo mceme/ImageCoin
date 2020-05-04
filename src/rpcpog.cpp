@@ -10,9 +10,14 @@
 #include "init.h"
 #include "bbpsocket.h"
 #include "activemasternode.h"
-#include "governance-classes.h"
 #include "governance.h"
+#include "governance-vote.h"
+#include "governance-classes.h"
+#include "governance-validators.h"
+#include "masternode.h"
 #include "masternode-sync.h"
+#include "masternodeconfig.h"
+#include "masternodeman.h"
 #include "masternode-payments.h"
 #include "messagesigner.h"
 #include "smartcontract-server.h"
@@ -685,6 +690,147 @@ std::string GetActiveProposals()
 		}
 	}
 	return sXML;
+}
+
+bool VoteManyForGobject(std::string govobj, std::string strVoteSignal, std::string strVoteOutcome,
+	int iVotingLimit, int& nSuccessful, int& nFailed, std::string& sError)
+{
+
+	uint256 hash(uint256S(govobj));
+	vote_signal_enum_t eVoteSignal = CGovernanceVoting::ConvertVoteSignal(strVoteSignal);
+	if(eVoteSignal == VOTE_SIGNAL_NONE)
+	{
+		sError = "Invalid vote signal (funding).";
+		return false;
+	}
+    vote_outcome_enum_t eVoteOutcome = CGovernanceVoting::ConvertVoteOutcome(strVoteOutcome);
+    if(eVoteOutcome == VOTE_OUTCOME_NONE)
+	{
+        sError = "Invalid vote outcome (yes/no/abstain)";
+		return false;
+	}
+
+#ifdef ENABLE_WALLET
+    if (!pwalletMain)
+    {
+        sError = "Voting is not supported when wallet is disabled.";
+        return false;
+    }
+#endif
+
+	std::map<uint256, CKey> votingKeys;
+
+
+//    auto mnList = deterministicMNManager->GetListAtChainTip();
+//    mnList.ForEachMN(true, [&](const CDeterministicMNCPtr& dmn)
+//	{
+//        CKey votingKey;
+//        if (pwalletMain->GetKey(dmn->pdmnState->keyIDVoting, votingKey))
+//		{
+//            votingKeys.emplace(dmn->proTxHash, votingKey);
+//		}
+//	});
+
+
+
+	UniValue vOutcome;
+
+
+	try
+	{
+
+		 std::vector<CMasternodeConfig::CMasternodeEntry> mnEntries;
+		        mnEntries = masternodeConfig.getEntries();
+
+		        UniValue resultsObj(UniValue::VOBJ);
+
+		        BOOST_FOREACH(CMasternodeConfig::CMasternodeEntry mne, masternodeConfig.getEntries()) {
+		            std::string strError;
+		            std::vector<unsigned char> vchMasterNodeSignature;
+		            std::string strMasterNodeSignMessage;
+
+		            CPubKey pubKeyCollateralAddress;
+		            CKey keyCollateralAddress;
+		            CPubKey pubKeyMasternode;
+		            CKey keyMasternode;
+
+		            UniValue statusObj(UniValue::VOBJ);
+
+		            if(!CMessageSigner::GetKeysFromSecret(mne.getPrivKey(), keyMasternode, pubKeyMasternode)){
+		                nFailed++;
+		                statusObj.push_back(Pair("result", "failed"));
+		                statusObj.push_back(Pair("errorMessage", "Masternode signing error, could not set key correctly"));
+		                resultsObj.push_back(Pair(mne.getAlias(), statusObj));
+		                continue;
+		            }
+
+		            uint256 nTxHash;
+		            nTxHash.SetHex(mne.getTxHash());
+
+		            int nOutputIndex = 0;
+		            if(!ParseInt32(mne.getOutputIndex(), &nOutputIndex)) {
+		                continue;
+		            }
+
+		            COutPoint outpoint(nTxHash, nOutputIndex);
+
+		            CMasternode mn;
+		            bool fMnFound = mnodeman.Get(outpoint, mn);
+
+		            if(!fMnFound) {
+		                nFailed++;
+		                statusObj.push_back(Pair("result", "failed"));
+		                statusObj.push_back(Pair("errorMessage", "Can't find masternode by collateral output"));
+		                resultsObj.push_back(Pair(mne.getAlias(), statusObj));
+		                continue;
+		            }
+
+		            CGovernanceVote vote(mn.vin.prevout, hash, eVoteSignal, eVoteOutcome);
+		            if(!vote.Sign(keyMasternode, pubKeyMasternode)){
+		                nFailed++;
+		                statusObj.push_back(Pair("result", "failed"));
+		                statusObj.push_back(Pair("errorMessage", "Failure to sign."));
+		                resultsObj.push_back(Pair(mne.getAlias(), statusObj));
+		                continue;
+		            }
+
+		            CGovernanceException exception;
+		            if(governance.ProcessVoteAndRelay(vote, exception, *g_connman)) {
+		                nSuccessful++;
+		                statusObj.push_back(Pair("result", "success"));
+		            }
+		            else {
+		                nFailed++;
+		                statusObj.push_back(Pair("result", "failed"));
+		                statusObj.push_back(Pair("errorMessage", exception.GetMessage()));
+		            }
+
+		            resultsObj.push_back(Pair(mne.getAlias(), statusObj));
+		        }
+
+		        UniValue returnObj(UniValue::VOBJ);
+		        returnObj.push_back(Pair("overall", strprintf("Voted successfully %d time(s) and failed %d time(s).", nSuccessful, nFailed)));
+		        returnObj.push_back(Pair("detail", resultsObj));
+		        returnObj.push_back(Pair("success_count", nSuccessful));
+
+		        vOutcome = returnObj;
+
+		//vOutcome = VoteWithMasternodes(votingKeys, hash, eVoteSignal, eVoteOutcome);
+	}
+	catch(std::runtime_error& e)
+	{
+		sError = e.what();
+		return false;
+	}
+	catch (...)
+	{
+		sError = "Voting failed.";
+		return false;
+	}
+
+	nSuccessful = cdbl(vOutcome["success_count"].getValStr(), 0);
+	bool fResult = nSuccessful > 0 ? true : false;
+	return fResult;
 }
 
 
