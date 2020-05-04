@@ -20,6 +20,8 @@
 #include "versionbits.h"
 #include "spentindex.h"
 
+#include "rpcpog.h"
+
 #include <algorithm>
 #include <exception>
 #include <map>
@@ -179,7 +181,6 @@ extern std::map<std::pair<std::string, std::string>, std::pair<std::string, int6
 extern std::atomic<bool> fDIP0001WasLockedIn;
 extern std::atomic<bool> fDIP0001ActiveAtTip;
 
-struct Researcher;
 
 extern std::map<std::string, Researcher> mvResearchers;
 
