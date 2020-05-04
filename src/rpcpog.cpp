@@ -42,7 +42,7 @@
 #include "netbase.h" // for LookupHost
 #include "wallet/wallet.h"
 #include <sstream>
-#include "randomx_bbp.h"
+//#include "randomx_bbp.h"
 
 #ifdef ENABLE_WALLET
 extern CWallet* pwalletMain;
