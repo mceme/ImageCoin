@@ -1,4 +1,4 @@
-ifndef SECDIALOG_H
+#ifndef SECDIALOG_H
 #define SECDIALOG_H
 
 #include <QDialog>
