@@ -46,7 +46,11 @@
 
 #ifdef ENABLE_WALLET
 extern CWallet* pwalletMain;
+
 #endif // ENABLE_WALLET
+
+CValidationState state;
+
 UniValue VoteWithMasternodes(const std::map<uint256, CKey>& keys,	
                              const uint256& hash, vote_signal_enum_t eVoteSignal,	
                              vote_outcome_enum_t eVoteOutcome);
@@ -584,7 +588,8 @@ bool FundWithExternalPurse(std::string& sError, const CTxDestination &address, C
 
 	// We must pass minCoinAge == .01+, and nExactSpend == purses vout to use this feature:
 	
-    if (!pwalletMain->CreateTransaction(vecSend, wtxNew, reservekey, nFeeRequired, nChangePosRet))
+    if (!pwalletMain->CreateTransaction(vecSend, wtxNew, reservekey, nFeeRequired, nChangePosRet, strError, NULL, true, ONLY_NONDENOMINATED, fUseInstantSend, 0,
+		sOptionalData, dMinCoinAge, 0, nExactAmount, sPursePubKey))
 	{
         if (!fSubtractFeeFromAmount && nValue + nFeeRequired > pwalletMain->GetBalance())
 		{
@@ -594,7 +599,7 @@ bool FundWithExternalPurse(std::string& sError, const CTxDestination &address, C
 		sError = "Unable to Create Transaction: " + strError;
 		return false;
     }
-    CValidationState state;
+    //CValidationState state;
         
     if (!pwalletMain->CommitTransaction(wtxNew, reservekey, g_connman.get(), state,  fUseInstantSend ? NetMsgType::TXLOCKREQUEST : NetMsgType::TX))
 	{
@@ -641,7 +646,7 @@ bool RPCSendMoney(std::string& sError, const CTxDestination &address, CAmount nV
 	vecSend.push_back(recipient);
 	
     int nMinConfirms = 0;
-    if (!pwalletMain->CreateTransaction(vecSend, wtxNew, reservekey, nFeeRequired, nChangePosRet))
+    if (!pwalletMain->CreateTransaction(vecSend, wtxNew, reservekey, nFeeRequired, nChangePosRet, strError, NULL, true, ONLY_NONDENOMINATED, fUseInstantSend, 0, sOptionalData))
 	{
         if (!fSubtractFeeFromAmount && nValue + nFeeRequired > pwalletMain->GetBalance())
 		{
@@ -651,7 +656,7 @@ bool RPCSendMoney(std::string& sError, const CTxDestination &address, CAmount nV
 		sError = "Unable to Create Transaction: " + strError;
 		return false;
     }
-    CValidationState state;
+    //CValidationState state;
         
     if (!pwalletMain->CommitTransaction(wtxNew, reservekey, g_connman.get(), state,  fUseInstantSend ? NetMsgType::TXLOCKREQUEST : NetMsgType::TX))
 	{
@@ -799,7 +804,7 @@ std::string CreateGovernanceCollateral(uint256 GovObjHash, CAmount caFee, std::s
 	{
 		// -- make our change address
 		CReserveKey reservekey(pwalletMain);
-		CValidationState state;
+		//CValidationState state;
         pwalletMain->CommitTransaction(wtx, reservekey, g_connman.get(), state, NetMsgType::TX);
 		DBG( cout << "gobject: prepare "
 					<< " strData = " << govobj.GetDataAsString()
