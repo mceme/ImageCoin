@@ -588,8 +588,7 @@ bool FundWithExternalPurse(std::string& sError, const CTxDestination &address, C
 
 	// We must pass minCoinAge == .01+, and nExactSpend == purses vout to use this feature:
 	
-    if (!pwalletMain->CreateTransaction(vecSend, wtxNew, reservekey, nFeeRequired, nChangePosRet, strError, NULL, true, ONLY_NONDENOMINATED, fUseInstantSend, 0,
-		sOptionalData, dMinCoinAge, 0, nExactAmount, sPursePubKey))
+    if (!pwalletMain->CreateTransaction(vecSend, wtxNew, reservekey, nFeeRequired, nChangePosRet, strError, NULL, true, 0, fUseInstantSend))
 	{
         if (!fSubtractFeeFromAmount && nValue + nFeeRequired > pwalletMain->GetBalance())
 		{
@@ -646,7 +645,7 @@ bool RPCSendMoney(std::string& sError, const CTxDestination &address, CAmount nV
 	vecSend.push_back(recipient);
 	
     int nMinConfirms = 0;
-    if (!pwalletMain->CreateTransaction(vecSend, wtxNew, reservekey, nFeeRequired, nChangePosRet, strError, NULL, true, ONLY_NONDENOMINATED, fUseInstantSend, 0, sOptionalData))
+    if (!pwalletMain->CreateTransaction(vecSend, wtxNew, reservekey, nFeeRequired, nChangePosRet, strError, NULL, true,  0, fUseInstantSend))
 	{
         if (!fSubtractFeeFromAmount && nValue + nFeeRequired > pwalletMain->GetBalance())
 		{
