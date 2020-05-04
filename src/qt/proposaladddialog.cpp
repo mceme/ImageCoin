@@ -119,7 +119,7 @@ void ProposalAddDialog::on_btnSubmit_clicked()
 	}
 	else
 	{
-		if (nBalance < (2501*COIN)) sError += "Sorry balance too low to create proposal collateral. ";
+		if (nBalance < (6*COIN)) sError += "Sorry balance too low to create proposal collateral. ";
 	}
 
 	std::string sPrepareTxId;
