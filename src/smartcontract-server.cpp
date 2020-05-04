@@ -55,8 +55,7 @@ std::string GetCPIDByCPK(std::string sCPK)
 
 DACProposal GetProposalByHash(uint256 govObj, int nLastSuperblock)
 {
-	int nSancCount = deterministicMNManager->GetListAtChainTip().GetValidMNsCount();
-	int nMinPassing = nSancCount * .10;
+	int nMinPassing = 500 * .10;
 	if (nMinPassing < 1) nMinPassing = 1;
 	CGovernanceObject* myGov = governance.FindGovernanceObject(govObj);
 	UniValue obj = myGov->GetJSONObject();
@@ -70,7 +69,7 @@ DACProposal GetProposalByHash(uint256 govObj, int nLastSuperblock)
 	dacProposal.sAddress = obj["payment_address"].getValStr();
 	dacProposal.uHash = myGov->GetHash();
 	dacProposal.nHeight = GetHeightByEpochTime(dacProposal.nStartEpoch);
-	dacProposal.nMinPassing = nMinPassing;
+	dacProposal.nMinPassing = 1;
 	dacProposal.nYesVotes = myGov->GetYesCount(VOTE_SIGNAL_FUNDING);
 	dacProposal.nNoVotes = myGov->GetNoCount(VOTE_SIGNAL_FUNDING);
 	dacProposal.nAbstainVotes = myGov->GetAbstainCount(VOTE_SIGNAL_FUNDING);
@@ -84,7 +83,7 @@ DACProposal GetProposalByHash(uint256 govObj, int nLastSuperblock)
 
 std::string DescribeProposal(DACProposal dacProposal)
 {
-	std::string sReport = "Proposal StartDate: " + dacProposal.sProposalHRTime + ", Hash: " + dacProposal.uHash.GetHex() + " for Amount: " + RoundToString(dacProposal.nAmount, 2) + CURRENCY_NAME + ", Name: " 
+	std::string sReport = "Proposal StartDate: " + dacProposal.sProposalHRTime + ", Hash: " + dacProposal.uHash.GetHex() + " for Amount: " + RoundToString(dacProposal.nAmount, 2) + "IMAGECOIN, Name: "
 				+ dacProposal.sName + ", ExpType: " + dacProposal.sExpenseType + ", PAD: " + dacProposal.sAddress 
 				+ ", Height: " + RoundToString(dacProposal.nHeight, 0) 
 				+ ", Votes: " + RoundToString(dacProposal.nNetYesVotes, 0) + ", LastSB: " 
