@@ -1316,10 +1316,10 @@ UniValue ContributionReport()
 				nEnd = ii;
 				for (auto tx : block.vtx) 
 				{
-					 for (int i=0; i < (int)tx->vout.size(); i++)
+					 for (int i=0; i < (int)tx.vout.size(); i++)
 					 {
-				 		std::string sRecipient = PubKeyToAddress(tx->vout[i].scriptPubKey);
-						double dAmount = tx->vout[i].nValue/COIN;
+				 		std::string sRecipient = PubKeyToAddress(tx.vout[i].scriptPubKey);
+						double dAmount = tx.vout[i].nValue/COIN;
 						bool bProcess = false;
 						if (sRecipient == consensusParams.FoundationAddress)
 						{ 
@@ -1422,12 +1422,12 @@ int DeserializePrayersFromFile()
 CAmount GetTitheAmount(CTransaction ctx)
 {
 	const Consensus::Params& consensusParams = Params().GetConsensus();
-	for (unsigned int z = 0; z < ctx->vout.size(); z++)
+	for (unsigned int z = 0; z < ctx.vout.size(); z++)
 	{
-		std::string sRecip = PubKeyToAddress(ctx->vout[z].scriptPubKey);
+		std::string sRecip = PubKeyToAddress(ctx.vout[z].scriptPubKey);
 		if (sRecip == consensusParams.FoundationAddress) 
 		{
-			return ctx->vout[z].nValue;  // First Tithe amount found in transaction counts
+			return ctx.vout[z].nValue;  // First Tithe amount found in transaction counts
 		}
 	}
 	return 0;
@@ -2376,9 +2376,9 @@ bool AdvertiseChristianPublicKeypair(std::string sProjectId, std::string sNickNa
 std::string GetTransactionMessage(CTransaction tx)
 {
 	std::string sMsg;
-	for (unsigned int i = 0; i < tx->vout.size(); i++) 
+	for (unsigned int i = 0; i < tx.vout.size(); i++)
 	{
-		sMsg += tx->vout[i].sTxOutMessage;
+		sMsg += tx.vout[i].sTxOutMessage;
 	}
 	return sMsg;
 }
@@ -2429,9 +2429,9 @@ bool CheckAntiBotNetSignature(CTransaction tx, std::string sType, std::string sS
 			return false;
 		}
 	}
-	for (unsigned int i = 0; i < tx->vout.size(); i++)
+	for (unsigned int i = 0; i < tx.vout.size(); i++)
 	{
-		const CTxOut& txout = tx->vout[i];
+		const CTxOut& txout = tx.vout[i];
 		std::string sAddr = PubKeyToAddress(txout.scriptPubKey);
 		std::string sError;
 		bool fSigned = CheckStakeSignature(sAddr, sSig, sMessage, sError);
@@ -2445,12 +2445,12 @@ double GetVINCoinAge(int64_t nBlockTime, CTransaction tx, bool fDebug)
 {
 	double dTotal = 0;
 	std::string sDebugData = "\nGetVINCoinAge: ";
-	for (int i = 0; i < (int)tx->vin.size(); i++) 
+	for (int i = 0; i < (int)tx.vin.size(); i++)
 	{
-    	int n = tx->vin[i].prevout.n;
+    	int n = tx.vin[i].prevout.n;
 		CAmount nAmount = 0;
 		int64_t nTime = 0;
-		bool fOK = GetTransactionTimeAndAmount(tx->vin[i].prevout.hash, n, nTime, nAmount);
+		bool fOK = GetTransactionTimeAndAmount(tx.vin[i].prevout.hash, n, nTime, nAmount);
 		double nSancScalpingDisabled = GetSporkDouble("preventsanctuaryscalping", 0);
 		if (nSancScalpingDisabled == 1 && nAmount == (SANCTUARY_COLLATERAL * COIN)) 
 		{
@@ -2774,20 +2774,20 @@ double GetFees(CTransaction tx)
 	CAmount nFees = 0;
 	CAmount nValueIn = 0;
 	CAmount nValueOut = 0;
-	for (int i = 0; i < (int)tx->vin.size(); i++) 
+	for (int i = 0; i < (int)tx.vin.size(); i++)
 	{
-    	int n = tx->vin[i].prevout.n;
+    	int n = tx.vin[i].prevout.n;
 		CAmount nAmount = 0;
 		int64_t nTime = 0;
-		bool fOK = GetTransactionTimeAndAmount(tx->vin[i].prevout.hash, n, nTime, nAmount);
+		bool fOK = GetTransactionTimeAndAmount(tx.vin[i].prevout.hash, n, nTime, nAmount);
 		if (fOK && nTime > 0 && nAmount > 0)
 		{
 			nValueIn += nAmount;
 		}
 	}
-	for (int i = 0; i < (int)tx->vout.size(); i++)
+	for (int i = 0; i < (int)tx.vout.size(); i++)
 	{
-		nValueOut += tx->vout[i].nValue;
+		nValueOut += tx.vout[i].nValue;
 	}
 	nFees = nValueIn - nValueOut;
 	if (fDebug)

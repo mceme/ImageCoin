@@ -195,7 +195,7 @@ bool GetTransactionTimeAndAmount(uint256 txhash, int nVout, int64_t& nTime, CAmo
 		   {
               CBlockIndex* pMNIndex = (*mi).second;
 			  nTime = pMNIndex->GetBlockTime();
-		      nAmount = tx2->vout[nVout].nValue;
+		      nAmount = tx2.vout[nVout].nValue;
 			  return true;
 		   }
 	}
