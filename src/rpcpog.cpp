@@ -813,7 +813,7 @@ std::string GetActiveProposals()
 		// First ensure the proposals gov height has not passed yet
 		bool bIsPaid = nEpochHeight < nLastSuperblock;
 		std::string sReport = DescribeProposal(dProposal);
-		if (fDebugSpam && fDebug)
+		if (fDebug)
 			LogPrintf("\nGetActiveProposals::Proposal %s , epochHeight %f, nLastSuperblock %f, IsPaid %f ", 
 					sReport, nEpochHeight, nLastSuperblock, (double)bIsPaid);
 		if (!bIsPaid)
@@ -843,66 +843,6 @@ std::string GetActiveProposals()
 	return sXML;
 }
 
-bool VoteManyForGobject(std::string govobj, std::string strVoteSignal, std::string strVoteOutcome, 
-	int iVotingLimit, int& nSuccessful, int& nFailed, std::string& sError)
-{
-        
-	uint256 hash(uint256S(govobj));
-	vote_signal_enum_t eVoteSignal = CGovernanceVoting::ConvertVoteSignal(strVoteSignal);
-	if(eVoteSignal == VOTE_SIGNAL_NONE) 
-	{
-		sError = "Invalid vote signal (funding).";
-		return false;
-	}
-    vote_outcome_enum_t eVoteOutcome = CGovernanceVoting::ConvertVoteOutcome(strVoteOutcome);
-    if(eVoteOutcome == VOTE_OUTCOME_NONE) 
-	{
-        sError = "Invalid vote outcome (yes/no/abstain)";
-		return false;
-	}
-
-#ifdef ENABLE_WALLET	
-    if (!pwalletMain)	
-    {	
-        sError = "Voting is not supported when wallet is disabled.";	
-        return false;	
-    }	
-#endif
-
-	std::map<uint256, CKey> votingKeys;	
-
-
-    auto mnList = deterministicMNManager->GetListAtChainTip();
-    mnList.ForEachMN(true, [&](const CDeterministicMNCPtr& dmn) 
-	{
-        CKey votingKey;		
-        if (pwalletMain->GetKey(dmn->pdmnState->keyIDVoting, votingKey)) 
-		{	       
-            votingKeys.emplace(dmn->proTxHash, votingKey);	
-		}
-	});
-	UniValue vOutcome;
-
-
-	try	
-	{	
-		vOutcome = VoteWithMasternodes(votingKeys, hash, eVoteSignal, eVoteOutcome);
-	}	
-	catch(std::runtime_error& e)
-	{
-		sError = e.what();
-		return false;
-	}
-	catch (...) 
-	{
-		sError = "Voting failed.";
-		return false;
-	}
-    
-	nSuccessful = cdbl(vOutcome["success_count"].getValStr(), 0);	
-	bool fResult = nSuccessful > 0 ? true : false;
-	return fResult;
-}
 
 std::string CreateGovernanceCollateral(uint256 GovObjHash, CAmount caFee, std::string& sError)
 {
@@ -999,4 +939,35 @@ bool SubmitProposalToNetwork(uint256 txidFee, int64_t nStartTime, std::string sH
 	return true;
 }
 
-
+double cdbl(std::string s, int place)
+{
+	if (s=="") s = "0";
+	if (s.length() > 255) return 0;
+	s = strReplace(s, "\r","");
+	s = strReplace(s, "\n","");
+	std::string t = "";
+	for (int i = 0; i < (int)s.length(); i++)
+	{
+		std::string u = s.substr(i,1);
+		if (u=="0" || u=="1" || u=="2" || u=="3" || u=="4" || u=="5" || u=="6" || u == "7" || u=="8" || u=="9" || u=="." || u=="-")
+		{
+			t += u;
+		}
+	}
+	double r= 0;
+	try
+	{
+	    r = boost::lexical_cast<double>(t);
+	}
+	catch(boost::bad_lexical_cast const& e)
+	{
+		LogPrintf("caught cdbl bad lexical cast %f from %s with %f", 1, s, (double)place);
+		return 0;
+	}
+	catch(...)
+	{
+		LogPrintf("caught cdbl bad lexical cast %f", 2);
+	}
+	double d = Round(r, place);
+	return d;
+}
