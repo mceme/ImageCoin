@@ -11,7 +11,7 @@
 #include "uint256.h"
 #include "ui_interface.h"
 #include "init.h"
-
+#include "validation.h"
 #include <stdint.h>
 
 #include <boost/thread.hpp>
@@ -353,6 +353,8 @@ bool CBlockTreeDB::LoadBlockIndexGuts(boost::function<CBlockIndex*(const uint256
     pcursor->Seek(make_pair(DB_BLOCK_INDEX, uint256()));
 
     // Load mapBlockIndex
+    fLoadingIndex = true;
+
     while (pcursor->Valid()) {
         boost::this_thread::interruption_point();
         std::pair<char, uint256> key;
@@ -379,6 +381,7 @@ bool CBlockTreeDB::LoadBlockIndexGuts(boost::function<CBlockIndex*(const uint256
 
                 pcursor->Next();
             } else {
+            	fLoadingIndex = false;
                 return error("%s: failed to read value", __func__);
             }
         } else {
@@ -386,6 +389,7 @@ bool CBlockTreeDB::LoadBlockIndexGuts(boost::function<CBlockIndex*(const uint256
         }
     }
 
+	fLoadingIndex = false;
     return true;
 }
 

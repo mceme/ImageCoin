@@ -77,6 +77,7 @@ bool fTimestampIndex = false;
 bool fSpentIndex = false;
 bool fHavePruned = false;
 bool fPruneMode = false;
+bool fLoadingIndex = false;
 bool fIsBareMultisigStd = DEFAULT_PERMIT_BAREMULTISIG;
 bool fRequireStandard = true;
 unsigned int nBytesPerSigOp = DEFAULT_BYTES_PER_SIGOP;

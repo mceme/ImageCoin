@@ -160,6 +160,7 @@ extern bool fEnableReplacement;
 extern bool fLargeWorkForkFound;
 extern bool fLargeWorkInvalidChainFound;
 
+extern bool fLoadingIndex;
 
 extern std::string msProposalHex;
 
