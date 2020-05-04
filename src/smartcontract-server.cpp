@@ -90,3 +90,12 @@ std::string DescribeProposal(DACProposal dacProposal)
 				+ RoundToString(dacProposal.nLastSuperblock, 0);
 	return sReport;
 }
+
+std::string GetCPIDElementByData(std::string sData, int iElement)
+{
+	std::vector<std::string> vP = Split(sData.c_str(), "|");
+	if (vP.size() < 10)
+		return std::string();
+	return vP[iElement];
+}
+
