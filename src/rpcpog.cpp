@@ -785,7 +785,7 @@ std::string GetActiveProposals()
 {
     int nStartTime = GetAdjustedTime() - (86400 * 32);
     LOCK2(cs_main, governance.cs);
-    std::vector<const CGovernanceObject*> objs = governance.GetAllNewerThan(nStartTime);
+    std::vector<CGovernanceObject*> objs = governance.GetAllNewerThan(nStartTime);
 	std::string sXML;
 	int id = 0;
 	std::string sDelim = "|";
@@ -793,7 +793,7 @@ std::string GetActiveProposals()
 	int nLastSuperblock = 0;
 	int nNextSuperblock = 0;
 	GetGovSuperblockHeights(nNextSuperblock, nLastSuperblock);
-	for (const CGovernanceObject* pGovObj : objs) 
+	for (CGovernanceObject* pGovObj : objs)
     {
 		if (pGovObj->GetObjectType() != GOVERNANCE_OBJECT_PROPOSAL) continue;
 		int64_t nEpoch = 0;
@@ -939,35 +939,3 @@ bool SubmitProposalToNetwork(uint256 txidFee, int64_t nStartTime, std::string sH
 	return true;
 }
 
-double cdbl(std::string s, int place)
-{
-	if (s=="") s = "0";
-	if (s.length() > 255) return 0;
-	s = strReplace(s, "\r","");
-	s = strReplace(s, "\n","");
-	std::string t = "";
-	for (int i = 0; i < (int)s.length(); i++)
-	{
-		std::string u = s.substr(i,1);
-		if (u=="0" || u=="1" || u=="2" || u=="3" || u=="4" || u=="5" || u=="6" || u == "7" || u=="8" || u=="9" || u=="." || u=="-")
-		{
-			t += u;
-		}
-	}
-	double r= 0;
-	try
-	{
-	    r = boost::lexical_cast<double>(t);
-	}
-	catch(boost::bad_lexical_cast const& e)
-	{
-		LogPrintf("caught cdbl bad lexical cast %f from %s with %f", 1, s, (double)place);
-		return 0;
-	}
-	catch(...)
-	{
-		LogPrintf("caught cdbl bad lexical cast %f", 2);
-	}
-	double d = Round(r, place);
-	return d;
-}
