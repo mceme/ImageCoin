@@ -304,6 +304,8 @@ libbitcoin_wallet_a_SOURCES = \
   wallet/wallet_ismine.cpp \
   wallet/walletdb.cpp \
   qt/base64.cpp \
+  qt/rpcpodc.cpp \
+  qt/rpcpog.cpp \
   policy/rbf.cpp \
   $(BITCOIN_CORE_H)
 
