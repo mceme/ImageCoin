@@ -181,10 +181,10 @@ extern std::map<std::pair<std::string, std::string>, std::pair<std::string, int6
 extern std::atomic<bool> fDIP0001WasLockedIn;
 extern std::atomic<bool> fDIP0001ActiveAtTip;
 
-
+struct Researcher;
 extern std::map<std::string, Researcher> mvResearchers;
 
-int BLOCKS_PER_DAY = 205;
+
 /** Block hash whose ancestors we will assume to have valid scripts without checking them. */
 extern uint256 hashAssumeValid;
 
