@@ -40,6 +40,8 @@
 #include "masternodeman.h"
 #include "masternode-payments.h"
 
+
+
 #include <sstream>
 
 #include <boost/algorithm/string/replace.hpp>
@@ -75,6 +77,7 @@ bool fTimestampIndex = false;
 bool fSpentIndex = false;
 bool fHavePruned = false;
 bool fPruneMode = false;
+bool fLoadingIndex = false;
 bool fIsBareMultisigStd = DEFAULT_PERMIT_BAREMULTISIG;
 bool fRequireStandard = true;
 unsigned int nBytesPerSigOp = DEFAULT_BYTES_PER_SIGOP;
@@ -85,6 +88,20 @@ uint64_t nPruneTarget = 0;
 bool fAlerts = DEFAULT_ALERTS;
 bool fEnableReplacement = DEFAULT_ENABLE_REPLACEMENT;
 
+
+std::map<std::pair<std::string, std::string>, std::pair<std::string, int64_t>> mvApplicationCache;
+
+std::map<std::string, Researcher> mvResearchers;
+
+int nProposalModulus = 0;
+std::string msURL;
+bool fProposalNeedsSubmitted= false;
+int64_t nProposalStartTime = 0;
+uint256 uTxIdFee = uint256S("0x0");
+int nProposalPrepareHeight = 0;
+
+std::string msProposalResult;
+std::string msProposalHex;
 std::atomic<bool> fDIP0001WasLockedIn{false};
 std::atomic<bool> fDIP0001ActiveAtTip{false};
 

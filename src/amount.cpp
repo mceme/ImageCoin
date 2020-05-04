@@ -9,6 +9,8 @@
 
 const std::string CURRENCY_UNIT = "IMG";
 
+
+
 CFeeRate::CFeeRate(const CAmount& nFeePaid, size_t nSize)
 {
     if (nSize > 0)

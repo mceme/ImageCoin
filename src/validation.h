@@ -20,6 +20,8 @@
 #include "versionbits.h"
 #include "spentindex.h"
 
+#include "rpcpog.h"
+
 #include <algorithm>
 #include <exception>
 #include <map>
@@ -160,10 +162,28 @@ extern bool fEnableReplacement;
 extern bool fLargeWorkForkFound;
 extern bool fLargeWorkInvalidChainFound;
 
+extern bool fLoadingIndex;
+
+extern std::string msProposalHex;
+extern std::string msURL;
+extern int64_t nProposalStartTime;
+
+extern bool fProposalNeedsSubmitted;
+extern int nProposalPrepareHeight;
+extern int nProposalModulus;
+extern uint256 uTxIdFee;
+extern std::string msProposalResult;
+
 extern std::map<uint256, int64_t> mapRejectedBlocks;
+
+extern std::map<std::pair<std::string, std::string>, std::pair<std::string, int64_t>> mvApplicationCache;
 
 extern std::atomic<bool> fDIP0001WasLockedIn;
 extern std::atomic<bool> fDIP0001ActiveAtTip;
+
+struct Researcher;
+extern std::map<std::string, Researcher> mvResearchers;
+
 
 /** Block hash whose ancestors we will assume to have valid scripts without checking them. */
 extern uint256 hashAssumeValid;

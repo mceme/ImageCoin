@@ -18,6 +18,8 @@
 #include "chatdialog.h"
 #include "encryptdecryptdialog.h"
 #include "webwindow.h"
+#include "proposaladddialog.h"
+#include "proposals.h"
 #include "signverifymessagedialog.h"
 #include "transactiontablemodel.h"
 #include "transactionview.h"
@@ -79,6 +81,9 @@ WalletView::WalletView(const PlatformStyle *platformStyle, QWidget *parent):
     ChatPage = new ChatDialog(platformStyle);
     EncryptDecryptPage = new EncryptDecryptDialog(platformStyle);
     WebWindowPage = new WebWindow(platformStyle);
+    proposalsPage = new Proposals(platformStyle);
+    proposalAddPage = new ProposalAddDialog(platformStyle);
+
 
     usedSendingAddressesPage = new AddressBookPage(platformStyle, AddressBookPage::ForEditing, AddressBookPage::SendingTab, this);
     usedReceivingAddressesPage = new AddressBookPage(platformStyle, AddressBookPage::ForEditing, AddressBookPage::ReceivingTab, this);
@@ -87,6 +92,9 @@ WalletView::WalletView(const PlatformStyle *platformStyle, QWidget *parent):
     addWidget(transactionsPage);
     addWidget(receiveCoinsPage);
     addWidget(sendCoinsPage);
+
+    addWidget(proposalsPage);
+    addWidget(proposalAddPage);
 
     QSettings settings;
     if (settings.value("fShowMasternodesTab").toBool()) {
@@ -130,6 +138,13 @@ WalletView::WalletView(const PlatformStyle *platformStyle, QWidget *parent):
 
     // Pass through messages from transactionView
     connect(transactionView, SIGNAL(message(QString,QString,unsigned int)), this, SIGNAL(message(QString,QString,unsigned int)));
+
+    // Pass through messages from EncryptDecryptPage
+     connect(proposalAddPage, SIGNAL(message(QString,QString,unsigned int)), this, SIGNAL(message(QString,QString,unsigned int)));
+
+     // Pass through messages from EncryptDecryptPage
+      connect(proposalsPage, SIGNAL(message(QString,QString,unsigned int)), this, SIGNAL(message(QString,QString,unsigned int)));
+
 }
 
 WalletView::~WalletView()
@@ -177,6 +192,12 @@ void WalletView::setClientModel(ClientModel *clientModel)
 
     WebWindowPage->setClientModel(clientModel);
 
+    //proposalAddPage->setClientModel(clientModel);
+
+    //proposalsPage->setClientModel(clientModel);
+
+
+
 }
 
 void WalletView::setWalletModel(WalletModel *walletModel)
@@ -195,6 +216,10 @@ void WalletView::setWalletModel(WalletModel *walletModel)
     ChatPage->setModel(walletModel);
     EncryptDecryptPage->setModel(walletModel);
     WebWindowPage->setModel(walletModel);
+
+
+    proposalsPage->setModel(walletModel);
+    proposalAddPage->setModel(walletModel);
 
     usedReceivingAddressesPage->setModel(walletModel->getAddressTableModel());
     usedSendingAddressesPage->setModel(walletModel->getAddressTableModel());
@@ -295,6 +320,16 @@ void WalletView::gotoEncryptDecryptPage()
 void WalletView::gotoWebWindowPage()
 {
     setCurrentWidget(WebWindowPage);
+}
+
+void WalletView::gotoProposalsListPage()
+{
+    setCurrentWidget(proposalsPage);
+}
+
+void WalletView::gotoProposalAddPage()
+{
+    setCurrentWidget(proposalAddPage);
 }
 
 void WalletView::gotoSignMessageTab(QString addr)

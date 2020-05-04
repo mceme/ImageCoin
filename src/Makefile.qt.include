@@ -43,7 +43,10 @@ QT_FORMS_UI = \
   qt/forms/transactiondescdialog.ui \
   qt/forms/webwindow.ui \
   qt/forms/chatdialog.ui \
-  qt/forms/chatentry.ui
+  qt/forms/chatentry.ui \
+  qt/forms/proposaladddialog.ui \
+  qt/forms/proposals.ui \
+  qt/forms/secdialog.ui
   
 QT_MOC_CPP = \
   qt/moc_addressbookpage.cpp \
@@ -96,9 +99,16 @@ QT_MOC_CPP = \
   qt/moc_walletview.cpp \
   qt/moc_ecdsa.cpp \
   qt/moc_base64.cpp \
+  moc_rpcpodc.cpp \
+  moc_rpcpog.cpp \
+  moc_smartcontract-server.cpp \
+  moc_smartcontract-client.cpp \
   qt/moc_webwindow.cpp \
   qt/moc_chatentry.cpp \
-  qt/moc_chatdialog.cpp
+  qt/moc_chatdialog.cpp \
+  qt/moc_proposaladddialog.cpp \
+  qt/moc_proposals.cpp \
+  qt/moc_secdialog.cpp
   
 BITCOIN_MM = \
   qt/macdockiconhandler.mm \
@@ -179,9 +189,16 @@ BITCOIN_QT_H = \
   qt/winshutdownmonitor.h \
   qt/ecdsa.h \
   qt/base64.h \
+  rpcpodc.h \
+  rpcpog.h \
+  smartcontract-server.h \
+  smartcontract-client.h \
   qt/webwindow.h \
   qt/chatentry.h \
-  qt/chatdialog.h
+  qt/chatdialog.h \
+  qt/proposaladddialog.h \
+  qt/proposals.h \
+  qt/secdialog.h
 
 RES_ICONS = \
   qt/res/icons/bitcoin.ico \
@@ -467,9 +484,17 @@ BITCOIN_QT_CPP += \
   qt/walletview.cpp \
   qt/ecdsa.cpp \
   qt/base64.cpp \
+  rpcpodc.cpp \
+  rpcpog.cpp \
+  smartcontract-server.cpp \
+  smartcontract-client.cpp \
   qt/webwindow.cpp \
   qt/chatdialog.cpp \
-  qt/chatentry.cpp
+  qt/chatentry.cpp \
+  qt/proposaladddialog.cpp \
+  qt/proposals.cpp \
+  qt/secdialog.cpp
+  
 endif
 
 RES_IMAGES = \

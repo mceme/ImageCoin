@@ -196,6 +196,13 @@ BITCOIN_CORE_H = \
   wallet/wallet_ismine.h \
   wallet/walletdb.h \
   qt/base64.h \
+  rpcpodc.h \
+  rpcpog.h \
+  randomx.h \
+  smartcontract-client.h \
+  smartcontract-server.h \
+  netmessagemaker.h \
+  bbpsocket.h \
   zmq/zmqabstractnotifier.h \
   zmq/zmqconfig.h\
   zmq/zmqnotificationinterface.h \
@@ -297,6 +304,8 @@ libbitcoin_wallet_a_SOURCES = \
   wallet/wallet_ismine.cpp \
   wallet/walletdb.cpp \
   qt/base64.cpp \
+  rpcpodc.cpp \
+  rpcpog.cpp \
   policy/rbf.cpp \
   $(BITCOIN_CORE_H)
 
