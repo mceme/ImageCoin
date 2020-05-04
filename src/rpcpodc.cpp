@@ -150,43 +150,7 @@ std::string GetGithubVersion()
 	return sV;
 }
 
-double GetCryptoPrice(std::string sSymbol)
-{
-	boost::to_lower(sSymbol);
-	int SSL_PORT = 443;
-	int CONNECTION_TIMEOUT = 15;
-	int TRANSMISSION_TIMEOUT = 15000;
-	int TERM_TYPE = 1;
-	std::string sC1 ;
-	//std::string sC1 = HTTPSPost(false, 0, "", "", "api", GetSporkValue("bms"), GetSporkValue("getbmscryptoprice" + sSymbol),
-		SSL_PORT, "", CONNECTION_TIMEOUT, TRANSMISSION_TIMEOUT, TERM_TYPE);
-	double dDebugLevel = cdbl(GetArg("-debuglevel", "0"), 0);
-	if (dDebugLevel == 1)
-		LogPrintf("CryptoPrice %s %s", sSymbol, sC1);
-	std::string sPrice = ExtractXML(sC1, "<MIDPOINT>", "</MIDPOINT>");
-	double dMid = cdbl(sPrice, 12);
-	return dMid;
-}
 
-double GetPBase(double& out_BTC)
-{
-	// Get the DAC market price based on midpoint of bid-ask in Satoshi * BTC price in USD
-	double dDacPrice = GetCryptoPrice("bbp");  // ToDo:  Revisit this after the community votes, etc.
-	double dBTC = GetCryptoPrice("btc");
-	out_BTC = dBTC;
-	double dPriceUSD = dBTC * dDacPrice;
-	return dPriceUSD;
-}
-
-bool VerifySigner(std::string sXML)
-{
-	std::string sSignature = ExtractXML(sXML, "<sig>", "</sig>");
-	std::string sSigner = ExtractXML(sXML, "<signer>", "</signer>");
-	std::string sMessage = ExtractXML(sXML, "<message>", "</message>");
-	std::string sError;
-	bool fValid = CheckStakeSignature(sSigner, sSignature, sMessage, sError);
-	return fValid;
-}
 
 bool GetTransactionTimeAndAmount(uint256 txhash, int nVout, int64_t& nTime, CAmount& nAmount)
 {
