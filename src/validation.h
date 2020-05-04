@@ -163,7 +163,7 @@ extern bool fLargeWorkInvalidChainFound;
 extern bool fLoadingIndex;
 
 extern std::string msProposalHex;
-
+extern std::string msURL;
 extern int64_t nProposalStartTime;
 
 extern bool fProposalNeedsSubmitted;

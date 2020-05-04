@@ -92,7 +92,7 @@ bool fEnableReplacement = DEFAULT_ENABLE_REPLACEMENT;
 std::map<std::pair<std::string, std::string>, std::pair<std::string, int64_t>> mvApplicationCache;
 
 int nProposalModulus = 0;
-
+std::string msURL;
 bool fProposalNeedsSubmitted= false;
 int64_t nProposalStartTime = 0;
 uint256 uTxIdFee = uint256S("0x0");
