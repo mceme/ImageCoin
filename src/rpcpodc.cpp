@@ -145,7 +145,8 @@ std::string GetGithubVersion()
 {
 	std::string sURL = "https://" + GetSporkValue("bms");
 	std::string sRestfulURL = "BMS/LAST_MANDATORY_VERSION";
-	std::string sV = ExtractXML(HTTPSPost(false, 0, "", "", "", sURL, sRestfulURL, 443, "", 25, 10000, 1), "<VERSION>", "</VERSION>");
+	//std::string sV = ExtractXML(HTTPSPost(false, 0, "", "", "", sURL, sRestfulURL, 443, "", 25, 10000, 1), "<VERSION>", "</VERSION>");
+	std::string sV;
 	return sV;
 }
 
@@ -156,7 +157,8 @@ double GetCryptoPrice(std::string sSymbol)
 	int CONNECTION_TIMEOUT = 15;
 	int TRANSMISSION_TIMEOUT = 15000;
 	int TERM_TYPE = 1;
-	std::string sC1 = HTTPSPost(false, 0, "", "", "api", GetSporkValue("bms"), GetSporkValue("getbmscryptoprice" + sSymbol), 
+	std::string sC1 ;
+	//std::string sC1 = HTTPSPost(false, 0, "", "", "api", GetSporkValue("bms"), GetSporkValue("getbmscryptoprice" + sSymbol),
 		SSL_PORT, "", CONNECTION_TIMEOUT, TRANSMISSION_TIMEOUT, TERM_TYPE);
 	double dDebugLevel = cdbl(GetArg("-debuglevel", "0"), 0);
 	if (dDebugLevel == 1)
@@ -228,7 +230,8 @@ int GetWCGMemberID(std::string sMemberName, std::string sAuthCode, double& nPoin
 {
 	std::string sDomain = "https://www.worldcommunitygrid.org";
 	std::string sRestfulURL = "verifyMember.do?name=" + sMemberName + "&code=" + sAuthCode;
-	std::string sResponse = HTTPSPost(true, 0, "", "", "", sDomain, sRestfulURL, 443, "", 12, 14000, 1);
+	//std::string sResponse = HTTPSPost(true, 0, "", "", "", sDomain, sRestfulURL, 443, "", 12, 14000, 1);
+	std::string sResponse;
 	int iID = (int)cdbl(ExtractXML(sResponse, "<MemberId>","</MemberId>"), 0);
 	nPoints = cdbl(ExtractXML(sResponse, "<Points>", "</Points>"), 2);
 	return iID;

@@ -929,3 +929,128 @@ bool SubmitProposalToNetwork(uint256 txidFee, int64_t nStartTime, std::string sH
 	return true;
 }
 
+
+static double HTTP_PROTO_VERSION = 2.0;
+//std::string HTTPSPost(bool bPost, int iThreadID, std::string sActionName, std::string sDistinctUser, std::string sPayload, std::string sBaseURL, std::string sPage, int iPort,
+//	std::string sSolution, int iTimeoutSecs, int iMaxSize, int iBOE)
+//{
+//	std::string sData;
+//	int iChunkSize = 1024;
+//	if (iMaxSize > 512000)
+//	{
+//		sData.reserve(iMaxSize);
+//		iChunkSize = 65536;
+//	}
+//
+//	// The OpenSSL version of Post *only* works with SSL websites, hence the need for HTTPPost(2) (using BOOST).  The dev team is working on cleaning this up before the end of 2019 to have one standard version with cleaner code and less internal parts. //
+//	try
+//	{
+//		double dDebugLevel = cdbl(GetArg("-devdebuglevel", "0"), 0);
+//
+//		std::map<std::string, std::string> mapRequestHeaders;
+//		mapRequestHeaders["Miner"] = sDistinctUser;
+//		mapRequestHeaders["Action"] = sPayload;
+//		mapRequestHeaders["Solution"] = sSolution;
+//		mapRequestHeaders["Agent"] = FormatFullVersion();
+//		// Supported pool Network Chain modes: main, test, regtest
+//		const CChainParams& chainparams = Params();
+//		mapRequestHeaders["NetworkID"] = chainparams.NetworkIDString();
+//		mapRequestHeaders["ThreadID"] = RoundToString(iThreadID, 0);
+//		mapRequestHeaders["OS"] = sOS;
+//
+//		mapRequestHeaders["SessionID"] = msSessionID;
+//		mapRequestHeaders["WorkerID1"] = GetArg("-workerid", "");
+//		mapRequestHeaders["WorkerID2"] = GetArg("-workeridfunded", "");
+//		mapRequestHeaders["HTTP_PROTO_VERSION"] = RoundToString(HTTP_PROTO_VERSION, 0);
+//
+//		BIO* bio;
+//		SSL_CTX* ctx;
+//		//   Registers the SSL/TLS ciphers and digests and starts the security layer.
+//		SSL_library_init();
+//		ctx = SSL_CTX_new(SSLv23_client_method());
+//		if (ctx == NULL)
+//		{
+//			return "<ERROR>CTX_IS_NULL</ERROR>";
+//		}
+//		bio = BIO_new_ssl_connect(ctx);
+//		std::string sDomain = GetDomainFromURL(sBaseURL);
+//		std::string sDomainWithPort = sDomain + ":" + RoundToString(iPort, 0);
+//
+//		// Compatibility with strict d-dos prevention rules (like cloudflare)
+//		SSL * ssl(nullptr);
+//		BIO_get_ssl(bio, &ssl);
+//		SSL_set_mode(ssl, SSL_MODE_AUTO_RETRY);
+//		SSL_set_tlsext_host_name(ssl, const_cast<char *>(sDomain.c_str()));
+//		BIO_set_conn_int_port(bio, &iPort);
+//
+//		BIO_set_conn_hostname(bio, sDomainWithPort.c_str());
+//		if(BIO_do_connect(bio) <= 0)
+//		{
+//			return "<ERROR>Failed connection to " + sDomainWithPort + "</ERROR>";
+//		}
+//
+//		if (sDomain.empty()) return "<ERROR>DOMAIN_MISSING</ERROR>";
+//		// Evo requires 2 args instead of 3, the last used to be true for DNS resolution=true
+//
+//		CNetAddr cnaMyHost;
+//		LookupHost(sDomain.c_str(), cnaMyHost, true);
+// 	    CService addrConnect = CService(cnaMyHost, 443);
+//
+//		if (!addrConnect.IsValid())
+//		{
+//  			return "<ERROR>DNS_ERROR</ERROR>";
+//		}
+//		std::string sPost = PrepareHTTPPost(bPost, sPage, sDomain, sPayload, mapRequestHeaders);
+//		if (dDebugLevel == 1)
+//			LogPrintf("Trying connection to %s ", sPost);
+//		const char* write_buf = sPost.c_str();
+//		if(BIO_write(bio, write_buf, strlen(write_buf)) <= 0)
+//		{
+//			return "<ERROR>FAILED_HTTPS_POST</ERROR>";
+//		}
+//		//  Variables used to read the response from the server
+//		int size;
+//		clock_t begin = clock();
+//		char buf[65536];
+//		for(;;)
+//		{
+//			//  Get chunks of the response
+//			size = BIO_read(bio, buf, 65535);
+//			if(size <= 0)
+//			{
+//				break;
+//			}
+//			buf[size] = 0;
+//			std::string MyData(buf);
+//			sData += MyData;
+//			clock_t end = clock();
+//			double elapsed_secs = double(end - begin) / (CLOCKS_PER_SEC + .01);
+//			if (elapsed_secs > iTimeoutSecs) break;
+//			if (TermPeekFound(sData, iBOE)) break;
+//
+//			if (sData.find("Content-Length:") != std::string::npos)
+//			{
+//				double dMaxSize = cdbl(ExtractXML(sData,"Content-Length: ","\n"),0);
+//				std::size_t foundPos = sData.find("Content-Length:");
+//				if (dMaxSize > 0)
+//				{
+//					iMaxSize = dMaxSize + (int)foundPos + 16;
+//				}
+//			}
+//			if ((int)sData.size() >= (iMaxSize-1)) break;
+//		}
+//		// R ANDREW - JAN 4 2018: Free bio resources
+//		BIO_free_all(bio);
+//		if (dDebugLevel == 1)
+//			LogPrintf("Received %s ", sData);
+//		return sData;
+//	}
+//	catch (std::exception &e)
+//	{
+//        return "<ERROR>WEB_EXCEPTION</ERROR>";
+//    }
+//	catch (...)
+//	{
+//		return "<ERROR>GENERAL_WEB_EXCEPTION</ERROR>";
+//	}
+//}
