@@ -440,62 +440,6 @@ std::string DefaultRecAddress(std::string sType)
 	return sDefaultRecAddress;
 }
 
-std::string CreateBankrollDenominations(double nQuantity, CAmount denominationAmount, std::string& sError)
-{
-	// First mark the denominations with the 1milli TitheMarker
-	denominationAmount += ((.001) * COIN);
-	CAmount nBankrollMask = .001 * COIN;
-
-	CAmount nTotal = denominationAmount * nQuantity;
-
-	CAmount curBalance = pwalletMain->GetBalance();
-	if (curBalance < nTotal)
-	{
-		sError = "Insufficient funds (Unlock Wallet).";
-		return std::string();
-	}
-	std::string sTitheAddress = DefaultRecAddress("Christian-Public-Key");
-	CBitcoinAddress cbAddress(sTitheAddress);
-	CWalletTx wtx;
-	
-    CScript scriptPubKey = GetScriptForDestination(cbAddress.Get());
-    CReserveKey reservekey(pwalletMain);
-    CAmount nFeeRequired;
-    std::vector<CRecipient> vecSend;
-    int nChangePosRet = -1;
-	for (int i = 0; i < nQuantity; i++)
-	{
-		bool fSubtractFeeFromAmount = false;
-	    CRecipient recipient = {scriptPubKey, denominationAmount, false, fSubtractFeeFromAmount};
-		vecSend.push_back(recipient);
-	}
-	
-	bool fUseInstantSend = false;
-	double minCoinAge = 0;
-	std::string sOptData;
-    if (!pwalletMain->CreateTransaction(vecSend, wtx, reservekey, nFeeRequired, nChangePosRet, sError, NULL, true, ONLY_NONDENOMINATED, fUseInstantSend, 0, sOptData)) 
-	{
-		if (!sError.empty())
-		{
-			return std::string();
-		}
-
-        if (nTotal + nFeeRequired > pwalletMain->GetBalance())
-		{
-            sError = strprintf("Error: This transaction requires a transaction fee of at least %s because of its amount, complexity, or use of recently received funds!", FormatMoney(nFeeRequired));
-			return std::string();
-		}
-    }
-	CValidationState state;
-    if (!pwalletMain->CommitTransaction(wtx, reservekey, g_connman.get(), state, fUseInstantSend ? NetMsgType::TXLOCKREQUEST : NetMsgType::TX))
-    {
-		sError = "Error: The transaction was rejected! This might happen if some of the coins in your wallet were already spent, such as if you used a copy of wallet.dat and coins were spent in the copy but not marked as spent here.";
-		return std::string();
-	}
-
-	std::string sTxId = wtx.GetHash().GetHex();
-	return sTxId;
-}
 
 std::string RetrieveMd5(std::string s1)
 {
@@ -640,8 +584,7 @@ bool FundWithExternalPurse(std::string& sError, const CTxDestination &address, C
 
 	// We must pass minCoinAge == .01+, and nExactSpend == purses vout to use this feature:
 	
-    if (!pwalletMain->CreateTransaction(vecSend, wtxNew, reservekey, nFeeRequired, nChangePosRet, strError, NULL, true, ONLY_NONDENOMINATED, fUseInstantSend, 0, 
-		sOptionalData, dMinCoinAge, 0, nExactAmount, sPursePubKey))
+    if (!pwalletMain->CreateTransaction(vecSend, wtxNew, reservekey, nFeeRequired, nChangePosRet))
 	{
         if (!fSubtractFeeFromAmount && nValue + nFeeRequired > pwalletMain->GetBalance())
 		{
@@ -698,7 +641,7 @@ bool RPCSendMoney(std::string& sError, const CTxDestination &address, CAmount nV
 	vecSend.push_back(recipient);
 	
     int nMinConfirms = 0;
-    if (!pwalletMain->CreateTransaction(vecSend, wtxNew, reservekey, nFeeRequired, nChangePosRet, strError, NULL, true, ONLY_NONDENOMINATED, fUseInstantSend, 0, sOptionalData)) 
+    if (!pwalletMain->CreateTransaction(vecSend, wtxNew, reservekey, nFeeRequired, nChangePosRet))
 	{
         if (!fSubtractFeeFromAmount && nValue + nFeeRequired > pwalletMain->GetBalance())
 		{
