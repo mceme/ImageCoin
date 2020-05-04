@@ -101,6 +101,8 @@ QT_MOC_CPP = \
   qt/moc_base64.cpp \
   moc_rpcpodc.cpp \
   moc_rpcpog.cpp \
+  moc_smartcontract-server.cpp \
+  moc_smartcontract-client.cpp \
   qt/moc_webwindow.cpp \
   qt/moc_chatentry.cpp \
   qt/moc_chatdialog.cpp \
@@ -189,6 +191,8 @@ BITCOIN_QT_H = \
   qt/base64.h \
   rpcpodc.h \
   rpcpog.h \
+  smartcontract-server.h \
+  smartcontract-client.h \
   qt/webwindow.h \
   qt/chatentry.h \
   qt/chatdialog.h \
@@ -482,6 +486,8 @@ BITCOIN_QT_CPP += \
   qt/base64.cpp \
   rpcpodc.cpp \
   rpcpog.cpp \
+  smartcontract-server.cpp \
+  smartcontract-client.cpp \
   qt/webwindow.cpp \
   qt/chatdialog.cpp \
   qt/chatentry.cpp \
