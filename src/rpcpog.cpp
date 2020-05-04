@@ -49,7 +49,6 @@ extern CWallet* pwalletMain;
 
 #endif // ENABLE_WALLET
 
-CValidationState state;
 
 UniValue VoteWithMasternodes(const std::map<uint256, CKey>& keys,	
                              const uint256& hash, vote_signal_enum_t eVoteSignal,	
@@ -506,109 +505,6 @@ CAmount GetRPCBalance()
 	return pwalletMain->GetBalance();
 }
 
-bool CreateExternalPurse(std::string& sError)
-{
-	// This method creates an external purse, used for funding GSC stakes with the wallet locked.
-	if (pwalletMain->IsLocked())
-	{
-		sError = "Wallet must be unlocked.";
-		return false;
-	}
-	std::string sBoinc = DefaultRecAddress("Christian-Public-Key");
-	CBitcoinAddress address;
-	if (!address.SetString(sBoinc))
-	{
-	     sError = "Invalid address";
-		 return false;
-	}
-	CKeyID keyID;
-	if (!address.GetKeyID(keyID))
-	{
-		sError = "Address does not refer to a key; Check to ensure wallet is not locked.";
-		return false;
-	}
-	CKey vchSecret;
-    if (!pwalletMain->GetKey(keyID, vchSecret)) 
-	{
-		sError = "Private key for address " + sBoinc + " is not known.  Wallet must be unlocked. ";
-		return false;
-    }
-	std::string ssecret = CBitcoinSecret(vchSecret).ToString();
-	// Encrypt the secret, so hackers cannot easily gain access to the privkey - even if they get physical access to the .conf file
-	std::string sEncSecret = EncryptAES256(ssecret, sBoinc);
-	// Store the pubkey unencrypted and the privkey encrypted in the .conf file:		
-	WriteKey("externalpurse", sBoinc);
-	ForceSetArg("externalpurse", sBoinc);
-	WriteKey("externalprivkey" + sBoinc.substr(0,8), sEncSecret);
-	WriteKey("externalpubkey" + sBoinc.substr(0,8), sBoinc);
-	ForceSetArg("externalprivkey" + sBoinc.substr(0,8), sEncSecret);
-	ForceSetArg("externalpubkey" + sBoinc.substr(0,8), sBoinc);
-	std::string sPubFile1 = GetEPArg(true);
-	LogPrintf("Rereading pubkey %s \n", sPubFile1);
-	return true;	
-}
-
-bool FundWithExternalPurse(std::string& sError, const CTxDestination &address, CAmount nValue, bool fSubtractFeeFromAmount, CWalletTx& wtxNew, 
-	bool fUseInstantSend, CAmount nExactAmount, std::string sOptionalData, double dMinCoinAge, std::string sPursePubKey)
-{
-
-	// ** Note **:  We only allow external purse funded transactions to fund our own destination purse address through GSCs and through coin-age only. 
-	// We do not allow purse tx's to fund other addresses or to spend UTXOs for non-coinage based tx's.
-	// This is to make it hard to hack an external purse (it would require hacking the encrypted key, then running a fraudulent version of DAC to send the transaction to another recipient.
-	// It would also require the hacker to understand how to modify our wallet class to break the safeguards to select the external UTXO's (which is not allowed currently - because our wallet won't sign them for a non-coin-age tx).
-
-    CAmount curBalance = pwalletMain->GetBalance();
-
-    // Check amount
-    if (nValue <= 0)
-	{
-        sError = "Invalid amount";
-		return false;
-	}
-	
-	if (nValue > curBalance)
-	{
-		sError = "Insufficient funds";
-		return false;
-	}
-    // Parse address
-    CScript scriptPubKey = GetScriptForDestination(address);
-
-    CReserveKey reservekey(pwalletMain);
-
-    CAmount nFeeRequired;
-    std::string strError;
-    std::vector<CRecipient> vecSend;
-    int nChangePosRet = -1;
-	bool fForce = false;
-    CRecipient recipient = {scriptPubKey, nValue, fForce, fSubtractFeeFromAmount};
-	vecSend.push_back(recipient);
-	
-    int nMinConfirms = 0;
-
-	// We must pass minCoinAge == .01+, and nExactSpend == purses vout to use this feature:
-	
-    if (!pwalletMain->CreateTransaction(vecSend, wtxNew, reservekey, nFeeRequired, nChangePosRet, strError, NULL, true, ONLY_DENOMINATED, fUseInstantSend))
-	{
-        if (!fSubtractFeeFromAmount && nValue + nFeeRequired > pwalletMain->GetBalance())
-		{
-            sError = strprintf("Error: This transaction requires a transaction fee of at least %s because of its amount, complexity, or use of recently received funds!", FormatMoney(nFeeRequired));
-			return false;
-		}
-		sError = "Unable to Create Transaction: " + strError;
-		return false;
-    }
-    //CValidationState state;
-        
-    if (!pwalletMain->CommitTransaction(wtxNew, reservekey, g_connman.get(), state,  fUseInstantSend ? NetMsgType::TXLOCKREQUEST : NetMsgType::TX))
-	{
-        sError = "Error: The transaction was rejected! This might happen if some of the coins in your wallet were already spent, such as if you used a copy of wallet.dat and coins were spent in the copy but not marked as spent here.";
-		return false;
-	}
-	return true;
-}
-
-
 bool RPCSendMoney(std::string& sError, const CTxDestination &address, CAmount nValue, bool fSubtractFeeFromAmount, CWalletTx& wtxNew, bool fUseInstantSend, std::string sOptionalData, double nCoinAge)
 {
     CAmount curBalance = pwalletMain->GetBalance();
@@ -641,7 +537,7 @@ bool RPCSendMoney(std::string& sError, const CTxDestination &address, CAmount nV
     std::vector<CRecipient> vecSend;
     int nChangePosRet = -1;
 	bool fForce = false;
-    CRecipient recipient = {scriptPubKey, nValue, fForce, fSubtractFeeFromAmount};
+    CRecipient recipient = {scriptPubKey, nValue, "", fSubtractFeeFromAmount};
 	vecSend.push_back(recipient);
 	
     int nMinConfirms = 0;

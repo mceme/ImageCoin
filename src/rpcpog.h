@@ -18,6 +18,7 @@ class CWallet;
 class CValidationState;
 
 int BLOCKS_PER_DAY = 205;
+CValidationState state;
 std::string RetrieveMd5(std::string s1);
 
 struct UserVote
