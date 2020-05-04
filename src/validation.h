@@ -176,6 +176,12 @@ extern std::map<uint256, int64_t> mapRejectedBlocks;
 extern std::atomic<bool> fDIP0001WasLockedIn;
 extern std::atomic<bool> fDIP0001ActiveAtTip;
 
+struct Researcher;
+
+extern std::map<std::string, POSEScore> mvPOSEScore;
+extern std::atomic<bool> fDIP0001ActiveAtTip;
+extern std::map<std::string, Researcher> mvResearchers;
+
 /** Block hash whose ancestors we will assume to have valid scripts without checking them. */
 extern uint256 hashAssumeValid;
 

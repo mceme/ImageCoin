@@ -1419,7 +1419,7 @@ int DeserializePrayersFromFile()
 	return nHeight;
 }
 
-CAmount GetTitheAmount(CTransactionRef ctx)
+CAmount GetTitheAmount(CTransaction ctx)
 {
 	const Consensus::Params& consensusParams = Params().GetConsensus();
 	for (unsigned int z = 0; z < ctx->vout.size(); z++)
@@ -2373,7 +2373,7 @@ bool AdvertiseChristianPublicKeypair(std::string sProjectId, std::string sNickNa
 	return true;
 }
 
-std::string GetTransactionMessage(CTransactionRef tx)
+std::string GetTransactionMessage(CTransaction tx)
 {
 	std::string sMsg;
 	for (unsigned int i = 0; i < tx->vout.size(); i++) 
@@ -2383,7 +2383,7 @@ std::string GetTransactionMessage(CTransactionRef tx)
 	return sMsg;
 }
 
-void ProcessBLSCommand(CTransactionRef tx)
+void ProcessBLSCommand(CTransaction tx)
 {
 	std::string sXML = GetTransactionMessage(tx);
 	std::string sEnc = ExtractXML(sXML, "<blscommand>", "</blscommand>");
@@ -2413,7 +2413,7 @@ void ProcessBLSCommand(CTransactionRef tx)
 	}
 }
 
-bool CheckAntiBotNetSignature(CTransactionRef tx, std::string sType, std::string sSolver)
+bool CheckAntiBotNetSignature(CTransaction tx, std::string sType, std::string sSolver)
 {
 	std::string sXML = GetTransactionMessage(tx);
 	std::string sSig = ExtractXML(sXML, "<" + sType + "sig>", "</" + sType + "sig>");
@@ -2441,7 +2441,7 @@ bool CheckAntiBotNetSignature(CTransactionRef tx, std::string sType, std::string
 	return false;
 }
 
-double GetVINCoinAge(int64_t nBlockTime, CTransactionRef tx, bool fDebug)
+double GetVINCoinAge(int64_t nBlockTime, CTransaction tx, bool fDebug)
 {
 	double dTotal = 0;
 	std::string sDebugData = "\nGetVINCoinAge: ";
@@ -2474,7 +2474,7 @@ double GetVINCoinAge(int64_t nBlockTime, CTransactionRef tx, bool fDebug)
 	return dTotal;
 }
 
-double GetAntiBotNetWeight(int64_t nBlockTime, CTransactionRef tx, bool fDebug, std::string sSolver)
+double GetAntiBotNetWeight(int64_t nBlockTime, CTransaction tx, bool fDebug, std::string sSolver)
 {
 	double nCoinAge = GetVINCoinAge(nBlockTime, tx, fDebug);
 	bool fSigned = CheckAntiBotNetSignature(tx, "abn", sSolver);
@@ -2590,7 +2590,7 @@ double GetABNWeight(const CBlock& block, bool fMining)
 	std::string sSolver = PubKeyToAddress(block.vtx[0]->vout[0].scriptPubKey);
 	int nABNLocator = (int)cdbl(ExtractXML(sMsg, "<abnlocator>", "</abnlocator>"), 0);
 	if (block.vtx.size() < nABNLocator) return 0;
-	CTransactionRef tx = block.vtx[nABNLocator];
+	CTransaction tx = block.vtx[nABNLocator];
 	double dWeight = GetAntiBotNetWeight(block.GetBlockTime(), tx, true, sSolver);
 	return dWeight;
 }
@@ -2602,7 +2602,7 @@ bool CheckABNSignature(const CBlock& block, std::string& out_CPK)
 	std::string sMsg = GetTransactionMessage(block.vtx[0]);
 	int nABNLocator = (int)cdbl(ExtractXML(sMsg, "<abnlocator>", "</abnlocator>"), 0);
 	if (block.vtx.size() < nABNLocator) return 0;
-	CTransactionRef tx = block.vtx[nABNLocator];
+	CTransaction tx = block.vtx[nABNLocator];
 	out_CPK = ExtractXML(tx->GetTxMessage(), "<abncpk>", "</abncpk>");
 	return CheckAntiBotNetSignature(tx, "abn", sSolver);
 }
@@ -2668,7 +2668,7 @@ std::string GetPOGBusinessObjectList(std::string sType, std::string sFields)
 const CBlockIndex* GetBlockIndexByTransactionHash(const uint256 &hash)
 {
 	CBlockIndex* pindexHistorical;
-	CTransactionRef tx1;
+	CTransaction tx1;
 	uint256 hashBlock1;
 	if (GetTransaction(hash, tx1, Params().GetConsensus(), hashBlock1, true))
 	{
@@ -2769,7 +2769,7 @@ int ReassessAllChains()
 	return iProgress;
 }
 
-double GetFees(CTransactionRef tx)
+double GetFees(CTransaction tx)
 {
 	CAmount nFees = 0;
 	CAmount nValueIn = 0;
@@ -3360,13 +3360,13 @@ int64_t GetTxTime(uint256 blockHash, int& iHeight)
 	return 0;
 }
 
-bool GetTxDAC(uint256 txid, CTransactionRef& tx1)
+bool GetTxDAC(uint256 txid, CTransaction& tx1)
 {
 	uint256 hashBlock1;
 	return GetTransaction(txid, tx1, Params().GetConsensus(), hashBlock1, true);
 }
 
-WhaleStake GetWhaleStake(CTransactionRef tx1)
+WhaleStake GetWhaleStake(CTransaction tx1)
 {
 	// Pull up the actual burn
 	WhaleStake w;
@@ -3419,7 +3419,7 @@ std::vector<WhaleStake> GetDWS(bool fIncludeMemoryPool)
 			int64_t nTimestamp = v.second;
 			std::string sTXID = ii.first.second;
 			uint256 hashInput = uint256S(sTXID);
-			CTransactionRef tx1;
+			CTransaction tx1;
 			bool fGot = GetTxDAC(hashInput, tx1);
 			if (fGot)
 			{
@@ -3440,7 +3440,7 @@ std::vector<WhaleStake> GetDWS(bool fIncludeMemoryPool)
 		BOOST_FOREACH(const CTxMemPoolEntry& e, mempool.mapTx)
 		{
 			const CTransaction& tx = e.GetTx();
-			CTransactionRef tx1 = MakeTransactionRef(std::move(tx));
+			CTransaction tx1 = MakeTransactionRef(std::move(tx));
 			WhaleStake w = GetWhaleStake(tx1);
 			if (w.found && w.RewardAmount > 0 && w.Amount > 0 && w.ActualDWU > 0)
 				wStakes.push_back(w);
@@ -3615,7 +3615,7 @@ std::vector<WhaleStake> GetPayableWhaleStakes(int nHeight, double& nOwed)
 	return wReturnStakes;
 }
 
-bool VerifyDynamicWhaleStake(CTransactionRef tx, std::string& sError)
+bool VerifyDynamicWhaleStake(CTransaction tx, std::string& sError)
 {
     std::string sXML = tx->GetTxMessage();
 	
@@ -3755,7 +3755,7 @@ double GetWhaleStakesInMemoryPool(std::string sCPK)
 	BOOST_FOREACH(const CTxMemPoolEntry& e, mempool.mapTx)
     {
         const CTransaction& tx = e.GetTx();
-		CTransactionRef tx1 = MakeTransactionRef(std::move(tx));
+		CTransaction tx1 = MakeTransactionRef(std::move(tx));
 		WhaleStake w = GetWhaleStake(tx1);
 		if (w.found)
 		{
@@ -3783,7 +3783,7 @@ CoinVin GetCoinVIN(COutPoint o, int64_t nTxTime)
 		if (hash == o.hash)
 		{
 			const CTransaction& tx = e.GetTx();
-			CTransactionRef tx1 = MakeTransactionRef(std::move(tx));
+			CTransaction tx1 = MakeTransactionRef(std::move(tx));
 			b.TxRef = tx1;
 			b.BlockTime = GetAdjustedTime(); //Memory Pool
 			b.Amount = b.TxRef->vout[b.OutPoint.n].nValue;

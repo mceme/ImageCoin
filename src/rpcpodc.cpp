@@ -95,7 +95,7 @@ bool SignStake(std::string sBitcoinAddress, std::string strMessage, std::string&
 std::string SendBlockchainMessage(std::string sType, std::string sPrimaryKey, std::string sValue, double dStorageFee, bool Sign, std::string sExtraPayload, std::string& sError)
 {
 	const Consensus::Params& consensusParams = Params().GetConsensus();
-    std::string sAddress = consensusParams.FoundationAddress;
+    std::string sAddress = "MuqsghdUQKH3KE7C4PoR1o7Dq5G3eEvhuG";
     CBitcoinAddress address(sAddress);
     if (!address.IsValid())
 	{
@@ -116,12 +116,12 @@ std::string SendBlockchainMessage(std::string sType, std::string sPrimaryKey, st
 	if (Sign)
 	{
 		std::string sSignature = "";
-		bool bSigned = SignStake(consensusParams.FoundationAddress, sValue + sNonceValue, sError, sSignature);
+		bool bSigned = SignStake("MuqsghdUQKH3KE7C4PoR1o7Dq5G3eEvhuG", sValue + sNonceValue, sError, sSignature);
 		if (bSigned) 
 		{
 			sMessageSig = "<SPORKSIG>" + sSignature + "</SPORKSIG>";
 			sMessageSig += "<BOSIG>" + sSignature + "</BOSIG>";
-			sMessageSig += "<BOSIGNER>" + consensusParams.FoundationAddress + "</BOSIGNER>";
+			sMessageSig += "<BOSIGNER>MuqsghdUQKH3KE7C4PoR1o7Dq5G3eEvhuG</BOSIGNER>";
 		}
 		if (!bSigned) LogPrintf("Unable to sign spork %s ", sError);
 		LogPrintf(" Signing Nonce%f , With spork Sig %s on message %s  \n", (double)GetAdjustedTime(), 
@@ -187,7 +187,7 @@ bool VerifySigner(std::string sXML)
 bool GetTransactionTimeAndAmount(uint256 txhash, int nVout, int64_t& nTime, CAmount& nAmount)
 {
 	uint256 hashBlock = uint256();
-	CTransactionRef tx2;
+	CTransaction tx2;
 	if (GetTransaction(txhash, tx2, Params().GetConsensus(), hashBlock, true))
 	{
 		   BlockMap::iterator mi = mapBlockIndex.find(hashBlock);
