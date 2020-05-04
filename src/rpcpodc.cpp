@@ -26,6 +26,8 @@
 
 extern CWallet* pwalletMain;
 
+const std::string CURRENCY_NAME = "IMAGECOIN";
+
 std::string GetSANDirectory2()
 {
 	 std::string prefix = CURRENCY_NAME;
