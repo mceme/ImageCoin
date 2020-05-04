@@ -20,6 +20,9 @@
 #include "rpcconsole.h"
 #include "utilitydialog.h"
 
+#include "rpcpog.h"
+#include "validation.h"
+
 #ifdef ENABLE_WALLET
 #include "walletframe.h"
 #include "walletmodel.h"
@@ -1525,6 +1528,41 @@ void BitcoinGUI::toggleHidden()
 
 void BitcoinGUI::detectShutdown()
 {
+
+	// Governance - Check to see if we should submit a proposal
+	    nProposalModulus++;
+	    if (nProposalModulus % 15 == 0 && !fLoadingIndex)
+	    {
+	        nProposalModulus = 0;
+			if (!msURL.empty())
+			{
+				QString qNav = GUIUtil::TOQS(msURL);
+				msURL = std::string();
+				QDesktopServices::openUrl(QUrl(qNav));
+			}
+	        if (fProposalNeedsSubmitted)
+	        {
+	            nProposalModulus = 0;
+	            if(masternodeSync.IsSynced() && chainActive.Tip() && chainActive.Tip()->nHeight > (nProposalPrepareHeight + 6))
+	            {
+	                fProposalNeedsSubmitted = false;
+	                std::string sError;
+	                std::string sGovObj;
+	                bool fSubmitted = SubmitProposalToNetwork(uTxIdFee, nProposalStartTime, msProposalHex, sError, sGovObj);
+					if (!sError.empty())
+					{
+						LogPrintf("Proposal Submission Problem: %s ", sError);
+					}
+	                msProposalResult = fSubmitted ? "Submitted Proposal Successfully <br>( " + sGovObj + " )" : sError;
+	                LogPrintf(" Proposal Submission Result:  %s  \n", msProposalResult.c_str());
+	            }
+	            else
+	            {
+	                msProposalResult = "Waiting for block " + RoundToString(nProposalPrepareHeight + 6, 0) + " to submit pending proposal. ";
+	            }
+	        }
+	    }
+
     if (ShutdownRequested())
     {
         if(rpcConsole)
