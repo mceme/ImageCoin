@@ -45,10 +45,11 @@ ProposalAddDialog::ProposalAddDialog(const PlatformStyle *platformStyle, QWidget
     }
 
 	ui->cmbExpenseType->clear();
- 	ui->cmbExpenseType->addItem("Name");
+	ui->cmbExpenseType->addItem("IT");
+ 	ui->cmbExpenseType->addItem("MKT");
 	ui->cmbExpenseType->addItem("PR");
 	ui->cmbExpenseType->addItem("P2P");
-	ui->cmbExpenseType->addItem("IT");
+
  }
 
 
