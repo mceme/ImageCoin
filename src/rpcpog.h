@@ -6,6 +6,7 @@
 #define RPCPOG_H
 
 #include "wallet/wallet.h"
+#include "consensus/validation.h"
 #include "hash.h"
 #include "net.h"
 #include "utilstrencodings.h"
@@ -15,7 +16,7 @@
 
 class CWallet;
 
-class CValidationState;
+
 
 int BLOCKS_PER_DAY = 205;
 

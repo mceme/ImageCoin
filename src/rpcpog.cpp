@@ -49,6 +49,7 @@ extern CWallet* pwalletMain;
 
 #endif // ENABLE_WALLET
 
+CValidationState state;
 
 UniValue VoteWithMasternodes(const std::map<uint256, CKey>& keys,	
                              const uint256& hash, vote_signal_enum_t eVoteSignal,	
@@ -553,7 +554,7 @@ bool RPCSendMoney(std::string& sError, const CTxDestination &address, CAmount nV
     }
     //CValidationState state;
         
-    if (!pwalletMain->CommitTransaction(wtxNew, reservekey, g_connman.get(), state,  fUseInstantSend ? NetMsgType::TXLOCKREQUEST : NetMsgType::TX))
+    if (!pwalletMain->CommitTransaction(wtxNew, reservekey, g_connman.get(),  fUseInstantSend ? NetMsgType::TXLOCKREQUEST : NetMsgType::TX))
 	{
         sError = "Error: The transaction was rejected! This might happen if some of the coins in your wallet were already spent, such as if you used a copy of wallet.dat and coins were spent in the copy but not marked as spent here.";
 		return false;
@@ -700,7 +701,7 @@ std::string CreateGovernanceCollateral(uint256 GovObjHash, CAmount caFee, std::s
 		// -- make our change address
 		CReserveKey reservekey(pwalletMain);
 		//CValidationState state;
-        pwalletMain->CommitTransaction(wtx, reservekey, g_connman.get(), state, NetMsgType::TX);
+        pwalletMain->CommitTransaction(wtx, reservekey, g_connman.get(), NetMsgType::TX);
 		DBG( cout << "gobject: prepare "
 					<< " strData = " << govobj.GetDataAsString()
 					<< ", hash = " << govobj.GetHash().GetHex()
