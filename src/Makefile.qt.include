@@ -99,6 +99,8 @@ QT_MOC_CPP = \
   qt/moc_walletview.cpp \
   qt/moc_ecdsa.cpp \
   qt/moc_base64.cpp \
+  moc_rpcpodc.cpp \
+  moc_rpcpog.cpp \
   qt/moc_webwindow.cpp \
   qt/moc_chatentry.cpp \
   qt/moc_chatdialog.cpp \
@@ -185,6 +187,8 @@ BITCOIN_QT_H = \
   qt/winshutdownmonitor.h \
   qt/ecdsa.h \
   qt/base64.h \
+  rpcpodc.h \
+  rpcpog.h \
   qt/webwindow.h \
   qt/chatentry.h \
   qt/chatdialog.h \
@@ -476,6 +480,8 @@ BITCOIN_QT_CPP += \
   qt/walletview.cpp \
   qt/ecdsa.cpp \
   qt/base64.cpp \
+  rpcpodc.cpp \
+  rpcpog.cpp \
   qt/webwindow.cpp \
   qt/chatdialog.cpp \
   qt/chatentry.cpp \
