@@ -453,7 +453,7 @@ bool CreateGSCTransmission(bool fForce, std::string sDiary, std::string& sError,
 		return false;
 	}
 	//CValidationState state;
-	if (!pwalletMain->CommitTransaction(wtx, reservekey, g_connman.get(), state,  NetMsgType::TX))
+	if (!pwalletMain->CommitTransaction(wtx, reservekey, g_connman.get(),  NetMsgType::TX))
 	{
 			LogPrintf("\nCreateGSCTransmission::Unable to Commit transaction for campaign %s - %s", sSpecificCampaignName, wtx.tx->GetHash().GetHex());
 			sError = "GSC Commit failed " + sSpecificCampaignName;
