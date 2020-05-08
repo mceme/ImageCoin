@@ -61,7 +61,7 @@ void EnsureWalletIsUnlocked()
 
 void WalletTxToJSON(const CWalletTx& wtx, UniValue& entry)
 {
-	  EnsureWalletIsUnlocked();
+
     int confirms = wtx.GetDepthInMainChain(false);
     bool fLocked = instantsend.IsLockedInstantSendTransaction(wtx.GetHash());
     entry.push_back(Pair("confirmations", confirms));
@@ -226,7 +226,7 @@ UniValue getaccountaddress(const UniValue& params, bool fHelp)
 
 UniValue getrawchangeaddress(const UniValue& params, bool fHelp)
 {
-	  EnsureWalletIsUnlocked();
+
 
     if (!EnsureWalletIsAvailable(fHelp))
         return NullUniValue;
@@ -645,7 +645,7 @@ UniValue signmessage(const UniValue& params, bool fHelp)
 
     LOCK2(cs_main, pwalletMain->cs_wallet);
 
-    EnsureWalletIsUnlocked();
+
 
     string strAddress = params[0].get_str();
     string strMessage = params[1].get_str();
@@ -1568,12 +1568,14 @@ void ListTransactions(const CWalletTx& wtx, const string& strAccount, int nMinDe
 
 void AcentryToJSON(const CAccountingEntry& acentry, const string& strAccount, UniValue& ret)
 {
-	  EnsureWalletIsUnlocked();
+
 
     bool fAllAccounts = (strAccount == string("*"));
 
     if (fAllAccounts || acentry.strAccount == strAccount)
     {
+    	 EnsureWalletIsUnlocked();
+
         UniValue entry(UniValue::VOBJ);
         entry.push_back(Pair("account", acentry.strAccount));
         entry.push_back(Pair("category", "move"));
