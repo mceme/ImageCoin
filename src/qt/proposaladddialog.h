@@ -61,6 +61,8 @@ private:
 
 private Q_SLOTS:
     void on_btnSubmit_clicked();
+    void on_btnFinal_clicked();
+
 };
 
 #endif // BITCOIN_QT_PROPOSALADDDIALOG_H

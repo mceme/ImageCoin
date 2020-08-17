@@ -62,6 +62,9 @@ void ProposalAddDialog::UpdateDisplay()
 	if (fProposalNeedsSubmitted)
 	{
 		sInfo += "<br>NOTE: You have a proposal waiting to be submitted.  <br>Status: " + msProposalResult;
+
+		btnFinal->setVisible(true);
+
 	}
 	else if (!msProposalResult.empty())
 	{
@@ -185,8 +188,39 @@ void ProposalAddDialog::on_btnSubmit_clicked()
 		msProposalHex = sHex;
 		fProposalNeedsSubmitted = true;
 		clear();
+
 	}
+
  	QMessageBox::warning(this, tr("Proposal Add Result"), GUIUtil::TOQS(sNarr), QMessageBox::Ok, QMessageBox::Ok);
 
     UpdateDisplay();
 }
+
+void ProposalAddDialog::on_btnFinal_clicked()
+{
+	 if (fProposalNeedsSubmitted)
+	        {
+	            nProposalModulus = 0;
+	            if(masternodeSync.IsSynced() && chainActive.Tip() && chainActive.Tip()->nHeight > (nProposalPrepareHeight + 6))
+	            {
+	                fProposalNeedsSubmitted = false;
+	                std::string sError;
+	                std::string sGovObj;
+	                bool fSubmitted = SubmitProposalToNetwork(uTxIdFee, nProposalStartTime, msProposalHex, sError, sGovObj);
+					if (!sError.empty())
+					{
+						LogPrintf("Proposal Submission Problem: %s ", sError);
+						 fProposalNeedsSubmitted = true;
+					}
+	                msProposalResult = fSubmitted ? "Submitted Proposal Successfully <br>( " + sGovObj + " )" : sError;
+	                LogPrintf(" Proposal Submission Result:  %s  \n", msProposalResult.c_str());
+	            }
+	            else
+	            {
+	                msProposalResult = "Waiting for block " + RoundToString(nProposalPrepareHeight + 6, 0) + " to submit pending proposal. ";
+	            }
+	         	QMessageBox::warning(this, tr("Proposal Add Result"), GUIUtil::TOQS(msProposalResult), QMessageBox::Ok, QMessageBox::Ok);
+
+	        }
+}
+
