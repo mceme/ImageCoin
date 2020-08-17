@@ -18,6 +18,8 @@
 #include "governance-vote.h"
 #include "governance-classes.h"
 
+#include "masternode-sync.h"
+
 #include "walletmodel.h"
 #include "validation.h"
 #include "rpcpodc.h"

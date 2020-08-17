@@ -48,6 +48,7 @@ public:
 
 public Q_SLOTS:
     void clear();
+    void on_btnFinal_clicked();
 
 protected:
    
@@ -61,7 +62,7 @@ private:
 
 private Q_SLOTS:
     void on_btnSubmit_clicked();
-    void on_btnFinal_clicked();
+
 
 };
 
