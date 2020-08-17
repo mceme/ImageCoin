@@ -125,7 +125,7 @@
              </size>
             </property>
             <property name="text">
-             <string>&amp;Submit Proposal</string>
+             <string>&amp;Prepare Proposal</string>
             </property>
            </widget>
           </item>
@@ -141,6 +141,22 @@
              </size>
             </property>
            </spacer>
+          </item>
+         <item>
+           <widget class="QPushButton" name="btnFinal">
+            <property name="minimumSize">
+             <size>
+              <width>150</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>&amp;Submit Proposal</string>
+            </property>
+            <property name="visible">
+             <bool>false</bool>
+            </property>
+           </widget>
           </item>
          </layout>
         </item>
