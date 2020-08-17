@@ -206,6 +206,7 @@ void ProposalAddDialog::on_btnFinal_clicked()
 	            if(masternodeSync.IsSynced() && chainActive.Tip() && chainActive.Tip()->nHeight > (nProposalPrepareHeight + 6))
 	            {
 	                fProposalNeedsSubmitted = false;
+	                ui->btnFinal->setVisible(false);
 	                std::string sError;
 	                std::string sGovObj;
 	                bool fSubmitted = SubmitProposalToNetwork(uTxIdFee, nProposalStartTime, msProposalHex, sError, sGovObj);
@@ -213,9 +214,12 @@ void ProposalAddDialog::on_btnFinal_clicked()
 					{
 						LogPrintf("Proposal Submission Problem: %s ", sError);
 						 fProposalNeedsSubmitted = true;
+						 ui->btnFinal->setVisible(true);
 					}
 	                msProposalResult = fSubmitted ? "Submitted Proposal Successfully <br>( " + sGovObj + " )" : sError;
 	                LogPrintf(" Proposal Submission Result:  %s  \n", msProposalResult.c_str());
+
+
 	            }
 	            else
 	            {
