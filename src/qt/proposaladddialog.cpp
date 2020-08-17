@@ -65,7 +65,7 @@ void ProposalAddDialog::UpdateDisplay()
 	{
 		sInfo += "<br>NOTE: You have a proposal waiting to be submitted.  <br>Status: " + msProposalResult;
 
-		btnFinal->setVisible(true);
+		  ui->btnFinal->setVisible(true);
 
 	}
 	else if (!msProposalResult.empty())
