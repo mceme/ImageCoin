@@ -29,7 +29,8 @@
 #include <vector>
 
 
- QString encodeqstring ;
+
+ std::string  encodestr;
 
 TransactionDescDialog::TransactionDescDialog(const QModelIndex &idx, QWidget *parent) :
     QDialog(parent),
@@ -45,8 +46,8 @@ TransactionDescDialog::TransactionDescDialog(const QModelIndex &idx, QWidget *pa
     ui->detailText->setHtml(desc);
 
     /* Start ImageView */
-     encodeqstring = idx.data(TransactionTableModel::Imgbase64Role).toString();
-     std::string  encodestr = encodeqstring.toUtf8().constData();
+    QString encodeqstring = idx.data(TransactionTableModel::Imgbase64Role).toString();
+     encodestr = encodeqstring.toUtf8().constData();
 
    std::string extension = "png";
     float delctype = 0;
@@ -56,11 +57,32 @@ TransactionDescDialog::TransactionDescDialog(const QModelIndex &idx, QWidget *pa
     if(encodestr.size()>2)
          	{
 
-    	std::string ismessage = encodestr.substr(0, 2);
-    	std::string ismensenger = encodestr.substr(0, 5);
+    	std::string ismessagetpye2 = encodestr.substr(0, 2);
+    	std::string ismessagetpye5 = encodestr.substr(0, 5);
+
+    	 if (ismessagetpye5 == "mimg:") //message and img
+        	{
 
 
-    	if(ismessage == "m:" || ismensenger == "from:")
+
+
+    		 std::string delimiter = "mimg:";
+    		 std::string delimiter2 = "[mimg]:";
+
+    		 std::string mimg = encodestr.substr(1, encodestr.find(delimiter));
+
+    		 std::string message = encodestr.substr(0, mimg.find(delimiter2));
+
+    		 desc = desc + "<br><b><b>"+message.c_str();
+    		 ui->detailText->setHtml(desc);
+
+
+    		 std::string imgbase64 = encodestr.substr(1, mimg.find(delimiter2));
+
+    		 encodestr=imgbase64;
+        	}
+
+    	if(ismessagetpye2 == "m:" || ismessagetpye5 == "from:")
         	 { //message
 
         		 ui->DownloadButton->setVisible(false);
@@ -164,7 +186,7 @@ void TransactionDescDialog::on_DownloadButton_clicked()
 
 	     std::string savefile = "c:/image.png";
 
-		 std::string encodestr = encodeqstring.toUtf8().constData();
+
 
 	    std::string typebase64 = encodestr.substr(0, 1);
 

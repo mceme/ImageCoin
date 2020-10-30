@@ -54,6 +54,7 @@ SendCoinsEntry::SendCoinsEntry(const PlatformStyle *platformStyle, QWidget *pare
     ui->deleteButton_s->setIcon(QIcon(":/icons/" + theme + "/remove"));
     ui->pasteButtonBase64->setIcon(QIcon(":/icons/" + theme + "/editpaste"));
     ui->Imgbase64Edit->setMaxLength(10000000);
+    ui->ImgMessagelineEdit->setMaxLength(1000);
 
     // normal dash address field
     GUIUtil::setupAddressWidget(ui->payTo, this);
@@ -122,8 +123,9 @@ void SendCoinsEntry::clear()
     ui->payTo->clear();
     ui->addAsLabel->clear();
     ui->payAmount->clear();
+    ui->ImgMessagelineEdit->clear();
     ui->Imgbase64Edit->clear();
-    ui->Imgbase64Edit->setEnabled(1);
+    ui->Imgbase64Edit->setDisabled(1);
     fileselected=false;
     ui->checkboxSubtractFeeFromAmount->setCheckState(Qt::Unchecked);
     ui->messageTextLabel->clear();
@@ -214,8 +216,20 @@ bool SendCoinsEntry::validate()
         retval = false;
     }
 
+    ui->ImgMessagelineEdit->setStyleSheet("QLineEdit { background: rgb(255, 255, 255); selection-background-color: rgb(255, 128, 128); }");
+    ui->ImgMessagelineEdit->setToolTip("Enter message for this tx. ");
+
     ui->Imgbase64Edit->setStyleSheet("QLineEdit { background: rgb(255, 255, 255); selection-background-color: rgb(255, 128, 128); }");
     ui->Imgbase64Edit->setToolTip("Enter base64 string for this tx. ");
+
+	if(ui->ImgMessagelineEdit->text().length()>1000)
+    	{
+    		 ui->ImgMessagelineEdit->setStyleSheet("QLineEdit { background: rgb(220, 20, 60); selection-background-color: rgb(233, 99, 0); }");
+    		 ui->ImgMessagelineEdit->setToolTip("Max length 1000 chars! ");
+    		 ui->ImgMessagelineEdit->setText("");
+    		 retval = false;
+    	}
+
     if (!ui->Imgbase64Edit->text().isEmpty())
     {
 
@@ -274,8 +288,11 @@ SendCoinsRecipient SendCoinsEntry::getValue()
     recipient.address = ui->payTo->text();
     recipient.label = ui->addAsLabel->text();
     recipient.imgbase64 = ui->Imgbase64Edit->text();
-    if(ui->Imgbase64Edit->text().size()>0 && !fileselected){ //message
-    recipient.imgbase64 ="m:"+ ui->Imgbase64Edit->text();
+    if(ui->ImgMessagelineEdit->text().size() > 0 && ui->Imgbase64Edit->text().size()== 0 ){ // only message
+    recipient.imgbase64 ="m:"+ ui->ImgMessagelineEdit->text();
+    }
+    if(ui->ImgMessagelineEdit->text().size() > 0 && ui->Imgbase64Edit->text().size()>0){ // message and imgbase64
+    recipient.imgbase64 ="mimg:"+ ui->ImgMessagelineEdit->text()+"[img]:"+ui->Imgbase64Edit->text();
     }
     recipient.amount = ui->payAmount->value();
     recipient.message = ui->messageTextLabel->text();
