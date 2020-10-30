@@ -48,7 +48,7 @@
        <widget class="QLabel" name="Labelimgbase64">
         <property name="minimumSize">
          <size>
-          <width>40</width>
+          <width>65</width>
           <height>0</height>
          </size>
         </property>
@@ -300,7 +300,7 @@
        <widget class="QLabel" name="labelImgMessage">
         <property name="minimumSize">
          <size>
-          <width>40</width>
+          <width>30</width>
           <height>0</height>
          </size>
         </property>

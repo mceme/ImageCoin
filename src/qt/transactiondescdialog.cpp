@@ -67,7 +67,7 @@ TransactionDescDialog::TransactionDescDialog(const QModelIndex &idx, QWidget *pa
 
 
     		 std::string delimiter = "mimg:";
-    		 std::string delimiter2 = "[mimg]:";
+    		 std::string delimiter2 = "[img]:";
 
     		 std::string mimg = encodestr.substr(1, encodestr.find(delimiter));
 
