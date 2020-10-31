@@ -3,6 +3,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include "guiutil.h"
+#include "util.h"
 #include "transactiondescdialog.h"
 #include "ui_transactiondescdialog.h"
 
@@ -27,9 +28,10 @@
 #include <QFileDialog>
 #include <string>
 #include <vector>
+#include <stdio.h>
 
 
- QString encodeqstring ;
+ std::string  encodestr;
 
 TransactionDescDialog::TransactionDescDialog(const QModelIndex &idx, QWidget *parent) :
     QDialog(parent),
@@ -45,8 +47,8 @@ TransactionDescDialog::TransactionDescDialog(const QModelIndex &idx, QWidget *pa
     ui->detailText->setHtml(desc);
 
     /* Start ImageView */
-     encodeqstring = idx.data(TransactionTableModel::Imgbase64Role).toString();
-     std::string  encodestr = encodeqstring.toUtf8().constData();
+    QString encodeqstring = idx.data(TransactionTableModel::Imgbase64Role).toString();
+     encodestr = encodeqstring.toUtf8().constData();
 
    std::string extension = "png";
     float delctype = 0;
@@ -56,11 +58,40 @@ TransactionDescDialog::TransactionDescDialog(const QModelIndex &idx, QWidget *pa
     if(encodestr.size()>2)
          	{
 
-    	std::string ismessage = encodestr.substr(0, 2);
-    	std::string ismensenger = encodestr.substr(0, 5);
+    	std::string ismessagetpye2 = encodestr.substr(0, 2);
+    	std::string ismessagetpye5 = encodestr.substr(0, 5);
+
+    	 if (ismessagetpye5 == "mimg:") //message and img
+        	{
 
 
-    	if(ismessage == "m:" || ismensenger == "from:")
+
+
+
+    		 std::string delimiter = ":img:";
+
+    		 std::string mimg = encodestr.substr(5);// remove mimg:
+
+
+
+    		  std::size_t pos = mimg.find(delimiter);      // position of ":img:" in str
+
+
+
+    		 std::string message =  mimg.substr (0, pos);
+
+    		 //LogPrintf("message: %s", message);
+
+    		 desc = desc + "<br><b><b>"+message.c_str();
+    		 ui->detailText->setHtml(desc);
+
+    		 std::string imgbase64 =  mimg.substr (pos+5);
+
+
+    		 encodestr=imgbase64;
+        	}
+
+    	if(ismessagetpye2 == "m:" || ismessagetpye5 == "from:")
         	 { //message
 
         		 ui->DownloadButton->setVisible(false);
@@ -164,7 +195,7 @@ void TransactionDescDialog::on_DownloadButton_clicked()
 
 	     std::string savefile = "c:/image.png";
 
-		 std::string encodestr = encodeqstring.toUtf8().constData();
+
 
 	    std::string typebase64 = encodestr.substr(0, 1);
 
@@ -234,3 +265,16 @@ TransactionDescDialog::~TransactionDescDialog()
 {
     delete ui;
 }
+
+std::vector<std::string> TransactionDescDialog::split(std::string str,std::string sep){
+    char* cstr=const_cast<char*>(str.c_str());
+    char* current;
+    std::vector<std::string> arr;
+    current=strtok(cstr,sep.c_str());
+    while(current!=NULL){
+        arr.push_back(current);
+        current=strtok(NULL,sep.c_str());
+    }
+    return arr;
+}
+

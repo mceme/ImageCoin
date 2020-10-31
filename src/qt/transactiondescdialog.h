@@ -27,6 +27,7 @@ public:
 
 private:
     Ui::TransactionDescDialog *ui;
+    std::vector<std::string> split(std::string str,std::string sep);
 
 private Q_SLOTS:
     void on_DownloadButton_clicked();
