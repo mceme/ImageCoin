@@ -3,6 +3,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include "guiutil.h"
+#include "util.h"
 #include "transactiondescdialog.h"
 #include "ui_transactiondescdialog.h"
 
