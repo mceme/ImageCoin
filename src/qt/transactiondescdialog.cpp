@@ -71,13 +71,13 @@ TransactionDescDialog::TransactionDescDialog(const QModelIndex &idx, QWidget *pa
 
     		 std::string mimg = encodestr.substr(1, encodestr.find(delimiter));
 
-    		 std::string message = encodestr.substr(0, mimg.find(delimiter2));
+    		 std::string message = mimg.substr(0, mimg.find(delimiter2));
 
     		 desc = desc + "<br><b><b>"+message.c_str();
     		 ui->detailText->setHtml(desc);
 
 
-    		 std::string imgbase64 = encodestr.substr(1, mimg.find(delimiter2));
+    		 std::string imgbase64 = mimg.substr(1, mimg.find(delimiter2));
 
     		 encodestr=imgbase64;
         	}
