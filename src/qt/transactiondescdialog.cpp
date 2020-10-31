@@ -69,7 +69,10 @@ TransactionDescDialog::TransactionDescDialog(const QModelIndex &idx, QWidget *pa
     		 std::string delimiter = "mimg:";
     		 std::string delimiter2 = "[img]:";
 
-    		 std::string mimg = encodestr.substr(5, encodestr.length());// remove mimg:
+    		 std::string mimg = encodestr.substr(5);// remove mimg:
+
+
+
 
     		 std::vector<std::string> arrmimg;
 
@@ -77,6 +80,7 @@ TransactionDescDialog::TransactionDescDialog(const QModelIndex &idx, QWidget *pa
 
     		 std::string message = arrmimg[0].c_str();
 
+    		 //LogPrintf("message: %s",message);
 
     		 desc = desc + "<br><b><b>"+message.c_str();
     		 ui->detailText->setHtml(desc);
