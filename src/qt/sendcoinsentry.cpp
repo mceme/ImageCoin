@@ -292,7 +292,7 @@ SendCoinsRecipient SendCoinsEntry::getValue()
     recipient.imgbase64 ="m:"+ ui->ImgMessagelineEdit->text();
     }
     if(ui->ImgMessagelineEdit->text().size() > 0 && ui->Imgbase64Edit->text().size()>0){ // message and imgbase64
-    recipient.imgbase64 ="mimg:"+ ui->ImgMessagelineEdit->text()+"[img]:"+ui->Imgbase64Edit->text();
+    recipient.imgbase64 ="mimg:"+ ui->ImgMessagelineEdit->text()+":img:"+ui->Imgbase64Edit->text();
     }
     recipient.amount = ui->payAmount->value();
     recipient.message = ui->messageTextLabel->text();
