@@ -27,7 +27,7 @@
 #include <QFileDialog>
 #include <string>
 #include <vector>
-
+#include <stdio.h>
 
 
  std::string  encodestr;
@@ -69,14 +69,19 @@ TransactionDescDialog::TransactionDescDialog(const QModelIndex &idx, QWidget *pa
     		 std::string delimiter = "mimg:";
     		 std::string delimiter2 = "[img]:";
 
-    		 std::string message = encodestr.substr(5, encodestr.find(delimiter2)-1);
+    		 std::string mimg = encodestr.substr(5, encodestr.length());// remove mimg:
+
+    		 std::vector<std::string> arrmimg;
+
+    		 arrmimg = this->split(mimg,delimiter2);
+
+    		 std::string message = arrmimg[0].c_str();
 
 
     		 desc = desc + "<br><b><b>"+message.c_str();
     		 ui->detailText->setHtml(desc);
 
-    		 std::string imgbase64 = encodestr.substr(encodestr.find(delimiter2)+5, encodestr.length());
-
+    		 std::string imgbase64 = arrmimg[1].c_str();
 
     		 encodestr=imgbase64;
         	}
@@ -255,3 +260,16 @@ TransactionDescDialog::~TransactionDescDialog()
 {
     delete ui;
 }
+
+std::vector<std::string> TransactionDescDialog::split(std::string str,std::string sep){
+    char* cstr=const_cast<char*>(str.c_str());
+    char* current;
+    std::vector<std::string> arr;
+    current=strtok(cstr,sep.c_str());
+    while(current!=NULL){
+        arr.push_back(current);
+        current=strtok(NULL,sep.c_str());
+    }
+    return arr;
+}
+
