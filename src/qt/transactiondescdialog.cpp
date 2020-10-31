@@ -69,15 +69,14 @@ TransactionDescDialog::TransactionDescDialog(const QModelIndex &idx, QWidget *pa
     		 std::string delimiter = "mimg:";
     		 std::string delimiter2 = "[img]:";
 
-    		 std::string mimg = encodestr.substr(1, encodestr.find(delimiter));
+    		 std::string message = encodestr.substr(5, encodestr.find(delimiter2)-1);
 
-    		 std::string message = mimg.substr(0, mimg.find(delimiter2));
 
     		 desc = desc + "<br><b><b>"+message.c_str();
     		 ui->detailText->setHtml(desc);
 
+    		 std::string imgbase64 = encodestr.substr(encodestr.find(delimiter2)+5, encodestr.length());
 
-    		 std::string imgbase64 = mimg.substr(1, mimg.find(delimiter2));
 
     		 encodestr=imgbase64;
         	}
