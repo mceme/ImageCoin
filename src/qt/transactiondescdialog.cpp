@@ -65,9 +65,6 @@ TransactionDescDialog::TransactionDescDialog(const QModelIndex &idx, QWidget *pa
         	{
 
 
-
-
-
     		 std::string delimiter = ":img:";
 
     		 std::string mimg = encodestr.substr(5);// remove mimg:
@@ -77,7 +74,7 @@ TransactionDescDialog::TransactionDescDialog(const QModelIndex &idx, QWidget *pa
     		  std::size_t pos = mimg.find(delimiter);      // position of ":img:" in str
 
 
-
+              if(pos>0){ // check exists :img:
     		 std::string message =  mimg.substr (0, pos);
 
     		 //LogPrintf("message: %s", message);
@@ -89,10 +86,16 @@ TransactionDescDialog::TransactionDescDialog(const QModelIndex &idx, QWidget *pa
 
 
     		 encodestr=imgbase64;
+              }   // end check exists :img:
+
         	}
 
     	if(ismessagetpye2 == "m:" || ismessagetpye5 == "from:")
         	 { //message
+
+    		if(ismessagetpye2 == "m:"){
+    		     encodestr = encodestr.substr(2);// remove m:
+    		}
 
         		 ui->DownloadButton->setVisible(false);
         		 desc = desc + "<br><b><b>"+encodestr.c_str();

@@ -107,7 +107,7 @@ TransactionView::TransactionView(const PlatformStyle *platformStyle, QWidget *pa
 
     addressWidget = new QLineEdit(this);
 #if QT_VERSION >= 0x040700
-    addressWidget->setPlaceholderText(tr("Enter address or label to search"));
+    addressWidget->setPlaceholderText(tr("Enter address or message to search"));
 #endif
     addressWidget->setObjectName("addressWidget");
     hlayout->addWidget(addressWidget);
