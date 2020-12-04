@@ -589,6 +589,7 @@ QVariant TransactionTableModel::data(const QModelIndex &index, int role) const
         	if(qimgbase64.size()>2) {
         		QString mensage = qimgbase64.section(":", 0, 0, QString::SectionSkipEmpty);
         	     if(mensage=="m") qimgbase64 = qimgbase64.mid(2);
+        	     if(mensage=="mimg") qimgbase64 = qimgbase64.mid(5);
         	     if(mensage=="from") qimgbase64 = qimgbase64.mid(40);
         	}
 

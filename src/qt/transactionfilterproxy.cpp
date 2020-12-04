@@ -81,7 +81,7 @@ bool TransactionFilterProxy::filterAcceptsRow(int sourceRow, const QModelIndex &
         return false;
     if(datetime < dateFrom || datetime > dateTo)
         return false;
-    if (!address.contains(addrPrefix, Qt::CaseInsensitive) && addrPrefix2.isEmpty() &&  !label.contains(addrPrefix, Qt::CaseInsensitive))
+    if (!address.contains(addrPrefix, Qt::CaseInsensitive) && addrPrefix2.isEmpty() && !label.contains(addrPrefix, Qt::CaseInsensitive) && !qimgbase64.contains(addrPrefix, Qt::CaseInsensitive))
         return false;
 
 
