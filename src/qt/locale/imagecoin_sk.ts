@@ -245,6 +245,10 @@
         <source>Wallet</source>
         <translation>Peňaženka</translation>
     </message>
+	<message>
+        <source>Messenger</source>
+        <translation>Posol</translation>
+    </message>
     <message>
         <source>Node</source>
         <translation>Uzol</translation>
@@ -2725,6 +2729,10 @@ https://www.transifex.com/projects/p/imagecoin/</translation>
     <message>
         <source>This is a normal payment.</source>
         <translation>Toto je normálna platba.</translation>
+    </message>
+	<message>
+        <source>Chooser</source>
+        <translation>Vyberte si</translation>
     </message>
     <message>
         <source>Pay &amp;To:</source>

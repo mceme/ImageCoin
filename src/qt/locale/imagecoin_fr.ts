@@ -246,12 +246,16 @@
         <translation>Une erreur fatale est survenue. imagecoin ne peut plus continuer de façon sûre et va s'arrêter.</translation>
     </message>
     <message>
-        <source>imagecoin Core</source>
-        <translation>imagecoin Core</translation>
+        <source>Imagecoin Core</source>
+        <translation>Imagecoin Core</translation>
     </message>
     <message>
         <source>Wallet</source>
         <translation>Portefeuille</translation>
+    </message>
+	<message>
+        <source>Messenger</source>
+        <translation>Messager</translation>
     </message>
     <message>
         <source>Node</source>
@@ -2944,6 +2948,10 @@ https://www.transifex.com/projects/p/imagecoin/</translation>
     <message>
         <source>This is a normal payment.</source>
         <translation>Ceci est un paiement normal.</translation>
+    </message>
+	<message>
+        <source>Chooser</source>
+        <translation>Choisir</translation>
     </message>
     <message>
         <source>Pay &amp;To:</source>

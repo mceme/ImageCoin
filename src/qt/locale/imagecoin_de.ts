@@ -249,6 +249,10 @@
         <source>imagecoin Core</source>
         <translation>imagecoin Core</translation>
     </message>
+	 <message>
+        <source>Messenger</source>
+        <translation>Bote</translation>
+    </message>
     <message>
         <source>Wallet</source>
         <translation>Wallet</translation>
@@ -2948,6 +2952,10 @@ Dies kann passieren, wenn einige imagecoin aus ihrer Wallet bereits ausgegeben w
         <source>This is a normal payment.</source>
         <translation>Dies ist eine normale Überweisung.</translation>
     </message>
+	<message>
+        <source>Chooser</source>
+        <translation>Wählen</translation>
+    </message>	
     <message>
         <source>Pay &amp;To:</source>
         <translation>E&amp;mpfänger:</translation>

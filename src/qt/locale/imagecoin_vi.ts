@@ -249,6 +249,10 @@
         <source>Imagecoin Core</source>
         <translation>Imagecoin Core</translation>
     </message>
+	<message>
+        <source>Messenger</source>
+        <translation>tin nhắn</translation>
+    </message>
     <message>
         <source>Wallet</source>
         <translation>Ví</translation>
@@ -2944,6 +2948,10 @@ https://www.transifex.com/projects/p/imagecoin/</translation>
     <message>
         <source>This is a normal payment.</source>
         <translation>Đây là giao dịch thông thường.</translation>
+    </message>
+	<message>
+        <source>Chooser</source>
+        <translation>Chọn</translation>
     </message>
     <message>
         <source>Pay &amp;To:</source>

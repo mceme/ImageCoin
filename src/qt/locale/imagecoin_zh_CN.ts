@@ -246,6 +246,10 @@
         <source>&amp;Overview</source>
         <translation>概况(&amp;O)</translation>
     </message>
+	<message>
+        <source>Messenger</source>
+        <translation>信使</translation>
+    </message>
     <message>
         <source>Show general overview of wallet</source>
         <translation>显示钱包概况</translation>
@@ -2506,6 +2510,10 @@ https://www.transifex.com/projects/p/imagecoin/</translation>
     <message>
         <source>This is a normal payment.</source>
         <translation>这是笔正常的支付。</translation>
+    </message>
+	<message>
+        <source>Chooser</source>
+        <translation>选择</translation>
     </message>
     <message>
         <source>Pay &amp;To:</source>

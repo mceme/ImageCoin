@@ -227,6 +227,10 @@
         <source>Wallet</source>
         <translation>Plånbok</translation>
     </message>
+	   <message>
+        <source>Messenger</source>
+        <translation>Sel</translation>
+    </message>
     <message>
         <source>Node</source>
         <translation>Nod</translation>
@@ -1916,6 +1920,10 @@ https://www.transifex.com/projects/p/imagecoin/</translation>
     <message>
         <source>This is a normal payment.</source>
         <translation>Detta är en vanlig betalning.</translation>
+    </message>
+	<message>
+        <source>Chooser</source>
+        <translation>Izberite</translation>
     </message>
     <message>
         <source>Pay &amp;To:</source>

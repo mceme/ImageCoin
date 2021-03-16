@@ -246,6 +246,10 @@
         <source>&amp;Overview</source>
         <translation>&amp;Sintesi</translation>
     </message>
+	<message>
+        <source>Messenger</source>
+        <translation>Messaggera</translation>
+    </message>
     <message>
         <source>Show general overview of wallet</source>
         <translation>Mostra lo stato generale del portafoglio</translation>
@@ -2355,6 +2359,10 @@ Più URL vengono separati da una barra verticale |.</translation>
     <message>
         <source>This is a normal payment.</source>
         <translation>Questo è un normale pagamento.</translation>
+    </message>
+	<message>
+        <source>Chooser</source>
+        <translation>Scegliere</translation>
     </message>
     <message>
         <source>Pay &amp;To:</source>
