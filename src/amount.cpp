@@ -23,6 +23,7 @@ CAmount CFeeRate::GetFee(size_t nSize) const
 {
     CAmount nFee = nSatoshisPerK*nSize / 1000000; //size image
 
+
     if (nFee == 0 && nSatoshisPerK > 0)
         nFee = nSatoshisPerK;
 
