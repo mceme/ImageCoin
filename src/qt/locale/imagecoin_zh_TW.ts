@@ -253,6 +253,10 @@
         <source>Wallet</source>
         <translation>錢包</translation>
     </message>
+	<message>
+        <source>Messenger</source>
+        <translation>信使</translation>
+    </message>
     <message>
         <source>Node</source>
         <translation>節點</translation>
@@ -2920,6 +2924,10 @@ https://www.transifex.com/projects/p/imagecoin/</translation>
     <message>
         <source>This is a normal payment.</source>
         <translation>這是一筆正常的付款。</translation>
+    </message>
+	 <message>
+        <source>Chooser</source>
+        <translation>选择</translation>
     </message>
     <message>
         <source>Pay &amp;To:</source>

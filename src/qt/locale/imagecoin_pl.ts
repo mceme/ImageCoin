@@ -246,12 +246,16 @@
         <translation>Wystąpił błąd krytyczny. imagecoin Core nie może bezpiecznie kontynuować i zostanie zamknięty.</translation>
     </message>
     <message>
-        <source>imagecoin Core</source>
-        <translation>imagecoin Core</translation>
+        <source>Imagecoin Core</source>
+        <translation>Imagecoin Core</translation>
     </message>
     <message>
         <source>Wallet</source>
         <translation>Portfel</translation>
+    </message>
+	 <message>
+        <source>Messenger</source>
+        <translation>Posłaniec</translation>
     </message>
     <message>
         <source>Node</source>
@@ -2928,6 +2932,10 @@ https://www.transifex.com/projects/p/imagecoin/</translation>
     <message>
         <source>This is a normal payment.</source>
         <translation>To jest standardowa płatność</translation>
+    </message>
+	<message>
+        <source>Chooser</source>
+        <translation>Wybierać</translation>
     </message>
     <message>
         <source>Pay &amp;To:</source>

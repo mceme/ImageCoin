@@ -2517,6 +2517,10 @@ https://www.transifex.com/projects/p/imagecoin/</translation>
         <source>This is a normal payment.</source>
         <translation>Este é um pagamento normal.</translation>
     </message>
+	<message>
+        <source>Chooser</source>
+        <translation>Selecionar</translation>
+    </message>
     <message>
         <source>Pay &amp;To:</source>
         <translation>&amp;Pagar a:</translation>

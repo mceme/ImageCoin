@@ -397,6 +397,11 @@
         <source>Browse masternodes</source>
         <translation>Browse masternodes</translation>
     </message>
+	<message>
+        <location line="+12"/>
+        <source>Messenger</source>
+        <translation>Messenger</translation>
+    </message>
     <message>
         <location line="+29"/>
         <source>E&amp;xit</source>
@@ -3834,7 +3839,12 @@ https://www.transifex.com/projects/p/imagecoin/</translation>
         <location filename="../forms/sendcoinsentry.ui" line="+21"/>
         <source>This is a normal payment.</source>
         <translation>This is a normal payment.</translation>
-    </message>
+    </message>	
+	<message>
+        <location line="+137"/>
+        <source>Chooser</source>
+        <translation>Choose</translation>
+    </message>	
     <message>
         <location line="+21"/>
         <source>Pay &amp;To:</source>

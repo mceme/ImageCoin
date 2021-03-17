@@ -246,8 +246,12 @@
         <translation>Vakava virhe tapahtunut. imagecoin Core ei voi enää toimia turvallisesti ja sulkeutuu.</translation>
     </message>
     <message>
-        <source>imagecoin Core</source>
+        <source>Imagecoin Core</source>
         <translation>imagecoin Core</translation>
+    </message>
+	  <message>
+        <source>Messenger</source>
+        <translation>Sanansaattaja</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -2949,6 +2953,10 @@ Näillä toiminnoilla voit korjata korruptoituneen lohkoketjun tai puuttuvat/van
     <message>
         <source>This is a normal payment.</source>
         <translation>Tämä on normaali maksu.</translation>
+    </message>
+	<message>
+        <source>Chooser</source>
+        <translation>Valita</translation>
     </message>
     <message>
         <source>Pay &amp;To:</source>

@@ -210,6 +210,10 @@
         <source>Node</source>
         <translation>ノード</translation>
     </message>
+	 <message>
+        <source>Messenger</source>
+        <translation>メッセンジャー</translation>
+    </message>
     <message>
         <source>&amp;Overview</source>
         <translation>概要(&amp;O)</translation>
@@ -1826,6 +1830,10 @@
     <message>
         <source>This is a normal payment.</source>
         <translation>これは通常の支払です。</translation>
+    </message>
+	  <message>
+        <source>Chooser</source>
+        <translation>選択</translation>
     </message>
     <message>
         <source>Pay &amp;To:</source>

@@ -270,6 +270,10 @@
         <source>&amp;Transactions</source>
         <translation>&amp;Transacciones</translation>
     </message>
+	<message>
+        <source>Messenger</source>
+        <translation>Mensajera</translation>
+    </message>
     <message>
         <source>Browse transaction history</source>
         <translation>Examinar el historial de transacciones</translation>
@@ -2513,6 +2517,10 @@ https://www.transifex.com/projects/p/imagecoin/</translation>
     <message>
         <source>This is a normal payment.</source>
         <translation>Esto es un pago ordinario.</translation>
+    </message>
+	<message>
+        <source>Chooser</source>
+        <translation>Escoger</translation>
     </message>
     <message>
         <source>Pay &amp;To:</source>

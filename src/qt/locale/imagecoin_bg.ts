@@ -249,6 +249,10 @@
         <source>imagecoin Core</source>
         <translation>imagecoin Ядро</translation>
     </message>
+	 <message>
+        <source>Messenger</source>
+        <translation>Пратеник</translation>
+    </message>
     <message>
         <source>Wallet</source>
         <translation>Портфейл</translation>
@@ -2945,6 +2949,10 @@ https://www.transifex.com/projects/p/imagecoin/</translation>
         <source>This is a normal payment.</source>
         <translation>Това е нормално плащане.</translation>
     </message>
+	<message>
+        <source>Chooser</source>
+        <translation>Избирам</translation>
+    </message>	
     <message>
         <source>Pay &amp;To:</source>
         <translation>Плати &amp;На:</translation>

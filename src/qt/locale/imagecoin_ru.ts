@@ -253,6 +253,10 @@
         <source>Wallet</source>
         <translation>Кошелёк</translation>
     </message>
+	 <message>
+        <source>Messenger</source>
+        <translation>посыльный</translation>
+    </message>
     <message>
         <source>Node</source>
         <translation>Узел</translation>
@@ -2944,6 +2948,10 @@ https://www.transifex.com/projects/p/imagecoin/</translation>
     <message>
         <source>This is a normal payment.</source>
         <translation>Это нормальный платёж.</translation>
+    </message>
+	 <message>
+        <source>Chooser</source>
+        <translation>выбирать</translation>
     </message>
     <message>
         <source>Pay &amp;To:</source>
