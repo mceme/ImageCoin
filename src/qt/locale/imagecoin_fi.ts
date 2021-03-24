@@ -250,7 +250,7 @@
         <translation>imagecoin Core</translation>
     </message>
 	  <message>
-        <source>Messenger</source>
+        <source>&amp;Messenger</source>
         <translation>Sanansaattaja</translation>
     </message>
     <message>

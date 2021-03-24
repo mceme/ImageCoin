@@ -211,7 +211,7 @@
         <translation>ノード</translation>
     </message>
 	 <message>
-        <source>Messenger</source>
+        <source>&amp;Messenger</source>
         <translation>メッセンジャー</translation>
     </message>
     <message>

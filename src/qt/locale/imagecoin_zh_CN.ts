@@ -247,7 +247,7 @@
         <translation>概况(&amp;O)</translation>
     </message>
 	<message>
-        <source>Messenger</source>
+        <source>&amp;Messenger</source>
         <translation>信使</translation>
     </message>
     <message>

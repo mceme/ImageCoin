@@ -399,7 +399,7 @@
     </message>
 	<message>
         <location line="+12"/>
-        <source>Messenger</source>
+        <source>&amp;Messenger</source>
         <translation>Messenger</translation>
     </message>
     <message>

@@ -250,7 +250,7 @@
         <translation>imagecoin Ядро</translation>
     </message>
 	 <message>
-        <source>Messenger</source>
+        <source>&amp;Messenger</source>
         <translation>Пратеник</translation>
     </message>
     <message>

@@ -271,7 +271,7 @@
         <translation>&amp;Transacciones</translation>
     </message>
 	<message>
-        <source>Messenger</source>
+        <source>&amp;Messenger</source>
         <translation>Mensajera</translation>
     </message>
     <message>

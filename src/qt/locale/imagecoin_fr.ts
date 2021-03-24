@@ -254,7 +254,7 @@
         <translation>Portefeuille</translation>
     </message>
 	<message>
-        <source>Messenger</source>
+        <source>&amp;Messenger</source>
         <translation>Messager</translation>
     </message>
     <message>

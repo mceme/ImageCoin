@@ -228,7 +228,7 @@
         <translation>Plånbok</translation>
     </message>
 	   <message>
-        <source>Messenger</source>
+        <source>&amp;Messenger</source>
         <translation>Sel</translation>
     </message>
     <message>

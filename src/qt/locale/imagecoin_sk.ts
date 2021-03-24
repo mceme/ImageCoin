@@ -246,7 +246,7 @@
         <translation>Peňaženka</translation>
     </message>
 	<message>
-        <source>Messenger</source>
+        <source>&amp;Messenger</source>
         <translation>Posol</translation>
     </message>
     <message>
