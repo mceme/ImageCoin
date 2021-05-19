@@ -652,6 +652,21 @@
         <source>&amp;File</source>
         <translation>&amp;File</translation>
     </message>
+	<message>
+        <location line="+15"/>
+        <source>&amp;Proposals</source>
+        <translation>&amp;Proposals</translation>
+    </message>
+	<message>
+        <location line="+15"/>
+        <source>&amp;Add Proposal</source>
+        <translation>&amp;Add Proposal</translation>
+    </message>
+		<message>
+        <location line="+15"/>
+        <source>&amp;List Proposal</source>
+        <translation>&amp;List Proposal</translation>
+    </message>
     <message>
         <location line="+14"/>
         <source>&amp;Settings</source>

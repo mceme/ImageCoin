@@ -109,9 +109,13 @@ TransactionDescDialog::TransactionDescDialog(const QModelIndex &idx, QWidget *pa
              if(typebase64=="J" /*pdf*/ || typebase64=="V"){
             	 delctype = 2;
              }
-             else if(typebase64=="A" /*mp4*/ || typebase64=="R" /*gif*/|| typebase64=="U" /*avi*/ || typebase64=="S" /*mp3*/)
+             else if(typebase64=="R" /*gif*/)
              {
             	 delctype = 1;
+             }
+             else if(typebase64=="A" /*mp4*/ || typebase64=="U" /*avi*/ || typebase64=="S" /*mp3*/)
+             {
+                	 delctype = 3;
              }
 
 	 base64 base64trdialog;
@@ -157,12 +161,41 @@ TransactionDescDialog::TransactionDescDialog(const QModelIndex &idx, QWidget *pa
                 QMovie *movie = new QMovie(&buffermov);
                 movie->setScaledSize(QSize(400, 250));
      		 gif_anim->setMovie(movie);
-     		 movie->start();
+
      		 QGraphicsProxyWidget *proxy = scene->addWidget(gif_anim);
                   scene->addWidget(gif_anim);
      		              ui->graphicsView->setScene( scene );
      		             ui->graphicsView->show();
+
+     		     movie->start();
      		       }
+     		  /* Start Video */
+     		     		  else if (delctype==3)
+     		    		  {
+     		     			ui->graphicsView->setVisible(true);
+     		     		     		              ui->graphicsView->setGeometry(QRect(0, 0, 400, 250));
+
+
+     		     		     		           QGraphicsVideoItem *videoItem = new QGraphicsVideoItem;
+     		     		     		        videoItem->setGeometry(0, 0, 400, 250);
+
+     		     		     		  QBuffer buffervid(base64decodearray);
+     		     		     		buffervid.open(QIODevice::ReadOnly);
+     		     				buffervid.seek(0);
+
+     		     		              player = new QMediaPlayer;
+     		     		              player->setVideoOutput(ui->videoItem);
+     		     		              player->setScaledSize(QSize(400, 250));
+     		     		              player->setMedia(QMediaContent(), &buffervid);
+
+     		     		     		 QGraphicsProxyWidget *proxy = scene->addWidget(videoItem);
+     		     		     		     		     		                  scene->addWidget(videoItem);
+     		     		     		     		     		     		              ui->graphicsView->setScene( scene );
+     		     		     		     		     		     		             ui->graphicsView->show();
+     		     		     	      player->play();
+
+
+     		    		  }
     		   /* Start Document */
      		  else if (delctype==2)
     		  {
