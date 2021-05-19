@@ -49,6 +49,8 @@ INCLUDEPATH += \
   E:/protobuf/
 
 QT += widgets
+QT += multimedia
+QT += multimediawidgets
 QT += webkit
 QT += webkitwidgets
 QT += webenginewidgets
