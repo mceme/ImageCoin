@@ -21,11 +21,13 @@
 #include <QPixmap>
 #include <QGraphicsView>
 #include <QGraphicsScene>
-#include <QGraphicsTextItem>
+#include <QGraphicsVideoItem>
 #include <QLabel>
 #include <QMovie>
 #include <QGraphicsProxyWidget>
 #include <QFileDialog>
+#include <QMediaPlayer>
+#include <QMediaContent>
 #include <string>
 #include <vector>
 #include <stdio.h>
