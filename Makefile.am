@@ -14,8 +14,8 @@ BITCOIN_QT_BIN=$(top_builddir)/src/qt/imagecoin-qt$(EXEEXT)
 BITCOIN_CLI_BIN=$(top_builddir)/src/imagecoin-cli$(EXEEXT)
 BITCOIN_WIN_INSTALLER=$(PACKAGE)-$(PACKAGE_VERSION)-win$(WINDOWS_BITS)-setup$(EXEEXT)
 
-OSX_APP=ImgDash-Qt.app
-OSX_DMG=ImgDash-Core.dmg
+OSX_APP=ImageCoin-Qt.app
+OSX_DMG=ImageCoin-Qt.dmg
 OSX_BACKGROUND_IMAGE=background.tiff
 OSX_DEPLOY_SCRIPT=$(top_srcdir)/contrib/macdeploy/macdeployqtplus
 OSX_FANCY_PLIST=$(top_srcdir)/contrib/macdeploy/fancy.plist
