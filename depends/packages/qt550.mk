@@ -1,6 +1,6 @@
 PACKAGE=qt
 $(package)_version=5.5.0
-$(package)_download_path=http://download.qt.io/archive/qt/5.5/$($(package)_version)/submodules
+$(package)_download_path=http://download.qt.io/new_archive/qt/5.5/$($(package)_version)/submodules
 $(package)_suffix=opensource-src-$($(package)_version).tar.gz
 $(package)_file_name=qtbase-$($(package)_suffix)
 $(package)_sha256_hash=7e82b1318f88e56a2a9376e069aa608d4fd96b48cb0e1b880ae658b0a1af0561
@@ -15,6 +15,9 @@ $(package)_qttranslations_sha256_hash=c4bd6db6e426965c6f8824c54e81f68bbd61e2bae1
 
 $(package)_qttools_file_name=qttools-$($(package)_suffix)
 $(package)_qttools_sha256_hash=d9e06bd19ecc86afba5e95d45a906d1bc1ad579aa70001e36143c1aaf695bdd6
+
+$(package)_qtmultimedia_file_name=qtmultimedia-$($(package)_suffix)
+$(package)_qtmultimedia_sha256_hash=310384bde1edeafcd7c61ea85796ef9cf6312b042bff4fb8850724dfe929cdfe
 
 $(package)_extra_sources  = $($(package)_qttranslations_file_name)
 $(package)_extra_sources += $($(package)_qttools_file_name)
@@ -109,12 +112,15 @@ define $(package)_extract_cmds
   mkdir -p $($(package)_extract_dir) && \
   echo "$($(package)_sha256_hash)  $($(package)_source)" > $($(package)_extract_dir)/.$($(package)_file_name).hash && \
   echo "$($(package)_qttranslations_sha256_hash)  $($(package)_source_dir)/$($(package)_qttranslations_file_name)" > $($(package)_extract_dir)/.$($(package)_file_name).hash && \
+  echo "$($(package)_qtmultimedia_sha256_hash)  $($(package)_source_dir)/$($(package)_qtmultimedia_file_name)" > $($(package)_extract_dir)/.$($(package)_file_name).hash && \
   echo "$($(package)_qttools_sha256_hash)  $($(package)_source_dir)/$($(package)_qttools_file_name)" > $($(package)_extract_dir)/.$($(package)_file_name).hash && \
   $(build_SHA256SUM) -c $($(package)_extract_dir)/.$($(package)_file_name).hash && \
   mkdir qtbase && \
   tar --strip-components=1 -xf $($(package)_source) -C qtbase && \
   mkdir qttranslations && \
   tar --strip-components=1 -xf $($(package)_source_dir)/$($(package)_qttranslations_file_name) -C qttranslations && \
+  mkdir qtmultimedia && \
+  tar --strip-components=1 -xf $($(package)_source_dir)/$($(package)_qtmultimedia_file_name) -C qtmultimedia && \
   mkdir qttools && \
   tar --strip-components=1 -xf $($(package)_source_dir)/$($(package)_qttools_file_name) -C qttools
 endef
@@ -147,7 +153,9 @@ define $(package)_config_cmds
   ./configure $($(package)_config_opts) && \
   $(MAKE) sub-src-clean && \
   cd ../qttranslations && ../qtbase/bin/qmake qttranslations.pro -o Makefile && \
-  cd translations && ../../qtbase/bin/qmake translations.pro -o Makefile && cd ../.. &&\
+  cd translations && ../../qtbase/bin/qmake translations.pro -o Makefile && cd ../ &&\
+  cd ../qtmultimedia && ../qtbase/bin/qmake qtmultimedia.pro -o Makefile && \
+  cd multimedia && ../../qtbase/bin/qmake qtmultimedia.pro -o Makefile && cd ../.. &&\
   cd qttools/src/linguist/lrelease/ && ../../../../qtbase/bin/qmake lrelease.pro -o Makefile
 endef
 
