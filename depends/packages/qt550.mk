@@ -20,6 +20,7 @@ $(package)_qtmultimedia_file_name=qtmultimedia-$($(package)_suffix)
 $(package)_qtmultimedia_sha256_hash=310384bde1edeafcd7c61ea85796ef9cf6312b042bff4fb8850724dfe929cdfe
 
 $(package)_extra_sources  = $($(package)_qttranslations_file_name)
+$(package)_extra_sources += $($(package)_qtmultimedia_file_name)
 $(package)_extra_sources += $($(package)_qttools_file_name)
 
 define $(package)_set_vars
@@ -163,13 +164,15 @@ endef
 define $(package)_build_cmds
   $(MAKE) -C src $(addprefix sub-,$($(package)_qt_libs)) && \
   $(MAKE) -C ../qttools/src/linguist/lrelease && \
-  $(MAKE) -C ../qttranslations
+  $(MAKE) -C ../qttranslations  && \
+   $(MAKE) -C ../qtmultimedia
 endef
 
 define $(package)_stage_cmds
   $(MAKE) -C src INSTALL_ROOT=$($(package)_staging_dir) $(addsuffix -install_subtargets,$(addprefix sub-,$($(package)_qt_libs))) && cd .. &&\
   $(MAKE) -C qttools/src/linguist/lrelease INSTALL_ROOT=$($(package)_staging_dir) install_target && \
   $(MAKE) -C qttranslations INSTALL_ROOT=$($(package)_staging_dir) install_subtargets && \
+  $(MAKE) -C qtmultimedia INSTALL_ROOT=$($(package)_staging_dir) install_subtargets && \
   if `test -f qtbase/src/plugins/platforms/xcb/xcb-static/libxcb-static.a`; then \
     cp qtbase/src/plugins/platforms/xcb/xcb-static/libxcb-static.a $($(package)_staging_prefix_dir)/lib; \
   fi
