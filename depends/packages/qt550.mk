@@ -156,9 +156,7 @@ define $(package)_config_cmds
   $(MAKE) sub-src-clean && \
   cd ../qttranslations && ../qtbase/bin/qmake qttranslations.pro -o Makefile && \
   cd translations && ../../qtbase/bin/qmake translations.pro -o Makefile && cd ../ &&\
-  cd ../qtmultimedia && ../qtbase/bin/qmake qtmultimedia.pro -o Makefile && \
-  cd /src/multimedia && ../../../qtbase/bin/qmake multimedia.pro -o Makefile && cd ../../.. &&\
-  cd qtmultimedia/src/multimediawidgets && ../../../qtbase/bin/qmake multimediawidgets.pro -o Makefile && cd ../../.. &&\
+  cd ../qtmultimedia && ../qtbase/bin/qmake qtmultimedia.pro -o Makefile && cd ../ &&\
   cd qttools/src/linguist/lrelease/ && ../../../../qtbase/bin/qmake lrelease.pro -o Makefile
 endef
 
