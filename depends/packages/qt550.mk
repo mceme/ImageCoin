@@ -157,6 +157,7 @@ define $(package)_config_cmds
   cd ../qttranslations && ../qtbase/bin/qmake qttranslations.pro -o Makefile && \
   cd translations && ../../qtbase/bin/qmake translations.pro -o Makefile && cd ../ &&\
   cd ../qtmultimedia && ../qtbase/bin/qmake qtmultimedia.pro -o Makefile && cd ../ &&\
+  cd qtmultimedia/src/ && ../../qtbase/bin/qmake src.pro -o Makefile && cd ../../ &&\
   cd qttools/src/linguist/lrelease/ && ../../../../qtbase/bin/qmake lrelease.pro -o Makefile
 endef
 
