@@ -21,6 +21,9 @@
 #include <QPixmap>
 #include <QGraphicsView>
 #include <QGraphicsScene>
+#include <QGraphicsVideoItem>
+#include <QMediaPlayer>
+#include <QMediaContent>
 #include <QLabel>
 #include <QMovie>
 #include <QGraphicsProxyWidget>
@@ -176,21 +179,27 @@ TransactionDescDialog::TransactionDescDialog(const QModelIndex &idx, QWidget *pa
      		  /* Start Video */
      		  else if (delctype==3)
      		    		  {
-     		     			encodestr = "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";
-     		     			    		      std::vector<unsigned char> bytesarraydoc = base64trdialog.decode(encodestr);
+     		     				ui->graphicsView->setVisible(true);
+     		     		     		              ui->graphicsView->setGeometry(QRect(0, 0, 400, 250));
 
-     		     			    			  QByteArray *base64decodearraydoc;
-     		     			    			  base64decodearraydoc = new QByteArray(reinterpret_cast<const char*>(bytesarraydoc.data()), bytesarraydoc.size());
-     		     			                  QBuffer bufferdoc(base64decodearraydoc);
-     		     					  QImageReader reader(&bufferdoc);
-     		     			    		  QImage image = reader.read();
-     		     			             QPixmap imagePixmap =  QPixmap::fromImage(image);
-     		     			             QPixmap newPixmap = imagePixmap.scaled(QSize(400,250),  Qt::KeepAspectRatio);
-     		     			    		  scene->addPixmap(newPixmap);
-     		     			    		  ui->graphicsView->setScene( scene );
-     		     			                  ui->graphicsView->setVisible(true);
-     		     			                  ui->graphicsView->setGeometry(QRect(0, 0, 400, 250));
-     		     			    		  ui->graphicsView->show();
+
+     		     		     		           QGraphicsVideoItem *videoItem = new QGraphicsVideoItem;
+     		     		     		        videoItem->setGeometry(0, 0, 400, 250);
+
+     		     		     		  QBuffer buffervid(base64decodearray);
+     		     		     		buffervid.open(QIODevice::ReadOnly);
+     		     				buffervid.seek(0);
+
+     		     		              player = new QMediaPlayer;
+     		     		              player->setVideoOutput(ui->videoItem);
+     		     		              player->setScaledSize(QSize(400, 250));
+     		     		              player->setMedia(QMediaContent(), &buffervid);
+
+     		     		     		 QGraphicsProxyWidget *proxy = scene->addWidget(videoItem);
+     		     		     		     		     		                  scene->addWidget(videoItem);
+     		     		     		     		     		     		              ui->graphicsView->setScene( scene );
+     		     		     		     		     		     		             ui->graphicsView->show();
+     		     		     	      player->play();
 
 
      		    		  }
