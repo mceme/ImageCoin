@@ -765,9 +765,9 @@ QVariant TransactionTableModel::data(const QModelIndex &index, int role) const
     case LabelRole:
         return walletModel->getAddressTableModel()->labelForAddress(QString::fromStdString(rec->address));
     case Imgbase64TypeRole:
-           return QString::fromStdString(rec->imgbase64);
+    	  return formatImgbase64Type(rec);
     case Imgbase64Role:
-    	 return formatImgbase64Type(rec);
+    	  return QString::fromStdString(rec->imgbase64);
     case AmountRole:
         return qint64(rec->credit + rec->debit);
     case TxIDRole:
