@@ -184,20 +184,21 @@ TransactionDescDialog::TransactionDescDialog(const QModelIndex &idx, QWidget *pa
 
 
      		     		     		           QGraphicsVideoItem *videoItem = new QGraphicsVideoItem;
-     		     		     		        videoItem->setGeometry(0, 0, 400, 250);
-
+     		     		     		     videoItem->setSize(QSize(400,250));
      		     		     		  QBuffer buffervid(base64decodearray);
      		     		     		buffervid.open(QIODevice::ReadOnly);
      		     				buffervid.seek(0);
 
-     		     		              player = new QMediaPlayer;
-     		     		              player->setVideoOutput(ui->videoItem);
-     		     		              player->setScaledSize(QSize(400, 250));
+     		     		              QMediaPlayer *player = new QMediaPlayer;
+     		     		              player->setVideoOutput(videoItem);
+     		     		             
      		     		              player->setMedia(QMediaContent(), &buffervid);
 
-     		     		     		 QGraphicsProxyWidget *proxy = scene->addWidget(videoItem);
-     		     		     		     		     		                  scene->addWidget(videoItem);
+
+     		     		     		 //QGraphicsProxyWidget *proxy = scene->addItem(videoItem);
+     		     		     		     		     		                  scene->addItem(videoItem);
      		     		     		     		     		     		              ui->graphicsView->setScene( scene );
+																					  ui->graphicsView->fitInView(videoItem, Qt::KeepAspectRatio);
      		     		     		     		     		     		             ui->graphicsView->show();
      		     		     	      player->play();
 

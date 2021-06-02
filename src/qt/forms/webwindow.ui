@@ -15,21 +15,17 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <widget class="QWebView" name="webView" native="true">
-     <property name="url" stdset="0">
-      <url>
-       <string>https://www.imagehosty.com/</string>
-      </url>
-     </property>
+    <widget class="QDialog" name="webView" native="true">
+     
     </widget>
    </item>
   </layout>
  </widget>
  <customwidgets>
   <customwidget>
-   <class>QWebView</class>
+ 
    <extends>QWidget</extends>
-   <header>QtWebKit/QWebView</header>
+  
   </customwidget>
  </customwidgets>
  <resources/>
