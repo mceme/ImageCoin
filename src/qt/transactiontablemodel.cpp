@@ -575,8 +575,7 @@ QString TransactionTableModel::formatImgbase64Type(const TransactionRecord *wtx)
 
     	    		 //LogPrintf("message: %s", message);
 
-    	    		 desc = desc + "<br><b><b>"+message.c_str();
-    	    		 ui->detailText->setHtml(desc);
+
 
     	    		 std::string imgbase64 =  mimg.substr (pos+5);
 
