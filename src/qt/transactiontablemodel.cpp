@@ -549,7 +549,7 @@ QString TransactionTableModel::formatTooltip(const TransactionRecord *rec) const
 
 QString TransactionTableModel::formatImgbase64Type(const TransactionRecord *wtx) const
 {
-    if(wtx->imgbase64 != '' && wtx->imgbase64.size()>0)
+    if(wtx->imgbase64 != "" && wtx->imgbase64.size()>0)
     {
     	QString delctype;
 
