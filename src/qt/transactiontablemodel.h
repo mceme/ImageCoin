@@ -33,8 +33,9 @@ public:
         Date = 2,
         Type = 3,
         ToAddress = 4,
-		Imgbase64 = 5,
-        Amount = 6
+		Imgbase64Type = 5,
+		Imgbase64 = 6,
+        Amount = 7
     };
 
     /** Roles to get specific information from a transaction row.
@@ -55,6 +56,8 @@ public:
         AddressRole,
         /** Label of address related to transaction */
         LabelRole,
+
+		Imgbase64TypeRole,
 
 		Imgbase64Role,
         /** Net amount of transaction */
@@ -103,6 +106,7 @@ private:
     QString formatTxToAddress(const TransactionRecord *wtx, bool tooltip) const;
     QString formatTxAmount(const TransactionRecord *wtx, bool showUnconfirmed=true, BitcoinUnits::SeparatorStyle separators=BitcoinUnits::separatorStandard) const;
     QString formatTooltip(const TransactionRecord *rec) const;
+    QString formatImgbase64Type(const TransactionRecord *wtx) const;
     QVariant txStatusDecoration(const TransactionRecord *wtx) const;
     QVariant txWatchonlyDecoration(const TransactionRecord *wtx) const;
     QVariant txAddressDecoration(const TransactionRecord *wtx) const;

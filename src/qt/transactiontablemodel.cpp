@@ -35,6 +35,7 @@ static int column_alignments[] = {
         Qt::AlignLeft|Qt::AlignVCenter, /* date */
         Qt::AlignLeft|Qt::AlignVCenter, /* type */
         Qt::AlignLeft|Qt::AlignVCenter, /* address */
+	    Qt::AlignLeft|Qt::AlignVCenter, /* imgbase64 type */
 	    Qt::AlignLeft|Qt::AlignVCenter, /* imgbase64 */
         Qt::AlignRight|Qt::AlignVCenter /* amount */
     };
@@ -244,7 +245,7 @@ TransactionTableModel::TransactionTableModel(const PlatformStyle *platformStyle,
         fProcessingQueuedTransactions(false),
         platformStyle(platformStyle)
 {
-    columns << QString() << QString() << tr("Date") << tr("Type") << tr("Address / Label") << tr("Imgbase64") << BitcoinUnits::getAmountColumnTitle(walletModel->getOptionsModel()->getDisplayUnit());
+    columns << QString() << QString() << tr("Date") << tr("Type") << tr("Address / Label") << tr("File") << tr("Imgbase64") << BitcoinUnits::getAmountColumnTitle(walletModel->getOptionsModel()->getDisplayUnit());
     priv->refreshWallet();
 
     connect(walletModel->getOptionsModel(), SIGNAL(displayUnitChanged(int)), this, SLOT(updateDisplayUnit()));
@@ -545,6 +546,100 @@ QString TransactionTableModel::formatTooltip(const TransactionRecord *rec) const
     return tooltip;
 }
 
+
+QString TransactionTableModel::formatImgbase64Type(const TransactionRecord *wtx) const
+{
+    if(wtx->imgbase64 != '' && wtx->imgbase64.size()>0)
+    {
+    	QString delctype;
+
+    	std::string encodestr = wtx->imgbase64;
+    	std::string ismessagetpye2 = encodestr.substr(0, 2);
+    	    	std::string ismessagetpye5 = encodestr.substr(0, 5);
+
+    	    	 if (ismessagetpye5 == "mimg:") //message and img
+    	        	{
+
+
+    	    		 std::string delimiter = ":img:";
+
+    	    		 std::string mimg = encodestr.substr(5);// remove mimg:
+
+
+
+    	    		  std::size_t pos = mimg.find(delimiter);      // position of ":img:" in str
+
+
+    	              if(pos>0){ // check exists :img:
+    	    		 std::string message =  mimg.substr (0, pos);
+
+    	    		 //LogPrintf("message: %s", message);
+
+    	    		 desc = desc + "<br><b><b>"+message.c_str();
+    	    		 ui->detailText->setHtml(desc);
+
+    	    		 std::string imgbase64 =  mimg.substr (pos+5);
+
+
+    	    		 encodestr=imgbase64;
+    	              }   // end check exists :img:
+
+    	        	}
+
+    	    	if(ismessagetpye2 == "m:" || ismessagetpye5 == "from:")
+    	        	 { //message
+
+    	    		   delctype = "message";
+    	    		   return delctype;
+    	        	}
+
+
+
+    	  std::string typebase64 = encodestr.substr(0, 1);
+    	  std::string typebase64_4 = encodestr.substr(0, 4);
+
+
+    	         if(typebase64=="J" /*pdf*/ ){
+    	        	 delctype = "pdf";
+
+    	         }
+    	         else if(typebase64=="V" /*txt*/)
+    	                 {
+    	              delctype = "txt";
+
+    	                 }
+    	         else if(typebase64=="A" /*mp4*/)
+    	         {
+    	        	 delctype = "mp4";
+
+    	         }
+    	         else if( typebase64=="R")  /*gif*/
+    	         {
+    	        	 delctype = "gif";
+
+    	         }
+    	         else if( typebase64=="U")  /*avi*/
+    	         {
+    	           	 delctype = "avi";
+    	         }
+    	         else if( typebase64=="S")  /*mp3*/
+    	         {
+    	           	 delctype = "mp3";
+    	         }
+    	         else if( typebase64_4=="iVBO")  /*png*/
+    	         {
+    	           	 delctype = "png";
+    	         }
+    	         else if( typebase64_4=="/9j/")  /*jpg*/
+    	         {
+    	             delctype = "jpg";
+    	         }
+
+    	         return delctype;
+    }
+    return QString();
+}
+
 QVariant TransactionTableModel::data(const QModelIndex &index, int role) const
 {
     if(!index.isValid())
@@ -577,6 +672,8 @@ QVariant TransactionTableModel::data(const QModelIndex &index, int role) const
             return formatTxType(rec);
         case ToAddress:
             return formatTxToAddress(rec, false);
+        case Imgbase64Type:
+            return formatImgbase64Type(rec);
         case Imgbase64:{
         	QString qimgbase64 = QString();
                  qimgbase64  =  QString::fromStdString(rec->imgbase64);
@@ -613,6 +710,8 @@ QVariant TransactionTableModel::data(const QModelIndex &index, int role) const
             return (rec->involvesWatchAddress ? 1 : 0);
         case ToAddress:
             return formatTxToAddress(rec, true);
+        case Imgbase64Type:
+                   return formatImgbase64Type(rec);
         case Imgbase64:{
         	QString qimgbase64 = QString();
                  qimgbase64  =  QString::fromStdString(rec->imgbase64);
@@ -666,8 +765,10 @@ QVariant TransactionTableModel::data(const QModelIndex &index, int role) const
         return QString::fromStdString(rec->address);
     case LabelRole:
         return walletModel->getAddressTableModel()->labelForAddress(QString::fromStdString(rec->address));
+    case Imgbase64TypeRole:
+           return QString::fromStdString(rec->imgbase64);
     case Imgbase64Role:
-        return QString::fromStdString(rec->imgbase64);
+    	 return formatImgbase64Type(rec);
     case AmountRole:
         return qint64(rec->credit + rec->debit);
     case TxIDRole:
