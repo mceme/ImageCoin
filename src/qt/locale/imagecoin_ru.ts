@@ -254,7 +254,7 @@
         <translation>Кошелёк</translation>
     </message>
 	 <message>
-        <source>Messenger</source>
+        <source>&amp;Messenger</source>
         <translation>посыльный</translation>
     </message>
     <message>

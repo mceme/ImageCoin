@@ -250,7 +250,7 @@
         <translation>Imagecoin Core</translation>
     </message>
 	<message>
-        <source>Messenger</source>
+        <source>&amp;Messenger</source>
         <translation>tin nhắn</translation>
     </message>
     <message>

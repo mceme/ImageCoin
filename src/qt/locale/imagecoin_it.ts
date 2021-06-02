@@ -247,7 +247,7 @@
         <translation>&amp;Sintesi</translation>
     </message>
 	<message>
-        <source>Messenger</source>
+        <source>&amp;Messenger</source>
         <translation>Messaggera</translation>
     </message>
     <message>

@@ -399,7 +399,7 @@
     </message>
 	<message>
         <location line="+12"/>
-        <source>Messenger</source>
+        <source>&amp;Messenger</source>
         <translation>Messenger</translation>
     </message>
     <message>
@@ -651,6 +651,21 @@
         <location line="+62"/>
         <source>&amp;File</source>
         <translation>&amp;File</translation>
+    </message>
+	<message>
+        <location line="+15"/>
+        <source>&amp;Proposals</source>
+        <translation>&amp;Proposals</translation>
+    </message>
+	<message>
+        <location line="+15"/>
+        <source>&amp;Add Proposal</source>
+        <translation>&amp;Add Proposal</translation>
+    </message>
+		<message>
+        <location line="+15"/>
+        <source>&amp;List Proposal</source>
+        <translation>&amp;List Proposal</translation>
     </message>
     <message>
         <location line="+14"/>

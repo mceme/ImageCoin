@@ -254,7 +254,7 @@
         <translation>錢包</translation>
     </message>
 	<message>
-        <source>Messenger</source>
+        <source>&amp;Messenger</source>
         <translation>信使</translation>
     </message>
     <message>

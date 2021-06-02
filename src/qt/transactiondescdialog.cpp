@@ -21,7 +21,9 @@
 #include <QPixmap>
 #include <QGraphicsView>
 #include <QGraphicsScene>
-#include <QGraphicsTextItem>
+#include <QGraphicsVideoItem>
+#include <QMediaPlayer>
+#include <QMediaContent>
 #include <QLabel>
 #include <QMovie>
 #include <QGraphicsProxyWidget>
@@ -106,13 +108,22 @@ TransactionDescDialog::TransactionDescDialog(const QModelIndex &idx, QWidget *pa
     	ui->DownloadButton->setVisible(true);
 
     	std::string typebase64 = encodestr.substr(0, 1);
-             if(typebase64=="J" /*pdf*/ || typebase64=="V"){
+             if(typebase64=="J" /*pdf*/ || typebase64=="V" /*txt*/){
             	 delctype = 2;
              }
-             else if(typebase64=="A" /*mp4*/ || typebase64=="R" /*gif*/|| typebase64=="U" /*avi*/ || typebase64=="S" /*mp3*/)
+             else if(typebase64=="R" /*gif*/)
              {
             	 delctype = 1;
              }
+             else if(typebase64=="A" /*mp4*/ || typebase64=="U" /*avi*/)
+             {
+                	 delctype = 3;
+             }
+             else if(typebase64=="S" /*mp3*/)
+             {
+                	 delctype = 4;
+             }
+
 
 	 base64 base64trdialog;
 
@@ -157,12 +168,42 @@ TransactionDescDialog::TransactionDescDialog(const QModelIndex &idx, QWidget *pa
                 QMovie *movie = new QMovie(&buffermov);
                 movie->setScaledSize(QSize(400, 250));
      		 gif_anim->setMovie(movie);
-     		 movie->start();
+
      		 QGraphicsProxyWidget *proxy = scene->addWidget(gif_anim);
                   scene->addWidget(gif_anim);
      		              ui->graphicsView->setScene( scene );
      		             ui->graphicsView->show();
+
+     		     movie->start();
      		       }
+     		  /* Start Video Mp3*/
+     		  else if (delctype==3 || delctype==4 )
+     		    		  {
+     				ui->graphicsView->setVisible(true);
+     		     		     		     		              ui->graphicsView->setGeometry(QRect(0, 0, 400, 250));
+
+
+     		     		     		     		           QGraphicsVideoItem *videoItem = new QGraphicsVideoItem;
+     		     		     		     		     videoItem->setSize(QSize(400,250));
+     		     		     		     		  QBuffer buffervid(base64decodearray);
+     		     		     		     		buffervid.open(QIODevice::ReadOnly);
+     		     		     				buffervid.seek(0);
+
+     		     		     		              QMediaPlayer *player = new QMediaPlayer;
+     		     		     		              player->setVideoOutput(videoItem);
+
+     		     		     		              player->setMedia(QMediaContent(), &buffervid);
+
+
+     		     		     		     		 //QGraphicsProxyWidget *proxy = scene->addItem(videoItem);
+     		     		     		     		     scene->addItem(videoItem);
+     		     		     		     		    ui->graphicsView->setScene( scene );
+     												ui->graphicsView->fitInView(videoItem, Qt::KeepAspectRatio);
+     		     		     		     		    ui->graphicsView->show();
+     		     		     		     	      player->play();
+
+
+     		    		  }
     		   /* Start Document */
      		  else if (delctype==2)
     		  {

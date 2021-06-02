@@ -498,7 +498,7 @@ void BitcoinGUI::createActions()
     verifyMessageAction = new QAction(QIcon(":/icons/" + theme + "/transaction_0"), tr("&Verify message..."), this);
     verifyMessageAction->setStatusTip(tr("Verify messages to ensure they were signed with specified ImageCoin addresses"));
 
-    proposalAddAction = new QAction(QIcon(":/icons/" + theme + "/filesave"), tr("Add Proposal"), this);
+    proposalAddAction = new QAction(QIcon(":/icons/" + theme + "/filesave"), tr("&Add Proposal"), this);
     proposalAddAction->setStatusTip(tr("Submit proposal"));
     proposalsListAction = new QAction(QIcon(":/icons/" + theme + "/edit"), tr("&List Proposals"), this);
     proposalsListAction->setStatusTip(tr("List all Proposal of Governance System"));
