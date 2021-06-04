@@ -52,16 +52,16 @@ Development tips and tricks
 
 Messages
 
-`m:Example message! 
-m:Hello!`
+* `m:Example message! `
+* ` m:Hello!`
 
 Messages and File
 
-`mimg:Example message!:img:base64 
-mimg:Hello!:img:T2dnUwACAAAAAAAAAAAfm5nB6slBlZ3Fch.`.
+* `mimg:Example message!:img:base64 `
+* `mimg:Hello!:img:T2dnUwACAAAAAAAAAAAfm5nB6slBlZ3Fch.`.
 
 File
-`T2dnUwACAAAAAAAAAAAfm5nB6slBlZ3Fch..`
+* `T2dnUwACAAAAAAAAAAAfm5nB6slBlZ3Fch..`
 
 **compiling for debugging**
 
