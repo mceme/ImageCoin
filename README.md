@@ -54,13 +54,13 @@ Messages
 * `m:Example message! `
 * ` m:Hello!`
 
-Messages and File
+Messages and Image/Video
 
 * `mimg:Example message!:img:base64 `
-* `mimg:Hello!:img:T2dnUwACAAAAAAAAAAAfm5nB6slBlZ3Fch.`.
+* `mimg:Hello!:img:iVdnUwACAAAAAAAAAAAfm5nB6slBlZ3Fch.`.
 
-File
-* `T2dnUwACAAAAAAAAAAAfm5nB6slBlZ3Fch..`
+Image/Video
+* `iVdnUwACAAAAAAAAAAAfm5nB6slBlZ3Fch..`
 
 **compiling for debugging**
 
