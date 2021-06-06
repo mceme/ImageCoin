@@ -49,12 +49,12 @@ Development tips and tricks
 
 **payload for img**
 
-Messages
+Message
 
 * `m:Example message! `
 * ` m:Hello!`
 
-Messages and Image/Video
+Message and Image/Video
 
 * `mimg:Example message!:img:base64 `
 * `mimg:Hello!:img:iVdnUwACAAAAAAAAAAAfm5nB6slBlZ3Fch.`.
