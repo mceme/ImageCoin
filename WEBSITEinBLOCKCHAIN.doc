@@ -41,7 +41,7 @@ https://github.com/mceme/php-OP_RETURN
 
 Example :
 
-https://github.com/mceme/php-OP_RETURN/example/
+https://github.com/mceme/php-OP_RETURN/blob/master/example/start.html
 
 Run configure with the --enable-debug option, then make. Or run configure with
 CXXFLAGS="-g -ggdb -O0" or whatever debug flags you need.
