@@ -37,11 +37,11 @@ File
 After run ImageCoind in your server.
 
 Get your Files with OP_Return
-https://github.com/mceme/php-OP_RETURN
+* https://github.com/mceme/php-OP_RETURN
 
 Example :
 
-https://github.com/mceme/php-OP_RETURN/blob/master/example/start.html
+* https://github.com/mceme/php-OP_RETURN/blob/master/example/start.html
 
 Run configure with the --enable-debug option, then make. Or run configure with
 CXXFLAGS="-g -ggdb -O0" or whatever debug flags you need.
