@@ -21,6 +21,11 @@
         <file alias="transaction_3">res/icons/drkblue/clock3.png</file>
         <file alias="transaction_4">res/icons/drkblue/clock4.png</file>
         <file alias="transaction_5">res/icons/drkblue/clock5.png</file>
+        <file alias="imgtype_audio">res/icons/drkblue/imgtype_audio.png</file>
+        <file alias="imgtype_video">res/icons/drkblue/imgtype_video.png</file>
+        <file alias="imgtype_image">res/icons/drkblue/imgtype_image.png</file>
+        <file alias="imgtype_doc">res/icons/drkblue/imgtype_doc.png</file>
+        <file alias="imgtype_message">res/icons/drkblue/imgtype_message.png</file>
         <file alias="eye">res/icons/drkblue/eye.png</file>
         <file alias="eye_minus">res/icons/drkblue/eye_minus.png</file>
         <file alias="eye_plus">res/icons/drkblue/eye_plus.png</file>
@@ -77,6 +82,11 @@
         <file alias="transaction_3">res/icons/crownium/clock3.png</file>
         <file alias="transaction_4">res/icons/crownium/clock4.png</file>
         <file alias="transaction_5">res/icons/crownium/clock5.png</file>
+        <file alias="imgtype_audio">res/icons/drkblue/imgtype_audio.png</file>
+        <file alias="imgtype_video">res/icons/drkblue/imgtype_video.png</file>
+        <file alias="imgtype_image">res/icons/drkblue/imgtype_image.png</file>
+        <file alias="imgtype_doc">res/icons/drkblue/imgtype_doc.png</file>
+        <file alias="imgtype_message">res/icons/drkblue/imgtype_message.png</file>
         <file alias="eye">res/icons/crownium/eye.png</file>
         <file alias="eye_minus">res/icons/crownium/eye_minus.png</file>
         <file alias="eye_plus">res/icons/crownium/eye_plus.png</file>
@@ -133,6 +143,11 @@
         <file alias="transaction_3">res/icons/light/clock3.png</file>
         <file alias="transaction_4">res/icons/light/clock4.png</file>
         <file alias="transaction_5">res/icons/light/clock5.png</file>
+        <file alias="imgtype_audio">res/icons/drkblue/imgtype_audio.png</file>
+        <file alias="imgtype_video">res/icons/drkblue/imgtype_video.png</file>
+        <file alias="imgtype_image">res/icons/drkblue/imgtype_image.png</file>
+        <file alias="imgtype_doc">res/icons/drkblue/imgtype_doc.png</file>
+        <file alias="imgtype_message">res/icons/drkblue/imgtype_message.png</file>
         <file alias="eye">res/icons/light/eye.png</file>
         <file alias="eye_minus">res/icons/light/eye_minus.png</file>
         <file alias="eye_plus">res/icons/light/eye_plus.png</file>
@@ -189,6 +204,11 @@
         <file alias="transaction_3">res/icons/trad/clock3.png</file>
         <file alias="transaction_4">res/icons/trad/clock4.png</file>
         <file alias="transaction_5">res/icons/trad/clock5.png</file>
+        <file alias="imgtype_audio">res/icons/drkblue/imgtype_audio.png</file>
+        <file alias="imgtype_video">res/icons/drkblue/imgtype_video.png</file>
+        <file alias="imgtype_image">res/icons/drkblue/imgtype_image.png</file>
+        <file alias="imgtype_doc">res/icons/drkblue/imgtype_doc.png</file>
+        <file alias="imgtype_message">res/icons/drkblue/imgtype_message.png</file>
         <file alias="eye">res/icons/trad/eye.png</file>
         <file alias="eye_minus">res/icons/trad/eye_minus.png</file>
         <file alias="eye_plus">res/icons/trad/eye_plus.png</file>
