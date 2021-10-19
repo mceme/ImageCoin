@@ -29,7 +29,7 @@
 #include <boost/foreach.hpp>
 
 
-QColor COLOR_WHITE =QColor.fromRgb(255, 255, 255);
+
 
 
 // Amount column is right-aligned it contains numbers
@@ -551,31 +551,33 @@ QString TransactionTableModel::formatTooltip(const TransactionRecord *rec) const
   QString imgtype = formatImgbase64Type(rec);
 
   if(imgtype!=""){
-    tooltip += QString("ImgType: ") + formatImgbase64Type(rec);
+    tooltip += QString("\n") + QString("ImgType: ") + formatImgbase64Type(rec);
   }
     return tooltip;
 }
 
 
-QVariant TransactionTableModel::txIMGTypeDecoration(const QString *imgtype) const
+QVariant TransactionTableModel::txIMGTypeDecoration(QString imgtype) const
 {
     QString theme = GUIUtil::getThemeName();
-    switch(imgtype)
-    {
 
-    case "mp3": case "wav":
+    std::string imgtypestd = imgtype.toStdString();
+    
+
+
+    if (imgtypestd == "mp3" || imgtypestd == "wav") 
         return QIcon(":/icons/" + theme + "/imgtype_audio");
-    case "mp4":  case "avi":
+    if (imgtypestd == "mp4" || imgtypestd == "avi")
         return QIcon(":/icons/" + theme + "/imgtype_video");
-    case "jpg": case "png": case "gif":
-    	 return QIcon(":/icons/" + theme + "/imgtype_image");
-    case "txt": case "pdf":
-        return QIcon(":/icons/" + theme + "/imgtype_doc");
-    case "message":
+    if (imgtypestd == "jpg" || imgtypestd == "png" || imgtypestd == "gif")
+        return QIcon(":/icons/" + theme + "/imgtype_image");
+    if (imgtypestd == "txt" || imgtypestd == "pdf") 
+         return QIcon(":/icons/" + theme + "/imgtype_doc");  
+    if (imgtypestd == "message") 
          return QIcon(":/icons/" + theme + "/imgtype_message");
-    default:
-        return COLOR_WHITE;
-    }
+    else
+        return QVariant();
+    
 }
 
 
@@ -688,6 +690,10 @@ QVariant TransactionTableModel::data(const QModelIndex &index, int role) const
             return txWatchonlyDecoration(rec);
         case ToAddress:
             return txAddressDecoration(rec);
+        case Imgbase64Type:{
+                     QString imgbase64Type = formatImgbase64Type(rec);
+                     return txIMGTypeDecoration(imgbase64Type);
+                    }
         }
         break;
     case Qt::DecorationRole:
@@ -703,8 +709,7 @@ QVariant TransactionTableModel::data(const QModelIndex &index, int role) const
             return formatTxType(rec);
         case ToAddress:
             return formatTxToAddress(rec, false);
-        case Imgbase64Type:
-        	  return txIMGTypeDecoration(formatImgbase64Type(rec));
+
         case Imgbase64:{
         	QString qimgbase64 = QString();
                  qimgbase64  =  QString::fromStdString(rec->imgbase64);
@@ -741,8 +746,10 @@ QVariant TransactionTableModel::data(const QModelIndex &index, int role) const
             return (rec->involvesWatchAddress ? 1 : 0);
         case ToAddress:
             return formatTxToAddress(rec, true);
-        case Imgbase64Type:
-        	  return txIMGTypeDecoration(formatImgbase64Type(rec));
+        case Imgbase64Type:{
+              QString imgbase64Type = formatImgbase64Type(rec);
+              return txIMGTypeDecoration(imgbase64Type);
+             }
         case Imgbase64:{
         	QString qimgbase64 = QString();
                  qimgbase64  =  QString::fromStdString(rec->imgbase64);
@@ -796,8 +803,10 @@ QVariant TransactionTableModel::data(const QModelIndex &index, int role) const
         return QString::fromStdString(rec->address);
     case LabelRole:
         return walletModel->getAddressTableModel()->labelForAddress(QString::fromStdString(rec->address));
-    case Imgbase64TypeRole:
-    	  return txIMGTypeDecoration(formatImgbase64Type(rec));
+    case Imgbase64TypeRole:{
+    	      return QString imgbase64Type = formatImgbase64Type(rec);
+              //return txIMGTypeDecoration(imgbase64Type);
+             }
     case Imgbase64Role:
     	  return QString::fromStdString(rec->imgbase64);
     case AmountRole:
