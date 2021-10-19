@@ -747,8 +747,8 @@ QVariant TransactionTableModel::data(const QModelIndex &index, int role) const
         case ToAddress:
             return formatTxToAddress(rec, true);
         case Imgbase64Type:{
-              QString imgbase64Type = formatImgbase64Type(rec);
-              return txIMGTypeDecoration(imgbase64Type);
+              return formatImgbase64Type(rec);
+             // return txIMGTypeDecoration(imgbase64Type);
              }
         case Imgbase64:{
         	QString qimgbase64 = QString();
@@ -804,7 +804,7 @@ QVariant TransactionTableModel::data(const QModelIndex &index, int role) const
     case LabelRole:
         return walletModel->getAddressTableModel()->labelForAddress(QString::fromStdString(rec->address));
     case Imgbase64TypeRole:{
-    	      return QString imgbase64Type = formatImgbase64Type(rec);
+    	      return formatImgbase64Type(rec);
               //return txIMGTypeDecoration(imgbase64Type);
              }
     case Imgbase64Role:
