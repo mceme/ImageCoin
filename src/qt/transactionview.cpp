@@ -243,7 +243,7 @@ void TransactionView::setModel(WalletModel *model)
         transactionView->setColumnWidth(TransactionTableModel::Watchonly, WATCHONLY_COLUMN_WIDTH);
         transactionView->setColumnWidth(TransactionTableModel::Date, DATE_COLUMN_WIDTH);
         transactionView->setColumnWidth(TransactionTableModel::Type, TYPE_COLUMN_WIDTH);
-        transactionView->setColumnWidth(TransactionTableModel::Imgbase64Type, STATUS_COLUMN_WIDTH + 70);
+        transactionView->setColumnWidth(TransactionTableModel::Imgbase64Type, STATUS_COLUMN_WIDTH);
         transactionView->setColumnWidth(TransactionTableModel::Imgbase64, TYPE_COLUMN_WIDTH);
         transactionView->setColumnWidth(TransactionTableModel::Amount, AMOUNT_MINIMUM_COLUMN_WIDTH);
 

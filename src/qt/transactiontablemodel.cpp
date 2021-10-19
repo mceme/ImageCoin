@@ -28,6 +28,10 @@
 
 #include <boost/foreach.hpp>
 
+
+QColor COLOR_WHITE =QColor.fromRgb(255, 255, 255);
+
+
 // Amount column is right-aligned it contains numbers
 static int column_alignments[] = {
         Qt::AlignLeft|Qt::AlignVCenter, /* status */
@@ -543,7 +547,35 @@ QString TransactionTableModel::formatTooltip(const TransactionRecord *rec) const
     {
         tooltip += QString(" ") + formatTxToAddress(rec, true);
     }
+
+  QString imgtype = formatImgbase64Type(rec);
+
+  if(imgtype!=""){
+    tooltip += QString("ImgType: ") + formatImgbase64Type(rec);
+  }
     return tooltip;
+}
+
+
+QVariant TransactionTableModel::txIMGTypeDecoration(const QString *imgtype) const
+{
+    QString theme = GUIUtil::getThemeName();
+    switch(imgtype)
+    {
+
+    case "mp3": case "wav":
+        return QIcon(":/icons/" + theme + "/imgtype_audio");
+    case "mp4":  case "avi":
+        return QIcon(":/icons/" + theme + "/imgtype_video");
+    case "jpg": case "png": case "gif":
+    	 return QIcon(":/icons/" + theme + "/imgtype_image");
+    case "txt": case "pdf":
+        return QIcon(":/icons/" + theme + "/imgtype_doc");
+    case "message":
+         return QIcon(":/icons/" + theme + "/imgtype_message");
+    default:
+        return COLOR_WHITE;
+    }
 }
 
 
@@ -672,7 +704,7 @@ QVariant TransactionTableModel::data(const QModelIndex &index, int role) const
         case ToAddress:
             return formatTxToAddress(rec, false);
         case Imgbase64Type:
-            return formatImgbase64Type(rec);
+        	  return txIMGTypeDecoration(formatImgbase64Type(rec));
         case Imgbase64:{
         	QString qimgbase64 = QString();
                  qimgbase64  =  QString::fromStdString(rec->imgbase64);
@@ -710,7 +742,7 @@ QVariant TransactionTableModel::data(const QModelIndex &index, int role) const
         case ToAddress:
             return formatTxToAddress(rec, true);
         case Imgbase64Type:
-                   return formatImgbase64Type(rec);
+        	  return txIMGTypeDecoration(formatImgbase64Type(rec));
         case Imgbase64:{
         	QString qimgbase64 = QString();
                  qimgbase64  =  QString::fromStdString(rec->imgbase64);
@@ -765,7 +797,7 @@ QVariant TransactionTableModel::data(const QModelIndex &index, int role) const
     case LabelRole:
         return walletModel->getAddressTableModel()->labelForAddress(QString::fromStdString(rec->address));
     case Imgbase64TypeRole:
-    	  return formatImgbase64Type(rec);
+    	  return txIMGTypeDecoration(formatImgbase64Type(rec));
     case Imgbase64Role:
     	  return QString::fromStdString(rec->imgbase64);
     case AmountRole:
