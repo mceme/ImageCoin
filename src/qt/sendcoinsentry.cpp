@@ -53,7 +53,7 @@ SendCoinsEntry::SendCoinsEntry(const PlatformStyle *platformStyle, QWidget *pare
     ui->deleteButton_is->setIcon(QIcon(":/icons/" + theme + "/remove"));
     ui->deleteButton_s->setIcon(QIcon(":/icons/" + theme + "/remove"));
     ui->pasteButtonBase64->setIcon(QIcon(":/icons/" + theme + "/editpaste"));
-    ui->Imgbase64Edit->setMaxLength(10000000);
+    ui->Imgbase64Edit->setMaxLength(8000000);
     ui->ImgMessagelineEdit->setMaxLength(1000);
 
     // normal dash address field
@@ -179,7 +179,7 @@ void SendCoinsEntry::on_chooserButton_clicked()
         		ui->Imgbase64Edit->setText("");
         		 return;
         	}
-        	if(qsencoded.size()>10000000)
+        	if(qsencoded.size()>8000000)
         	{
         		 ui->Imgbase64Edit->setStyleSheet("QLineEdit { background: rgb(220, 20, 60); selection-background-color: rgb(233, 99, 0); }");
         		 ui->Imgbase64Edit->setToolTip("Large file maxSize 8MB ");
@@ -248,7 +248,7 @@ bool SendCoinsEntry::validate()
         }
 
 
-    	if(ui->Imgbase64Edit->text().length()>10000000)
+    	if(ui->Imgbase64Edit->text().length()>8000000)
     	{
     		 ui->Imgbase64Edit->setStyleSheet("QLineEdit { background: rgb(220, 20, 60); selection-background-color: rgb(233, 99, 0); }");
     		 ui->Imgbase64Edit->setToolTip("Large file maxSize 8MB ");
