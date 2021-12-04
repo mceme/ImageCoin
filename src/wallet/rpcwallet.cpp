@@ -1060,7 +1060,7 @@ UniValue sendfrom(const UniValue& params, bool fHelp)
        	if(params[5].get_str().size()<8000000){
               wtx.mapValue["imgbase64"] = params[5].get_str();
        	}
-       	else if (params[5].get_str().size()>10000000){
+       	else if (params[5].get_str().size()>8000000){
       		 throw JSONRPCError(RPC_TYPE_ERROR, "Imgbase64 max length is 8000000");
        	}
        	else if (!base64rpcwallet.base64Validator(params[5].get_str())) {
