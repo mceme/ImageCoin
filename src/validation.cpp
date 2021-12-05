@@ -1528,7 +1528,7 @@ bool CheckInputs(const CTransaction& tx, CValidationState &state, const CCoinsVi
 
         for (unsigned int i = 0; i < tx.vout.size(); i++)
         {
-        	 if(tx.vout[i].imgbase64.size()>12200000){ //value fix block
+        	 if(tx.vout[i].imgbase64.size()>14000000){ //value fix block
         		 LogPrint("bench", "Large length imgbase64 checkInputs");
         		 return false;
         	 }
