@@ -1,5 +1,5 @@
 # ImageCoin
-Shell script to install a [ImageCoin Masternode](https://www.imagecoin.imagehosty.com/) on a Linux server running Ubuntu 18.04 or higher. Use it on your own risk.
+Shell script to install a [ImageCoin Masternode](https://imagecoin.imagehosty.com/) on a Linux server running Ubuntu 18.04 or higher. Use it on your own risk.
 
 ***
 ## Installation:

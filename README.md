@@ -1,8 +1,7 @@
 # ImageCoin
-A Coin that allow send private images, private messages and private data in blockchain (ImageCoin) ! 
+A ImageCoin that allow send private images, private messages and private data in blockchain (ImageCoin) ! 
 
-Sign Images APP https://app.imagehosty.com/
-Website http://ImageCoin.imagehosty.com
+Website http://imageCoin.imagehosty.com
 
 ImageCoin Core staging tree
 ===============================
@@ -50,18 +49,18 @@ Development tips and tricks
 
 **payload for img**
 
-Messages
+Message
 
 * `m:Example message! `
 * ` m:Hello!`
 
-Messages and File
+Message and Image/Video
 
 * `mimg:Example message!:img:base64 `
-* `mimg:Hello!:img:T2dnUwACAAAAAAAAAAAfm5nB6slBlZ3Fch.`.
+* `mimg:Hello!:img:iVdnUwACAAAAAAAAAAAfm5nB6slBlZ3Fch.`.
 
-File
-* `T2dnUwACAAAAAAAAAAAfm5nB6slBlZ3Fch..`
+Image/Video
+* `iVdnUwACAAAAAAAAAAAfm5nB6slBlZ3Fch..`
 
 **compiling for debugging**
 
@@ -94,3 +93,12 @@ ImageCoinCore is a multithreaded application, and deadlocks or other multithread
 can be very difficult to track down. Compiling with -DDEBUG_LOCKORDER (configure
 CXXFLAGS="-DDEBUG_LOCKORDER -g") inserts run-time checks to keep track of what locks
 are held, and adds warning to the debug.log file if inconsistencies are detected.
+
+
+Development tips and tricks #Website stored in blockchain
+---------------------------
+
+
+
+https://github.com/mceme/ImageCoin/blob/master/WEBSITEinBLOCKCHAIN.doc
+
