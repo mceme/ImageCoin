@@ -47,7 +47,7 @@ Always verify the signatures and checksums.
 Development tips and tricks
 ---------------------------
 
-**payload for img**
+**payload example for img**
 
 Message
 
