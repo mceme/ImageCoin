@@ -59,7 +59,7 @@ Message and Image/Video
 * `mimg:Example message!:img:base64 `
 * `mimg:Hello!:img:iVdnUwACAAAAAAAAAAAfm5nB6slBlZ3Fch..`
 
-Image/Video
+Only Image/Video/File
 * `iVdnUwACAAAAAAAAAAAfm5nB6slBlZ3Fch..`
 
 **compiling for debugging**
