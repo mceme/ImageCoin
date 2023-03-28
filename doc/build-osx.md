@@ -43,13 +43,51 @@ NOTE: Building with Qt4 is still supported, however, doing so could result in a 
         git clone https://github.com/mceme/ImageCoin.git
         cd ImageCoin
 
-2.  Build ImageCoin Core:
-    This will configure and build the headless dash binaries as well as the gui (if Qt is found).
-    You can disable the gui build by passing `--without-gui` to configure.
+2. Building dependencies
+---------------------
+ImageCoin inherited the `depends` folder from Bitcoin, which contains all dependencies required to build Dash. These
+dependencies must be built before Dash can actually be built. To do so, perform the following:
 
-        ./autogen.sh
-        ./configure
-        make
+```bash
+$ cd depends
+$ make -j4 # Choose a good -j value, depending on the number of CPU cores available
+$ cd ..
+```
+
+This will download and build all dependencies required to build Dash Core. Caching of build results will ensure that only
+the packages are rebuilt which have changed since the last depends build.
+
+It is required to re-run the above commands from time to time when dependencies have been updated or added. If this is
+not done, build failures might occur when building Dash.
+
+Please read the [depends](../depends/README.md) documentation for more details on supported hosts and configuration
+options. If no host is specified (as in the above example) when calling `make`, the depends system will default to your
+local host system. 
+
+Building ImageCoin Core
+---------------------
+
+```bash
+$ ./autogen.sh
+$ ./configure --prefix=`pwd`/depends/<host>
+$ make
+$ make install # optional
+```
+
+Please replace `<host>` with your local system's `host-platform-triplet`. The following triplets are usually valid:
+- `i686-pc-linux-gnu` for Linux32
+- `x86_64-pc-linux-gnu` for Linux64
+- `x86_64-w64-mingw32` for Win64
+- `x86_64-apple-darwin19` for macOS
+- `arm-linux-gnueabihf` for Linux ARM 32 bit
+- `aarch64-linux-gnu` for Linux ARM 64 bit
+
+If you want to cross-compile for another platform, choose the appropriate `<host>` and make sure to build the
+dependencies with the same host before.
+
+If you want to build for the same host but different distro, add `--enable-glibc-back-compat LDFLAGS=-static-libstdc++` when calling `./configure`.
+
+
 
 3.  It is also a good idea to build and run the unit tests:
 
