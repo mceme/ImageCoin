@@ -5,7 +5,9 @@ This guide will show you how to build dashd (headless client) for OSX.
 Notes
 -----
 
-* Tested on OS X 10.7 through 10.11 on 64-bit Intel processors only.
+* Tested on OS X 10.7 through 10.11 on 64-bit Intel processors.
+
+* Tested on OS X 13.2 through 13.2.3 on 64-bit M1 processors.
 
 * All of the commands should be executed in a Terminal application. The
 built-in one is located in `/Applications/Utilities`.
