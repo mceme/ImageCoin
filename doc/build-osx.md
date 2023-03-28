@@ -38,7 +38,7 @@ Instructions: Homebrew
 
 NOTE: Building with Qt4 is still supported, however, doing so could result in a broken UI. Therefore, building with Qt5 is recommended. Be aware that Qt5 5.7+ requires C++11 compiler support.
 
-### Building Dash Core
+### ImageCoin Core
 
 1. Clone the GitHub tree to get the source code and go into the directory.
 
@@ -56,7 +56,7 @@ $ make -j4 # Choose a good -j value, depending on the number of CPU cores availa
 $ cd ..
 ```
 
-This will download and build all dependencies required to build Dash Core. Caching of build results will ensure that only
+This will download and build all dependencies required to build ImageCoin Core. Caching of build results will ensure that only
 the packages are rebuilt which have changed since the last depends build.
 
 It is required to re-run the above commands from time to time when dependencies have been updated or added. If this is
