@@ -11,6 +11,10 @@ CMainSignals& GetMainSignals()
 {
     return g_signals;
 }
+//fix build release Macos Sequoia
+using boost::placeholders::_1;
+using boost::placeholders::_2;
+using boost::placeholders::_3;
 
 void RegisterValidationInterface(CValidationInterface* pwalletIn) {
     g_signals.AcceptedBlockHeader.connect(boost::bind(&CValidationInterface::AcceptedBlockHeader, pwalletIn, _1));
